@@ -2,6 +2,7 @@ var REQUISITO_HABILIDAD = "Requisito de habilidad";
 var REQUISITO_HABILIDAD_KI = "Requisito de Habilidad del Ki";
 var REQUISITO_ARTE_MARCIAL = "Requisito de Arte Marcial";
 var REQUISITO_UNO_DE_LOS_SIGUIENTES = "Requisito uno entre varios";
+var REQ_CADENA_UNO_ENTRE = "Uno de los siguientes requisitos";
 
 /**
  *
@@ -41,6 +42,25 @@ function Requisito(tipo, item, valor) {
 Requisito.prototype = {
 
     constructor : Requisito,
+
+    toString : function() {
+        var cadena = "";
+        if (this.tipo == REQUISITO_UNO_DE_LOS_SIGUIENTES) {
+            cadena = REQ_CADENA_UNO_ENTRE + ": ";
+            for (var i = 0; i < this.requisitos.length; i++) {
+                cadena += this.requisitos[i].toString();
+                if (i < this.requisitos.length-1) {
+                    cadena += "; ";
+                }
+            }
+        } else {
+            cadena = this.tipo + ": " + this.item;
+            if (this.tipo == REQUISITO_HABILIDAD) {
+                cadena += " " + this.valor;
+            }
+        }
+        return cadena;
+    },
 
     /**
      *

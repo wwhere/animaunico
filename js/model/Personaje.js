@@ -334,6 +334,31 @@ function Personaje(nivelInicial) {
 Personaje.prototype = {
     constructor : Personaje,
 
+    toString : function() {
+        return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza;
+    },
+
+    getStringCategoria : function() {
+        var cadena = "";
+        var catActual = "";
+        var nivelActual = 0;
+        var numCategorias = 0;
+        for (var i = 1; i <= this.nivel; i++) {
+            if ((this.categoriasPorNiveles[i].toString() != catActual) || (numCategorias == 0)) {
+                if (numCategorias == 1) {
+                    cadena += catActual + " " + nivelActual;
+                } else if (numCategorias > 1) {
+                    cadena += "/" + catActual + " " + nivelActual;
+                }
+                catActual = this.categoriasPorNiveles[i].toString();
+                numCategorias++;
+                nivelActual = 1;
+            }
+            nivelActual++;
+        }
+        return cadena;
+    },
+
 //region Datos Personales
 
     /**
@@ -3902,6 +3927,18 @@ function TipoArmadura(nombre, arrayTAs, blanda) {
 TipoArmadura.prototype = {
     constructor : TipoArmadura,
 
+    toString : function() {
+        var cadena = "[";
+        for (var i = 0; i < this.TAs.length;i++) {
+            cadena += this.TAs[i];
+            if (i < this.TAs.length-1) {
+                cadena += " ";
+            }
+        }
+        cadena += "]"
+        return cadena;
+    },
+
     getNombre : function() {
         return this.nombre;
     },
@@ -4008,6 +4045,20 @@ function AumentoCaracteristicas() {
 
 AumentoCaracteristicas.prototype = {
     constructor : AumentoCaracteristicas,
+
+    toString : function() {
+        var cadena = "";
+        switch (this.estado) {
+            case EST_AUM_LIBRE:
+                cadena = EST_AUM_LIBRE;
+                break;
+            case EST_AUM_GASTADO:
+            case EST_AUM_FIJO:
+                cadena= "+1 " + this.uso;
+                break;
+        }
+        return cadena;
+    },
 
     /**
      *

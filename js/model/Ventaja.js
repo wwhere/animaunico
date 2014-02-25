@@ -91,6 +91,10 @@ function Ventaja(nombre, descripcion, descripcionEfecto, repetible, coste, incom
 Ventaja.prototype = {
     constructor : Ventaja,
 
+    toString : function() {
+        return this.nombre;
+    },
+
     /**
      *
      * @returns {string}
@@ -302,6 +306,11 @@ function ElementoPCComprado(elementoPC, pc, opcion, origen) {
 
 ElementoPCComprado.prototype = {
     constructor : ElementoPCComprado,
+
+
+    toString : function() {
+        return this.ventaja.toString() + " (" + this.pc + " PC)";
+    },
 
     /**
      *

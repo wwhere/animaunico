@@ -57,6 +57,10 @@ function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, ca
 TablaArmas.prototype = {
     constructor : TablaArmas,
 
+    toString : function() {
+        return this.nombre;
+    },
+
     /**
      *
      * @returns {string}
@@ -149,6 +153,14 @@ function TablaArmasComprada(tablaArmas, opcion) {
 
 TablaArmasComprada.prototype = {
     constructor : TablaArmasComprada,
+
+    toString : function() {
+        if (this.opcion) {
+            return this.tablaArmas.toString() + ": " + this.opcion;
+        } else {
+            return this.tablaArmas.toString();
+        }
+    },
 
     /**
      *
