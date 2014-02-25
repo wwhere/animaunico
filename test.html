@@ -1,0 +1,198 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="test/mocha.css" />
+</head>
+<body>
+<div id="mocha"><p><a href=".">Index</a></p></div>
+<div id="messages"></div>
+<div id="fixtures"></div>
+
+<script src="test/mocha.js"></script>
+<script src="test/chai.js"></script>
+
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/vendor/jquery-1.10.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="js/vendor/jquery-2.0.3.min.js"></script>
+<!--<![endif]-->
+
+<script src="js/pluginsOld.js"></script>
+<script src="js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/libs/gumby.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/controller/json_parse.js"></script>
+
+
+<script src="js/mainAnimaUnico.js"></script>
+<script src="js/hojaPersonaje.js"></script>
+
+<script src="js/model/Resistencia.js"></script>
+
+<script src="js/model/Bono.js"></script>
+
+<script src="js/model/ElementoProhibido.js"></script>
+
+<script src="js/model/Requisito.js"></script>
+
+<script src="js/model/Habilidad.js"></script>
+<script src="js/controller/Habilidad_ct.js"></script>
+
+<script src="js/model/Magia.js"></script>
+<script src="js/controller/Magia_ct.js"></script>
+<script src="js/data/magia/LibreAcceso.js"></script>
+<script src="js/data/magia/ViaAgua.js"></script>
+<script src="js/data/magia/ViaAire.js"></script>
+<script src="js/data/magia/ViaCreacion.js"></script>
+<script src="js/data/magia/ViaDestruccion.js"></script>
+<script src="js/data/magia/ViaEsencia.js"></script>
+<script src="js/data/magia/ViaFuego.js"></script>
+<script src="js/data/magia/ViaIlusion.js"></script>
+<script src="js/data/magia/ViaLuz.js"></script>
+<script src="js/data/magia/ViaNigromancia.js"></script>
+<script src="js/data/magia/ViaOscuridad.js"></script>
+<script src="js/data/magia/ViaTierra.js"></script>
+
+<script src="js/model/DisciplinaPsiquica.js"></script>
+<script src="js/controller/Psiquica_ct.js"></script>
+<script src="js/data/psiquica/PoderesMatriciales.js"></script>
+<script src="js/data/psiquica/Crioquinesis.js"></script>
+<script src="js/data/psiquica/Energia.js"></script>
+<script src="js/data/psiquica/IncrementoFisico.js"></script>
+<script src="js/data/psiquica/Piroquinesis.js"></script>
+<script src="js/data/psiquica/Sentiente.js"></script>
+<script src="js/data/psiquica/Telemetria.js"></script>
+<script src="js/data/psiquica/Telepatia.js"></script>
+<script src="js/data/psiquica/Telequinesis.js"></script>
+
+<script src="js/model/HabilidadKi.js"></script>
+<script src="js/model/Ki.js"></script>
+<script src="js/controller/Ki_ct.js"></script>
+<script src="js/data/ki/habilidadesKi.js"></script>
+<script src="js/data/ki/efectosTecnicas/desventajasTecnicas.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosAccion.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosDefensivos.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosDestructivos.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosEsotericos.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosEspeciales.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosOfensivos.js"></script>
+<script src="js/data/ki/efectosTecnicas/efectosReaccion.js"></script>
+<script src="js/data/ki/tecnicas/celeritas.js"></script>
+<script src="js/data/ki/tecnicas/ignis.js"></script>
+<script src="js/data/ki/tecnicas/elDragon.js"></script>
+
+<script src="js/model/Ventaja.js"></script>
+<script src="js/controller/Ventaja_ct.js"></script>
+<script src="js/data/ventajas/ventComunes.js"></script>
+<script src="js/data/ventajas/ventDon.js"></script>
+<script src="js/data/ventajas/ventPsiquicos.js"></script>
+<script src="js/data/desventajas/desvComunes.js"></script>
+<script src="js/data/desventajas/desvDon.js"></script>
+<script src="js/data/desventajas/desvPsiquicos.js"></script>
+
+<script src="js/model/Dinero.js"></script>
+<script src="js/model/Equipo.js"></script>
+<script src="js/controller/Equipo_ct.js"></script>
+<script src="js/data/equipo/Armas.js"></script>
+<script src="js/data/equipo/Armaduras.js"></script>
+<!--<script src="js/data/equipo/Equipo.js"></script>-->
+
+<script src="js/model/TablaArmas.js"></script>
+<script src="js/controller/Tablas_ct.js"></script>
+<script src="js/data/tablas/tablasArmas.js"></script>
+<script src="js/data/tablas/tablasMisticas.js"></script>
+<script src="js/data/tablas/tablasPsiquicas.js"></script>
+
+<script src="js/model/Raza.js"></script>
+<script src="js/controller/Razas_Ct.js"></script>
+<script src="js/data/razas/humano.js"></script>
+<script src="js/data/razas/nephilim/nephDaimah.js"></script>
+<script src="js/data/razas/nephilim/nephDanjayni.js"></script>
+<script src="js/data/razas/nephilim/nephDukZarist.js"></script>
+<script src="js/data/razas/nephilim/nephEbudan.js"></script>
+<script src="js/data/razas/nephilim/nephJayan.js"></script>
+<script src="js/data/razas/nephilim/nephSylvain.js"></script>
+
+<script src="js/model/ArteMarcial.js"></script>
+<script src="js/controller/ArtesMarciales_ct.js"></script>
+<script src="js/data/artesMarciales/artesMarcialesBasicas.js"></script>
+<script src="js/data/artesMarciales/artesMarcialesAvanzadas.js"></script>
+
+<script src="js/model/Elan.js"></script>
+<script src="js/controller/Elan_ct.js"></script>
+<script src="js/data/elan/BerylAzrael.js"></script>
+<script src="js/data/elan/BerylBarakiel.js"></script>
+<script src="js/data/elan/BerylEdamiel.js"></script>
+<script src="js/data/elan/BerylGabriel.js"></script>
+<script src="js/data/elan/BerylRafael.js"></script>
+<script src="js/data/elan/BerylMikael.js"></script>
+<script src="js/data/elan/BerylUriel.js"></script>
+<script src="js/data/elan/ShajadAbbadon.js"></script>
+<script src="js/data/elan/ShajadErebus.js"></script>
+<script src="js/data/elan/ShajadEriol.js"></script>
+<script src="js/data/elan/ShajadMeseguis.js"></script>
+<script src="js/data/elan/ShajadJedah.js"></script>
+<script src="js/data/elan/ShajadNoah.js"></script>
+<script src="js/data/elan/ShajadZemial.js"></script>
+
+<script src="js/model/Categoria.js"></script>
+<script src="js/controller/Categoria_ct.js"></script>
+<script src="js/data/categorias/asesino.js"></script>
+<script src="js/data/categorias/conjurador.js"></script>
+<script src="js/data/categorias/explorador.js"></script>
+<script src="js/data/categorias/guerrero.js"></script>
+<script src="js/data/categorias/guerreroAcrobata.js"></script>
+<script src="js/data/categorias/guerreroConjurador.js"></script>
+<script src="js/data/categorias/guerreroMentalista.js"></script>
+<script src="js/data/categorias/hechicero.js"></script>
+<script src="js/data/categorias/hechiceroMentalista.js"></script>
+<script src="js/data/categorias/ilusionista.js"></script>
+<script src="js/data/categorias/ladron.js"></script>
+<script src="js/data/categorias/maestroEnArmas.js"></script>
+<script src="js/data/categorias/mentalista.js"></script>
+<script src="js/data/categorias/novel.js"></script>
+<script src="js/data/categorias/paladinDesc.js"></script>
+<script src="js/data/categorias/paladinFrial.js"></script>
+<script src="js/data/categorias/paladinOscuroCont.js"></script>
+<script src="js/data/categorias/paladinOscuroResi.js"></script>
+<script src="js/data/categorias/sombra.js"></script>
+<script src="js/data/categorias/tao.js"></script>
+<script src="js/data/categorias/tecnicista.js"></script>
+<script src="js/data/categorias/warlock.js"></script>
+
+<script src="js/model/Personaje.js"></script>
+<script src="js/controller/Personaje_ct.js"></script>
+<script src="js/view/Personaje_vw.js"></script>
+
+<script src="js/view/Controles_vw.js"></script>
+<script src="js/view/Caracteristicas_vw.js"></script>
+<script src="js/view/Categoria_vw.js"></script>
+<script src="js/view/Combate_vw.js"></script>
+<script src="js/view/Equipo_vw.js"></script>
+<script src="js/view/Ki_vw.js"></script>
+<script src="js/view/Magia_vw.js"></script>
+<script src="js/view/Psiquica_vw.js"></script>
+<script src="js/view/ArtesMarciales_vw.js"></script>
+<script src="js/view/PuntosCreacion_vw.js"></script>
+<script src="js/view/Raza_vw.js"></script>
+<script src="js/view/Elan_vw.js"></script>
+<script src="js/view/Habilidades_vw.js"></script>
+<script src="js/controller/Creacion.js"></script>
+
+<script src="js/controller/persistencia.js"></script>
+<script src="js/init.js"></script>
+
+<script>mocha.setup('bdd')</script>
+
+<script src="test/test.js"></script>
+<script>
+    mocha.checkLeaks();
+    mocha.run();
+</script>
+</body>
+</html>

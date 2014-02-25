@@ -1,0 +1,14 @@
+.idea
+.sass-cache
+.svn
+node_modules
+.htaccess
+config.rb
+js/data_private
+server/tmp/*
+server/[Cc]onfig/core.php
+server/[Cc]onfig/database.php
+server/app/tmp/*
+server/app/[Cc]onfig/core.php
+server/app/[Cc]onfig/database.php
+!empty

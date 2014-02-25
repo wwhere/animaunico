@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anima: UNICO - Generador de Personajes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/anima-unico/jquery-ui-1.10.3.custom.min.css">
+    <link rel="stylesheet" href="css/gumby.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="js/vendor/jquery-2.0.3.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="js/anima-unico.min.js"></script>
+
+</head>
+<body onload="animaUnico.inicializar()" class="ui-widget">
+<div class="navbar pretty" id="nav1" gumby-fixed="top">
+    <div class="row">
+        <h1 class="two columns logo">
+            <a href="#">
+                <img src="img/anima_unico_logo.png" gumby-retina />
+            </a>
+        </h1>
+
+        <div class="two columns">
+            <div id="infoSuperior">
+
+            </div>
+        </div>
+
+        <ul class="eight columns" >
+            <li>
+                <a href="#">Personaje</a>
+                <div class="dropdown">
+                    <ul id="menuPersonaje">
+                        <li><a href="#" id="BOTON_CREACION">Crear nuevo</a></li>
+                        <li><a href="#" id="BOTON_SUBIR_NIVEL">Subir de nivel</a></li>
+                        <li><a href="#" id="BOTON_GUARDAR">Guardar</a></li>
+                        <li><a href="#" id="BOTON_CARGAR">Cargar</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Creación</a>
+                <div class="dropdown">
+                    <ul id="menuCreacion">
+                        <li><a href="#" id="BOTON_BONOS_NATURALES">Elegir bonos naturales</a></li>
+                        <li><a href="#" id="BOTON_ARMA_INICIAL">Elegir arma inicial</a></li>
+                        <li id="BOTON_TABLAS_ARMAS"><a href="#" >Comprar tablas de armas</a></li>
+                        <li><a href="#" id="BOTON_MAGIA">Gastar niveles de vía (Magia)</a></li>
+                        <li><a href="#" id="BOTON_CV">Gastar CV (Psíquica)</a></li>
+                        <li><a href="#" id="BOTON_CM">Gastar CM (Ki)</a></li>
+                        <li><a href="#" id="BOTON_ELAN">Gastar sincronización (Elan)</a></li>
+                        <hr>
+                        <li><a href="#" id="BOTON_FINALIZAR_CREACION">Finalizar creación/subida</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Soporte</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#" id="BOTON_LOG">Cambios recientes...</a></li>
+                        <li><a href="#" id="BOTON_LICENCIA">Créditos y agradecimientos</a></li>
+                        <li><a href="https://www.assembla.com/spaces/animaunico/support/tickets" target="_blank">Informar de errores</a></li>
+                        <li><a href="https://www.assembla.com/spaces/animaunico/messages" target="_blank">Comentarios, sugerencias...</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div style="position:fixed !important;position:absolute;top:70px;right:0;bottom:0;left:0;overflow-y: scroll;">
+    <div class="row">
+
+        <div class="six columns">
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divPersonales"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divCaracteristicas"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divCombate"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divArtesMarciales"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divKi"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divSobrenatural"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divPsiquica"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divElan"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="six columns">
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divDesarrollo"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divCapacidades"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divResistencias"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divVentajas"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divDesventajas"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divSecundarias"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45119981-1', 'helechaloscuro.net');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<div id="dialogElegirRaza">
+
+</div>
+
+<div id="dialogElegirCategoria">
+
+</div>
+
+<div id="dialogPuntosCreacion">
+
+</div>
+
+<div id="dialogBonosNaturales"></div>
+
+<div id="dialogElegirArma"></div>
+
+<div id="dialogFileSystem"></div>
+
+<div id="licencia" style="display:none">
+    <h5>Agradecimientos</h5>
+    <div class="textoSmall">
+        <p>Agradecimientos a Anima Studio. Por todo.</p>
+    </div>
+    <h5>Créditos</h5>
+    <div class="textoSmall">
+        <p>Anima, Beyond Fantasy es © 2005 - 2010 de Anima Project Studio.</p>
+        <p><a href="www.animarpg.com">www.animarpg.com</a></p>
+        <p>La edición en castellano es © 2005 - 2010 de Edge Entertainment.</p>
+        <p><a href="www.edgeent.com">www.edgeent.com</a></p>
+        <p>Todo el texto descriptivo de los efectos de juego es copyright de Edge Entertainment.</p>
+        <p>El código es copyright 2013 de Guillermo Heras Prieto.</p>
+        <p>Anima: Único no existiría si no hubiera tenido como inspiración y modelo muy inicial la excepcional <a href="http://azrapse.es/tor/sheet.html" target="_blank">hoja de personaje online para El Anillo Único de David Esparza Guerrero.</a></p>
+    </div>
+    <h5>Licencia de software</h5>
+    <div class="textoSmall">
+        <p>The MIT License (MIT)</p>
+        <br>
+        <p>Copyright (c) 2013 Guillermo Heras Prieto</p>
+        <br>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p>
+        <br>
+        <p>
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+        </p>
+        <br>
+        <p>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+        </p>
+    </div>
+</div>
+
+<div id="logCambios" style="display:none">
+    <h5>Desarrollo actual</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Implementados varios métodos de guardado.</li>
+        <li>... y ahora implementados varios métodos de cargado. La carga desde almacenamiento web aún solo permite cargar el último, y la carga desde servidor aún no está.</li>
+    </ul>
+    <h5>21 de Febrero de 2014</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Cambio de categoría (UI): Ahora el botón aparece y desaparece cuando debe.</li>
+        <li>Cambio de categoría: Implementada la opción de cambio de categoría.</li>
+        <li>Bonos dobles: Deja de contarse el nivel 0 para dar bonos por nivel de categorías.</li>
+        <li>Aumentos de características: Al subir de nivel y ganar aumentos de características se pueden gastar y desgastar en características y PC hasta dejarlos al gusto.</li>
+        <li>Poderes psíquicos: Remodelada algo la ventana de poderes psíquicos. Arreglado el problema para fortalecer poderes psíquicos.</li>
+        <li>Subida de nivel: Al subir nivel ya no se pueden devolver ventajas/desventajas sin más, ni reducir los valores de habilidad que ya se habían comprado.</li>
+        <li>Subida de nivel: En general remodelada, debería funcionar.</li>
+        <li>Complemento Web 1: Incluido el poder perdido de crioquinesis (Inmunidad al frío) y el árbol de técnicas del ki Las Cadenas.</li>
+        <li>Pantalla del Director: Incluido el método V de generación de características y las ventajas y desventajas.</li>
+        <li>Ventajas: Apto en una materia ya no se puede comprar a 3 PC.</li>
+        <li>Ventajas y desventajas: La aplicación gastará los PC del modo óptimo, al margen del orden de compra. Por ejemplo, si compras una ventaja del don y luego una desventaja del don.</li>
+        <li>Guardar y Cargar: Parece que el guardado/cargado funciona, para los navegadores en los que funcione la descarga del personaje.</li>
+        <li>Guardar y Cargar: Parece que sólo va bien en Chrome, en estos momentos. Seguiré investigando.</li>
+        <li>Siguiente actualización: servidor de personajes para guardar/cargar mejorado (o, al menos, funcional).</li>
+    </ul>
+    <h5>9 de Diciembre de 2013</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Habilidades Sobrenaturales: Ahora el zeon se compra y paga de cinco en cinco, como se ha hecho toda la vida.</li>
+    </ul>
+    <h5>8 de Diciembre de 2013</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Interfaz: El arreglo de la altura de las ventanas fallaba en firefox. Ahora debería funcionar. Espero.</li>
+        <li>Interfaz: Al empezar a crear un personaje nuevo, si ya hay uno en marcha, pide confirmación.</li>
+        <li>Interfaz: Ya no debería aparecer "null" como especialidad si se deja en blanco el cuadro.</li>
+        <li>Tablas de armas: Ahora la compra de tablas de armas funciona de forma sensata, apareciendo cada una por separado y todo eso..</li>
+    </ul>
+    <h5>7 de Diciembre de 2013</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Interfaz: Las ventanas ajustarán su altura a la altura de la ventana, para que se pueda ver su contenido en resoluciones inferiores.</li>
+        <li>Interfaz: Ahora se puede cambiar el tamaño a casi todas las ventanas del modo habitual (arrastrando en su borde). No sé por qué se querría hacer, pero ahí está.</li>
+        <li>Interfaz: Casi casi todas las ventanas pueden ahora cerrarse con la "X" de su superior derecha o pulsando la tecla Esc.</li>
+        <li>Importante: Por confusión mía, incluía textos que no tenía derecho a incluir. Han sido purgados.</li>
+    </ul>
+    <h5>6 de Diciembre de 2013</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Interfaz: Ahora los botones que debían aparecer desactivados aparecen, efectivamente, desactivados. Esto evita algunos problemas (como poder elegir el mismo bono natural dos veces).</li>
+        <li>Razas: Añadida como opción la raza D'Anjayni.</li>
+        <li>Razas: Añadida como opción la raza Ebudan. Falta permitir que cumplan Sue' Aman y que las Alas les den vuelo y arma adicional.</li>
+        <li>Razas: Añadida como opción la raza Jayán. Falta que consiga sus armas naturales.</li>
+        <li>Razas: Añadida como opción la raza Daimah. Falta que consiga sus armas naturales.</li>
+        <li>Razas: Añadida como opción la raza Duk'Zarist. Falta obligarles a comprar Don o acceso psíquico.</li>
+    </ul>
+    <h5>5 de Diciembre de 2013</h5>
+    <ul class="textoSmall listaCambios">
+        <li>Interfaz: Creada ventana con log de cambios.</li>
+        <li>Combate: Ajustadas las comprobaciones de ataque/defensa para saber si se pueden subir. Ahora, si se ha desarrollado ataque y defensa, comparará el ataque con la defensa más elevada. Si ese valor es inferior o igual a 50, permite subir.</li>
+        <li>Desventajas: Ahora para el límite de tres desventajas no cuentan las que no se han comprado con PC.</li>
+        <li>Razas: Las descripciones de las ventajas de los nephilim ahora indican que son de nephilim.</li>
+        <li>Razas: Añadida como opción la raza Sylvain.</li>
+    </ul>
+</div>
+</html>
