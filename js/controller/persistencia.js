@@ -65,24 +65,6 @@ function muestraDialogoGuardarPersonaje() {
     });
 }
 
-function guardaEnWebStorage(event) {
-    var numPersonajes = 0;
-    if (localStorage.getItem("numPersonajes")) {
-        numPersonajes = Number(localStorage.getItem("numPersonajes")) + 1;
-    } else {
-        numPersonajes = 1;
-    }
-
-    var prefijo = "per"+numPersonajes;
-
-    localStorage.setItem("numPersonajes", numPersonajes);
-    localStorage.setItem(prefijo, event.data.texto);
-    localStorage.setItem(prefijo+"_Nombre", personaje_actual.getNombre());
-    localStorage.setItem(prefijo+"_Categoria", personaje_actual.getCategoria());
-    localStorage.setItem(prefijo+"_Raza", personaje_actual.getNombre());
-    localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNombre());
-}
-
 function copiaAlPortapapeles(event) {
     window.prompt("Ahora copia al portapapeles pulsando Control+C (o Cmd+C) y luego pégalo donde quieras con Control+v (o Cmd+v)", event.data.texto);
 }
@@ -146,7 +128,7 @@ function muestraDialogoCargarPersonaje() {
     var botonWebStorage = "";
     if (typeof(Storage)!=="undefined") {
         explicacionWebStorage = getDiv().append("Con este método el personaje se carga internamente de tu ordenador, en el navegador web. En estos momentos sólo se carga el último guardado");
-        if (localStorage.animaUnicoNumPersonajes) {
+        if (localStorage.getItem("numPersonajes")) {
             botonWebStorage = muestraBotonPequeño("Carga del navegador",{},cargaDeWebStorage);
         }
     } else {
@@ -172,6 +154,25 @@ function muestraDialogoCargarPersonaje() {
 
 }
 
+//region Almacenamiento web
+function guardaEnWebStorage(event) {
+    var numPersonajes = 0;
+    if (localStorage.getItem("numPersonajes")) {
+        numPersonajes = Number(localStorage.getItem("numPersonajes")) + 1;
+    } else {
+        numPersonajes = 1;
+    }
+
+    var prefijo = "per"+numPersonajes;
+
+    localStorage.setItem("numPersonajes", numPersonajes);
+    localStorage.setItem(prefijo, event.data.texto);
+    localStorage.setItem(prefijo+"_Nombre", personaje_actual.getNombre());
+    localStorage.setItem(prefijo+"_Categoria", personaje_actual.getCategoria());
+    localStorage.setItem(prefijo+"_Raza", personaje_actual.getNombre());
+    localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNombre());
+}
+
 function cargaDeWebStorage(event) {
     var numPersonaje = Number(localStorage.getItem("numPersonajes"));
 
@@ -179,6 +180,7 @@ function cargaDeWebStorage(event) {
 
     cargarPersonaje(personaje);
 }
+//endregion Almacenamiento web
 
 function cargaCopiaPega() {
     var texto = $("#zonaCargaPersonaje")[0].value;
