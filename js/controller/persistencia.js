@@ -67,14 +67,20 @@ function muestraDialogoGuardarPersonaje() {
 
 function guardaEnWebStorage(event) {
     var numPersonajes = 0;
-    if (localStorage.getItem("animaUnicoNumPersonajes")) {
-        numPersonajes = Number(localStorage.getItem("animaUnicoNumPersonajes")) + 1;
+    if (localStorage.getItem("numPersonajes")) {
+        numPersonajes = Number(localStorage.getItem("numPersonajes")) + 1;
     } else {
         numPersonajes = 1;
     }
 
-    localStorage.setItem("animaUnicoNumPersonajes", numPersonajes);
-    localStorage.setItem("animaUnicoPersonajeNum"+numPersonajes, event.data.texto);
+    var prefijo = "per"+numPersonajes;
+
+    localStorage.setItem("numPersonajes", numPersonajes);
+    localStorage.setItem(prefijo, event.data.texto);
+    localStorage.setItem(prefijo+"_Nombre", personaje_actual.getNombre());
+    localStorage.setItem(prefijo+"_Categoria", personaje_actual.getCategoria());
+    localStorage.setItem(prefijo+"_Raza", personaje_actual.getNombre());
+    localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNombre());
 }
 
 function copiaAlPortapapeles(event) {
@@ -167,7 +173,7 @@ function muestraDialogoCargarPersonaje() {
 }
 
 function cargaDeWebStorage(event) {
-    var numPersonaje = Number(localStorage.getItem("animaUnicoNumPersonajes"));
+    var numPersonaje = Number(localStorage.getItem("numPersonajes"));
 
     var personaje = localStorage.getItem("animaUnicoPersonajeNum"+numPersonaje);
 
