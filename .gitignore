@@ -4,6 +4,7 @@
 node_modules
 .htaccess
 config.rb
+test
 js/data_private
 server/tmp/*
 server/[Cc]onfig/core.php
