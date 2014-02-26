@@ -125,11 +125,11 @@ function muestraDialogoCargarPersonaje() {
     var tituloWebStorage = getDiv(CSS_SUBTITULO_SECCION).append("Método 3: Almacenamiento Web");
     var textoWebStorage = getDiv(CSS_TEXTO_SMALL);
     var explicacionWebStorage = "";
-    var botonWebStorage = "";
+    var listaPersonajes = getDiv("");
     if (typeof(Storage)!=="undefined") {
         explicacionWebStorage = getDiv().append("Con este método el personaje se carga internamente de tu ordenador, en el navegador web. En estos momentos sólo se carga el último guardado");
         if (localStorage.getItem("numPersonajes")) {
-            botonWebStorage = muestraBotonPequeño("Carga del navegador",{},cargaDeWebStorage);
+            listaPersonajes.append(cargaDeWebStorage());
         }
     } else {
         explicacionWebStorage = getDiv().append("Tu navegador no permite usar este método. Lo siento.");
@@ -137,7 +137,7 @@ function muestraDialogoCargarPersonaje() {
 
 
 
-    dialogo.append(webStorageDiv.append(tituloWebStorage).append(textoWebStorage.append(explicacionWebStorage).append(botonWebStorage)));
+    dialogo.append(webStorageDiv.append(tituloWebStorage).append(textoWebStorage.append(explicacionWebStorage).append(listaPersonajes)));
 
 
     dialogo.dialog({
@@ -169,18 +169,30 @@ function guardaEnWebStorage(event) {
     localStorage.setItem(prefijo, event.data.texto);
     localStorage.setItem(prefijo+"_Nombre", personaje_actual.getNombre());
     localStorage.setItem(prefijo+"_Categoria", personaje_actual.getCategoria());
-    localStorage.setItem(prefijo+"_Raza", personaje_actual.getNombre());
-    localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNombre());
+    localStorage.setItem(prefijo+"_Raza", personaje_actual.getRaza());
+    localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNivel());
 }
 
 function cargaDeWebStorage(event) {
-    var numPersonaje = Number(localStorage.getItem("numPersonajes"));
-
-    var personaje = localStorage.getItem("animaUnicoPersonajeNum"+numPersonaje);
-
-    cargarPersonaje(personaje);
+    var numPersonajes = Number(localStorage.getItem("numPersonajes"));
+    var div = getDiv(CSS_TEXTO_SMALL);
+    for (var i = 1; i <= numPersonajes; i++) {
+        var personaje = localStorage.getItem("per"+i);
+        var nombre = localStorage.getItem("per"+i+"_Nombre");
+        var categoria = localStorage.getItem("per"+i+"_Categoria");
+        var raza = localStorage.getItem("per"+i+"_Raza");
+        var nivel = localStorage.getItem("per"+i+"_Nivel");
+        var divNombre = getDiv(CSS_MUESTRA_INLINE).append(nombre + " [" + categoria + " " + raza + " " + nivel);
+        var botonCarga = muestraBotonPequeño("Carga",{personaje:personaje},lanzaCargado);
+        div.append(divNombre).append(botonCarga);
+    }
+    return div;
 }
 //endregion Almacenamiento web
+
+function lanzaCargado(event) {
+    cargarPersonaje(event.data.personaje);
+}
 
 function cargaCopiaPega() {
     var texto = $("#zonaCargaPersonaje")[0].value;
