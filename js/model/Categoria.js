@@ -125,6 +125,10 @@ function Categoria(nombre) {
 Categoria.prototype =  {
     constructor: Categoria,
 
+    toString : function() {
+        return this.nombre;
+    },
+
     /**
      *
      * @returns {string}

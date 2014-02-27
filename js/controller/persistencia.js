@@ -168,7 +168,7 @@ function guardaEnWebStorage(event) {
     localStorage.setItem("numPersonajes", numPersonajes);
     localStorage.setItem(prefijo, event.data.texto);
     localStorage.setItem(prefijo+"_Nombre", personaje_actual.getNombre());
-    localStorage.setItem(prefijo+"_Categoria", personaje_actual.getCategoria());
+    localStorage.setItem(prefijo+"_Categoria", personaje_actual.getStringCategoria());
     localStorage.setItem(prefijo+"_Raza", personaje_actual.getRaza());
     localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNivel());
 }
@@ -182,7 +182,7 @@ function cargaDeWebStorage(event) {
         var categoria = localStorage.getItem("per"+i+"_Categoria");
         var raza = localStorage.getItem("per"+i+"_Raza");
         var nivel = localStorage.getItem("per"+i+"_Nivel");
-        var divNombre = getDiv(CSS_MUESTRA_INLINE).append(nombre + " [" + categoria + " " + raza + " " + nivel);
+        var divNombre = getDiv(CSS_MUESTRA_INLINE).append(nombre + " [" + categoria + " " + raza + "]");
         var botonCarga = muestraBotonPequeño("Carga",{personaje:personaje},lanzaCargado);
         div.append(divNombre).append(botonCarga);
     }
