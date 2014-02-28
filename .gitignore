@@ -11,4 +11,5 @@ server/[Cc]onfig/database.php
 server/app/tmp/*
 server/app/[Cc]onfig/core.php
 server/app/[Cc]onfig/database.php
+server/app/Plugin
 !empty
