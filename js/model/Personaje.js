@@ -1914,10 +1914,11 @@ Personaje.prototype = {
             var i;
 
             if (this.cambioCategoria) {
-                if (this.nivel+numNiveles > this.cambioCategoria) {
+                if (this.nivel+numNiveles >= this.cambioCategoria) {
                     numNiveles = this.cambioCategoria-this.nivel;
+                    this.setCategoria(this.proximaCategoria);
+                    this.cambioCategoria = false;
                 }
-                this.setCategoria(this.proximaCategoria);
             }
 
             this.PD_libresPrevios = this.PD_libres;
