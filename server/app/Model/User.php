@@ -17,6 +17,10 @@ class User extends AppModel {
         return true;
     }
 
+    public $hasMany = array(
+        'MiembrosGrupo'
+    );
+
     public $validate = array(
         'username' => array(
             'required' => array(

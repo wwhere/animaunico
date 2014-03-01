@@ -15,7 +15,7 @@
         <th>Nivel</th>
         <th>Categoría</th>
         <th>Raza</th>
-        <th>JSON</th>
+        <th>Usuario</th>
         <th>Acción</th>
     </tr>
 
@@ -28,7 +28,7 @@
             <td><?php echo $personaje['Personaje']['nivel']; ?></td>
             <td><?php echo $personaje['Personaje']['categoria']; ?></td>
             <td><?php echo $personaje['Personaje']['raza']; ?></td>
-            <td><?php echo $personaje['Personaje']['json']; ?></td>
+            <td><?php echo $personaje['User']['username']; ?></td>
             <td><?php
                     echo $this->Form->postLink(
                     'Borrar',

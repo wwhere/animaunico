@@ -30,8 +30,6 @@ class Personaje extends AppModel {
         )
     );
 
-    public function isOwnedBy($personaje, $user) {
-        return $this->field('id', array('id' => $personaje, 'autor' => $user)) === $personaje;
-    }
+    public $belongsTo = 'User';
 
 }
