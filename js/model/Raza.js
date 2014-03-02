@@ -41,6 +41,10 @@ function Raza(nombre, ventajas, desventajas, modNivel) {
 Raza.prototype = {
     constructor : Raza,
 
+    toString : function() {
+        return this.nombre;
+    },
+
     /**
      *
      * @returns {string}

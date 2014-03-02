@@ -9,12 +9,12 @@ function muestraDialogoGuardarPersonaje() {
     var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append("Método base: Servidor de personajes");
     var textoServidor = getDiv(CSS_TEXTO_SMALL);
     var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes guardar tu personaje en el servidor de personajes de Anima: Único.");
-    var formServidor = $("<form name='salvaPersonaje' action='http://www.helechaloscuro.net/cake/personajes/salva' method='post'>" +
-        "<input type='text' name='nombre' hidden value='"+personaje_actual.getNombre()+"'/> " +
-        "<input type='text' name='categoria' hidden value='"+personaje_actual.getCategoria().getNombre()+"'/> " +
+    var formServidor = $("<form name='salvaPersonaje' action='http://www.helechaloscuro.net/cake/personajes/salva' method='post' target='_blank'>" +
+        "<textarea name='nombre' hidden>"+personaje_actual.getNombre()+"</textarea> " +
+        "<textarea name='categoria' hidden>"+personaje_actual.getStringCategoria() +"</textarea> " +
         "<input type='text' name='nivel' hidden value='"+personaje_actual.getNivel()+"'/> " +
-        "<input type='text' name='raza' hidden value='"+personaje_actual.getRaza().getNombre()+"'/> " +
-        "<input type='text' name='json' hidden value='"+personajeSerializado+"'/> " +
+        "<textarea name='raza' hidden>"+personaje_actual.getRaza().toString() +"</textarea> " +
+        "<textarea name='json' hidden>"+personajeSerializado+"</textarea> " +
         "<input type='submit' value='Guardar'/>" +
         "</form>" );
 
@@ -63,18 +63,6 @@ function muestraDialogoGuardarPersonaje() {
         width: 500,
         height: 500
     });
-}
-
-function guardaEnWebStorage(event) {
-    var numPersonajes = 0;
-    if (localStorage.getItem("animaUnicoNumPersonajes")) {
-        numPersonajes = Number(localStorage.getItem("animaUnicoNumPersonajes")) + 1;
-    } else {
-        numPersonajes = 1;
-    }
-
-    localStorage.setItem("animaUnicoNumPersonajes", numPersonajes);
-    localStorage.setItem("animaUnicoPersonajeNum"+numPersonajes, event.data.texto);
 }
 
 function copiaAlPortapapeles(event) {
@@ -137,11 +125,11 @@ function muestraDialogoCargarPersonaje() {
     var tituloWebStorage = getDiv(CSS_SUBTITULO_SECCION).append("Método 3: Almacenamiento Web");
     var textoWebStorage = getDiv(CSS_TEXTO_SMALL);
     var explicacionWebStorage = "";
-    var botonWebStorage = "";
+    var listaPersonajes = getDiv("");
     if (typeof(Storage)!=="undefined") {
         explicacionWebStorage = getDiv().append("Con este método el personaje se carga internamente de tu ordenador, en el navegador web. En estos momentos sólo se carga el último guardado");
-        if (localStorage.animaUnicoNumPersonajes) {
-            botonWebStorage = muestraBotonPequeño("Carga del navegador",{},cargaDeWebStorage);
+        if (localStorage.getItem("numPersonajes")) {
+            listaPersonajes.append(cargaDeWebStorage());
         }
     } else {
         explicacionWebStorage = getDiv().append("Tu navegador no permite usar este método. Lo siento.");
@@ -149,7 +137,7 @@ function muestraDialogoCargarPersonaje() {
 
 
 
-    dialogo.append(webStorageDiv.append(tituloWebStorage).append(textoWebStorage.append(explicacionWebStorage).append(botonWebStorage)));
+    dialogo.append(webStorageDiv.append(tituloWebStorage).append(textoWebStorage.append(explicacionWebStorage).append(listaPersonajes)));
 
 
     dialogo.dialog({
@@ -166,12 +154,44 @@ function muestraDialogoCargarPersonaje() {
 
 }
 
+//region Almacenamiento web
+function guardaEnWebStorage(event) {
+    var numPersonajes = 0;
+    if (localStorage.getItem("numPersonajes")) {
+        numPersonajes = Number(localStorage.getItem("numPersonajes")) + 1;
+    } else {
+        numPersonajes = 1;
+    }
+
+    var prefijo = "per"+numPersonajes;
+
+    localStorage.setItem("numPersonajes", numPersonajes);
+    localStorage.setItem(prefijo, event.data.texto);
+    localStorage.setItem(prefijo+"_Nombre", personaje_actual.getNombre());
+    localStorage.setItem(prefijo+"_Categoria", personaje_actual.getStringCategoria());
+    localStorage.setItem(prefijo+"_Raza", personaje_actual.getRaza());
+    localStorage.setItem(prefijo+"_Nivel", personaje_actual.getNivel());
+}
+
 function cargaDeWebStorage(event) {
-    var numPersonaje = Number(localStorage.getItem("animaUnicoNumPersonajes"));
+    var numPersonajes = Number(localStorage.getItem("numPersonajes"));
+    var div = getDiv(CSS_TEXTO_SMALL);
+    for (var i = 1; i <= numPersonajes; i++) {
+        var personaje = localStorage.getItem("per"+i);
+        var nombre = localStorage.getItem("per"+i+"_Nombre");
+        var categoria = localStorage.getItem("per"+i+"_Categoria");
+        var raza = localStorage.getItem("per"+i+"_Raza");
+        var nivel = localStorage.getItem("per"+i+"_Nivel");
+        var divNombre = getDiv(CSS_MUESTRA_INLINE).append(nombre + " [" + categoria + " " + raza + "]");
+        var botonCarga = muestraBotonPequeño("Carga",{personaje:personaje},lanzaCargado);
+        div.append(divNombre).append(botonCarga);
+    }
+    return div;
+}
+//endregion Almacenamiento web
 
-    var personaje = localStorage.getItem("animaUnicoPersonajeNum"+numPersonaje);
-
-    cargarPersonaje(personaje);
+function lanzaCargado(event) {
+    cargarPersonaje(event.data.personaje);
 }
 
 function cargaCopiaPega() {

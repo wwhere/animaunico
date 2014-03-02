@@ -12,13 +12,28 @@ class PersonajesController extends AppController {
     }
 
     function view($id = null) {
-        $this->Personaje->id = $id;
-        $this->set('personaje',$this->Personaje->read());
+        $this->set('personaje',$this->Personaje->find(
+            'first', array (
+                'conditions' => array('Personaje.id' => $id)
+            )
+        ));
+    }
+
+    function carga($id = null) {
+        $this->set('personaje',$this->Personaje->find(
+            'first', array (
+                'conditions' => array('Personaje.id' => $id)
+            )
+        ));
+        $this->layout = 'ajax';
     }
 
     public function add() {
         if ( $this->request->is('post')) {
             $this->request->data['Personaje']['autor'] = $this->Auth->user('id');
+            $this->request->data['Personaje']['nombre'] = $this->request->data['Personaje']['nombre'];
+            $this->request->data['Personaje']['raza'] = $this->request->data['Personaje']['raza'];
+            $this->request->data['Personaje']['json'] = $this->request->data['Personaje']['json'];
             if ($this->Personaje->save($this->request->data)) {
                 $this->Session->setFlash('Tu personaje se ha salvado');
                 $this->redirect(array('action' => 'index'));
@@ -35,6 +50,7 @@ class PersonajesController extends AppController {
                     'nivel' => $this->request->data('nivel'),
                     'raza' => $this->request->data('raza'),
                     'json' => $this->request->data('json'),
+                    'user_id' => $this->Auth->user('id')
                 )
             );
             $this->Personaje->create();
@@ -82,8 +98,13 @@ class PersonajesController extends AppController {
         }
     }
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('carga');
+    }
+
     public function isAuthorized($user) {
-        if ($this->action === 'add') {
+        if (($this->action === 'add') || ($this->action === 'salva')  || ($this->action === 'carga')) {
             return true;
         }
 

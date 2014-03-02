@@ -28,6 +28,10 @@ function ViaMagia(nombre, descripcion, opuestas) {
 ViaMagia.prototype = {
     constructor : ViaMagia,
 
+    toString : function() {
+        return this.nombre;
+    },
+
     /**
      *
      * @returns {string}
@@ -190,6 +194,10 @@ function Conjuro(nombre, nivel, /*accion, tipo, efecto, costesZeon, intReq, obje
 Conjuro.prototype = {
     constructor : Conjuro,
 
+    toString : function() {
+        return this.nombre;
+    },
+
     /**
      *
      * @returns {string}
@@ -324,6 +332,10 @@ function NivelEnVia(via,nivel) {
 
 NivelEnVia.prototype = {
     constructor : NivelEnVia,
+
+    toString : function() {
+        return this.via.toString() + " " + this.nivel;
+    },
 
     /**
      *
