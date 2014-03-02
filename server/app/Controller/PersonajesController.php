@@ -13,6 +13,7 @@ class PersonajesController extends AppController {
 
     function indexBeta() {
         $this->set('personajes', $this->Personaje->find('all'));
+        $this->layout = 'animaunico';
     }
 
     function view($id = null) {
