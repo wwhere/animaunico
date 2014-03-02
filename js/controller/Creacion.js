@@ -454,8 +454,8 @@ function comprasiPuedesPotencialPsiquico(coste) {
 function desarrolloSoloAtaqueODefensa() {
     var valor = false;
     var pdAtaque = personaje_actual.getHabilidadDePersonaje(HB_ATAQUE).getPDinvertidos();
-    var pdParada = personaje_actual.getHabilidadDePersonaje(HB_ESQUIVA).getPDinvertidos();
-    var pdEsquiva = personaje_actual.getHabilidadDePersonaje(HB_PARADA).getPDinvertidos();
+    var pdParada = personaje_actual.getHabilidadDePersonaje(HB_PARADA).getPDinvertidos();
+    var pdEsquiva = personaje_actual.getHabilidadDePersonaje(HB_ESQUIVA).getPDinvertidos();
 
     if ( (pdAtaque == 0) || ( (pdEsquiva == 0) && (pdParada == 0)) ) {
         if (pdAtaque > 0) {
