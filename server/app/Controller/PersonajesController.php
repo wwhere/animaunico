@@ -89,6 +89,11 @@ class PersonajesController extends AppController {
         }
     }
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('carga');
+    }
+
     public function isAuthorized($user) {
         if (($this->action === 'add') || ($this->action === 'salva')  || ($this->action === 'carga')) {
             return true;
