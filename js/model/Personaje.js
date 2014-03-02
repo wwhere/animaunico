@@ -335,7 +335,7 @@ Personaje.prototype = {
     constructor : Personaje,
 
     toString : function() {
-        return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza;
+        return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza + ")";
     },
 
     getStringCategoria : function() {
@@ -352,10 +352,16 @@ Personaje.prototype = {
                 }
                 catActual = this.categoriasPorNiveles[i].toString();
                 numCategorias++;
-                nivelActual = 1;
+                nivelActual = 0;
             }
             nivelActual++;
         }
+        if (numCategorias == 1) {
+            cadena += catActual + " " + nivelActual;
+        } else if (numCategorias > 1) {
+            cadena += "/" + catActual + " " + nivelActual;
+        }
+
         return cadena;
     },
 
@@ -1908,10 +1914,11 @@ Personaje.prototype = {
             var i;
 
             if (this.cambioCategoria) {
-                if (this.nivel+numNiveles > this.cambioCategoria) {
+                if (this.nivel+numNiveles >= this.cambioCategoria) {
                     numNiveles = this.cambioCategoria-this.nivel;
+                    this.setCategoria(this.proximaCategoria);
+                    this.cambioCategoria = false;
                 }
-                this.setCategoria(this.proximaCategoria);
             }
 
             this.PD_libresPrevios = this.PD_libres;

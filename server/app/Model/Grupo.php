@@ -20,4 +20,15 @@ class Grupo extends AppModel {
  */
 	public $displayField = 'nombre';
 
+    public $belongsTo = array(
+        'Dj' => array(
+            'classname' => 'User',
+            'foreignKey' => 'dj'
+        )
+    );
+
+    public $hasMany = array(
+        'MiembrosGrupo'
+    );
+
 }

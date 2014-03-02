@@ -1155,7 +1155,7 @@ function asignarEspecialidad(parametros) {
 }
 
 function finalizarGeneracion() {
-    personaje_actual.nivelGeneracionTerminada = 1;
+    personaje_actual.nivelGeneracionTerminada = personaje_actual.getNivel();
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_PERSONAJE_HECHO;
     mostrarPersonajeActual();
 }
@@ -1259,7 +1259,7 @@ function cambiarCategoria() {
 }
 
 function subirNivel() {
-    var nivelActual = personaje_actual.getNivel() +personaje_actual.getRaza().getModNivel();
+    var nivelActual = personaje_actual.getNivel() + personaje_actual.getRaza().getModNivel();
 
     var nivelObjetivo = getNivelPorPX(personaje_actual.getPX());
 
