@@ -34075,7 +34075,7 @@ function muestraDialogoGuardarPersonaje() {
         "<input type='text' name='categoria' hidden value='"+personaje_actual.getStringCategoria() +"'/> " +
         "<input type='text' name='nivel' hidden value='"+personaje_actual.getNivel()+"'/> " +
         "<input type='text' name='raza' hidden value='"+personaje_actual.getRaza().toString() +"'/> " +
-        "<input type='text' name='json' hidden value='"+personajeSerializado+"'/> " +
+        "<input type='text' name='json' hidden value='"+encodeURIComponent(personajeSerializado)+"'/> " +
         "<input type='submit' value='Guardar'/>" +
         "</form>" );
 

@@ -1,1 +1,1 @@
-<?php echo $personaje['Personaje']['json']; ?>
+<?php echo urldecode($personaje['Personaje']['json']); ?>

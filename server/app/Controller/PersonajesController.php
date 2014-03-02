@@ -12,19 +12,28 @@ class PersonajesController extends AppController {
     }
 
     function view($id = null) {
-        $this->Personaje->id = $id;
-        $this->set('personaje',$this->Personaje->read());
+        $this->set('personaje',$this->Personaje->find(
+            'first', array (
+                'conditions' => array('Personaje.id' => $id)
+            )
+        ));
     }
 
     function carga($id = null) {
-        $this->Personaje->id = $id;
-        $this->set('personaje',$this->Personaje->read());
+        $this->set('personaje',$this->Personaje->find(
+            'first', array (
+                'conditions' => array('Personaje.id' => $id)
+            )
+        ));
         $this->layout = 'ajax';
     }
 
     public function add() {
         if ( $this->request->is('post')) {
             $this->request->data['Personaje']['autor'] = $this->Auth->user('id');
+            $this->request->data['Personaje']['nombre'] = pg_escape_string($this->request->data['Personaje']['nombre']);
+            $this->request->data['Personaje']['raza'] = pg_escape_string($this->request->data['Personaje']['raza']);
+            $this->request->data['Personaje']['json'] = pg_escape_string($this->request->data['Personaje']['json']);
             if ($this->Personaje->save($this->request->data)) {
                 $this->Session->setFlash('Tu personaje se ha salvado');
                 $this->redirect(array('action' => 'index'));
