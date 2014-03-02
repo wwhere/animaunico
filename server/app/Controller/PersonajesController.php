@@ -16,6 +16,12 @@ class PersonajesController extends AppController {
         $this->set('personaje',$this->Personaje->read());
     }
 
+    function carga($id = null) {
+        $this->Personaje->id = $id;
+        $this->set('personaje',$this->Personaje->read());
+        $this->layout = 'ajax';
+    }
+
     public function add() {
         if ( $this->request->is('post')) {
             $this->request->data['Personaje']['autor'] = $this->Auth->user('id');
@@ -35,6 +41,7 @@ class PersonajesController extends AppController {
                     'nivel' => $this->request->data('nivel'),
                     'raza' => $this->request->data('raza'),
                     'json' => $this->request->data('json'),
+                    'user_id' => $this->Auth->user('id')
                 )
             );
             $this->Personaje->create();
@@ -83,7 +90,7 @@ class PersonajesController extends AppController {
     }
 
     public function isAuthorized($user) {
-        if ($this->action === 'add') {
+        if (($this->action === 'add') || ($this->action === 'salva')  || ($this->action === 'carga')) {
             return true;
         }
 
