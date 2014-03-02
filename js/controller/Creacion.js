@@ -466,7 +466,6 @@ function desarrolloSoloAtaqueODefensa() {
             valor = HB_PARADA;
         }
     }
-
     return valor;
 }
 
