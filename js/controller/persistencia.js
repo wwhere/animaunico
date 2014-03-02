@@ -10,11 +10,11 @@ function muestraDialogoGuardarPersonaje() {
     var textoServidor = getDiv(CSS_TEXTO_SMALL);
     var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes guardar tu personaje en el servidor de personajes de Anima: Único.");
     var formServidor = $("<form name='salvaPersonaje' action='http://www.helechaloscuro.net/cake/personajes/salva' method='post' target='_blank'>" +
-        "<input type='text' name='nombre' hidden value='"+personaje_actual.getNombre()+"'/> " +
-        "<input type='text' name='categoria' hidden value='"+personaje_actual.getStringCategoria() +"'/> " +
+        "<textarea name='nombre' hidden>"+personaje_actual.getNombre()+"</textarea> " +
+        "<textarea name='categoria' hidden>"+personaje_actual.getStringCategoria() +"</textarea> " +
         "<input type='text' name='nivel' hidden value='"+personaje_actual.getNivel()+"'/> " +
-        "<input type='text' name='raza' hidden value='"+personaje_actual.getRaza().toString() +"'/> " +
-        "<input type='text' name='json' hidden value='"+encodeURIComponent(personajeSerializado)+"'/> " +
+        "<textarea name='raza' hidden>"+personaje_actual.getRaza().toString() +"</textarea> " +
+        "<textarea name='json' hidden>"+personajeSerializado+"</textarea> " +
         "<input type='submit' value='Guardar'/>" +
         "</form>" );
 
