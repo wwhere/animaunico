@@ -7,7 +7,7 @@
 ?>
 <!-- File: /app/View/Posts/index.ctp -->
 
-<h1>Personajes</h1>
+<h1>Personajes - Versión Desarrollo (BETA)</h1>
 <?php echo $this->Html->link('Añadir Personaje', array('controller' => 'personajes', 'action' => 'add')); ?>
 <table>
     <tr>
@@ -40,7 +40,7 @@
                                         array('action' => 'edit', $personaje['Personaje']['id']))*/
                 $optionsCreate = array(
                     'type' => 'GET',
-                    'url' => 'http://helechaloscuro.net/animaunico/index.html'
+                    'url' => 'http://helechaloscuro.net/animaunico/beta/index.html'
                 );
                 echo $this->Form->create($optionsCreate);
                 echo $this->Form->hidden('id', array(

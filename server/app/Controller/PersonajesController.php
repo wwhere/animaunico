@@ -11,6 +11,10 @@ class PersonajesController extends AppController {
         $this->set('personajes', $this->Personaje->find('all'));
     }
 
+    function indexBeta() {
+        $this->set('personajes', $this->Personaje->find('all'));
+    }
+
     function view($id = null) {
         $this->set('personaje',$this->Personaje->find(
             'first', array (
@@ -100,7 +104,7 @@ class PersonajesController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('carga');
+        $this->Auth->allow('carga', 'indexBeta');
     }
 
     public function isAuthorized($user) {
