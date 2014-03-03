@@ -1,3 +1,20 @@
+function doLogin() {
+    $.ajax
+    ({
+        type: "GET",
+        url: "http://helechaloscuro.net/cake/users/login",
+        dataType: 'json',
+        async: false,
+        username: $("input#username").val(),
+        password: $("input#password").val(),
+        data: '{ "login" }',
+        success: function (){
+            console.log("Exito");
+            //TODO esconder boton login
+        }
+    });
+}
+
 function muestraDialogoGuardarPersonaje() {
     var dialogo  = $("#dialogFileSystem");
     dialogo.empty();
@@ -9,6 +26,11 @@ function muestraDialogoGuardarPersonaje() {
     var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append("Método base: Servidor de personajes");
     var textoServidor = getDiv(CSS_TEXTO_SMALL);
     var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes guardar tu personaje en el servidor de personajes de Anima: Único.");
+
+    var formLogin = $("<form name='doLogin'>" +
+        "Usuario:<input type='text' name='username' /> " +
+        "Contraseña:<input type='password' name='password' /> " +
+        "</form>" );
     var formServidor = $("<form name='salvaPersonaje' action='http://www.helechaloscuro.net/cake/personajes/salva' method='post' target='_blank'>" +
         "<textarea name='nombre' hidden>"+personaje_actual.getNombre()+"</textarea> " +
         "<textarea name='categoria' hidden>"+personaje_actual.getStringCategoria() +"</textarea> " +
@@ -18,7 +40,16 @@ function muestraDialogoGuardarPersonaje() {
         "<input type='submit' value='Guardar'/>" +
         "</form>" );
 
-    dialogo.append(enlaceServidorDiv.append(tituloServidor).append(textoServidor.append(explicacionServidor).append(formServidor)));
+    dialogo
+        .append(enlaceServidorDiv
+            .append(tituloServidor)
+            .append(textoServidor
+                .append(explicacionServidor)
+                .append(formLogin)
+                .append(muestraBotonPequeño("Login",{},doLogin))
+                .append(formServidor)
+            )
+        );
 
     /**Metodo 1: por enlace de descarga */
     var enlaceDescargaDiv = $("<div></div>");
