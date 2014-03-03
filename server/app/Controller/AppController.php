@@ -19,7 +19,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-App::uses('Controller', 'Controller');
+App::uses('AuthComponent', 'Controller');
 
 /**
  * Application Controller
@@ -44,7 +44,9 @@ class AppController extends Controller {
                 'action' => 'display',
                 'home'
             ),
-            'authorize' => array('Controller')
+            'authorize' => array(
+                'Controller'
+            )
         )
     );
 
@@ -57,6 +59,12 @@ class AppController extends Controller {
     }
 
     public function beforeFilter() {
+        $this->Auth->authenticate = array(
+            AuthComponent::ALL => array('userModel' => 'User'),
+            'Basic',
+            'Form'
+        );
+
         $this->Auth->allow('index', 'view');
     }
 

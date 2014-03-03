@@ -45,7 +45,7 @@ class UsersController extends AppController {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('El usuario ha sido creado'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Session->setFlash(
                 __('No se ha podido crear el usuario. Inténtalo de nuevo.')
