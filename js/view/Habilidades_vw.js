@@ -214,12 +214,16 @@ function muestraDialogoElegirOpcionHabilidad(callback,parametro,soloFisicasOMent
     var grupoHabi;
     var habi;
 
+    if (!soloFisicasOMentales) {
+        soloFisicasOMentales = "habNatural";
+    }
+
     for (i = 0; i < habilidades_secundarias.length;i++) {
         grupoHabi = habilidades_secundarias[i];
         categorias.push(new OpcionMostrable(habilidades_secundarias_nombres_grupos[i],habilidades_secundarias_nombres_grupos[i]+"_tipo"+soloFisicasOMentales));
         for (j = 0; j < grupoHabi.length; j++) {
             habi = getHabilidad(grupoHabi[j]);
-            if ((soloFisicasOMentales == TIPO_BONIFICADOR_NATURAL_EXTRA) ||
+            if ((soloFisicasOMentales == TIPO_BONIFICADOR_NATURAL_EXTRA) || (soloFisicasOMentales == "habNatural") ||
                 ((soloFisicasOMentales == TIPO_BONIFICADOR_NATURAL_FISICO) && ((habi.getCaracteristica() == FUE) || (habi.getCaracteristica() == DES) || (habi.getCaracteristica() == AGI) || (habi.getCaracteristica() == CON))) ||
                 ((soloFisicasOMentales == TIPO_BONIFICADOR_NATURAL_MENTAL) && ((habi.getCaracteristica() == INT) || (habi.getCaracteristica() == VOL) || (habi.getCaracteristica() == POD) || (habi.getCaracteristica() == PER)))) {
                 arrayOpciones.push(new OpcionMostrable(habi.getNombre(),habilidades_secundarias_nombres_grupos[i]+"_tipo"+soloFisicasOMentales));
