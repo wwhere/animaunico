@@ -24,7 +24,7 @@ viaOscuridad.addConjuro(new Conjuro(
     10));
 viaOscuridad.addConjuro(new Conjuro(
     "Sombra",
-    10));
+    12));
 viaOscuridad.addConjuro(new Conjuro(
     "Armadura Oscura",
     16));
