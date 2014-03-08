@@ -57,8 +57,8 @@ class AppController extends Controller {
     public function beforeFilter() {
         $this->Auth->authenticate = array(
             AuthComponent::ALL => array('userModel' => 'User'),
-            'Basic',
-            'Form'
+            'Form',
+            'Basic'
         );
 
         $this->Auth->allow('index', 'view');

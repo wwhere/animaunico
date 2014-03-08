@@ -1,13 +1,13 @@
 function doLogin() {
     $.ajax
     ({
-        type: "GET",
+        type: "POST",
         url: "http://helechaloscuro.net/cake/users/login",
         dataType: 'json',
         async: false,
         username: $("input#username").val(),
         password: $("input#password").val(),
-        data: '{ "login" }',
+        data: '{ "username"="'+$("input#username").val()+'","password":"'+$("input#password").val()+'" }',
         success: function (){
             console.log("Exito");
             //TODO esconder boton login
@@ -25,12 +25,8 @@ function muestraDialogoGuardarPersonaje() {
     var enlaceServidorDiv = $("<div></div>");
     var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append("Método base: Servidor de personajes");
     var textoServidor = getDiv(CSS_TEXTO_SMALL);
-    var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes guardar tu personaje en el servidor de personajes de Anima: Único.");
+    var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes guardar tu personaje en el servidor de personajes de Anima: Único.<br>Te pedirá usuario y contraseña. Si no tienes ninguno, puedes <a href='http://www.helechaloscuro.net/cake/users/add' target='_blank'>REGISTRARTE</a>.");
 
-    var formLogin = $("<form name='doLogin'>" +
-        "Usuario:<input type='text' name='username' /> " +
-        "Contraseña:<input type='password' name='password' /> " +
-        "</form>" );
     var formServidor = $("<form name='salvaPersonaje' action='http://www.helechaloscuro.net/cake/personajes/salva' method='post' target='_blank'>" +
         "<textarea name='nombre' hidden>"+personaje_actual.getNombre()+"</textarea> " +
         "<textarea name='categoria' hidden>"+personaje_actual.getStringCategoria() +"</textarea> " +
@@ -45,8 +41,6 @@ function muestraDialogoGuardarPersonaje() {
             .append(tituloServidor)
             .append(textoServidor
                 .append(explicacionServidor)
-                .append(formLogin)
-                .append(muestraBotonPequeño("Login",{},doLogin))
                 .append(formServidor)
             )
         );
