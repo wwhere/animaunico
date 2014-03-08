@@ -383,6 +383,9 @@ HabilidadDePersonaje.prototype = {
 
     subirNivel : function() {
         this.valorPrevio = this.valorBase(personaje_actual.getCoste(this.habilidad.getNombre(), this.habilidad.isPrincipal()));
+        if (this.valorPrevio == -30) {
+            this.valorPrevio = 0;
+        }
         this.PDinvertidosPrevios += this.PDinvertidos;
         this.PDinvertidos = 0;
     }
