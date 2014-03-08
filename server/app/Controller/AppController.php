@@ -19,7 +19,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-App::uses('AuthComponent', 'Controller');
+App::uses('Controller', 'Controller');
 
 /**
  * Application Controller
@@ -35,10 +35,6 @@ class AppController extends Controller {
         'DebugKit.Toolbar',
         'Session',
         'Auth' => array(
-            'loginRedirect' => array(
-                'controller' => 'personajes',
-                'action' => 'index'
-            ),
             'logoutRedirect' => array(
                 'controller' => 'pages',
                 'action' => 'display',

@@ -47,7 +47,12 @@ class PersonajesController extends AppController {
     }
 
     public function salva() {
-        if ($this->request->is(array('post', 'put'))) {
+        if (!$this->data && $this->Session->check('last_post_data') && ($this->Session->read('last_post_action') == 'salva')) {
+            $this->data = $this->Session->read('last_post_data');
+        }
+        $this->Session->delete('last_post_data');
+        $this->Session->delete('last_post_action');
+        if ($this->request->is(array('post', 'put')) || ($this->data)) {
             $data = array(
                 'Personaje' => array(
                     'nombre' => $this->request->data('nombre'),
@@ -104,6 +109,10 @@ class PersonajesController extends AppController {
     }
 
     public function beforeFilter() {
+        if ($this->request->is('post') && $this->data) {
+            $this->Session->write('last_post_data', $this->data);
+            $this->Session->write('last_post_action', $this->action);
+        }
         parent::beforeFilter();
         $this->Auth->allow('carga', 'indexBeta');
     }
