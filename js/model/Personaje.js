@@ -329,6 +329,7 @@ function Personaje(nivelInicial) {
 
     //endregion Presencia, gnosis, natura
 
+    this.equipo = [];
 }
 
 Personaje.prototype = {
@@ -336,6 +337,10 @@ Personaje.prototype = {
 
     toString : function() {
         return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza + ")";
+    },
+
+    getEquipo : function() {
+        return this.equipo;
     },
 
     getStringCategoria : function() {

@@ -24,6 +24,7 @@ var BOTON_MAGIA = "BOTON_MAGIA";
 var BOTON_ELAN = "BOTON_ELAN";
 var BOTON_FINALIZAR_CREACION = "BOTON_FINALIZAR_CREACION";
 var BOTON_SUBIR_NIVEL = "BOTON_SUBIR_NIVEL";
+var BOTON_COMPRAR_EQUIPO = "BOTON_COMPRAR_EQUIPO";
 
 var BOTON_GUARDAR = "BOTON_GUARDAR";
 var BOTON_CARGAR = "BOTON_CARGAR";
@@ -51,6 +52,7 @@ var BOTONES_BARRA_CONTROLES = [
     BOTON_MAGIA,
     BOTON_ELAN,
     BOTON_FINALIZAR_CREACION,
+    BOTON_COMPRAR_EQUIPO,
     BOTON_SUBIR_NIVEL
 ];
 
@@ -73,6 +75,7 @@ function muestraControles() {
     $("#"+BOTON_CARGAR).off("click",muestraDialogoCargarPersonaje);
     $("#"+BOTON_LOG).off("click",mostrarLogCambios);
     $("#"+BOTON_LICENCIA).off("click",mostrarLicencia);
+    $("#"+BOTON_COMPRAR_EQUIPO).off("click",muestraVentanaCompraEquipo);
 
     $("#"+BOTON_ELAN).on("click",dialogoElan);
     $("#"+BOTON_MAGIA).on("click",dialogoMagia);
@@ -88,6 +91,7 @@ function muestraControles() {
     $("#"+BOTON_CARGAR).on("click",muestraDialogoCargarPersonaje);
     $("#"+BOTON_LOG).on("click",mostrarLogCambios);
     $("#"+BOTON_LICENCIA).on("click",mostrarLicencia);
+    $("#"+BOTON_COMPRAR_EQUIPO).on("click",muestraVentanaCompraEquipo);
 }
 
 /**
@@ -207,13 +211,15 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
         liElan = $("<li></li>").addClass("desactivado").append("Gastar sincronización (Elan)");
     }
 
+    var liEquipo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_COMPRAR_EQUIPO).append("Comprar equipo"));
+
     if (!(((activar==0)||(activar==2)) || (!personajeCompleto()))) {
         liFinCreacion = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_FINALIZAR_CREACION).append("Finalizar creación/subida"));
     } else {
         liFinCreacion = $("<li></li>").addClass("desactivado").append("Finalizar creación/subida");
     }
 
-    menuCreacion.append(liBonosNaturales).append(liArmaInicial).append(liTablaArmas).append(liArtesMarciales).append(liCM).append(liMagia).append(liCV).append(liElan).append("<hr>").append(liFinCreacion);
+    menuCreacion.append(liBonosNaturales).append(liArmaInicial).append(liTablaArmas).append(liArtesMarciales).append(liCM).append(liMagia).append(liCV).append(liElan).append("<hr>").append(liEquipo).append("<hr>").append(liFinCreacion);
 
     muestraControles();
 }

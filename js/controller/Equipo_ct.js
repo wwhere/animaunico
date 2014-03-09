@@ -29,7 +29,8 @@ var orfebreria_set = [];
 var venenos_set = [];
 var varios_set = [];
 
-
+var equipo_set = [armas_set, armaduras_set, bardas_set, yelmos_set, vestimenta_set, calzado_set, animales_set, transporte_set, embarcaciones_set, raciones_set, vivienda_set, decoracion_set, orfebreria_set, venenos_set,varios_set];
+var categorias_equipo = ["Armas", "Armaduras", "Bardas", "Yelmos", "Vestimentas", "Calzado", "Animales", "Transporte", "Embarcaciones", "Raciones", "Viviendas", "Decoraciones", "Orfebrería", "Venenos", "Varios"];
 var ERR_ARMA_DESCONOCIDA = "Error: Arma desconocida";
 var ERR_INDICE_TAM_DESCONOCIDO = "Error: tamaño desconocido";
 

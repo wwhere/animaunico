@@ -235,6 +235,10 @@ Equipo.prototype = {
      */
     duplicar: function() {
         return new Equipo(this.nombre, this.costeDinero, this.peso, this.disponibilidad, this.entereza, this.presencia, this.bonoHabilidad);
+    },
+
+    toString: function() {
+        return this.nombre;
     }
 };
 

@@ -156,6 +156,8 @@ var UI_CONVOCATORIA = "Convocatoria";
 var UI_PSIQUICA = "Poderes Psíquicos";
 
 var UI_SECUNDARIAS = "Habilidades Secundarias";
+var UI_EQUIPAMIENTO = "Equipamiento";
+var UI_DINERO = "Dinero";
 
 var CSS_RECUADRO = "recuadroDatos";
 var CSS_CAMPO_PERSONALES = "campoDatosPersonales";
