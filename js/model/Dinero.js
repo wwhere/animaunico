@@ -88,6 +88,16 @@ Dinero.prototype = {
             return INCALCULABLE;
         }
         return ((((this.oro*100)+this.plata)*10)+this.cobre);
+    },
+
+    /**
+     * Multiplica el coste por el valor pasado
+     * @param {number} multiplicador
+     */
+    multiplica : function(multiplicador) {
+        this.oro *= multiplicador;
+        this.plata *= multiplicador;
+        this.cobre *= multiplicador;
     }
 };
 
