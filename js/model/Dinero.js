@@ -68,6 +68,14 @@ Dinero.prototype = {
 
     /**
      *
+     * @param {number} valor
+     */
+    addPlata : function(valor) {
+        this.setPlata(this.getPlata() + valor);
+    },
+
+    /**
+     *
      * @returns {number}
      */
     getCobre : function() {
@@ -81,6 +89,15 @@ Dinero.prototype = {
     setCobre : function(valor) {
         this.cobre = valor;
     },
+
+    /**
+     *
+     * @param {number} valor
+     */
+    addCobre : function(valor) {
+        this.setCobre(this.getCobre() + valor);
+    },
+
     /**
      *
      * @returns {number}

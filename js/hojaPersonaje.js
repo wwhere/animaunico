@@ -9,6 +9,7 @@ var UI_SEXO = "Sexo";
 var UI_RAZA = "Raza";
 var UI_PESO = "Peso";
 var UI_ALTURA = "Altura";
+var UI_ESTATUS_SOCIAL = "Estatus social";
 var UI_CATEGORIA = "Categoría";
 var UI_PUNTOS_CANSANCIO = "Puntos de Cansancio";
 var UI_TIPO_MOVIMIENTO = "Tipo de Movimiento";

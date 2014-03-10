@@ -61,6 +61,28 @@ function iniciarGeneracion() {
     personaje_actual = new Personaje();
     personaje_actual.setRaza(getRaza(RAZA_HUMANO));
     personaje_actual.setCategoria(CATEGORIA_NOVEL);
+
+    switch (d10()) {
+        case 1:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_POBRE);
+            break;
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_MEDIO);
+            break;
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_ALTO);
+            break;
+        case 10:
+        default:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_BAJA_NOBLEZA);
+    }
+
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;
     activarNotificaciones();
@@ -1101,6 +1123,23 @@ function elegirManualSexo() {
     muestraDialogoElegirOpciones([new OpcionMostrable(SEXO_HOMBRE, ""), new OpcionMostrable(SEXO_MUJER)], {}, {principal: asignarSexo, isDisabled: alwaysEnabled}, true);
 }
 
+function elegirClaseSocial() {
+    muestraDialogoElegirOpciones(
+        [
+            new OpcionMostrable(CLASE_SOCIAL_POBRE, ""),
+            new OpcionMostrable(CLASE_SOCIAL_MEDIO, ""),
+            new OpcionMostrable(CLASE_SOCIAL_ALTO, ""),
+            new OpcionMostrable(CLASE_SOCIAL_BAJA_NOBLEZA, "")
+        ],
+        {},
+        {
+            principal: asignarClaseSocial,
+            isDisabled: alwaysEnabled
+        },
+        true
+    );
+}
+
 function elegirManualNombre() {
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarNombre,isDisabled:alwaysEnabled});
 }
@@ -1111,6 +1150,10 @@ function asignarNombre(parametros) {
 
 function asignarSexo(parametros) {
     personaje_actual.setSexo(parametros.opcion);
+}
+
+function asignarClaseSocial(parametros) {
+    personaje_actual.setClaseSocial(parametros.opcion);
 }
 
 function asignarApariencia(parametros) {

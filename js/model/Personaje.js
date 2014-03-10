@@ -17,6 +17,12 @@ function Personaje(nivelInicial) {
     /** @type string */
     this.sexo = SEXO_HOMBRE;
 
+    /**
+     *
+     * @type {string}
+     */
+    this.claseSocial = CLASE_SOCIAL_POBRE;
+
     /** @type string  */
     this.altura = "0.5 m";
 
@@ -311,7 +317,7 @@ function Personaje(nivelInicial) {
 
     //region Equipo y dinero
     /** @type Dinero */
-    this.dinero = new Dinero(0,0,0);
+    this.dinero = new Dinero(0,0,5);
     //endregion
 
     //region Flags
@@ -408,6 +414,42 @@ Personaje.prototype = {
 
     /**
      *
+     * @param {string} claseSocial
+     */
+    setClaseSocial : function(claseSocial) {
+        switch (this.claseSocial) {
+            case CLASE_SOCIAL_POBRE:
+                this.getDinero().addCobre(-5);
+                break;
+            case CLASE_SOCIAL_MEDIO:
+                personaje_actual.getDinero().addOro(-1);
+                break;
+            case CLASE_SOCIAL_ALTO:
+                personaje_actual.getDinero().addOro(-20);
+                break;
+            case CLASE_SOCIAL_BAJA_NOBLEZA:
+                personaje_actual.getDinero().addOro(-150);
+        }
+        this.claseSocial = claseSocial;
+        switch (this.claseSocial) {
+            case CLASE_SOCIAL_POBRE:
+                this.getDinero().addCobre(5);
+                break;
+            case CLASE_SOCIAL_MEDIO:
+                personaje_actual.getDinero().addOro(1);
+                break;
+            case CLASE_SOCIAL_ALTO:
+                personaje_actual.getDinero().addOro(20);
+                break;
+            case CLASE_SOCIAL_BAJA_NOBLEZA:
+                personaje_actual.getDinero().addOro(150);
+        }
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+        lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+    },
+
+    /**
+     *
      * @returns {string}
      */
     getPeso : function() {
@@ -429,6 +471,14 @@ Personaje.prototype = {
      */
     getAltura : function() {
         return ""+this.altura;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getEstatus : function() {
+        return this.claseSocial;
     },
 
     /**
@@ -3487,11 +3537,34 @@ Personaje.prototype = {
 
     /**
      *
-     * @param {number} valor
+     * @param {number} oro
+     * @param {number} plata
+     * @param {number} cobre
      */
-    addDineroOro : function(valor) {
-        this.dinero.addOro(valor);
-        //TODO dispatch evento equipo
+    addDinero : function(oro, plata, cobre) {
+        this.dinero.addOro(oro);
+        this.dinero.addPlata(plata);
+        this.dinero.addCobre(cobre);
+        lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+    },
+
+    /**
+     *
+     * @param {Dinero} coste
+     */
+    puedeGastarse : function(coste) {
+        return (this.dinero.totalEnCobre() >= coste.totalEnCobre());
+    },
+
+    /**
+     *
+     * @param {Equipo} item
+     */
+    compra : function(item) {
+        //TODO ajustar el cambio de monedas y enviar evento para actualizar seccion
+        this.addDinero(-1*item.getCosteDinero().getOro(),-1*item.getCosteDinero().getPlata(),-1*item.getCosteDinero().getCobre());
+        this.equipo.push(item);
+
     },
 
 //endregion

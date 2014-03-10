@@ -182,7 +182,8 @@ function muestraPersonales(estadoGeneracion) {
     divContenido.append(muestraPersonal(UI_SEXO, personaje_actual.getSexo(), modificarPersonales, elegirManualSexo));
     divContenido.append(muestraPersonal(UI_RAZA, personaje_actual.getRaza().getNombre(), modificarPersonales,dialogoElegirRaza));
     divContenido.append(muestraPersonal(UI_PESO, personaje_actual.getPeso(), modificarPersonales, elegirPeso));
-    divContenido.append(muestraPersonal(UI_ALTURA, personaje_actual.getAltura(), modificarPersonales, elegirAltura));
+    divContenido.append(muestraPersonal(UI_ALTURA, personaje_actual.getAltura(), modificarPersonales, elegirAltura ));
+    divContenido.append(muestraPersonal(UI_ESTATUS_SOCIAL, personaje_actual.getEstatus(), modificarPersonales, elegirClaseSocial));
     divContenido.append(muestraPersonalConDivExtra(UI_CATEGORIA, personaje_actual.getCategoria().getNombre(), modificarPersonales, dialogoElegirCategoria,{}, muestraBotonPequeño("Cambiar cat.",{},cambiarCategoria)));
 
     div.append(divContenido);
@@ -1239,7 +1240,7 @@ function muestraEquipamiento() {
 
     var divDinero = getDiv("row");
     var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append("Dinero: ");
-    var divValorDinero = getDiv("three columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
+    var divValorDinero = getDiv("six columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
 
     divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero));
 
