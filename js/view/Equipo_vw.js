@@ -105,6 +105,7 @@ function muestraVentanaCompraEquipo() {
                 contenidoDialogo.append("<h3>"+categ+"</h3>");
 
                 for (var i =0; i < equipo_set[j].length; i++) {
+                    //TODO insertar boton que lleve a comprar
                     gridCateg.append("<li>"+equipo_set[j][i].toString()+"</li>");
                 }
                 divCateg.append(gridCateg);

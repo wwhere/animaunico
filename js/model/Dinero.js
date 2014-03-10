@@ -22,6 +22,10 @@ function Dinero(oro, plata, cobre) {
 Dinero.prototype = {
     constructor : Dinero,
 
+    toString: function() {
+        return this.oro + "mo, " + this.plata + "mp, " + this.cobre + "mc";
+    },
+
     /**
      *
      * @returns {number}

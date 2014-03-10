@@ -72,6 +72,7 @@ function activaListenerCambiosPersonaje() {
     DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{evento: EVENT_CHARACTER_SECCION_ELAN}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_ARTES_MARCIALES,{evento: EVENT_CHARACTER_SECCION_ARTES_MARCIALES}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_SECUNDARIAS,{evento: EVENT_CHARACTER_SECCION_SECUNDARIAS}, recargaSeccionPersonaje);
+    DISPATCHER.on(EVENT_CHARACTER_SECCION_EQUIPO,{evento: EVENT_CHARACTER_SECCION_EQUIPO}, recargaSeccionPersonaje);
     listenerActivado = true;
 }
 
@@ -1234,8 +1235,15 @@ function muestraEquipamiento() {
 
     div.append(muestraSubtitulo(UI_EQUIPAMIENTO, true));
 
-    div.append(muestraSubtitulo(UI_DINERO, false));
+    divContenido.append(muestraSubtitulo(UI_DINERO, false));
 
+    var divDinero = getDiv("row");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append("Dinero: ");
+    var divValorDinero = getDiv("three columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
+
+    divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero));
+
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false));
     var equipo = personaje_actual.getEquipo();
     for (var i = 0; i < equipo.length; i++) {
 
@@ -1243,6 +1251,10 @@ function muestraEquipamiento() {
             equipo[i].toString()
         );
 
+    }
+
+    if (equipo.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
     div.append(divContenido);
