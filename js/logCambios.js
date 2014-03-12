@@ -5,7 +5,7 @@
 var DIAG_LOG_CAMBIOS = "Log de cambios";
 var DIAG_LICENCIA = "Agradecimientos y licencia de software";
 
-var CURRENT_VERSION = 24;
+var CURRENT_VERSION = 25;
 
 function mostrarLogCambios() {
     $("#logCambios").dialog({
