@@ -13,6 +13,8 @@ var ESTADO_GENERACION_PERSONAJE_HECHO = "ESTADO_GENERACION_PERSONAJE_HECHO";
 var ESTADO_GENERACION_SUBIENDO_NIVEL = "ESTADO_GENERACION_SUBIENDO_NIVEL";
 var GENERACION_INICIADA = ESTADO_GENERACION_NINGUNO;
 
+var UI_ESPECIFICAR = "Especificar";
+var UI_PREGUNTA_PUNTOS_METODO_5 = "¿Cuántos puntos quieres repartir?";
 
 var DIAG_METODO_CREACION_TITULO = "Seleccionar método de creación";
 var DIAG_ELEGIR_RAZA_TITULO = "Seleccionar raza";
@@ -210,11 +212,16 @@ function generarMetodo4() {
  *
  */
 function generarMetodo5() {
-    muestraDialogoElegirOpciones([new OpcionMostrable("45",""),new OpcionMostrable("55",""),new OpcionMostrable("65","")],{},{principal:metodo5PuntosElegidos,isDisabled:alwaysEnabled},false);
+    muestraDialogoElegirOpciones([new OpcionMostrable("45",""),new OpcionMostrable("50",""),new OpcionMostrable("55",""),new OpcionMostrable("60",""),new OpcionMostrable("65",""),new OpcionMostrable(UI_ESPECIFICAR,"")],{},{principal:metodo5PuntosElegidos,isDisabled:alwaysEnabled},false);
 }
 
 function metodo5PuntosElegidos(parametros) {
-    var total = parseInt(parametros.opcion);
+    var total = 0;
+    if (parametros.opcion == UI_ESPECIFICAR) {
+        total = parseInt(prompt(UI_PREGUNTA_PUNTOS_METODO_5));
+    } else {
+        total = parseInt(parametros.opcion);
+    }
     mostrarDialogoRepartoPuntosCaracteristicas(total,true);
 }
 
