@@ -11,6 +11,8 @@ animaUnico.inicializar = function() {
 
     muestraControles();
 
+    setIdiomaUI();
+
     /*Se extraen los valores de GET*/
     var queryDict = {};
     location.search.substr(1).split("&").forEach(
@@ -65,6 +67,8 @@ function inicializar() {
     initCategorias();
 
     muestraControles();
+
+    setIdiomaUI();
 
     /*Se extraen los valores de GET*/
     var queryDict = {};
