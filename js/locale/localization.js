@@ -1,3 +1,4 @@
+//region codigo
 var SPA = "spa";
 var ENG = "eng";
 
@@ -61,3 +62,12 @@ L.prototype = {
 function _(clave) {
     return this[IDIOMA_UI];
 }
+
+//endregion codigo
+
+var MENU_PERSONAJE = "Personaje";
+new L(MENU_PERSONAJE,MENU_PERSONAJE,"Character");
+var MENU_CREACION = "Creación";
+new L(MENU_CREACION,MENU_CREACION,"Generation");
+var MENU_SOPORTE = "Soporte";
+new L(MENU_SOPORTE,MENU_SOPORTE,"Support");
