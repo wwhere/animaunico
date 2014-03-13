@@ -184,6 +184,9 @@ var UI_RV = (new L("Resistencia contra Venenos","Resistencia contra Venenos","Po
 var UI_RM = (new L("Resistencia Mágica","Resistencia Mágica","Magic Resistance")).getId();
 var UI_RP = (new L("Resistencia Psíquica","Resistencia Psíquica","Psychic Resistance")).getId();
 
+var UI_DIALOGO_LOG_CAMBIOS_TITULO = (new L("Titulo Log de cambios","Log de cambios","Change log")).getId();
+var UI_DIALOGO_LICENCIA_TITULO = (new L("Titulo Agradecimientos y licencia de software", "Agradecimientos y licencia de software", "Thanks and software license")).getId();
+
 //region HTML estático
 var UI_TITULO = (new L("TituloAnima", "Anima: UNICO - Generador de personajes", "Anima: UNICO - Character Generator")).getId();
 var UI_MENU_PERSONAJE = (new L("Personaje", "Personaje", "Character")).getId();

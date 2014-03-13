@@ -2,9 +2,6 @@
  * Created by Guille on 5/12/13.
  */
 
-var DIAG_LOG_CAMBIOS = "Log de cambios";
-var DIAG_LICENCIA = "Agradecimientos y licencia de software";
-
 var CURRENT_VERSION = 25;
 
 function mostrarLogCambios() {
@@ -14,7 +11,7 @@ function mostrarLogCambios() {
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: DIAG_LOG_CAMBIOS,
+        title: UI_DIALOGO_LOG_CAMBIOS_TITULO,
         position: "center",
         closeOnEscape: true,
         width: ANCHO_DIALOGO,
@@ -32,7 +29,7 @@ function mostrarLicencia() {
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: DIAG_LICENCIA,
+        title: UI_DIALOGO_LICENCIA_TITULO,
         position: "center",
         closeOnEscape: true,
         width: ANCHO_DIALOGO,
