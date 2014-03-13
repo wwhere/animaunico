@@ -609,5 +609,5 @@ var applyContainerHeight = function() {
 $(window).on("resize",function() {
     applyContainerHeight();
     ALTO_DIALOGO =  $(window).height() * 0.8;
-    console.log("Ahora el alto es " + ALTO_DIALOGO);
+    ALTO_DIALOGO =  $(window).height() * 0.8;
 });

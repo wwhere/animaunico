@@ -3,6 +3,8 @@ var ENG = "eng";
 
 var IDIOMA_UI = ENG;
 
+var diccionario = {};
+
 function setIdiomaUI() {
     var lang = navigator.language || navigator.userLanguage;
 
@@ -31,6 +33,13 @@ function L(id, spa, eng) {
      * @type {string}
      */
     this[ENG] = eng;
+
+    if (!diccionario["ANIMAUNICO_"+this.id]) {
+        diccionario["ANIMAUNICO_"+this.id] = this;
+    } else {
+        console.log("Clave de diccionario repetida: [" + this.id + " / " + this[SPA] + " / " + this[ENG] + "]");
+        console.log("--Clave previa: [" + diccionario["ANIMAUNICO_"+this.id].id + " / " + diccionario["ANIMAUNICO_"+this.id][SPA] + " / " + diccionario["ANIMAUNICO_"+this.id][ENG] + "]");
+    }
 }
 
 L.prototype = {
@@ -42,5 +51,13 @@ L.prototype = {
      */
     toString : function() {
         return this[IDIOMA_UI];
+    },
+
+    getId : function() {
+        return this.id;
     }
 };
+
+function _(clave) {
+    return this[IDIOMA_UI];
+}
