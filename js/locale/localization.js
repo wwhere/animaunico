@@ -328,6 +328,7 @@ var PER3 = (new L("PER","PER","PER")).getId();
 var ERR_CARACTERISTICA_ERRONEA = (new L("Error: Nombre de característica erróneo","Error: Nombre de característica erróneo","Error: Wrong ability name")).getId();
 var ERR_VALOR_CARACTERISTICA_ERRONEO = (new L("Error: Valor de característica fuera de rango","Error: Valor de característica fuera de rango","Error: Ability value out of bounds")).getId();
 
+
 var NOM_ARQ_LUCHADOR = (new L("Luchador","Luchador","Fighter")).getId();
 var NOM_ARQ_MISTICO = (new L("Místico","Místico","Mystic")).getId();
 var NOM_ARQ_PSIQUICO = (new L("Psíquico","Psíquico","Psychic")).getId();

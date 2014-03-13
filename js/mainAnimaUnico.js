@@ -2,32 +2,6 @@ var DISPATCHER = $(document);
 var MAX_CARACTERISTICA = 20;
 var ATAQUE_DEFENSA_PARA_ARTE_MARCIAL = 40;
 
-var UDS_PD = "PD";
-var UDS_PC = "PC";
-var UDS_PORCENT = "%";
-var UDS_CV = "CV";
-var UDS_CM = "CM";
-var UDS_ELAN = "elan";
-var UDS_NIVELES_VIA = "niveles de magia";
-
-var FUE = "Fuerza";
-var DES = "Destreza";
-var AGI = "Agilidad";
-var CON = "Constitución";
-var INT = "Inteligencia";
-var POD = "Poder";
-var VOL = "Voluntad";
-var PER = "Percepción";
-
-var FUE3 = "FUE";
-var DES3 = "DES";
-var AGI3 = "AGI";
-var CON3 = "CON";
-var INT3 = "INT";
-var POD3 = "POD";
-var VOL3 = "VOL";
-var PER3 = "PER";
-
 var IDX_AGI = 0;
 var IDX_CON = 1;
 var IDX_DES = 2;
@@ -100,9 +74,6 @@ function getBonoPorValor(valor) {
     }
 }
 
-var ERR_CARACTERISTICA_ERRONEA = "Error: Nombre de característica erróneo";
-var ERR_VALOR_CARACTERISTICA_ERRONEO = "Error: Valor de característica fuera de rango";
-
 function Arquetipo(mixto, arq1, arq2) {
     /**
      *
@@ -166,13 +137,6 @@ Arquetipo.prototype = {
     }
 };
 
-var NOM_ARQ_LUCHADOR = "Luchador";
-var NOM_ARQ_MISTICO = "Místico";
-var NOM_ARQ_PSIQUICO = "Psíquico";
-var NOM_ARQ_ACECHADOR = "Acechador";
-var NOM_ARQ_DOMINE = "Domine";
-var NOM_ARQ_SIN_CATEGORIA = "Sin Categoría";
-
 var ARQ_LUCHADOR = new Arquetipo(false,NOM_ARQ_LUCHADOR);
 var ARQ_MISTICO = new Arquetipo(false,NOM_ARQ_MISTICO);
 var ARQ_PSIQUICO = new Arquetipo(false,NOM_ARQ_PSIQUICO);
@@ -187,27 +151,9 @@ var ARQ_MISTICO_PSIQUICO = new Arquetipo(true,NOM_ARQ_MISTICO,NOM_ARQ_PSIQUICO);
 var ARQ_LUCHADOR_MISTICO = new Arquetipo(true,NOM_ARQ_LUCHADOR,NOM_ARQ_MISTICO);
 var ARQ_LUCHADOR_PSIQUICO = new Arquetipo(true,NOM_ARQ_LUCHADOR,NOM_ARQ_PSIQUICO);
 
-
-
-
-var ORIGEN_MULTIPLO_VIDA = "Múltiplos de vida";
-
-var ERR_HABILIDAD_ERRONEA = "Error: Nombre de habilidad erróneo";
-var ERR_TIPO_HABILIDAD_ERRONEO = "Error: Nombre de tipo de habilidad erróneo";
-
-
-
-
-
-var SEXO_HOMBRE = "Hombre";
-var SEXO_MUJER = "Mujer";
-
 function d10() {
     return Math.floor(Math.random()*10) + 1;
 }
-
-
-
 
 var FLAG_CONOCEDOR_TODAS_MATERIAS = "FLAG_CONOCEDOR_TODAS_MATERIAS";
 var FLAG_DON = "FLAG_DON";
@@ -236,47 +182,17 @@ var FLAG_BONO_NATURAL_EXTRA = "FLAG_BONO_NATURAL_EXTRA";
 var FLAG_SIN_BONIFICADOR_NATURAL = "FLAG_SIN_BONIFICADOR_NATURAL";
 var FLAG_MAGIA_OPUESTA = "FLAG_MAGIA_OPUESTA";
 
-var DIF_RUT = "Rutinario";
-var DIF_RUT3 = "RUT";
 var DIF_RUT_VALOR = 20;
-
-var DIF_FAC = "Fácil";
-var DIF_FAC3 = "FAC";
 var DIF_FAC_VALOR = 40;
-
-var DIF_MED = "Media";
-var DIF_MED3 = "MED";
 var DIF_MED_VALOR = 80;
-
-var DIF_DIF = "Difícil";
-var DIF_DIF3 = "DIF";
 var DIF_DIF_VALOR = 120;
-
-var DIF_MDF = "Muy Difícil";
-var DIF_MDF3 = "MDF";
 var DIF_MDF_VALOR = 120;
-
-var DIF_ABS = "Absurdo";
-var DIF_ABS3 = "ABS";
 var DIF_ABS_VALOR = 180;
-
-var DIF_CIM = "Casi Imposible";
-var DIF_CIM3 = "CIM";
 var DIF_CIM_VALOR = 240;
-
-var DIF_IMP = "Imposible";
-var DIF_IMP3 = "IMP";
 var DIF_IMP_VALOR = 280;
-
-var DIF_INH = "Inhumano";
-var DIF_INH3 = "INH";
 var DIF_INH_VALOR = 320;
-
-var DIF_ZEN = "Zen";
-var DIF_ZEN3 = "ZEN";
 var DIF_ZEN_VALOR = 440;
 
-var ERR_DIFICULTAD_DESCONOCIDA = "Error: dificultad desconocida";
 
 var DIFICULTADES = [DIF_RUT,DIF_FAC,DIF_MED,DIF_DIF,DIF_MDF,DIF_ABS,DIF_CIM,DIF_IMP,DIF_INH,DIF_ZEN];
 
@@ -331,41 +247,16 @@ var TIPO_BONIFICADOR_NATURAL_FISICO = "fisico";
 var TIPO_BONIFICADOR_NATURAL_MENTAL = "mental";
 var TIPO_BONIFICADOR_NATURAL_EXTRA = "extra";
 
-var LISTA_ESPECIES_ANIMALES = ["Perros", "Lobos", "Loros", "Elefantes", "Caballos"];
-var LISTA_CIENCIAS = ["Matemáticas", "Mecánica", "Astronomía", "Filosofía"];
-var LISTA_TEMAS_HISTORIA = ["Abel", "Guerras de la Cruz", "Imperio de Abel", "Fábulas", "Economía"];
-var LISTA_ARTES = ["Pintura", "Escultura"];
-var LISTA_BAILES = ["Baile de Salón", "Bailes de Espheria", "Bailes Antiguos"];
-var LISTA_FORJA = ["Armaduras pesadas", "Espadas", "Utensilios de cocina"];
-var LISTA_INSTRUMENTOS_MUSICALES = ["Flauta", "Clavicordio", "Arpa"];
-var LISTA_TRUCOS_MANOS = ["Juegos de cartas", "Malabares"];
-
-var ATAQUE_FIL = "FILo";
-var ATAQUE_CON = "CONtundente";
-var ATAQUE_PEN = "PENetrante";
-var ATAQUE_CAL = "CALor";
-var ATAQUE_FRI = "FRIo";
-var ATAQUE_ELE = "ELEctricidad";
-var ATAQUE_ENE = "ENErgía";
-var ATAQUE_FIL3 = "FIL";
-var ATAQUE_CON3 = "CON";
-var ATAQUE_PEN3 = "PEN";
-var ATAQUE_CAL3 = "CAL";
-var ATAQUE_FRI3 = "FRI";
-var ATAQUE_ELE3 = "ELE";
-var ATAQUE_ENE3 = "ENE";
+var LISTA_ESPECIES_ANIMALES = [UI_ESP_PERROS,UI_ESP_LOBOS,UI_ESP_LOROS,UI_ESP_ELEFANTES,UI_ESP_CABALLOS];
+var LISTA_CIENCIAS = [UI_ESP_MATEMATICAS,UI_ESP_MECANICA,UI_ESP_ASTRONOMIA,UI_ESP_FILOSOFIA];
+var LISTA_TEMAS_HISTORIA = [UI_ESP_ABEL,UI_ESP_GUERRAS_CRUZ,UI_ESP_IMPERIO_ABEL,UI_ESP_IMPERIO_ABEL,UI_ESP_ECONOMIA];
+var LISTA_ARTES = [UI_ESP_PINTURA,UI_ESP_ESCULTURA];
+var LISTA_BAILES = [UI_ESP_BAILES_SALON,UI_ESP_BAILES_ESPHERIA,UI_ESP_BAILES_ANTIGUOS];
+var LISTA_FORJA = [UI_ESP_ARMADURAS_PESADAS,UI_ESP_ESPADAS,UI_ESP_UTENSILIOS_COCINA];
+var LISTA_INSTRUMENTOS_MUSICALES = [UI_ESP_FLAUTA,UI_ESP_CLAVICORDIO,UI_ESP_ARPA];
+var LISTA_TRUCOS_MANOS = [UI_ESP_JUEGOS_CARTAS,UI_ESP_MALABARES];
 
 var TAS_ARMADURA = [ATAQUE_FIL3,ATAQUE_CON3,ATAQUE_PEN3,ATAQUE_CAL3,ATAQUE_FRI3,ATAQUE_ELE3,ATAQUE_ENE3];
-
-
-var DISP_TOTAL = "Disponibilidad normal";
-var DISP_B = "Disponibilidad B";
-var DISP_A = "Disponibilidad A";
-var NO_DISPONIBLE = "No disponible";
-
-
-var ACCION_ACTIVA = "Activa";
-var ACCION_PASIVA = "Pasiva";
 
 /**
  *
