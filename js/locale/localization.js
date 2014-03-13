@@ -60,14 +60,17 @@ L.prototype = {
 };
 
 function _(clave) {
-    return this[IDIOMA_UI];
+    return diccionario["ANIMAUNICO_"+clave].toString();
+}
+
+function localizaHTML() {
+    $(".localizable").each(function() {
+            $(this).html(_($(this).attr("loc")));
+        }
+    );
 }
 
 //endregion codigo
-
-var MENU_PERSONAJE = (new L("Personaje","Personaje","Character")).getId();
-var MENU_CREACION = (new L("Creación","Creación","Generation")).getId();
-var MENU_SOPORTE = (new L("Sorpote","Sorpote","Support")).getId();
 
 var UI_NOMBRE = (new L("Nombre","Nombre","Name")).getId();
 var UI_SEXO = (new L("Sexo","Sexo","Gender")).getId();
@@ -181,6 +184,11 @@ var UI_RV = (new L("Resistencia contra Venenos","Resistencia contra Venenos","Po
 var UI_RM = (new L("Resistencia Mágica","Resistencia Mágica","Magic Resistance")).getId();
 var UI_RP = (new L("Resistencia Psíquica","Resistencia Psíquica","Psychic Resistance")).getId();
 
+//region HTML estático
+var UI_TITULO = (new L("TituloAnima", "Anima: UNICO - Generador de personajes", "Anima: UNICO - Character Generator")).getId();
+var UI_MENU_PERSONAJE = (new L("Personaje", "Personaje", "Character")).getId();
+var UI_MENU_CREACION = (new L("Creacion", "Creación", "Generation")).getId();
+var UI_MENU_SOPORTE = (new L("Soporte", "Soporte", "Support")).getId();
 var UI_BOTON_CREACION = (new L("Iniciar Creación","Iniciar Creación","Start Creation")).getId();
 var UI_BOTON_RAZA = (new L("Elegir Raza","Elegir Raza","Choose Race")).getId();
 var UI_BOTON_CATEGORIA = (new L("Elegir Categoría","Elegir Categoría","Choose Class")).getId();
@@ -196,10 +204,13 @@ var UI_BOTON_GASTAR_NIVELES_VIA = (new L("Gastar niveles de vía","Gastar nivele
 var UI_BOTON_GASTAR_ELAN = (new L("Gastar elan","Gastar elan","Spend Elan")).getId();
 var UI_BOTON_FINALIZAR_CREACION = (new L("Finalizar Creación","Finalizar Creación","End Creation")).getId();
 var UI_BOTON_SUBIR_NIEVL = (new L("Subir nivel","Subir nivel","Level Up")).getId();
-
 var UI_BOTON_GUARDAR = (new L("Guardar personaje","Guardar personaje","Save Character")).getId();
 var UI_BOTON_CARGAR = (new L("Cargar personaje","Cargar personaje","Load Character")).getId();
-
+var UI_BOTON_LOG_CAMBIOS = (new L("Log de cambios","Log de cambios","Change Log")).getId();
+var UI_BOTON_LICENCIA = (new L("Agradecimientos y licencia de software","Agradecimientos y licencia de software","Thanks and software licence")).getId();
+var UI_BOTON_SOPORTE = (new L("Informa de errores","Informa de errores","Report an error")).getId();
+var UI_BOTON_COMENTARIOS = (new L("Comentarios, sugerencias ...","Comentarios, sugerencias ...","Comments, sugestions ...")).getId();
+//endregion HTML estático
 
 var UI_PERSONALES = (new L("Datos Personales","Datos Personales","Personal Info")).getId();
 var UI_RESISTENCIAS = (new L("Resistencias","Resistencias","Resistances")).getId();
@@ -223,10 +234,6 @@ var UI_PSIQUICA = (new L("Poderes Psíquicos","Poderes Psíquicos","Psychic Powe
 var UI_SECUNDARIAS = (new L("Habilidades Secundarias","Habilidades Secundarias","Secondary Skills")).getId();
 
 var UI_VACIO = (new L("","","")).getId();
-var UI_TITULO = (new L("TituloAnima", "Anima: UNICO - Generador de personajes", "Anima: UNICO - Character Generator")).getId();
-var UI_MENU_PERSONAJE = (new L("Personaje", "Personaje", "Character")).getId();
-var UI_MENU_CREACION = (new L("Creacion", "Creación", "Generation")).getId();
-var UI_MENU_SOPORTE = (new L("Soporte", "Soporte", "Support")).getId();
 
 var ERROR_ARTE_MARCIAL_ELIMINADA_ATAQUE_BAJO = (new L("Aviso: Arte marcial eliminada por no tener suficiente ataque/defensa","Aviso: Arte marcial eliminada por no tener suficiente ataque/defensa","Warning: Martial art dropped because of insuficiente attack/defense")).getId();
 var ERROR_ARTE_MARCIAL_ELIMINADA_REQUISITOS = (new L("Aviso: Arte marcial eliminada por no cumplir requisitos","Aviso: Arte marcial eliminada por no cumplir requisitos","Warning: Martial art dropped for not meeting its requisites")).getId();
@@ -286,20 +293,16 @@ var REGLA_ARMA_TRABA_EL_ARMA_EXP = (new L("Artefactos que, por su diseño y cara
 
 var AVISO_RECUPERADOS_PD_HABILIDAD = (new L("PD recuperados para ajustar valor de habilidad","PD recuperados para ajustar valor de habilidad","free DP back after adjusting skill value")).getId();
 
-var UI_BOTON_LOG_CAMBIOS = (new L("Log de cambios","Log de cambios","Change Log")).getId();
-var UI_BOTON_LICENCIA = (new L("Agradecimientos y licencia de software","Agradecimientos y licencia de software","Thanks and software licence")).getId();
-var UI_BOTON_SOPORTE = (new L("Informa de errores","Informa de errores","Report an error")).getId();
-var UI_BOTON_COMENTARIOS = (new L("Comentarios, sugerencias ...","Comentarios, sugerencias ...","Comments, sugestions ...")).getId();
 
 
 
-var UDS_PD = (new L("PD","PD","DP")).getId();
-var UDS_PC = (new L("PC","PC","CP")).getId();
-var UDS_PORCENT = (new L("%","%","%")).getId();
-var UDS_CV = (new L("CV","CV","PP")).getId();
-var UDS_CM = (new L("CM","CM","MK")).getId();
-var UDS_ELAN = (new L("elan","elan","elan")).getId();
-var UDS_NIVELES_VIA = (new L("niveles de magia","niveles de magia","magic levels")).getId();
+var UDS_PD = (new L("uds PD","PD","DP")).getId();
+var UDS_PC = (new L("uds PC","PC","CP")).getId();
+var UDS_PORCENT = (new L("uds %","%","%")).getId();
+var UDS_CV = (new L("uds CV","CV","PP")).getId();
+var UDS_CM = (new L("uds CM","CM","MK")).getId();
+var UDS_ELAN = (new L("uds elan","elan","elan")).getId();
+var UDS_NIVELES_VIA = (new L("uds niveles de magia","niveles de magia","magic levels")).getId();
 
 var FUE = (new L("Fuerza","Fuerza","Strength")).getId();
 var DES = (new L("Destreza","Destreza","Dextery")).getId();
@@ -400,20 +403,20 @@ var UI_ESP_ARPA =  (new L("Arpa","Arpa","Harp")).getId();
 var UI_ESP_JUEGOS_CARTAS =  (new L("Juegos de cartas","Juegos de cartas","Card games")).getId();
 var UI_ESP_MALABARES =  (new L("Malabares","Malabares","Juggling")).getId();
 
-var ATAQUE_FIL = (new L("FILo","FILo","CUTting")).getId();
-var ATAQUE_CON = (new L("CONtundente","CONtundente","IMPact")).getId();
-var ATAQUE_PEN = (new L("PENetrante","PENetrante","THRusting")).getId();
-var ATAQUE_CAL = (new L("CALor","CALor","HOT")).getId();
-var ATAQUE_FRI = (new L("FRIo","FRIo","COLd")).getId();
-var ATAQUE_ELE = (new L("ELEctricidad","ELEctricidad","ELEctricity")).getId();
-var ATAQUE_ENE = (new L("ENErgía","ENErgía","ENErgy")).getId();
-var ATAQUE_FIL3 = (new L("FIL","FIL","CUT")).getId();
-var ATAQUE_CON3 = (new L("CON","CON","IMP")).getId();
-var ATAQUE_PEN3 = (new L("PEN","PEN","THR")).getId();
-var ATAQUE_CAL3 = (new L("CAL","CAL","HOT")).getId();
-var ATAQUE_FRI3 = (new L("FRI","FRI","COL")).getId();
-var ATAQUE_ELE3 = (new L("ELE","ELE","ELE")).getId();
-var ATAQUE_ENE3 = (new L("ENE","ENE","ENE")).getId();
+var ATAQUE_FIL = (new L("ata FILo","FILo","CUTting")).getId();
+var ATAQUE_CON = (new L("ata CONtundente","CONtundente","IMPact")).getId();
+var ATAQUE_PEN = (new L("ata PENetrante","PENetrante","THRusting")).getId();
+var ATAQUE_CAL = (new L("ata CALor","CALor","HOT")).getId();
+var ATAQUE_FRI = (new L("ata FRIo","FRIo","COLd")).getId();
+var ATAQUE_ELE = (new L("ata ELEctricidad","ELEctricidad","ELEctricity")).getId();
+var ATAQUE_ENE = (new L("ata ENErgía","ENErgía","ENErgy")).getId();
+var ATAQUE_FIL3 = (new L("ata FIL","FIL","CUT")).getId();
+var ATAQUE_CON3 = (new L("ata CON","CON","IMP")).getId();
+var ATAQUE_PEN3 = (new L("ata PEN","PEN","THR")).getId();
+var ATAQUE_CAL3 = (new L("ata CAL","CAL","HOT")).getId();
+var ATAQUE_FRI3 = (new L("ata FRI","FRI","COL")).getId();
+var ATAQUE_ELE3 = (new L("ata ELE","ELE","ELE")).getId();
+var ATAQUE_ENE3 = (new L("ata ENE","ENE","ENE")).getId();
 
 var DISP_TOTAL = (new L("Disponibilidad normal","Disponibilidad normal","Normal availability")).getId();
 var DISP_B = (new L("Disponibilidad B","Disponibilidad B","Availability B")).getId();

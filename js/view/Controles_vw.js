@@ -145,6 +145,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
     var menuPersonaje = $("#menuPersonaje").empty();
     var liNuevo, liSubir, liGuardar, liCargar;
 
+    //TODO añadir class localizable y localizar
     liNuevo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CREACION).append("Crear nuevo"));
     if (activar==2) {
         liSubir = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_SUBIR_NIVEL).append("Subir de nivel"));

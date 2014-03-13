@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                     "js/main.js",
 
                     "js/head.js",
-                    "js/localization.js",
+                    "js/locale/localization.js",
 
                     "js/libros.js",
                     "js/mainAnimaUnico.js",
