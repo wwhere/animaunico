@@ -2,31 +2,31 @@ var DISPATCHER = $(document);
 var MAX_CARACTERISTICA = 20;
 var ATAQUE_DEFENSA_PARA_ARTE_MARCIAL = 40;
 
-var UDS_PD = new L("PD","PD","DP");
-var UDS_PC = new L("PC","PC","CP");
-var UDS_PORCENT = new L("%","%","%");
-var UDS_CV = new L("CV","CV","PP");
-var UDS_CM = new L("CM","CM","MK");
-var UDS_ELAN = new L("elan","elan","elan");
-var UDS_NIVELES_VIA = new L("niveles de magia","niveles de magia","magic levels");
+var UDS_PD = "PD";
+var UDS_PC = "PC";
+var UDS_PORCENT = "%";
+var UDS_CV = "CV";
+var UDS_CM = "CM";
+var UDS_ELAN = "elan";
+var UDS_NIVELES_VIA = "niveles de magia";
 
-var FUE = new L("Fuerza","Fuerza","Strength");
-var DES = new L("Destreza","Destreza","Dextery");
-var AGI = new L("Agilidad","Agilidad","Agility");
-var CON = new L("Constitución","Constitución","Constitution");
-var INT = new L("Inteligencia","Inteligencia","Intelligence");
-var POD = new L("Poder","Poder","Power");
-var VOL = new L("Voluntad","Voluntad","Willpower");
-var PER = new L("Percepción","Percepción","Perception");
+var FUE = "Fuerza";
+var DES = "Destreza";
+var AGI = "Agilidad";
+var CON = "Constitución";
+var INT = "Inteligencia";
+var POD = "Poder";
+var VOL = "Voluntad";
+var PER = "Percepción";
 
-var FUE3 = new L("FUE","FUE","STR");
-var DES3 = new L("DES","DES","DEX");
-var AGI3 = new L("AGI","AGI","AGI");
-var CON3 = new L("CON","CON","CON");
-var INT3 = new L("INT","INT","INT");
-var POD3 = new L("POD","POD","POW");
-var VOL3 = new L("VOL","VOL","WP");
-var PER3 = new L("PER","PER","PER");
+var FUE3 = "FUE";
+var DES3 = "DES";
+var AGI3 = "AGI";
+var CON3 = "CON";
+var INT3 = "INT";
+var POD3 = "POD";
+var VOL3 = "VOL";
+var PER3 = "PER";
 
 var IDX_AGI = 0;
 var IDX_CON = 1;
@@ -100,16 +100,9 @@ function getBonoPorValor(valor) {
     }
 }
 
-var ERR_CARACTERISTICA_ERRONEA = new L("Error: Nombre de característica erróneo","Error: Nombre de característica erróneo","Error: Wrong ability name");
-var ERR_VALOR_CARACTERISTICA_ERRONEO = new L("Error: Valor de característica fuera de rango","Error: Valor de característica fuera de rango","Error: Ability value out of bounds");
+var ERR_CARACTERISTICA_ERRONEA = "Error: Nombre de característica erróneo";
+var ERR_VALOR_CARACTERISTICA_ERRONEO = "Error: Valor de característica fuera de rango";
 
-/**
- *
- * @param {boolean} mixto
- * @param {L} arq1
- * @param {L} [arq2]
- * @constructor
- */
 function Arquetipo(mixto, arq1, arq2) {
     /**
      *
@@ -119,14 +112,14 @@ function Arquetipo(mixto, arq1, arq2) {
 
     /**
      *
-     * @type {L}
+     * @type {string}
      */
     this.arquetipo1 = arq1;
 
     if (mixto) {
         /**
          *
-         * @type {L}
+         * @type {string}
          */
         this.arquetipo2 = arq2;
     }
@@ -135,31 +128,18 @@ function Arquetipo(mixto, arq1, arq2) {
 Arquetipo.prototype = {
     constructor : Arquetipo,
 
-    /**
-     *
-     * @returns {boolean}
-     */
     isMixto : function() {
         return this.esMixto;
     },
 
-    /**
-     *
-     * @returns {string}
-     */
     toString : function() {
-        if (!this.esMixto) {
-            return this.arquetipo1.toString();
+        if (!mixto) {
+            return this.arquetipo1;
         } else {
-            return this.arquetipo1.toString() + "/" + this.arquetipo2.toString();
+            return this.arquetipo1 + "/" + this.arquetipo2;
         }
     },
 
-    /**
-     *
-     * @param {Arquetipo} otroArq
-     * @returns {boolean}
-     */
     comparteArquetipoMixto : function(otroArq) {
         if (this.isMixto()) {
             var comparte = false;
@@ -186,12 +166,12 @@ Arquetipo.prototype = {
     }
 };
 
-var NOM_ARQ_LUCHADOR = new L("Luchador","Luchador","Fighter");
-var NOM_ARQ_MISTICO = new L("Místico","Místico","Mystic");
-var NOM_ARQ_PSIQUICO = new L("Psíquico","Psíquico","Psychic");
-var NOM_ARQ_ACECHADOR = new L("Acechador","Acechador","Stalker");
-var NOM_ARQ_DOMINE = new L("Domine","Domine","Domine");
-var NOM_ARQ_SIN_CATEGORIA = new L("Sin Categoría","Sin Categoría","Without Class");
+var NOM_ARQ_LUCHADOR = "Luchador";
+var NOM_ARQ_MISTICO = "Místico";
+var NOM_ARQ_PSIQUICO = "Psíquico";
+var NOM_ARQ_ACECHADOR = "Acechador";
+var NOM_ARQ_DOMINE = "Domine";
+var NOM_ARQ_SIN_CATEGORIA = "Sin Categoría";
 
 var ARQ_LUCHADOR = new Arquetipo(false,NOM_ARQ_LUCHADOR);
 var ARQ_MISTICO = new Arquetipo(false,NOM_ARQ_MISTICO);
@@ -210,22 +190,24 @@ var ARQ_LUCHADOR_PSIQUICO = new Arquetipo(true,NOM_ARQ_LUCHADOR,NOM_ARQ_PSIQUICO
 
 
 
-var ORIGEN_MULTIPLO_VIDA = new L("Múltiplos de vida","Múltiplos de vida","LP Multiples");
+var ORIGEN_MULTIPLO_VIDA = "Múltiplos de vida";
 
-var ERR_HABILIDAD_ERRONEA = new L("Error: Nombre de habilidad erróneo","Error: Nombre de habilidad erróneo","Error: wrong skill name");
-var ERR_TIPO_HABILIDAD_ERRONEO = new L("Error: Nombre de tipo de habilidad erróneo","Error: Nombre de tipo de habilidad erróneo","Error: wrong skill group name");
+var ERR_HABILIDAD_ERRONEA = "Error: Nombre de habilidad erróneo";
+var ERR_TIPO_HABILIDAD_ERRONEO = "Error: Nombre de tipo de habilidad erróneo";
 
 
-var SEXO_HOMBRE = new L("Hombre","Hombre","Male");
-var SEXO_MUJER = new L("Mujer","Mujer","Female");
 
-/**
- *
- * @returns {number}
- */
+
+
+var SEXO_HOMBRE = "Hombre";
+var SEXO_MUJER = "Mujer";
+
 function d10() {
     return Math.floor(Math.random()*10) + 1;
 }
+
+
+
 
 var FLAG_CONOCEDOR_TODAS_MATERIAS = "FLAG_CONOCEDOR_TODAS_MATERIAS";
 var FLAG_DON = "FLAG_DON";
@@ -253,11 +235,6 @@ var FLAG_VERSATIL = "FLAG_VERSATIL";
 var FLAG_BONO_NATURAL_EXTRA = "FLAG_BONO_NATURAL_EXTRA";
 var FLAG_SIN_BONIFICADOR_NATURAL = "FLAG_SIN_BONIFICADOR_NATURAL";
 var FLAG_MAGIA_OPUESTA = "FLAG_MAGIA_OPUESTA";
-
-/************************************************************************************/
-    //TODO VOY POR AQUI
-    //TODO
-    //TODO
 
 var DIF_RUT = "Rutinario";
 var DIF_RUT3 = "RUT";

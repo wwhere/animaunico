@@ -2,8 +2,8 @@
  * Created by Guille on 5/12/13.
  */
 
-var DIAG_LOG_CAMBIOS = new L("Log de cambios","Log de cambios","Change Log");
-var DIAG_LICENCIA = new L("Agradecimientos y licencia de software","Agradecimientos y licencia de software","Thanks and software licence");
+var DIAG_LOG_CAMBIOS = "Log de cambios";
+var DIAG_LICENCIA = "Agradecimientos y licencia de software";
 
 var CURRENT_VERSION = 25;
 
