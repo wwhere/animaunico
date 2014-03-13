@@ -144,7 +144,7 @@ function recuadroBase() {
     return div;
 }
 
-function muestraSubtitulo(etiqueta, esTitulo) {
+function muestraSubtitulo(etiquetaId, esTitulo) {
     var divTitulo = getDiv("pretty");
     if (esTitulo) {
         divTitulo.addClass(CSS_TITULO_SECCION);
@@ -153,7 +153,7 @@ function muestraSubtitulo(etiqueta, esTitulo) {
         divTitulo.addClass(CSS_SUBTITULO_SECCION);
         divTitulo.addClass("pretty label danger");
     }
-    divTitulo.append(etiqueta);
+    divTitulo.append(_l(etiquetaId));
     return divTitulo;
 }
 

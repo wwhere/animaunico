@@ -1,5 +1,4 @@
 var TAG_ID_ARTE_MARCIAL = "TagIdArteMarcial";
-var ALERT_ARTE_MARCIAL_ATAQUE_DEFENSA_BAJOS = "No puedes aprender más artes marciales. Mejora más tu ataque y defensa";
 
 /**
  * Bloque con las artes marciales conocidas por personaje_actual
@@ -17,7 +16,7 @@ function muestraArtesMarciales(estadoGeneracion) {
 
     if (muestraBotones) {
         var divBotonNuevo = getDiv("");
-        divBotonNuevo.append(muestraBotonPequeño("Comprar artes marciales",{},prepararDialogoArtesMarciales,BOTON_ARTES_MARCIALES));
+        divBotonNuevo.append(muestraBotonPequeño(UI_BOTON_ARTES_MARCIALES,{},prepararDialogoArtesMarciales,BOTON_ARTES_MARCIALES));
         divContenido.append(divBotonNuevo);
     } else if (artesMarciales.length == 0) {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
@@ -28,11 +27,11 @@ function muestraArtesMarciales(estadoGeneracion) {
 
         var divArteMarcial = getDiv(CSS_TEXTO_SMALL);
 
-        var divNombre = getDiv(CSS_ETIQUETA).append(arteMarcial.getNombre());
+        var divNombre = getDiv(CSS_ETIQUETA).append(_l(PRE_ARTE_MARCIAL+arteMarcial.getNombre()));
 
         divArteMarcial.append(divNombre);
 
-        addToolTip(divNombre,arteMarcial.getDescripcion());
+        addToolTip(divNombre,_l(PRE_ARTE_MARCIAL+arteMarcial.getDescripcion()));
 
         if ((muestraBotones) && (arteMarcial.isAnulable())) {
             divArteMarcial.append(muestraBotonAnular(anularArteMarcial,{arteMarcial: arteMarcial, esPrimera: primera}));
@@ -55,7 +54,7 @@ function prepararDialogoArtesMarciales() {
 
     categorias.push(new OpcionMostrable(UI_ARTES_MARCIALES_BASICAS,CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
     categorias.push(new OpcionMostrable(UI_ARTES_MARCIALES_AVANZADAS,CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
-
+//TODO POR AQUI
     for (i=0;i<artesMarcialesBasicas_set.length;i++) {
         arrayArtesMarciales.push(new OpcionMostrable(artesMarcialesBasicas_set[i].getNombre(),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,artesMarcialesBasicas_set[i].getDescripcion() + "<hr>" + artesMarcialesBasicas_set[i].getDescripcionVentajas()));
     }

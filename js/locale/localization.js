@@ -59,15 +59,26 @@ L.prototype = {
     }
 };
 
-function _(clave) {
-    return diccionario["ANIMAUNICO_"+clave].toString();
+/**
+ *
+ * @param {string} clave La id de la cadena a mostrar en pantalla
+ * @returns {string} La cadena localizada, según IDIOMA_UI
+ * @private
+ */
+function _l(clave) {
+    if (diccionario["ANIMAUNICO_"+clave]) {
+        return diccionario["ANIMAUNICO_"+clave].toString();
+    } else {
+        return clave;
+    }
 }
 
 function localizaHTML() {
     $(".localizable").each(function() {
-            $(this).html(_($(this).attr("loc")));
+            $(this).html(_l($(this).attr("loc")));
         }
     );
+    document.title = _l(UI_TITULO);
 }
 
 //endregion codigo
@@ -430,3 +441,6 @@ var NO_DISPONIBLE = (new L("No disponible","No disponible","Not available")).get
 
 var ACCION_ACTIVA = (new L("Activa","Activa","Active")).getId();
 var ACCION_PASIVA = (new L("Pasiva","Pasiva","Passive")).getId();
+
+var ALERT_ARTE_MARCIAL_ATAQUE_DEFENSA_BAJOS = (new L("Aviso Limite Artes Marciales","No puedes aprender más artes marciales. Mejora más tu ataque y defensa","You can't learn more martial arts. Raise your attack and defenses.")).getId();
+var UI_BOTON_COMPRAR_ARTES_MARCIALES
