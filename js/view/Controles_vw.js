@@ -346,8 +346,8 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
  * @param {OpcionMostrable[]} arrayOpciones
  * @param {{}} parametros
  * @param {{}} callback
- * @param {string[]} [categorias]
  * @param {boolean} permitirCierre
+ * @param {OpcionMostrable[]} [categorias] Ya localizado
  */
 function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permitirCierre, categorias) {
     var dialogo = getDiv("");
@@ -358,7 +358,7 @@ function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permi
         draggable: true,
         resizable: true,
         ////show: "puff",
-        title: DIAG_ELEGIR_OPCIONES_TITULO,
+        title: _l(DIAG_ELEGIR_OPCIONES_TITULO),
         position: "center",
         closeOnEscape: permitirCierre,
         width: ANCHO_DIALOGO,

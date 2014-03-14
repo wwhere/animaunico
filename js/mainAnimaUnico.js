@@ -260,9 +260,9 @@ var TAS_ARMADURA = [ATAQUE_FIL3,ATAQUE_CON3,ATAQUE_PEN3,ATAQUE_CAL3,ATAQUE_FRI3,
 
 /**
  *
- * @param {string} etiqueta
+ * @param {string} etiqueta Tal cual se imprimirá en pantalla (ya localizada)
  * @param {string} categoria
- * @param {string} [tooltip]
+ * @param {string} [tooltip] Tal cual se imprimirá en pantalla (ya localizada)
  * @constructor
  */
 function OpcionMostrable(etiqueta, categoria, tooltip) {
@@ -286,6 +286,11 @@ var ROTURA_PLUS_10 = "ROTURA_PLUS_10";
 var TA_ENEMIGA_MENOS_2 = "TA_ENEMIGA_MENOS_2";
 
 
+/**
+ *
+ * @param {string} elemento Ya localizado
+ * @param {string} contenido Ya localizado
+ */
 function addToolTip(elemento,contenido) {
     elemento.tooltip({
         content: contenido,
@@ -363,6 +368,12 @@ function modificadorBonito(modif) {
     return bonito;
 }
 
+/**
+ *
+ * @param {boolean} puedeComprar
+ * @param {string} [mensajeFallo] Ya localizado
+ * @constructor
+ */
 function PuedeComprar(puedeComprar, mensajeFallo) {
     this.puedeComprar = puedeComprar;
     if (!puedeComprar) {

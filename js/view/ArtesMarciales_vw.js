@@ -52,16 +52,20 @@ function prepararDialogoArtesMarciales() {
     var categorias = [];
     var i;
 
-    categorias.push(new OpcionMostrable(UI_ARTES_MARCIALES_BASICAS,CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
-    categorias.push(new OpcionMostrable(UI_ARTES_MARCIALES_AVANZADAS,CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
-//TODO POR AQUI
+    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_BASICAS),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
+    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_AVANZADAS),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
+
     for (i=0;i<artesMarcialesBasicas_set.length;i++) {
-        arrayArtesMarciales.push(new OpcionMostrable(artesMarcialesBasicas_set[i].getNombre(),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,artesMarcialesBasicas_set[i].getDescripcion() + "<hr>" + artesMarcialesBasicas_set[i].getDescripcionVentajas()));
+        arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesBasicas_set[i].getNombre()),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesBasicas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesBasicas_set[i].getDescripcionVentajas())));
     }
     for (i=0;i<artesMarcialesAvanzadas_set.length;i++) {
-        arrayArtesMarciales.push(new OpcionMostrable(artesMarcialesAvanzadas_set[i].getNombre(),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL,artesMarcialesAvanzadas_set[i].getDescripcion() + "<hr>" + artesMarcialesAvanzadas_set[i].getDescripcionVentajas()));
+        arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesAvanzadas_set[i].getNombre()),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesAvanzadas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesAvanzadas_set[i].getDescripcionVentajas())));
     }
 
+    /**
+     *
+     * @type {PuedeComprar}
+     */
     var puedeComprar = personaje_actual.puedeComprarNuevaArteMarcial();
     if (puedeComprar.puedeComprar) {
         muestraDialogoElegirOpciones(arrayArtesMarciales, {}, {principal: aplicarArteMarcial, isDisabled: arteMarcialNoComprable}, true, categorias);
@@ -77,7 +81,6 @@ function prepararDialogoArtesMarciales() {
  */
 function arteMarcialNoComprable(parametros) {
     var arteMarcial = getArteMarcial(parametros.opcion);
-
 
     return ( (!arteMarcial.cumpleRequisitos(personaje_actual)) || (personaje_actual.hasArteMarcial(parametros.opcion)) );
 }
