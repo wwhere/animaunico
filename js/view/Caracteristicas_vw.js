@@ -10,7 +10,7 @@ function mostrarDialogoTipoGeneracion() {
         draggable: true,
         resizable: false,
         //////show: "puff",
-        title: DIAG_METODO_CREACION_TITULO,
+        title: _l(DIAG_METODO_CREACION_TITULO),
         width: 500,
         height: 500,
         dialogClass: "no-close",
@@ -31,7 +31,7 @@ function mostrarDialogoTipoGeneracion() {
 
     for (var i = 1; i <= numeroMetodos; i++) {
         var divTipo = getDiv("two columns");
-        var divBoton = boton("big primary btn pretty",BTN_TIPO + " " + i);
+        var divBoton = boton("big primary btn pretty",_l(BTN_TIPO) + " " + i);
         divBoton.css("width","100%");
 
         divTipo.append(divBoton);

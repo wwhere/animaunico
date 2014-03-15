@@ -67,7 +67,7 @@ function muestraCM() {
  * @returns {jQuery}
  */
 function muestraBotonNuevaHabilidadKi() {
-    var divBotonNuevaHabilidadKi = boton("medium primary pretty btn","Comprar habilidad de ki");
+    var divBotonNuevaHabilidadKi = boton("medium primary pretty btn",_l(UI_COMPRAR_HABILIDAD_KI));
 
     divBotonNuevaHabilidadKi.on("click", comprarHabilidadKi);
 
@@ -79,7 +79,7 @@ function muestraBotonNuevaHabilidadKi() {
  * @returns {jQuery}
  */
 function muestraBotonCompraTecnicaKi() {
-    var divBotonComprarTecnicaKiExistente = boton("medium primary pretty btn","Comprar técnica de dominio existente",noPuedeComprarTecnicas());
+    var divBotonComprarTecnicaKiExistente = boton("medium primary pretty btn",_l(UI_COMPRAR_TECNICA_EXISTENTE),noPuedeComprarTecnicas());
 
     divBotonComprarTecnicaKiExistente.on("click", comprarTecnicaKi);
 
@@ -91,7 +91,7 @@ function muestraBotonCompraTecnicaKi() {
  * @returns {jQuery}
  */
 function muestraBotonNuevaTecnicaKi() {
-    var divBotonNuevaTecnicaKi = boton("medium primary pretty btn","Crear técnica de dominio",noPuedeComprarTecnicas());
+    var divBotonNuevaTecnicaKi = boton("medium primary pretty btn",_l(UI_CREAR_TECNICA_DOMINIO),noPuedeComprarTecnicas());
 
     divBotonNuevaTecnicaKi.on("click", crearTecnicaKi);
 
@@ -138,13 +138,13 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
                     var divEfectoCompraPrim = $("<div></div>").addClass("two columns");
 
-                    var botonAñadePrimaria = boton("small primary pretty btn","1ª",!puedeComprarseEfecto(tecnicaKi,efectosTecnicas[j],true));
+                    var botonAñadePrimaria = boton("small primary pretty btn",_l("1ª"),!puedeComprarseEfecto(tecnicaKi,efectosTecnicas[j],true));
                     divEfectoCompraPrim.append(botonAñadePrimaria);
                     botonAñadePrimaria.on("click",{tecnicaKi:tecnicaKi, efecto:efectosTecnicas[j]},añadeEfectoPrimarioTecnica);
 
                     var divEfectoCompraSec = $("<div></div>").addClass("push_one two columns");
 
-                    var botonAñadeSecundaria = boton("small secondary pretty btn","2ª",!puedeComprarseEfecto(tecnicaKi,efectosTecnicas[j],false));
+                    var botonAñadeSecundaria = boton("small secondary pretty btn",_l("2ª"),!puedeComprarseEfecto(tecnicaKi,efectosTecnicas[j],false));
                     divEfectoCompraSec.append(botonAñadeSecundaria);
                     botonAñadeSecundaria.on("click",{tecnicaKi:tecnicaKi, efecto:efectosTecnicas[j]},añadeEfectoSecundarioTecnica);
 
@@ -169,7 +169,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
             var divDesventajaCompra = $("<div></div>").addClass("three columns");
 
-            var botonAñadeDesventaja = boton("small primary pretty btn","+",!puedeAñadirseDesventajaATecnica(tecnicaKi,desventajasTecnicas[i]));
+            var botonAñadeDesventaja = boton("small primary pretty btn",_l("+"),!puedeAñadirseDesventajaATecnica(tecnicaKi,desventajasTecnicas[i]));
 
             divDesventajaCompra.append(botonAñadeDesventaja);
             botonAñadeDesventaja.on("click",{tecnicaKi:tecnicaKi, desventaja:desventajasTecnicas[j]},añadeDesventajaTecnica);
@@ -373,7 +373,7 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
 
     var divBotonesVentajas = $("<div></div>").addClass("one columns");
     if (efectoTecnicaElegido.getVentajasOpcionales().length > 0) {
-        var divBotonAddVentajaTecnica = boton("small primary pretty btn","+");
+        var divBotonAddVentajaTecnica = boton("small primary pretty btn",_l("+"));
 
         divBotonAddVentajaTecnica.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido},addVentajaOpcionalEfectoTecnica);
 
@@ -641,8 +641,8 @@ function dialogoRecolocacionCosteKi(costeKi) {
  */
 function muestraBotonMasMenosCosteKi(costeKi, caracDestino) {
     var div = $("<div></div>");
-    var divMas = boton("small primary pretty btn","+");
-    var divMenos = boton("small secondary pretty btn","+");
+    var divMas = boton("small primary pretty btn",_l("+"));
+    var divMenos = boton("small secondary pretty btn",_l("+"));
 
 //    divMas.css("width","1rem");
   //  divMenos.css("width","1rem");

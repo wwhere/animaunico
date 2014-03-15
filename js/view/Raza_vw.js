@@ -18,7 +18,7 @@ function dialogoElegirRaza() {
     for (var i = 0; i < razas_set.length ; i++) {
         var raza = razas_set[i];
 
-        var divRaza = boton("big primary pretty btn",raza.nombre,(raza.nombre == personaje_actual.raza.nombre));
+        var divRaza = boton("big primary pretty btn",_l(raza.nombre),(raza.nombre == personaje_actual.raza.nombre));
 
         dialogElegirRaza.append(divRaza);
         divRaza.attr("raza",raza.nombre);

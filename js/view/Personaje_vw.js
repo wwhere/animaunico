@@ -274,7 +274,7 @@ function muestraPersonal(etiqueta, valor, mostrarBotonEleccionManual, funcionEle
     divCampo.append(divEtiqueta).append(divValor);
 
     if (mostrarBotonEleccionManual) {
-        var divBoton = boton("small info pretty btn",UI_ELEGIR);
+        var divBoton = boton("small info pretty btn",_l(UI_ELEGIR));
         divBoton.on("click",parametrosEleccionManual,funcionEleccionManual);
 //        divBoton.css("width","1rem");
         divCampo.append(divBoton);
@@ -303,7 +303,7 @@ function muestraPersonalConDivExtra(etiqueta, valor, mostrarBotonEleccionManual,
     divCampo.append(divEtiqueta).append(divValor);
 
     if (mostrarBotonEleccionManual) {
-        var divBoton = boton("small info pretty btn",UI_ELEGIR);
+        var divBoton = boton("small info pretty btn",_l(UI_ELEGIR));
         divBoton.on("click",parametrosEleccionManual,funcionEleccionManual);
 //        divBoton.css("width","1rem");
         divCampo.append(divBoton);
@@ -660,6 +660,14 @@ function listaElementosPCComprados(titulo,arrayElementos,callback,puedeComprarNu
     return div;
 }
 
+/**
+ *
+ * @param {string} label Ya localizada
+ * @param id
+ * @param callback
+ * @param parametros
+ * @returns {*}
+ */
 function botonComprarNuevo(label, id, callback, parametros) {
     var divBotonNuevo = boton("small primary btn pretty",label);
     divBotonNuevo.attr("id",id);
@@ -1148,9 +1156,9 @@ function muestraInnatos(muestraBotones) {
 
     var divBotones = getDiv("push_four two columns");
 
-    var botonMasInnato = boton("small primary pretty btn","+",(personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual()-personaje_actual.cv_gastados < 2));
+    var botonMasInnato = boton("small primary pretty btn",_l("+"),(personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual()-personaje_actual.cv_gastados < 2));
 
-    var botonMenosInnato = boton("small primary pretty btn","-",(personaje_actual.innatosPsiquicos == 0));
+    var botonMenosInnato = boton("small primary pretty btn",_l("-"),(personaje_actual.innatosPsiquicos == 0));
 
     botonMasInnato.on("click", {cantidad: 1}, comprarInnato);
 

@@ -443,7 +443,7 @@ function alwaysEnabled(opcion) {
  * @returns {jQuery}
  */
 function muestraBotonAnular(callback, parametros) {
-    var botonAnular = boton("small pretty primary btn","X");
+    var botonAnular = boton("small pretty primary btn",_l("X"));
 
     if (parametros) {
         botonAnular.on("click", parametros, callback);
@@ -543,8 +543,16 @@ function GrupoOpciones(etiqueta, opciones, numAElegir) {
     this.opcionesElegidas = [];
 }
 
-function muestraBotonPequeño(labelId, parametros, callback, id) {
-    var divBoton = boton("small primary btn pretty",labelId);
+/**
+ *
+ * @param {string} label Ya localizada
+ * @param parametros
+ * @param callback
+ * @param id
+ * @returns {*}
+ */
+function muestraBotonPequeño(label, parametros, callback, id) {
+    var divBoton = boton("small primary btn pretty",label);
 
     divBoton.attr("id",id);
     divBoton.on("click",parametros,callback);
@@ -554,13 +562,13 @@ function muestraBotonPequeño(labelId, parametros, callback, id) {
 /**
  *
  * @param {string} clase
- * @param {string} labelId
+ * @param {string} labelId Ya localizado
  * @param {boolean} [disabled]
  * @returns {*}
  */
 function boton(clase, labelId, disabled) {
     var boton = getDiv(clase);
-    boton.append("<a href='#'>"+ _l(labelId) + "</a>");
+    boton.append("<a href='#'>"+ labelId + "</a>");
 
     if (disabled) {
         disableButton(boton);

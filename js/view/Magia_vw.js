@@ -33,7 +33,7 @@ function dialogoMagia() {
             botonViaDisabled = true;
         }
 
-        var divBotonNuevaVia = boton("medium primary pretty btn","Acceso a nueva vía de magia",botonViaDisabled);
+        var divBotonNuevaVia = boton("medium primary pretty btn",_l(UI_ACCESO_NUEVA_VIA),botonViaDisabled);
 
         dialogo.append(divBotonNuevaVia);
 
@@ -126,8 +126,8 @@ function dialogoMagia() {
  */
 function muestraBotonMasMenosNivelVia(nivelVia) {
     var div = $("<div></div>");
-    var divMas = boton("small primary pretty btn","+");
-    var divMenos = boton("small secondary pretty btn","+");
+    var divMas = boton("small primary pretty btn",_l("+"));
+    var divMenos = boton("small secondary pretty btn",_l("+"));
 
 //    divMas.css("width","1rem");
   //  divMenos.css("width","1rem");
@@ -146,7 +146,7 @@ function muestraBotonMasMenosNivelVia(nivelVia) {
  * @returns {jQuery}
  */
 function muestraBotonElegirConjuroLibreAcceso(via,nivel) {
-    var botonDiv = boton("small primary pretty btn",UI_ELEGIR);
+    var botonDiv = boton("small primary pretty btn",_l(UI_ELEGIR));
 
     botonDiv.on("click",{via:via,nivel:nivel},elegirConjuroLibreAcceso);
 
@@ -154,7 +154,7 @@ function muestraBotonElegirConjuroLibreAcceso(via,nivel) {
 }
 
 function muestraBotonElegirConjuroSuelto() {
-    var botonDiv = boton("small primary pretty btn","Comprar conjuro suelto");
+    var botonDiv = boton("small primary pretty btn",_l(UI_COMPRAR_CONJURO_SUELTO));
 
     botonDiv.on("click",{},elegirConjuroSuelto);
 

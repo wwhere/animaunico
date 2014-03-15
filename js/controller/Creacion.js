@@ -1244,7 +1244,7 @@ function cambiarCategoria() {
     for (var i = 0; i < categorias_set.length ; i++) {
         var categoria = categorias_set[i];
 
-        var divCategoria = boton("big primary btn pretty",categoria.getNombre() + "[" + costeCambioCategoria(personaje_actual.getCategoria(),categoria) + " PD]",!puedeElegirCategoria(categoria.getNombre()));
+        var divCategoria = boton("big primary btn pretty",_l(categoria.getNombre()) + "[" + costeCambioCategoria(personaje_actual.getCategoria(),categoria) + " " + _l(UDS_PD)+"]",!puedeElegirCategoria(categoria.getNombre()));
         divCategoria.css("width","100%");
 
         gridCategorias.append( $("<li></li>").append(divCategoria));

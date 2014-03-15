@@ -48,13 +48,17 @@ function appendDonesElan(elemento, nombre, dialogo) {
     var gridBotones = $("<ul></ul>").addClass("three_up tiles");
 
     for (var i = 0; i < dones.length; i++) {
-        var labelBoton = "[" + dones[i].getCoste() + "] " + dones[i].getNombre() + "<br>";
-        labelBoton += "Req: Sinc. " + dones[i].getElanMinimo();
+        var labelBoton = "[" + dones[i].getCoste() + "] " + _l(dones[i].getNombre()) + "<br>";
+        labelBoton += _l(ELAN_SYNC_REQ) + " " + dones[i].getElanMinimo();
         if (dones[i].getDonesRequisito().length > 0) {
             labelBoton += ", ";
+            /**
+             *
+             * @type {string[]}
+             */
             var donesRequisito = dones[i].getDonesRequisito();
             for (var j = 0; j < donesRequisito.length; j++) {
-                labelBoton += donesRequisito[j];
+                labelBoton += _l(donesRequisito[j]);
                 if (j+1 < donesRequisito.length) {
                     labelBoton += ", ";
                 }

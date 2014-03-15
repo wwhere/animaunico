@@ -443,4 +443,15 @@ var ACCION_ACTIVA = (new L("Activa","Activa","Active")).getId();
 var ACCION_PASIVA = (new L("Pasiva","Pasiva","Passive")).getId();
 
 var ALERT_ARTE_MARCIAL_ATAQUE_DEFENSA_BAJOS = (new L("Aviso Limite Artes Marciales","No puedes aprender más artes marciales. Mejora más tu ataque y defensa","You can't learn more martial arts. Raise your attack and defenses.")).getId();
-var UI_BOTON_COMPRAR_ARTES_MARCIALES
+
+var ELAN_SYNC_REQ = (new L("Sinc. Req.","Sinc. Req.","Synch. Req.")).getId();
+
+new L("E", "E", "S");
+new L("1ª", "1ª", "1st");
+new L("2ª", "2ª", "2nd");
+
+var UI_COMPRAR_TECNICA_EXISTENTE = (new L("Comprar técnica de dominio existente","Comprar técnica de dominio existente","Buy pre-existent technique")).getId();
+var UI_COMPRAR_HABILIDAD_KI = (new L("Comprar habilidad de ki", "Comprar habilidad de ki", "Buy Ki Ability")).getId();
+var UI_CREAR_TECNICA_DOMINIO = (new L("Crear técnica de dominio", "Crear técnica de dominio", "Design own ki technique")).getId();
+var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva vía de magia","Access to new spell list")).getId();
+var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro suelto","Cherry pick spell")).getId();

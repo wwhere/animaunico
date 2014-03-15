@@ -27,6 +27,10 @@ function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
     }
     dialogPuntosCreacion.append(divAcord);
 
+    /**
+     *
+     * @type {Ventaja[]}
+     */
     var arrayPC;
     if (esVentajas) {
         arrayPC = ventajas_set;
@@ -35,12 +39,16 @@ function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
     }
 
     for (var i = 0; i < arrayPC.length ; i++) {
+        /**
+         *
+         * @type {Ventaja}
+         */
         var elemento = arrayPC[i];
 
         if (elemento.repetible != NO_COMPRABLE) {
 
 
-            var labelVent = elemento.nombre + "<br>[";
+            var labelVent = _l(elemento.nombre) + "<br>[";
             for (var k = 0;k<elemento.costes.length;k++) {
                 labelVent += elemento.costes[k];
                 if (k < elemento.costes.length-1) {

@@ -45,7 +45,7 @@ function dialogoBonosNaturales() {
 
         div.append(etiqu);
 
-        var botonBono = boton("medium pretty primary btn",UI_ELEGIR);
+        var botonBono = boton("medium pretty primary btn",_l(UI_ELEGIR));
         div.append(botonBono);
 
         botonBono.on("click",{indice: i, nivel: personaje_actual.getNivel()}, elegirHabilidadNatural);
@@ -74,7 +74,7 @@ function dialogoBonosNaturales() {
         etiquFisico.append(divNombreFisico);
         divFisico.append(etiquFisico);
 
-        var botonFisico = boton("medium pretty primary btn",UI_ELEGIR);
+        var botonFisico = boton("medium pretty primary btn",_l(UI_ELEGIR));
         divFisico.append(botonFisico);
         divBonificadoresNaturales.append(divFisico);
 
@@ -101,7 +101,7 @@ function dialogoBonosNaturales() {
         divMental.append(etiquMental);
 
 
-        var botonMental = boton("medium pretty primary btn",UI_ELEGIR);
+        var botonMental = boton("medium pretty primary btn",_l(UI_ELEGIR));
         divMental.append(botonMental);
 
         divBonificadoresNaturales.append(divMental);
@@ -128,7 +128,7 @@ function dialogoBonosNaturales() {
             divExtra.append(etiquExtra);
 
 
-            var botonExtra = boton("medium pretty primary btn",UI_ELEGIR);
+            var botonExtra = boton("medium pretty primary btn",_l(UI_ELEGIR));
             divExtra.append(botonExtra);
 
             divBonificadoresNaturales.append(divExtra);
@@ -156,7 +156,7 @@ function dialogoBonosNaturales() {
 
             divNovel.append(etiquNovel);
 
-            var botonNovel = boton("medium pretty primary btn",UI_ELEGIR);
+            var botonNovel = boton("medium pretty primary btn",_l(UI_ELEGIR));
             botonNovel.css("cursor", "pointer");
             divNovel.append(botonNovel);
 
@@ -177,8 +177,8 @@ function dialogoBonosNaturales() {
  */
 function muestraBotonMasMenosHabilidad(nombreHabilidad) {
     var div = $("<div></div>");
-    var divMas = boton("small primary pretty btn","+");
-    var divMenos = boton("small secondary pretty btn","-");
+    var divMas = boton("small primary pretty btn",_l("+"));
+    var divMenos = boton("small secondary pretty btn",_l("-"));
 
 //    divMas.css("width", "1rem")
   //  divMenos.css("width", "1rem")
@@ -192,7 +192,7 @@ function muestraBotonMasMenosHabilidad(nombreHabilidad) {
 
 function muestraBotonElegirEspecialidad(nombreHabilidad) {
     var div = $("<div></div>");
-    var divBoton = boton("small info pretty btn","E");
+    var divBoton = boton("small info pretty btn",_l("E"));
 //    divBoton.css("width", "1rem")
     div.append(divBoton);
 

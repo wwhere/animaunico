@@ -30,7 +30,7 @@ function dialogoElegirCategoria() {
     for (var i = 0; i < categorias_set.length ; i++) {
         var categoria = categorias_set[i];
 
-        var divCategoria = boton("big primary btn pretty",categoria.getNombre(),!puedeElegirCategoria(categoria.getNombre()));
+        var divCategoria = boton("big primary btn pretty",_l(categoria.getNombre()),!puedeElegirCategoria(categoria.getNombre()));
         divCategoria.css("width","100%");
 
         gridCategorias.append( $("<li></li>").append(divCategoria));
