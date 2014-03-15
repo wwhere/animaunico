@@ -160,7 +160,7 @@ function elegirPoderADominar(event) {
     var poderesPsiquicos = disciplina.getPoderesPsiquicos();
     for (var j = 0; j < poderesPsiquicos.length; j++) {
         var poder = poderesPsiquicos[j];
-        arrayOpciones.push(new OpcionMostrable(poder.getNombre(),"",poder.getDescripcion()));
+        arrayOpciones.push(new OpcionMostrable(_l(poder.getNombre()),poder.getNombre(),"",_l(poder.getDescripcion())));
     }
 
     muestraDialogoElegirOpciones(arrayOpciones, {disciplina: disciplina}, {principal: dominarPoder, isDisabled: noPuedeDominarPoder}, true);

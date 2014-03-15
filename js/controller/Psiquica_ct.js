@@ -53,7 +53,7 @@ function afinidadNuevaDisciplina() {
     for (i = 0; i < disciplinasPsiquicas_set.length;i++) {
         var disciplina = disciplinasPsiquicas_set[i];
         if ((!disciplina.isLibre()) && (!personaje_actual.hasDisciplina(disciplina.getNombre()))) {
-            arrayOpciones.push(new OpcionMostrable(disciplina.getNombre(),"",disciplina.getDescripcion()));
+            arrayOpciones.push(new OpcionMostrable(_l(disciplina.getNombre()),disciplina.getNombre(),"",_l(disciplina.getDescripcion())));
         }
     }
     muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: compraAfinidadDisciplina, isDisabled: noPuedeComprarDisciplina}, true);

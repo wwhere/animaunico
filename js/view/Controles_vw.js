@@ -228,22 +228,22 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
     switch (opciones) {
         case  LISTA_CARACTERISTICAS :
             for (i = 0; i < CARACTERISTICAS_NOMBRES.length; i++) {
-                arrayOpciones.push(new OpcionMostrable(_l(CARACTERISTICAS_NOMBRES[i]),""));
+                arrayOpciones.push(new OpcionMostrable(_l(CARACTERISTICAS_NOMBRES[i]),CARACTERISTICAS_NOMBRES[i],""));
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_TIPOS_SECUNDARIAS :
             for (i = 0; i < habilidades_secundarias_nombres_grupos.length; i++) {
-                arrayOpciones.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),""));
+                arrayOpciones.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),habilidades_secundarias_nombres_grupos[i],habilidades_secundarias_nombres_grupos[i],""));
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_HABILIDADES_SECUNDARIAS :
             for (i = 0; i < habilidades_secundarias.length;i++) {
                 var grupoHabi = habilidades_secundarias[i];
-                categorias.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),habilidades_secundarias_nombres_grupos[i]));
+                categorias.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),habilidades_secundarias_nombres_grupos[i],habilidades_secundarias_nombres_grupos[i]));
                 for (j = 0; j < grupoHabi.length; j++) {
-                    arrayOpciones.push(new OpcionMostrable(_l(grupoHabi[j]),habilidades_secundarias_nombres_grupos[i]));
+                    arrayOpciones.push(new OpcionMostrable(_l(grupoHabi[j]),grupoHabi[j],habilidades_secundarias_nombres_grupos[i]));
                 }
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true, categorias);
@@ -252,7 +252,7 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
             for (i = 0; i < disciplinasPsiquicas_set.length;i++) {
                 var disciplina = disciplinasPsiquicas_set[i];
                 if (!disciplina.isLibre()) {
-                    arrayOpciones.push(new OpcionMostrable(_l(disciplina.getNombre()),"",_l(disciplina.getDescripcion())));
+                    arrayOpciones.push(new OpcionMostrable(_l(disciplina.getNombre()),disciplina.getNombre(),"",_l(disciplina.getDescripcion())));
                 }
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
@@ -260,15 +260,15 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
         case  LISTA_AJUSTE_TAMAÑO :
             for (i = -5; i <= 5; i++) {
                 if (personaje_actual.getTamaño()>(-1*i)) {
-                    arrayOpciones.push(new OpcionMostrable(i,""));
+                    arrayOpciones.push(new OpcionMostrable(i,i,""));
                 }
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_HABILIDAD_COMBATE :
-            arrayOpciones.push(new OpcionMostrable(_l(HB_ATAQUE),""));
-            arrayOpciones.push(new OpcionMostrable(_l(HB_PARADA),""));
-            arrayOpciones.push(new OpcionMostrable(_l(HB_ESQUIVA),""));
+            arrayOpciones.push(new OpcionMostrable(_l(HB_ATAQUE),HB_ATAQUE,""));
+            arrayOpciones.push(new OpcionMostrable(_l(HB_PARADA),HB_PARADA,""));
+            arrayOpciones.push(new OpcionMostrable(_l(HB_ESQUIVA),HB_ESQUIVA,""));
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_PODER_PSIQUICO :
@@ -289,12 +289,12 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
 
             for (i = 0; i < disciplinasPsiquicas_set.length; i++) {
                 var disciplinaAct = disciplinasPsiquicas_set[i];
-                categorias.push(new OpcionMostrable(_l(disciplinaAct.getNombre()),disciplinaAct.getNombre()));
+                categorias.push(new OpcionMostrable(_l(disciplinaAct.getNombre()),disciplinaAct.getNombre(),disciplinaAct.getNombre()));
                 var poderesPsiquicos = disciplinaAct.getPoderesPsiquicos();
                 for (j = 0; j < poderesPsiquicos.length; j++) {
                     var poder = poderesPsiquicos[j];
                     if (indiceDificultad(poder.dificultadMinima()) <= indiceDificultad(dificultadMaxima)) {
-                        arrayOpciones.push(new OpcionMostrable(_l(poder.getNombre()),disciplinaAct.getNombre(),_l(poder.getDescripcion())));
+                        arrayOpciones.push(new OpcionMostrable(_l(poder.getNombre()),poder.getNombre(),disciplinaAct.getNombre(),_l(poder.getDescripcion())));
                     }
                 }
             }
@@ -302,15 +302,15 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
             break;
         case  LISTA_SHAJADS_BERYLS :
             for (i = 0; i < berylShajad_set.length;i++) {
-                arrayOpciones.push(new OpcionMostrable(_l(berylShajad_set[i].getNombre()), berylShajad_set[i].getTipo()));
+                arrayOpciones.push(new OpcionMostrable(_l(berylShajad_set[i].getNombre()),berylShajad_set[i].getNombre(), berylShajad_set[i].getTipo()));
             }
-            categorias.push(new OpcionMostrable(_l(UI_BERYL), BERYL));
-            categorias.push(new OpcionMostrable(_l(UI_SHAJAD), SHAJAD));
+            categorias.push(new OpcionMostrable(_l(UI_BERYL),UI_BERYL, BERYL));
+            categorias.push(new OpcionMostrable(_l(UI_SHAJAD),UI_SHAJAD, SHAJAD));
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true, categorias);
             break;
         case  LISTA_VIAS_MAGIA :
             for (i = 0; i < VIAS_MAGICAS.length;i++) {
-                arrayOpciones.push(new OpcionMostrable(_l(VIAS_MAGICAS[i]),""));
+                arrayOpciones.push(new OpcionMostrable(_l(VIAS_MAGICAS[i]),VIAS_MAGICAS[i],""));
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
@@ -373,7 +373,7 @@ function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permi
             var gridCateg = $("<ul></ul>").addClass("four_up tiles");
 
             contenidoDialogo.append("<h3>"+categ.etiqueta+"</h3>");
-            gridCateg.attr("id",categ.categoria.replace(/\s+/g, ''));
+            gridCateg.attr("id",categ.id.replace(/\s+/g, ''));
             divCateg.append(gridCateg);
             contenidoDialogo.append(divCateg);
         }
@@ -384,7 +384,7 @@ function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permi
     dialogo.append(contenidoDialogo);
 
     for (var i = 0; i < arrayOpciones.length;i++) {
-        parametros.opcion = arrayOpciones[i].etiqueta;
+        parametros.opcion = arrayOpciones[i].id;
         if (arrayOpciones[i].categoria != undefined) {
             parametros.categoria = arrayOpciones[i].categoria;
         }

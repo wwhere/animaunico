@@ -265,12 +265,14 @@ var TAS_ARMADURA = [ATAQUE_FIL3,ATAQUE_CON3,ATAQUE_PEN3,ATAQUE_CAL3,ATAQUE_FRI3,
 /**
  *
  * @param {string} etiqueta Tal cual se imprimirá en pantalla (ya localizada)
+ * @param {string} id la id de la etiqueta
  * @param {string} categoria
  * @param {string} [tooltip] Tal cual se imprimirá en pantalla (ya localizada)
  * @constructor
  */
-function OpcionMostrable(etiqueta, categoria, tooltip) {
+function OpcionMostrable(etiqueta, id, categoria, tooltip) {
     this.etiqueta = etiqueta;
+    this.opcion = id;
     this.categoria = categoria;
     if (tooltip) {
         this.tooltip = tooltip;

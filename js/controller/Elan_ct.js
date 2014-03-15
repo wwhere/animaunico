@@ -39,8 +39,8 @@ function prepararEleccionVentajaElan(ventaja) {
     switch (ventaja.getElegir()) {
         case ELEGIR_POD_VOL :
             var arrayOpciones = [
-                new OpcionMostrable(POD,""),
-                new OpcionMostrable(VOL,"")
+                new OpcionMostrable(_l(POD),POD,""),
+                new OpcionMostrable(_l(VOL),VOL,"")
             ];
             muestraDialogoElegirOpciones(arrayOpciones, {ventaja: ventaja}, {principal: influjoSobrenaturalElanElegido, isDisabled: alwaysEnabled}, true);
             break;

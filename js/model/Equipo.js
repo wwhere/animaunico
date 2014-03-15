@@ -320,6 +320,23 @@ Arma.prototype.getCategoria = function() {
 
 /**
  *
+ * @returns {string} Ya localizado
+ */
+Arma.prototype.getCategoriaLoc = function() {
+    var categoria = "";
+
+    for (var i = 0; i < this.categorias.length; i++) {
+        categoria += _l(this.categorias[i]);
+        if (i+1 < this.categorias.length) {
+            categoria += "/";
+        }
+    }
+
+    return categoria;
+}
+
+/**
+ *
  * @returns {string[]}
  */
 Arma.prototype.getCategorias = function() {

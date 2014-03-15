@@ -251,7 +251,7 @@ function accesoNuevaVia() {
 
     for (i=0;i<VIAS_MAGICAS.length;i++) {
         var nombreVia = VIAS_MAGICAS[i];
-        arrayViasMagia.push(new OpcionMostrable(nombreVia,""));
+        arrayViasMagia.push(new OpcionMostrable(_l(nombreVia),nombreVia,""));
     }
 
     muestraDialogoElegirOpciones(arrayViasMagia, {}, {principal: aplicarAccesoVia, isDisabled: accesoViaDisabled}, true);
@@ -346,7 +346,7 @@ function elegirConjuroLibreAcceso(event) {
         if (conjurosLibreAcceso[i].getNivel() > maxNivelConjuro) {
             break;
         } else {
-            arrayOpciones.push(new OpcionMostrable(conjurosLibreAcceso[i].getNombre(),"","Nivel: " + conjurosLibreAcceso[i].getNivel() /*+ "<hr>Efecto: " + conjurosLibreAcceso[i].getEfecto()*/));
+            arrayOpciones.push(new OpcionMostrable(_l(conjurosLibreAcceso[i].getNombre()),conjurosLibreAcceso[i].getNombre(),"",_l(UI_NIVEL)+": " + conjurosLibreAcceso[i].getNivel()));
         }
     }
 
@@ -386,13 +386,13 @@ function elegirConjuroSuelto() {
     var maxNivel = maxNivelConjuroSueltoPermitible();
 
     for (i = 0; i < vias_set.length; i++) {
-        categorias.push(new OpcionMostrable(vias_set[i].getNombre(),vias_set[i].getNombre()+"_viamagia"));
+        categorias.push(new OpcionMostrable(_l(vias_set[i].getNombre()),vias_set[i].getNombre(),vias_set[i].getNombre()+"_viamagia"));
         var conjuros = vias_set[i].getConjuros();
         for (j = 0; j < conjuros.length; j++) {
             if ((conjuros[j].getNivel() > maxNivel) && (vias_set[i].getNombre() != VIA_LIBRE_ACCESO)) {
                 break;
             } else {
-                arrayOpciones.push(new OpcionMostrable(conjuros[j].getNombre(),vias_set[i].getNombre()+"_viamagia","Nivel: " + conjuros[j].getNivel()/* + "<hr>Efecto: " + conjuros[j].getEfecto()*/));
+                arrayOpciones.push(new OpcionMostrable(_l(conjuros[j].getNombre()),conjuros[j].getNombre(),vias_set[i].getNombre()+"_viamagia",_l(UI_NIVEL)+": " + conjuros[j].getNivel()));
             }
         }
     }

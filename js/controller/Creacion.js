@@ -212,7 +212,7 @@ function generarMetodo4() {
  *
  */
 function generarMetodo5() {
-    muestraDialogoElegirOpciones([new OpcionMostrable("45",""),new OpcionMostrable("50",""),new OpcionMostrable("55",""),new OpcionMostrable("60",""),new OpcionMostrable("65",""),new OpcionMostrable(UI_ESPECIFICAR,"")],{},{principal:metodo5PuntosElegidos,isDisabled:alwaysEnabled},false);
+    muestraDialogoElegirOpciones([new OpcionMostrable("45","45",""),new OpcionMostrable("50","50",""),new OpcionMostrable("55","55",""),new OpcionMostrable("60","60",""),new OpcionMostrable("65","65",""),new OpcionMostrable(_l(UI_ESPECIFICAR),UI_ESPECIFICAR,"")],{},{principal:metodo5PuntosElegidos,isDisabled:alwaysEnabled},false);
 }
 
 function metodo5PuntosElegidos(parametros) {
@@ -278,7 +278,7 @@ function aplicarElementoPC(event) {
     if (costes.length > 1) {
         var arrayOpciones = [];
         for (var i=0; i < costes.length;i++) {
-            arrayOpciones.push(new OpcionMostrable(costes[i],""));
+            arrayOpciones.push(new OpcionMostrable(costes[i],costes[i],""));
         }
         muestraDialogoElegirOpciones(arrayOpciones, {elementoPC: elementoPC, isVentaja: isVentaja}, {principal: aplicarElementoPCPaso2, isDisabled: alwaysEnabled}, true);
     } else {
@@ -989,7 +989,7 @@ function aumentaHabilidadClick(event) {
 function elegirManualApariencia() {
     var arrayOpciones = [];
     for (var i = 1; i <= 10; i++) {
-        arrayOpciones.push(new OpcionMostrable(i,""));
+        arrayOpciones.push(new OpcionMostrable(i,i,""));
     }
     muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: asignarApariencia, isDisabled: alwaysEnabled}, true);
 }
@@ -1104,7 +1104,7 @@ function elegirPX() {
 }
 
 function elegirManualSexo() {
-    muestraDialogoElegirOpciones([new OpcionMostrable(SEXO_HOMBRE, ""), new OpcionMostrable(SEXO_MUJER)], {}, {principal: asignarSexo, isDisabled: alwaysEnabled}, true);
+    muestraDialogoElegirOpciones([new OpcionMostrable(_l(SEXO_HOMBRE),SEXO_HOMBRE, ""), new OpcionMostrable(_l(SEXO_MUJER),SEXO_MUJER, "")], {}, {principal: asignarSexo, isDisabled: alwaysEnabled}, true);
 }
 
 function elegirManualNombre() {

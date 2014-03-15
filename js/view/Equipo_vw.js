@@ -4,7 +4,7 @@
 function dialogoElegirArmaTodas() {
     var catArmas = [];
 
-    for (i=0; i<armas_set.length;i++) {
+    for (var i=0; i<armas_set.length;i++) {
         var arma = armas_set[i];
         var categoria = arma.getCategoria();
 
@@ -30,7 +30,7 @@ function dialogoElegirTipoArma(categoriasPermitidas, callback, parametros) {
             }
         }
 
-        arrayOpciones.push(new OpcionMostrable(categoria,""));
+        arrayOpciones.push(new OpcionMostrable(_l(categoria),categoria,""));
     }
 
     parametros.elegir = true;
@@ -54,6 +54,7 @@ function dialogoElegirArma(categoriasPermitidas, callback, parametros) {
     for (i=0; i<armas_set.length;i++) {
         var arma = armas_set[i];
         var categoria = arma.getCategoria();
+        var categoriaLoc = arma.getCategoriaLoc();
 
         var permitida = false;
         for (k = 0; k < categoriasPermitidas.length; k++) {
@@ -76,10 +77,10 @@ function dialogoElegirArma(categoriasPermitidas, callback, parametros) {
         }
 
         if (!yaListada) {
-            categorias.push(new OpcionMostrable(categoria,categoriaLimpia+"ElegirArma"));
+            categorias.push(new OpcionMostrable(categoriaLoc,categoria,categoriaLimpia+"ElegirArma"));
         }
 
-        arrayArmas.push(new OpcionMostrable(arma.nombre,categoriaLimpia+"ElegirArma"));
+        arrayArmas.push(new OpcionMostrable(_l(arma.nombre),arma.nombre,categoriaLimpia+"ElegirArma"));
 
     }
 

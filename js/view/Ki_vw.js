@@ -445,7 +445,7 @@ function addVentajaOpcionalEfectoTecnica(event) {
     var ventajasOpc = efecto.getVentajasOpcionales();
 
     for (var i = 0; i < ventajasOpc.length; i++) {
-        arrayOpciones.push(new OpcionMostrable(ventajasOpc[i].getNombre(),"",ventajasOpc[i].getDescripcion()));
+        arrayOpciones.push(new OpcionMostrable(_l(ventajasOpc[i].getNombre()),ventajasOpc[i].getNombre(),"",_l(ventajasOpc[i].getDescripcion())));
     }
 
     var parametros = {
@@ -475,7 +475,7 @@ function ventajaEfectoTecnicaElegida(parametros) {
         var niveles = ventaja.getNivelesVentaja();
 
         for (var i = 0; i < niveles.length; i++) {
-            arrayOpciones.push(new OpcionMostrable(niveles[i].getNombre(),"","CM: " + niveles[i].getCosteCM() + ", Ki: " + niveles[i].getCosteKi()));
+            arrayOpciones.push(new OpcionMostrable(_l(niveles[i].getNombre()),niveles[i].getNombre(),"",_l(UI_CM)+": " + niveles[i].getCosteCM() + ", "+_l(UI_COSTE_KI)+": " + niveles[i].getCosteKi()));
         }
 
         muestraDialogoElegirOpciones(arrayOpciones,parametros,{principal:nivelVentajaEfectoTecnicaElegida,isDisabled:noPuedePonerseNivelVentajaEfectoTecnica},true);

@@ -27,11 +27,11 @@ function muestraArtesMarciales(estadoGeneracion) {
 
         var divArteMarcial = getDiv(CSS_TEXTO_SMALL);
 
-        var divNombre = getDiv(CSS_ETIQUETA).append(_l(PRE_ARTE_MARCIAL+arteMarcial.getNombre()));
+        var divNombre = getDiv(CSS_ETIQUETA).append(_l(arteMarcial.getNombre()));
 
         divArteMarcial.append(divNombre);
 
-        addToolTip(divNombre,_l(PRE_ARTE_MARCIAL+arteMarcial.getDescripcion()));
+        addToolTip(divNombre,_l(arteMarcial.getDescripcion()));
 
         if ((muestraBotones) && (arteMarcial.isAnulable())) {
             divArteMarcial.append(muestraBotonAnular(anularArteMarcial,{arteMarcial: arteMarcial, esPrimera: primera}));
@@ -52,14 +52,14 @@ function prepararDialogoArtesMarciales() {
     var categorias = [];
     var i;
 
-    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_BASICAS),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
-    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_AVANZADAS),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
+    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_BASICAS),UI_ARTES_MARCIALES_BASICAS,CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
+    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_AVANZADAS),UI_ARTES_MARCIALES_AVANZADAS,CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
 
     for (i=0;i<artesMarcialesBasicas_set.length;i++) {
-        arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesBasicas_set[i].getNombre()),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesBasicas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesBasicas_set[i].getDescripcionVentajas())));
+        arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesBasicas_set[i].getNombre()),artesMarcialesBasicas_set[i].getNombre(),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesBasicas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesBasicas_set[i].getDescripcionVentajas())));
     }
     for (i=0;i<artesMarcialesAvanzadas_set.length;i++) {
-        arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesAvanzadas_set[i].getNombre()),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesAvanzadas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesAvanzadas_set[i].getDescripcionVentajas())));
+        arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesAvanzadas_set[i].getNombre()),artesMarcialesAvanzadas_set[i].getNombre(),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesAvanzadas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesAvanzadas_set[i].getDescripcionVentajas())));
     }
 
     /**

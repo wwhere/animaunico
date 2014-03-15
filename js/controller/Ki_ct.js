@@ -520,7 +520,13 @@ function asignarNombreTecnica(parametros) {
 function elegirNivelTecnica(event) {
     var tecnicaKi = event.data.tecnicaKi;
 
-    muestraDialogoElegirOpciones([new OpcionMostrable("1",""),new OpcionMostrable("2",""),new OpcionMostrable("3","")],{tecnicaKi:tecnicaKi},{principal:asignarNivelTecnica,isDisabled:alwaysEnabled},true);
+    muestraDialogoElegirOpciones(
+        [
+            new OpcionMostrable("1","1",""),
+            new OpcionMostrable("2","2",""),
+            new OpcionMostrable("3","3","")
+        ],
+        {tecnicaKi:tecnicaKi},{principal:asignarNivelTecnica,isDisabled:alwaysEnabled},true);
 }
 
 /**
@@ -561,7 +567,7 @@ function añadeEfectoPrimarioTecnica(event) {
     var arrayOpciones = [];
     var nivelesEfecto = efectoTecnica.getNivelesEfecto();
     for (var i = 0; i < nivelesEfecto.length; i++) {
-        arrayOpciones.push(new OpcionMostrable(nivelesEfecto[i].getNombre(),"","CM: "+nivelesEfecto[i].getCosteCM()+", coste ki: " + nivelesEfecto[i].getCostePrimario()));
+        arrayOpciones.push(new OpcionMostrable(_l(nivelesEfecto[i].getNombre()),nivelesEfecto[i].getNombre(),"",_l(UI_CM) + ": "+nivelesEfecto[i].getCosteCM()+", "+_l(UI_COSTE_KI)+": " + nivelesEfecto[i].getCostePrimario()));
     }
 
     muestraDialogoElegirOpciones(arrayOpciones,{tecnicaKi:tecnicaKi,efecto:efectoTecnica},{principal:asignaEfectoPrimarioTecnica,isDisabled:noPuedeElegirEfectoPrimario},true);
@@ -602,7 +608,7 @@ function añadeEfectoSecundarioTecnica(event) {
     var arrayOpciones = [];
     var nivelesEfecto = efectoTecnica.getNivelesEfecto();
     for (var i = 0; i < nivelesEfecto.length; i++) {
-        arrayOpciones.push(new OpcionMostrable(nivelesEfecto[i].getNombre(),"","CM: "+nivelesEfecto[i].getCosteCM()+", coste ki: " + nivelesEfecto[i].getCosteSecundario()));
+        arrayOpciones.push(new OpcionMostrable(_l(nivelesEfecto[i].getNombre()),nivelesEfecto[i].getNombre(),"",_l(UI_CM)+": "+nivelesEfecto[i].getCosteCM()+", "+_l(UI_COSTE_KI)+": " + nivelesEfecto[i].getCosteSecundario()));
     }
 
     muestraDialogoElegirOpciones(arrayOpciones,{tecnicaKi:tecnicaKi,efecto:efectoTecnica},{principal:asignaEfectoSecundarioTecnica,isDisabled:noPuedeElegirEfectoSecundario},true);
@@ -768,7 +774,7 @@ function introducirCosteCMYDescripcion(minCM, maxCM, tecnicaKi, desventajaTecnic
     var arrayOpciones = [];
 
     for (var i = minCM; i <= maxCM; i += 5) {
-        arrayOpciones.push(new OpcionMostrable(i,""));
+        arrayOpciones.push(new OpcionMostrable(i,i,""));
     }
     desventajaTecnicaElegida.setDescripcion(prompt("Especifica la condición",""));
     parametros = {
@@ -799,7 +805,7 @@ function comprarHabilidadKi() {
     var arrayOpciones = [];
 
     for (var i = 0; i < habilidadesKi_set.length; i++) {
-        arrayOpciones.push(new OpcionMostrable(habilidadesKi_set[i].getNombre(),"",habilidadesKi_set[i].getDescripcion()));
+        arrayOpciones.push(new OpcionMostrable(_l(habilidadesKi_set[i].getNombre()),habilidadesKi_set[i].getNombre(),"",_l(habilidadesKi_set[i].getDescripcion())));
     }
 
     muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: eligeHabilidadKi, isDisabled: noPuedeComprarHabilidadKi}, true);
@@ -813,11 +819,11 @@ function comprarTecnicaKi() {
     var categorias = [];
 
     for (var i = 0; i < tecnicasMuestra_set.length; i++) {
-        arrayOpciones.push(new OpcionMostrable(tecnicasMuestra_set[i].getNombre(),tecnicasMuestra_set[i].getArbolTecnicas(),tecnicasMuestra_set[i].getDescripcion()));
+        arrayOpciones.push(new OpcionMostrable(_l(tecnicasMuestra_set[i].getNombre()),tecnicasMuestra_set[i].getNombre(),tecnicasMuestra_set[i].getArbolTecnicas(),_l(tecnicasMuestra_set[i].getDescripcion())));
     }
 
     for (i = 0; i < arbolesTecnicasMuestra_set.length;i++) {
-        categorias.push(new OpcionMostrable(arbolesTecnicasMuestra_set[i],arbolesTecnicasMuestra_set[i]));
+        categorias.push(new OpcionMostrable(_l(arbolesTecnicasMuestra_set[i]),arbolesTecnicasMuestra_set[i],arbolesTecnicasMuestra_set[i]));
     }
 
     muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: eligeTecnicaKi, isDisabled: noPuedeComprarTecnicaKi}, true,categorias);

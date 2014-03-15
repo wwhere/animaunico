@@ -450,6 +450,7 @@ new L("E", "E", "S");
 new L("1ª", "1ª", "1st");
 new L("2ª", "2ª", "2nd");
 
+
 var UI_COMPRAR_TECNICA_EXISTENTE = (new L("Comprar técnica de dominio existente","Comprar técnica de dominio existente","Buy pre-existent technique")).getId();
 var UI_COMPRAR_HABILIDAD_KI = (new L("Comprar habilidad de ki", "Comprar habilidad de ki", "Buy Ki Ability")).getId();
 var UI_CREAR_TECNICA_DOMINIO = (new L("Crear técnica de dominio", "Crear técnica de dominio", "Design own ki technique")).getId();
