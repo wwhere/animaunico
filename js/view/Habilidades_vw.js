@@ -11,7 +11,7 @@ function dialogoBonosNaturales() {
         draggable: true,
         resizable: true,
         ////show: "puff",
-        title: DIAG_ELEGIR_BONOS_NATURALES_TITULO,
+        title: _l(DIAG_ELEGIR_BONOS_NATURALES_TITULO),
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
         maxHeight: ALTO_DIALOGO,
@@ -32,14 +32,14 @@ function dialogoBonosNaturales() {
 
         var etiqu =  $("<div></div>");
         etiqu.addClass(CSS_MUESTRA_INLINE);
-        etiqu.append(UI_HABILIDAD_NATURAL + " " + (i+1) + ": ");
+        etiqu.append(_l(UI_HABILIDAD_NATURAL) + " " + (i+1) + ": ");
 
         var divNombre = $("<div></div>");
         divNombre.attr("id","habilidadNaturalElegida"+i);
         divNombre.addClass(CSS_MUESTRA_INLINE);
         if (personaje_actual.getBonoHabilidadNatural(i,personaje_actual.getNivel()) != -1) {
             var nombreElegido = personaje_actual.getBonoHabilidadNatural(i,personaje_actual.getNivel()).getItem();
-            divNombre.append(nombreElegido);
+            divNombre.append(_l(nombreElegido));
         }
         etiqu.append(divNombre);
 
@@ -61,7 +61,7 @@ function dialogoBonosNaturales() {
 
         var etiquFisico =  $("<div></div>");
         etiquFisico.addClass(CSS_MUESTRA_INLINE);
-        etiquFisico.append(UI_BONIFICADOR_NATURAL_FISICO + ": ");
+        etiquFisico.append(_l(UI_BONIFICADOR_NATURAL_FISICO) + ": ");
 
         var divNombreFisico = $("<div></div>");
         divNombreFisico.addClass(CSS_MUESTRA_INLINE);
@@ -69,7 +69,7 @@ function dialogoBonosNaturales() {
 
         if (personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_FISICO,1) != "") {
             var nombreElegidoFisico = personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_FISICO,1);
-            divNombreFisico.append(nombreElegidoFisico);
+            divNombreFisico.append(_l(nombreElegidoFisico));
         }
         etiquFisico.append(divNombreFisico);
         divFisico.append(etiquFisico);
@@ -86,7 +86,7 @@ function dialogoBonosNaturales() {
 
         var etiquMental =  $("<div></div>");
         etiquMental.addClass(CSS_MUESTRA_INLINE);
-        etiquMental.append(UI_BONIFICADOR_NATURAL_MENTAL + ": ");
+        etiquMental.append(_l(UI_BONIFICADOR_NATURAL_MENTAL) + ": ");
 
         var divNombreMental = $("<div></div>");
         divNombreMental.addClass(CSS_MUESTRA_INLINE);
@@ -94,7 +94,7 @@ function dialogoBonosNaturales() {
 
         if (personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_MENTAL,1) != "") {
             var nombreElegidoMental = personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_MENTAL,1);
-            divNombreMental.append(nombreElegidoMental);
+            divNombreMental.append(_l(nombreElegidoMental));
         }
         etiquMental.append(divNombreMental);
 
@@ -113,7 +113,7 @@ function dialogoBonosNaturales() {
 
             var etiquExtra =  $("<div></div>");
             etiquExtra.addClass(CSS_MUESTRA_INLINE);
-            etiquExtra.append(UI_BONIFICADOR_NATURAL_EXTRA + ": ");
+            etiquExtra.append(_l(UI_BONIFICADOR_NATURAL_EXTRA) + ": ");
 
             var divNombreExtra = $("<div></div>");
             divNombreExtra.addClass(CSS_MUESTRA_INLINE);
@@ -121,7 +121,7 @@ function dialogoBonosNaturales() {
 
             if (personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_EXTRA,1) != "") {
                 var nombreElegidoExtra = personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_EXTRA,1);
-                divNombreExtra.append(nombreElegidoExtra);
+                divNombreExtra.append(_l(nombreElegidoExtra));
             }
             etiquExtra.append(divNombreExtra);
 
@@ -143,14 +143,14 @@ function dialogoBonosNaturales() {
 
             var etiquNovel =  $("<div></div>");
             etiquNovel.addClass(CSS_MUESTRA_INLINE);
-            etiquNovel.append(UI_BONO_NOVEL + " " + (i+1) + ": ");
+            etiquNovel.append(_l(UI_BONO_NOVEL) + " " + (i+1) + ": ");
 
             var divNombreNovel = $("<div></div>");
             divNombreNovel.attr("id","habilidadNaturalElegidaNovel"+i);
             divNombreNovel.addClass(CSS_MUESTRA_INLINE);
             if (personaje_actual.getBonoNovel(i,personaje_actual.getNivel()) != "") {
                 var nombreElegidoNovel = personaje_actual.getBonoNovel(i,personaje_actual.getNivel());
-                divNombreNovel.append(nombreElegidoNovel);
+                divNombreNovel.append(_l(nombreElegidoNovel));
             }
             etiquNovel.append(divNombreNovel);
 
