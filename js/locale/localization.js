@@ -457,6 +457,7 @@ var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva 
 var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro suelto","Cherry pick spell")).getId();
 var UI_TOTAL = (new L("Total","Total", "Total")).getId();
 var UI_LIBRES = (new L("Libres", "Libres", "Free")).getId();
+var UI_LIBRE = (new L("Libre", "Libre", "Free")).getId();
 
 var DIAG_ELEGIR_CATEGORIA_TITULO = (new L("Seleccionar categoría","Seleccionar categoría","Choose class")).getId();
 
@@ -470,3 +471,5 @@ var UI_NECESITAS_40_ATAQUE_DEFENSA = (new L("Necesitas 40 de ataque y defensa po
 
 
 var UI_ESPECIFICA = (new L("Especifica","Especifica","Specify")).getId();
+
+var UI_SINCRONIZACION = (new L("Sincronizacion", "Sincronización", "Synchronization")).getId();

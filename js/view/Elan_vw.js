@@ -8,7 +8,7 @@ function dialogoElan() {
     var elanPersonaje = personaje_actual.getElan();
     for (var i = 0; i < elanPersonaje.length; i++) {
         var titulo = $("<h3></h3>");
-        titulo.append(elanPersonaje[i].getNombre() + " - Sincronización: " + elanPersonaje[i].getSincronizacion() + " / Libre: " + elanPersonaje[i].sincLibre());
+        titulo.append(_l(elanPersonaje[i].getNombre()) + " - " + _l(UI_SINCRONIZACION) + ": " + elanPersonaje[i].getSincronizacion() + " / " + _l(UI_LIBRE) + ": " + elanPersonaje[i].sincLibre());
         var contenido = $("<div></div>");
         contenido.attr("id","donesElan" + elanPersonaje[i].getNombre());
         appendDonesElan(contenido,elanPersonaje[i].getNombre(),dialogo);
@@ -25,7 +25,7 @@ function dialogoElan() {
         draggable: true,
         resizable: true,
         ////show: "puff",
-        title: DIAG_ELEGIR_OPCIONES_TITULO,
+        title: _l(DIAG_ELEGIR_OPCIONES_TITULO),
         position: "center",
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
