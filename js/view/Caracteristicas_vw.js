@@ -43,7 +43,7 @@ function mostrarDialogoTipoGeneracion() {
         });
 
         divBoton.on("mouseenter", {metodo:i}, function(event) {
-            $("."+DIV_DESTINO_EXPLICACION_GENERACION).empty().append(getExplicacionMetodo(event.data.metodo));
+            $("."+DIV_DESTINO_EXPLICACION_GENERACION).empty().append(_l(getExplicacionMetodo(event.data.metodo)));
         });
         divBoton.on("mouseleave", function() {
             $("."+DIV_DESTINO_EXPLICACION_GENERACION).empty();
@@ -75,11 +75,11 @@ function mostrarDialogoRepartoTiradasCaracteristicas(valores,valoresAbandonados)
 
         divZonaCaracteristicas.append(
             getDiv("row").append(
-                    getDiv("four columns").append(UI_CARACTERISTICA)
+                    getDiv("four columns").append(_l(UI_CARACTERISTICA))
                 ).append(
-                    getDiv("four columns").append(UI_VALOR).addClass(CSS_TEXTO_CENTRO)
+                    getDiv("four columns").append(_l(UI_VALOR)).addClass(CSS_TEXTO_CENTRO)
                 ).append(
-                    getDiv("four columns").append(UI_BONO).addClass(CSS_TEXTO_CENTRO)
+                    getDiv("four columns").append(_l(UI_BONO)).addClass(CSS_TEXTO_CENTRO)
                 )
         );
 
@@ -117,7 +117,7 @@ function mostrarDialogoRepartoTiradasCaracteristicas(valores,valoresAbandonados)
             var divValor = getDiv(CSS_VALOR_CARACTERISTICAS);
             var divBono = getDiv(CSS_BONO_CARACTERISTICAS);
 
-            divEtiqueta.append(CARACTERISTICAS_NOMBRES[i]);
+            divEtiqueta.append(_l(CARACTERISTICAS_NOMBRES[i]));
 
             if (caracteristicasAsignadas[i]) {
                 divValor.append(nuevoValorDraggable(personaje_actual.getCaracteristica(CARACTERISTICAS_NOMBRES[i]),CARACTERISTICAS_NOMBRES[i]));
@@ -190,7 +190,7 @@ function mostrarDialogoRepartoTiradasCaracteristicas(valores,valoresAbandonados)
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: UI_REPARTO_CARACTERISTICAS,
+        title: _l(UI_REPARTO_CARACTERISTICAS),
         width: 500,
         height: 600,
         dialogClass: "no-close",
@@ -261,11 +261,11 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
 
         divZonaCaracteristicas.append(
             getDiv("row").append(
-                    getDiv("four columns").append(UI_CARACTERISTICA)
+                    getDiv("four columns").append(_l(UI_CARACTERISTICA))
                 ).append(
-                    getDiv("four columns").append(UI_VALOR).addClass(CSS_TEXTO_CENTRO)
+                    getDiv("four columns").append(_l(UI_VALOR)).addClass(CSS_TEXTO_CENTRO)
                 ).append(
-                    getDiv("four columns").append(UI_BONO).addClass(CSS_TEXTO_CENTRO)
+                    getDiv("four columns").append(_l(UI_BONO)).addClass(CSS_TEXTO_CENTRO)
                 )
         );
 
@@ -275,7 +275,7 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
             var divEtiqueta = getDiv(CSS_ETIQUETA_CARACTERISTICAS);
             var divValor = getDiv(CSS_VALOR_CARACTERISTICAS);
             var divBono = getDiv(CSS_BONO_CARACTERISTICAS);
-            divEtiqueta.append(CARACTERISTICAS_NOMBRES[i]);
+            divEtiqueta.append(_l(CARACTERISTICAS_NOMBRES[i]));
 
             var divContenidoValor = $("<input>");
             divContenidoValor.prop("type","number");
@@ -352,8 +352,8 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
 
         var divTotal = getDiv("");
         var divLibre = getDiv("");
-        divTotal.append("Total: " + puntosTotales);
-        divLibre.append("Libres: " + puntosLibres);
+        divTotal.append(_l(UI_TOTAL) + ": " + puntosTotales);
+        divLibre.append(_l(UI_LIBRES) + ": " + puntosLibres);
 
         divValorTotal.append(divTotal).append(divLibre);
 
@@ -366,7 +366,7 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: UI_REPARTO_CARACTERISTICAS,
+        title: _l(UI_REPARTO_CARACTERISTICAS),
         width: 500,
         height: 600,
         dialogClass: "no-close",
@@ -403,7 +403,7 @@ function muestraDialogoElegirCaracteristica(callback,parametros,divExplicativo) 
     var botones = [];
     for (var i = 0; i < CARACTERISTICAS_NOMBRES.length;i++) {
         botones.push({
-            text: CARACTERISTICAS_NOMBRES[i],
+            text: _l(ARACTERISTICAS_NOMBRES[i]),
             click: function(event) {
                 $( this ).dialog("close" );
                 callback(event.target.innerHTML,parametros)
@@ -422,7 +422,7 @@ function muestraDialogoElegirCaracteristica(callback,parametros,divExplicativo) 
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: DIAG_ELEGIR_OPCIONES_TITULO,
+        title: _l(DIAG_ELEGIR_OPCIONES_TITULO),
         dialogClass: "no-close",
         closeOnEscape: false,
         buttons: botones,

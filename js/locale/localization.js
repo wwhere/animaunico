@@ -455,3 +455,5 @@ var UI_COMPRAR_HABILIDAD_KI = (new L("Comprar habilidad de ki", "Comprar habilid
 var UI_CREAR_TECNICA_DOMINIO = (new L("Crear técnica de dominio", "Crear técnica de dominio", "Design own ki technique")).getId();
 var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva vía de magia","Access to new spell list")).getId();
 var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro suelto","Cherry pick spell")).getId();
+var UI_TOTAL = (new L("Total","Total", "Total")).getId();
+var UI_LIBRES = (new L("Libres", "Libres", "Free")).getId();
