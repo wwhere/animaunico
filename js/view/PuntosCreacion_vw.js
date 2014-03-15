@@ -6,6 +6,11 @@ function dialogoDesventajas() {
     dialogoPuntosCreacion(DIAG_ELEGIR_DESVENTAJAS_TITULO, false);
 }
 
+/**
+ *
+ * @param {string} tituloDialogo No localizado
+ * @param {boolean} esVentajas
+ */
 function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
     var dialogPuntosCreacion = $("#dialogPuntosCreacion");
     dialogPuntosCreacion.empty();
@@ -16,10 +21,10 @@ function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
         var categ = categoriasDeVentajasComprables[j];
         var divCateg = $("<div></div>");
         if (esVentajas) {
-            divAcord.append("<h3>"+categ+"</h3>");
+            divAcord.append("<h3>"+_l(categ)+"</h3>");
             divCateg.attr("id",categ.replace(/\s+/g, ''));
         } else {
-            divAcord.append("<h3>"+categ.replace("Ventaja","Desventaja")+"</h3>");
+            divAcord.append("<h3>"+_l(categ.replace("Ventaja","Desventaja"))+"</h3>");
             divCateg.attr("id",categ.replace(/\s+/g, '')+"Desv");
         }
         divCateg.addClass("contenedorBotonesVentajas");
@@ -75,16 +80,17 @@ function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
                 },
                 aplicarElementoPC);
             divElemento.on("mouseenter", function() {
+                var elementoAct;
                 if (esVentajas) {
-                    var elementoAct = getVentaja($(this).attr("ventaja"));
+                    elementoAct = getVentaja($(this).attr("ventaja"));
                 } else {
-                    var elementoAct = getVentaja($(this).attr("desventaja"));
+                    elementoAct = getVentaja($(this).attr("desventaja"));
                 }
 
                 var divGeneral = $("<div></div>");
                 divGeneral.addClass(CSS_TEXTO_SMALLER);
 
-                var descripcion = elementoAct.descripcion + " - " + elementoAct.descripcionEfecto;
+                var descripcion = _l(elementoAct.descripcion) + " - " + _l(elementoAct.descripcionEfecto);
                 var divDescripcion = $("<div></div>");
                 divDescripcion.addClass(CSS_TEXTO_ITALIC);
                 divDescripcion.addClass("muestraBlock");
@@ -115,7 +121,7 @@ function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
         draggable: true,
         resizable: true,
         //show: "puff",
-        title: tituloDialogo,
+        title: _l(tituloDialogo),
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
         maxHeight: ALTO_DIALOGO,
