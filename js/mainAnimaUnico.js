@@ -103,11 +103,15 @@ Arquetipo.prototype = {
         return this.esMixto;
     },
 
+    /**
+     *
+     * @returns {string} Ya localizada
+     */
     toString : function() {
-        if (!mixto) {
-            return this.arquetipo1;
+        if (!this.esMixto) {
+            return _l(this.arquetipo1);
         } else {
-            return this.arquetipo1 + "/" + this.arquetipo2;
+            return _l(this.arquetipo1) + "/" + _l(this.arquetipo2);
         }
     },
 

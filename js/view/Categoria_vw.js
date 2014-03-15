@@ -1,6 +1,5 @@
 var DIV_DIALOG_ELEGIR_CATEGORIA = "#dialogElegirCategoria";
 var DESTINO_EXPLICACION_CATEGORIA = "explicacionCategoria";
-var DIAG_ELEGIR_CATEGORIA_TITULO = "Seleccionar categoría";
 
 /**
  *
@@ -17,7 +16,7 @@ function dialogoElegirCategoria() {
         resizable: true,
         closeOnEscape: true,
         ////show: "puff",
-        title: DIAG_ELEGIR_CATEGORIA_TITULO,
+        title: _l(DIAG_ELEGIR_CATEGORIA_TITULO),
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
         maxHeight: ALTO_DIALOGO
@@ -60,13 +59,13 @@ function mostrarCostesReducidosCategoria(elementoBase, categoria) {
     var divCostesReducidos = $("<div></div>");
     divCostesReducidos.addClass(CSS_MUESTRA_BLOCK);
     divCostesReducidos.addClass(CSS_TEXTO_FUERTE);
-    divCostesReducidos.append(UI_COSTES_REDUCIDOS);
+    divCostesReducidos.append(_l(UI_COSTES_REDUCIDOS));
     elementoBase.append(divCostesReducidos);
     var costesReducidos = categoria.getCostesReducidos();
     if (costesReducidos.length == 0) {
         var divCostesReducidosNinguno = $("<div></div>");
         divCostesReducidosNinguno.addClass(CSS_MUESTRA_BLOCK);
-        divCostesReducidosNinguno.append(UI_NINGUNO);
+        divCostesReducidosNinguno.append(_l(UI_NINGUNO));
         elementoBase.append(divCostesReducidosNinguno);
     } else {
         for (var i = 0; i < costesReducidos.length; i++) {
@@ -77,7 +76,7 @@ function mostrarCostesReducidosCategoria(elementoBase, categoria) {
             var divCosteRedEti = $("<div></div>");
             divCosteRedEti.addClass(CSS_MUESTRA_INLINE);
             divCosteRedEti.addClass(CSS_TEXTO_FUERTE);
-            divCosteRedEti.append(_costeReducido.getNombre() + ": ");
+            divCosteRedEti.append(_l(_costeReducido.getNombre()) + ": ");
             var divCosteRedTex = $("<div></div>");
             divCosteRedTex.addClass(CSS_MUESTRA_INLINE);
             divCosteRedTex.append(_costeReducido.getCoste());
@@ -96,13 +95,13 @@ function mostrarBonosInnatosCategoria(elemento, categoria) {
     var divBonosInnatos = $("<div></div>");
     divBonosInnatos.addClass(CSS_MUESTRA_BLOCK);
     divBonosInnatos.addClass(CSS_TEXTO_FUERTE);
-    divBonosInnatos.append(UI_BONOS_INNATOS);
+    divBonosInnatos.append(_l(UI_BONOS_INNATOS));
     elemento.append(divBonosInnatos);
     var bonosInnatos = categoria.getBonosInnatos();
     if (bonosInnatos.length == 0) {
         var divBonosInnatosNinguno = $("<div></div>");
         divBonosInnatosNinguno.addClass(CSS_MUESTRA_BLOCK);
-        divBonosInnatosNinguno.append(UI_NINGUNO);
+        divBonosInnatosNinguno.append(_l(UI_NINGUNO));
         elemento.append(divBonosInnatosNinguno);
     } else {
         for (var i = 0; i < bonosInnatos.length; i++) {
@@ -113,10 +112,10 @@ function mostrarBonosInnatosCategoria(elemento, categoria) {
             var divBonoInnEti = $("<div></div>");
             divBonoInnEti.addClass(CSS_MUESTRA_INLINE);
             divBonoInnEti.addClass(CSS_TEXTO_FUERTE);
-            divBonoInnEti.append(_bonoInnato.item + ": ");
+            divBonoInnEti.append(_l(_bonoInnato.item) + ": ");
             var divBonoInnTex = $("<div></div>");
             divBonoInnTex.addClass(CSS_MUESTRA_INLINE);
-            divBonoInnTex.append("+" + _bonoInnato.bono + " " + UI_POR_NIVEL);
+            divBonoInnTex.append("+" + _bonoInnato.bono + " " + _l(UI_POR_NIVEL));
             divBonoInn.append(divBonoInnEti).append(divBonoInnTex);
             elemento.append(divBonoInn);
 
@@ -134,7 +133,7 @@ function mostrarDescripcionCategoria(elemento, categoria) {
     var divDescripcion = $("<div></div>");
     divDescripcion.addClass(CSS_TEXTO_ITALIC);
     divDescripcion.addClass(CSS_MUESTRA_BLOCK);
-    divDescripcion.append(descripcion);
+    divDescripcion.append(_l(descripcion));
     elemento.append(divDescripcion);
 }
 
@@ -150,7 +149,7 @@ function mostrarArquetipoCategoria(elemento, categoria) {
     var divArqEti = $("<div></div>");
     divArqEti.addClass(CSS_MUESTRA_INLINE);
     divArqEti.addClass(CSS_TEXTO_FUERTE);
-    divArqEti.append(UI_ARQUETIPO + ": ");
+    divArqEti.append(_l(UI_ARQUETIPO) + ": ");
     var divArqTex = $("<div></div>");
     divArqTex.addClass(CSS_MUESTRA_INLINE);
     divArqTex.append(arquetipo);
@@ -174,7 +173,7 @@ function mostrarCostesCategoria(elementoUno, elementoDos, categoria) {
         var divCosteEti = $("<div></div>");
         divCosteEti.addClass(CSS_MUESTRA_INLINE);
         divCosteEti.addClass(CSS_TEXTO_FUERTE);
-        divCosteEti.append(_coste.getNombre() + ": ");
+        divCosteEti.append(_l(_coste.getNombre()) + ": ");
         var divCosteTex = $("<div></div>");
         divCosteTex.addClass(CSS_MUESTRA_INLINE);
         divCosteTex.append(_coste.getCoste());

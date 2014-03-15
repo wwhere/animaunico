@@ -457,3 +457,5 @@ var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva 
 var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro suelto","Cherry pick spell")).getId();
 var UI_TOTAL = (new L("Total","Total", "Total")).getId();
 var UI_LIBRES = (new L("Libres", "Libres", "Free")).getId();
+
+var DIAG_ELEGIR_CATEGORIA_TITULO = (new L("Seleccionar categoría","Seleccionar categoría","Choose class")).getId();
