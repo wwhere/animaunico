@@ -1,15 +1,10 @@
 var DIV_DESTINO_CONTROLES = "#divControles";
-var BTN_TIPO = "Tipo";
 var DIV_DESTINO_EXPLICACION_GENERACION = "explicacionMetodo";
-
 var DIV_DIALOGO_REPARTO_CARACTERISTICAS = "dialogRepartoCaracteristicas";
-
-var UI_REPARTO_CARACTERISTICAS = "Asigna los valores";
 var DIV_DESTINO_EXPLICACION_RAZA = ".explicacionRaza";
 var DIV_DESTINO_EXPLICACION_ARMA = ".explicacionArma";
 var DIV_DESTINO_EXPLICACION_VENTAJA = ".explicacionVentaja";
 var DIV_DESTINO_EXPLICACION_DESVENTAJA = ".explicacionDesventaja";
-
 var BOTON_CREACION = "BOTON_CREACION";
 var BOTON_RAZA = "BOTON_RAZA";
 var BOTON_CATEGORIA = "BOTON_CATEGORIA";
@@ -24,10 +19,8 @@ var BOTON_MAGIA = "BOTON_MAGIA";
 var BOTON_ELAN = "BOTON_ELAN";
 var BOTON_FINALIZAR_CREACION = "BOTON_FINALIZAR_CREACION";
 var BOTON_SUBIR_NIVEL = "BOTON_SUBIR_NIVEL";
-
 var BOTON_GUARDAR = "BOTON_GUARDAR";
 var BOTON_CARGAR = "BOTON_CARGAR";
-
 var BOTON_LOG = "BOTON_LOG";
 var BOTON_LICENCIA = "BOTON_LICENCIA";
 var BOTON_SOPORTE = "BOTON_SOPORTE";
@@ -124,7 +117,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
     var botonArtesMarciales = $("#"+BOTON_ARTES_MARCIALES);
     if (personaje_actual.numArtesMarciales() >= personaje_actual.maxArtesMarciales()) {
         botonActivado(botonArtesMarciales,false);
-        addToolTip(botonArtesMarciales,"Necesitas 40 de ataque y defensa por cada arte marcial.");
+        addToolTip(botonArtesMarciales,_l(UI_NECESITAS_40_ATAQUE_DEFENSA));
     } else {
         botonActivado(botonArtesMarciales,true);
     }
@@ -145,21 +138,20 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
     var menuPersonaje = $("#menuPersonaje").empty();
     var liNuevo, liSubir, liGuardar, liCargar;
 
-    //TODO añadir class localizable y localizar
-    liNuevo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CREACION).append("Crear nuevo"));
+    liNuevo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CREACION).append(_l(UI_BOTON_CREACION)));
     if (activar==2) {
-        liSubir = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_SUBIR_NIVEL).append("Subir de nivel"));
+        liSubir = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_SUBIR_NIVEL).append(_l(UI_BOTON_SUBIR_NIEVL)));
     } else {
-        liSubir = $("<li></li>").addClass("desactivado").append("Subir de nivel");
+        liSubir = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_SUBIR_NIEVL));
     }
     if (activar!=0) {
-        liGuardar = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_GUARDAR).append("Guardar"));
+        liGuardar = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_GUARDAR).append(_l(UI_BOTON_GUARDAR)));
     } else {
-        liGuardar = $("<li></li>").addClass("desactivado").append("Guardar");
+        liGuardar = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GUARDAR));
     }
-    liCargar = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CARGAR).append("Cargar"));
+    liCargar = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CARGAR).append(_l(UI_BOTON_CARGAR)));
 
-    menuPersonaje.append(liNuevo).append(liSubir).append(liGuardar).append(liCargar);
+    menuPersonaje.append(liNuevo).append(liSubir).append(liGuardar).append(_l(UI_BOTON_CARGAR));
 
     //menu Creacion
     var menuCreacion = $("#menuCreacion").empty();
@@ -169,49 +161,49 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
     var liTablaArmas;
     var liCM;
     if (((activar==1)||(activar==3))) {
-        liBonosNaturales = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_BONOS_NATURALES).append("Elegir bonos naturales"));
-        liArmaInicial = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ARMA_INICIAL).append("Elegir arma inicial"));
-        liTablaArmas = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_TABLAS_ARMAS).append("Comprar tablas de armas"));
-        liCM = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CM).append("Gastar CM (Ki)"));
+        liBonosNaturales = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_BONOS_NATURALES).append(_l(UI_BOTON_NATURALES)));
+        liArmaInicial = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ARMA_INICIAL).append(_l(UI_BOTON_ARMA_INICIAL)));
+        liTablaArmas = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_TABLAS_ARMAS).append(_l(UI_BOTON_TABLAS_ARMAS)));
+        liCM = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CM).append(_l(UI_BOTON_GASTAR_CM)));
     } else {
-        liBonosNaturales = $("<li></li>").addClass("desactivado").append("Elegir bonos naturales");
-        liArmaInicial = $("<li></li>").addClass("desactivado").append("Elegir arma inicial");
-        liTablaArmas = $("<li></li>").addClass("desactivado").append("Comprar tablas de armas");
-        liCM = $("<li></li>").addClass("desactivado").append("Gastar CM (Ki)");
+        liBonosNaturales = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_NATURALES));
+        liArmaInicial = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_ARMA_INICIAL));
+        liTablaArmas = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_TABLAS_ARMAS));
+        liCM = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_CM));
     }
 
     var liArtesMarciales;
 
     if (personaje_actual.numArtesMarciales() >= personaje_actual.maxArtesMarciales()) {
-        liArtesMarciales = $("<li></li>").addClass("desactivado").append("Comprar artes marciales");
+        liArtesMarciales = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_ARTES_MARCIALES));
     } else {
-        liArtesMarciales = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ARTES_MARCIALES).append("Comprar artes marciales"));
+        liArtesMarciales = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ARTES_MARCIALES).append(_l(UI_BOTON_ARTES_MARCIALES)));
     }
 
     var liMagia, liCV, liElan, liFinCreacion;
 
     if (!((activar==0) || (personaje_actual.nivelMagiaMaximo() == 0))) {
-        liMagia = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_MAGIA).append("Gastar niveles de vía (Magia)"));
+        liMagia = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_MAGIA).append(_l(UI_BOTON_GASTAR_NIVELES_VIA)));
     } else {
-        liMagia = $("<li></li>").addClass("desactivado").append("Gastar niveles de vía (Magia)");
+        liMagia = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_NIVELES_VIA));
     }
 
     if (!((activar==0) || (personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() == 0)) ) {
-        liCV = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CV).append("Gastar CV (Psíquica)"));
+        liCV = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CV).append(_l(UI_BOTON_GASTAR_CV)));
     } else {
-        liCV = $("<li></li>").addClass("desactivado").append("Gastar CV (Psíquica)");
+        liCV = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_CV));
     }
 
     if (!((activar==0) || (personaje_actual.getElan().length == 0)) ) {
-        liElan = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ELAN).append("Gastar sincronización (Elan)"));
+        liElan = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ELAN).append(_l(UI_BOTON_GASTAR_ELAN)));
     } else {
-        liElan = $("<li></li>").addClass("desactivado").append("Gastar sincronización (Elan)");
+        liElan = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_ELAN));
     }
 
     if (!(((activar==0)||(activar==2)) || (!personajeCompleto()))) {
-        liFinCreacion = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_FINALIZAR_CREACION).append("Finalizar creación/subida"));
+        liFinCreacion = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_FINALIZAR_CREACION).append(_l(UI_BOTON_FINALIZAR_CREACION)));
     } else {
-        liFinCreacion = $("<li></li>").addClass("desactivado").append("Finalizar creación/subida");
+        liFinCreacion = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_FINALIZAR_CREACION));
     }
 
     menuCreacion.append(liBonosNaturales).append(liArmaInicial).append(liTablaArmas).append(liArtesMarciales).append(liCM).append(liMagia).append(liCV).append(liElan).append("<hr>").append(liFinCreacion);
@@ -236,22 +228,22 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
     switch (opciones) {
         case  LISTA_CARACTERISTICAS :
             for (i = 0; i < CARACTERISTICAS_NOMBRES.length; i++) {
-                arrayOpciones.push(new OpcionMostrable(CARACTERISTICAS_NOMBRES[i],""));
+                arrayOpciones.push(new OpcionMostrable(_l(CARACTERISTICAS_NOMBRES[i]),""));
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_TIPOS_SECUNDARIAS :
             for (i = 0; i < habilidades_secundarias_nombres_grupos.length; i++) {
-                arrayOpciones.push(new OpcionMostrable(habilidades_secundarias_nombres_grupos[i],""));
+                arrayOpciones.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),""));
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_HABILIDADES_SECUNDARIAS :
             for (i = 0; i < habilidades_secundarias.length;i++) {
                 var grupoHabi = habilidades_secundarias[i];
-                categorias.push(new OpcionMostrable(habilidades_secundarias_nombres_grupos[i],habilidades_secundarias_nombres_grupos[i]));
+                categorias.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),habilidades_secundarias_nombres_grupos[i]));
                 for (j = 0; j < grupoHabi.length; j++) {
-                    arrayOpciones.push(new OpcionMostrable(grupoHabi[j],habilidades_secundarias_nombres_grupos[i]));
+                    arrayOpciones.push(new OpcionMostrable(_l(grupoHabi[j]),habilidades_secundarias_nombres_grupos[i]));
                 }
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true, categorias);
@@ -260,7 +252,7 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
             for (i = 0; i < disciplinasPsiquicas_set.length;i++) {
                 var disciplina = disciplinasPsiquicas_set[i];
                 if (!disciplina.isLibre()) {
-                    arrayOpciones.push(new OpcionMostrable(disciplina.getNombre(),"",disciplina.getDescripcion()));
+                    arrayOpciones.push(new OpcionMostrable(_l(disciplina.getNombre()),"",_l(disciplina.getDescripcion())));
                 }
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
@@ -274,9 +266,9 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_HABILIDAD_COMBATE :
-            arrayOpciones.push(new OpcionMostrable(HB_ATAQUE,""));
-            arrayOpciones.push(new OpcionMostrable(HB_PARADA,""));
-            arrayOpciones.push(new OpcionMostrable(HB_ESQUIVA,""));
+            arrayOpciones.push(new OpcionMostrable(_l(HB_ATAQUE),""));
+            arrayOpciones.push(new OpcionMostrable(_l(HB_PARADA),""));
+            arrayOpciones.push(new OpcionMostrable(_l(HB_ESQUIVA),""));
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_PODER_PSIQUICO :
@@ -297,12 +289,12 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
 
             for (i = 0; i < disciplinasPsiquicas_set.length; i++) {
                 var disciplinaAct = disciplinasPsiquicas_set[i];
-                categorias.push(new OpcionMostrable(disciplinaAct.getNombre(),disciplinaAct.getNombre()));
+                categorias.push(new OpcionMostrable(_l(disciplinaAct.getNombre()),disciplinaAct.getNombre()));
                 var poderesPsiquicos = disciplinaAct.getPoderesPsiquicos();
                 for (j = 0; j < poderesPsiquicos.length; j++) {
                     var poder = poderesPsiquicos[j];
                     if (indiceDificultad(poder.dificultadMinima()) <= indiceDificultad(dificultadMaxima)) {
-                        arrayOpciones.push(new OpcionMostrable(poder.getNombre(),disciplinaAct.getNombre(),poder.getDescripcion()));
+                        arrayOpciones.push(new OpcionMostrable(_l(poder.getNombre()),disciplinaAct.getNombre(),_l(poder.getDescripcion())));
                     }
                 }
             }
@@ -310,32 +302,32 @@ function muestraDialogoElegirOpcion(opciones, parametros, callback) {
             break;
         case  LISTA_SHAJADS_BERYLS :
             for (i = 0; i < berylShajad_set.length;i++) {
-                arrayOpciones.push(new OpcionMostrable(berylShajad_set[i].getNombre(), berylShajad_set[i].getTipo()));
+                arrayOpciones.push(new OpcionMostrable(_l(berylShajad_set[i].getNombre()), berylShajad_set[i].getTipo()));
             }
-            categorias.push(new OpcionMostrable(BERYL, BERYL));
-            categorias.push(new OpcionMostrable(SHAJAD, SHAJAD));
+            categorias.push(new OpcionMostrable(_l(UI_BERYL), BERYL));
+            categorias.push(new OpcionMostrable(_l(UI_SHAJAD), SHAJAD));
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true, categorias);
             break;
         case  LISTA_VIAS_MAGIA :
             for (i = 0; i < VIAS_MAGICAS.length;i++) {
-                arrayOpciones.push(new OpcionMostrable(VIAS_MAGICAS[i],""));
+                arrayOpciones.push(new OpcionMostrable(_l(VIAS_MAGICAS[i]),""));
             }
             muestraDialogoElegirOpciones(arrayOpciones, parametros, {principal: callback.principal, isDisabled: callback.isDisabled}, true);
             break;
         case  LISTA_DESEQUILIBRIO_SEPHIROTICO :
             var gruposOpciones = [
-                new GrupoOpciones("Fuego/Agua",[VIA_AGUA,VIA_FUEGO],1),
-                new GrupoOpciones("Aire/Tierra",[VIA_AIRE,VIA_TIERRA],1),
-                new GrupoOpciones("Luz/Oscuridad",[VIA_LUZ,VIA_OSCURIDAD],1),
-                new GrupoOpciones("Esencia/Ilusión",[VIA_ESENCIA,VIA_ILUSION],1),
-                new GrupoOpciones("Creación/Destrucción",[VIA_CREACION,VIA_DESTRUCCION],1)
+                new GrupoOpciones(_l(VIA_FUEGO)+"/"+_l(VIA_AGUA),[VIA_AGUA,VIA_FUEGO],1),
+                new GrupoOpciones(_l(VIA_AIRE)+"/"+_l(VIA_TIERRA),[VIA_AIRE,VIA_TIERRA],1),
+                new GrupoOpciones(_l(VIA_LUZ)+"/"+_l(VIA_OSCURIDAD),[VIA_LUZ,VIA_OSCURIDAD],1),
+                new GrupoOpciones(_l(VIA_ESENCIA)+"/"+_l(VIA_ILUSION),[VIA_ESENCIA,VIA_ILUSION],1),
+                new GrupoOpciones(_l(VIA_CREACION)+"/"+_l(VIA_DESTRUCCION),[VIA_CREACION,VIA_DESTRUCCION],1)
             ];
             parametros.isDesequilibrioSephirotico = true;
             dialogoSeleccionMultiple(gruposOpciones,parametros,callback.principal);
             break;
         case  LISTA_INTRODUCCION_USUARIO :
         case  LISTA_DESCRIPCION :
-            parametros.opcion = prompt("Especifica","");
+            parametros.opcion = prompt(_l(UI_ESPECIFICA),"");
             callback.principal(parametros);
             break;
     }
@@ -468,7 +460,7 @@ function dialogoSeleccionMultiple(gruposOpciones, parametros, callback) {
         draggable: true,
         resizable: true,
         ////show: "puff",
-        title: DIAG_ELEGIR_OPCIONES_TITULO,
+        title: _l(DIAG_ELEGIR_OPCIONES_TITULO),
         position: "center",
         closeOnEscape: true,
         width: ANCHO_DIALOGO,
@@ -493,7 +485,7 @@ function dialogoSeleccionMultiple(gruposOpciones, parametros, callback) {
         var divBotones = $("<div></div>").attr("id","botones"+i);
         for (var j = 0; j < grOp.opciones.length;j++) {
             var inputCheck = $("<input>").attr("type","checkbox").attr("id","checkBotones"+i+"_"+j).addClass("checkBotones"+i);
-            var labelCheck = $("<label></label>").attr("for","checkBotones"+i+"_"+j).append(grOp.opciones[j]);
+            var labelCheck = $("<label></label>").attr("for","checkBotones"+i+"_"+j).append(_l(grOp.opciones[j]));
             divBotones.append(inputCheck).append(labelCheck);
 
             inputCheck.on("click", {grupoOpciones:gruposOpciones[i], claseChecks:".checkBotones"+i, item:grOp.opciones[j]}, function(event) {
@@ -531,12 +523,20 @@ function dialogoSeleccionMultiple(gruposOpciones, parametros, callback) {
 
 /**
  *
- * @param {string} etiqueta
- * @param {string[]} opciones
+ * @param {string} etiqueta ya localizada
+ * @param {string[]} opciones NO localizadas
  * @param {number} numAElegir
  */
 function GrupoOpciones(etiqueta, opciones, numAElegir) {
+    /**
+     *
+     * @type {string} Ya localizado
+     */
     this.etiqueta = etiqueta;
+    /**
+     *
+     * @type {string[]} No localizadas
+     */
     this.opciones = opciones;
     this.numAElegir = numAElegir;
     this.checked = 0;
@@ -580,7 +580,6 @@ function boton(clase, labelId, disabled) {
 function eventoDesactivado(event) {
     event.preventDefault();
     event.stopImmediatePropagation();
-    console.log("prevented");
 }
 
 function disableButton(bot) {

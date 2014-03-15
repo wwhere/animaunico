@@ -31,7 +31,7 @@ function mostrarDialogoTipoGeneracion() {
 
     for (var i = 1; i <= numeroMetodos; i++) {
         var divTipo = getDiv("two columns");
-        var divBoton = boton("big primary btn pretty",_l(BTN_TIPO) + " " + i);
+        var divBoton = boton("big primary btn pretty",_l(UI_BTN_TIPO) + " " + i);
         divBoton.css("width","100%");
 
         divTipo.append(divBoton);

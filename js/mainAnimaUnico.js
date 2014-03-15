@@ -292,7 +292,7 @@ var TA_ENEMIGA_MENOS_2 = "TA_ENEMIGA_MENOS_2";
 
 /**
  *
- * @param {string} elemento Ya localizado
+ * @param {jQuery} elemento
  * @param {string} contenido Ya localizado
  */
 function addToolTip(elemento,contenido) {

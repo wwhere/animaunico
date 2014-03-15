@@ -462,3 +462,11 @@ var DIAG_ELEGIR_CATEGORIA_TITULO = (new L("Seleccionar categoría","Seleccionar 
 
 var UI_ARTES_MARCIALES_BASICAS = (new L("Artes Marciales Básicas","Artes Marciales Básicas","Basic Martial Arts")).getId();
 var UI_ARTES_MARCIALES_AVANZADAS = (new L("Artes Marciales Avanzadas","Artes Marciales Avanzadas","Advanced Martial Arts")).getId();
+
+var UI_BTN_TIPO = (new L("Tipo", "Método", "Method")).getId();
+var UI_REPARTO_CARACTERISTICAS = (new L("Asigna los valores","Asigna los valores","Assign the points")).getId();
+
+var UI_NECESITAS_40_ATAQUE_DEFENSA = (new L("Necesitas 40 de ataque y defensa por cada arte marcial.", "Necesitas 40 de ataque y defensa por cada arte marcial.", "You need 40 in attack and defenses for each martial art")).getId();
+
+
+var UI_ESPECIFICA = (new L("Especifica","Especifica","Specify")).getId();
