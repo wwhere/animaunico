@@ -7,7 +7,7 @@ function dialogoElegirRaza() {
         draggable: true,
         resizable: true,
         //show: "puff",
-        title: DIAG_ELEGIR_RAZA_TITULO,
+        title: _l(DIAG_ELEGIR_RAZA_TITULO),
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
         maxHeight: ALTO_DIALOGO,
@@ -47,9 +47,9 @@ function dialogoElegirRaza() {
                 divreg.addClass(CSS_TEXTO_ITALIC);
                 divreg.addClass(CSS_MUESTRA_INLINE);
 
-                divNombre.append(ventRaza[k].nombre + ": ");
-                divDesc.append(ventRaza[k].descripcion);
-                divreg.append(" (" + ventRaza[k].reglas + ") ");
+                divNombre.append(_l(ventRaza[k].nombre) + ": ");
+                divDesc.append(_l(ventRaza[k].descripcion));
+                divreg.append(" (" + _l(ventRaza[k].reglas) + ") ");
                 divUnaVentaja.append(divNombre).append(divDesc).append(divreg);
                 divVent.append(divUnaVentaja);
             }
