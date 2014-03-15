@@ -140,8 +140,7 @@ function recargaSeccionPersonaje(event) {
 }
 
 function recuadroBase() {
-    var div = getDiv(CSS_RECUADRO);
-    return div;
+    return getDiv(CSS_RECUADRO);
 }
 
 /**
@@ -177,12 +176,13 @@ function muestraPersonales(estadoGeneracion) {
     div.append(muestraSubtitulo(UI_PERSONALES, true));
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
-    divContenido.append(muestraPersonal(UI_NOMBRE, personaje_actual.getNombre(), modificarPersonales, elegirManualNombre));
-    divContenido.append(muestraPersonal(UI_SEXO, personaje_actual.getSexo(), modificarPersonales, elegirManualSexo));
-    divContenido.append(muestraPersonal(UI_RAZA, personaje_actual.getRaza().getNombre(), modificarPersonales,dialogoElegirRaza));
-    divContenido.append(muestraPersonal(UI_PESO, personaje_actual.getPeso(), modificarPersonales, elegirPeso));
-    divContenido.append(muestraPersonal(UI_ALTURA, personaje_actual.getAltura(), modificarPersonales, elegirAltura));
-    divContenido.append(muestraPersonalConDivExtra(UI_CATEGORIA, personaje_actual.getCategoria().getNombre(), modificarPersonales, dialogoElegirCategoria,{}, muestraBotonPequeño("Cambiar cat.",{},cambiarCategoria)));
+    divContenido.append(muestraPersonal(_l(UI_NOMBRE), personaje_actual.getNombre(), modificarPersonales, elegirManualNombre));
+    divContenido.append(muestraPersonal(_l(UI_SEXO), personaje_actual.getSexo(), modificarPersonales, elegirManualSexo));
+    divContenido.append(muestraPersonal(_l(UI_RAZA), personaje_actual.getRaza().getNombre(), modificarPersonales,dialogoElegirRaza));
+    divContenido.append(muestraPersonal(_l(UI_PESO), personaje_actual.getPeso(), modificarPersonales, elegirPeso));
+    divContenido.append(muestraPersonal(_l(UI_ALTURA), personaje_actual.getAltura(), modificarPersonales, elegirAltura));
+    divContenido.append(muestraPersonalConDivExtra(_l(UI_CATEGORIA), personaje_actual.getCategoria().getNombre(), modificarPersonales, dialogoElegirCategoria,{},
+        muestraBotonPequeño(_l(UI_CAMBIAR_CAT),{},cambiarCategoria,"")));
 
     div.append(divContenido);
 
@@ -200,10 +200,10 @@ function muestraCapacidades(estadoGeneracion) {
 
     divContenido.append(muestraValorPV(modificarPV));
 
-    divContenido.append(muestraPersonal(UI_PUNTOS_CANSANCIO, personaje_actual.getPuntosCansancio(), false));
-    divContenido.append(muestraPersonal(UI_TIPO_MOVIMIENTO, personaje_actual.getTipoMovimiento(), false));
-    divContenido.append(muestraPersonal(UI_APARIENCIA, personaje_actual.getApariencia(), modificarApariencia, elegirManualApariencia));
-    divContenido.append(muestraPersonal(UI_TAMAÑO, personaje_actual.getTamaño(), false));
+    divContenido.append(muestraPersonal(_l(UI_PUNTOS_CANSANCIO), personaje_actual.getPuntosCansancio(), false));
+    divContenido.append(muestraPersonal(_l(UI_TIPO_MOVIMIENTO), personaje_actual.getTipoMovimiento(), false));
+    divContenido.append(muestraPersonal(_l(UI_APARIENCIA), personaje_actual.getApariencia(), modificarApariencia, elegirManualApariencia));
+    divContenido.append(muestraPersonal(_l(UI_TAMAÑO), personaje_actual.getTamaño(), false));
 
     divContenido.append(muestraValorRegeneracion());
 
@@ -219,24 +219,24 @@ function muestraDesarrollo(estadoGeneracion) {
     var modificarPX = (estadoGeneracion == ESTADO_GENERACION_PERSONAJE_HECHO);
     var mostrarPDyPCArriba = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) ||(estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
-    divContenido.append(muestraPersonal(UI_NIVEL, personaje_actual.getNivel(), false));
+    divContenido.append(muestraPersonal(_l(UI_NIVEL), personaje_actual.getNivel(), false));
 
-    divContenido.append(muestraPersonal(UI_PUNTOS_DESARROLLO, personaje_actual.getPDTotales() + "(" + personaje_actual.getPDLibres() + " " + UI_PUNTOS_SIN_USAR + ")", false));
+    divContenido.append(muestraPersonal(_l(UI_PUNTOS_DESARROLLO), personaje_actual.getPDTotales() + "(" + personaje_actual.getPDLibres() + " " + _l(UI_PUNTOS_SIN_USAR) + ")", false));
     if ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
         var ul = $("<ul></ul>");
-        ul.append($("<li></li>").append(muestraPersonal(UI_PD_COMBATE, personaje_actual.gastoActualPDsGrupoHabilidad(TIPO_HB_COMBATE) + "/" + personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_COMBATE), false)));
-        ul.append($("<li></li>").append(muestraPersonal(UI_PD_ATAQUE_DEFENSA, personaje_actual.gastoActualPDsAtaqueDefensa() + "/" + personaje_actual.maxPDsAtaqueDefensa(), false)));
-        ul.append($("<li></li>").append(muestraPersonal(UI_PD_SOBRENATURAL, personaje_actual.gastoActualPDsGrupoHabilidad(TIPO_HB_SOBRENATURAL) + "/" + personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_SOBRENATURAL), false)));
-        ul.append($("<li></li>").append(muestraPersonal(UI_PD_PSIQUICA, personaje_actual.gastoActualPDsGrupoHabilidad(TIPO_HB_PSIQUICA) + "/" + personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_PSIQUICA), false)));
-        ul.append($("<li></li>").append(muestraPersonal(UI_PD_SECUNDARIAS, personaje_actual.gastoActualPDsSecundarias(), false)));
+        ul.append($("<li></li>").append(muestraPersonal(_l(UI_PD_COMBATE), personaje_actual.gastoActualPDsGrupoHabilidad(TIPO_HB_COMBATE) + "/" + personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_COMBATE), false)));
+        ul.append($("<li></li>").append(muestraPersonal(_l(UI_PD_ATAQUE_DEFENSA), personaje_actual.gastoActualPDsAtaqueDefensa() + "/" + personaje_actual.maxPDsAtaqueDefensa(), false)));
+        ul.append($("<li></li>").append(muestraPersonal(_l(UI_PD_SOBRENATURAL), personaje_actual.gastoActualPDsGrupoHabilidad(TIPO_HB_SOBRENATURAL) + "/" + personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_SOBRENATURAL), false)));
+        ul.append($("<li></li>").append(muestraPersonal(_l(UI_PD_PSIQUICA), personaje_actual.gastoActualPDsGrupoHabilidad(TIPO_HB_PSIQUICA) + "/" + personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_PSIQUICA), false)));
+        ul.append($("<li></li>").append(muestraPersonal(_l(UI_PD_SECUNDARIAS), personaje_actual.gastoActualPDsSecundarias(), false)));
         divContenido.append(ul);
     }
 
     if ((estadoGeneracion == ESTADO_GENERACION_INICIADA)) {
-        divContenido.append(muestraPersonal(UI_PUNTOS_CREACION, personaje_actual.getPCTotales() +
-            "(" + personaje_actual.getPC("PC_libres_generales") + " " + UI_PUNTOS_SIN_USAR + ")" +
-            "(" + personaje_actual.getPC("PC_libres_don") + " " + UI_PC_DON + ")" +
-            "(" + personaje_actual.getPC("PC_libres_psiquicas") + " " + UI_PC_PSIQUICA + ")", false));
+        divContenido.append(muestraPersonal(_l(UI_PUNTOS_CREACION), personaje_actual.getPCTotales() +
+            "(" + personaje_actual.getPC("PC_libres_generales") + " " + _l(UI_PUNTOS_SIN_USAR) + ")" +
+            "(" + personaje_actual.getPC("PC_libres_don") + " " + _l(UI_PC_DON) + ")" +
+            "(" + personaje_actual.getPC("PC_libres_psiquicas") + " " + _l(UI_PC_PSIQUICA) + ")", false));
     }
 
     if (mostrarPDyPCArriba) {
@@ -246,16 +246,16 @@ function muestraDesarrollo(estadoGeneracion) {
         divPCArriba.css("margin-bottom","0px");
         var divDestinoAlto =$("#infoSuperior");
         divDestinoAlto.empty();
-        divDestinoAlto.append(divPDArriba.html("PD:" +personaje_actual.getPDLibres() + "/" + personaje_actual.getPDTotales()));
-        divDestinoAlto.append(divPCArriba.html("PC:" +personaje_actual.getPCLibres() + "/" + personaje_actual.getPCTotales()));
+        divDestinoAlto.append(divPDArriba.html(_l(UDS_PD) + ":" +personaje_actual.getPDLibres() + "/" + personaje_actual.getPDTotales()));
+        divDestinoAlto.append(divPCArriba.html(_l(UDS_PC) + ":" +personaje_actual.getPCLibres() + "/" + personaje_actual.getPCTotales()));
     }
 
 
     if ((estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
-        divContenido.append(muestraPersonal(UI_AUMENTOS_CARACTERISTICAS, personaje_actual.getAumentosCaracteristicasLibres(), false));
+        divContenido.append(muestraPersonal(_l(UI_AUMENTOS_CARACTERISTICAS), personaje_actual.getAumentosCaracteristicasLibres(), false));
     }
 
-    divContenido.append(muestraPersonal(UI_PX, personaje_actual.getPX(), modificarPX, elegirPX));
+    divContenido.append(muestraPersonal(_l(UI_PX), personaje_actual.getPX(), modificarPX, elegirPX));
 
     div.append(divContenido);
     return div;
@@ -291,7 +291,7 @@ function muestraPersonal(etiqueta, valor, mostrarBotonEleccionManual, funcionEle
 
 /**
  *
- * @param {string} etiqueta
+ * @param {string} etiqueta Ya localizado
  * @param {number|string} valor
  * @param {boolean} mostrarBotonEleccionManual
  * @param {function} [funcionEleccionManual]
@@ -329,10 +329,10 @@ function muestraValorPV(modificable) {
     var divEtiqueta = getDiv(CSS_ETIQUETA);
     var divValor = getDiv(CSS_VALOR_PERSONALES);
 
-    divEtiqueta.append(UI_PUNTOS_VIDA + ":");
+    divEtiqueta.append(_l(UI_PUNTOS_VIDA) + ":");
     var valorFinal = parseInt(personaje_actual.pv);
 
-    var tooltip = personaje_actual.pv + "(base)";
+    var tooltip = personaje_actual.pv + "("+_l(UI_BASE)+")";
 
     var bonos = personaje_actual.getBonos(BONO_PV, BONO_PV, CATEGORIA_BONO_CUALQUIERA);
     for (var i = 0; i < bonos.length; i++) {
@@ -344,9 +344,9 @@ function muestraValorPV(modificable) {
         } else {
             valorBono = "" + valorBono;
         }
-        tooltip += valorBono + " (" + bono.origen + ")";
+        tooltip += valorBono + " (" + _l(bono.origen) + ")";
     }
-    tooltip += "=" + valorFinal + " (final)";
+    tooltip += "=" + valorFinal + " (" + _l(UI_FINAL) + ")";
 
     divValor.append(valorFinal);
 
@@ -358,7 +358,7 @@ function muestraValorPV(modificable) {
     divCoste.addClass("textSmaller");
     divCoste.append("[" + personaje_actual.getCostePV() + "] ");
 
-    var etiMultip = getDiv(CSS_ETIQUETA).append(UI_MULTIPLO_VIDA + ": ");
+    var etiMultip = getDiv(CSS_ETIQUETA).append(_l(UI_MULTIPLO_VIDA) + ": ");
     var valorMultip = getDiv(CSS_VALOR_PERSONALES).append(personaje_actual.getHabilidadDePersonaje(HB_MULTIPLO_VIDA).valorBase(personaje_actual.getCostePV()));
 
     divCampo2.append(divCoste).append(etiMultip).append(valorMultip);
@@ -377,10 +377,10 @@ function muestraValorRegeneracion() {
     var divEtiqueta = getDiv(CSS_ETIQUETA);
     var divValor = getDiv(CSS_VALOR_PERSONALES);
 
-    divEtiqueta.append(UI_REGENERACION + ":");
+    divEtiqueta.append(_l(UI_REGENERACION) + ":");
     var valorFinal = parseInt(personaje_actual.getRegeneracionBase());
 
-    var tooltip = personaje_actual.getRegeneracionBase() + "(base)";
+    var tooltip = personaje_actual.getRegeneracionBase() + "("+_l(UI_BASE)+")";
 
     var bonos = personaje_actual.getBonos(BONO_REGENERACION, BONO_REGENERACION, CATEGORIA_BONO_CUALQUIERA);
     for (var i = 0; i < bonos.length; i++) {
@@ -392,9 +392,9 @@ function muestraValorRegeneracion() {
         } else {
             valorBono = "" + valorBono;
         }
-        tooltip += valorBono + " (" + bono.origen + ")";
+        tooltip += valorBono + " (" + _l(bono.origen) + ")";
     }
-    tooltip += "=" + valorFinal + " (final)";
+    tooltip += "=" + valorFinal + " ("+_l(UI_FINAL)+")";
 
     divValor.append(valorFinal);
 
@@ -414,11 +414,11 @@ function muestraCaracteristicas(estadoGeneracion) {
     var divRow = getDiv(CSS_TEXTO_SMALL);
     divRow.addClass("row");
     var divNombre = getDiv("four columns");
-    divNombre.append("Característica");
+    divNombre.append(_l(UI_CARACTERISTICA));
     var divValor = getDiv("three columns").addClass(CSS_TEXTO_CENTRO);
-    divValor.append("Valor");
+    divValor.append(_l(UI_VALOR));
     var divBono = getDiv("three columns").addClass(CSS_TEXTO_CENTRO);
-    divBono.append("Bono");
+    divBono.append(_l(UI_BONO));
     var divAumento = getDiv("two columns");
     divRow.append(divNombre).append(divValor).append(divBono).append(divAumento);
     divContenido.append(divRow);
@@ -436,7 +436,7 @@ function muestraCaracteristicas(estadoGeneracion) {
 
 /**
  *
- * @param {string} nombre
+ * @param {string} nombre No localizado
  * @param {number} valor
  * @param {string} bono
  * @param {boolean} mostrarBotonesAumento
@@ -453,7 +453,6 @@ function muestraCaracteristica(nombre, valor, bono, mostrarBotonesAumento) {
     divRow.append(divNombre).append(divValor).append(divBono);
 
     if (mostrarBotonesAumento) {
-        console.debug("Se muestran botones para " + nombre);
         divRow.append(divAumento);
         var botonMas = muestraBotonPequeño("+",{caracteristica:nombre},gastaAumentoCaracteristica,"");
         divAumento.append(botonMas);
@@ -463,18 +462,15 @@ function muestraCaracteristica(nombre, valor, bono, mostrarBotonesAumento) {
 
         if (personaje_actual.getAumentosCaracteristicasLibres() < 1) {
             disableButton(botonMas);
-            console.debug("Mas desactivado");
         }
 
         disableButton(botonMenos);
-        console.debug("Menos desactivado");
         if (personaje_actual.aumentoGastadoEn(nombre)) {
             enableButton(botonMenos);
-            console.debug("Menos activado");
         }
     }
 
-    divNombre.append(nombre);
+    divNombre.append(_l(nombre));
     divValor.append(valor);
     divBono.append(bono);
 
@@ -497,36 +493,44 @@ function muestraResistencias(estadoGeneracion) {
     } else {
         multiplicador = MULTIPLICADOR_ENTERO;
     }
-    divContenido.append(muestraValorConBonos(UI_RF, personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RF, CATEGORIA_BONO_CUALQUIERA),multiplicador));
+    divContenido.append(muestraValorConBonos(_l(UI_RF), personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RF, CATEGORIA_BONO_CUALQUIERA),multiplicador));
     if (personaje_actual.hasFlag(FLAG_RE_A_MITAD)) {
         multiplicador = MULTIPLICADOR_MITAD;
     } else {
         multiplicador = MULTIPLICADOR_ENTERO;
     }
-    divContenido.append(muestraValorConBonos(UI_RE, personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RE, CATEGORIA_BONO_CUALQUIERA),multiplicador));
+    divContenido.append(muestraValorConBonos(_l(UI_RE), personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RE, CATEGORIA_BONO_CUALQUIERA),multiplicador));
     if (personaje_actual.hasFlag(FLAG_RV_A_MITAD)) {
         multiplicador = MULTIPLICADOR_MITAD;
     } else {
         multiplicador = MULTIPLICADOR_ENTERO;
     }
-    divContenido.append(muestraValorConBonos(UI_RV, personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RV, CATEGORIA_BONO_CUALQUIERA),multiplicador));
+    divContenido.append(muestraValorConBonos(_l(UI_RV), personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RV, CATEGORIA_BONO_CUALQUIERA),multiplicador));
     if (personaje_actual.hasFlag(FLAG_RM_A_MITAD)) {
         multiplicador = MULTIPLICADOR_MITAD;
     } else {
         multiplicador = MULTIPLICADOR_ENTERO;
     }
-    divContenido.append(muestraValorConBonos(UI_RM, personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RM, CATEGORIA_BONO_CUALQUIERA),multiplicador));
+    divContenido.append(muestraValorConBonos(_l(UI_RM), personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RM, CATEGORIA_BONO_CUALQUIERA),multiplicador));
     if (personaje_actual.hasFlag(FLAG_RP_A_MITAD)) {
         multiplicador = MULTIPLICADOR_MITAD;
     } else {
         multiplicador = MULTIPLICADOR_ENTERO;
     }
-    divContenido.append(muestraValorConBonos(UI_RP, personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RP, CATEGORIA_BONO_CUALQUIERA),multiplicador));
+    divContenido.append(muestraValorConBonos(_l(UI_RP), personaje_actual.getPresencia(), personaje_actual.getBonos(BONO_RESISTENCIA, RP, CATEGORIA_BONO_CUALQUIERA),multiplicador));
 
     div.append(divContenido);
     return div;
 }
 
+/**
+ *
+ * @param {string} etiqueta Ya localizada
+ * @param valorBase
+ * @param bonos
+ * @param multiplicador
+ * @returns {*}
+ */
 function muestraValorConBonos(etiqueta, valorBase, bonos,multiplicador) {
     var divCampo = getDiv(CSS_CAMPO_PERSONALES);
     var divEtiqueta = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL);
@@ -539,8 +543,8 @@ function muestraValorConBonos(etiqueta, valorBase, bonos,multiplicador) {
     var tooltip = "";
 
     divEtiqueta.append(etiqueta + ":");
-    divValor.append(valorBase + "(base)");
-    tooltip = valorBase + "(base)";
+    divValor.append(valorBase + "("+_l(UI_BASE)+")");
+    tooltip = valorBase + "("+_l(UI_BASE+")");
     var valorFinal = parseInt(valorBase);
     var valorBonos = 0;
     for (var i = 0; i < bonos.length; i++) {
@@ -553,7 +557,7 @@ function muestraValorConBonos(etiqueta, valorBase, bonos,multiplicador) {
         } else {
             valorBono = "" + valorBono;
         }
-        tooltip += valorBono + " (" + bono.origen + ")";
+        tooltip += valorBono + " (" + _l(bono.origen) + ")";
     }
     valorFinal *= multiplicador;
 
@@ -565,8 +569,8 @@ function muestraValorConBonos(etiqueta, valorBase, bonos,multiplicador) {
     } else {
         valorBonos = "" + valorBonos;
     }
-    tooltip += "=" + valorFinal + " (final)";
-    divValor.append(valorBonos + "(bonos) =" + valorFinal + " (final)");
+    tooltip += "=" + valorFinal + " ("+_l(UI_FINAL)+")";
+    divValor.append(valorBonos + "("+_l(UI_BONOS)+") =" + valorFinal + " ("+_l(UI_FINAL)+")");
 
     addToolTip(divValor,tooltip);
 
@@ -587,11 +591,15 @@ function muestraElan(estadoGeneracion) {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
     for (var i = 0; i < personaje_actual.elan.length; i++) {
+        /**
+         *
+         * @type {Elan}
+         */
         var elanPersonaje = personaje_actual.elan[i];
 
         var divElan = getDiv(CSS_MUESTRA_BLOCK).addClass(CSS_TEXTO_SMALLER);
-        var divEtiElan = getDiv(CSS_ETIQUETA).html(elanPersonaje.nombre);
-        var divSincro = getDiv(CSS_COSTE).html("(" + elanPersonaje.getSincronizacion().toString() + "/" + (elanPersonaje.getSincronizacion()-elanPersonaje.getSinGastada()).toString() + " libre)");
+        var divEtiElan = getDiv(CSS_ETIQUETA).html(_l(elanPersonaje.nombre));
+        var divSincro = getDiv(CSS_COSTE).html("(" + elanPersonaje.getSincronizacion().toString() + "/" + (elanPersonaje.getSincronizacion()-elanPersonaje.getSinGastada()).toString() + " "+_l(UI_LIBRE)+")");
         divElan.append(divEtiElan).append(divSincro);
         divContenido.append(divElan);
 
@@ -599,8 +607,8 @@ function muestraElan(estadoGeneracion) {
             var divDones = getDiv(CSS_TABULADO);
             for (var j = 0; j < elanPersonaje.dones.length; j++) {
                 var divNombreDon = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK);
-                divNombreDon.append(elanPersonaje.dones[j].nombre);
-                addToolTip(divNombreDon,elanPersonaje.dones[j].descripcion);
+                divNombreDon.append(_l(elanPersonaje.dones[j].nombre));
+                addToolTip(divNombreDon,_l(elanPersonaje.dones[j].descripcion));
                 divDones.append(divNombreDon);
             }
             divContenido.append(divDones);
@@ -619,7 +627,7 @@ function muestraVentajas(estadoGeneracion) {
         puedeAñadir = true;
     }
 
-    div.append(listaElementosPCComprados(UI_VENTAJAS,personaje_actual.ventajas,anularelementoPCComprado,puedeAñadir, dialogoVentajas,"Comprar ventaja"));
+    div.append(listaElementosPCComprados(UI_VENTAJAS,personaje_actual.ventajas,anularelementoPCComprado,puedeAñadir, dialogoVentajas,_l(UI_COMPRAR_VENTAJA)));
 
     return div;
 }
@@ -632,11 +640,21 @@ function muestraDesventajas(estadoGeneracion) {
         puedeAñadir = true;
     }
 
-    div.append(listaElementosPCComprados(UI_DESVENTAJAS,personaje_actual.desventajas,anularelementoPCComprado,puedeAñadir,dialogoDesventajas,"Comprar desventaja"));
+    div.append(listaElementosPCComprados(UI_DESVENTAJAS,personaje_actual.desventajas,anularelementoPCComprado,puedeAñadir,dialogoDesventajas,_l(UI_COMPRAR_DESVENTAJA)));
 
     return div;
 }
 
+/**
+ *
+ * @param {string} titulo No localizado
+ * @param arrayElementos
+ * @param callback
+ * @param puedeComprarNuevo
+ * @param callbackBotonNuevo
+ * @param {string} etiquetaBotonNuevo Ya localizado
+ * @returns {*}
+ */
 function listaElementosPCComprados(titulo,arrayElementos,callback,puedeComprarNuevo,callbackBotonNuevo, etiquetaBotonNuevo) {
     var div = getDiv("");
 
@@ -689,18 +707,18 @@ function muestraVentaja(ventajaComprada) {
 
     div.append(divNombre).append(divCoste);
 
-    divNombre.append(ventajaComprada.ventaja.nombre);
+    divNombre.append(_l(ventajaComprada.ventaja.nombre));
 
     if (ventajaComprada.opcion != "") {
-        divNombre.append(" (" + ventajaComprada.opcion + ")");
+        divNombre.append(" (" + _l(ventajaComprada.opcion) + ")");
     }
     if (ventajaComprada.origen == ORIGEN_PC) {
         divCoste.append(" [" + ventajaComprada.pc + "]");
     } else {
-        divCoste.append(" (" + ventajaComprada.origen + ")");
+        divCoste.append(" (" + _l(ventajaComprada.origen) + ")");
     }
 
-    addToolTip(div,ventajaComprada.ventaja.descripcion + "<hr>" + ventajaComprada.ventaja.descripcionEfecto);
+    addToolTip(div,_l(ventajaComprada.ventaja.descripcion) + "<hr>" + _l(ventajaComprada.ventaja.descripcionEfecto));
 
     return div;
 }
@@ -746,7 +764,7 @@ function muestraCombate(estadoGeneracion) {
     divContenido.append(muestraArmadura());
 
     divContenido.append(muestraSubtitulo(UI_TURNO, false));
-    divContenido.append(muestraValorConBonos(UI_TURNO, personaje_actual.turnoBase, personaje_actual.getBonos(BONO_TURNO, BONO_TURNO, CATEGORIA_BONO_CUALQUIERA)));
+    divContenido.append(muestraValorConBonos(_l(UI_TURNO), personaje_actual.turnoBase, personaje_actual.getBonos(BONO_TURNO, BONO_TURNO, CATEGORIA_BONO_CUALQUIERA)));
 
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES],muestraBotones));
@@ -769,19 +787,19 @@ function muestraKi(estadoGeneracion) {
 
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
-    divContenido.append(muestraHabilidadPrimaria(HB_KI_AGI,UI_KI_AGI,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_KI_CON,UI_KI_CON,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_KI_DES,UI_KI_DES,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_KI_FUE,UI_KI_FUE,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_KI_POD,UI_KI_POD,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_KI_VOL,UI_KI_VOL,muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_KI_AGI,_l(UI_KI_AGI),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_KI_CON,_l(UI_KI_CON),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_KI_DES,_l(UI_KI_DES),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_KI_FUE,_l(UI_KI_FUE),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_KI_POD,_l(UI_KI_POD),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_KI_VOL,_l(UI_KI_VOL),muestraBotones));
 
-    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_AGI,UI_ACUMULACION_KI_AGI,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_CON,UI_ACUMULACION_KI_CON,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_DES,UI_ACUMULACION_KI_DES,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_FUE,UI_ACUMULACION_KI_FUE,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_POD,UI_ACUMULACION_KI_POD,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_VOL,UI_ACUMULACION_KI_VOL,muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_AGI,_l(UI_ACUMULACION_KI_AGI),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_CON,_l(UI_ACUMULACION_KI_CON),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_DES,_l(UI_ACUMULACION_KI_DES),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_FUE,_l(UI_ACUMULACION_KI_FUE),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_POD,_l(UI_ACUMULACION_KI_POD),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACUM_KI_VOL,_l(UI_ACUMULACION_KI_VOL),muestraBotones));
 
     divContenido.append(muestraHabilidadesKi(muestraBotones));
 
@@ -793,8 +811,8 @@ function muestraKi(estadoGeneracion) {
 
 function muestraCMPersonaje() {
     var divCM = getDiv("");
-    divCM.append(getDiv(CSS_MUESTRA_BLOCK).append(muestraValorConBonos(UI_CM, 0, personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA))));
-    var divCMlibreEti = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append("CM libre: ");
+    divCM.append(getDiv(CSS_MUESTRA_BLOCK).append(muestraValorConBonos(_l(UI_CM), 0, personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA))));
+    var divCMlibreEti = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(_l(UI_CM)+ " " + _l(UI_LIBRE) + ": ");
     var divCMlibreValor = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(personaje_actual.getCMTotal()-personaje_actual.getCMGastado());
     divCM.append(getDiv(CSS_TEXTO_SMALL).append(divCMlibreEti).append(divCMlibreValor));
     return divCM;
@@ -811,7 +829,7 @@ function muestraHabilidadesKi(muestraBotones) {
     div.append(muestraSubtitulo(UI_HABILIDADES_KI, false));
 
     if (muestraBotones) {
-        div.append(botonComprarNuevo("Comprar habilidad del ki",BOTON_CM,dialogoCM,{}));
+        div.append(botonComprarNuevo(_l(UI_COMPRAR_HABILIDAD_KI),BOTON_CM,dialogoCM,{}));
     }
 
     var habKi = personaje_actual.getHabilidadesKi();
@@ -828,7 +846,7 @@ function muestraHabilidadesKi(muestraBotones) {
             }
             divHabilidad.append(
                 muestraValorConBonosYCoste(
-                    habKi[i].getNombre(),
+                    _l(habKi[i].getNombre()),
                     habKi[i].getValorActual(personaje_actual),
                     personaje_actual.getBonos(BONO_KI, habKi[i].getNombre(), CATEGORIA_BONO_CUALQUIERA),
                     0,
@@ -837,7 +855,7 @@ function muestraHabilidadesKi(muestraBotones) {
                     false)
             );
         } else {
-            divHabilidad.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(habKi[i].getNombre()));
+            divHabilidad.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(habKi[i].getNombre())));
             if (muestraBotones) {
                 divHabilidad.append(muestraBotonAnular(anularHabilidadKi,{habilidadKi: habKi[i]}));
             }
@@ -861,7 +879,7 @@ function muestraTecnicasKi(muestraBotones) {
 
     if (muestraBotones) {
         var divBotonNuevo = $("<div></div>");
-        divBotonNuevo.append(muestraBotonPequeño("Comprar técnica del dominio",{},dialogoCM,BOTON_CM));
+        divBotonNuevo.append(muestraBotonPequeño(_l(UI_COMPRAR_TECNICA_DE_KI),{},dialogoCM,BOTON_CM));
         div.append(divBotonNuevo);
     } else if (tecnicasKi.length == 0) {
         div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
@@ -870,7 +888,7 @@ function muestraTecnicasKi(muestraBotones) {
     for (var i = 0; i < tecnicasKi.length; i++) {
         var divTecnica = getDiv("");
 
-        divTecnica.append(tecnicasKi[i].getNombre());
+        divTecnica.append(_l(tecnicasKi[i].getNombre()));
         if (muestraBotones) {
             divTecnica.append(muestraBotonAnular(anularTecnicaKi,{tecnicaKi: tecnicasKi[i]}));
         }
@@ -888,12 +906,12 @@ function muestraTecnicasKi(muestraBotones) {
 function muestraCombateHabilidadesGenerales(muestraBotones) {
     var div = $("<div></div>");
 
-    div.append(muestraHabilidadPrimaria(HB_ATAQUE, UI_ATAQUE,muestraBotones));
-    div.append(muestraHabilidadPrimaria(HB_PARADA, UI_PARADA,muestraBotones));
+    div.append(muestraHabilidadPrimaria(HB_ATAQUE, _l(UI_ATAQUE),muestraBotones));
+    div.append(muestraHabilidadPrimaria(HB_PARADA, _l(UI_PARADA),muestraBotones));
 
-    div.append(muestraHabilidadPrimaria(HB_ESQUIVA, UI_ESQUIVA,muestraBotones));
+    div.append(muestraHabilidadPrimaria(HB_ESQUIVA, _l(UI_ESQUIVA),muestraBotones));
 
-    div.append(muestraHabilidadPrimaria(HB_ARMADURA, UI_LLEVAR_ARMADURA,muestraBotones));
+    div.append(muestraHabilidadPrimaria(HB_ARMADURA, _l(UI_LLEVAR_ARMADURA),muestraBotones));
 
     return div;
 }
@@ -911,7 +929,7 @@ function muestraArmadura() {
             divCol = getDiv("two columns");
         }
         divCol
-            .append(divTA.append(TAS_ARMADURA[i] + ":"))
+            .append(divTA.append(_l(TAS_ARMADURA[i]) + ":"))
             .append(divValor.append(personaje_actual.getArmadura(TAS_ARMADURA[i])));
         divRow.append(divCol);
     }
@@ -922,15 +940,15 @@ function muestraArmadura() {
 function muestraManejoArmas() {
     var div = getDiv(CSS_TEXTO_SMALL);
     var divInicial = getDiv(CSS_MUESTRA_BLOCK);
-    var divEtiInicial = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append("Arma inicial: ");
-    var divValorInicial = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(personaje_actual.getArmaInicial());
+    var divEtiInicial = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(_l(UI_ARMA_INICIAL) + ": ");
+    var divValorInicial = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(_l(personaje_actual.getArmaInicial()));
     div.append(divInicial.append(divEtiInicial).append(divValorInicial));
     if (personaje_actual.manejoArmas.length > 1) {
         var divAdicional = getDiv(CSS_MUESTRA_BLOCK);
-        var divMasArmasEti = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append("Otras armas: ");
+        var divMasArmasEti = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(_l(UI_OTRAS_ARMAS) + ": ");
         divAdicional.append(divMasArmasEti);
         for (var i = 0; i < personaje_actual.manejoArmas.length; i++) {
-            var divMasValor = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_LISTA_INLINE).addClass(CSS_MUESTRA_INLINE).append(personaje_actual.manejoArmas[i].nombre);
+            var divMasValor = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_LISTA_INLINE).addClass(CSS_MUESTRA_INLINE).append(_l(personaje_actual.manejoArmas[i].getNombre()));
             divAdicional.append(divMasValor);
         }
         div.append(divAdicional);
@@ -947,9 +965,9 @@ function muestraSobrenatural(estadoGeneracion) {
     div.append(muestraSubtitulo(UI_SOBRENATURALES, true));
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
-    divContenido.append(muestraHabilidadPrimaria(HB_ZEON,UI_ZEON,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ACT,UI_ACT,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_MAGICA,UI_PROYECCION_MAGICA,muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ZEON,_l(UI_ZEON),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ACT,_l(UI_ACT),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_MAGICA,_l(UI_PROYECCION_MAGICA),muestraBotones));
 
     divContenido.append(muestraMagiaInnata());
 
@@ -965,10 +983,10 @@ function muestraSobrenatural(estadoGeneracion) {
     divContenido.append(muestraSubtitulo(UI_CONVOCATORIA, false));
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
-    divContenido.append(muestraHabilidadPrimaria(HB_CONVOCAR,UI_CONVOCAR,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_DOMINAR,UI_DOMINAR,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_ATAR,UI_ATAR,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_DESCONVOCAR,UI_DESCONVOCAR,muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_CONVOCAR,_l(UI_CONVOCAR),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_DOMINAR,_l(UI_DOMINAR),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_ATAR,_l(UI_ATAR),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_DESCONVOCAR,_l(UI_DESCONVOCAR),muestraBotones));
 
     div.append(divContenido);
     return div;
@@ -976,7 +994,7 @@ function muestraSobrenatural(estadoGeneracion) {
 
 function muestraMagiaInnata() {
     var div = getDiv(CSS_TEXTO_SMALL);
-    var divEtiqueta = getDiv(CSS_ETIQUETA).append("Magia innata: ");
+    var divEtiqueta = getDiv(CSS_ETIQUETA).append(_l(UI_MAGIA_INNATA) + ": ");
     var divValor = getDiv(CSS_VALOR_PERSONALES).append(personaje_actual.getZeonMagiaInnata());
     div.append(divEtiqueta).append(divValor);
     return div;
@@ -995,7 +1013,7 @@ function muestraViasMagia(muestraBotones) {
 
     if (muestraBotones) {
         var divBotonNuevo = getDiv("");
-        divBotonNuevo.append(muestraBotonPequeño("Aumentar niveles en vías",{},dialogoMagia,BOTON_MAGIA));
+        divBotonNuevo.append(muestraBotonPequeño(_l(UI_AUMENTAR_NIVELES_EN_VIAS),{},dialogoMagia,BOTON_MAGIA));
         div.append(divBotonNuevo);
     } else if (viasMagia.length == 0) {
         div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
@@ -1003,8 +1021,8 @@ function muestraViasMagia(muestraBotones) {
 
     for (i=0; i < viasMagia.length;i++) {
         var divVia = getDiv(CSS_TEXTO_SMALL);
-        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(viasMagia[i].getVia().getNombre());
-        var divNivel = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(" (nv " + viasMagia[i].getNivel() + ")");
+        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(_l(viasMagia[i].getVia().getNombre()));
+        var divNivel = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(" ("+_l(UI_NV)+ viasMagia[i].getNivel() + ")");
         divVia.append(divNombre).append(divNivel);
         divVias.append(divVia);
         var divListaConjuros = getDiv("row");
@@ -1015,8 +1033,8 @@ function muestraViasMagia(muestraBotones) {
                 divListaConjuros.append(botonDefinir);
             } else {
                 var divConjuro = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("four columns");
-                divConjuro.append(conjuro.getNombre() + " (" +conjuro.getNivel()+")" );
-                addToolTip(divConjuro,"Nivel: "+conjuro.getNivel()/*+"<hr>"+conjuro.getEfecto()*/);
+                divConjuro.append(_l(conjuro.getNombre()) + " (" +conjuro.getNivel()+")" );
+                addToolTip(divConjuro,_l(UI_NIVEL) + ": "+conjuro.getNivel());
                 divListaConjuros.append(divConjuro);
             }
         }
@@ -1048,8 +1066,8 @@ function muestraConjurosSueltos(muestraBotones) {
     for (i=0; i < conjuros.length;i++) {
         var conjuro = conjuros[i];
         var divConjuro = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("four columns");
-        divConjuro.append(conjuro.getNombre() + " (" +conjuro.getNivel()+")" );
-        addToolTip(divConjuro,"Nivel: "+conjuro.getNivel()/*+"<hr>"+conjuro.getEfecto()*/);
+        divConjuro.append(_l(conjuro.getNombre()) + " (" +conjuro.getNivel()+")" );
+        addToolTip(divConjuro,_l(UI_NIVEL) + ": "+conjuro.getNivel());
         divConjuros.append(divConjuro);
     }
 
@@ -1070,17 +1088,17 @@ function muestraPsiquica(estadoGeneracion) {
 
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
-    divContenido.append(muestraHabilidadPrimaria(HB_CV,UI_CV,muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_CV,_l(UI_CV),muestraBotones));
     divContenido.append(muestraCVLibres());
 
-    divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_PSIQUICA,UI_PROYECCION_PSIQUICA,muestraBotones));
-    divContenido.append(muestraHabilidadPrimaria(HB_POTENCIAL_PSIQUICO,UI_POTENCIAL_PSIQUICO,muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_PSIQUICA,_l(UI_PROYECCION_PSIQUICA),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_POTENCIAL_PSIQUICO,_l(UI_POTENCIAL_PSIQUICO),muestraBotones));
 
     divContenido.append(muestraInnatos(muestraBotones));
 
     if (muestraBotones) {
         var divBotonNuevo = getDiv("");
-        divBotonNuevo.append(muestraBotonPequeño("Gastar CVs",{},dialogoCV,BOTON_CV));
+        divBotonNuevo.append(muestraBotonPequeño(_l(UI_BOTON_GASTAR_CV),{},dialogoCV,BOTON_CV));
         divContenido.append(divBotonNuevo);
     }
 
@@ -1095,7 +1113,7 @@ function muestraPsiquica(estadoGeneracion) {
 
 function muestraCVLibres() {
     var div = getDiv("row");
-    var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append("CV Libres");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append(_l(UI_CV_LIBRES));
     var divValor = getDiv("one column").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append((personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() - personaje_actual.cv_gastados));
     div.append(divEtiqueta).append(divValor);
     return div;
@@ -1105,30 +1123,30 @@ function muestraDisciplinasYPoderes(muestraBotones) {
     var div = getDiv("");
     var i;
     var divDisciplinas = getDiv(CSS_TEXTO_SMALL);
-    div.append(muestraSubtitulo("Afinidad con disciplinas", false));
+    div.append(muestraSubtitulo(UI_AFINIDAD_CON_DISCIPLINAS, false));
 
     if (muestraBotones) {
         var divBotonNuevaDisciplina = getDiv("");
-        divBotonNuevaDisciplina.append(muestraBotonPequeño("Gastar CVs",{},dialogoCV,BOTON_CV));
+        divBotonNuevaDisciplina.append(muestraBotonPequeño(_l(UI_BOTON_GASTAR_CV),{},dialogoCV,BOTON_CV));
         divDisciplinas.append(divBotonNuevaDisciplina);
     } else if (personaje_actual.disciplinasPsiquicas.length == 0) {
         divDisciplinas.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
     for (i=0; i < personaje_actual.disciplinasPsiquicas.length;i++) {
-        var divDisciplina = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_BLOCK).append(personaje_actual.disciplinasPsiquicas[i].nombre);
-        addToolTip(divDisciplina,personaje_actual.disciplinasPsiquicas[i].getDescripcion());
+        var divDisciplina = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_BLOCK).append(_l(personaje_actual.disciplinasPsiquicas[i].nombre));
+        addToolTip(divDisciplina,_l(personaje_actual.disciplinasPsiquicas[i].getDescripcion()));
         divDisciplinas.append(divDisciplina);
     }
 
     div.append(divDisciplinas);
 
-    div.append(muestraSubtitulo("Poderes dominados", false));
+    div.append(muestraSubtitulo(UI_PODERES_DOMINADOS, false));
     var divPoderes = getDiv("");
 
     if (muestraBotones) {
         var divBotonNuevoPoder = getDiv("");
-        divBotonNuevoPoder.append(muestraBotonPequeño("Gastar CVs",{},dialogoCV,BOTON_CV));
+        divBotonNuevoPoder.append(muestraBotonPequeño(_l(UI_BOTON_GASTAR_CV),{},dialogoCV,BOTON_CV));
         divPoderes.append(divBotonNuevoPoder);
     } else if (personaje_actual.poderesPsiquicosDominados.length == 0) {
         divPoderes.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
@@ -1137,7 +1155,7 @@ function muestraDisciplinasYPoderes(muestraBotones) {
     for (i=0; i < personaje_actual.poderesPsiquicosDominados.length;i++) {
         var divPoder = getDiv(CSS_TEXTO_SMALL);
 
-        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(personaje_actual.poderesPsiquicosDominados[i].poder.nombre);
+        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(_l(personaje_actual.poderesPsiquicosDominados[i].poder.nombre));
         var divFortalecimiento = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" (+" + 10*personaje_actual.poderesPsiquicosDominados[i].fortalecimiento + ")");
         divPoderes.append(divPoder.append(divNombre).append(divFortalecimiento));
     }
@@ -1158,9 +1176,9 @@ function muestraInnatos(muestraBotones) {
 
     var divCoste = getDiv(CSS_COSTE).addClass(CSS_TEXTO_SMALL);
 
-    divCoste.append("[2 CV] ");
+    divCoste.append("[2 " +_l(UI_CV) + "] ");
 
-    divEtiqueta.append("Innatos");
+    divEtiqueta.append(_l(UI_INNATO));
 
     divNombre.append(divCoste).append(divEtiqueta);
     divValor.append(personaje_actual.getInnatosPsiquicos())
@@ -1188,13 +1206,13 @@ function muestraInnatos(muestraBotones) {
 function muestraCabecerasBaseBonosFinal() {
     var div = getDiv(CSS_TEXTO_SMALL);
     div.addClass("row");
-    var divNombre = $("<div>Nombre</div>");
+    var divNombre = $("<div></div>").append(_l(UI_NOMBRE));
     divNombre.addClass("four columns");
-    var divBase = $("<div>Base</div>");
+    var divBase = $("<div></div>").append(_l(UI_BASE));
     divBase.addClass("one columns");
-    var divBonos = $("<div>Bonos</div>");
+    var divBonos = $("<div></div>").append(_l(UI_BONOS));
     divBonos.addClass("two columns");
-    var divFinal = $("<div>Final</div>");
+    var divFinal = $("<div></div>").append(_l(UI_FINAL));
     divFinal.addClass("one columns");
 
     div.append(divNombre).append(divBase).append(divBonos).append(divFinal);
@@ -1221,7 +1239,7 @@ function muestraSecundarias(estadoGeneracion) {
             var habilidadDePersonaje = personaje_actual.getHabilidadDePersonaje(grupoHab[j]);
             var coste = personaje_actual.getCoste(habilidadDePersonaje.getHabilidad().getNombre(),false);
             var valorBase = habilidadDePersonaje.valorBase(coste);
-            var etiqueta = habilidadDePersonaje.getHabilidad().getNombre();
+            var etiqueta = _l(habilidadDePersonaje.getHabilidad().getNombre());
             var divBotones = $("<div></div>");
             if (muestraBotones) {
                 divBotones.append(muestraBotonMasMenosHabilidad(habilidadDePersonaje.getHabilidad().getNombre()).addClass(CSS_MUESTRA_INLINE));
@@ -1230,7 +1248,7 @@ function muestraSecundarias(estadoGeneracion) {
                 }
             }
             if (habilidadDePersonaje.getEspecializacion() != "") {
-                etiqueta += " (" + habilidadDePersonaje.getEspecializacion() + ")";
+                etiqueta += " (" + _l(habilidadDePersonaje.getEspecializacion()) + ")";
             }
             divContenido.append(
                 muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), personaje_actual.getBonos(BONO_HABILIDAD, habilidadDePersonaje.getHabilidad().getNombre(), CATEGORIA_BONO_CUALQUIERA), coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), false)
@@ -1243,6 +1261,17 @@ function muestraSecundarias(estadoGeneracion) {
 
 }
 
+/**
+ *
+ * @param {string} etiqueta Localizada
+ * @param valorBase
+ * @param bonos
+ * @param coste
+ * @param toAppend
+ * @param usable
+ * @param esPotencialPsiquico
+ * @returns {*}
+ */
 function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend, usable, esPotencialPsiquico) {
     var divRow = getDiv("row");
 
@@ -1263,9 +1292,9 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
         if (esPotencialPsiquico) {
             var costePotencial = siguienteCostePotencial(personaje_actual.getHabilidadDePersonaje(HB_POTENCIAL_PSIQUICO).CVsGastados);
             if (costePotencial != -1) {
-                costePotencial = "[" + costePotencial + " CV] ";
+                costePotencial = "[" + costePotencial + " " + _l(UI_CV) + "] ";
             } else {
-                costePotencial = "[max] ";
+                costePotencial = "[" + _l(UI_MAX) + "] ";
             }
 
             divCoste = getDiv(CSS_COSTE).addClass(CSS_TEXTO_SMALL);
@@ -1282,10 +1311,10 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
 
     if (usable) {
         divValorBase.append(valorBase);
-        tooltip = valorBase + "(base)";
+        tooltip = valorBase + "("+_l(UI_BASE)+")";
     } else {
-        divValorBase.append(UI_NO_USABLE_SIN_RANGOS);
-        tooltip = UI_NO_USABLE_SIN_RANGOS + "(base)";
+        divValorBase.append(_l(UI_NO_USABLE_SIN_RANGOS));
+        tooltip = _l(UI_NO_USABLE_SIN_RANGOS) + "("+_l(UI_BASE)+")";
     }
 
     var valorFinal = parseInt(valorBase);
@@ -1303,7 +1332,7 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
         } else {
             valorBono = "" + valorBono;
         }
-        tooltip += valorBono + " (" + bono.origen + ")";
+        tooltip += valorBono + " (" + _l(bono.origen) + ")";
     }
     if (valorBonos >= 0) {
         valorBonos = "+" + valorBonos;
@@ -1313,10 +1342,10 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
     divBonos.append(valorBonos);
     if (usable) {
         divValor.append("=" + valorFinal);
-        tooltip += "=" + valorFinal + " (final)";
+        tooltip += "=" + valorFinal + " ("+_l(UI_FINAL)+")";
     } else {
-        divValor.append("=" + UI_NO_USABLE_SIN_RANGOS);
-        tooltip += "=" + UI_NO_USABLE_SIN_RANGOS + " (final)";
+        divValor.append("=" + _l(UI_NO_USABLE_SIN_RANGOS));
+        tooltip += "=" + _l(UI_NO_USABLE_SIN_RANGOS) + " ("+_l(UI_FINAL)+")";
     }
     addToolTip(divRow,tooltip);
 
@@ -1336,7 +1365,7 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
  * @param coste
  * @param {string} etiqueta Localizada
  * @param valorBase
- * @param parametros
+ * @param {{}} parametros descripcion ya localizada
  * @param toAppend
  * @returns {*}
  */
@@ -1359,13 +1388,13 @@ function muestraValorPuntual(coste, etiqueta, valorBase, parametros, toAppend) {
     divEtiqueta.append(etiqueta + ":");
 
     divValorBase.append(valorBase);
-    tooltip = valorBase + "(base)";
+    tooltip = valorBase + "("+_l(UI_BASE)+")";
 
     var valorFinal = parseInt(valorBase);
 
     if (parametros.valorBonos) {
         parametros.valorBonos = modificadorBonito(parametros.valorBonos);
-        tooltip += parametros.valorBonos + " (bonos)";
+        tooltip += parametros.valorBonos + " ("+_l(UI_BONOS) +")";
         divBonos.append(parametros.valorBonos);
     }
 
@@ -1374,7 +1403,7 @@ function muestraValorPuntual(coste, etiqueta, valorBase, parametros, toAppend) {
     }
 
     divValor.append("=" + valorFinal);
-    tooltip += "=" + valorFinal + " (final)";
+    tooltip += "=" + valorFinal + " ("+_l(UI_FINAL)+")";
     addToolTip(divRow,tooltip);
 
     divRow.append(divEtiqueta).append(divValorBase).append(divBonos).append(divValor);
@@ -1408,9 +1437,9 @@ function muestraTablas(tiposTablas,muestraBotones) {
 
         if (listable) {
             var divV = getDiv(CSS_TEXTO_SMALL);
-            var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(tablaArmas.getNombre());
+            var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(_l(tablaArmas.getNombre()));
             if (tablaArmas.getOpcion() != "") {
-                divNombre.append(" (" + tablaArmas.getOpcion() + ")");
+                divNombre.append(" (" + _l(tablaArmas.getOpcion()) + ")");
             }
             divV.append(divNombre);
             var divCoste = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" [" + tablaArmas.getCoste(personaje_actual) + "]");
@@ -1423,7 +1452,7 @@ function muestraTablas(tiposTablas,muestraBotones) {
     }
 
     if (muestraBotones) {
-        div.append(botonComprarNuevo("Comprar tabla de armas",BOTON_TABLAS_ARMAS,dialogoTablasArmas,{}));
+        div.append(botonComprarNuevo(_l(UI_COMPRAR_TABLA_ARMAS),BOTON_TABLAS_ARMAS,dialogoTablasArmas,{}));
     } else if (listables == 0) {
         div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }

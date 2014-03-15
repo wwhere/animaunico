@@ -235,6 +235,7 @@ var UI_CARACTERISTICAS = (new L("Características","Características","Abilities
 var UI_CARACTERISTICA = (new L("Característica","Característica","Ability")).getId();
 var UI_VALOR = (new L("Valor","Valor","Value")).getId();
 var UI_BONO= (new L("Bono","Bono","Bonus")).getId();
+var UI_BONOS= (new L("Bonos","Bonos","Bonuses")).getId();
 
 
 var UI_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Skills")).getId();
@@ -519,3 +520,19 @@ var UI_AFINIDAD_CON_NUEVA_DISCIPLINA = (new L("Afinidad con nueva disciplina","A
 var UI_DOMINAR_NUEVO_PODER = (new L("Dominar un nuevo poder","Dominar un nuevo poder","Dominate new Power")).getId();
 
 var UI_POTENCIAL = (new L("potencial","potencial","potential")).getId();
+
+var UI_CAMBIAR_CAT = (new L("Cambiar cat.","Cambiar cat.","Change class")).getId();
+var UI_BASE = (new L("base","base","base")).getId();
+var UI_FINAL = (new L("final","final","final")).getId();
+
+var UI_COMPRAR_VENTAJA = (new L("Comprar ventaja","Comprar ventaja","Buy Advantage")).getId();
+var UI_COMPRAR_DESVENTAJA = (new L("Comprar desventaja","Comprar desventaja","Buy Disadvantage")).getId();
+var UI_COMPRAR_TECNICA_DE_KI = (new L("Comprar técnica del dominio","Comprar técnica del dominio","Buy Ki Technique")).getId();
+var UI_ARMA_INICIAL = (new L("Arma inicial","Arma inicial","Initial weapon")).getId();
+var UI_OTRAS_ARMAS = (new L("Otras armas", "Otras armas", "Other weapons")).getId();
+var UI_MAGIA_INNATA = (new L("Magia innata","Magia innata","Innate Magic")).getId();
+var UI_AUMENTAR_NIVELES_EN_VIAS = (new L("Aumentar niveles en vías","Aumentar niveles en vías","Raise spell lists levels")).getId();
+var UI_AFINIDAD_CON_DISCIPLINAS = (new L("Afinidad con disciplinas","Afinidad con disciplinas","Affinity with Disciplines")).getId();
+var UI_PODERES_DOMINADOS = (new L("Poderes dominados","Poderes dominados","Dominated powers")).getId();
+
+var UI_COMPRAR_TABLA_ARMAS = (new L("Comprar tabla de armas","Comprar tabla de armas","Buy Table Weapon/Combat Style")).getId();
