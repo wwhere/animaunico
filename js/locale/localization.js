@@ -474,3 +474,25 @@ var UI_NECESITAS_40_ATAQUE_DEFENSA = (new L("Necesitas 40 de ataque y defensa po
 var UI_ESPECIFICA = (new L("Especifica","Especifica","Specify")).getId();
 
 var UI_SINCRONIZACION = (new L("Sincronizacion", "Sincronización", "Synchronization")).getId();
+
+var UI_CONOCIMIENTO_MARCIAL = (new L("Conocimiento Marcial","Conocimiento Marcial","Martial Knowledge")).getId();
+var UI_HABILIDADES_KI = (new L("Habilidades del Ki","Habilidades del Ki","Ki Abilities")).getId();
+var UI_TECNICAS_KI = (new L("Técnicas de Dominio","Técnicas de Dominio","Ki Techniques")).getId();
+
+var UI_MINIMO = (new L("Minimo", "Mínimo", "Min.")).getId();
+var UI_MAXIMO = (new L("Maximo", "Máximo", "Max.")).getId();
+var UI_MIN = (new L("Min", "Min.", "Min.")).getId();
+var UI_MAX = (new L("Max", "Max.", "Max.")).getId();
+
+var UI_EFECTOS_DE_LA_TECNICA = (new L("Efectos de la técnica","Efectos de la técnica","Technique Effects")).getId();
+var UI_EFECTO = (new L("Efecto","Efecto","Effect")).getId();
+var UI_MANTENIMIENTO = (new L("Mantenimiento","Mantenimiento","Maintenance")).getId();
+var UI_BORRAR = (new L("Borrar","Borrar","Delete")).getId();
+
+var UI_DESVENTAJA = (new L("Desventaja","Desventaja","Disadvantage")).getId();
+var UI_DESVENTAJAS_DE_LA_TECNICA = (new L("Desventajas de la técnica","Desventajas de la técnica","Technique disadvantages")).getId();
+
+var UI_CREAR = (new L("Crear","Crear","Create")).getId();
+
+var UI_ON = (new L("ON", "ON", "ON")).getId();
+var UI_OFF = (new L("OFF", "OFF", "OFF")).getId();

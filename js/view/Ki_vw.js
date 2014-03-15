@@ -1,6 +1,3 @@
-var UI_CM = "Conocimiento Marcial";
-var UI_HABILIDADES_KI = "Habilidades del Ki";
-var UI_TECNICAS_KI = "Técnicas de Dominio";
 
 /**
  *
@@ -33,7 +30,7 @@ function dialogoCM() {
         resizable: true,
         draggable: true,
         //show: "puff",
-        title: DIAG_PODERES_KI,
+        title: _l(DIAG_PODERES_KI),
         position: "center",
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
@@ -54,10 +51,10 @@ function dialogoCM() {
  */
 function muestraCM() {
     var div = $("<div></div>");
-    div.append(muestraSubtitulo(UI_CM, false));
+    div.append(muestraSubtitulo(_l(UI_CONOCIMIENTO_MARCIAL), false));
     var divCM = $("<div></div>").addClass(CSS_ETIQUETA_EFECTO_TECNICA);
-    divCM.append(muestraValorConBonos(UI_CM, 0, personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA)).addClass(CSS_MUESTRA_INLINE));
-    divCM.append(" - CM Libre: " + (personaje_actual.getCMTotal() - personaje_actual.getCMGastado()));
+    divCM.append(muestraValorConBonos(_l(UI_CONOCIMIENTO_MARCIAL), 0, personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA)).addClass(CSS_MUESTRA_INLINE));
+    divCM.append(" - " + _l(UI_CM) + " " + _l(UI_LIBRE) + ": " + (personaje_actual.getCMTotal() - personaje_actual.getCMGastado()));
     div.append(divCM);
     return div;
 }
@@ -125,7 +122,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
         for( i = 0; i < TIPOS_EFECTOS_TECNICAS.length; i++) {
             var divCategoriaEfecto = $("<h3></h3>");
-            divCategoriaEfecto.append(TIPOS_EFECTOS_TECNICAS[i]);
+            divCategoriaEfecto.append(_l(TIPOS_EFECTOS_TECNICAS[i]));
             divEfectos.append(divCategoriaEfecto);
             var divEfectosCategoria = $("<div></div>");
             for (j = 0; j < efectosTecnicas.length; j++) {
@@ -134,7 +131,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
                     var divEfectoNombre = $("<div></div>").addClass("seven columns");
 
-                    divEfectoNombre.append(efectosTecnicas[j].getNombre());
+                    divEfectoNombre.append(_l(efectosTecnicas[j].getNombre()));
 
                     var divEfectoCompraPrim = $("<div></div>").addClass("two columns");
 
@@ -157,7 +154,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         }
 
         var divCategoriaDesventaja = $("<h3></h3>");
-        divCategoriaDesventaja.append(UI_DESVENTAJAS);
+        divCategoriaDesventaja.append(_l(UI_DESVENTAJAS));
         divEfectos.append(divCategoriaDesventaja);
         var divListaDesventajas = $("<div></div>");
         for (j = 0; j < desventajasTecnicas.length; j++) {
@@ -165,7 +162,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
             var divDesventajaNombre = $("<div></div>").addClass("nine columns");
 
-            divDesventajaNombre.append(desventajasTecnicas[j].getNombre());
+            divDesventajaNombre.append(_l(desventajasTecnicas[j].getNombre()));
 
             var divDesventajaCompra = $("<div></div>").addClass("three columns");
 
@@ -189,25 +186,25 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
         divResumenTecnica.append(divDatosTecnica);
 
-        var divNombre = $("<div></div>").append(muestraPersonal(UI_NOMBRE, tecnicaKi.getNombre(), true, elegirManualNombreTecnica, {tecnicaKi:tecnicaKi}));
-        var divNivel  = $("<div></div>").append(muestraPersonal(UI_NIVEL, tecnicaKi.getNivel(), true, elegirNivelTecnica, {tecnicaKi:tecnicaKi}));
-        var divCoste = $("<div></div>").append("CM: " + tecnicaKi.getCosteCM() + " / CM Mínimo: " + tecnicaKi.getMinCM() + " / CM Máximo: " + tecnicaKi.getMaxCM());
-        var divDescripcion = $("<div></div>").append(muestraPersonal(UI_DESCRIPCION, tecnicaKi.getDescripcion(), true, elegirManualDescripcionTecnica, {tecnicaKi:tecnicaKi}));
-        var divCosteKi = $("<div></div>").append(muestraPersonal(UI_COSTE_KI, tecnicaKi.getCosteKi().toString(), false));
+        var divNombre = $("<div></div>").append(muestraPersonal(_l(UI_NOMBRE), tecnicaKi.getNombre(), true, elegirManualNombreTecnica, {tecnicaKi:tecnicaKi}));
+        var divNivel  = $("<div></div>").append(muestraPersonal(_l(UI_NIVEL), tecnicaKi.getNivel(), true, elegirNivelTecnica, {tecnicaKi:tecnicaKi}));
+        var divCoste = $("<div></div>").append(_l(UI_CM) + ": " + tecnicaKi.getCosteCM() + " / " + _l(UI_CM) + " " + _l(UI_MINIMO) + ": " + tecnicaKi.getMinCM() + " / " + _l(UI_CM) + " " + _l(UI_MAXIMO) + ": " + tecnicaKi.getMaxCM());
+        var divDescripcion = $("<div></div>").append(muestraPersonal(_l(UI_DESCRIPCION), tecnicaKi.getDescripcion(), true, elegirManualDescripcionTecnica, {tecnicaKi:tecnicaKi}));
+        var divCosteKi = $("<div></div>").append(muestraPersonal(_l(UI_COSTE_KI), tecnicaKi.getCosteKi().toString(), false));
         var divIsMantenida = $("<div></div>");
         if (tecnicaKi.isMantenida()) {
-            divIsMantenida.append(muestraPersonal(UI_MANTENIDA + ". " + UI_COSTE_MANTENIMIENTO, tecnicaKi.getCosteMantenimiento().toString(), false));
+            divIsMantenida.append(muestraPersonal(_l(UI_MANTENIDA) + ". " + _l(UI_COSTE_MANTENIMIENTO), tecnicaKi.getCosteMantenimiento().toString(), false));
         }
 
-        var divEfectosDeLaTecnica = $("<div></div>").append("Efectos de la técnica:").addClass(CSS_TEXTO_SMALL);
+        var divEfectosDeLaTecnica = $("<div></div>").append(_l(UI_EFECTOS_DE_LA_TECNICA)  + ":").addClass(CSS_TEXTO_SMALL);
 
         var filaEncabezados = $("<div></div>").addClass("row");
-        var encabezadoNombre = $("<div></div>").addClass("three columns").append("Efecto");
-        var encabezadoCM = $("<div></div>").addClass("one columns").append("CM");
-        var encabezadoKi = $("<div></div>").addClass("three columns").append("Ki");
-        var encabezadoMantenimiento = $("<div></div>").addClass("three columns").append("Mantenimiento");
-        var encabezadoBotonesVentajas = $("<div></div>").addClass("one columns").append("Ventajas");
-        var encabezadoBoton = $("<div></div>").addClass("one columns").append("Borrar");
+        var encabezadoNombre = $("<div></div>").addClass("three columns").append(_l(UI_EFECTO));
+        var encabezadoCM = $("<div></div>").addClass("one columns").append(_l(UI_CM));
+        var encabezadoKi = $("<div></div>").addClass("three columns").append(_l(UI_KI));
+        var encabezadoMantenimiento = $("<div></div>").addClass("three columns").append(_l(UI_MANTENIMIENTO));
+        var encabezadoBotonesVentajas = $("<div></div>").addClass("one columns").append(_l(UI_VENTAJAS));
+        var encabezadoBoton = $("<div></div>").addClass("one columns").append(_l(UI_BORRAR));
 
         filaEncabezados.append(encabezadoNombre).append(encabezadoCM).append(encabezadoKi).append(encabezadoMantenimiento).append(encabezadoBotonesVentajas).append(encabezadoBoton);
 
@@ -232,13 +229,13 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         }
 
         var filaEncabezadosDesv = $("<div></div>").addClass("row");
-        var encabezadoNombreDesv = $("<div></div>").addClass("four columns").append("Desventaja");
-        var encabezadoCMDesv = $("<div></div>").addClass("seven columns").append("CM");
-        var encabezadoBotonDesv = $("<div></div>").addClass("one columns").append("Borrar");
+        var encabezadoNombreDesv = $("<div></div>").addClass("four columns").append(_l(UI_DESVENTAJA));
+        var encabezadoCMDesv = $("<div></div>").addClass("seven columns").append(_l(UI_CM));
+        var encabezadoBotonDesv = $("<div></div>").addClass("one columns").append(_l(UI_BORRAR));
 
         filaEncabezadosDesv.append(encabezadoNombreDesv).append(encabezadoCMDesv).append(encabezadoBotonDesv);
 
-        var divDesventajas = $("<div></div>").append("Desventajas de la técnica (Max. " + tecnicaKi.getMaxDesventajas() + "):").addClass(CSS_TEXTO_SMALL);
+        var divDesventajas = $("<div></div>").append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + "(" + _l(UI_MAX) + " " + tecnicaKi.getMaxDesventajas() + "):").addClass(CSS_TEXTO_SMALL);
 
         divDesventajas.append(filaEncabezadosDesv);
 
@@ -256,7 +253,8 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         });
 
         if (dialogInicializado) {
-            dialogo.dialog("option", "buttons", [{text: "Crear",
+            dialogo.dialog("option", "buttons", [{
+                text: _l(UI_CREAR),
                 disabled: !(tecnicaKi.isCorrecta() && personaje_actual.puedeComprarTecnicaKi(tecnicaKi)),
                 click: function() {
                     dialogo.dialog( "close" );
@@ -274,7 +272,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         resizable: true,
         draggable: true,
         //show: "puff",
-        title: DIAG_CREACION_TECNICA,
+        title: _l(DIAG_CREACION_TECNICA),
         position: "center",
         closeOnEscape: true,
         width: ANCHO_COMPLETO,
@@ -287,7 +285,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         },
         buttons: [
             {
-                text: "Crear",
+                text: _l(UI_CREAR),
                 disabled: !(tecnicaKi.isCorrecta() && personaje_actual.puedeComprarTecnicaKi(tecnicaKi)),
                 click: function() {
                     dialogo.dialog( "close" );
@@ -325,7 +323,7 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
     var contentCosteKi = getDiv(CSS_MUESTRA_INLINE);
     contentCosteKi.append(efectoTecnicaElegido.getCosteKi().toString());
     divCosteKi.append(contentCosteKi);
-    divCosteKi.append(muestraBotonPequeño("?",{costeKi:efectoTecnicaElegido.getCosteKi()},muestraDialogoRecolocacionCosteKi,""));
+    divCosteKi.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteKi()},muestraDialogoRecolocacionCosteKi,""));
 
     var divMantenimiento = $("<div></div>").addClass("three columns");
     var subrow = $("<div></div>").addClass("row");
@@ -340,13 +338,13 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
             .attr("type","radio")
             .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn")
             .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var labelBotonOn = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn").append("On");
+        var labelBotonOn = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn").append(_l(UI_ON));
 
         var divBotonMantenimientoOff = $("<input>")
             .attr("type","radio")
             .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff")
             .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var labelBotonOff = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff").append("Off");
+        var labelBotonOff = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff").append(_l(UI_OFF));
 
         if (isMantenida) {
             divBotonMantenimientoOn.attr("checked","checked");
@@ -359,7 +357,7 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
 
         if (efectoTecnicaElegido.isMantenido()) {
             divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
-            divCosteMantenimiento.append(muestraBotonPequeño("?",{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
+            divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
         }
 
         divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:true},cambiaMantenimiento);
@@ -402,7 +400,7 @@ function muestraVentajaOpcionalEfectoTecnica(ventajaElegida, efectoTecnicaElegid
 
     var divNombre = $("<div></div>").addClass("push_one two columns");
     var contentNombre= $("<div></div>");
-    contentNombre.addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(ventajaElegida.getNombre());
+    contentNombre.addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(_l(ventajaElegida.getNombre()));
     divNombre.append(contentNombre);
 
     var divCoste = $("<div></div>").addClass("one columns");
@@ -418,7 +416,7 @@ function muestraVentajaOpcionalEfectoTecnica(ventajaElegida, efectoTecnicaElegid
     var divMantenimiento = $("<div></div>").addClass("three columns");
     var contentMantenimiento= $("<div></div>").addClass(CSS_FILA_EFECTO_TECNICA);
     if (efectoTecnicaElegido.isMantenible()) {
-
+        //TODO ¿no falta algo aqui?
     }
     divMantenimiento.append(contentMantenimiento);
 
@@ -538,7 +536,7 @@ function muestraDesventajaTecnica(desventajaElegida, tecnicaKi, anulable) {
     var div = $("<div></div>").addClass("row");
 
     var divNombre = $("<div></div>").addClass("four columns");
-    divNombre.addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(desventajaElegida.getNombre());
+    divNombre.addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(_l(desventajaElegida.getNombre()));
 
     var divCoste = $("<div></div>").addClass("seven columns");
     divCoste.append(desventajaElegida.getCosteCM());
@@ -571,7 +569,7 @@ function dialogoRecolocacionCosteKi(costeKi) {
         var divDestino = getDiv("");
 
         var divNombreOrigen = getDiv(CSS_TEXTO_CENTRO);
-        divNombreOrigen.append(costeKi.caracbase);
+        divNombreOrigen.append(_l(costeKi.caracbase));
         var divCosteOrigen = getDiv(CSS_TEXTO_CENTRO);
         divCosteOrigen.append(costeKi.getCoste(costeKi.caracbase));
 
@@ -584,7 +582,7 @@ function dialogoRecolocacionCosteKi(costeKi) {
             var carDest = caracsDestino[i];
 
             var divNombreDestino = getDiv(CSS_TEXTO_CENTRO);
-            divNombreDestino.append(carDest + " (+" + costeKi.mod[carDest] + ")");
+            divNombreDestino.append(_l(carDest) + " (+" + costeKi.mod[carDest] + ")");
             var divCosteDestino = getDiv(CSS_TEXTO_CENTRO);
             divCosteDestino.append(costeKi.getCoste(carDest));
 
@@ -609,7 +607,7 @@ function dialogoRecolocacionCosteKi(costeKi) {
         resizable: true,
         draggable: true,
         //show: "puff",
-        title: DIAG_REASIGNA_COSTE_KI,
+        title: _l(DIAG_REASIGNA_COSTE_KI),
         position: "center",
         closeOnEscape: true,
         width: ANCHO_DIALOGO,

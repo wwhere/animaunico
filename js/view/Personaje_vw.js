@@ -257,7 +257,7 @@ function muestraDesarrollo(estadoGeneracion) {
 
 /**
  *
- * @param {string} etiqueta
+ * @param {string} etiqueta Ya localizada
  * @param {number|string} valor
  * @param {boolean} mostrarBotonEleccionManual
  * @param {function} [funcionEleccionManual]

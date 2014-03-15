@@ -1164,6 +1164,10 @@ TecnicaKi.prototype = {
         }
     },
 
+    /**
+     *
+     * @returns {CosteKi}
+     */
     getCosteMantenimiento : function() {
         if (!this.costeMantenimiento) {
             var costeMantenimiento = new CosteKi(0,0,0,0,0,0,AGI);
@@ -1256,10 +1260,10 @@ EfectoTecnicaElegido.prototype = {
 
     /**
      *
-     * @returns {string}
+     * @returns {string} Localizado
      */
     getNombreCompleto : function() {
-        return this.efectoTecnica.getNombre() + " " + this.nivelElegido.getNombre();
+        return _l(this.efectoTecnica.getNombre()) + " " + _l(this.nivelElegido.getNombre());
     },
 
     /**
@@ -1288,7 +1292,7 @@ EfectoTecnicaElegido.prototype = {
 
     /**
      *
-     * @returns {number}
+     * @returns {CosteKi}
      */
     getCosteMantenimiento : function() {
         return this.costeMantenimiento;
@@ -1873,7 +1877,12 @@ CosteKi.prototype = {
      * @returns {string}
      */
     toString : function() {
-        return "A:"+this.coste[AGI]+" C:"+this.coste[CON]+" D:"+this.coste[DES]+" F:"+this.coste[FUE]+" P:"+this.coste[POD]+" V:"+this.coste[VOL];
+        return _l(AGI).substr(0,1)+":"+this.coste[AGI]+
+            " "+_l(CON).substr(0,1)+":"+this.coste[CON]+
+            " "+_l(DES).substr(0,1)+":"+this.coste[DES]+
+            " "+_l(FUE).substr(0,1)+":"+this.coste[FUE]+
+            " "+_l(POD).substr(0,1)+":"+this.coste[POD]+
+            " "+_l(VOL).substr(0,1)+":"+this.coste[VOL];
     },
 
     /**
