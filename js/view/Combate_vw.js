@@ -1,5 +1,3 @@
-var UI_ARTES_MARCIALES_BASICAS = "Artes Marciales Básicas";
-var UI_ARTES_MARCIALES_AVANZADAS = "Artes Marciales Avanzadas";
 var CATEGORIA_BASICA = "CATEGORIA_BASICA";
 var CATEGORIA_AVANZADA = "CATEGORIA_AVANZADA";
 
@@ -13,7 +11,7 @@ function dialogoTablasArmas() {
     var j;
 
     for (i=0;i<CATEGORIAS_TABLAS_ARMAS.length;i++) {
-        categorias.push(new OpcionMostrable(CATEGORIAS_TABLAS_ARMAS[i],CATEGORIAS_TABLAS_ARMAS[i]+"ElegirTablaArmas"));
+        categorias.push(new OpcionMostrable(_l(CATEGORIAS_TABLAS_ARMAS[i]),CATEGORIAS_TABLAS_ARMAS[i]+"ElegirTablaArmas"));
     }
 
     for (i=0; i<tablasArmas_set.length;i++) {
@@ -21,7 +19,7 @@ function dialogoTablasArmas() {
         var categoria = tablaArmas.getCategoriaTabla();
 
 
-        arrayTablaArmas.push(new OpcionMostrable(tablaArmas.getNombre(),categoria+"ElegirTablaArmas",tablaArmas.getDescripcion()));
+        arrayTablaArmas.push(new OpcionMostrable(_l(tablaArmas.getNombre()),categoria+"ElegirTablaArmas",_l(tablaArmas.getDescripcion())));
 
     }
 

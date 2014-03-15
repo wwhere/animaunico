@@ -10,7 +10,7 @@ function setIdiomaUI() {
     var lang = navigator.language || navigator.userLanguage;
 
     if ((lang.lastIndexOf("es") != -1) || (lang.lastIndexOf("spa") != -1)) {
-        IDIOMA_UI = SPA;
+        IDIOMA_UI = ENG;
     } else {
         IDIOMA_UI = ENG;
     }
@@ -459,3 +459,6 @@ var UI_TOTAL = (new L("Total","Total", "Total")).getId();
 var UI_LIBRES = (new L("Libres", "Libres", "Free")).getId();
 
 var DIAG_ELEGIR_CATEGORIA_TITULO = (new L("Seleccionar categoría","Seleccionar categoría","Choose class")).getId();
+
+var UI_ARTES_MARCIALES_BASICAS = (new L("Artes Marciales Básicas","Artes Marciales Básicas","Basic Martial Arts")).getId();
+var UI_ARTES_MARCIALES_AVANZADAS = (new L("Artes Marciales Avanzadas","Artes Marciales Avanzadas","Advanced Martial Arts")).getId();
