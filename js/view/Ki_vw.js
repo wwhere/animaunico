@@ -51,7 +51,7 @@ function dialogoCM() {
  */
 function muestraCM() {
     var div = $("<div></div>");
-    div.append(muestraSubtitulo(_l(UI_CONOCIMIENTO_MARCIAL), false));
+    div.append(muestraSubtitulo(UI_CONOCIMIENTO_MARCIAL, false));
     var divCM = $("<div></div>").addClass(CSS_ETIQUETA_EFECTO_TECNICA);
     divCM.append(muestraValorConBonos(_l(UI_CONOCIMIENTO_MARCIAL), 0, personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA)).addClass(CSS_MUESTRA_INLINE));
     divCM.append(" - " + _l(UI_CM) + " " + _l(UI_LIBRE) + ": " + (personaje_actual.getCMTotal() - personaje_actual.getCMGastado()));

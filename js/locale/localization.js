@@ -465,7 +465,7 @@ var DIAG_ELEGIR_CATEGORIA_TITULO = (new L("Seleccionar categoría","Seleccionar 
 var UI_ARTES_MARCIALES_BASICAS = (new L("Artes Marciales Básicas","Artes Marciales Básicas","Basic Martial Arts")).getId();
 var UI_ARTES_MARCIALES_AVANZADAS = (new L("Artes Marciales Avanzadas","Artes Marciales Avanzadas","Advanced Martial Arts")).getId();
 
-var UI_BTN_TIPO = (new L("Tipo", "Método", "Method")).getId();
+var UI_BTN_TIPO = (new L("Tipo", "Tipo", "Type")).getId();
 var UI_REPARTO_CARACTERISTICAS = (new L("Asigna los valores","Asigna los valores","Assign the points")).getId();
 
 var UI_NECESITAS_40_ATAQUE_DEFENSA = (new L("Necesitas 40 de ataque y defensa por cada arte marcial.", "Necesitas 40 de ataque y defensa por cada arte marcial.", "You need 40 in attack and defenses for each martial art")).getId();
@@ -496,3 +496,16 @@ var UI_CREAR = (new L("Crear","Crear","Create")).getId();
 
 var UI_ON = (new L("ON", "ON", "ON")).getId();
 var UI_OFF = (new L("OFF", "OFF", "OFF")).getId();
+
+var UI_NIVELES_VIA = (new L("Niveles de vía","Niveles de vía","Spell levels")).getId();
+var UI_VIAS = (new L("Vías de magia","Vías de magia","Spell Lists")).getId();
+var UI_CONJUROS = (new L("Conjuros sueltos","Conjuros sueltos","Cherry picked spells")).getId();
+
+
+var UI_NIVELES_MAXIMOS_A_REPARTIR = (new L("Niveles máximos a repartir","Niveles máximos a repartir","Max levels to assign")).getId();
+var UI_NIVELES_LIBRES_A_REPARTIR = (new L("Niveles libres a repartir","Niveles libres a repartir","Free levels to assign")).getId();
+
+
+var UI_NV = (new L("Nv", "Nv", "Lv")).getId();
+var UI_NIVELES_VIA_GASTADOS = (new L("niveles gastados", "niveles gastados", "spent levels")).getId();
+var UI_LIBRE_ACCESO = (new L("Libre acceso", "Libre acceso", "Free access")).getId();

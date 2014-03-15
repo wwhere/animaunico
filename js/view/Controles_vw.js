@@ -151,7 +151,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
     }
     liCargar = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CARGAR).append(_l(UI_BOTON_CARGAR)));
 
-    menuPersonaje.append(liNuevo).append(liSubir).append(liGuardar).append(_l(UI_BOTON_CARGAR));
+    menuPersonaje.append(liNuevo).append(liSubir).append(liGuardar).append(liCargar);
 
     //menu Creacion
     var menuCreacion = $("#menuCreacion").empty();

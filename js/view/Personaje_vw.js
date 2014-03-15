@@ -144,6 +144,12 @@ function recuadroBase() {
     return div;
 }
 
+/**
+ *
+ * @param {string} etiquetaId No localizado
+ * @param esTitulo
+ * @returns {*}
+ */
 function muestraSubtitulo(etiquetaId, esTitulo) {
     var divTitulo = getDiv("pretty");
     if (esTitulo) {

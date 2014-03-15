@@ -1,7 +1,3 @@
-var UI_NIVELES_VIA = "Niveles de vía";
-var UI_VIAS = "Vías de magia";
-var UI_CONJUROS = "Conjuros sueltos";
-
 /**
  *
  */
@@ -14,7 +10,7 @@ function dialogoMagia() {
 
         dialogo.append(muestraSubtitulo(UI_NIVELES_VIA, true));
         var divNivelMagia = $("<div></div>");
-        divNivelMagia.append("Niveles máximos a repartir: " + personaje_actual.nivelMagiaMaximo() + "<br>Niveles libres para repartir: " + (personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado()));
+        divNivelMagia.append(_l(UI_NIVELES_MAXIMOS_A_REPARTIR) + ": " + personaje_actual.nivelMagiaMaximo() + "<br>" + _l(UI_NIVELES_LIBRES_A_REPARTIR) + ": " + (personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado()));
         dialogo.append(divNivelMagia);
 
         dialogo.append(muestraSubtitulo(UI_VIAS, false));
@@ -46,7 +42,7 @@ function dialogoMagia() {
             var via = nivelEnVia.getVia();
             var coste = nivelEnVia.getNivel() * personaje_actual.getCosteVia(nivelEnVia.getVia().getNombre());
             titulo = $("<h3></h3>")
-            titulo.append(nivelEnVia.getVia().getNombre() + " - Nv: " + nivelEnVia.getNivel() + " (" + coste + " niveles gastados)");
+            titulo.append(_l(nivelEnVia.getVia().getNombre()) + " - " + _l(UI_NV) + ": " + nivelEnVia.getNivel() + " (" + coste + " " + _l(UI_NIVELES_VIA_GASTADOS) + ")");
 
             titulo.append(muestraBotonMasMenosNivelVia(nivelEnVia));
 
@@ -58,16 +54,16 @@ function dialogoMagia() {
 
             for (var j = 2; j <= nivelEnVia.getNivel(); j += 2) {
                 if (via.isNivelLibreAcceso(j)) {
-                    divConjurosVia.append("<br><b>Nivel " + j + ": Libre Acceso");
+                    divConjurosVia.append("<br><b>"+_l(UI_NIVEL)+" " + j + ": " + _l(UI_LIBRE_ACCESO));
                     if (nivelEnVia.getConjuroLibre(j) != undefined) {
                         var conjuroLibre = nivelEnVia.getConjuroLibre(j);
-                        divConjurosVia.append(" - " + conjuroLibre.getNombre());
+                        divConjurosVia.append(" - " + _l(conjuroLibre.getNombre()));
                     }
                     divConjurosVia.append("</b>");
                     divConjurosVia.append(muestraBotonElegirConjuroLibreAcceso(via,j));
                 } else {
                     var conjuro = via.getConjuro(j);
-                    divConjurosVia.append("<br><b>Nivel " + j + ": " + conjuro.getNombre() +  "</b>");
+                    divConjurosVia.append("<br><b>"+_l(UI_NIVEL)+" " + j + ": " + _l(conjuro.getNombre()) +  "</b>");
                 }
             }
 
@@ -75,14 +71,14 @@ function dialogoMagia() {
         }
 
         titulo = $("<h3></h3>")
-        titulo.append(UI_CONJUROS);
+        titulo.append(_l(UI_CONJUROS));
         divZonaVias.append(titulo);
         var divConjurosSueltos = $("<div></div>");
 
         divConjurosSueltos.append(muestraBotonElegirConjuroSuelto());
         var conjurosSueltos = personaje_actual.getConjurosSueltos();
         for (var k = 0; k < conjurosSueltos.length; k++) {
-            divConjurosSueltos.append("<br><b>Nivel " + conjurosSueltos[k].getNivel() + ": " + conjurosSueltos[k].getNombre() +  "</b>");
+            divConjurosSueltos.append("<br><b>"+_l(UI_NIVEL)+" " + conjurosSueltos[k].getNivel() + ": " + _l(conjurosSueltos[k].getNombre()) +  "</b>");
         }
 
         divZonaVias.append(divConjurosSueltos);
@@ -100,7 +96,7 @@ function dialogoMagia() {
         resizable: true,
         draggable: true,
         //show: "puff",
-        title: DIAG_PODERES_MAGIA,
+        title: _l(DIAG_PODERES_MAGIA),
         position: "center",
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
