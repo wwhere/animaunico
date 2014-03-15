@@ -1,4 +1,3 @@
-var CAT_HECHICERO = "Hechicero";
 var CATEGORIA_HECHICERO = new Categoria(CAT_HECHICERO);
 
 CATEGORIA_HECHICERO.descripcion = "";

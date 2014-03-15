@@ -1,4 +1,3 @@
-var CAT_LADRON = "Ladrón";
 var CATEGORIA_LADRON = new Categoria(CAT_LADRON);
 
 CATEGORIA_LADRON.descripcion = "";

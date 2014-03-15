@@ -1,4 +1,3 @@
-var CAT_ILUSIONISTA = "Ilusionista";
 var CATEGORIA_ILUSIONISTA = new Categoria(CAT_ILUSIONISTA);
 
 CATEGORIA_ILUSIONISTA.descripcion = "";

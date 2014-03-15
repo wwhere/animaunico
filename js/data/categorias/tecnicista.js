@@ -1,4 +1,3 @@
-var CAT_TECNICISTA = "Tecnicista";
 var CATEGORIA_TECNICISTA = new Categoria(CAT_TECNICISTA);
 
 

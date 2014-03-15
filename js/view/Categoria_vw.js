@@ -5,8 +5,7 @@ var DESTINO_EXPLICACION_CATEGORIA = "explicacionCategoria";
  *
  */
 function dialogoElegirCategoria() {
-    var dialogElegirCategoria = getDiv("");
-    dialogElegirCategoria.prop("id",DIV_DIALOG_ELEGIR_CATEGORIA);
+    var dialogElegirCategoria = $(DIV_DIALOG_ELEGIR_CATEGORIA);
     dialogElegirCategoria.empty();
 
     dialogElegirCategoria.dialog({

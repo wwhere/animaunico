@@ -1,4 +1,3 @@
-var CAT_PALADIN_OSCURO_CONT = "Paladín Oscuro (Controlar)";
 var CATEGORIA_PALADIN_OSCURO_CONT = new Categoria(CAT_PALADIN_OSCURO_CONT);
 
 

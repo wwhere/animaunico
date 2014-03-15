@@ -1,7 +1,5 @@
-var CAT_MAESTRO_ARMAS = "Maestro en Armas";
 var CATEGORIA_MAESTRO_ARMAS = new Categoria(CAT_MAESTRO_ARMAS);
 
-var BONO_MAESTRO_ARMAS = "tablas de armas y maniobras a medio coste";
 
 
 CATEGORIA_MAESTRO_ARMAS.descripcion = "";

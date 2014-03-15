@@ -1,4 +1,3 @@
-var CAT_WARLOCK = "Warlock";
 var CATEGORIA_WARLOCK = new Categoria(CAT_WARLOCK);
 
 CATEGORIA_WARLOCK.descripcion = "";

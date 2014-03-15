@@ -1,4 +1,3 @@
-var CAT_PALADIN_DESC = "Paladín (Desconvocar)";
 var CATEGORIA_PALADIN_DESC = new Categoria(CAT_PALADIN_DESC);
 
 

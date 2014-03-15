@@ -1,7 +1,5 @@
-var CAT_TAO = "Tao";
 var CATEGORIA_TAO = new Categoria(CAT_TAO);
 
-var BONO_TAO = "artes marciales a medio coste";
 
 
 CATEGORIA_TAO.descripcion = "";

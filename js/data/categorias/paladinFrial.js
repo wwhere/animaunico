@@ -1,4 +1,3 @@
-var CAT_PALADIN_FRIAL = "Paladín (Frialdad)";
 var CATEGORIA_PALADIN_FRIAL = new Categoria(CAT_PALADIN_FRIAL);
 
 

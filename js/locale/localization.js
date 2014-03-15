@@ -344,9 +344,9 @@ var ERR_VALOR_CARACTERISTICA_ERRONEO = (new L("Error: Valor de característica f
 var NOM_ARQ_LUCHADOR = (new L("Luchador","Luchador","Fighter")).getId();
 var NOM_ARQ_MISTICO = (new L("Místico","Místico","Mystic")).getId();
 var NOM_ARQ_PSIQUICO = (new L("Psíquico","Psíquico","Psychic")).getId();
-var NOM_ARQ_ACECHADOR = (new L("Acechador","Acechador","Stalker")).getId();
+var NOM_ARQ_ACECHADOR = (new L("Acechador","Acechador","Prowler")).getId();
 var NOM_ARQ_DOMINE = (new L("Domine","Domine","Domine")).getId();
-var NOM_ARQ_SIN_CATEGORIA = (new L("Sin Categoría","Sin Categoría","Without Class")).getId();
+var NOM_ARQ_SIN_CATEGORIA = (new L("Sin Categoría","Sin Categoría","Novel")).getId();
 
 var ORIGEN_MULTIPLO_VIDA = (new L("Múltiplos de vida","Múltiplos de vida","LP Multiples")).getId();
 

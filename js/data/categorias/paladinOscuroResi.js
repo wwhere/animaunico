@@ -1,4 +1,3 @@
-var CAT_PALADIN_OSCURO_RES = "Paladín Oscuro (Resistir Dolor)";
 var CATEGORIA_PALADIN_OSCURO_RES = new Categoria(CAT_PALADIN_OSCURO_RES);
 
 

@@ -1,8 +1,5 @@
-var CAT_NOVEL = "Novel";
 var CATEGORIA_NOVEL = new Categoria(CAT_NOVEL);
 
-var BONO_NOVEL_CINCO_ELECCIONES = "bono innato novel 5 +10";
-var BONO_NOVEL_CAMBIO_REDUCIDO = "bono innato novel cambio clase"; //TODO
 
 CATEGORIA_NOVEL.descripcion = "";
 CATEGORIA_NOVEL.arquetipo = ARQ_SIN_CATEGORIA;
@@ -47,13 +44,9 @@ CATEGORIA_NOVEL.costesReducidos = [];
 //BONIFICADORES INNATOS
 CATEGORIA_NOVEL.bonosInnatos = [
     new Bono(BONO_HABILIDAD,HB_ZEON,10,"",true,BONO_INNATO,ORIGEN_CATEGORIA,{categoriaPersonaje:CAT_NOVEL}),
-    new Bono(BONO_HABILIDAD,BONO_NOVEL_CINCO_ELECCIONES,10,"",true,BONO_INNATO,ORIGEN_CATEGORIA,{categoriaPersonaje:CAT_NOVEL}),
-    new Bono(BONO_HABILIDAD,BONO_NOVEL_CAMBIO_REDUCIDO,10,"",true,BONO_INNATO,ORIGEN_CATEGORIA,{categoriaPersonaje:CAT_NOVEL})
+    new Bono(BONO_NOVEL_CINCO_ELECCIONES,BONO_NOVEL_CINCO_ELECCIONES,10,"",true,BONO_INNATO,ORIGEN_CATEGORIA,{categoriaPersonaje:CAT_NOVEL}),
+    new Bono(BONO_NOVEL_CAMBIO_REDUCIDO,BONO_NOVEL_CAMBIO_REDUCIDO,0,"",true,BONO_INNATO,ORIGEN_CATEGORIA,{categoriaPersonaje:CAT_NOVEL})
 ];
 
-//Al novel sólo le cuesta 20 PD cambiar de categoría
-//a otra de cualquier arquetipo o viceversa (es
-//decir, un luchador solo gasta 20 PD puntos para
-//convertirse en novel).
 
 categorias_set.push(CATEGORIA_NOVEL);

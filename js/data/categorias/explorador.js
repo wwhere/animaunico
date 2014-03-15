@@ -1,4 +1,3 @@
-var CAT_EXPLORADOR = "Explorador";
 var CATEGORIA_EXPLORADOR = new Categoria(CAT_EXPLORADOR);
 
 CATEGORIA_EXPLORADOR.descripcion = "";

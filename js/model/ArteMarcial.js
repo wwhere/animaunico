@@ -270,7 +270,6 @@ ArteMarcialComprada.prototype = {
     /**
      *
      * @param {boolean} valor
-     * @returns {boolean}
      */
     setAnulable : function(valor) {
         this.anulable = valor;

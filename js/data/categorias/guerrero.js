@@ -1,4 +1,3 @@
-var CAT_GUERRERO = "Guerrero";
 var CATEGORIA_GUERRERO = new Categoria(CAT_GUERRERO);
 
 

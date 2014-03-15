@@ -1,0 +1,27 @@
+var CAT_PALADIN_OSCURO_CONT = (new L("CAT_PALADIN_OSC_CONTR","Paladín Oscuro (Controlar)","Dark Paladin (Control)")).getId();
+var CAT_PALADIN_OSCURO_RES = (new L("CAT_PALADIN_OSC_RES","Paladín Oscuro (Resistir Dolor)","Dark Paladin (Withstand Pain)")).getId();
+var CAT_GUERRERO_ACROBATA = (new L("CAT_GUERRERO_ACROBATA","Guerrero Acróbata","Acrobatic Warrior")).getId();
+var CAT_ASESINO = (new L("CAT_ASESINO","Asesino","Assassin")).getId();
+var CAT_GUERRERO = (new L("CAT_GUERRERO","Guerrero","Warrior")).getId();
+var CAT_PALADIN_DESC = (new L("CAT_PALADIN_DESC","Paladín (Desconvocar)","Paladin (Banish)")).getId();
+var CAT_PALADIN_FRIAL = (new L("CAT_PALADIN_FRIAL","Paladín (Frialdad)","Paladin (Composure)")).getId();
+var CAT_NOVEL = (new L("CAT_NOVEL","Novel","Freelance")).getId();
+var CAT_LADRON = (new L("CAT_LADRON","Ladrón","Thief")).getId();
+var CAT_MENTALISTA = (new L("CAT_MENTALISTA","Mentalista","Mentalist")).getId();
+var CAT_ILUSIONISTA =(new L("CAT_ILUSIONISTA","Ilusionista","Illusionist")).getId();
+var CAT_GUERRERO_MENTALISTA = (new L("CAT_GUERRERO_MENTALISTA","Guerrero Mentalista","Warrior Mentalist")).getId();
+var CAT_EXPLORADOR = (new L("CAT_EXPLORADOR","Explorador","Ranger")).getId();
+var CAT_HECHICERO = (new L("CAT_HECHICERO","Hechicero","Wizard")).getId();
+var CAT_SOMBRA = (new L("CAT_SOMBRA","Sombra","Shadow")).getId();
+var CAT_MAESTRO_ARMAS = (new L("CAT_MAESTRO_ARMAS","Maestro en Armas","Weaponmaster")).getId();
+var CAT_CONJURADOR = (new L("CAT_CONJURADOR","Conjurador","Summoner")).getId();
+var CAT_GUERRERO_CONJURADOR = (new L("CAT_GUERRERO_CONJURADOR","Guerrero Conjurador","Warrior Summoner")).getId();
+var CAT_HECHICERO_MENTALISTA = (new L("CAT_HECHICERO_MENTALISTA","Hechicero Mentalista","Wizard Mentalist")).getId();
+var CAT_TAO = (new L("CAT_TAO","Tao","Tao")).getId();
+var CAT_TECNICISTA = (new L("CAT_TECNICISTA","Tecnicista","Technician")).getId();
+var CAT_WARLOCK = (new L("CAT_WARLOCK","Warlock","Warlock")).getId();
+var BONO_MAESTRO_ARMAS = (new L("BONO_MAESTRO_ARMAS","Tablas de armas y maniobras a medio coste","Weapon tables and combat styles at half cost")).getId();
+var BONO_TAO = (new L("BONO_TAO","Artes marciales a medio coste","Martial arts at half cost")).getId();
+var BONO_NOVEL_CINCO_ELECCIONES = (new L("BONO_NOVEL_CINCO_ELECCIONES","+10 para 5 habilidades por nivel","+10 for 5 skills per level")).getId();
+var BONO_NOVEL_CAMBIO_REDUCIDO = (new L("BONO_NOVEL_CAMBIO_REDUCIDO","Cambiar de clase cuesta 20 PD","Changing class costs 20 DP")).getId();
+

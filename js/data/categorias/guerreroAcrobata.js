@@ -1,4 +1,4 @@
-var CAT_GUERRERO_ACROBATA = "Guerrero Acróbata";
+
 var CATEGORIA_GUERRERO_ACROBATA = new Categoria(CAT_GUERRERO_ACROBATA);
 
 

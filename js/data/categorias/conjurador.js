@@ -1,4 +1,3 @@
-var CAT_CONJURADOR = "Conjurador";
 var CATEGORIA_CONJURADOR = new Categoria(CAT_CONJURADOR);
 
 CATEGORIA_CONJURADOR.descripcion = "";

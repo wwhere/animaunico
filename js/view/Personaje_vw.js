@@ -177,11 +177,11 @@ function muestraPersonales(estadoGeneracion) {
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
     divContenido.append(muestraPersonal(_l(UI_NOMBRE), personaje_actual.getNombre(), modificarPersonales, elegirManualNombre));
-    divContenido.append(muestraPersonal(_l(UI_SEXO), personaje_actual.getSexo(), modificarPersonales, elegirManualSexo));
-    divContenido.append(muestraPersonal(_l(UI_RAZA), personaje_actual.getRaza().getNombre(), modificarPersonales,dialogoElegirRaza));
+    divContenido.append(muestraPersonal(_l(UI_SEXO), _l(personaje_actual.getSexo()), modificarPersonales, elegirManualSexo));
+    divContenido.append(muestraPersonal(_l(UI_RAZA), _l(personaje_actual.getRaza().getNombre()), modificarPersonales,dialogoElegirRaza));
     divContenido.append(muestraPersonal(_l(UI_PESO), personaje_actual.getPeso(), modificarPersonales, elegirPeso));
     divContenido.append(muestraPersonal(_l(UI_ALTURA), personaje_actual.getAltura(), modificarPersonales, elegirAltura));
-    divContenido.append(muestraPersonalConDivExtra(_l(UI_CATEGORIA), personaje_actual.getCategoria().getNombre(), modificarPersonales, dialogoElegirCategoria,{},
+    divContenido.append(muestraPersonalConDivExtra(_l(UI_CATEGORIA), _l(personaje_actual.getCategoria().getNombre()), modificarPersonales, dialogoElegirCategoria,{},
         muestraBotonPequeño(_l(UI_CAMBIAR_CAT),{},cambiarCategoria,"")));
 
     div.append(divContenido);

@@ -1,4 +1,3 @@
-var CAT_SOMBRA = "Sombra";
 var CATEGORIA_SOMBRA = new Categoria(CAT_SOMBRA);
 
 CATEGORIA_SOMBRA.descripcion = "";

@@ -1,4 +1,3 @@
-var CAT_MENTALISTA = "Mentalista";
 var CATEGORIA_MENTALISTA = new Categoria(CAT_MENTALISTA);
 
 CATEGORIA_MENTALISTA.descripcion = "";
