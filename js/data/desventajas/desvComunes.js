@@ -1,7 +1,7 @@
 addDesventaja(new Ventaja(
-    "Reducir dos puntos a una característica",
+    DESV_REDUCIR_DOS_PUNTOS_A_UNA_CARACTERISTICA,
     "",
-    "Reduce en dos puntos una de las características básicas. Limitación: Esta desventaja sólo puede adquirirse en una ocasión. No es posible disminuir una característica por debajo de 3.",
+    DESV_REDUCIR_DOS_PUNTOS_A_UNA_CARACTERISTICA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -12,9 +12,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Salud enfermiza",
+    DESV_SALUD_ENFERMIZA,
     "",
-    "La RE del personaje queda reducida a la mitad.",
+    DESV_SALUD_ENFERMIZA_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -25,9 +25,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Lenta curación",
+    DESV_LENTA_CURACION,
     "",
-    "El personaje recupera sólo la mitad de puntos de vida de cualquier cantidad que debiera recobrar, ya sea mediante regeneración normal o medios místicos.",
+    DESV_LENTA_CURACION_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -38,9 +38,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Miopía",
+    DESV_MIOPIA,
     "",
-    "Aplicará un negativo de –50 a cualquier tirada de la habilidad Advertir o Buscar en la que se emplee la vista y un –3 a cualquier control de Percepción que la requiera. Este penalizador también se aplicará a la puntería. Si consigue unas gafas, el negativo penalizador se reduciría como el Director de Juego considere conveniente.",
+    DESV_MIOPIA_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -51,9 +51,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Vulnerabilidad a los venenos",
+    DESV_VULNERABILIDAD_A_LOS_VENENOS,
     "",
-    "La RV del personaje queda reducida a la mitad.",
+    DESV_VULNERABILIDAD_A_LOS_VENENOS_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -64,9 +64,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Fácil posesión",
+    DESV_FACIL_POSESION,
     "",
-    "El personaje aplica un negativo de –50 a cualquier RP o RM que realice contra algún tipo de dominio o posesión capaz de modificar su conducta.",
+    DESV_FACIL_POSESION_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -77,9 +77,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Vulnerabilidad a la magia",
+    DESV_VULNERABILIDAD_A_LA_MAGIA,
     "",
-    "La RM del personaje queda reducida a la mitad.",
+    DESV_VULNERABILIDAD_A_LA_MAGIA_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -90,9 +90,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Vulnerable al frío",
+    DESV_VULNERABILIDAD_AL_FRIO,
     "",
-    "El personaje sufre un penalizador de –80 a cualquier Resistencia contra ese elemento y un –30 a toda acción en climas extremos.",
+    DESV_VULNERABILIDAD_AL_FRIO_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -103,9 +103,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Vulnerable al calor",
+    DESV_VULNERABLE_AL_CALOR,
     "",
-    "El personaje sufre un penalizador de –80 a cualquier Resistencia contra ese elemento y un –30 a toda acción en climas extremos.",
+    DESV_VULNERABLE_AL_CALOR_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -116,9 +116,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Extremidad atrofiada",
+    DESV_EXTREMIDAD_ATROFIADA,
     "",
-    "El personaje aplica un penalizador de –80 a todas las acciones físicas que requieran el uso del miembro atrofiado.",
+    DESV_EXTREMIDAD_ATROFIADA_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -129,9 +129,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Debilidad física",
+    DESV_DEBILIDAD_FISICA,
     "",
-    "La RF del personaje queda reducida a la mitad.",
+    DESV_DEBILIDAD_FISICA_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -142,9 +142,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Aspecto desagradable",
+    DESV_ASPECTO_DESAGRADABLE,
     "",
-    "Reduce la apariencia del personaje a 2. Limitación: El personaje tiene que tener como mínimo un 7 en apariencia. Esta característica debe de haber sido generada mediante una tirada, no elegida libremente por el jugador.",
+    DESV_ASPECTO_DESAGRADABLE_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -155,9 +155,9 @@ addDesventaja(new Ventaja(
     [FLAG_APARIENCIA_ALEATORIA,FLAG_APARIENCIA_MINIMA_7]
 ));
 addDesventaja(new Ventaja(
-    "Desafortunado",
+    DESV_DESAFORTUNADO,
     "",
-    "El Director de Juego deberá interpretar el alcance de esta desventaja. En un grupo, alguien desafortunado será siempre el que caiga en la trampa aleatoria y el primero al que ataquen cuando el azar decida quién recibe el primer impacto.",
+    DESV_DESAFORTUNADO_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -168,87 +168,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Enfermedad grave",
+    DESV_ENFERMEDAD_GRAVE,
     "",
-    "El personaje aplicará un penalizador acumulativo de –10 a toda acción por cada mes que transcurra. El Director de Juego determinará una fecha en secreto, llegada la cual morirá.",
-    NO_REPETIBLE,
-    [-2],
-    [],
-    true,
-    [],
-    [],
-    GRUPO_OTRAS,
-    []
-));
-addDesventaja(new Ventaja(
-    "Alergia grave",
-    "",
-    "Los negativos a toda acción por entrar en contacto con dicha sustancia variarán entre un –40 y un –80, dependiendo de la gravedad o del tiempo que se haya permanecido en contacto con dicho elemento.",
-    REPETIBLE_OPCIONES,
-    [-1],
-    [],
-    true,
-    [LISTA_INTRODUCCION_USUARIO],
-    [],
-    GRUPO_OTRAS,
-    []
-));
-addDesventaja(new Ventaja(
-    "Sueño profundo",
-    "",
-    "El personaje aplicará un penalizador de –200 a cualquier tirada de percepción mientras duerme. Durante los diez asaltos posteriores a su despertar, aplicará un penalizador de –40 a toda acción.",
-    NO_REPETIBLE,
-    [-1],
-    [],
-    true,
-    [],
-    [],
-    GRUPO_OTRAS,
-    []
-));
-addDesventaja(new Ventaja(
-    "Fobia grave",
-    "",
-    "El personaje aplicará el estado de miedo siempre que se encuentre con el objeto de su fobia.",
-    REPETIBLE_OPCIONES,
-    [-1],
-    [],
-    true,
-    [LISTA_INTRODUCCION_USUARIO],
-    [],
-    GRUPO_OTRAS,
-    []
-));
-addDesventaja(new Ventaja(
-    "Mala suerte",
-    "",
-    "La cifra requerida para pifiar aumenta en dos puntos. En las habilidades normales pifiará con un resultado de 5 y, si es maestro, lo hará con 4.",
-    NO_REPETIBLE,
-    [-1],
-    [],
-    true,
-    [],
-    [],
-    GRUPO_OTRAS,
-    []
-));
-addDesventaja(new Ventaja(
-    "Mudo",
-    "",
-    "El personaje no puede hablar.",
-    NO_REPETIBLE,
-    [-1],
-    [],
-    true,
-    [],
-    [],
-    GRUPO_OTRAS,
-    []
-));
-addDesventaja(new Ventaja(
-    "Ciego",
-    "",
-    "El personaje no podrá usar ninguna habilidad que requiera ver. Aplicará en todo momento el penalizador de cegado.",
+    DESV_ENFERMEDAD_GRAVE_DESC,
     NO_REPETIBLE,
     [-2],
     [],
@@ -259,9 +181,22 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Sordo",
+    DESV_ALERGIA_GRAVE,
     "",
-    "El personaje no podrá emplear ninguna habilidad que requiera el uso del oído.",
+    DESV_ALERGIA_GRAVE_DESC,
+    REPETIBLE_OPCIONES,
+    [-1],
+    [],
+    true,
+    [LISTA_INTRODUCCION_USUARIO],
+    [],
+    GRUPO_OTRAS,
+    []
+));
+addDesventaja(new Ventaja(
+    DESV_SUEÑO_PROFUNDO,
+    "",
+    DESV_SUEÑO_PROFUNDO_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -272,9 +207,74 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Aprendizaje lento",
+    DESV_FOBIA_GRAVE,
     "",
-    "El personaje tiene un penalizador de 4 puntos de experiencia a los otorgados por el Director de Juego al finalizar la sesión. El punto de desventaja adicional aumenta este penalizador a 8.",
+    DESV_FOBIA_GRAVE_DESC,
+    REPETIBLE_OPCIONES,
+    [-1],
+    [],
+    true,
+    [LISTA_INTRODUCCION_USUARIO],
+    [],
+    GRUPO_OTRAS,
+    []
+));
+addDesventaja(new Ventaja(
+    DESV_MALA_SUERTE,
+    "",
+    DESV_MALA_SUERTE_DESC,
+    NO_REPETIBLE,
+    [-1],
+    [],
+    true,
+    [],
+    [],
+    GRUPO_OTRAS,
+    []
+));
+addDesventaja(new Ventaja(
+    DESV_MUDO,
+    "",
+    DESV_MUDO_DESC,
+    NO_REPETIBLE,
+    [-1],
+    [],
+    true,
+    [],
+    [],
+    GRUPO_OTRAS,
+    []
+));
+addDesventaja(new Ventaja(
+    DESV_CIEGO,
+    "",
+    DESV_CIEGO_DESC,
+    NO_REPETIBLE,
+    [-2],
+    [],
+    true,
+    [],
+    [],
+    GRUPO_OTRAS,
+    []
+));
+addDesventaja(new Ventaja(
+    DESV_SORDO,
+    "",
+    DESV_SORDO_DESC,
+    NO_REPETIBLE,
+    [-1],
+    [],
+    true,
+    [],
+    [],
+    GRUPO_OTRAS,
+    []
+));
+addDesventaja(new Ventaja(
+    DESV_APRENDIZAJE_LENTO,
+    "",
+    DESV_APRENDIZAJE_LENTO_DESC,
     NO_REPETIBLE,
     [-1,-2],
     [],
@@ -285,9 +285,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Reacción lenta",
+    DESV_REACCION_LENTA,
     "",
-    "El personaje aplicará un penalizador especial de –30 a su turno. El punto de desventaja adicional aumenta este negativo hasta –60.",
+    DESV_REACCION_LENTA_DESC,
     NO_REPETIBLE,
     [-1,-2],
     [],
@@ -298,9 +298,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Arma exclusiva",
+    DESV_ARMA_EXCLUSIVA,
     "",
-    "El personaje aplicará un penalizador de –30 a su habilidad de combate con cualquier arma distinta a la suya. Limitación: Esta desventaja sólo puede ser adquirida por los arquetipos de Luchador, Acechador, Domine o Sin Categoría.",
+    DESV_ARMA_EXCLUSIVA_DESC,
     NO_REPETIBLE, //TODO SOLO ARQUETIPOS INDICADOS
     [-1],
     [],
@@ -311,9 +311,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Adicción o vicio grave",
+    DESV_ADICCION_O_VICIO_GRAVE,
     "",
-    "El personaje aplicará un penalizador acumulativo de –10 por cada día que transcurra sin satisfacer su vicio.",
+    DESV_ADICCION_O_VICIO_GRAVE_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -324,9 +324,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Vulnerable al dolor",
+    DESV_VULNERABILIDAD_AL_DOLOR,
     "",
-    "Dobla cualquier penalizador causado por el dolor, ya sea producido por críticos o efectos místicos.",
+    DESV_VULNERABILIDAD_AL_DOLOR_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -337,9 +337,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Exhausto",
+    DESV_EXHAUSTO,
     "",
-    "Dobla los penalizadores a la acción provocados por la fatiga y resta un punto el Cansancio base del personaje.",
+    DESV_EXHAUSTO_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -353,9 +353,9 @@ addDesventaja(new Ventaja(
 //region Pantalla del Director
 
 addDesventaja(new Ventaja(
-    "Endeble",
+    DESV_ENDEBLE,
     "",
-    "Cuando los pv bajan por debajo de un tercio del total sufre un -30 a toda acción hasta recuperarse.",
+    DESV_ENDEBLE_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -367,9 +367,9 @@ addDesventaja(new Ventaja(
 ));
 
 addDesventaja(new Ventaja(
-    "Cobardía",
+    DESV_COBARDIA,
     "",
-    "Al encontrarse con un riesgo real, sufre el estado de Miedo. Si supera un control MDF de Frialdad puede reducir el penalizador a -20.",
+    DESV_COBARDIA_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -381,9 +381,9 @@ addDesventaja(new Ventaja(
 ));
 
 addDesventaja(new Ventaja(
-    "Patoso",
+    DESV_PATOSO,
     "",
-    "Sufre un penalizador de -30 a toda habilidad manual que requiera coordinación y un -3 a todos los controles enfrentados de DES.",
+    DESV_PATOSO_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -395,9 +395,9 @@ addDesventaja(new Ventaja(
 ));
 
 addDesventaja(new Ventaja(
-    "Sin bonificador natural",
+    DESV_SIN_BONIFICADOR_NATURAL,
     "",
-    "No aplica el bonificador natural por nivel.",
+    DESV_SIN_BONIFICADOR_NATURAL_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -409,9 +409,9 @@ addDesventaja(new Ventaja(
 ));
 
 addDesventaja(new Ventaja(
-    "Insufrible",
+    DESV_INSUFRIBLE,
     "",
-    "A interpretar por el DJ.",
+    DESV_INSUFRIBLE_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -423,9 +423,9 @@ addDesventaja(new Ventaja(
 ));
 
 addDesventaja(new Ventaja(
-    "Novato",
+    DESV_NOVATO,
     "",
-    "Empieza con 100px menos que los demás.",
+    DESV_NOVATO_DESC,
     NO_REPETIBLE,
     [-1],
     [],
@@ -437,9 +437,9 @@ addDesventaja(new Ventaja(
 ));
 
 addDesventaja(new Ventaja(
-    "Destino aciago",
+    DESV_DESTINO_ACIAGO,
     "",
-    "No puede obtener tiradas abiertas.",
+    DESV_DESTINO_ACIAGO_DESC,
     NO_REPETIBLE,
     [-2],
     [],
@@ -452,9 +452,9 @@ addDesventaja(new Ventaja(
 
 
 addDesventaja(new Ventaja(
-    "Maldito",
+    DESV_MALDITO,
     "",
-    "Interpretado por el DJ.",
+    DESV_MALDITO_DESC,
     REPETIBLE_OPCIONES,
     [-1,-2],
     [],
