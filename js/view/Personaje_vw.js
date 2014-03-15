@@ -707,6 +707,13 @@ function muestraVentaja(ventajaComprada) {
 
 /******* habilidades **********/
 
+/**
+ *
+ * @param {string} nombreHabilidad No localizado
+ * @param {string} etiqueta Localizado
+ * @param muestraBotones
+ * @returns {*}
+ */
 function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
     var coste = personaje_actual.getCoste(nombreHabilidad, true);
 
@@ -1324,6 +1331,15 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
     return divRow;
 }
 
+/**
+ *
+ * @param coste
+ * @param {string} etiqueta Localizada
+ * @param valorBase
+ * @param parametros
+ * @param toAppend
+ * @returns {*}
+ */
 function muestraValorPuntual(coste, etiqueta, valorBase, parametros, toAppend) {
     var divRow = getDiv("row");
     var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL);

@@ -1,7 +1,3 @@
-var UI_DISCIPLINAS_DOMINADAS = "Disciplinas dominadas";
-var UI_CVS_POTENCIAL = "CVs, Potencial Psíquico e Innatos";
-var UI_CV_LIBRES = "CV Libres";
-var UI_INNATO = "Innatos";
 
 function dialogoCV() {
     var dialogo = getDiv();
@@ -22,13 +18,13 @@ function dialogoCV() {
 
         divHabilidades.append(muestraCabecerasBaseBonosFinal());
 
-        var divCVs = getDiv().append(muestraHabilidadPrimaria(HB_CV,UI_CV,true));
-        var divCVsLibres = getDiv().append(muestraValorPuntual(0,UI_CV_LIBRES,cvLibres,{}));
-        var divPotencial = getDiv().append(muestraHabilidadPrimaria(HB_POTENCIAL_PSIQUICO,UI_POTENCIAL_PSIQUICO,true));
+        var divCVs = getDiv().append(muestraHabilidadPrimaria(HB_CV,_l(UI_CV),true));
+        var divCVsLibres = getDiv().append(muestraValorPuntual(0,_l(UI_CV_LIBRES),cvLibres,{}));
+        var divPotencial = getDiv().append(muestraHabilidadPrimaria(HB_POTENCIAL_PSIQUICO,_l(UI_POTENCIAL_PSIQUICO),true));
         var botonMasInnato = boton("small primary pretty btn",_l("+"),(cvLibres < 2));
         var botonMenosInnato = boton("small secondary pretty btn",_l("-"),(personaje_actual.getInnatosPsiquicos() == 0));
         var divBotones = getDiv().append(botonMasInnato).append(botonMenosInnato);
-        var divInnatos = getDiv().append(muestraValorPuntual("2 CV",UI_INNATO,personaje_actual.getInnatosPsiquicos(),{},divBotones));
+        var divInnatos = getDiv().append(muestraValorPuntual("2 CV",_l(UI_INNATO),personaje_actual.getInnatosPsiquicos(),{},divBotones));
 
         botonMasInnato.on("click", {cantidad: 1}, comprarInnato);
         botonMenosInnato.on("click", {cantidad: -1}, comprarInnato);
@@ -55,7 +51,7 @@ function dialogoCV() {
                 botonAfinidadDisciplinaDisabled = true;
             }
         }
-        var divBotonNuevaDisciplina = muestraBotonPequeño("Afinidad con nueva disciplina [1 CV]",{},afinidadNuevaDisciplina);
+        var divBotonNuevaDisciplina = muestraBotonPequeño(_l(UI_AFINIDAD_CON_NUEVA_DISCIPLINA) + "[1 " + _l(UI_CV) + "]",{},afinidadNuevaDisciplina,"");
             //boton("medium primary pretty btn",,botonAfinidadDisciplinaDisabled);
 
         dialogo.append(divBotonNuevaDisciplina);
@@ -68,7 +64,7 @@ function dialogoCV() {
         var zonasDisciplinas = getDiv();
         var disciplinasPsiquicas = personaje_actual.getDisciplinasPsiquicas();
         for (var i = 0; i < disciplinasPsiquicas.length; i++) {
-            titulo = $("<h3></h3>").append(disciplinasPsiquicas[i].getNombre());
+            titulo = $("<h3></h3>").append(_l(disciplinasPsiquicas[i].getNombre()));
 
             titulo.append(muestraBotonAnular(eliminarAfinidadDisciplina,{disciplina: disciplinasPsiquicas[i]}));
 
@@ -79,7 +75,7 @@ function dialogoCV() {
         }
 
         var poderesMatriciales = getDisciplina(DISCIPLINA_PODERES_MATRICIALES);
-        titulo = $("<h3></h3>").append(poderesMatriciales.getNombre());
+        titulo = $("<h3></h3>").append(_l(poderesMatriciales.getNombre()));
         contenido = getDiv().attr("id","disciplinaPsiquica" + poderesMatriciales.getNombre().replace(/\s+/g, ''));
         if (personaje_actual.hasFlag(FLAG_PSIQUICO)) {
             appendPoderesPsiquicos(contenido,poderesMatriciales);
@@ -99,7 +95,7 @@ function dialogoCV() {
         autoOpen: true,
         resizable: true,
         draggable: true,
-        title: DIAG_PODERES_PSIQUICOS,
+        title: _l(DIAG_PODERES_PSIQUICOS),
         position: "center",
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
@@ -122,7 +118,7 @@ function appendPoderesPsiquicos(elemento, disciplinaPsiquica) {
 
     var noQuedanCV = (personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual()-personaje_actual.getCVGastados() == 0);
 
-    var nuevoPoder = muestraBotonPequeño("Dominar un nuevo poder [1 CV]",{disciplina: disciplinaPsiquica},elegirPoderADominar);
+    var nuevoPoder = muestraBotonPequeño(_l(UI_DOMINAR_NUEVO_PODER) + "[1 " + _l(UI_CV) + "]",{disciplina: disciplinaPsiquica},elegirPoderADominar,"");
 
     elemento.append(nuevoPoder);
 
@@ -138,7 +134,7 @@ function appendPoderesPsiquicos(elemento, disciplinaPsiquica) {
         var botonMenos = boton("small primary pretty btn",_l("-"),(poder.getFortalecimiento() == 0));
         var divBotones = getDiv().append(botonMas).append(botonMenos);
 
-        var labelPoder = muestraValorPuntual(" [Nvl:" + poder.getPoder().getNivel() + "]",poder.getPoder().getNombre(),poder.getFortalecimiento()*10,{descripcion:"potencial"},divBotones);
+        var labelPoder = muestraValorPuntual(" [" + _l(UI_NV) + ":" + poder.getPoder().getNivel() + "]",_l(poder.getPoder().getNombre()),poder.getFortalecimiento()*10,{descripcion:_l(UI_POTENCIAL)},divBotones);
 
         divPoder.append(labelPoder);
 

@@ -509,3 +509,13 @@ var UI_NIVELES_LIBRES_A_REPARTIR = (new L("Niveles libres a repartir","Niveles l
 var UI_NV = (new L("Nv", "Nv", "Lv")).getId();
 var UI_NIVELES_VIA_GASTADOS = (new L("niveles gastados", "niveles gastados", "spent levels")).getId();
 var UI_LIBRE_ACCESO = (new L("Libre acceso", "Libre acceso", "Free access")).getId();
+
+var UI_DISCIPLINAS_DOMINADAS = (new L("Disciplinas dominadas","Disciplinas dominadas","Dominated Disciplines")).getId();
+var UI_CVS_POTENCIAL = (new L("CVs, Potencial Psíquico e Innatos","CVs, Potencial Psíquico e Innatos","PP, Psychic Potential and Innates")).getId();
+var UI_CV_LIBRES = (new L("CV Libres","CV Libres","Free PP")).getId();
+var UI_INNATO = (new L("Innatos","Innatos","Innates")).getId();
+
+var UI_AFINIDAD_CON_NUEVA_DISCIPLINA = (new L("Afinidad con nueva disciplina","Afinidad con nueva disciplina","Affinity with new Discipline")).getId();
+var UI_DOMINAR_NUEVO_PODER = (new L("Dominar un nuevo poder","Dominar un nuevo poder","Dominate new Power")).getId();
+
+var UI_POTENCIAL = (new L("potencial","potencial","potential")).getId();
