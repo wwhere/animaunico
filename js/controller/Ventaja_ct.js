@@ -1117,11 +1117,11 @@ function lazoExistencial(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function resistenciaCelestialElan(coste, opcion, aplicar) {
-    var bonoRF = new Bono(BONO_RESISTENCIA,RF,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_MIKAEL_RESISTENCIA_CELESTIAL);
-    var bonoRE = new Bono(BONO_RESISTENCIA,RE,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_MIKAEL_RESISTENCIA_CELESTIAL);
-    var bonoRV = new Bono(BONO_RESISTENCIA,RV,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_MIKAEL_RESISTENCIA_CELESTIAL);
-    var bonoRM = new Bono(BONO_RESISTENCIA,RM,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_MIKAEL_RESISTENCIA_CELESTIAL);
-    var bonoRP = new Bono(BONO_RESISTENCIA,RP,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_MIKAEL_RESISTENCIA_CELESTIAL);
+    var bonoRF = new Bono(BONO_RESISTENCIA,RF,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MIKAEL_RESISTENCIA_CELESTIAL);
+    var bonoRE = new Bono(BONO_RESISTENCIA,RE,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MIKAEL_RESISTENCIA_CELESTIAL);
+    var bonoRV = new Bono(BONO_RESISTENCIA,RV,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MIKAEL_RESISTENCIA_CELESTIAL);
+    var bonoRM = new Bono(BONO_RESISTENCIA,RM,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MIKAEL_RESISTENCIA_CELESTIAL);
+    var bonoRP = new Bono(BONO_RESISTENCIA,RP,Math.floor(personaje_actual.getSincronizacionElan(BERYL_MIKAEL)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MIKAEL_RESISTENCIA_CELESTIAL);
     if (aplicar) {
         personaje_actual.addBono(bonoRF,true,true);
         personaje_actual.addBono(bonoRE,true,true);
@@ -1171,7 +1171,7 @@ function liderElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function valorHeroesElan(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_FRIALDAD,Math.floor(personaje_actual.getSincronizacionElan(BERYL_AZRAEL)),"",false,BONO_ESPECIAL,ELAN_AZRAEL_VALOR_HEROES);
+    var bono = new Bono(BONO_HABILIDAD,HB_FRIALDAD,Math.floor(personaje_actual.getSincronizacionElan(BERYL_AZRAEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_AZRAEL_VALOR_HEROES);
     if (aplicar) {
         personaje_actual.addBono(bono,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:valorHeroesElan},actualizaVentajaDependienteElan);
@@ -1199,7 +1199,7 @@ function guerreroAzraelElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function esteticaElan(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_ESTILO,Math.floor(personaje_actual.getSincronizacionElan(BERYL_BARAKIEL)),"",false,BONO_ESPECIAL,ELAN_BARAKIEL_SABER_CIENCIA);
+    var bono = new Bono(BONO_HABILIDAD,HB_ESTILO,Math.floor(personaje_actual.getSincronizacionElan(BERYL_BARAKIEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_BARAKIEL_SABER_DE_LACIENCIA);
     if (aplicar) {
         personaje_actual.addBono(bono,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:esteticaElan},actualizaVentajaDependienteElan);
@@ -1216,7 +1216,7 @@ function esteticaElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function saberCienciaElan(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_CIENCIA,Math.floor(personaje_actual.getSincronizacionElan(BERYL_BARAKIEL)),"",false,BONO_ESPECIAL,ELAN_BARAKIEL_SABER_CIENCIA);
+    var bono = new Bono(BONO_HABILIDAD,HB_CIENCIA,Math.floor(personaje_actual.getSincronizacionElan(BERYL_BARAKIEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_BARAKIEL_SABER_DE_LACIENCIA);
     if (aplicar) {
         personaje_actual.addBono(bono,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:saberCienciaElan},actualizaVentajaDependienteElan);
@@ -1296,8 +1296,8 @@ function divinidadCuerpoAlmaElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function aptitudArtisticaGabriel(coste, opcion, aplicar) {
-    var bonoMusica = new Bono(BONO_HABILIDAD,HB_MUSICA,Math.floor(personaje_actual.getSincronizacionElan(BERYL_GABRIEL)),"",false,BONO_ESPECIAL,ELAN_GABRIEL_APTITUD_ARTISTICA);
-    var bonoArte = new Bono(BONO_HABILIDAD,HB_ARTE,Math.floor(personaje_actual.getSincronizacionElan(BERYL_GABRIEL)),"",false,BONO_ESPECIAL,ELAN_GABRIEL_APTITUD_ARTISTICA);
+    var bonoMusica = new Bono(BONO_HABILIDAD,HB_MUSICA,Math.floor(personaje_actual.getSincronizacionElan(BERYL_GABRIEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_GABRIEL_APTITUD_ARTISTICA);
+    var bonoArte = new Bono(BONO_HABILIDAD,HB_ARTE,Math.floor(personaje_actual.getSincronizacionElan(BERYL_GABRIEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_GABRIEL_APTITUD_ARTISTICA);
     if (aplicar) {
         personaje_actual.addBono(bonoMusica,true,true);
         personaje_actual.addBono(bonoArte,true,true);
@@ -1316,7 +1316,7 @@ function aptitudArtisticaGabriel(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function conocimientoNaturalezaElan(coste, opcion, aplicar) {
-    var bonoHerbolaria = new Bono(BONO_HABILIDAD,HB_HERBOLARIA,Math.floor(personaje_actual.getSincronizacionElan(BERYL_RAFAEL)),"",false,BONO_ESPECIAL,ELAN_RAFAEL_CONOCIMIENTO_NATURALEZA);
+    var bonoHerbolaria = new Bono(BONO_HABILIDAD,HB_HERBOLARIA,Math.floor(personaje_actual.getSincronizacionElan(BERYL_RAFAEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_NATURALEZA);
     if (aplicar) {
         personaje_actual.addBono(bonoHerbolaria,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:conocimientoNaturalezaElan},actualizaVentajaDependienteElan);

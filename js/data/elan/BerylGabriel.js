@@ -1,12 +1,9 @@
-var BERYL_GABRIEL = "Gabriel";
-
 var berylGabriel = new BerylShajad(BERYL_GABRIEL, BERYL);
 
-var ELAN_GABRIEL_APTITUD_ARTISTICA = "Guerrero de Azrael";
 ventajas_set.push(new Ventaja(
-    ELAN_GABRIEL_APTITUD_ARTISTICA,
+    ELAN_VENTAJA_GABRIEL_APTITUD_ARTISTICA,
     "",
-    "Este don otorga un bonificador especial a sus habilidades secundarias Arte y Música equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_GABRIEL_APTITUD_ARTISTICA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -17,17 +14,17 @@ ventajas_set.push(new Ventaja(
 ));
 berylGabriel.addDon(
     new DonElan(
-        "Aptitud artística",
-        "Este don otorga un bonificador especial a sus habilidades secundarias Arte y Música equivalente a su nivel de Elan.",
+        ELAN_GABRIEL_DON_APTITUD_ARTISTICA,
+        ELAN_GABRIEL_DON_APTITUD_ARTISTICA_DESC,
         5,
         10,
-        [ELAN_GABRIEL_APTITUD_ARTISTICA],
+        [ELAN_VENTAJA_GABRIEL_APTITUD_ARTISTICA],
         []
     )
 );
 berylGabriel.addDon(
     new DonElan(
-        "Gracia",
+        ELAN_GABRIEL_DON_GRACIA,
         "",
         5,
         20,
@@ -37,7 +34,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Empatía positiva",
+        ELAN_GABRIEL_DON_EMPATIA_POSITIVA,
         "",
         10,
         30,
@@ -47,7 +44,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Pacificador",
+        ELAN_GABRIEL_DON_PACIFICADOR,
         "",
         10,
         40,
@@ -57,7 +54,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Inmunidad psicológica (Gabriel)",
+        ELAN_GABRIEL_DON_INMUNIDAD_PSICOLOGICA,
         "",
         10,
         40,
@@ -67,7 +64,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Percepción de sentimientos",
+        ELAN_GABRIEL_DON_PERCEPCION_DE_SENTIMIENTOS,
         "",
         10,
         50,
@@ -77,7 +74,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Imbuir sentimientos",
+        ELAN_GABRIEL_DON_IMBUIR_SENTIMIENTOS,
         "",
         15,
         50,
@@ -87,7 +84,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Lazo",
+        ELAN_GABRIEL_DON_LAZO,
         "",
         15,
         60,
@@ -97,7 +94,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Auxilio",
+        ELAN_GABRIEL_DON_AUXILIO,
         "",
         10,
         70,
@@ -107,7 +104,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Canto de La Paz",
+        ELAN_GABRIEL_DON_CANTO_DE_LA_PAZ,
         "",
         15,
         80,
@@ -117,7 +114,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Protección",
+        ELAN_GABRIEL_DON_PROTECCION,
         "",
         20,
         90,
@@ -127,7 +124,7 @@ berylGabriel.addDon(
 );
 berylGabriel.addDon(
     new DonElan(
-        "Paraíso",
+        ELAN_GABRIEL_DON_PARAISO,
         "",
         10,
         100,

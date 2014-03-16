@@ -1,12 +1,9 @@
-var BERYL_BARAKIEL = "Barakiel";
-
 var berylBarakiel = new BerylShajad(BERYL_BARAKIEL, BERYL);
 
-var ELAN_BARAKIEL_ESTETICA = "Estética";
 ventajas_set.push(new Ventaja(
-    ELAN_BARAKIEL_ESTETICA,
+    ELAN_VENTAJA_BARAKIEL_ESTETICA,
     "",
-    "Este don otorga un bonificador especial a Estilo equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_BARAKIEL_ESTETICA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -17,17 +14,18 @@ ventajas_set.push(new Ventaja(
 ));
 berylBarakiel.addDon(
     new DonElan(
-        "Estética",
-        "Bonificador especial a la habilidad secundaria Estilo, equivalente al nivel de Elan que posee.",
+        ELAN_BARAKIEL_DON_ESTETICA,
+        ELAN_BARAKIEL_DON_ESTETICA_DESC,
         5,
         10,
-        [ELAN_BARAKIEL_ESTETICA],
+        [ELAN_VENTAJA_BARAKIEL_ESTETICA],
         []
     )
 );
+
 berylBarakiel.addDon(
     new DonElan(
-        "Atrayente",
+        ELAN_BARAKIEL_DON_ATRAYENTE,
         "",
         10,
         20,
@@ -35,11 +33,10 @@ berylBarakiel.addDon(
         []
     )
 );
-var ELAN_BARAKIEL_SABER_CIENCIA = "Saber de la ciencia";
 ventajas_set.push(new Ventaja(
-    ELAN_BARAKIEL_SABER_CIENCIA,
+    ELAN_VENTAJA_BARAKIEL_SABER_DE_LACIENCIA,
     "",
-    "Este don otorga un bonificador especial a Ciencia equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_BARAKIEL_SABER_DE_LACIENCIA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -50,17 +47,18 @@ ventajas_set.push(new Ventaja(
 ));
 berylBarakiel.addDon(
     new DonElan(
-        "Saber de la ciencia",
-        "Bonificador especial a la habilidad secundaria Ciencia equivalente al nivel de Elan.",
+        ELAN_BARAKIEL_DON_SABER_DE_LA_CIENCIA,
+        ELAN_BARAKIEL_DON_SABER_DE_LA_CIENCIA_DESC,
         10,
         30,
-        [ELAN_BARAKIEL_SABER_CIENCIA],
+        [ELAN_VENTAJA_BARAKIEL_SABER_DE_LACIENCIA],
         []
     )
 );
+
 berylBarakiel.addDon(
     new DonElan(
-        "Percibir imperfecciones",
+        ELAN_BARAKIEL_DON_PERCIBIR_IMPERFECCIONES,
         "",
         10,
         40,
@@ -68,9 +66,10 @@ berylBarakiel.addDon(
         []
     )
 );
+
 berylBarakiel.addDon(
     new DonElan(
-        "Sentir el orden",
+        ELAN_BARAKIEL_DON_SENTIR_EL_ORDEN,
         "",
         5,
         40,
@@ -78,21 +77,21 @@ berylBarakiel.addDon(
         []
     )
 );
+
 berylBarakiel.addDon(
     new DonElan(
-        "Cuerpo perfecto",
+        ELAN_BARAKIEL_DON_CUERPO_PERFECTO,
         "",
         15,
         50,
         [],
-        ["Belleza perfecta"]
+        [ELAN_BARAKIEL_DON_BELLEZA_PERFECTA]
     )
 );
-var ELAN_BARAKIEL_BELLEZA_PERFECTA = "Belleza perfecta";
 ventajas_set.push(new Ventaja(
-    ELAN_BARAKIEL_BELLEZA_PERFECTA,
+    ELAN_VENTAJA_BARAKIEL_BELLEZA_PERFECTA,
     "",
-    "Este don sube la Apariencia a 10.",
+    ELAN_VENTAJA_BARAKIEL_BELLEZA_PERFECTA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -101,19 +100,21 @@ ventajas_set.push(new Ventaja(
     [bellezaPerfectaElan],
     GRUPO_ELAN
 ));
+
 berylBarakiel.addDon(
     new DonElan(
-        "Belleza perfecta",
-        "Su Apariencia llega a 10.",
+        ELAN_BARAKIEL_DON_BELLEZA_PERFECTA,
+        ELAN_BARAKIEL_DON_BELLEZA_PERFECTA_DESC,
         5,
         50,
-        [ELAN_BARAKIEL_BELLEZA_PERFECTA],
+        [ELAN_VENTAJA_BARAKIEL_BELLEZA_PERFECTA],
         []
     )
 );
+
 berylBarakiel.addDon(
     new DonElan(
-        "Aura de orden",
+        ELAN_BARAKIEL_DON_AURA_DE_ORDEN,
         "",
         10,
         60,
@@ -121,11 +122,11 @@ berylBarakiel.addDon(
         []
     )
 );
-var ELAN_BARAKIEL_ESENCIA_BARAKIEL = "La esencia de Barakiel";
+
 ventajas_set.push(new Ventaja(
-    ELAN_BARAKIEL_ESENCIA_BARAKIEL,
+    ELAN_VENTAJA_BARAKIEL_ESENCIA_BARAKIEL,
     "",
-    "Este don permite ignorar desventajas y debilidades.",
+    ELAN_VENTAJA_BARAKIEL_ESENCIA_BARAKIEL_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -136,17 +137,17 @@ ventajas_set.push(new Ventaja(
 ));
 berylBarakiel.addDon(
     new DonElan(
-        "La esencia de Barakiel",
-        "Este don permite ignorar desventajas y debilidades.",
+        ELAN_BARAKIEL_DON_ESENCIA_BARAKIEL,
+        ELAN_BARAKIEL_DON_ESENCIA_BARAKIEL_DESC,
         20,
         70,
-        [ELAN_BARAKIEL_ESENCIA_BARAKIEL],
+        [ELAN_VENTAJA_BARAKIEL_ESENCIA_BARAKIEL],
         []
     )
 );
 berylBarakiel.addDon(
     new DonElan(
-        "Incapaz de errar",
+        ELAN_BARAKIEL_DON_INCAPAZ_DE_ERRAR,
         "",
         10,
         70,
@@ -154,11 +155,10 @@ berylBarakiel.addDon(
         []
     )
 );
-var ELAN_BARAKIEL_DIVINIDAD_CUERPO_ALMA = "Divinidad en cuerpo y alma";
 ventajas_set.push(new Ventaja(
-    ELAN_BARAKIEL_DIVINIDAD_CUERPO_ALMA,
+    ELAN_VENTAJA_BARAKIEL_DIVINIDAD_CUERPO_ALMA,
     "",
-    "Sube características hasta 10 + bono por raza.",
+    ELAN_VENTAJA_BARAKIEL_DIVINIDAD_CUERPO_ALMA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -169,27 +169,27 @@ ventajas_set.push(new Ventaja(
 ));
 berylBarakiel.addDon(
     new DonElan(
-        "Divinidad en cuerpo y alma",
-        "Sube características hasta 10 + bono por raza.", //TODO el bono por raza llega de otro modo
+        ELAN_BARAKIEL_DON_DIVINIDAD_EN_CUERPO_Y_ALMA,
+        ELAN_BARAKIEL_DON_DIVINIDAD_EN_CUERPO_Y_ALMA_DESC, //TODO el bono por raza llega de otro modo
         20,
         80,
-        [ELAN_BARAKIEL_DIVINIDAD_CUERPO_ALMA],
-        ["Cuerpo perfecto"]
+        [ELAN_VENTAJA_BARAKIEL_DIVINIDAD_CUERPO_ALMA],
+        [ELAN_BARAKIEL_DON_CUERPO_PERFECTO]
     )
 );
 berylBarakiel.addDon(
     new DonElan(
-        "Inmortalidad",
+        ELAN_BARAKIEL_DON_INMORTALIDAD,
         "",
         10,
         90,
         [],
-        ["Cuerpo perfecto"]
+        [ELAN_BARAKIEL_DON_CUERPO_PERFECTO]
     )
 );
 berylBarakiel.addDon(
     new DonElan(
-        "Perfección absoluta",
+        ELAN_BARAKIEL_DON_PERFECCION_ABSOLUTA,
         "",
         10,
         100,

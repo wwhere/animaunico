@@ -1,11 +1,8 @@
-var BERYL_EDAMIEL = "Edamiel";
-
-
 var berylEdamiel = new BerylShajad(BERYL_EDAMIEL, BERYL);
 
 berylEdamiel.addDon(
     new DonElan(
-        "Deseable",
+        BERYL_EDAMIEL_DON_DESEABLE,
         "",
         5,
         10,
@@ -15,7 +12,7 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Amplificador del placer",
+        BERYL_EDAMIEL_DON_AMPLIFICADOR_DEL_PLACER,
         "",
         5,
         20,
@@ -23,9 +20,10 @@ berylEdamiel.addDon(
         []
     )
 );
+
 berylEdamiel.addDon(
     new DonElan(
-        "La voz del placer",
+        BERYL_EDAMIEL_DON_LA_VOZ_DEL_PLACER,
         "",
         5,
         30,
@@ -35,7 +33,7 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Sentir el deseo",
+        BERYL_EDAMIEL_DON_SENTIR_EL_DESEO,
         "",
         10,
         40,
@@ -43,9 +41,10 @@ berylEdamiel.addDon(
         []
     )
 );
+
 berylEdamiel.addDon(
     new DonElan(
-        "Inmunidad psicológica (Edamiel)",
+        BERYL_EDAMIEL_DON_INMUNIDAD_PSICOLOGICA,
         "",
         10,
         50,
@@ -55,7 +54,7 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Arrancar los sentimientos",
+        BERYL_EDAMIEL_DON_ARRANCAR_LOS_SENTIMIENTOS,
         "",
         10,
         60,
@@ -65,7 +64,7 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Pasividad",
+        BERYL_EDAMIEL_DON_PASIVIDAD,
         "",
         15,
         60,
@@ -75,17 +74,17 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Anulación",
+        BERYL_EDAMIEL_DON_ANULACION,
         "",
         15,
         70,
         [],
-        ["Arrancar los sentimientos"]
+        [BERYL_EDAMIEL_DON_ARRANCAR_LOS_SENTIMIENTOS]
     )
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Transición hacia el vacío",
+        BERYL_EDAMIEL_DON_TRANSICION_HACIA_EL_VACIO,
         "",
         15,
         80,
@@ -95,7 +94,7 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "Vórtice",
+        BERYL_EDAMIEL_DON_VORTICE,
         "",
         25,
         90,
@@ -105,7 +104,7 @@ berylEdamiel.addDon(
 );
 berylEdamiel.addDon(
     new DonElan(
-        "El paso de la nada",
+        BERYL_EDAMIEL_DON_EL_PASO_DE_LA_NADA,
         "",
         10,
         100,

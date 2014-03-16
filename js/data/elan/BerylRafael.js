@@ -1,12 +1,10 @@
-var BERYL_RAFAEL = "Rafael";
 
 var berylRafael = new BerylShajad(BERYL_RAFAEL, BERYL);
 
-var ELAN_RAFAEL_CONOCIMIENTO_NATURALEZA = "Conocimiento de la naturaleza";
 ventajas_set.push(new Ventaja(
-    ELAN_RAFAEL_CONOCIMIENTO_NATURALEZA,
+    ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_NATURALEZA,
     "",
-    "Este don otorga un bonificador especial a Herbolaria equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_NATURALEZA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -21,7 +19,7 @@ berylRafael.addDon(
         "Este don otorga un bonificador especial a Herbolaria equivalente a su nivel de Elan.",
         5,
         10,
-        [ELAN_RAFAEL_CONOCIMIENTO_NATURALEZA],
+        [ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_NATURALEZA],
         []
     )
 );

@@ -1,12 +1,9 @@
-var BERYL_AZRAEL = "Azrael";
-
 var berylAzrael = new BerylShajad(BERYL_AZRAEL, BERYL);
 
-var ELAN_AZRAEL_LIDER = "Líder";
 ventajas_set.push(new Ventaja(
-    ELAN_AZRAEL_LIDER,
+    ELAN_VENTAJA_AZRAEL_LIDER,
     "",
-    "Este don otorga un bonificador especial a Liderazgo equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_AZRAEL_LIDER_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -17,19 +14,19 @@ ventajas_set.push(new Ventaja(
 ));
 berylAzrael.addDon(
     new DonElan(
-        "Líder",
-        "Bono especial a Liderazgo equivalente a su nivel de Elan.",
+        ELAN_AZRAEL_DON_LIDER,
+        ELAN_AZRAEL_DON_LIDER_DESC,
         5,
         10,
-        [ELAN_AZRAEL_LIDER],
+        [ELAN_VENTAJA_AZRAEL_LIDER],
         []
     )
 );
-var ELAN_AZRAEL_VALOR_HEROES = "El valor de los héroes";
+
 ventajas_set.push(new Ventaja(
-    ELAN_AZRAEL_VALOR_HEROES,
+    ELAN_VENTAJA_AZRAEL_VALOR_HEROES,
     "",
-    "Bonificador especial a su habilidad secundaria Frialdad equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_AZRAEL_VALOR_HEROES_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -40,17 +37,17 @@ ventajas_set.push(new Ventaja(
 ));
 berylAzrael.addDon(
     new DonElan(
-        "El valor de los héroes",
-        "Bono especial a su habilidad secundaria Frialdad equivalente a su nivel de Elan.",
+        ELAN_AZRAEL_DON_VALOR_HEROES,
+        ELAN_AZRAEL_DON_VALOR_HEROES_DESC,
         5,
         20,
-        [ELAN_AZRAEL_VALOR_HEROES],
+        [ELAN_VENTAJA_AZRAEL_VALOR_HEROES],
         []
     )
 );
 berylAzrael.addDon(
     new DonElan(
-        "Exaltación del espíritu",
+        ELAN_AZRAEL_DON_EXALTACION_DEL_ESPIRITU,
         "",
         10,
         30,
@@ -60,7 +57,7 @@ berylAzrael.addDon(
 );
 berylAzrael.addDon(
     new DonElan(
-        "Sentido de la justicia",
+        ELAN_AZRAEL_DON_SENTIDO_DE_LA_JUSTICIA,
         "",
         10,
         40,
@@ -70,7 +67,7 @@ berylAzrael.addDon(
 );
 berylAzrael.addDon(
     new DonElan(
-        "Espíritu sagrado",
+        ELAN_AZRAEL_DON_ESPIRITU_SAGRADO,
         "",
         5,
         50,
@@ -78,19 +75,21 @@ berylAzrael.addDon(
         []
     )
 );
+
 berylAzrael.addDon(
     new DonElan(
-        "Aura de poder",
+        ELAN_AZRAEL_DON_AURA_DE_PODER,
         "",
         10,
         60,
         [],
-        ["Espíritu sagrado"]
+        [ELAN_AZRAEL_DON_ESPIRITU_SAGRADO]
     )
 );
+
 berylAzrael.addDon(
     new DonElan(
-        "Inmunidad",
+        ELAN_AZRAEL_DON_INMUNIDAD,
         "",
         15,
         60,
@@ -98,9 +97,10 @@ berylAzrael.addDon(
         []
     )
 );
+
 berylAzrael.addDon(
     new DonElan(
-        "Destructor del mal",
+        ELAN_AZRAEL_DON_DESTRUCTOR_DEL_MAL,
         "",
         15,
         70,
@@ -108,9 +108,10 @@ berylAzrael.addDon(
         []
     )
 );
+
 berylAzrael.addDon(
     new DonElan(
-        "Bendecido",
+        ELAN_AZRAEL_DON_BENDECIDO,
         "",
         20,
         70,
@@ -118,11 +119,11 @@ berylAzrael.addDon(
         []
     )
 );
-var ELAN_AZRAEL_GUERRERO_AZRAEL = "Guerrero de Azrael";
+
 ventajas_set.push(new Ventaja(
-    ELAN_AZRAEL_GUERRERO_AZRAEL,
+    ELAN_VENTAJA_AZRAEL_GUERRERO_AZRAEL,
     "",
-    "Este don otorga un punto adicional en sus características de Fuerza y Destreza.",
+    ELAN_VENTAJA_AZRAEL_GUERRERO_AZRAEL_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -133,27 +134,27 @@ ventajas_set.push(new Ventaja(
 ));
 berylAzrael.addDon(
     new DonElan(
-        "Guerrero de Azrael",
-        "Un punto adicional en sus características de Fuerza y Destreza.",
+        ELAN_AZRAEL_DON_GUERRERO_DE_AZRAEL,
+        ELAN_AZRAEL_DON_GUERRERO_DE_AZRAEL_DESC,
         10,
         80,
-        [ELAN_AZRAEL_GUERRERO_AZRAEL],
+        [ELAN_VENTAJA_AZRAEL_GUERRERO_AZRAEL],
         []
     )
 );
 berylAzrael.addDon(
     new DonElan(
-        "Consagrar",
+        ELAN_AZRAEL_DON_CONSAGRAR,
         "",
         15,
         90,
         [],
-        ["Aura de poder"]
+        [ELAN_AZRAEL_DON_AURA_DE_PODER]
     )
 );
 berylAzrael.addDon(
     new DonElan(
-        "Yihad",
+        ELAN_AZRAEL_DON_YIHAD,
         "",
         10,
         100,
