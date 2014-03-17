@@ -23,7 +23,7 @@ var A_M_KEMPO = (new L("A_M_KEMPO","Kempo",
 var A_M_KEMPO_D_V = (new L("A_M_KEMPO_D_V","Los rápidos encadenamientos de golpes permiten al maestro de Kempo realizar los ataques adicionales con un penalizador de –10 a su habilidad, en lugar del –25 habitual. Da una base de daño 20 más el bono de Fuerza, y ataca en Contundentes.",
     "Los rápidos encadenamientos de golpes permiten al maestro de Kempo realizar los ataques adicionales con un penalizador de –10 a su habilidad, en lugar del –25 habitual. Da una base de daño 20 más el bono de Fuerza, y ataca en Contundentes.")).getId();
 var A_M_MOAI_THAI  = (new L("A_M_MOAI_THAI ","Moai Thai",
-    "Moai Thai")).getId();
+    "Muay Thai")).getId();
 var A_M_MOAI_THAI_D_V  = (new L("A_M_MOAI_THAI_D_V ","Tiene un daño base de 20 más el triple del bono de Fuerza de su usuario. Ataca en Contundentes.",
     "Tiene un daño base de 20 más el triple del bono de Fuerza de su usuario. Ataca en Contundentes.")).getId();
 var A_M_SAMBO = (new L("A_M_SAMBO","Sambo",

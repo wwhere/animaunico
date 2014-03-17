@@ -1,7 +1,7 @@
 addDesventaja(new Ventaja(
-    "Extenuación psíquica",
+    DESV_EXTENUACION_PSIQUICA,
     "",
-    "El personaje pierde el doble de puntos de Cansancio de lo que indique su fatiga psíquica. Límitación: Esta desventaja no puede cogerse en combinación con Resistencia a la fatiga psíquica.",
+    DESV_EXTENUACION_PSIQUICA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [
@@ -14,9 +14,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Sin concentración",
+    DESV_SIN_CONCENTRACION,
     "",
-    "Un psíquico con esta desventaja no podrá aplicar bonificadores a su potencial psíquico concentrándose.",
+    DESV_SIN_CONCENTRACION_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -27,9 +27,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Poder único",
+    DESV_PODER_UNICO,
     "",
-    "El psíquico sólo podrá utilizar un único poder psíquico por asalto. Ello no le impide seguir usando otros mantenidos, siempre que los originara en asaltos anteriores.",
+    DESV_PODER_UNICO_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -40,9 +40,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Consumición psíquica",
+    DESV_CONSUMICION_PSIQUICA,
     "",
-    "Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.",
+    DESV_CONSUMICION_PSIQUICA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-2],      //coste
     [],    //incompatibles

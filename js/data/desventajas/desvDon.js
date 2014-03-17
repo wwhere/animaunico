@@ -1,7 +1,7 @@
 addDesventaja(new Ventaja(
-    "Obligación oral",
+    DESV_OBLIGACION_ORAL,
     "",
-    "El personaje debe de tener la capacidad de hablar para acumular magia y realizar sus conjuros.",
+    DESV_OBLIGACION_ORAL_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -12,9 +12,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Obligación somática",
+    DESV_OBLIGACION_SOMATICA,
     "",
-    "El personaje debe moverse libremente para acumular magia y realizar sus conjuros.",
+    DESV_OBLIGACION_SOMATICA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -25,9 +25,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Extenuación mágica",
+    DESV_EXTENUACION_MAGICA,
     "",
-    "El mago perderá un punto de Cansancio al lanzar un conjuro con un potencial superior a 100, dos si es mayor a 300 y tres si lo es de 500.",
+    DESV_EXTENUACION_MAGICA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -38,13 +38,13 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Lenta recuperación de magia",
+    DESV_LENTA_RECUPERACION_DE_LA_MAGIA,
     "",
-    "La regeneración zeónica del personaje se reduce a la mitad.",
+    DESV_LENTA_RECUPERACION_DE_LA_MAGIA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Magia estanca")
+        new ElementoProhibido(VENTAJA,DESV_MAGIA_ESTANCA)
     ],    //incompatibles
     true,  //anulable
     [],
@@ -53,9 +53,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Magia atada a acción",
+    DESV_MAGIA_ATADA_A_ACCION,
     "",
-    "Sólo es posible usar magia si se realiza la acción o se cumple la condición determinada por la desventaja. En el caso de que la acción sea una habilidad secundaria, el mago deberá superar un control contra Difícil (DIF) para lanzar sus conjuros.",
+    DESV_MAGIA_ATADA_A_ACCION_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -66,13 +66,13 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Magia estanca",
+    DESV_MAGIA_ESTANCA,
     "",
-    "El personaje carece de regeneración zeónica, por lo que no recuperará naturalmente los puntos de Zeon que consuma. Sólo podrá volver a conseguir magia drenándola de objetos que lo permitan o de seres vivos con el Don. Esta desventaja no puede combinarse a la de lenta recuperación de magia.",
+    DESV_MAGIA_ESTANCA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-2],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Lenta recuperación de magia")
+        new ElementoProhibido(VENTAJA,DESV_LENTA_RECUPERACION_DE_LA_MAGIA)
     ],    //incompatibles
     true,  //anulable
     [],
@@ -81,9 +81,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Lazo existencial",
+    DESV_LAZO_EXISTENCIAL,
     "",
-    "El mago no podrá elegir los conjuros de Libre Acceso de sus vías de magia y será incapaz de acceder a conjuros elegidos libremente.",
+    DESV_LAZO_EXISTENCIAL_DESC,
     NO_REPETIBLE,   //getRepetible
     [-1],      //coste
     [],    //incompatibles
@@ -94,9 +94,9 @@ addDesventaja(new Ventaja(
     []
 ));
 addDesventaja(new Ventaja(
-    "Brujería",
+    DESV_BRUJERIA,
     "",
-    "El hechicero requiere obligatoriamente emplear componentes materiales para lanzar hechizos. Cada conjuro requerirá un componente distinto determinado por el Director de Juego, según su origen y los conocimientos del brujo.",
+    DESV_BRUJERIA_DESC,
     NO_REPETIBLE,   //getRepetible
     [-2],      //coste
     [],    //incompatibles
