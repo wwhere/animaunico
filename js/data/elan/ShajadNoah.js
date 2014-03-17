@@ -1,10 +1,9 @@
-var SHAJAD_NOAH = "Noah";
 
 var shajadNoah = new BerylShajad(SHAJAD_NOAH, SHAJAD);
 
 shajadNoah.addDon(
     new DonElan(
-        "En las manos apropiadas",
+        ELAN_NOAH_DON_EN_LAS_MANOS_APROPIADAS,
         "",
         5,
         10,
@@ -14,7 +13,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Espíritu de superación",
+        ELAN_NOAH_DON_ESPIRITU_DE_SUPERACION,
         "",
         10,
         20,
@@ -22,11 +21,10 @@ shajadNoah.addDon(
         []
     )
 );
-var ELAN_NOAH_RESISTENTE = "Resistente";
 ventajas_set.push(new Ventaja(
-    ELAN_NOAH_RESISTENTE,
+    ELAN_VENTAJA_NOAH_RESISTENTE,
     "",
-    "Este don otorga un bonificador especial a su RF equivalente a la mitad del Elan que posee.",
+    ELAN_VENTAJA_NOAH_RESISTENTE_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -37,17 +35,17 @@ ventajas_set.push(new Ventaja(
 ));
 shajadNoah.addDon(
     new DonElan(
-        "Resistente",
-        "Este don otorga un bonificador especial a su RF equivalente a la mitad del Elan que posee.",
+        ELAN_NOAH_DON_RESISTENTE,
+        ELAN_NOAH_DON_RESISTENTE_DESC,
         5,
         20,
-        [ELAN_NOAH_RESISTENTE],
+        [ELAN_VENTAJA_NOAH_RESISTENTE],
         []
     )
 );
 shajadNoah.addDon(
     new DonElan(
-        "Inhumano",
+        ELAN_NOAH_DON_INHUMANO,
         "",
         5,
         30,
@@ -57,7 +55,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Ignorar penalizadores",
+        ELAN_NOAH_DON_IGNORAR_PENALIZADORES,
         "",
         10,
         40,
@@ -67,7 +65,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Potencia oscura",
+        ELAN_NOAH_DON_POTENCIA_OSCURA,
         "",
         15,
         50,
@@ -77,7 +75,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Dote",
+        ELAN_NOAH_DON_DOTE,
         "",
         10,
         60,
@@ -87,7 +85,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Mejorar ante los retos",
+        ELAN_NOAH_DON_MEJORAR_ANTE_LOS_RETOS,
         "",
         15,
         70,
@@ -97,7 +95,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Aura de guerra",
+        ELAN_NOAH_DON_AURA_DE_GUERRA,
         "",
         10,
         70,
@@ -107,17 +105,17 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "Avatar oscuro",
+        ELAN_NOAH_DON_AVATAR_OSCURO,
         "",
         20,
         80,
         [],
-        ["Inhumano"]
+        [ELAN_NOAH_DON_INHUMANO]
     )
 );
 shajadNoah.addDon(
     new DonElan(
-        "La sombra de la guerra",
+        ELAN_NOAH_DON_LA_SOMBRA_DE_LA_GUERRA,
         "",
         15,
         90,
@@ -127,7 +125,7 @@ shajadNoah.addDon(
 );
 shajadNoah.addDon(
     new DonElan(
-        "El Vencedor",
+        ELAN_NOAH_DON_EL_VENCEDOR,
         "",
         10,
         100,

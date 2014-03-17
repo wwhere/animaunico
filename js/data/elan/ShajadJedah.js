@@ -1,12 +1,9 @@
-var SHAJAD_JEDAH = "Jedah";
-
 var shajadJedah = new BerylShajad(SHAJAD_JEDAH, SHAJAD);
 
-var ELAN_JEDAH_DON_POLITICA = "Don de la política";
 ventajas_set.push(new Ventaja(
-    ELAN_JEDAH_DON_POLITICA,
+    ELAN_VENTAJA_JEDAH_DON_POLITICA,
     "",
-    "Este don otorga un bonificador especial a sus habilidades secundarias Persuasión y Liderazgo equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_JEDAH_DON_POLITICA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -17,17 +14,17 @@ ventajas_set.push(new Ventaja(
 ));
 shajadJedah.addDon(
     new DonElan(
-        "Don de la política",
-        "Este don otorga un bonificador especial a sus habilidades secundarias Persuasión y Liderazgo equivalente a su nivel de Elan.",
+        ELAN_JEDAH_DON_DON_DE_LA_POLITICA,
+        ELAN_JEDAH_DON_DON_DE_LA_POLITICA_DESC,
         5,
         10,
-        [ELAN_JEDAH_DON_POLITICA],
+        [ELAN_VENTAJA_JEDAH_DON_POLITICA],
         []
     )
 );
 shajadJedah.addDon(
     new DonElan(
-        "Dominación incrementada",
+        ELAN_JEDAH_DON_DOMINACION_INCREMENTADA,
         "",
         10,
         20,
@@ -37,7 +34,7 @@ shajadJedah.addDon(
 );
 shajadJedah.addDon(
     new DonElan(
-        "Sombra",
+        ELAN_JEDAH_DON_SOMBRA,
         "",
         5,
         30,
@@ -47,7 +44,7 @@ shajadJedah.addDon(
 );
 shajadJedah.addDon(
     new DonElan(
-        "Afinidad oscura",
+        ELAN_JEDAH_DON_AFINIDAD_OSCURA,
         "",
         5,
         40,
@@ -55,11 +52,10 @@ shajadJedah.addDon(
         []
     )
 );
-var ELAN_JEDAH_PODER_CONOCIMIENTO = "El poder del conocimiento";
 ventajas_set.push(new Ventaja(
-    ELAN_JEDAH_PODER_CONOCIMIENTO,
+    ELAN_VENTAJA_JEDAH_PODER_CONOCIMIENTO,
     "",
-    "Este don otorga un bonificador especial a todas las habilidades secundarias Intelectuales, equivalente a la mitad de su nivel de Elan.",
+    ELAN_VENTAJA_JEDAH_PODER_CONOCIMIENTO_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -70,17 +66,17 @@ ventajas_set.push(new Ventaja(
 ));
 shajadJedah.addDon(
     new DonElan(
-        "El poder del conocimiento",
-        "Este don otorga un bonificador especial a todas las habilidades secundarias Intelectuales, equivalente a la mitad de su nivel de Elan.",
+        ELAN_JEDAH_DON_EL_PODER_DEL_CONOCIMIENTO,
+        ELAN_JEDAH_DON_EL_PODER_DEL_CONOCIMIENTO_DESC,
         10,
         50,
-        [ELAN_JEDAH_PODER_CONOCIMIENTO],
+        [ELAN_VENTAJA_JEDAH_PODER_CONOCIMIENTO],
         []
     )
 );
 shajadJedah.addDon(
     new DonElan(
-        "El Dominador (Habla)",
+        ELAN_JEDAH_DON_EL_DOMINADOR_HABLA,
         "",
         10,
         50,
@@ -90,7 +86,7 @@ shajadJedah.addDon(
 );
 shajadJedah.addDon(
     new DonElan(
-        "Cadena de mando",
+        ELAN_JEDAH_DON_CADENA_DE_MANDO,
         "",
         10,
         60,
@@ -100,19 +96,18 @@ shajadJedah.addDon(
 );
 shajadJedah.addDon(
     new DonElan(
-        "Señor de las sombras",
+        ELAN_JEDAH_DON_SEÑOR_DE_LAS_SOMBRAS,
         "",
         15,
         65,
         [],
-        ["Afinidad oscura"]
+        [ELAN_JEDAH_DON_AFINIDAD_OSCURA]
     )
 );
-var ELAN_JEDAH_PODER_OSCURO = "Comunión con Uriel";
 ventajas_set.push(new Ventaja(
-    ELAN_JEDAH_PODER_OSCURO,
+    ELAN_VENTAJA_JEDAH_PODER_OSCURO,
     "",
-    "Este don otorga un punto adicional en sus características de Poder, Voluntad e Inteligencia.",
+    ELAN_VENTAJA_JEDAH_PODER_OSCURO_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -123,27 +118,27 @@ ventajas_set.push(new Ventaja(
 ));
 shajadJedah.addDon(
     new DonElan(
-        "Poder oscuro",
-        "Este don otorga un punto adicional en sus características de Poder, Voluntad e Inteligencia.",
+        ELAN_JEDAH_DON_PODER_OSCURO,
+        ELAN_JEDAH_DON_PODER_OSCURO_DESC,
         15,
         70,
-        [ELAN_JEDAH_PODER_OSCURO],
+        [ELAN_VENTAJA_JEDAH_PODER_OSCURO],
         []
     )
 );
 shajadJedah.addDon(
     new DonElan(
-        "El Dominador (Vista)",
+        ELAN_JEDAH_DON_EL_DOMINADOR_VISTA,
         "",
         10,
         70,
         [],
-        ["El Dominador (Habla)"]
+        [ELAN_JEDAH_DON_EL_DOMINADOR_HABLA]
     )
 );
 shajadJedah.addDon(
     new DonElan(
-        "Esencia sobrenatural",
+        ELAN_JEDAH_DON_ESENCIA_SOBRENATURAL,
         "",
         15,
         80,
@@ -153,17 +148,17 @@ shajadJedah.addDon(
 );
 shajadJedah.addDon(
     new DonElan(
-        "El Dominador (Aura)",
+        ELAN_JEDAH_DON_EL_DOMINADOR_AURA,
         "",
         10,
         90,
         [],
-        ["El Dominador (Vista)"]
+        [ELAN_JEDAH_DON_EL_DOMINADOR_VISTA]
     )
 );
 shajadJedah.addDon(
     new DonElan(
-        "Maestro de marionetas",
+        ELAN_JEDAH_DON_MAESTRO_DE_MARIONETAS,
         "",
         10,
         100,

@@ -1333,7 +1333,7 @@ function conocimientoNaturalezaElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function conocimientoAnimalElan(coste, opcion, aplicar) {
-    var bonoAnimales = new Bono(BONO_HABILIDAD,HB_ANIMALES,Math.floor(personaje_actual.getSincronizacionElan(BERYL_RAFAEL)),"",false,BONO_ESPECIAL,ELAN_RAFAEL_CONOCIMIENTO_ANIMAL);
+    var bonoAnimales = new Bono(BONO_HABILIDAD,HB_ANIMALES,Math.floor(personaje_actual.getSincronizacionElan(BERYL_RAFAEL)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_ANIMAL);
     if (aplicar) {
         personaje_actual.addBono(bonoAnimales,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:conocimientoAnimalElan},actualizaVentajaDependienteElan);
@@ -1389,7 +1389,7 @@ function poderOscuroElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function conocimientoSobrenaturalElan(coste, opcion, aplicar) {
-    var bonoAnimales = new Bono(BONO_HABILIDAD,HB_OCULTISMO,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_EREBUS)),"",false,BONO_ESPECIAL,ELAN_EREBUS_CONOCIMIENTO_SOBRENATURAL);
+    var bonoAnimales = new Bono(BONO_HABILIDAD,HB_OCULTISMO,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_EREBUS)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_EREBUS_CONOCIMIENTO_SOBRENATURAL);
     if (aplicar) {
         personaje_actual.addBono(bonoAnimales,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:conocimientoSobrenaturalElan},actualizaVentajaDependienteElan);
@@ -1406,7 +1406,7 @@ function conocimientoSobrenaturalElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function presenciaTenebrosaElan(coste, opcion, aplicar) {
-    var bonoAnimales = new Bono(BONO_HABILIDAD,HB_INTIMIDAR,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_EREBUS)),"",false,BONO_ESPECIAL,ELAN_EREBUS_PRESENCIA_TENEBROSA);
+    var bonoAnimales = new Bono(BONO_HABILIDAD,HB_INTIMIDAR,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_EREBUS)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_EREBUS_PRESENCIA_TENEBROSA);
     if (aplicar) {
         personaje_actual.addBono(bonoAnimales,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:presenciaTenebrosaElan},actualizaVentajaDependienteElan);
@@ -1448,8 +1448,8 @@ function demiurgoElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function donPoliticaElan(coste, opcion, aplicar) {
-    var bonoPersuasion = new Bono(BONO_HABILIDAD,HB_PERSUASION,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_JEDAH)),"",false,BONO_ESPECIAL,ELAN_JEDAH_DON_POLITICA);
-    var bonoLiderazgo = new Bono(BONO_HABILIDAD,HB_LIDERAZGO,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_JEDAH)),"",false,BONO_ESPECIAL,ELAN_JEDAH_DON_POLITICA);
+    var bonoPersuasion = new Bono(BONO_HABILIDAD,HB_PERSUASION,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_JEDAH)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_JEDAH_DON_POLITICA);
+    var bonoLiderazgo = new Bono(BONO_HABILIDAD,HB_LIDERAZGO,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_JEDAH)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_JEDAH_DON_POLITICA);
     if (aplicar) {
         personaje_actual.addBono(bonoPersuasion,true,true);
         personaje_actual.addBono(bonoLiderazgo,true,true);
@@ -1469,7 +1469,7 @@ function donPoliticaElan(coste, opcion, aplicar) {
  */
 function poderConocimientoElan(coste, opcion, aplicar) {
     for (var i = 0; i < habilidades_intelectuales_set.length; i++) {
-        var bono = new Bono(BONO_HABILIDAD,habilidades_intelectuales_set[i],Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_JEDAH)/2),"",false,BONO_ESPECIAL,ELAN_JEDAH_PODER_CONOCIMIENTO);
+        var bono = new Bono(BONO_HABILIDAD,habilidades_intelectuales_set[i],Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_JEDAH)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_JEDAH_PODER_CONOCIMIENTO);
         if (aplicar) {
             personaje_actual.addBono(bono,true,false);
         } else {
@@ -1492,8 +1492,8 @@ function poderConocimientoElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function serenidadMelancoliaElan(coste, opcion, aplicar) {
-    var bonoFrialdad = new Bono(BONO_HABILIDAD,HB_FRIALDAD,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_MESEGUIS)),"",false,BONO_ESPECIAL,ELAN_MESEGUIS_SERENIDAD_MELANCOLIA);
-    var bonoResistirDolor = new Bono(BONO_HABILIDAD,HB_RESISTENCIA_DOLOR,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_MESEGUIS)),"",false,BONO_ESPECIAL,ELAN_MESEGUIS_SERENIDAD_MELANCOLIA);
+    var bonoFrialdad = new Bono(BONO_HABILIDAD,HB_FRIALDAD,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_MESEGUIS)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MESEGUIS_SERENIDAD_MELANCOLIA);
+    var bonoResistirDolor = new Bono(BONO_HABILIDAD,HB_RESISTENCIA_DOLOR,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_MESEGUIS)),"",false,BONO_ESPECIAL,ELAN_VENTAJA_MESEGUIS_SERENIDAD_MELANCOLIA);
     if (aplicar) {
         personaje_actual.addBono(bonoFrialdad,true,true);
         personaje_actual.addBono(bonoResistirDolor,true,true);
@@ -1512,7 +1512,7 @@ function serenidadMelancoliaElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function resistenteElan(coste, opcion, aplicar) {
-    var bonoRF = new Bono(BONO_RESISTENCIA,RF,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_NOAH)/2),"",false,BONO_ESPECIAL,ELAN_NOAH_RESISTENTE);
+    var bonoRF = new Bono(BONO_RESISTENCIA,RF,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_NOAH)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_NOAH_RESISTENTE);
     if (aplicar) {
         personaje_actual.addBono(bonoRF,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:resistenteElan},actualizaVentajaDependienteElan);
@@ -1529,7 +1529,7 @@ function resistenteElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function dañoIncrementadoElan(coste, opcion, aplicar) {
-    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_ZEMIAL)/2),"",false,BONO_ESPECIAL,ELAN_ZEMIAL_DAÑO_INCREMENTADO);
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,Math.floor(personaje_actual.getSincronizacionElan(SHAJAD_ZEMIAL)/2),"",false,BONO_ESPECIAL,ELAN_VENTAJA_ZEMIAL_DAÑO_INCREMENTADO);
     if (aplicar) {
         personaje_actual.addBono(bonoDaño,true,true);
         DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{callback:dañoIncrementadoElan},actualizaVentajaDependienteElan);

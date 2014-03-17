@@ -1,10 +1,8 @@
-var SHAJAD_ABBADON = "Abbadon";
-
 var shajadAbbadon = new BerylShajad(SHAJAD_ABBADON, SHAJAD);
 
 shajadAbbadon.addDon(
     new DonElan(
-        "Empatía oscura",
+        ELAN_ABBADON_DON_EMPATIA_OSCURA,
         "",
         10,
         10,
@@ -14,7 +12,7 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Los ojos de la maldad",
+        ELAN_ABBADON_DON_LOS_OJOS_DE_LA_MALDAD,
         "",
         5,
         20,
@@ -24,7 +22,7 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Señor de los pecados",
+        ELAN_ABBADON_DON_SEÑOR_DE_LOS_PECADOS,
         "",
         10,
         30,
@@ -34,7 +32,7 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Ser oscuro",
+        ELAN_ABBADON_DON_SER_OSCURO,
         "",
         5,
         40,
@@ -44,7 +42,7 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Corruptor de almas",
+        ELAN_ABBADON_DON_CORRUPTOR_DE_ALMAS,
         "",
         15,
         50,
@@ -54,17 +52,17 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Encarnación demoníaca",
+        ELAN_ABBADON_DON_ENCARNACION_DEMONIACA,
         "",
         10,
         60,
         [], //TODO poderes de monstruo
-        ["Ser oscuro"]
+        [ELAN_ABBADON_DON_SER_OSCURO]
     )
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Destructor de lo sagrado",
+        ELAN_ABBADON_DON_DESTRUCTOR_DE_LO_SAGRADO,
         "",
         15,
         70,
@@ -74,17 +72,17 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Don de la malignidad",
+        ELAN_ABBADON_DON_DON_DE_LA_MALIGNIDAD,
         "",
         10,
         80,
         [],
-        ["Ser oscuro"]
+        [ELAN_ABBADON_DON_SER_OSCURO]
     )
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Invocación demoníaca",
+        ELAN_ABBADON_DON_INVOCACION_DEMONIACA,
         "",
         15,
         80,
@@ -94,7 +92,7 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "Devorador de almas",
+        ELAN_ABBADON_DON_DEVORADOR_DE_ALMAS,
         "",
         15,
         90,
@@ -104,7 +102,7 @@ shajadAbbadon.addDon(
 );
 shajadAbbadon.addDon(
     new DonElan(
-        "La semilla del diablo",
+        ELAN_ABBADON_DON_LA_SEMILLA_DEL_DIABLO,
         "",
         10,
         100,

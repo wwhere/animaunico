@@ -15,19 +15,18 @@ ventajas_set.push(new Ventaja(
 ));
 berylRafael.addDon(
     new DonElan(
-        "Conocimiento de la naturaleza",
-        "Este don otorga un bonificador especial a Herbolaria equivalente a su nivel de Elan.",
+        ELAN_RAFAEL_DON_CONOCIMIENTO_DE_LA_NATURALEZA,
+        ELAN_RAFAEL_DON_CONOCIMIENTO_DE_LA_NATURALEZA_DESC,
         5,
         10,
         [ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_NATURALEZA],
         []
     )
 );
-var ELAN_RAFAEL_CONOCIMIENTO_ANIMAL = "Conocimiento animal";
 ventajas_set.push(new Ventaja(
-    ELAN_RAFAEL_CONOCIMIENTO_ANIMAL,
+    ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_ANIMAL,
     "",
-    "Este don otorga un bonificador especial a Animales equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_ANIMAL_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -38,17 +37,17 @@ ventajas_set.push(new Ventaja(
 ));
 berylRafael.addDon(
     new DonElan(
-        "Conocimiento animal",
-        "Este don otorga un bonificador especial a Animales equivalente a su nivel de Elan.",
+        ELAN_RAFAEL_DON_CONOCIMIENTO_ANIMAL,
+        ELAN_RAFAEL_DON_CONOCIMIENTO_ANIMAL_DESC,
         5,
         20,
-        [ELAN_RAFAEL_CONOCIMIENTO_ANIMAL],
+        [ELAN_VENTAJA_RAFAEL_CONOCIMIENTO_ANIMAL],
         []
     )
 );
 berylRafael.addDon(
     new DonElan(
-        "Curación",
+        ELAN_RAFAEL_DON_CURACION,
         "",
         10,
         20,
@@ -58,7 +57,7 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Manto de fertilidad",
+        ELAN_RAFAEL_DON_MANTO_DE_FERTILIDAD,
         "",
         5,
         30,
@@ -68,7 +67,7 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Eliminar venenos naturales",
+        ELAN_RAFAEL_DON_ELIMINAR_VENENOS_NATURALES,
         "",
         10,
         40,
@@ -78,7 +77,7 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Tótem",
+        ELAN_RAFAEL_DON_TOTEM,
         "",
         20,
         50,
@@ -88,17 +87,17 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Curación expandida",
+        ELAN_RAFAEL_DON_CURACION_EXPANDIDA,
         "",
         15,
         50,
         [],
-        ["Curación"]
+        [ELAN_RAFAEL_DON_CURACION]
     )
 );
 berylRafael.addDon(
     new DonElan(
-        "Los ojos de la naturaleza",
+        ELAN_RAFAEL_DON_LOS_OJOS_DE_LA_NATURALEZA,
         "",
         10,
         60,
@@ -108,7 +107,7 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Invocar animales",
+        ELAN_RAFAEL_DON_INVOCAR_ANIMALES,
         "",
         10,
         60,
@@ -118,7 +117,7 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Transformación animal",
+        ELAN_RAFAEL_DON_TRANSFORMACION_ANIMAL,
         "",
         10,
         70,
@@ -128,27 +127,27 @@ berylRafael.addDon(
 );
 berylRafael.addDon(
     new DonElan(
-        "Invocación incrementada",
+        ELAN_RAFAEL_DON_INVOCACION_INCREMENTADA,
         "",
         10,
         80,
         [],
-        ["Invocar animales"] //TODO especificar especie u opción
+        [ELAN_RAFAEL_DON_INVOCAR_ANIMALES] //TODO especificar especie u opción
     )
 );
 berylRafael.addDon(
     new DonElan(
-        "Curación ilimitada",
+        ELAN_RAFAEL_DON_CURACION_ILIMITADA,
         "",
         20,
         90,
         [],
-        ["Curación expandida"]
+        [ELAN_RAFAEL_DON_CURACION_EXPANDIDA]
     )
 );
 berylRafael.addDon(
     new DonElan(
-        "Conciencia de la naturaleza",
+        ELAN_RAFAEL_DON_CONCIENCIA_DE_LA_NATURALEZA,
         "",
         10,
         100,

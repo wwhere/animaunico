@@ -1,10 +1,8 @@
-var BERYL_URIEL = "Uriel";
-
 var berylUriel = new BerylShajad(BERYL_URIEL, BERYL);
 
 berylUriel.addDon(
     new DonElan(
-        "Instinto de libertad",
+        ELAN_URIEL_DON_INSTINTO_DE_LIBERTAD,
         "",
         5,
         10,
@@ -14,7 +12,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Inadvertido",
+        ELAN_URIEL_DON_INADVERTIDO,
         "",
         5,
         20,
@@ -24,7 +22,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Espíritu indomable",
+        ELAN_URIEL_DON_ESPIRITU_INDOMABLE,
         "",
         10,
         20,
@@ -34,7 +32,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Alma libre",
+        ELAN_URIEL_DON_ALMA_LIBRE,
         "",
         5,
         30,
@@ -44,7 +42,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Visionario",
+        ELAN_URIEL_DON_VISIONARIO,
         "",
         10,
         40,
@@ -54,7 +52,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Medio de transporte",
+        ELAN_URIEL_DON_MEDIO_DE_TRANSPORTE,
         "",
         5,
         40,
@@ -64,7 +62,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Romper las cadenas",
+        ELAN_URIEL_DON_ROMPER_LAS_CADENAS,
         "",
         10,
         50,
@@ -74,17 +72,17 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "Ojos del futuro",
+        ELAN_URIEL_DON_OJOS_DEL_FUTURO,
         "",
         20,
         60,
         [],
-        ["Visionario"]
+        [ELAN_URIEL_DON_VISIONARIO]
     )
 );
 berylUriel.addDon(
     new DonElan(
-        "Paso libre",
+        ELAN_URIEL_DON_PASO_LIBRE,
         "",
         15,
         60,
@@ -92,11 +90,10 @@ berylUriel.addDon(
         []
     )
 );
-var ELAN_URIEL_COMUNION_URIEL = "Comunión con Uriel";
 ventajas_set.push(new Ventaja(
-    ELAN_URIEL_COMUNION_URIEL,
+    ELAN_VENTAJA_URIEL_COMUNION_URIEL,
     "",
-    "Este don otorga un punto adicional en sus características de Poder, Voluntad y Destreza.",
+    ELAN_VENTAJA_URIEL_COMUNION_URIEL_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -107,19 +104,18 @@ ventajas_set.push(new Ventaja(
 ));
 berylUriel.addDon(
     new DonElan(
-        "Comunión con Uriel",
-        "Este don otorga un punto adicional en sus características de Poder, Voluntad y Destreza.",
+        ELAN_URIEL_DON_COMUNION_CON_URIEL,
+        ELAN_URIEL_DON_COMUNION_CON_URIEL_DESC,
         10,
         70,
-        [ELAN_URIEL_COMUNION_URIEL],
+        [ELAN_VENTAJA_URIEL_COMUNION_URIEL],
         []
     )
 );
-var ELAN_URIEL_ESENCIA_SOBRENATURAL = "Esencia sobrenatural";
 ventajas_set.push(new Ventaja(
-    ELAN_URIEL_ESENCIA_SOBRENATURAL,
+    ELAN_VENTAJA_URIEL_ESENCIA_SOBRENATURAL,
     "",
-    "Este don otorga Gnosis 30.",
+    ELAN_VENTAJA_URIEL_ESENCIA_SOBRENATURAL_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -130,17 +126,17 @@ ventajas_set.push(new Ventaja(
 ));
 berylUriel.addDon(
     new DonElan(
-        "Esencia sobrenatural",
-        "Este don otorga Gnosis 30.",
+        ELAN_URIEL_DON_ESENCIA_SOBRENATURAL,
+        ELAN_URIEL_DON_ESENCIA_SOBRENATURAL_DESC,
         10,
         80,
-        [ELAN_URIEL_ESENCIA_SOBRENATURAL],
+        [ELAN_VENTAJA_URIEL_ESENCIA_SOBRENATURAL],
         []
     )
 );
 berylUriel.addDon(
     new DonElan(
-        "Una segunda oportunidad",
+        ELAN_URIEL_DON_UNA_SEGUNDA_OPORTUNIDAD,
         "",
         20,
         90,
@@ -150,7 +146,7 @@ berylUriel.addDon(
 );
 berylUriel.addDon(
     new DonElan(
-        "El Viajero",
+        ELAN_URIEL_DON_EL_VIAJERO,
         "",
         10,
         100,

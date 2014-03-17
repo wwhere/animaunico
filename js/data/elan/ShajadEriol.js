@@ -1,10 +1,10 @@
-var SHAJAD_ERIOL = "Eriol";
+
 
 var shajadEriol = new BerylShajad(SHAJAD_ERIOL, SHAJAD);
 
 shajadEriol.addDon(
     new DonElan(
-        "Otorgar fortuna y desgracia",
+        ELAN_ERIOL_DON_OTORGAR_FORTUNA_Y_DESGRACIA,
         "",
         10,
         10,
@@ -14,7 +14,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Alterar la Ley de la Casualidad",
+        ELAN_ERIOL_DON_ALTERAR_LA_LEY_DE_LA_CASUALIDAD,
         "",
         5,
         20,
@@ -24,7 +24,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Sentir el caos",
+        ELAN_ERIOL_DON_SENTIR_EL_CAOS,
         "",
         5,
         30,
@@ -34,7 +34,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Robar la suerte",
+        ELAN_ERIOL_DON_ROBAR_LA_SUERTE,
         "",
         10,
         40,
@@ -44,7 +44,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Conjurar la providencia",
+        ELAN_ERIOL_DON_CONJURAR_LA_PROVIDENCIA,
         "",
         10,
         50,
@@ -54,7 +54,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Estigma del caos",
+        ELAN_ERIOL_DON_ESTIGMA_DEL_CAOS,
         "",
         15,
         50,
@@ -64,7 +64,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Aura de caos",
+        ELAN_ERIOL_DON_AURA_DE_CAOS,
         "",
         10,
         60,
@@ -74,17 +74,17 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Alterar el destino",
+        ELAN_ERIOL_DON_ALTERAR_EL_DESTINO,
         "",
         15,
         70,
         [],
-        ["Conjurar la providencia"]
+        [ELAN_ERIOL_DON_CONJURAR_LA_PROVIDENCIA]
     )
 );
 shajadEriol.addDon(
     new DonElan(
-        "Forzar la suerte",
+        ELAN_ERIOL_DON_FORZAR_LA_SUERTE,
         "",
         15,
         80,
@@ -94,7 +94,7 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Truncar el sino",
+        ELAN_ERIOL_DON_TRUNCAR_EL_SINO,
         "",
         15,
         90,
@@ -104,12 +104,12 @@ shajadEriol.addDon(
 );
 shajadEriol.addDon(
     new DonElan(
-        "Señor del Caos",
+        ELAN_ERIOL_DON_SEÑOR_DEL_CAOS,
         "",
         10,
         100,
         [],
-        ["Aura de caos"]
+        [ELAN_ERIOL_DON_AURA_DE_CAOS]
     )
 );
 

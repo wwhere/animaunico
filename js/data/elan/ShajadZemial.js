@@ -1,10 +1,9 @@
-var SHAJAD_ZEMIAL = "Zemial";
 
 var shajadZemial = new BerylShajad(SHAJAD_ZEMIAL, SHAJAD);
 
 shajadZemial.addDon(
     new DonElan(
-        "Asalto espiritual",
+        ELAN_ZEMIAL_DON_ASALTO_ESPIRITUAL,
         "",
         5,
         10,
@@ -14,7 +13,7 @@ shajadZemial.addDon(
 );
 shajadZemial.addDon(
     new DonElan(
-        "Ansia demencial",
+        ELAN_ZEMIAL_DON_ANSIA_DEMENCIAL,
         "",
         5,
         20,
@@ -22,11 +21,10 @@ shajadZemial.addDon(
         []
     )
 );
-var ELAN_ZEMIAL_DAÑO_INCREMENTADO = "Daño incrementado";
 ventajas_set.push(new Ventaja(
-    ELAN_ZEMIAL_DAÑO_INCREMENTADO,
+    ELAN_VENTAJA_ZEMIAL_DAÑO_INCREMENTADO,
     "",
-    "Este don otorga un bonificador especial a daño base de cualquiera de sus ataques en una cantidad equivalente a la mitad de su nivel de Elan.",
+    ELAN_VENTAJA_ZEMIAL_DAÑO_INCREMENTADO_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -37,27 +35,27 @@ ventajas_set.push(new Ventaja(
 ));
 shajadZemial.addDon(
     new DonElan(
-        "Daño incrementado",
-        "Este don otorga un bonificador especial a daño base de cualquiera de sus ataques en una cantidad equivalente a la mitad de su nivel de Elan.",
+        ELAN_ZEMIAL_DON_DAÑO_INCREMENTADO,
+        ELAN_ZEMIAL_DON_DAÑO_INCREMENTADO_DESC,
         10,
         30,
-        [ELAN_ZEMIAL_DAÑO_INCREMENTADO],
+        [ELAN_VENTAJA_ZEMIAL_DAÑO_INCREMENTADO],
         []
     )
 );
 shajadZemial.addDon(
     new DonElan(
-        "Daño anímico",
+        ELAN_ZEMIAL_DON_DAÑO_ANIMICO,
         "",
         10,
         40,
         [],
-        ["Asalto espiritual"]
+        [ELAN_ZEMIAL_DON_ASALTO_ESPIRITUAL]
     )
 );
 shajadZemial.addDon(
     new DonElan(
-        "Destructor",
+        ELAN_ZEMIAL_DON_DESTRUCTOR,
         "",
         15,
         50,
@@ -67,7 +65,7 @@ shajadZemial.addDon(
 );
 shajadZemial.addDon(
     new DonElan(
-        "Señor de la destrucción (Tacto)",
+        ELAN_ZEMIAL_DON_SEÑOR_DE_LA_DESTRUCCION_TACTO,
         "",
         10,
         50,
@@ -77,7 +75,7 @@ shajadZemial.addDon(
 );
 shajadZemial.addDon(
     new DonElan(
-        "Presencia exterminadora",
+        ELAN_ZEMIAL_DON_PRESENCIA_EXTERMINADORA,
         "",
         10,
         60,
@@ -87,27 +85,27 @@ shajadZemial.addDon(
 );
 shajadZemial.addDon(
     new DonElan(
-        "Señor de la destrucción (Vista)",
+        ELAN_ZEMIAL_DON_SEÑOR_DE_LA_DESTRUCCION_VISTA,
         "",
         10,
         60,
         [],
-        ["Señor de la destrucción (Tacto)"]
+        [ELAN_ZEMIAL_DON_SEÑOR_DE_LA_DESTRUCCION_TACTO]
     )
 );
 shajadZemial.addDon(
     new DonElan(
-        "Señor de la destrucción (Aura)",
+        ELAN_ZEMIAL_DON_SEÑOR_DE_LA_DESTRUCCION_AURA,
         "",
         10,
         70,
         [],
-        ["Señor de la destrucción (Vista)"]
+        [ELAN_ZEMIAL_DON_SEÑOR_DE_LA_DESTRUCCION_VISTA]
     )
 );
 shajadZemial.addDon(
     new DonElan(
-        "Asalto destructor",
+        ELAN_ZEMIAL_DON_ASALTO_DESTRUCTOR,
         "",
         15,
         80,
@@ -117,7 +115,7 @@ shajadZemial.addDon(
 );
 shajadZemial.addDon(
     new DonElan(
-        "La sangre de la locura",
+        ELAN_ZEMIAL_DON_LA_SANGRE_DE_LA_LOCURA,
         "",
         20,
         90,
@@ -127,7 +125,7 @@ shajadZemial.addDon(
 );
 shajadZemial.addDon(
     new DonElan(
-        "Portador de catástrofes",
+        ELAN_ZEMIAL_DON_PORTADOR_DE_CATASTROFES,
         "",
         10,
         100,

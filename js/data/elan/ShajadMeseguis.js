@@ -1,12 +1,9 @@
-var SHAJAD_MESEGUIS = "Meseguis";
-
 var shajadMeseguis = new BerylShajad(SHAJAD_MESEGUIS, SHAJAD);
 
-var ELAN_MESEGUIS_SERENIDAD_MELANCOLIA = "La serenidad de la melancolía";
 ventajas_set.push(new Ventaja(
-    ELAN_MESEGUIS_SERENIDAD_MELANCOLIA,
+    ELAN_VENTAJA_MESEGUIS_SERENIDAD_MELANCOLIA,
     "",
-    "Este don otorga un bonificador especial a Frialdad y Resistir el dolor equivalente a su nivel de Elan.",
+    ELAN_VENTAJA_MESEGUIS_SERENIDAD_MELANCOLIA_DESC,
     NO_COMPRABLE,   //getRepetible
     new Array(0),      //coste
     [],    //incompatibles
@@ -17,17 +14,17 @@ ventajas_set.push(new Ventaja(
 ));
 shajadMeseguis.addDon(
     new DonElan(
-        "La serenidad de la melancolía",
-        "Este don otorga un bonificador especial a Frialdad y Resistir el dolor equivalente a su nivel de Elan.",
+        ELAN_MESEGUIS_DON_LA_SERENIDAD_DE_LA_MELANCOLIA,
+        ELAN_MESEGUIS_DON_LA_SERENIDAD_DE_LA_MELANCOLIA_DESC,
         5,
         10,
-        [ELAN_MESEGUIS_SERENIDAD_MELANCOLIA],
+        [ELAN_VENTAJA_MESEGUIS_SERENIDAD_MELANCOLIA],
         []
     )
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Camino de la venganza",
+        ELAN_MESEGUIS_DON_CAMINO_DE_LA_VENGANZA,
         "",
         5,
         20,
@@ -37,7 +34,7 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Ojos de la pesadumbre",
+        ELAN_MESEGUIS_DON_OJOS_DE_LA_PESADUMBRE,
         "",
         10,
         30,
@@ -47,7 +44,7 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Lágrimas por los demás",
+        ELAN_MESEGUIS_DON_LAGRIMAS_POR_LOS_DEMAS,
         "",
         5,
         30,
@@ -57,7 +54,7 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Transmitir el dolor",
+        ELAN_MESEGUIS_DON_TRANSMITIR_EL_DOLOR,
         "",
         10,
         40,
@@ -67,7 +64,7 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Espíritu de la venganza",
+        ELAN_MESEGUIS_DON_ESPIRITU_DE_LA_VENGANZA,
         "",
         10,
         40,
@@ -77,7 +74,7 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "La voz de los muertos",
+        ELAN_MESEGUIS_DON_LA_VOZ_DE_LOS_MUERTOS,
         "",
         10,
         50,
@@ -87,7 +84,7 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Vengador oscuro",
+        ELAN_MESEGUIS_DON_VENGADOR_OSCURO,
         "",
         10,
         60,
@@ -97,17 +94,17 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "La voz del dolor",
+        ELAN_MESEGUIS_DON_LA_VOZ_DEL_DOLOR,
         "",
         15,
         60,
         [],
-        ["Transmitir el dolor"]
+        [ELAN_MESEGUIS_DON_TRANSMITIR_EL_DOLOR]
     )
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Más allá de la muerte",
+        ELAN_MESEGUIS_DON_MAS_ALLA_DE_LA_MUERTE,
         "",
         10,
         70,
@@ -117,17 +114,17 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Ejecutor oscuro",
+        ELAN_MESEGUIS_DON_EJECUTOR_OSCURO,
         "",
         10,
         80,
         [],
-        ["Vengador oscuro"]
+        [ELAN_MESEGUIS_DON_VENGADOR_OSCURO]
     )
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Espejo oscuro",
+        ELAN_MESEGUIS_DON_ESPEJO_OSCURO,
         "",
         15,
         90,
@@ -137,12 +134,12 @@ shajadMeseguis.addDon(
 );
 shajadMeseguis.addDon(
     new DonElan(
-        "Comunión con los caídos",
+        ELAN_MESEGUIS_DON_COMUNION_CON_LOS_CAIDOS,
         "",
         10,
         100,
         [],
-        ["La voz de los muertos"]
+        [ELAN_MESEGUIS_DON_LA_VOZ_DE_LOS_MUERTOS]
     )
 );
 
