@@ -145,35 +145,35 @@ var DESV_MALDITO_DESC = (new L("DESV_Maldito_DESC","Interpretado por el DJ.",
 /*******************DON********************/
 
 var DESV_OBLIGACION_ORAL = (new L("DESV_OBLIGACION_ORAL","Obligación oral",
-    "Obligación oral")).getId();
+    "Oral requirement")).getId();
 var DESV_OBLIGACION_ORAL_DESC = (new L("DESV_OBLIGACION_ORAL_DESC","El personaje debe de tener la capacidad de hablar para acumular magia y realizar sus conjuros.",
     "El personaje debe de tener la capacidad de hablar para acumular magia y realizar sus conjuros.")).getId();
 var DESV_OBLIGACION_SOMATICA = (new L("DESV_OBLIGACION_SOMATICA","Obligación somática",
-    "Obligación somática")).getId();
+    "Require Gestures")).getId();
 var DESV_OBLIGACION_SOMATICA_DESC = (new L("DESV_OBLIGACION_SOMATICA_DESC","El personaje debe moverse libremente para acumular magia y realizar sus conjuros.",
     "El personaje debe moverse libremente para acumular magia y realizar sus conjuros.")).getId();
 var DESV_EXTENUACION_MAGICA = (new L("DESV_EXTENUACION_MAGICA","Extenuación mágica",
-    "Extenuación mágica")).getId();
+    "Magical Exhaustion")).getId();
 var DESV_EXTENUACION_MAGICA_DESC = (new L("DESV_EXTENUACION_MAGICA_DESC","El mago perderá un punto de Cansancio al lanzar un conjuro con un potencial superior a 100, dos si es mayor a 300 y tres si lo es de 500.",
     "El mago perderá un punto de Cansancio al lanzar un conjuro con un potencial superior a 100, dos si es mayor a 300 y tres si lo es de 500.")).getId();
 var DESV_LENTA_RECUPERACION_DE_LA_MAGIA = (new L("DESV_LENTA_RECUPERACION_DE_LA_MAGIA","Lenta recuperación de magia",
-    "Lenta recuperación de magia")).getId();
+    "Slow recovery of Magic")).getId();
 var DESV_LENTA_RECUPERACION_DE_LA_MAGIA_DESC = (new L("DESV_LENTA_RECUPERACION_DE_LA_MAGIA_DESC","La regeneración zeónica del personaje se reduce a la mitad.",
     "La regeneración zeónica del personaje se reduce a la mitad.")).getId();
 var DESV_MAGIA_ATADA_A_ACCION = (new L("DESV_MAGIA_ATADA_A_ACCION","Magia atada a acción",
-    "Magia atada a acción")).getId();
+    "Action Requirement")).getId();
 var DESV_MAGIA_ATADA_A_ACCION_DESC = (new L("DESV_MAGIA_ATADA_A_ACCION_DESC","Sólo es posible usar magia si se realiza la acción o se cumple la condición determinada por la desventaja. En el caso de que la acción sea una habilidad secundaria, el mago deberá superar un control contra Difícil (DIF) para lanzar sus conjuros.",
     "Sólo es posible usar magia si se realiza la acción o se cumple la condición determinada por la desventaja. En el caso de que la acción sea una habilidad secundaria, el mago deberá superar un control contra Difícil (DIF) para lanzar sus conjuros.")).getId();
 var DESV_MAGIA_ESTANCA = (new L("DESV_MAGIA_ESTANCA","Magia estanca",
-    "Magia estanca")).getId();
+    "Magic Blockage")).getId();
 var DESV_MAGIA_ESTANCA_DESC = (new L("DESV_MAGIA_ESTANCA_DESC","El personaje carece de regeneración zeónica, por lo que no recuperará naturalmente los puntos de Zeon que consuma. Sólo podrá volver a conseguir magia drenándola de objetos que lo permitan o de seres vivos con el Don. Esta desventaja no puede combinarse a la de lenta recuperación de magia.",
     "El personaje carece de regeneración zeónica, por lo que no recuperará naturalmente los puntos de Zeon que consuma. Sólo podrá volver a conseguir magia drenándola de objetos que lo permitan o de seres vivos con el Don. Esta desventaja no puede combinarse a la de lenta recuperación de magia.")).getId();
 var DESV_LAZO_EXISTENCIAL = (new L("DESV_LAZO_EXISTENCIAL","Lazo existencial",
-    "Lazo existencial")).getId();
+    "Magical Ties")).getId();
 var DESV_LAZO_EXISTENCIAL_DESC = (new L("DESV_LAZO_EXISTENCIAL_DESC","El mago no podrá elegir los conjuros de Libre Acceso de sus vías de magia y será incapaz de acceder a conjuros elegidos libremente.",
     "El mago no podrá elegir los conjuros de Libre Acceso de sus vías de magia y será incapaz de acceder a conjuros elegidos libremente.")).getId();
 var DESV_BRUJERIA = (new L("DESV_BRUJERIA","Brujería",
-    "Brujería")).getId();
+    "Shamanism")).getId();
 var DESV_BRUJERIA_DESC = (new L("DESV_BRUJERIA_DESC","El hechicero requiere obligatoriamente emplear componentes materiales para lanzar hechizos. Cada conjuro requerirá un componente distinto determinado por el Director de Juego, según su origen y los conocimientos del brujo.",
     "El hechicero requiere obligatoriamente emplear componentes materiales para lanzar hechizos. Cada conjuro requerirá un componente distinto determinado por el Director de Juego, según su origen y los conocimientos del brujo.")).getId();
 
@@ -181,18 +181,18 @@ var DESV_BRUJERIA_DESC = (new L("DESV_BRUJERIA_DESC","El hechicero requiere obli
 /***********PSIQUICA ***************/
 
 var DESV_EXTENUACION_PSIQUICA = (new L("DESV_EXTENUACION_PSIQUICA","Extenuación psíquica",
-    "Extenuación psíquica")).getId();
+    "Psychic exhaustion")).getId();
 var DESV_EXTENUACION_PSIQUICA_DESC = (new L("DESV_EXTENUACION_PSIQUICA_DESC","El personaje pierde el doble de puntos de Cansancio de lo que indique su fatiga psíquica. Límitación: Esta desventaja no puede cogerse en combinación con Resistencia a la fatiga psíquica.",
     "El personaje pierde el doble de puntos de Cansancio de lo que indique su fatiga psíquica. Límitación: Esta desventaja no puede cogerse en combinación con Resistencia a la fatiga psíquica.")).getId();
 var DESV_SIN_CONCENTRACION = (new L("DESV_SIN_CONCENTRACION","Sin concentración",
-    "Sin concentración")).getId();
+    "No concentration")).getId();
 var DESV_SIN_CONCENTRACION_DESC = (new L("DESV_SIN_CONCENTRACION_DESC","Un psíquico con esta desventaja no podrá aplicar bonificadores a su potencial psíquico concentrándose.",
     "Un psíquico con esta desventaja no podrá aplicar bonificadores a su potencial psíquico concentrándose.")).getId();
 var DESV_PODER_UNICO = (new L("DESV_PODER_UNICO","Poder único",
-    "Poder único")).getId();
+    "One power at a time")).getId();
 var DESV_PODER_UNICO_DESC = (new L("DESV_PODER_UNICO_DESC","El psíquico sólo podrá utilizar un único poder psíquico por asalto. Ello no le impide seguir usando otros mantenidos, siempre que los originara en asaltos anteriores.",
     "El psíquico sólo podrá utilizar un único poder psíquico por asalto. Ello no le impide seguir usando otros mantenidos, siempre que los originara en asaltos anteriores.")).getId();
 var DESV_CONSUMICION_PSIQUICA = (new L("DESV_CONSUMICION_PSIQUICA","Consumición psíquica",
-    "Consumición psíquica")).getId();
+    "Psychic consumption")).getId();
 var DESV_CONSUMICION_PSIQUICA_DESC = (new L("DESV_CONSUMICION_PSIQUICA_DESC","Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.",
     "Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.")).getId();
