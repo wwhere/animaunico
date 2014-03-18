@@ -1,5 +1,6 @@
+
 addEfectoTecnica(new EfectoTecnica(
-    "Habilidad de parada",
+    KI_EFECTO_HABILIDAD_PARADA,
     "",
     EFECTO_DEFENSIVO,
     [
@@ -25,7 +26,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Habilidad de parada limitada",
+    KI_EFECTO_HABILIDAD_PARADA_LIMITADA,
     "",
     EFECTO_DEFENSIVO,
     [
@@ -51,7 +52,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Habilidad de esquiva",
+    KI_EFECTO_HABILIDAD_ESQUIVA,
     "",
     EFECTO_DEFENSIVO,
     [
@@ -77,7 +78,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Habilidad de esquiva limitada",
+    KI_EFECTO_HABILIDAD_ESQUIVA_LIMITADA,
     "",
     EFECTO_DEFENSIVO,
     [

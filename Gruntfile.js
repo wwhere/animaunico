@@ -24,6 +24,7 @@ module.exports = function(grunt) {
                     "js/locale/locDesventajas.js",
                     "js/locale/locElan.js",
                     "js/locale/locEquipo.js",
+                    "js/locale/locKi.js",
 
                     "js/libros.js",
                     "js/mainAnimaUnico.js",

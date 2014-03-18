@@ -1,5 +1,5 @@
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque adicional",
+    KI_EFECTO_ATAQUE_ADICIONAL,
     "",
     EFECTO_ACCION,
     [
@@ -19,23 +19,23 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Ataque continuo",
+            KI_EFECTO_VENTAJA_ATAQUE_ADICIONAL_ATAQUE_CONTINUO,
             "",
             [
-                new NivelVentajaTecnica("Ataque continuo",10,30,5,1)
+                new NivelVentajaTecnica(KI_EFECTO_TECNICA_VENTAJA_ATAQUE_CONTINUO,10,30,5,1)
             ]
         ),
         new VentajaTecnica(
-            "Bono de Cansancio añadido",
+            KI_EFECTO_TECNICA_ATAQUE_ADICIONAL_BONO_CANSANCIO,
             "",
             [
-                new NivelVentajaTecnica("Cansancio añadido",8,30,2,1)
+                new NivelVentajaTecnica(KI_EFECTO_TECNICA_VENTAJA_CANSANCIO_AÑADIDO,8,30,2,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque adicional limitado",
+    KI_EFECTO_ATAQUE_ADICIONAL_LIMITADO,
     "",
     EFECTO_ACCION,
     [
@@ -58,16 +58,16 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Ataque continuo",
+            KI_EFECTO_VENTAJA_ATAQUE_ADICIONAL_LIMITADO_ATAQUE_CONTINUO,
             "",
             [
-                new NivelVentajaTecnica("Ataque continuo",10,30,5,1)
+                new NivelVentajaTecnica(KI_EFECTO_TECNICA_VENTAJA_ATAQUE_CONTINUO,10,30,5,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Defensa adicional",
+    KI_EFECTO_DEFENSA_ADICIONAL,
     "",
     EFECTO_ACCION,
     [
@@ -78,7 +78,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+6",5,8,20,6,1),
         new NivelEfectoTecnica("+8",6,9,25,8,1),
         new NivelEfectoTecnica("+10",7,10,30,10, 2),
-        new NivelEfectoTecnica("Ilimitadas",8,11,35,12,3)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ILIMITADAS,8,11,35,12,3)
     ],
     AGI,
     new ElementosAfines([ELEMENTO_LUZ]),
@@ -90,16 +90,16 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Bono de Cansancio añadido",
+            KI_EFECTO_TECNICA_DEFENSA_ADICIONAL_BONO_CANSANCIO,
             "",
             [
-                new NivelVentajaTecnica("Cansancio añadido",6,20,2,1)
+                new NivelVentajaTecnica(KI_EFECTO_TECNICA_VENTAJA_CANSANCIO_AÑADIDO,6,20,2,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Acción adicional",
+    KI_EFECTO_ACCION_ADICIONAL,
     "",
     EFECTO_ACCION,
     [
@@ -122,10 +122,10 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Bono de Cansancio añadido",
+            KI_EFECTO_TECNICA_ACCION_ADICIONAL_BONO_CANSANCIO,
             "",
             [
-                new NivelVentajaTecnica("Cansancio añadido",6,20,1,1)
+                new NivelVentajaTecnica(KI_EFECTO_TECNICA_VENTAJA_CANSANCIO_AÑADIDO,6,20,1,1)
             ]
         )
     ]

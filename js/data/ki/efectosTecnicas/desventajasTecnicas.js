@@ -1,53 +1,54 @@
 addDesventajaTecnica(new DesventajaTecnica(
-    "Atadura elemental (1 elemento)",
+    KI_TECN_DESV_ATADURA_ELEMENTAL_1,
     "",
     [elegirAtaduraElemental,1],
-    ["Atadura elemental (2 elementos)"],
+    [ KI_TECN_DESV_ATADURA_ELEMENTAL_2],
     -15,
     1
 ));
 addDesventajaTecnica(new DesventajaTecnica(
-    "Atadura elemental (2 elementos)",
+    KI_TECN_DESV_ATADURA_ELEMENTAL_2,
     "",
     [elegirAtaduraElemental,2],
-    ["Atadura elemental (1 elemento)"],
+    [KI_TECN_DESV_ATADURA_ELEMENTAL_1],
+    -10,
+    1
+));
+
+addDesventajaTecnica(new DesventajaTecnica(
+    KI_TECN_DESV_DAÑO_REDUCIDO_MITAD,
+    "",
+    [],
+    [ KI_TECN_DESV_DAÑO_REDUCIDO_NINGUNO],
     -10,
     1
 ));
 addDesventajaTecnica(new DesventajaTecnica(
-    "Daño reducido (Mitad de daño)",
+    KI_TECN_DESV_DAÑO_REDUCIDO_NINGUNO,
     "",
     [],
-    ["Daño reducido (Ningún daño)"],
-    -10,
-    1
-));
-addDesventajaTecnica(new DesventajaTecnica(
-    "Daño reducido (Ningún daño)",
-    "",
-    [],
-    ["Daño reducido (Mitad de daño)"],
+    [KI_TECN_DESV_DAÑO_REDUCIDO_MITAD],
     -20,
     1
 ));
 addDesventajaTecnica(new DesventajaTecnica(
-    "Requerimientos especiales (Intesidad simple)",
+    KI_TECN_DESV_REQUERIMIENTOS_ESPECIALES_SIMPLE,
     "",
     [],
-    ["Requerimientos especiales (Intesidad mayor)"],
+    [ KI_TECN_DESV_REQUERIMIENTOS_ESPECIALES_MAYOR],
     -10,
     1
 ));
 addDesventajaTecnica(new DesventajaTecnica(
-    "Requerimientos especiales (Intesidad mayor)",
+    KI_TECN_DESV_REQUERIMIENTOS_ESPECIALES_MAYOR,
     "",
     [],
-    ["Requerimientos especiales (Intesidad simple)"],
+    [KI_TECN_DESV_REQUERIMIENTOS_ESPECIALES_SIMPLE],
     -15,
     1
 ));
 addDesventajaTecnica(new DesventajaTecnica(
-    "Condición determinada",
+    KI_TECN_DESV_CONDICION_DETERMINADA,
     "",
     [introducirCosteCMYDescripcion,-25,-5],
     [],
@@ -55,7 +56,7 @@ addDesventajaTecnica(new DesventajaTecnica(
     1
 ));
 addDesventajaTecnica(new DesventajaTecnica(
-    "Predeterminación",
+    KI_TECN_DESV_PREDETERMINACION,
     "",
     [],
     [],

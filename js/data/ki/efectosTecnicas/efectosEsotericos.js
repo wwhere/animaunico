@@ -1,5 +1,6 @@
+
 addEfectoTecnica(new EfectoTecnica(
-    "Estados",
+    KI_EFECTO_ESTADOS,
     "",
     EFECTO_ESOTERICO,
     [
@@ -23,133 +24,133 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Estado añadido: Penalizador a la acción",
+            KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR,
             "",
             [
                 new NivelVentajaTecnica("Penalizador a la acción",2,5,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Ceguera",
+            KI_EFECTO_VENTAJA_ESTADOS_CEGUERA,
             "",
             [
                 new NivelVentajaTecnica("Ceguera",5,15,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de RF",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RF,
             "",
             [
                 new NivelVentajaTecnica("Reducción de RF",2, 10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (AGI)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_AGI,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (CON)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_CON,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (DES)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_DES,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (FUE)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_FUE,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (INT)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_INT,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (PER)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_PER,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (POD)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_POD,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Reducción de características (VOL)",
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_VOL,
             "",
             [
                 new NivelVentajaTecnica("Reducción de características",2,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Paralización parcial",
+            KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_PARCIAL,
             "",
             [
                 new NivelVentajaTecnica("Paralización parcial",6,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Daño",
+            KI_EFECTO_VENTAJA_ESTADOS_DAÑO,
             "",
             [
                 new NivelVentajaTecnica("Daño",5,10,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Inconsciencia",
+            KI_EFECTO_VENTAJA_ESTADOS_INCONSCIENCIA,
             "",
             [
                 new NivelVentajaTecnica("Inconsciencia",8,15,0,1)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Coma",
+            KI_EFECTO_VENTAJA_ESTADOS_COMA,
             "",
             [
                 new NivelVentajaTecnica("Coma",10,30,0,2)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Paralización total",
+            KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_TOTAL,
             "",
             [
                 new NivelVentajaTecnica("Paralización total",8,20,0,2)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Drenaje de vida",
+            KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_VIDA,
             "",
             [
                 new NivelVentajaTecnica("Drenaje de vida",8,15,0,2)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Control",
+            KI_EFECTO_VENTAJA_ESTADOS_CONTROL,
             "",
             [
                 new NivelVentajaTecnica("Control",10,40,0,3)
             ]
         ),
         new VentajaTecnica(
-            "Estado añadido: Muerte",
+            KI_EFECTO_VENTAJA_ESTADOS_MUERTE,
             "",
             [
                 new NivelVentajaTecnica("Muerte",12,50,0,3)

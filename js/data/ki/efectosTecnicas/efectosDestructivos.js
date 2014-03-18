@@ -1,6 +1,6 @@
 
 addEfectoTecnica(new EfectoTecnica(
-    "Multiplicador al daño",
+    KI_EFECTO_MULTIPLICADOR_DAÑO,
     "",
     EFECTO_DESTRUCTIVO,
     [
@@ -18,7 +18,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Aumento de daño",
+    KI_EFECTO_AUMENTO_DAÑO,
     "",
     EFECTO_DESTRUCTIVO,
     [
@@ -44,13 +44,13 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Sacrificio",
+            KI_EFECTO_VENTAJA_AUMENTO_DAÑO_SACRIFICIO,
             "",
             [
-                new NivelVentajaTecnica("Sacrificio vital",4,15,3,1),
-                new NivelVentajaTecnica("Sacrificio vital doble",10,50,4,1),
-                new NivelVentajaTecnica("Sacrificio de salud",2,10,2,1),
-                new NivelVentajaTecnica("Sacrificio de características",2,10,2,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_SACRIFICIO_VITAL,4,15,3,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_SACRIFICIO_VITAL_DOBLE,10,50,4,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_SACRIFICIO_SALUD,2,10,2,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_SACRIFICIO_CARACTERISTICAS,2,10,2,1)
             ]
         )
     ]
