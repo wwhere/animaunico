@@ -4,6 +4,7 @@ var ALTO_DIALOGO = 700;
 var ANCHO_COMPLETO = 900;
 
 
+
 var CSS_RECUADRO = "recuadroDatos";
 var CSS_CAMPO_PERSONALES = "campoDatosPersonales";
 var CSS_ETIQUETA_PERSONALES = "etiquetaPersonales";

@@ -22,6 +22,10 @@ function Dinero(oro, plata, cobre) {
 Dinero.prototype = {
     constructor : Dinero,
 
+    toString: function() {
+        return this.oro + "mo, " + this.plata + "mp, " + this.cobre + "mc";
+    },
+
     /**
      *
      * @returns {number}
@@ -64,6 +68,14 @@ Dinero.prototype = {
 
     /**
      *
+     * @param {number} valor
+     */
+    addPlata : function(valor) {
+        this.setPlata(this.getPlata() + valor);
+    },
+
+    /**
+     *
      * @returns {number}
      */
     getCobre : function() {
@@ -77,6 +89,15 @@ Dinero.prototype = {
     setCobre : function(valor) {
         this.cobre = valor;
     },
+
+    /**
+     *
+     * @param {number} valor
+     */
+    addCobre : function(valor) {
+        this.setCobre(this.getCobre() + valor);
+    },
+
     /**
      *
      * @returns {number}
@@ -88,6 +109,16 @@ Dinero.prototype = {
             return INCALCULABLE;
         }
         return ((((this.oro*100)+this.plata)*10)+this.cobre);
+    },
+
+    /**
+     * Multiplica el coste por el valor pasado
+     * @param {number} multiplicador
+     */
+    multiplica : function(multiplicador) {
+        this.oro *= multiplicador;
+        this.plata *= multiplicador;
+        this.cobre *= multiplicador;
     }
 };
 

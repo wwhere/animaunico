@@ -743,9 +743,9 @@ function fondosIniciales(coste, opcion, aplicar) {
         mo = 10000;
     }
     if (aplicar) {
-        personaje_actual.addOro(mo);
+        personaje_actual.addDinero(mo,0,0);
     } else {
-        personaje_actual.addOro(-1 * mo); //TODO ¿y si se ha gastado?
+        personaje_actual.addDinero(-1 * mo,0,0);
     }
 }
 

@@ -28,6 +28,7 @@ var DIAG_PODERES_KI = "Dominios del Ki";
 var DIAG_PODERES_MAGIA = "Magia";
 var DIAG_CREACION_TECNICA = "Crear Técnica de Dominio";
 var DIAG_REASIGNA_COSTE_KI = "Reparte coste de ki";
+var DIAG_COMPRA_EQUIPO = "Compra equipo";
 var EXPLI_METODO_1 = "El método tradicional y más recomendado para generar las tiradas es el de lanzar un D10 ocho veces y apuntar las características en una hoja de papel. Ignora cualquier resultado de 1, 2 ó 3 que saques y repítelo, lo que permitirá a tu personaje no tener en ningún momento puntuaciones demasiado bajas. Una vez que tengas las ocho, sustituye la menor por un 9 para asegurar así que, incluso en el improbable caso de que no tengas ninguna cifra elevada, el personaje será excepcional en al menos un campo. A continuación reparte las cifras como prefieras, definiendo exactamente lo que quieres. Este sistema de generación proporciona unas cifras por media elevadas, pero es natural teniendo en cuenta que los personajes suelen ser individuos excepcionales.";
 var EXPLI_METODO_2 = "Consiste en tirar dos D10 ocho veces, anotando sólo el resultado más alto de los dos obtenidos. Cuando se tengan las ocho cifras, el personaje las reparte libremente entre las características. Este método asegura una media alta, pero también permite obtener algunas cifras realmente bajas.";
 var EXPLI_METODO_3 = "Este método se utiliza en el caso de que los jugadores decidan interpretar personajes comunes, sin características demasiado excepcionales. Consiste en lanzar ocho veces un dado apuntando en orden las cifras obtenidas en las casillas de características. Cualquier tirada, por alta o baja que sea, deberá aceptarse.";
@@ -62,6 +63,28 @@ function iniciarGeneracion() {
     personaje_actual = new Personaje();
     personaje_actual.setRaza(getRaza(RAZA_HUMANO));
     personaje_actual.setCategoria(CATEGORIA_NOVEL);
+
+    switch (d10()) {
+        case 1:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_POBRE);
+            break;
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_MEDIO);
+            break;
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_ALTO);
+            break;
+        case 10:
+        default:
+            personaje_actual.setClaseSocial(CLASE_SOCIAL_BAJA_NOBLEZA);
+    }
+
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;
     activarNotificaciones();
@@ -1107,6 +1130,23 @@ function elegirManualSexo() {
     muestraDialogoElegirOpciones([new OpcionMostrable(_l(SEXO_HOMBRE),SEXO_HOMBRE, ""), new OpcionMostrable(_l(SEXO_MUJER),SEXO_MUJER, "")], {}, {principal: asignarSexo, isDisabled: alwaysEnabled}, true);
 }
 
+function elegirClaseSocial() {
+    muestraDialogoElegirOpciones(
+        [
+            new OpcionMostrable(CLASE_SOCIAL_POBRE, ""),
+            new OpcionMostrable(CLASE_SOCIAL_MEDIO, ""),
+            new OpcionMostrable(CLASE_SOCIAL_ALTO, ""),
+            new OpcionMostrable(CLASE_SOCIAL_BAJA_NOBLEZA, "")
+        ],
+        {},
+        {
+            principal: asignarClaseSocial,
+            isDisabled: alwaysEnabled
+        },
+        true
+    );
+}
+
 function elegirManualNombre() {
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarNombre,isDisabled:alwaysEnabled});
 }
@@ -1117,6 +1157,10 @@ function asignarNombre(parametros) {
 
 function asignarSexo(parametros) {
     personaje_actual.setSexo(parametros.opcion);
+}
+
+function asignarClaseSocial(parametros) {
+    personaje_actual.setClaseSocial(parametros.opcion);
 }
 
 function asignarApariencia(parametros) {

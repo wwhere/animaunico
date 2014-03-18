@@ -94,7 +94,7 @@ var UI_TIPO_MOVIMIENTO = (new L("Tipo de Movimiento","Tipo de Movimiento","Movem
 var UI_PUNTOS_VIDA = (new L("Puntos de vida","Puntos de vida","Life Points")).getId();
 var UI_APARIENCIA = (new L("Apariencia","Apariencia","Appeareance")).getId();
 var UI_TAMAÑO = (new L("Tamaño","Tamaño","Size")).getId();
-
+var UI_ESTATUS_SOCIAL = (new L("Estatus Social","Estatus Social","Social Status")).getId();
 
 var UI_REGENERACION = (new L("Regeneración","Regeneración","Regeneration")).getId();
 var UI_PUNTOS_DESARROLLO = (new L("Puntos de Desarrollo","Puntos de Desarrollo","Development Points")).getId();

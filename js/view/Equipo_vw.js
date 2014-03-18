@@ -89,4 +89,68 @@ function dialogoElegirArma(categoriasPermitidas, callback, parametros) {
     muestraDialogoElegirOpciones(arrayArmas, parametros, callback, true, categorias);
 }
 
+function muestraVentanaCompraEquipo() {
+    var dialogo = getDiv();
 
+    var actualizarDialogoEquipo = function() {
+        dialogo.empty();
+        var contenidoDialogo = getDiv("");
+
+        var gridGeneral = $("<ul></ul>").addClass("four_up tiles");
+
+            for (var j = 0; j < categorias_equipo.length; j++) {
+                var categ = categorias_equipo[j];
+                var divCateg = getDiv("contenedorBotonesVentajas");
+                var gridCateg = $("<ul></ul>").addClass("four_up tiles");
+
+                contenidoDialogo.append("<h3>"+categ+"</h3>");
+
+                for (var i =0; i < equipo_set[j].length; i++) {
+                    var item = equipo_set[j][i];
+                    var label = item.toString() + " [" + item.getCosteDinero().toString() + "]";
+                    var botonItem = boton("big pretty primary btn",label,!personaje_actual.puedeGastarse(item.getCosteDinero()));
+                    botonItem.addClass("botonDialogoOpciones");
+                    botonItem.css("width","100%");
+
+                    gridCateg.append($("<li></li>").append(botonItem));
+
+                    botonItem.on("click",{item: item}, function(event) {
+                        item = event.data.item;
+                        personaje_actual.compra(item);
+                    });
+
+
+                }
+                divCateg.append(gridCateg);
+                contenidoDialogo.append(divCateg);
+            }
+
+        dialogo.append(contenidoDialogo);
+
+            contenidoDialogo.accordion({
+                heightStyle: "content"
+            });
+    };
+
+    actualizarDialogoEquipo();
+
+    dialogo.dialog({
+        modal: true,
+        autoOpen: true,
+        resizable: true,
+        draggable: true,
+        title: DIAG_COMPRA_EQUIPO,
+        position: "center",
+        width: ANCHO_DIALOGO,
+        height: ALTO_DIALOGO,
+        maxHeight: ALTO_DIALOGO,
+        closeOnEscape: true
+    });
+
+    dialogo.on("close",function( event, ui ) {
+        dialogo.empty();
+        removeActualizador(EVENT_CHARACTER_SECCION_EQUIPO,actualizarDialogoEquipo);
+    });
+
+    addActualizador(EVENT_CHARACTER_SECCION_EQUIPO,actualizarDialogoEquipo);
+}

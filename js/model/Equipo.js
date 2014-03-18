@@ -1,6 +1,7 @@
 var ARMADURA_LOC_CAMISOLA = "Camisola";
 var ARMADURA_LOC_COMPLETA = "Completa";
 var ARMADURA_LOC_PETO = "Peto";
+var ARMADURA_LOC_CABEZA = "Cabeza";
 
 var ARMADURA_CLASE_BLANDA = "Blanda";
 var ARMADURA_CLASE_DURA = "Dura";
@@ -234,6 +235,10 @@ Equipo.prototype = {
      */
     duplicar: function() {
         return new Equipo(this.nombre, this.costeDinero, this.peso, this.disponibilidad, this.entereza, this.presencia, this.bonoHabilidad);
+    },
+
+    toString: function() {
+        return this.nombre;
     }
 };
 
@@ -580,8 +585,91 @@ Armadura.prototype.toJSON = function() {
 };
 
 
-//TODO añadir yelmos (core exxet 83)
-//TODO cambiar tas para que sean su propia clase
+
+function Yelmo(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorPercepcion,entereza,presencia,localizacion,clase,tas) {
+    Yelmo.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0);
+
+    /** @type number */
+    this.requisitoArmadura = requisitoArmadura;
+
+    /** @type number */
+    this.penalizadorPercepcion = penalizadorPercepcion;
+
+    /** @type string */
+    this.localizacion = localizacion;
+
+    /** @type string */
+    this.clase = clase;
+
+    /** @type number[] */
+    this.tas = tas;
+}
+
+extend(Yelmo,Equipo);
+
+/**
+ *
+ * @returns {number}
+ */
+Yelmo.prototype.getRequisitoArmadura = function() {
+    return this.requisitoArmadura;
+};
+
+/**
+ *
+ * @returns {number}
+ */
+Yelmo.prototype.getPenalizadorPercepcion =  function() {
+    return this.penalizadorPercepcion;
+};
+
+/**
+ *
+ * @returns {string}
+ */
+Yelmo.prototype.getLocalizacion = function() {
+    return this.localizacion;
+};
+
+/**
+ *
+ * @returns {string}
+ */
+Yelmo.prototype.getClase = function() {
+    return this.clase;
+};
+
+/**
+ *
+ * @returns {number[]}
+ */
+Yelmo.prototype.getTAs = function() {
+    return this.tas;
+};
+
+/**
+ *
+ * @returns {Yelmo}
+ */
+Yelmo.prototype.duplicar = function() {
+    return new Yelmo(this.nombre,
+        this.costeDinero,
+        this.peso,
+        this.disponibilidad,
+        this.requisitoArmadura,
+        this.penalizadorPercepcion,
+        this.entereza,
+        this.presencia,
+        this.localizacion,
+        this.clase,
+        this.tas);
+};
+
+Yelmo.prototype.toJSON = function() {
+    return this.nombre;
+};
+
+
 
 
 

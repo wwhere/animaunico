@@ -12,6 +12,7 @@ var DIV_DESTINO_PSIQUICA = "#divPsiquica";
 var DIV_DESTINO_SECUNDARIAS = "#divSecundarias";
 var DIV_DESTINO_DESARROLLO = "#divDesarrollo";
 var DIV_DESTINO_ELAN = "#divElan";
+var DIV_DESTINO_EQUIPO ="#divEquipamiento";
 
 var listenerActivado = false;
 
@@ -47,6 +48,7 @@ function muestraPersonaje() {
     $(DIV_DESTINO_SOBRENATURAL).empty().append(muestraSobrenatural(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_PSIQUICA).empty().append(muestraPsiquica(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_ELAN).empty().append(muestraElan(personaje_actual.GENERACION_INICIADA));
+    $(DIV_DESTINO_EQUIPO).empty().append(muestraEquipamiento());
 
     enableButtonsPasosCreacion(personaje_actual.GENERACION_INICIADA);
 
@@ -70,6 +72,7 @@ function activaListenerCambiosPersonaje() {
     DISPATCHER.on(EVENT_CHARACTER_SECCION_ELAN,{evento: EVENT_CHARACTER_SECCION_ELAN}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_ARTES_MARCIALES,{evento: EVENT_CHARACTER_SECCION_ARTES_MARCIALES}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_SECUNDARIAS,{evento: EVENT_CHARACTER_SECCION_SECUNDARIAS}, recargaSeccionPersonaje);
+    DISPATCHER.on(EVENT_CHARACTER_SECCION_EQUIPO,{evento: EVENT_CHARACTER_SECCION_EQUIPO}, recargaSeccionPersonaje);
     listenerActivado = true;
 }
 
@@ -134,6 +137,10 @@ function recargaSeccionPersonaje(event) {
             divDestino = DIV_DESTINO_SECUNDARIAS;
             funcionRecarga = muestraSecundarias;
             break;
+        case EVENT_CHARACTER_SECCION_EQUIPO:
+            divDestino = DIV_DESTINO_EQUIPO;
+            funcionRecarga = muestraEquipamiento;
+            break;
     }
     enableButtonsPasosCreacion(personaje_actual.GENERACION_INICIADA);
     $(divDestino).empty().append(funcionRecarga(personaje_actual.GENERACION_INICIADA));
@@ -181,6 +188,7 @@ function muestraPersonales(estadoGeneracion) {
     divContenido.append(muestraPersonal(_l(UI_RAZA), _l(personaje_actual.getRaza().getNombre()), modificarPersonales,dialogoElegirRaza));
     divContenido.append(muestraPersonal(_l(UI_PESO), personaje_actual.getPeso(), modificarPersonales, elegirPeso));
     divContenido.append(muestraPersonal(_l(UI_ALTURA), personaje_actual.getAltura(), modificarPersonales, elegirAltura));
+    divContenido.append(muestraPersonal(_l(UI_ESTATUS_SOCIAL), personaje_actual.getEstatus(), modificarPersonales, elegirClaseSocial));
     divContenido.append(muestraPersonalConDivExtra(_l(UI_CATEGORIA), _l(personaje_actual.getCategoria().getNombre()), modificarPersonales, dialogoElegirCategoria,{},
         muestraBotonPequeño(_l(UI_CAMBIAR_CAT),{},cambiarCategoria,"")));
 
@@ -1259,6 +1267,39 @@ function muestraSecundarias(estadoGeneracion) {
     div.append(divContenido);
     return div;
 
+}
+
+
+function muestraEquipamiento() {
+    var div = recuadroBase();
+    var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
+
+    div.append(muestraSubtitulo(UI_EQUIPAMIENTO, true));
+
+    divContenido.append(muestraSubtitulo(UI_DINERO, false));
+
+    var divDinero = getDiv("row");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append("Dinero: ");
+    var divValorDinero = getDiv("six columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
+
+    divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero));
+
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false));
+    var equipo = personaje_actual.getEquipo();
+    for (var i = 0; i < equipo.length; i++) {
+
+        divContenido.append(
+            equipo[i].toString()
+        );
+
+    }
+
+    if (equipo.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+
+    div.append(divContenido);
+    return div;
 }
 
 /**
