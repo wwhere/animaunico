@@ -20,96 +20,37 @@ viaEsencia.nivelesLibreAcceso.push(88);
 viaEsencia.nivelesLibreAcceso.push(94);
 viaEsencia.nivelesLibreAcceso.push(98);
 
-viaEsencia.addConjuro(new Conjuro(
- "Afinidad Natural",
- 2));
-viaEsencia.addConjuro(new Conjuro(
-    "Detectar Esencia",
- 6));
-viaEsencia.addConjuro(new Conjuro(
-    "Comunicación por Esencia",
- 10));
-viaEsencia.addConjuro(new Conjuro(
- "Conocimiento Natural",
- 12));
-viaEsencia.addConjuro(new Conjuro(
-    "Sanación",
- 16));
-viaEsencia.addConjuro(new Conjuro(
-    "Barrera de Almas",
- 20));
-viaEsencia.addConjuro(new Conjuro(
-    "Compartir Sentidos",
- 22));
-viaEsencia.addConjuro(new Conjuro(
-    "Modificar la Esencia",
- 26));
-viaEsencia.addConjuro(new Conjuro(
-    "Veneno de Almas",
- 30));
-viaEsencia.addConjuro(new Conjuro(
-    "Analizar el Alma",
- 32));
-viaEsencia.addConjuro(new Conjuro(
-    "Adquirir Capacidades Naturales",
- 36));
-viaEsencia.addConjuro(new Conjuro(
-    "Revitalizar",
- 40));
-viaEsencia.addConjuro(new Conjuro(
-    "Mente de Vida",
- 42));
-viaEsencia.addConjuro(new Conjuro(
-    "Alterar el Crecimiento",
- 46));
-viaEsencia.addConjuro(new Conjuro(
- "Imitación Natural",
- 50));
-viaEsencia.addConjuro(new Conjuro(
- "Forma Espiritual",
- 52));
-viaEsencia.addConjuro(new Conjuro(
- "Control Natural",
- 56));
-viaEsencia.addConjuro(new Conjuro(
- "Inducción de Estados",
- 60));
-viaEsencia.addConjuro(new Conjuro(
-    "Devolver al Flujo",
- 62));
-viaEsencia.addConjuro(new Conjuro(
-    "Escudar",
- 66));
-viaEsencia.addConjuro(new Conjuro(
-    "Control Sobrenatural",
- 70));
-viaEsencia.addConjuro(new Conjuro(
-    "Compartir Esencia",
- 72));
-viaEsencia.addConjuro(new Conjuro(
-    "Transmigrar Almas",
- 76));
-viaEsencia.addConjuro(new Conjuro(
-    "Existencia Espiritual",
- 80));
-viaEsencia.addConjuro(new Conjuro(
- "Creación de Espíritus",
- 82));
-viaEsencia.addConjuro(new Conjuro(
-    "Atar Esencia Vital",
- 86));
-viaEsencia.addConjuro(new Conjuro(
-    "Verdor",
- 90));
-viaEsencia.addConjuro(new Conjuro(
-    "Dominio de la Vida",
- 92));
-viaEsencia.addConjuro(new Conjuro(
-    "Resurrección",
- 96));
-viaEsencia.addConjuro(new Conjuro(
- "Señor de las Almas",
- 100));
+
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_AFINIDAD_NATURAL, 2));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_DETECTAR_ESENCIA, 6));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_COMUNICACION_POR_ESENCIA, 10));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_CONOCIMIENTO_NATURAL, 12));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_SANACION, 16));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_BARRERA_DE_ALMAS, 20));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_COMPARTIR_SENTIDOS, 22));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_MODIFICAR_LA_ESENCIA, 26));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_VENENO_DE_ALMAS, 30));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_ANALIZAR_EL_ALMA, 32));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_ADQUIRIR_CAPACIDADES_NATURALES, 36));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_REVITALIZAR, 40));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_MENTE_DE_VIDA, 42));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_ALTERAR_EL_CRECIMIENTO, 46));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_IMITACION_NATURAL, 50));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_FORMA_ESPIRITUAL, 52));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_CONTROL_NATURAL, 56));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_INDUCCION_DE_ESTADOS, 60));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_DEVOLVER_AL_FLUJO, 62));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_ESCUDAR, 66));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_CONTROL_SOBRENATURAL, 70));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_COMPARTIR_ESENCIA, 72));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_TRANSMIGRAR_ALMAS, 76));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_EXISTENCIA_ESPIRITUAL, 80));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_CREACION_DE_ESPIRITUS, 82));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_ATAR_ESENCIA_VITAL, 86));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_VERDOR, 90));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_DOMINIO_DE_LA_VIDA, 92));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_RESURRECCION, 96));
+viaEsencia.addConjuro(new Conjuro( CONJURO_ESENCIA_SEÑOR_DE_LAS_ALMAS, 100));
 
 
 vias_set.push(viaEsencia);

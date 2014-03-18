@@ -21,96 +21,35 @@ viaAgua.nivelesLibreAcceso.push(88);
 viaAgua.nivelesLibreAcceso.push(94);
 viaAgua.nivelesLibreAcceso.push(98);
 
-viaAgua.addConjuro(new Conjuro(
-    "Manantial",
-    2));
-viaAgua.addConjuro(new Conjuro(
-    "Crear Frío",
-    6));
-viaAgua.addConjuro(new Conjuro(
-    "Capacidad Acuática",
-    10));
-viaAgua.addConjuro(new Conjuro(
-    "Inmunidad al Frío",
-    12));
-viaAgua.addConjuro(new Conjuro(
-    "Burbuja Protectora",
-    16));
-viaAgua.addConjuro(new Conjuro(
-    "Impacto de Agua",
-    20));
-viaAgua.addConjuro(new Conjuro(
-    "Control sobre los Líquidos",
-    22));
-viaAgua.addConjuro(new Conjuro(
-    "Congelar las Emociones",
-    26));
-viaAgua.addConjuro(new Conjuro(
-    "Controlar el Frío",
-    30));
-viaAgua.addConjuro(new Conjuro(
-    "Congelar",
-    32));
-viaAgua.addConjuro(new Conjuro(
-    "Pantalla de Hielo",
-    36));
-viaAgua.addConjuro(new Conjuro(
-    "Crear Líquidos",
-    40));
-viaAgua.addConjuro(new Conjuro(
-    "Ataque de Hielo",
-    42));
-viaAgua.addConjuro(new Conjuro(
-    "Cristalización",
-    46));
-viaAgua.addConjuro(new Conjuro(
-    "Control Reflejo",
-    50));
-viaAgua.addConjuro(new Conjuro(
-    "Cuerpo Líquido",
-    52));
-viaAgua.addConjuro(new Conjuro(
-    "Reflejar Estados",
-    56));
-viaAgua.addConjuro(new Conjuro(
-    "Tormenta de Hielo",
-    60));
-viaAgua.addConjuro(new Conjuro(
-    "Control de las Mareas",
-    62));
-viaAgua.addConjuro(new Conjuro(
-    "Prisión de Agua",
-    66));
-viaAgua.addConjuro(new Conjuro(
-    "Glacial",
-    70));
-viaAgua.addConjuro(new Conjuro(
-    "Tsunami",
-    72));
-viaAgua.addConjuro(new Conjuro(
-    "Reflejo del Alma",
-    76));
-viaAgua.addConjuro(new Conjuro(
-    "Enlentecer el Tiempo",
-    80));
-viaAgua.addConjuro(new Conjuro(
-    "Crear Ondina",
-    82));
-viaAgua.addConjuro(new Conjuro(
-    "Congelar la Magia",
-    86));
-viaAgua.addConjuro(new Conjuro(
-    "En el Interior del Espejo",
-    90));
-viaAgua.addConjuro(new Conjuro(
-    "Señor de los Hielos",
-    92));
-viaAgua.addConjuro(new Conjuro(
-    "Señor de las Aguas",
-    96));
-viaAgua.addConjuro(new Conjuro(
-    "Un mundo Perfecto",
-    100));
-
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_MANANTIAL, 2));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CREAR_FRIO, 6));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CAPACIDAD_ACUATICA, 10));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_INMUNIDAD_AL_FRIO, 12));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_BURBUJA_PROTECTORA, 16));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_IMPACTO_DE_AGUA, 20));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONTROL_SOBRE_LOS_LIQUIDOS, 22));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONGELAR_LAS_EMOCIONES, 26));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONTROLAR_EL_FRIO, 30));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONGELAR, 32));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_PANTALLA_DE_HIELO, 36));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CREAR_LIQUIDOS, 40));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_ATAQUE_DE_HIELO, 42));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CRISTALIZACION, 46));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONTROL_REFLEJO, 50));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CUERPO_LIQUIDO, 52));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_REFLEJAR_ESTADOS, 56));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_TORMENTA_DE_HIELO, 60));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONTROL_DE_LAS_MAREAS, 62));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_PRISION_DE_AGUA, 66));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_GLACIAL, 70));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_TSUNAMI, 72));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_REFLEJO_DEL_ALMA, 76));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_ENLENTECER_EL_TIEMPO, 80));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CREAR_ONDINA, 82));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONGELAR_LA_MAGIA, 86));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_EN_EL_INTERIOR_DEL_ESPEJO, 90));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_SEñOR_DE_LOS_HIELOS, 92));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_SEñOR_DE_LAS_AGUAS, 96));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_UN_MUNDO_PERFECTO, 100));
 
 vias_set.push(viaAgua);

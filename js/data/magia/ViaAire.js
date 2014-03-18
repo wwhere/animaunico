@@ -20,96 +20,35 @@ viaAire.nivelesLibreAcceso.push(88);
 viaAire.nivelesLibreAcceso.push(94);
 viaAire.nivelesLibreAcceso.push(98);
 
-viaAire.addConjuro(new Conjuro(
-    "Crear Viento",
-    2));
-viaAire.addConjuro(new Conjuro(
-    "Mover",
-    6));
-viaAire.addConjuro(new Conjuro(
-    "Reducir Peso",
-    10));
-viaAire.addConjuro(new Conjuro(
-    "No Respirar",
-    12));
-viaAire.addConjuro(new Conjuro(
-    "Movimiento Libre",
-    16));
-viaAire.addConjuro(new Conjuro(
-    "Golpe de Aire",
-    20));
-viaAire.addConjuro(new Conjuro(
-    "Pantalla de Aire",
-    22));
-viaAire.addConjuro(new Conjuro(
-    "Transporte Automático",
-    26));
-viaAire.addConjuro(new Conjuro(
-    "Vuelo",
-    30));
-viaAire.addConjuro(new Conjuro(
-    "Incremento de Reacción",
-    32));
-viaAire.addConjuro(new Conjuro(
-    "Electrificar",
-    36));
-viaAire.addConjuro(new Conjuro(
-    "Tajo de Aire",
-    40));
-viaAire.addConjuro(new Conjuro(
-    "Velocidad",
-    42));
-viaAire.addConjuro(new Conjuro(
-    "Rayo",
-    46));
-viaAire.addConjuro(new Conjuro(
-    "Remolino",
-    50));
-viaAire.addConjuro(new Conjuro(
-    "Forma etérea",
-    52));
-viaAire.addConjuro(new Conjuro(
-    "Control del Aire",
-    56));
-viaAire.addConjuro(new Conjuro(
-    "Control de la Electricidad",
-    60));
-viaAire.addConjuro(new Conjuro(
-    "Movimiento Defensivo",
-    62));
-viaAire.addConjuro(new Conjuro(
-    "Teletransportación",
-    66));
-viaAire.addConjuro(new Conjuro(
-    "Inmaterialidad",
-    70));
-viaAire.addConjuro(new Conjuro(
-    "Huracán",
-    72));
-viaAire.addConjuro(new Conjuro(
-    "Aire Sólido",
-    76));
-viaAire.addConjuro(new Conjuro(
-    "Control del Clima",
-    80));
-viaAire.addConjuro(new Conjuro(
-    "Crear Silfo",
-    82));
-viaAire.addConjuro(new Conjuro(
-    "Telequinesis Superior",
-    86));
-viaAire.addConjuro(new Conjuro(
-    "Ubicar Magia",
-    90));
-viaAire.addConjuro(new Conjuro(
-    "Magia Pasiva",
-    92));
-viaAire.addConjuro(new Conjuro(
-    "Señor del Aire",
-    96));
-viaAire.addConjuro(new Conjuro(
-    "Un Lugar en el Mundo",
-    100));
-
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_CREAR_VIENTO, 2));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_MOVER, 6));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_REDUCIR_PESO, 10));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_NO_RESPIRAR, 12));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_MOVIMIENTO_LIBRE, 16));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_GOLPE_DE_AIRE, 20));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_PANTALLA_DE_AIRE, 22));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_TRANSPORTE_AUTOMATICO, 26));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_VUELO, 30));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_INCREMENTO_DE_REACCION, 32));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_ELECTRIFICAR, 36));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_TAJO_DE_AIRE, 40));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_VELOCIDAD, 42));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_RAYO, 46));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_REMOLINO, 50));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_FORMA_ETEREA, 52));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_CONTROL_DEL_AIRE, 56));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_CONTROL_DE_LA_ELECTRICIDAD, 60));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_MOVIMIENTO_DEFENSIVO, 62));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_TELETRANSPORTACION, 66));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_INMATERIALIDAD, 70));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_HURACAN, 72));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_AIRE_SOLIDO, 76));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_CONTROL_DEL_CLIMA, 80));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_CREAR_SILFO, 82));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_TELEQUINESIS_SUPERIOR, 86));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_UBICAR_MAGIA, 90));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_MAGIA_PASIVA, 92));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_SEÑOR_DEL_AIRE, 96));
+viaAire.addConjuro(new Conjuro( CONJURO_AIRE_UN_LUGAR_EN_EL_MUNDO, 100));
 
 vias_set.push(viaAire);

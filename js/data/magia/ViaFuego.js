@@ -21,96 +21,36 @@ viaFuego.nivelesLibreAcceso.push(88);
 viaFuego.nivelesLibreAcceso.push(94);
 viaFuego.nivelesLibreAcceso.push(98);
 
-viaFuego.addConjuro(new Conjuro(
-    "Crear Fuego",
-    2));
-viaFuego.addConjuro(new Conjuro(
-    "Mitigar Fuego",
-    6));
-viaFuego.addConjuro(new Conjuro(
-    "Inmunidad Contra el Fuego",
-    10));
-viaFuego.addConjuro(new Conjuro(
-    "Sentir el Calor",
-    12));
-viaFuego.addConjuro(new Conjuro(
-    "Bola de Fuego",
-    16));
-viaFuego.addConjuro(new Conjuro(
-    "Control Sobre el Fuego",
-    20));
-viaFuego.addConjuro(new Conjuro(
-    "Barrera de Fuego",
-    22));
-viaFuego.addConjuro(new Conjuro(
-    "Arma Ígnea",
-    26));
-viaFuego.addConjuro(new Conjuro(
-    "Descarga de Calor",
-    30));
-viaFuego.addConjuro(new Conjuro(
-    "Ver en las Cenizas",
-    32));
-viaFuego.addConjuro(new Conjuro(
-    "Aumentar la Temperatura Ambiental",
-    36));
-viaFuego.addConjuro(new Conjuro(
-    "Mina de Fuego",
-    40));
-viaFuego.addConjuro(new Conjuro(
-    "Aumentar el Crítico",
-    42));
-viaFuego.addConjuro(new Conjuro(
-    "Secar",
-    46));
-viaFuego.addConjuro(new Conjuro(
-    "Fundir",
-    50));
-viaFuego.addConjuro(new Conjuro(
-    "Cuerpo a Fuego",
-    52));
-viaFuego.addConjuro(new Conjuro(
-    "Sacrificio Vital",
-    56));
-viaFuego.addConjuro(new Conjuro(
-    "Incinerar",
-    60));
-viaFuego.addConjuro(new Conjuro(
-    "Consumir Esencia",
-    62));
-viaFuego.addConjuro(new Conjuro(
-    "Sacrificio de Poder",
-    66));
-viaFuego.addConjuro(new Conjuro(
-    "Crítico Directo",
-    70));
-viaFuego.addConjuro(new Conjuro(
-    "Magia por Capacidades",
-    72));
-viaFuego.addConjuro(new Conjuro(
-    "Tormenta de Fuego",
-    76));
-viaFuego.addConjuro(new Conjuro(
-    "Consumir Vida por Magia",
-    80));
-viaFuego.addConjuro(new Conjuro(
-    "Crear Ifreet",
-    82));
-viaFuego.addConjuro(new Conjuro(
-    "Pira Absoluta",
-    86));
-viaFuego.addConjuro(new Conjuro(
-    "Devastación",
-    90));
-viaFuego.addConjuro(new Conjuro(
-    "Sacrificar a Otros",
-    92));
-viaFuego.addConjuro(new Conjuro(
-    "Señor del Fuego",
-    96));
-viaFuego.addConjuro(new Conjuro(
-    "Armagedón",
-    100));
 
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CREAR_FUEGO, 2));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_MITIGAR_FUEGO, 6));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_INMUNIDAD_CONTRA_EL_FUEGO, 10));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_SENTIR_EL_CALOR, 12));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_BOLA_DE_FUEGO, 16));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CONTROL_SOBRE_EL_FUEGO, 20));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_BARRERA_DE_FUEGO, 22));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_ARMA_IGNEA, 26));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_DESCARGA_DE_CALOR, 30));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_VER_EN_LAS_CENIZAS, 32));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_AUMENTAR_LA_TEMPERATURA_AMBIENTAL, 36));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_MINA_DE_FUEGO, 40));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_AUMENTAR_EL_CRITICO, 42));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_SECAR, 46));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_FUNDIR, 50));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CUERPO_A_FUEGO, 52));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_SACRIFICIO_VITAL, 56));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_INCINERAR, 60));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CONSUMIR_ESENCIA, 62));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_SACRIFICIO_DE_PODER, 66));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CRITICO_DIRECTO, 70));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_MAGIA_POR_CAPACIDADES, 72));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_TORMENTA_DE_FUEGO, 76));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CONSUMIR_VIDA_POR_MAGIA, 80));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_CREAR_IFREET, 82));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_PIRA_ABSOLUTA, 86));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_DEVASTACION, 90));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_SACRIFICAR_A_OTROS, 92));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_SEÑOR_DEL_FUEGO, 96));
+viaFuego.addConjuro(new Conjuro( CONJURO_FUEGO_ARMAGEDON, 100));
 
 vias_set.push(viaFuego);

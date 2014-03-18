@@ -20,96 +20,36 @@ viaIlusion.nivelesLibreAcceso.push(88);
 viaIlusion.nivelesLibreAcceso.push(94);
 viaIlusion.nivelesLibreAcceso.push(98);
 
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Sonora",
-    2));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Olfativa",
-    6));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Táctil",
-    10));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Visual",
-    12));
-viaIlusion.addConjuro(new Conjuro(
-    "Detectar Ilusiones",
-    16));
-viaIlusion.addConjuro(new Conjuro(
-    "Engatusar",
-    20));
-viaIlusion.addConjuro(new Conjuro(
-    "Alterar Apariencia",
-    22));
-viaIlusion.addConjuro(new Conjuro(
-    "Invisibilidad Ilusoria",
-    26));
-viaIlusion.addConjuro(new Conjuro(
-    "Imagen Espejo",
-    30));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Total",
-    32));
-viaIlusion.addConjuro(new Conjuro(
-    "Confusión",
-    36));
-viaIlusion.addConjuro(new Conjuro(
-    "Crear Ser Ilusorio",
-    40));
-viaIlusion.addConjuro(new Conjuro(
-    "Resistencia a las Ilusiones",
-    42));
-viaIlusion.addConjuro(new Conjuro(
-    "Detectar Mentira",
-    46));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Fantasmal",
-    50));
-viaIlusion.addConjuro(new Conjuro(
-    "Falsear Detección",
-    52));
-viaIlusion.addConjuro(new Conjuro(
-    "Mentira",
-    56));
-viaIlusion.addConjuro(new Conjuro(
-    "Destruir Ilusiones",
-    60));
-viaIlusion.addConjuro(new Conjuro(
-    "Ser Fantasmal",
-    62));
-viaIlusion.addConjuro(new Conjuro(
-    "Credulidad",
-    66));
-viaIlusion.addConjuro(new Conjuro(
-    "Ataque Fantasmal",
-    70));
-viaIlusion.addConjuro(new Conjuro(
-    "El Don de la Mentira",
-    72));
-viaIlusion.addConjuro(new Conjuro(
-    "Vida Ilusoria",
-    76));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión Mayor",
-    80));
-viaIlusion.addConjuro(new Conjuro(
-    "Fijar Ilusión",
-    82));
-viaIlusion.addConjuro(new Conjuro(
-    "Ilusión de Sentidos",
-    86));
-viaIlusion.addConjuro(new Conjuro(
-    "Inexistencia",
-    90));
-viaIlusion.addConjuro(new Conjuro(
-    "Engañar a la Muerte",
-    92));
-viaIlusion.addConjuro(new Conjuro(
-    "Mundo de Mentiras",
-    96));
-viaIlusion.addConjuro(new Conjuro(
-    "La Falsa Realidad",
-    100));
 
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_SONORA, 2));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_OLFATIVA, 6));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_TACTIL, 10));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_VISUAL, 12));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_DETECTAR_ILUSIONES, 16));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ENGATUSAR, 20));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ALTERAR_APARIENCIA, 22));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_INVISIBILIDAD_ILUSORIA, 26));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_IMAGEN_ESPEJO, 30));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_TOTAL, 32));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_CONFUSION, 36));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_CREAR_SER_ILUSORIO, 40));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_RESISTENCIA_A_LAS_ILUSIONES, 42));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_DETECTAR_MENTIRA, 46));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_FANTASMAL, 50));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_FALSEAR_DETECCION, 52));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_MENTIRA, 56));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_DESTRUIR_ILUSIONES, 60));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_SER_FANTASMAL, 62));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_CREDULIDAD, 66));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ATAQUE_FANTASMAL, 70));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_EL_DON_DE_LA_MENTIRA, 72));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_VIDA_ILUSORIA, 76));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_MAYOR, 80));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_FIJAR_ILUSION, 82));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ILUSION_DE_SENTIDOS, 86));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_INEXISTENCIA, 90));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_ENGAÑAR_A_LA_MUERTE, 92));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_MUNDO_DE_MENTIRAS, 96));
+viaIlusion.addConjuro(new Conjuro( CONJURO_ILUSION_LA_FALSA_REALIDAD, 100));
 
 vias_set.push(viaIlusion);

@@ -21,96 +21,37 @@ viaTierra.nivelesLibreAcceso.push(88);
 viaTierra.nivelesLibreAcceso.push(94);
 viaTierra.nivelesLibreAcceso.push(98);
 
-viaTierra.addConjuro(new Conjuro(
-    "Detectar Minerales",
-    2));
-viaTierra.addConjuro(new Conjuro(
-    "Control Mineral",
-    6));
-viaTierra.addConjuro(new Conjuro(
-    "Aumentar Peso",
-    10));
-viaTierra.addConjuro(new Conjuro(
-    "Transformar Mineral",
-    12));
-viaTierra.addConjuro(new Conjuro(
-    "Firmeza",
-    16));
-viaTierra.addConjuro(new Conjuro(
-    "Barrera de Piedra",
-    20));
-viaTierra.addConjuro(new Conjuro(
-    "Lentitud",
-    22));
-viaTierra.addConjuro(new Conjuro(
-    "Coraza",
-    26));
-viaTierra.addConjuro(new Conjuro(
-    "Escudo Magnético",
-    30));
-viaTierra.addConjuro(new Conjuro(
-    "Atravesar lo Sólido",
-    32));
-viaTierra.addConjuro(new Conjuro(
-    "Espina de la Tierra",
-    36));
-viaTierra.addConjuro(new Conjuro(
-    "Rotura",
-    40));
-viaTierra.addConjuro(new Conjuro(
-    "Telemetría",
-    42));
-viaTierra.addConjuro(new Conjuro(
-    "Control Magnético",
-    46));
-viaTierra.addConjuro(new Conjuro(
-    "Forja",
-    50));
-viaTierra.addConjuro(new Conjuro(
-    "Cuerpo Sólido",
-    52));
-viaTierra.addConjuro(new Conjuro(
-    "Resistencia",
-    56));
-viaTierra.addConjuro(new Conjuro(
-    "Petrificar",
-    60));
-viaTierra.addConjuro(new Conjuro(
-    "Grieta",
-    62));
-viaTierra.addConjuro(new Conjuro(
-    "Invertir la Gravedad",
-    66));
-viaTierra.addConjuro(new Conjuro(
-    "Creación Mineral",
-    70));
-viaTierra.addConjuro(new Conjuro(
-    "Erudición del Terreno",
-    72));
-viaTierra.addConjuro(new Conjuro(
-    "Terremoto",
-    76));
-viaTierra.addConjuro(new Conjuro(
-    "Destrucción Gravitacional",
-    80));
-viaTierra.addConjuro(new Conjuro(
-    "Crear Golem",
-    82));
-viaTierra.addConjuro(new Conjuro(
-    "Aumento de Gravedad",
-    86));
-viaTierra.addConjuro(new Conjuro(
-    "Meteoro",
-    90));
-viaTierra.addConjuro(new Conjuro(
-    "Control de la Gravedad",
-    92));
-viaTierra.addConjuro(new Conjuro(
-    "Uno con la Tierra",
-    96));
-viaTierra.addConjuro(new Conjuro(
-    "Control Atómico",
-    100));
+
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_DETECTAR_MINERALES, 2));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CONTROL_MINERAL, 6));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_AUMENTAR_PESO, 10));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_TRANSFORMAR_MINERAL, 12));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_FIRMEZA, 16));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_BARRERA_DE_PIEDRA, 20));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_LENTITUD, 22));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CORAZA, 26));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_ESCUDO_MAGNETICO, 30));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_ATRAVESAR_LO_SOLIDO, 32));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_ESPINA_DE_LA_TIERRA, 36));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_ROTURA, 40));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_TELEMETRIA, 42));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CONTROL_MAGNETICO, 46));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_FORJA, 50));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CUERPO_SOLIDO, 52));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_RESISTENCIA, 56));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_PETRIFICAR, 60));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_GRIETA, 62));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_INVERTIR_LA_GRAVEDAD, 66));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CREACION_MINERAL, 70));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_ERUDICION_DEL_TERRENO, 72));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_TERREMOTO, 76));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_DESTRUCCION_GRAVITACIONAL, 80));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CREAR_GOLEM, 82));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_AUMENTO_DE_GRAVEDAD, 86));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_METEORO, 90));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CONTROL_DE_LA_GRAVEDAD, 92));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_UNO_CON_LA_TIERRA, 96));
+viaTierra.addConjuro(new Conjuro( CONJURO_TIERRA_CONTROL_ATOMICO, 100));
 
 
 
@@ -118,3 +59,6 @@ viaTierra.addConjuro(new Conjuro(
 
 
 vias_set.push(viaTierra);
+
+
+

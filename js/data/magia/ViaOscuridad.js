@@ -10,125 +10,46 @@ viaOscuridad.nivelesLibreAcceso.push(74);
 viaOscuridad.nivelesLibreAcceso.push(84);
 viaOscuridad.nivelesLibreAcceso.push(94);
 
-viaOscuridad.addConjuro(new Conjuro(
-    "Crear Oscuridad",
-    2));
-viaOscuridad.addConjuro(new Conjuro(
-    "Imbuir Miedo",
-    6));
-viaOscuridad.addConjuro(new Conjuro(
-    "Ver en la Oscuridad",
-    8));
-viaOscuridad.addConjuro(new Conjuro(
-    "Escudo Oscuro",
-    10));
-viaOscuridad.addConjuro(new Conjuro(
-    "Sombra",
-    12));
-viaOscuridad.addConjuro(new Conjuro(
-    "Armadura Oscura",
-    16));
-viaOscuridad.addConjuro(new Conjuro(
-    "Destrucción de Luz",
-    18));
-viaOscuridad.addConjuro(new Conjuro(
-    "Ocultación de Magia",
-    20));
-viaOscuridad.addConjuro(new Conjuro(
-    "Descarga Oscura",
-    22));
-viaOscuridad.addConjuro(new Conjuro(
-    "Oscuridad Ambiental",
-    26));
-viaOscuridad.addConjuro(new Conjuro(
-    "Lazos Oscuros",
-    28));
-viaOscuridad.addConjuro(new Conjuro(
-    "Dominio Oscuro",
-    30));
-viaOscuridad.addConjuro(new Conjuro(
-    "Ocultación",
-    32));
-viaOscuridad.addConjuro(new Conjuro(
-    "Ofuscar",
-    36));
-viaOscuridad.addConjuro(new Conjuro(
-    "Rabia",
-    38));
-viaOscuridad.addConjuro(new Conjuro(
-    "Destruir Sentimientos Positivos",
-    40));
-viaOscuridad.addConjuro(new Conjuro(
-    "Noche",
-    42));
-viaOscuridad.addConjuro(new Conjuro(
-    "Esfera Oscura",
-    46));
-viaOscuridad.addConjuro(new Conjuro(
-    "Zona de Ocultación",
-    48));
-viaOscuridad.addConjuro(new Conjuro(
-    "Introducirse en las Pesadillas",
-    50));
-viaOscuridad.addConjuro(new Conjuro(
-    "Cuerpo a Oscuridad",
-    52));
-viaOscuridad.addConjuro(new Conjuro(
-    "Perdición",
-    56));
-viaOscuridad.addConjuro(new Conjuro(
-    "Crear Sentimientos Negativos",
-    58));
-viaOscuridad.addConjuro(new Conjuro(
-    "Eliminar Residuos",
-    60));
-viaOscuridad.addConjuro(new Conjuro(
-    "Escudar Contra lo Positivo",
-    62));
-viaOscuridad.addConjuro(new Conjuro(
-    "Oscuridad Devoradora",
-    66));
-viaOscuridad.addConjuro(new Conjuro(
-    "Destrozar",
-    68));
-viaOscuridad.addConjuro(new Conjuro(
-    "Marca del Miedo",
-    70));
-viaOscuridad.addConjuro(new Conjuro(
-    "Oscuridad Catastrófica",
-    72));
-viaOscuridad.addConjuro(new Conjuro(
-    "Objetos Oscuros",
-    76));
-viaOscuridad.addConjuro(new Conjuro(
-    "Transmisión por Sombras",
-    78));
-viaOscuridad.addConjuro(new Conjuro(
-    "Rey de Pesadillas",
-    80));
-viaOscuridad.addConjuro(new Conjuro(
-    "Creación Oscura",
-    82));
-viaOscuridad.addConjuro(new Conjuro(
-    "Ocultarse Ante la Magia",
-    86));
-viaOscuridad.addConjuro(new Conjuro(
-    "Reino de Tinieblas",
-    88));
-viaOscuridad.addConjuro(new Conjuro(
-    "Indetección",
-    90));
-viaOscuridad.addConjuro(new Conjuro(
-    "Prisión de Oscuridad",
-    92));
-viaOscuridad.addConjuro(new Conjuro(
-    "Esencia Oscura",
-    96));
-viaOscuridad.addConjuro(new Conjuro(
-    "Ascensión Oscura",
-    98));
-viaOscuridad.addConjuro(new Conjuro(
-    "Holocausto de Oscuridad",
-    100));
+
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_CREAR_OSCURIDAD, 2));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_IMBUIR_MIEDO, 6));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_VER_EN_LA_OSCURIDAD, 8));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ESCUDO_OSCURO, 10));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_SOMBRA, 12));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ARMADURA_OSCURA, 16));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_DESTRUCCION_DE_LUZ, 18));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OCULTACION_DE_MAGIA, 20));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_DESCARGA_OSCURA, 22));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OSCURIDAD_AMBIENTAL, 26));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_LAZOS_OSCUROS, 28));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_DOMINIO_OSCURO, 30));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OCULTACION, 32));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OFUSCAR, 36));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_RABIA, 38));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_DESTRUIR_SENTIMIENTOS_POSITIVOS, 40));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_NOCHE, 42));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ESFERA_OSCURA, 46));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ZONA_DE_OCULTACION, 48));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_INTRODUCIRSE_EN_LAS_PESADILLAS, 50));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_CUERPO_A_OSCURIDAD, 52));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_PERDICION, 56));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_CREAR_SENTIMIENTOS_NEGATIVOS, 58));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ELIMINAR_RESIDUOS, 60));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ESCUDAR_CONTRA_LO_POSITIVO, 62));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OSCURIDAD_DEVORADORA, 66));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_DESTROZAR, 68));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_MARCA_DEL_MIEDO, 70));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OSCURIDAD_CATASTROFICA, 72));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OBJETOS_OSCUROS, 76));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_TRANSMISION_POR_SOMBRAS, 78));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_REY_DE_PESADILLAS, 80));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_CREACION_OSCURA, 82));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_OCULTARSE_ANTE_LA_MAGIA, 86));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_REINO_DE_TINIEBLAS, 88));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_INDETECCION, 90));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_PRISION_DE_OSCURIDAD, 92));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ESENCIA_OSCURA, 96));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_ASCENSION_OSCURA, 98));
+viaOscuridad.addConjuro(new Conjuro( CONJURO_OSCURIDAD_HOLOCAUSTO_DE_OSCURIDAD, 100));
 
 vias_set.push(viaOscuridad);
