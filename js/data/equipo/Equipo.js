@@ -1,4 +1,3 @@
-var ARMA_POLVORA = "Pólvora (2 disparos)";
 varios_set.push(new Equipo(
     ARMA_POLVORA,
     new Dinero(10,0,0),
