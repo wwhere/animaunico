@@ -22,6 +22,8 @@ module.exports = function(grunt) {
                     "js/locale/locArtesMarciales.js",
                     "js/locale/locCategorias.js",
                     "js/locale/locDesventajas.js",
+                    "js/locale/locElan.js",
+                    "js/locale/locEquipo.js",
 
                     "js/libros.js",
                     "js/mainAnimaUnico.js",
@@ -95,6 +97,7 @@ module.exports = function(grunt) {
                     "js/controller/Equipo_ct.js",
                     "js/data/equipo/Armas.js",
                     "js/data/equipo/Armaduras.js",
+                    "js/data/equipo/Equipo.js",
 
                     "js/model/TablaArmas.js",
                     "js/controller/Tablas_ct.js",
