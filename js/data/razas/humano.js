@@ -1,4 +1,4 @@
-var RAZA_HUMANO = "Humano";
+
 
 var razaHumano =new Raza(RAZA_HUMANO, [], [], 0);
 

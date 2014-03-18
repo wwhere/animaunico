@@ -1,25 +1,12 @@
-var RAZA_NEPH_DUKZARIST = "Nephilim Duk'zarist";
-
-var DUK_NEPH_RESISTENCIAS = "Resistencias excepcionales (Nephilim Duk'zarist)";
-var DUK_NEPH_DESEQUILIBRIO = "Desequilibrio hacia la Oscuridad (Nephilim Duk'zarist)";
-var DUK_NEPH_AGUANTE = "Aguante a la Muerte (Nephilim Duk'zarist)";
-var DUK_NEPH_CURACION = "Curación Rápida (Nephilim Duk'zarist)";
-var DUK_NEPH_NECESIDADES = "Necesidades Limitadas (Nephilim Duk'zarist)";
-var DUK_NEPH_PRESENTIR = "Presentir lo oscuro y lo luminoso (Nephilim Duk'zarist)";
-var DUK_NEPH_VISION = "Visión nocturna (Nephilim Duk'zarist)";
-var DUK_NEPH_FUEGO = "Devoción al Fuego (Nephilim Duk'zarist)";
-var DUK_NEPH_CUERPOS = "Cuerpos perfectos (Nephilim Duk'zarist)";
-var DUK_NEPH_ALERGIA = "Alergia al Metal (Nephilim Duk'zarist)";
-var DUK_NEPH_ALMA = "Alma inmortal (Nephilim Duk'zarist)";
 
 ventajas_set.push(new Ventaja(
     DUK_NEPH_RESISTENCIAS,
     "",
-    "Las almas masculinas aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo la Resistencia Física (RF), donde poseen un +20. Por el contrario, las femeninas tienen un +15 a todas sus Resistencias (RF, RP, RV y RE) salvo la Mágica, donde tienen un +20 (RM).",
+    DUK_NEPH_RESISTENCIAS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Inmunidad sobrenatural")
+        new ElementoProhibido(VENTAJA,VENT_INMUNIDAD_SOBRENATURAL)
     ],    //incompatibles
     false,  //anulable
     [],
@@ -29,13 +16,14 @@ ventajas_set.push(new Ventaja(
 ));
 
 
+
 ventajas_set.push(new Ventaja(
     DUK_NEPH_DESEQUILIBRIO,
     "",
-    "Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Luz.",
+    DUK_NEPH_DESEQUILIBRIO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
-    [new ElementoProhibido(VENTAJA,"Desequilibrio elemental","Luz")],    //incompatibles
+    [new ElementoProhibido(VENTAJA,VENT_DESEQUILIBRIO_ELEMENTAL,ELEMENTO_LUZ)],    //incompatibles
     false,  //anulable
     [],
     [],
@@ -43,10 +31,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     DUK_NEPH_AGUANTE,
     "",
-    "Cuando entran en el estado de entre la vida y la muerte, no necesitan superar el control de Resistencia Física para sobrevivir, ya que su alma se afianza tanto al cuerpo que superan automáticamente estos controles.",
+    DUK_NEPH_AGUANTE_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -57,10 +46,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     DUK_NEPH_CURACION,
     "",
-    "Suman un punto a su nivel de Regeneración natural.",
+    DUK_NEPH_CURACION_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -71,10 +61,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     DUK_NEPH_NECESIDADES,
     "",
-    "Disminuyen sus necesidades de sueño y comida hasta una tercera parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.",
+    DUK_NEPH_NECESIDADES_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -84,11 +75,12 @@ ventajas_set.push(new Ventaja(
     GRUPO_RAZAS,
     []
 ));
+
 
 ventajas_set.push(new Ventaja(
     DUK_NEPH_PRESENTIR,
     "",
-    "De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.",
+    DUK_NEPH_PRESENTIR_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -98,11 +90,12 @@ ventajas_set.push(new Ventaja(
     GRUPO_RAZAS,
     []
 ));
+
 
 ventajas_set.push(new Ventaja(
     DUK_NEPH_VISION,
     "",
-    "A efectos de juego, esta capacidad no está tan desarrollada como la que se adquiere mediante un Punto de Creación, pero permite disminuir a la mitad cualquier penalizador que el Nephilim sufra a su percepción por causa de la oscuridad natural.",
+    DUK_NEPH_VISION_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -113,10 +106,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     DUK_NEPH_FUEGO,
     "",
-    "Si desarrolla sus habilidades mentales, tiene la obligación de adquirir como primera disciplina la Piroquinesis.",
+    DUK_NEPH_FUEGO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -127,34 +121,36 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     DUK_NEPH_CUERPOS,
     "",
-    "El Nephilim no puede elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.",
+    DUK_NEPH_CUERPOS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
     false,  //anulable
     [
-        new ElementoProhibido(VENTAJA,"Miembro atrofiado"),
-        new ElementoProhibido(VENTAJA,"Salud enfermiza"),
-        new ElementoProhibido(VENTAJA,"Vulnerabilidad a los venenos"),
-        new ElementoProhibido(VENTAJA,"Miopía"),
-        new ElementoProhibido(VENTAJA,"Debilidad física"),
-        new ElementoProhibido(VENTAJA,"Enfermedad grave"),
-        new ElementoProhibido(VENTAJA,"Mudo"),
-        new ElementoProhibido(VENTAJA,"Ciego"),
-        new ElementoProhibido(VENTAJA,"Sordo")
+        new ElementoProhibido(VENTAJA,DESV_EXTREMIDAD_ATROFIADA),
+        new ElementoProhibido(VENTAJA,DESV_SALUD_ENFERMIZA),
+        new ElementoProhibido(VENTAJA,DESV_VULNERABILIDAD_A_LOS_VENENOS),
+        new ElementoProhibido(VENTAJA,DESV_MIOPIA),
+        new ElementoProhibido(VENTAJA,DESV_DEBILIDAD_FISICA),
+        new ElementoProhibido(VENTAJA,DESV_ENFERMEDAD_GRAVE),
+        new ElementoProhibido(VENTAJA,DESV_MUDO),
+        new ElementoProhibido(VENTAJA,DESV_CIEGO),
+        new ElementoProhibido(VENTAJA,DESV_SORDO)
     ],
     [],
     GRUPO_RAZAS,
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     DUK_NEPH_ALERGIA,
     "",
-    "Si pone su piel en contacto con un metal que contenga una aleación de hierro, deberá superar un control usando su presencia base contra una dificultad de 60, o sufrirá una reacción adversa que le produce un negativo a la acción equivalente a la cantidad por la que falló la tirada. Si el metal es hierro puro, la tirada es contra 80. Estos negativos desaparecen a un ritmo de 10 puntos por minuto. Un Nephilim Duk´zarist puede utilizar ropas y guantes para evitar estos efectos.",
+    DUK_NEPH_ALERGIA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -165,10 +161,11 @@ desventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     DUK_NEPH_ALMA,
     "",
-    "Sufren un penalizador de -5 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
+    DUK_NEPH_ALMA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles

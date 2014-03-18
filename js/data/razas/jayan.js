@@ -1,27 +1,16 @@
-var RAZA_JAYAN = "Jayán";
-
-var JAY_GIGANTES = "Gigantes (Jayán)";
-var JAY_FISICO = "Físico excepcional (Jayán)";
-var JAY_CANSANCIO = "Aguante al cansancio (Jayán)";
-var JAY_RESISTENCIA = "Resistencia física (Jayán)";
-var JAY_OJO = "El tercer ojo (Jayán)";
-var JAY_ARMAS = "Armas naturales (Jayán)";
-var JAY_FUERZA = "Fuerza inhumana (Jayán)";
-
-var JAY_DEBILIDAD = "Debilidad contra magia (Jayán)";
 
 ventajas_set.push(new Ventaja(
     JAY_GIGANTES,
     "",
-    "Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.",
+    JAY_GIGANTES_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-5),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-4),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-3),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-2),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-1)
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-5),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-4),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-3),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-2),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-1)
     ],    //incompatibles
     false,  //anulable
     [],
@@ -30,16 +19,17 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     JAY_FISICO,
     "",
-    "Suman un +2 a su característica de FUE y un +1 a su CON. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos a una característica para rebajar su Fuerza.",
+    JAY_FISICO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
     false,  //anulable
     [
-        new ElementoProhibido(VENTAJA,"Reducir dos puntos a una característica",FUE)
+        new ElementoProhibido(VENTAJA,DESV_REDUCIR_DOS_PUNTOS_A_UNA_CARACTERISTICA,FUE)
     ],
     [fisicoJayan],
     GRUPO_RAZAS,
@@ -47,10 +37,11 @@ ventajas_set.push(new Ventaja(
 ));
 
 //noinspection MagicNumberJS
+
 ventajas_set.push(new Ventaja(
     JAY_CANSANCIO,
     "",
-    "Aplican un bonificador de tres puntos al valor máximo de su Cansancio",
+    JAY_CANSANCIO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -61,10 +52,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     JAY_RESISTENCIA,
     "",
-    "Obtienen +20 a su RF.",
+    JAY_RESISTENCIA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -75,10 +67,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     JAY_OJO,
     "",
-    "Esta habilidad no funciona con conjuros, efectos místicos o matrices psíquicas.",
+    JAY_OJO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -89,10 +82,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     JAY_ARMAS,
     "",
-    "Incluso desarmados, sus ataques producen un daño base de 40 ó 60 más el bono de Fuerza, dependiendo de su tamaño (Ver la Tabla 82). Naturalmente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.",
+    JAY_ARMAS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -103,10 +97,11 @@ desventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     JAY_FUERZA,
     "",
-    "Su increíble físico permite a los Jayán realizar acciones de dificultad Inhumana en todos aquellos controles que dependan de la característica de Fuerza.",
+    JAY_FUERZA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -117,10 +112,11 @@ desventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     JAY_DEBILIDAD,
     "",
-    "Aplican un penalizador de -20 a su RM. Además, restan un punto de su característica de POD.",
+    JAY_DEBILIDAD_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles

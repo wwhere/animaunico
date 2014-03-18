@@ -1,24 +1,12 @@
-var RAZA_SYLVAIN = "Sylvain";
-
-var SYLV_CARACTERISTICAS = "Características sobrehumanas (Sylvain)";
-var SYLV_RESISTENCIAS = "Resistencias anímicas excepcionales (Sylvain)";
-var SYLV_INMUNIDAD = "Inmunidad a las enfermedades y venenos naturales (Sylvain)";
-var SYLV_INHUMANAS = "Acciones inhumanas (Sylvain)";
-var SYLV_NECESIDADES = "Necesidades Limitadas (Sylvain)";
-var SYLV_CURACION = "Curación Rápida (Sylvain)";
-var SYLV_PRESENTIR = "Presentir lo oscuro y lo luminoso (Sylvain)";
-var SYLV_OBLIGACION = "Obligación mágica (Sylvain)";
-var SYLV_VISION = "Su visión del mundo (Sylvain)";
-var SYLV_LAZO = "Lazo hacia la luz (Sylvain)";
 
 ventajas_set.push(new Ventaja(
     SYLV_CARACTERISTICAS,
     "",
-    "Aplica un bono de +1 a las características de DES, AGI, POD e INT, pero sufren un penalizador de -1 a su FUE y CON.",
+    SYLV_CARACTERISTICAS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Inmunidad sobrenatural")
+        new ElementoProhibido(VENTAJA,VENT_INMUNIDAD_SOBRENATURAL)
     ],    //incompatibles
     false,  //anulable
     [],
@@ -27,14 +15,15 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     SYLV_RESISTENCIAS,
     "",
-    "aplican un bono de +30 a su Resistencia Mágica y Psíquica (RM y RP). Un Sylvain no puede elegir las desventajas de Vulnerabilidad a la magia o Fácil posesión.",
+    SYLV_RESISTENCIAS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
-    [new ElementoProhibido(VENTAJA,"Fácil posesión"),
-        new ElementoProhibido(VENTAJA,"Vulnerabilidad a la magia")
+    [new ElementoProhibido(VENTAJA,DESV_FACIL_POSESION),
+        new ElementoProhibido(VENTAJA,DESV_VULNERABILIDAD_A_LA_MAGIA)
     ],    //incompatibles
     false,  //anulable
     [],
@@ -43,16 +32,17 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     SYLV_INMUNIDAD,
     "",
-    "Obtienen además un bono de +20 a su RE y un +10 a su RV. No pueden elegir las desventajas de: Salud enfermiza, Vulnerable a los venenos o enfermedad grave incurable.",
+    SYLV_INMUNIDAD_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Salud enfermiza"),
-        new ElementoProhibido(VENTAJA,"Vulnerabilidad a los venenos"),
-        new ElementoProhibido(VENTAJA,"Enfermedad grave")
+        new ElementoProhibido(VENTAJA,DESV_SALUD_ENFERMIZA),
+        new ElementoProhibido(VENTAJA,DESV_VULNERABILIDAD_A_LOS_VENENOS),
+        new ElementoProhibido(VENTAJA,DESV_ENFERMEDAD_GRAVE)
     ],    //incompatibles
     false,  //anulable
     [],
@@ -62,10 +52,11 @@ ventajas_set.push(new Ventaja(
 ));
 
 
+
 ventajas_set.push(new Ventaja(
     SYLV_INHUMANAS,
     "",
-    "Por naturaleza, un Sylvain puede alcanzar la dificultad de Inhumano en los controles de dificultades.",
+    SYLV_INHUMANAS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [
@@ -77,10 +68,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     SYLV_NECESIDADES,
     "",
-    "Disminuyen sus necesidades de sueño y comida hasta una quinta parte de las que necesita un humano.",
+    SYLV_NECESIDADES_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -91,10 +83,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     SYLV_CURACION,
     "",
-    "Suman tres puntos a su nivel de Regeneración natural.",
+    SYLV_CURACION_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -105,10 +98,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     SYLV_PRESENTIR,
     "",
-    "De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.",
+    SYLV_PRESENTIR_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -119,13 +113,14 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     SYLV_LAZO,
     "",
-    "Cualquier ser de dicho elemento sentirá afinidad hacia ellos y no pueden elegir la ventaja Desequilibrio hacia la oscuridad. Además, poseen un bono especial de +10 a cualquier control de Resistencia que realicen contra efectos de lumínicos, y un penalizador equivalente contra la oscuridad.",
+    SYLV_LAZO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
-    [new ElementoProhibido(VENTAJA,"Desequilibrio elemental","Oscuridad")],    //incompatibles
+    [new ElementoProhibido(VENTAJA,VENT_DESEQUILIBRIO_ELEMENTAL,ELEMENTO_OSCURIDAD)],    //incompatibles
     false,  //anulable
     [],
     [],
@@ -133,10 +128,11 @@ desventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     SYLV_OBLIGACION,
     "",
-    "Están obligados a elegir la ventaja de Don.",
+    SYLV_OBLIGACION_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -147,10 +143,11 @@ desventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     SYLV_VISION,
     "",
-    "Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.",
+    SYLV_VISION_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles

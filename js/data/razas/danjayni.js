@@ -1,19 +1,7 @@
-var RAZA_DANJAYNI = "D'Anjayni";
-
-var DANJ_OLVIDO = "Olvido (D'Anjayni)";
-var DANJ_INDETECTABILIDAD = "Indetectabilidad (D'Anjayni)";
-var DANJ_ROSTRO = "El rostro de la araña (D'Anjayni)";
-var DANJ_PASAR = "Pasar sin dejar rastro (D'Anjayni)";
-var DANJ_SUSURROS = "Susurros silenciosos (D'Anjayni)";
-
-var DANJ_NATURALEZA = "Naturaleza observadora (D'Anjayni)";
-
-
 ventajas_set.push(new Ventaja(
     DANJ_OLVIDO,
     "",
-    "A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 120, " +
-        "u olvidará su apariencia y la conversación que han mantenido. ",
+    DANJ_OLVIDO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -27,7 +15,7 @@ ventajas_set.push(new Ventaja(
 ventajas_set.push(new Ventaja(
     DANJ_INDETECTABILIDAD,
     "",
-    "Su capacidad para evitar ser detectados por medios sobrenaturales les otorga un bono de +50 a cualquier Resistencia contra tales efectos. Además, poseen de manera innata la habilidad de Ocultación del Ki.",
+    DANJ_INDETECTABILIDAD_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -41,7 +29,7 @@ ventajas_set.push(new Ventaja(
 ventajas_set.push(new Ventaja(
     DANJ_ROSTRO,
     "",
-    "Mientras esté empleando El rostro de la araña, su habilidad de Olvido se resiente fuertemente, reduciendo la Resistencia a tan sólo 80.",
+    DANJ_ROSTRO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -55,7 +43,7 @@ ventajas_set.push(new Ventaja(
 ventajas_set.push(new Ventaja(
     DANJ_PASAR,
     "",
-    "Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -60 a su habilidad.",
+    DANJ_PASAR_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -69,7 +57,7 @@ ventajas_set.push(new Ventaja(
 ventajas_set.push(new Ventaja(
     DANJ_SUSURROS,
     "",
-    "Todo aquel que intente escucharlas aplicará un -80 a sus controles si no es su receptor.",
+    DANJ_SUSURROS_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -83,7 +71,7 @@ ventajas_set.push(new Ventaja(
 desventajas_set.push(new Ventaja(
     DANJ_NATURALEZA,
     "",
-    "Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.",
+    DANJ_NATURALEZA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles

@@ -1,26 +1,16 @@
-var RAZA_NEPH_JAYAN = "Nephilim Jayán";
-
-var JAY_NEPH_GIGANTES = "Gigantes (Nephilim Jayán)";
-var JAY_NEPH_CANSANCIO = "Aguante al cansancio (Nephilim Jayán)";
-var JAY_NEPH_RESISTENCIA = "Resistencia al daño (Nephilim Jayán)";
-var JAY_NEPH_FUERZA = "Fuerza descomunal (Nephilim Jayán)";
-var JAY_NEPH_VISION = "Visión espiritual (Nephilim Jayán)";
-
-var JAY_NEPH_DEBILIDAD = "Debilidad contra la magia (Nephilim Jayán)";
-var JAY_NEPH_ALMA = "Alma inmortal (Nephilim Jayán)";
 
 ventajas_set.push(new Ventaja(
     JAY_NEPH_GIGANTES,
     "",
-    "Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.",
+    JAY_NEPH_GIGANTES_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-5),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-4),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-3),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-2),
-        new ElementoProhibido(VENTAJA,"Tamaño no natural",-1)
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-5),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-4),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-3),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-2),
+        new ElementoProhibido(VENTAJA,VENT_TAMAÑO_NO_NATURAL,-1)
     ],    //incompatibles
     false,  //anulable
     [],
@@ -29,10 +19,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     JAY_NEPH_CANSANCIO,
     "",
-    "Aumentan un punto el valor máximo de su Cansancio.",
+    JAY_NEPH_CANSANCIO_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -44,10 +35,11 @@ ventajas_set.push(new Ventaja(
 ));
 
 //noinspection MagicNumberJS
+
 ventajas_set.push(new Ventaja(
     JAY_NEPH_RESISTENCIA,
     "",
-    "Aplica un bonificador de +15 a su Resistencia Física (RF).",
+    JAY_NEPH_RESISTENCIA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -58,13 +50,14 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     JAY_NEPH_FUERZA,
     "",
-    "Aument un punto el atributo de Fuerza del personaje. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos una característica para rebajar la Fuerza del Nephilim.",
+    JAY_NEPH_FUERZA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
-    [new ElementoProhibido(VENTAJA,"Reducir Dos Puntos Una Característica",FUE)],    //incompatibles
+    [new ElementoProhibido(VENTAJA,DESV_REDUCIR_DOS_PUNTOS_A_UNA_CARACTERISTICA,FUE)],    //incompatibles
     false,  //anulable
     [],
     [aumentaCaracteristica, FUE, 1],
@@ -72,10 +65,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 ventajas_set.push(new Ventaja(
     JAY_NEPH_VISION,
     "",
-    "Para hacerlo, el personaje debe cerrar los ojos y de un modo inconsciente podrá 'mirar' a los seres espirituales, aunque no será capaz de ver nada en el mundo material. Esta habilidad no permite al personaje ver conjuros, efectos místicos o matrices psíquicas, sino tan sólo almas invisibles al ojo humano.",
+    JAY_NEPH_VISION_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -86,10 +80,11 @@ ventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     JAY_NEPH_DEBILIDAD,
     "",
-    "Sufre un penalizador de -10 a su Resistencia Mágica (RM).",
+    JAY_NEPH_DEBILIDAD_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles
@@ -100,10 +95,11 @@ desventajas_set.push(new Ventaja(
     []
 ));
 
+
 desventajas_set.push(new Ventaja(
     JAY_NEPH_ALMA,
     "",
-    "Sufren un penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
+    JAY_NEPH_ALMA_DESC,
     NO_COMPRABLE,   //getRepetible
     [0],      //coste
     [],    //incompatibles

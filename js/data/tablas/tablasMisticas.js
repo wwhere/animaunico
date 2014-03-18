@@ -1,20 +1,2 @@
-tablasArmas_set.push(new TablaArmas(
-    "Proyección Mágica como ataque",
-    "",
-    "Permite utilizar la habilidad de ataque de un personaje como Proyección Mágica ofensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para lanzar conjuros pasivos ni defensivos.",
-    75,
-    TABLA_SIN_EFECTO,
-    [],
-    CATEGORIA_TABLA_MISTICAS
-));
-
-tablasArmas_set.push(new TablaArmas(
-    "Proyección Mágica como defensa",
-    "",
-    "Permite utilizar la habilidad de defensa de un personaje como Proyección Mágica defensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para dirigir conjuros de carácter ofensivo.",
-    75,
-    TABLA_SIN_EFECTO,
-    [],
-    CATEGORIA_TABLA_MISTICAS
-));
-
+tablasArmas_set.push(new TablaArmas( TABLA_PROYECCION_MAGICA_COMO_ATAQUE, "", TABLA_PROYECCION_MAGICA_COMO_ATAQUE_DESC, 75, TABLA_SIN_EFECTO, [], CATEGORIA_TABLA_MISTICAS ));
+tablasArmas_set.push(new TablaArmas( TABLA_PROYECCION_MAGICA_COMO_DEFENSA, "", TABLA_PROYECCION_MAGICA_COMO_DEFENSA_DESC, 75, TABLA_SIN_EFECTO, [], CATEGORIA_TABLA_MISTICAS ));
