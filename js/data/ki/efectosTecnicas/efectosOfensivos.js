@@ -1,6 +1,5 @@
-
 addEfectoTecnica(new EfectoTecnica(
-    "Habilidad de ataque",
+    KI_EFECTO_HABILIDAD_ATAQUE,
     "",
     EFECTO_OFENSIVO,
     [
@@ -27,7 +26,7 @@ addEfectoTecnica(new EfectoTecnica(
 ));
 
 addEfectoTecnica(new EfectoTecnica(
-    "Habilidad de contraataque",
+    KI_EFECTO_HABILIDAD_CONTRATAQUE,
     "",
     EFECTO_OFENSIVO,
     [

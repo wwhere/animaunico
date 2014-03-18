@@ -1,5 +1,5 @@
 addEfectoTecnica(new EfectoTecnica(
-    "Incrementar turno",
+    KI_EFECTO_INCREMENTAR_TURNO,
     "",
     EFECTO_REACCION,
     [

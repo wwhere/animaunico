@@ -86,22 +86,117 @@ var KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_TOTAL = "Estado añadido: Paralización 
 var KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_VIDA = "Estado añadido: Drenaje de vida";
 var KI_EFECTO_VENTAJA_ESTADOS_CONTROL = "Estado añadido: Control";
 var KI_EFECTO_VENTAJA_ESTADOS_MUERTE = "Estado añadido: Muerte";
+var KI_EFECTO_NIVEL_PENALIZADOR_ACCION = "Penalizador a la acción";
+var KI_EFECTO_NIVEL_CEGUERA = "Ceguera";
+var KI_EFECTO_NIVEL_REDUCCION_RF = "Reducción de RF";
+var KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS = "Reducción de características";
+var KI_EFECTO_NIVEL_PARALIZACION_PARCIAL = "Paralización parcial";
+var KI_EFECTO_NIVEL_DAÑO = "Daño";
+var KI_EFECTO_NIVEL_INCONSCIENCIA = "Inconsciencia";
+var KI_EFECTO_NIVEL_COMA = "Coma";
+var KI_EFECTO_NIVEL_PARALIZACION_TOTAL = "Paralización total";
+var KI_EFECTO_NIVEL_DRENAJE_DE_VIDA = "Drenaje de vida";
+var KI_EFECTO_NIVEL_CONTROL = "Control";
+var KI_EFECTO_NIVEL_MUERTE = "Muerte";
 
+/**** efectos ESPECIALES de técnicas ***/
+var KI_EFECTO_MANIOBRAS_COMBATE = "Maniobras de combate y apuntar";
+var KI_EFECTO_AUMENTAR_ARMADURA = "Aumentar armadura";
+var KI_EFECTO_DESTRUIR_ARMADURA = "Destruir armadura";
+var KI_EFECTO_NIVEL_TA_1 = "-1 TA";
+var KI_EFECTO_NIVEL_TA_2 = "-2 TA";
+var KI_EFECTO_NIVEL_TA_3 = "-3 TA";
+var KI_EFECTO_NIVEL_TA_4 = "-4 TA";
+var KI_EFECTO_NIVEL_TA_5 = "-5 TA";
+var KI_EFECTO_NIVEL_TA_6 = "-6 TA";
+var KI_EFECTO_NIVEL_TA_7 = "-7 TA";
+var KI_EFECTO_NIVEL_TA_8 = "-8 TA";
+var KI_EFECTO_AUMENTAR_ROTURA = "Aumentar rotura";
+var KI_EFECTO_AUMENTAR_ENTEREZA = "Aumentar entereza";
+var KI_EFECTO_ATAQUE_DISTANCIA = "Ataque a distancia";
+var KI_EFECTO_NIVEL_5_M = "5 metros";
+var KI_EFECTO_NIVEL_10_M = "10 metros";
+var KI_EFECTO_NIVEL_20_M = "20 metros";
+var KI_EFECTO_NIVEL_50_M = "50 metros";
+var KI_EFECTO_NIVEL_100_M = "100 metros";
+var KI_EFECTO_NIVEL_250_M = "250 metros";
+var KI_EFECTO_NIVEL_500_M = "500 metros";
+var KI_EFECTO_NIVEL_1_KM = "1 kilómetro";
+var KI_EFECTO_NIVEL_5_KM = "5 kilómetros";
+var KI_EFECTO_NIVEL_10_KM = "10 kilómetros";
+var KI_EFECTO_NIVEL_100_KM = "100 kilómetros";
+var KI_EFECTO_ATAQUE_AREA = "Ataque con área";
+var KI_EFECTO_NIVEL_1_M = "1 metro";
+var KI_EFECTO_NIVEL_25_M = "25 metros";
+var KI_EFECTO_VENTAJA_ATAQUE_AREA_ELECCION_BLANCO = "Elección de blanco";
+var KI_EFECTO_NIVEL_ELECCION_BLANCO = "Elección de blanco";
+var KI_EFECTO_TRANSPORTE_AUTOMATICO = "Transporte automático";
+var KI_EFECTO_POTENCIAR_CRITICO = "Potenciar crítico";
+var KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_CRITICO_AUTOMATICO = "Crítico automático";
+var KI_EFECTO_NIVEL_CRITICO_AUTOMATICO = "Crítico automático";
+var KI_EFECTO_ARMAS_FISICAS_KI = "Armas físicas de Ki";
+var KI_EFECTO_VENTAJA_ARMAS_FISICAS_PROYECTILES = "Proyectiles";
+var KI_EFECTO_NIVEL_PROYECTILES = "Proyectiles";
+var KI_EFECTO_APRESAMIENTO = "Apresamiento";
+var KI_EFECTO_PROYECCION = "Proyección";
+var KI_EFECTO_ESCUDO_ENERGIA = "Escudo de energía";
+var KI_EFECTO_INTANGIBILIDAD = "Intangibilidad";
+var KI_EFECTO_NIVEL_INTANGIBILIDAD = "Intangibilidad";
+var KI_EFECTO_ESPEJISMO = "Espejismo";
+var KI_EFECTO__VENTAJA_ESPEJISMO_INDETECCION = "Indetección";
+var KI_EFECTO_REFLECTAR_ATAQUE = "Reflectar el ataque";
+var KI_EFECTO_NIVEL_REFLECTAR = "Reflectar";
+var KI_EFECTO_VENTAJA_REFLECTAR_ATAQUE_ELECCION_BLANCO = "Elección del blanco";
+var KI_EFECTO_VENTAJA_REFLECTAR_ATAQUE_HAB_ESOTERICAS = "Reflectar habilidades esotéricas";
+var KI_EFECTO_NIVEL_HABILIDADES_ESOTERICAS = "Reflectar habilidades esotéricas";
+var KI_EFECTO_ATAQUE_CAPAZ_DAÑAR_ENERGIA = "Ataque capaz de dañar energía";
+var KI_EFECTO_NIVEL_ATAQUE_CAPAZ_DAÑAR_ENERGIA = "Ataque capaz de dañar energía";
+var KI_EFECTO_ATAQUE_ELEMENTAL_FUEGO = "Ataque elemental (Fuego)";
+var KI_EFECTO_NIVEL_ELEMENTAL_FUEGO = "Elemental (Fuego)";
+var KI_EFECTO_ATAQUE_ELEMENTAL_AIRE = "Ataque elemental (Aire)";
+var KI_EFECTO_NIVEL_ELEMENTAL_AIRE = "Elemental (Aire)";
+var KI_EFECTO_ATAQUE_ELEMENTAL_AGUA = "Ataque elemental (Agua)";
+var KI_EFECTO_NIVEL_ELEMENTAL_AGUA = "Elemental (Agua)";
+var KI_EFECTO_ATAQUE_ELEMENTAL_TIERRA = "Ataque elemental (Tierra)";
+var KI_EFECTO_NIVEL_ELEMENTAL_TIERRA = "Elemental (Tierra)";
+var KI_EFECTO_ATAQUE_SOBRENATURAL = "Ataque sobrenatural";
+var KI_EFECTO_NIVEL_ENERGIA = "Energía";
+var KI_EFECTO_ACUMULACION = "Acumulación";
 
+/**** efectos OFENSIVOS de técnicas ***/
+var KI_EFECTO_HABILIDAD_ATAQUE = "Habilidad de ataque";
+var KI_EFECTO_HABILIDAD_CONTRATAQUE = "Habilidad de contraataque";
+var KI_EFECTO_INCREMENTAR_TURNO = "Incrementar turno";
 
+/*************** TECNICAS DE MUESTRA *************/
+var KI_ARBOL_CELERITAS = "Celéritas";
+var KI_TECNICA_EXCISUM_AERIS = "Excisum Aeris";
+var KI_TECNICA_VELOCITAS_VENTUS = "Velocitas Ventus";
+var KI_TECNICA_EXCISUM_MAGISTER = "Excisum Magister";
+var KI_TECNICA_MAGNUS_EXACTOR = "Magnus Exactor";
+var KI_TECNICA_SUMMUN = "Summun";
+var KI_ARBOL_EL_DRAGON = "El Dragón";
+var KI_TECNICA_LAS_ESCAMAS = "Las escamas";
+var KI_TECNICA_LAS_GARRAS = "Las garras";
+var KI_TECNICA_EL_COLMILLO = "El colmillo";
+var KI_TECNICA_LA_COLA = "La cola";
+var KI_TECNICA_EL_ALIENTO_DEL_DRAGON = "El aliento del Dragón";
 
+var KI_ARBOL_IGNIS = "Ignis";
+var KI_TECNICA_FEUER = "Feuer";
+var KI_TECNICA_LE_FEU = "Le Feu";
+var KI_TECNICA_HORECKA = "Horecka";
+var KI_ARBOL_IGNIS_CONDICION_ESPECIAL = "Mantener activo Feuer";
+var KI_TECNICA_VATRA = "Vatra";
+var KI_TECNICA_ELD = "Eld";
 
-
-
-
-
-
-
-
-
-
-
-
+/*************** TECNICAS DE MUESTRA COMPLEMENTO WEB 1*************/
+var KI_ARBOL_LAS_CADENAS = "Las Cadenas";
+var KI_TECNICA_VOLGARATH = "Volgarath";
+var KI_TECNICA_EXELION = "Exelion";
+var KI_TECNICA_DEDALUS = "Dedalus";
+var KI_TECNICA_OBERON = "Oberon";
+var KI_TECNICA_GARUDA = "Garuda";
 
 
 

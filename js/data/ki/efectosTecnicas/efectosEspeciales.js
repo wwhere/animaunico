@@ -1,5 +1,6 @@
+
 addEfectoTecnica(new EfectoTecnica(
-    "Maniobras de combate y apuntar",
+    KI_EFECTO_MANIOBRAS_COMBATE,
     "",
     EFECTO_ESPECIAL,
     [
@@ -20,7 +21,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Aumentar armadura",
+    KI_EFECTO_AUMENTAR_ARMADURA,
     "",
     EFECTO_ESPECIAL,
     [
@@ -43,18 +44,18 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Destruir armadura",
+    KI_EFECTO_DESTRUIR_ARMADURA,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("-1 TA",1,2,5,1,1),
-        new NivelEfectoTecnica("-2 TA",2,4,5,1,1),
-        new NivelEfectoTecnica("-3 TA",3,5,10,2,1),
-        new NivelEfectoTecnica("-4 TA",4,6,10,2,1),
-        new NivelEfectoTecnica("-5 TA",5,8,15,3, 2),
-        new NivelEfectoTecnica("-6 TA",6,9,20,3, 2),
-        new NivelEfectoTecnica("-7 TA",8,11,25,4, 2),
-        new NivelEfectoTecnica("-8 TA",10,13,30,5, 3)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_1,1,2,5,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_2,2,4,5,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_3,3,5,10,2,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_4,4,6,10,2,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_5,5,8,15,3, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_6,6,9,20,3, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_7,8,11,25,4, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_TA_8,10,13,30,5, 3)
     ],
     FUE,
     new ElementosAfines([ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
@@ -65,8 +66,9 @@ addEfectoTecnica(new EfectoTecnica(
         new CaracSecunTecnica(CON, 2)
     ]
 ));
+
 addEfectoTecnica(new EfectoTecnica(
-    "Aumentar rotura",
+    KI_EFECTO_AUMENTAR_ROTURA,
     "",
     EFECTO_ESPECIAL,
     [
@@ -89,7 +91,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Aumentar entereza",
+    KI_EFECTO_AUMENTAR_ENTEREZA,
     "",
     EFECTO_ESPECIAL,
     [
@@ -111,21 +113,21 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque a distancia",
+    KI_EFECTO_ATAQUE_DISTANCIA,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("5 metros",1,2,5,1,1),
-        new NivelEfectoTecnica("10 metros",2,4,10,1,1),
-        new NivelEfectoTecnica("20 metros",3,5,10,2,1),
-        new NivelEfectoTecnica("50 metros",4,6,15,3,1),
-        new NivelEfectoTecnica("100 metros",5,8,20,4,1),
-        new NivelEfectoTecnica("250 metros",6,9,25,5, 2),
-        new NivelEfectoTecnica("500 metros",8,11,30,6, 2),
-        new NivelEfectoTecnica("1 kilómetro",10,13,35,8,2),
-        new NivelEfectoTecnica("5 kilómetros",14,18,40,10, 3),
-        new NivelEfectoTecnica("10 kilómetros",18,22,45,12, 3),
-        new NivelEfectoTecnica("100 kilómetros",22,26,50,14, 3)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_5_M,1,2,5,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_10_M,2,4,10,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_20_M,3,5,10,2,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_50_M,4,6,15,3,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_M,5,8,20,4,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_250_M,6,9,25,5, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_500_M,8,11,30,6, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_1_KM,10,13,35,8,2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_5_KM,14,18,40,10, 3),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_10_KM,18,22,45,12, 3),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_KM,22,26,50,14, 3)
     ],
     POD,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_FUEGO]),
@@ -137,19 +139,19 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque con área",
+    KI_EFECTO_ATAQUE_AREA,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("1 metro",1,2,5,1,1),
-        new NivelEfectoTecnica("5 metros",2,4,10,1,1),
-        new NivelEfectoTecnica("10 metros",3,5,15,2,1),
-        new NivelEfectoTecnica("25 metros",4,6,20,3,1),
-        new NivelEfectoTecnica("50 metros",6,9,25,4, 2),
-        new NivelEfectoTecnica("100 metros",8,11,30,5, 2),
-        new NivelEfectoTecnica("500 metros",10,13,40,6, 2),
-        new NivelEfectoTecnica("1 kilómetro",12,15,50,8, 3),
-        new NivelEfectoTecnica("5 kilómetros",16,20,60,10, 3)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_1_M,1,2,5,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_5_M,2,4,10,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_10_M,3,5,15,2,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_25_M,4,6,20,3,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_50_M,6,9,25,4, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_M,8,11,30,5, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_500_M,10,13,40,6, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_1_KM,12,15,50,8, 3),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_5_KM,16,20,60,10, 3)
     ],
     POD,
     new ElementosAfines([ELEMENTO_OSCURIDAD,ELEMENTO_LUZ,ELEMENTO_FUEGO]),
@@ -161,29 +163,29 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Elección de blanco",
+            KI_EFECTO_VENTAJA_ATAQUE_AREA_ELECCION_BLANCO,
             "",
             [
-                new NivelVentajaTecnica("Elección de blanco",2,10,1,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ELECCION_BLANCO,2,10,1,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Transporte automático",
+    KI_EFECTO_TRANSPORTE_AUTOMATICO,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("10 metros",2,4,5,1,1),
-        new NivelEfectoTecnica("20 metros",3,5,10,2,1),
-        new NivelEfectoTecnica("50 metros",4,6,10,3,1),
-        new NivelEfectoTecnica("100 metros",5,8,15,4,1),
-        new NivelEfectoTecnica("250 metros",6,9,20,5,1),
-        new NivelEfectoTecnica("500 metros",8,11,25,6, 2),
-        new NivelEfectoTecnica("1 kilómetro",10,13,30,7, 2),
-        new NivelEfectoTecnica("5 kilómetros",14,18,35,8, 2),
-        new NivelEfectoTecnica("10 kilómetros",18,22,40,10, 3),
-        new NivelEfectoTecnica("100 kilómetros",22,26,50,12, 3)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_10_M,2,4,5,1,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_20_M,3,5,10,2,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_50_M,4,6,10,3,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_M,5,8,15,4,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_250_M,6,9,20,5,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_500_M,8,11,25,6, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_1_KM,10,13,30,7, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_5_KM,14,18,35,8, 2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_10_KM,18,22,40,10, 3),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_KM,22,26,50,12, 3)
     ],
     AGI,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_LUZ,ELEMENTO_OSCURIDAD]),
@@ -195,7 +197,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Potenciar crítico",
+    KI_EFECTO_POTENCIAR_CRITICO,
     "",
     EFECTO_ESPECIAL,
     [
@@ -221,16 +223,16 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Crítico automático",
+            KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_CRITICO_AUTOMATICO,
             "",
             [
-                new NivelVentajaTecnica("Crítico automático",8,30,4,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CRITICO_AUTOMATICO,8,30,4,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Armas físicas de Ki",
+    KI_EFECTO_ARMAS_FISICAS_KI,
     "",
     EFECTO_ESPECIAL,
     [
@@ -250,16 +252,16 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Proyectiles",
+            KI_EFECTO_VENTAJA_ARMAS_FISICAS_PROYECTILES,
             "",
             [
-                new NivelVentajaTecnica("Proyectiles",2,10,1,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PROYECTILES,2,10,1,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Apresamiento",
+    KI_EFECTO_APRESAMIENTO,
     "",
     EFECTO_ESPECIAL,
     [
@@ -283,7 +285,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Proyección",
+    KI_EFECTO_PROYECCION,
     "",
     EFECTO_ESPECIAL,
     [
@@ -307,7 +309,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Escudo de energía",
+    KI_EFECTO_ESCUDO_ENERGIA,
     "",
     EFECTO_ESPECIAL,
     [
@@ -332,11 +334,11 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Intangibilidad",
+    KI_EFECTO_INTANGIBILIDAD,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Intangibilidad",3,5,10,2,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_INTANGIBILIDAD,3,5,10,2,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_OSCURIDAD,ELEMENTO_AGUA]),
@@ -348,7 +350,7 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Espejismo",
+    KI_EFECTO_ESPEJISMO,
     "",
     EFECTO_ESPECIAL,
     [
@@ -371,27 +373,27 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Indetección",
+            KI_EFECTO__VENTAJA_ESPEJISMO_INDETECCION,
             "",
             [
-                new NivelVentajaTecnica("Media",1,5,0,1),
-                new NivelVentajaTecnica("Difícil",2,10,0,1),
-                new NivelVentajaTecnica("Muy Difícil",3,10,0,1),
-                new NivelVentajaTecnica("Absurdo",4,15,0,1),
-                new NivelVentajaTecnica("Casi Imposible",5,15,0,1),
-                new NivelVentajaTecnica("Imposible",6,20,0,2),
-                new NivelVentajaTecnica("Inhumano",7,25,0,2),
-                new NivelVentajaTecnica("Zen",8,30,0,3)
+                new NivelVentajaTecnica(DIF_MED,1,5,0,1),
+                new NivelVentajaTecnica(DIF_DIF,2,10,0,1),
+                new NivelVentajaTecnica(DIF_MDF,3,10,0,1),
+                new NivelVentajaTecnica(DIF_ABS,4,15,0,1),
+                new NivelVentajaTecnica(DIF_CIM,5,15,0,1),
+                new NivelVentajaTecnica(DIF_IMP,6,20,0,2),
+                new NivelVentajaTecnica(DIF_INH,7,25,0,2),
+                new NivelVentajaTecnica(DIF_ZEN,8,30,0,3)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Reflectar el ataque",
+    KI_EFECTO_REFLECTAR_ATAQUE,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Reflectar",12,15,30,8,2)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_REFLECTAR,12,15,30,8,2)
     ],
     POD,
     new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_OSCURIDAD,ELEMENTO_AGUA]),
@@ -403,27 +405,27 @@ addEfectoTecnica(new EfectoTecnica(
     ],
     [
         new VentajaTecnica(
-            "Elección del blanco",
+            KI_EFECTO_VENTAJA_REFLECTAR_ATAQUE_ELECCION_BLANCO,
             "",
             [
-                new NivelVentajaTecnica("Elección del blanco",2,10,2,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ELECCION_BLANCO,2,10,2,1)
             ]
         ),
         new VentajaTecnica(
-            "Reflectar habilidades esotéricas",
+            KI_EFECTO_VENTAJA_REFLECTAR_ATAQUE_HAB_ESOTERICAS,
             "",
             [
-                new NivelVentajaTecnica("Reflectar habilidades esotéricas",4,20,1,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_HABILIDADES_ESOTERICAS,4,20,1,1)
             ]
         )
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque capaz de dañar energía",
+    KI_EFECTO_ATAQUE_CAPAZ_DAÑAR_ENERGIA,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Ataque capaz de dañar energía",1,2,5,1,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ATAQUE_CAPAZ_DAÑAR_ENERGIA,1,2,5,1,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_FUEGO,ELEMENTO_LUZ,ELEMENTO_OSCURIDAD]),
@@ -435,11 +437,11 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque elemental (Fuego)",
+    KI_EFECTO_ATAQUE_ELEMENTAL_FUEGO,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Elemental (Fuego)",2,4,5,1,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ELEMENTAL_FUEGO,2,4,5,1,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_FUEGO]),
@@ -451,11 +453,11 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque elemental (Aire)",
+    KI_EFECTO_ATAQUE_ELEMENTAL_AIRE,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Elemental (Aire)",2,4,5,1,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ELEMENTAL_AIRE,2,4,5,1,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_AIRE]),
@@ -467,11 +469,11 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque elemental (Agua)",
+    KI_EFECTO_ATAQUE_ELEMENTAL_AGUA,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Elemental (Agua)",2,4,5,1,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ELEMENTAL_AGUA,2,4,5,1,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_AGUA]),
@@ -483,11 +485,11 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque elemental (Tierra)",
+    KI_EFECTO_ATAQUE_ELEMENTAL_TIERRA,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Elemental (Tierra)",2,4,5,1,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ELEMENTAL_TIERRA,2,4,5,1,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_TIERRA]),
@@ -499,11 +501,11 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Ataque sobrenatural",
+    KI_EFECTO_ATAQUE_SOBRENATURAL,
     "",
     EFECTO_ESPECIAL,
     [
-        new NivelEfectoTecnica("Energía",5,8,10,1,1)
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_ENERGIA,5,8,10,1,1)
     ],
     POD,
     new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_OSCURIDAD]),
@@ -516,7 +518,7 @@ addEfectoTecnica(new EfectoTecnica(
 
 ));
 addEfectoTecnica(new EfectoTecnica(
-    "Acumulación",
+    KI_EFECTO_ACUMULACION,
     "",
     EFECTO_ESPECIAL,
     [
