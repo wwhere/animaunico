@@ -95,6 +95,14 @@ var UI_PUNTOS_VIDA = (new L("Puntos de vida","Puntos de vida","Life Points")).ge
 var UI_APARIENCIA = (new L("Apariencia","Apariencia","Appeareance")).getId();
 var UI_TAMAÑO = (new L("Tamaño","Tamaño","Size")).getId();
 var UI_ESTATUS_SOCIAL = (new L("Estatus Social","Estatus Social","Social Status")).getId();
+var UI_EQUIPAMIENTO = (new L("Secc Equipamiento", "Equipamiento", "Equipment")).getId();
+var UI_DINERO = (new L("Secc Dinero", "Dinero", "Money")).getId();
+
+var CLASE_SOCIAL_POBRE = (new L("CS_Pobre","Pobre","Poor")).getId();
+var CLASE_SOCIAL_MEDIO = (new L("CS_Media","Media","Medium")).getId();
+var CLASE_SOCIAL_ALTO = (new L("CS_Alta","Alta","High")).getId();
+var CLASE_SOCIAL_BAJA_NOBLEZA = (new L("CS_Baja_Nobleza","Baja Nobleza","Low Nobility")).getId();
+
 
 var UI_REGENERACION = (new L("Regeneración","Regeneración","Regeneration")).getId();
 var UI_PUNTOS_DESARROLLO = (new L("Puntos de Desarrollo","Puntos de Desarrollo","Development Points")).getId();
@@ -220,7 +228,7 @@ var UI_BOTON_FINALIZAR_CREACION = (new L("Finalizar Creación","Finalizar Creaci
 var UI_BOTON_SUBIR_NIEVL = (new L("Subir nivel","Subir nivel","Level Up")).getId();
 var UI_BOTON_GUARDAR = (new L("Guardar personaje","Guardar personaje","Save Character")).getId();
 var UI_BOTON_CARGAR = (new L("Cargar personaje","Cargar personaje","Load Character")).getId();
-var UI_BOTON_LOG_CAMBIOS = (new L("Log de cambios","Log de cambios","Change Log")).getId();
+var UI_BOTON_COMPRAR_EQUIPO = (new L("Comprar equipo","Comprar equipo","Buy Equipment")).getId();
 var UI_BOTON_LICENCIA = (new L("Agradecimientos y licencia de software","Agradecimientos y licencia de software","Thanks and software licence")).getId();
 var UI_BOTON_SOPORTE = (new L("Informa de errores","Informa de errores","Report an error")).getId();
 var UI_BOTON_COMENTARIOS = (new L("Comentarios, sugerencias ...","Comentarios, sugerencias ...","Comments, sugestions ...")).getId();
@@ -536,3 +544,7 @@ var UI_AFINIDAD_CON_DISCIPLINAS = (new L("Afinidad con disciplinas","Afinidad co
 var UI_PODERES_DOMINADOS = (new L("Poderes dominados","Poderes dominados","Dominated powers")).getId();
 
 var UI_COMPRAR_TABLA_ARMAS = (new L("Comprar tabla de armas","Comprar tabla de armas","Buy Table Weapon/Combat Style")).getId();
+
+var UI_MO = (new L("dinero mo", "mo", "gp")).getId();
+var UI_MP = (new L("dinero mp", "mp", "sp")).getId();
+var UI_MC = (new L("dinero mc", "mc", "cp")).getId();

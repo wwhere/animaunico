@@ -249,27 +249,23 @@ armaduras_set.push(new Armadura(
     [7,7,7,4,0,4,2]
 ));
 
-var BARDA_LIGERA = "Barda ligera";
 bardas_set.push(new Equipo(
     BARDA_LIGERA,
-    new Dinero(20,0,0),
+    new Dinero(20, 0, 0),
     0,
     DISP_B
 ));
 
-var BARDA_PESADA = "Barda pesada";
 bardas_set.push(new Equipo(
     BARDA_PESADA,
-    new Dinero(150,0,0),
+    new Dinero(150, 0, 0),
     25,
     DISP_B
 ));
 
-
-var YELMO_ANILLA = "Anilla";
 yelmos_set.push(new Yelmo(
     YELMO_ANILLA,
-    new Dinero(0,50,0),
+    new Dinero(0, 50, 0),
     0.5,
     DISP_TOTAL,
     0,      //requisito
@@ -278,12 +274,11 @@ yelmos_set.push(new Yelmo(
     15,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_DURA,
-    [2,2,1,1,1,1,0]
+    [2, 2, 1, 1, 1, 1, 0]
 ));
-var YELMO_FRENTON = "Frentón";
 yelmos_set.push(new Yelmo(
     YELMO_FRENTON,
-    new Dinero(0,80,0),
+    new Dinero(0, 80, 0),
     0.5,
     DISP_TOTAL,
     0,      //requisito
@@ -292,12 +287,11 @@ yelmos_set.push(new Yelmo(
     15,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_DURA,
-    [3,3,3,1,1,2,0]
+    [3, 3, 3, 1, 1, 2, 0]
 ));
-var YELMO_CORONILLA = "Coronilla";
 yelmos_set.push(new Yelmo(
     YELMO_CORONILLA,
-    new Dinero(1,0,0),
+    new Dinero(1, 0, 0),
     1,
     DISP_TOTAL,
     0,      //requisito
@@ -306,12 +300,11 @@ yelmos_set.push(new Yelmo(
     15,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_DURA,
-    [4,4,3,2,0,3,0]
+    [4, 4, 3, 2, 0, 3, 0]
 ));
-var YELMO_CAPUCHA_CUERO = "Capucha de cuero";
 yelmos_set.push(new Yelmo(
     YELMO_CAPUCHA_CUERO,
-    new Dinero(0,40,0),
+    new Dinero(0, 40, 0),
     0.5,
     DISP_TOTAL,
     0,      //requisito
@@ -320,12 +313,11 @@ yelmos_set.push(new Yelmo(
     15,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_BLANDA,
-    [1,0,2,1,3,1,0]
+    [1, 0, 2, 1, 3, 1, 0]
 ));
-var YELMO_CAPUCHA_MALLA = "Capucha de mallas";
 yelmos_set.push(new Yelmo(
     YELMO_CAPUCHA_MALLA,
-    new Dinero(5,0,0),
+    new Dinero(5, 0, 0),
     0.5,
     DISP_TOTAL,
     0,      //requisito
@@ -334,12 +326,11 @@ yelmos_set.push(new Yelmo(
     20,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_BLANDA,
-    [4,2,1,2,0,1,0]
+    [4, 2, 1, 2, 0, 1, 0]
 ));
-var YELMO_COMPLETO_ABIERTO = "Completo abierto";
 yelmos_set.push(new Yelmo(
     YELMO_COMPLETO_ABIERTO,
-    new Dinero(20,0,0),
+    new Dinero(20, 0, 0),
     1.5,
     DISP_B,
     5,      //requisito
@@ -348,12 +339,11 @@ yelmos_set.push(new Yelmo(
     25,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_DURA,
-    [5,4,5,3,0,3,1]
+    [5, 4, 5, 3, 0, 3, 1]
 ));
-var YELMO_COMPLETO_CERRADO = "Completo cerrado";
 yelmos_set.push(new Yelmo(
     YELMO_COMPLETO_CERRADO,
-    new Dinero(40,0,0),
+    new Dinero(40, 0, 0),
     2,
     DISP_B,
     10,      //requisito
@@ -362,6 +352,6 @@ yelmos_set.push(new Yelmo(
     25,     //presencia
     ARMADURA_LOC_CABEZA,
     ARMADURA_CLASE_DURA,
-    [5,5,5,4,0,4,2]
+    [5, 5, 5, 4, 0, 4, 2]
 ));
 

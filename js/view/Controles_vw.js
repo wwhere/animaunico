@@ -204,7 +204,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
         liElan = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_ELAN));
     }
 
-    var liEquipo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_COMPRAR_EQUIPO).append("Comprar equipo"));
+    var liEquipo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_COMPRAR_EQUIPO).append(_l(UI_BOTON_COMPRAR_EQUIPO)));
 
     if (!(((activar==0)||(activar==2)) || (!personajeCompleto()))) {
         liFinCreacion = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_FINALIZAR_CREACION).append(_l(UI_BOTON_FINALIZAR_CREACION)));

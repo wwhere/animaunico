@@ -139,7 +139,7 @@ function muestraVentanaCompraEquipo() {
         autoOpen: true,
         resizable: true,
         draggable: true,
-        title: DIAG_COMPRA_EQUIPO,
+        title: _l(DIAG_COMPRA_EQUIPO),
         position: "center",
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,

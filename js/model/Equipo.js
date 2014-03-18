@@ -238,7 +238,7 @@ Equipo.prototype = {
     },
 
     toString: function() {
-        return this.nombre;
+        return _l(this.nombre);
     }
 };
 

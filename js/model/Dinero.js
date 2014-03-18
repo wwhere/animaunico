@@ -23,7 +23,7 @@ Dinero.prototype = {
     constructor : Dinero,
 
     toString: function() {
-        return this.oro + "mo, " + this.plata + "mp, " + this.cobre + "mc";
+        return this.oro + _l(UI_MO) +", " + this.plata + _l(UI_MP) +", " + this.cobre + _l(UI_MC);
     },
 
     /**

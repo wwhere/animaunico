@@ -1279,7 +1279,7 @@ function muestraEquipamiento() {
     divContenido.append(muestraSubtitulo(UI_DINERO, false));
 
     var divDinero = getDiv("row");
-    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append("Dinero: ");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DINERO) + ": ");
     var divValorDinero = getDiv("six columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
 
     divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero));

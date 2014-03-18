@@ -18,6 +18,17 @@ var ARMADURA_COMPLETA = "Completa";
 var ARMADURA_COMPLETA_PESADA = "Completa pesada";
 var ARMADURA_CAMPAÑA_PESADA = "De campaña pesada";
 
+var BARDA_LIGERA = "Barda ligera";
+var BARDA_PESADA = "Barda pesada";
+
+var YELMO_ANILLA = "Anilla";
+var YELMO_FRENTON = "Frentón";
+var YELMO_CORONILLA = "Coronilla";
+var YELMO_CAPUCHA_CUERO = "Capucha de cuero";
+var YELMO_CAPUCHA_MALLA = "Capucha de mallas";
+var YELMO_COMPLETO_ABIERTO = "Completo abierto";
+var YELMO_COMPLETO_CERRADO = "Completo cerrado";
+
 
 
 /***********ARMAS************/
