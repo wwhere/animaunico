@@ -1,5 +1,3 @@
-var DISCIPLINA_ENERGIA = "Energía";
-var DISCIPLINA_DESCRIPCION_ENERGIA = "";
 
 var discEnergia = new DisciplinaPsiquica(
     DISCIPLINA_ENERGIA,
@@ -7,92 +5,107 @@ var discEnergia = new DisciplinaPsiquica(
 );
 
 discEnergia.addPoder(new PoderPsiquico(
-    "Crear energía",
+    PSI_PODER_CREAR_ENERGIA,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 2","Fatiga 1","1 intensidad","3 intensidades","5 intensidades","7 intensidades","10 intensidades","13 intensidades","16 intensidades","20 intensidades"]
+    [FATIGA_2,FATIGA_1,INTENSIDAD_1,INTENSIDAD_3,INTENSIDAD_5,INTENSIDAD_7,INTENSIDAD_10,INTENSIDAD_13,INTENSIDAD_16,INTENSIDAD_20]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Percibir energía",
+    PSI_PODER_PERCIBIR_ENERGIA,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 2","Fatiga 1","10 metros de radio","50 metros de radio","100 metros de radio","250 metros de radio","500 metros de radio","1 kilómetro de radio","10 kilómetros de radio","100 kilómetros de radio"]
+    [FATIGA_2,FATIGA_1,RADIO_10_M,RADIO_50_M,RADIO_100_M,RADIO_250_M,RADIO_500_M,RADIO_1_KM,RADIO_10_KM,RADIO_100_KM]
 ));
+
 discEnergia.addPoder(new PoderPsiquico(
-    "Creación de energía",
+    PSI_PODER_CREACION_ENERGIA,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 4","Fatiga 2","Fatiga 1","1 metro cúbico","2 metros cúbicos","3 metros cúbicos","4 metros cúbicos","5 metros cúbicos","10 metros cúbicos","20 metros cúbicos"]
+    [FATIGA_4,FATIGA_2,FATIGA_1, METRO_CUBICO_1, METRO_CUBICO_2, METRO_CUBICO_3, METRO_CUBICO_4, METRO_CUBICO_5, METRO_CUBICO_10, METRO_CUBICO_20]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Descarga de energía",
+    PSI_PODER_DESCARGA_ENERGIA,
     1,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 4","Fatiga 2","Fatiga 1","Daño 50","Daño 70","Daño 100","Daño 120","Daño 140 / Afecta a seres inmateriales","Daño 180 / Afecta a seres inmateriales","Daño 220 / Afecta a seres inmateriales"]
+    [FATIGA_4,FATIGA_2,FATIGA_1, DAÑO_50, DAÑO_70, DAÑO_100, DAÑO_120, PSI_DESCARGA_ENERGIA_EFEC_8, PSI_DESCARGA_ENERGIA_EFEC_9, PSI_DESCARGA_ENERGIA_EFEC_10]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Escudo de energía",
+    PSI_PODER_ESCUDO_ENERGIA,
     1,
     ACCION_PASIVA,
     true,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","300 PV","500 PV","800 PV","1.000 PV","1.400 PV","2.000 PV","3.000 PV"]
+    [FATIGA_6,FATIGA_4,FATIGA_2, PV_300, PV_500,PV_800, PV_1000, PV_1400, PV_2000, PV_3000]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Deshacer energía",
+    PSI_PODER_DESHACER_ENERGIA,
     2,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","-1 intensidad / 100 RF","-3 intensidades / 120 RF","-5 intensidades / 140 RF","-8 intensidades / 160 RF","-12 intensidades / 180 RF","-18 intensidades / 200 RF","-24 intensidades / 240 RF"]
+    [FATIGA_6,FATIGA_4,FATIGA_2, PSI_DESHACER_ENERGIA_EFEC_4, PSI_DESHACER_ENERGIA_EFEC_5, PSI_DESHACER_ENERGIA_EFEC_6, PSI_DESHACER_ENERGIA_EFEC_7, PSI_DESHACER_ENERGIA_EFEC_8, PSI_DESHACER_ENERGIA_EFEC_9, PSI_DESHACER_ENERGIA_EFEC_10]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Inmunidad",
+    PSI_PODER_INMUNIDAD,
     2,
     ACCION_PASIVA,
     true,
     "",
-    ["Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","Fatiga 2","10 intensidades","15 intensidades","20 intensidades","30 intensidades","40 intensidades"]
+    [FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4,FATIGA_2,INTENSIDAD_10, INTENSIDAD_15,INTENSIDAD_20,INTENSIDAD_30,INTENSIDAD_40]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Controlar energía",
+    PSI_PODER_CONTROLAR_ENERGIA,
     2,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","4 intensidades / 80 RF","6 intensidades / 100 RF","8 intensidades / 120 RF","12 intensidades / 140 RF","16 intensidades / 160 RF","20 intensidades / 180 RF","25 intensidades / 220 RF"]
+    [FATIGA_6,FATIGA_4,FATIGA_2, INTENSIDAD_4_RF_80,INTENSIDAD_6_RF_100,INTENSIDAD_8_RF_120,INTENSIDAD_12_RF_140,INTENSIDAD_16_RF_160,INTENSIDAD_20_RF_180,INTENSIDAD_25_RF_200]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Modificar naturaleza",
+    PSI_PODER_MODIFICAR_NATURALEZA,
     2,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 8","Fatiga 6","Fatiga 4","Fatiga 2","6 intensidades / 100 RF","8 intensidades / 120 RF","12 intensidades / 140 RF","16 intensidades / 160 RF","20 intensidades / 180 RF","25 intensidades / 220 RF"]
+    [FATIGA_8,FATIGA_6,FATIGA_4,FATIGA_2,INTENSIDAD_6_RF_100,INTENSIDAD_8_RF_120,INTENSIDAD_12_RF_140,INTENSIDAD_16_RF_160,INTENSIDAD_20_RF_180,INTENSIDAD_25_RF_200]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Cúpula de energía",
+    PSI_PODER_CUPULA_ENERGIA,
     3,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","Daño 100 / 25 metros de radio","Daño 120 / 50 metros de radio","Daño 140 / 100 metros de radio","Daño 160 / 200 metros de radio Puede dañar a seres inmateriales","Daño 200 / 500 metros de radio Puede dañar a seres inmateriales"]
+    [FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4, PSI_CUPULA_ENERGIA_EFEC_6, PSI_CUPULA_ENERGIA_EFEC_7, PSI_CUPULA_ENERGIA_EFEC_8, PSI_CUPULA_ENERGIA_EFEC_9, PSI_CUPULA_ENERGIA_EFEC_10]
 ));
 discEnergia.addPoder(new PoderPsiquico(
-    "Energía mayor",
+    PSI_PODER_ENERGIA_MAYOR,
     3,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 20","Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","25 intensidades","35 intensidades","45 intensidades","55 intensidades"]
+    [FATIGA_20,FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4,INTENSIDAD_25, INTENSIDAD_35, INTENSIDAD_45, INTENSIDAD_55]
 ));
 
 disciplinasPsiquicas_set.push(discEnergia);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

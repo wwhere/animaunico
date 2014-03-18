@@ -1,99 +1,95 @@
-var DISCIPLINA_PIROQUINESIS = "Piroquinesis";
-var DISCIPLINA_DESCRIPCION_PIROQUINESIS = "";
-
-
 var discPiroquinesis = new DisciplinaPsiquica(
     DISCIPLINA_PIROQUINESIS,
     DISCIPLINA_DESCRIPCION_PIROQUINESIS
 );
 
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Crear fuego",
+    PSI_PODER_CREAR_FUEGO,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 1","1 intensidad","3 intensidades","5 Intensidades","7 intensidades","10 intensidades","13 intensidades","16 intensidades","20 intensidades","25 intensidades"]
+    [FATIGA_1,INTENSIDAD_1,INTENSIDAD_3,INTENSIDAD_5,INTENSIDAD_7,INTENSIDAD_10,INTENSIDAD_13,INTENSIDAD_16,INTENSIDAD_20,INTENSIDAD_25]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Mitigar fuego",
+    PSI_PODER_MITIGAR_FUEGO,
     1,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 1","-1 intensidad / 80 RF","-3 intensidades / 100 RF","-5 intensidades / 120 RF","-7 intensidades / 140 RF","-10 intensidades / 160 RF","-15 intensidades / 180 RF","-20 intensidades / 200 RF","-30 intensidades / 220 RF","-40 intensidades / 260 RF"]
+    [FATIGA_1,INTENSIDAD_MENOS_1_RF_80,INTENSIDAD_MENOS_3_RF_100,INTENSIDAD_MENOS_5_RF_120,INTENSIDAD_MENOS_7_RF_140,INTENSIDAD_MENOS_10_RF_160,INTENSIDAD_MENOS_15_RF_180,INTENSIDAD_MENOS_20_RF_200,INTENSIDAD_MENOS_30_RF_220,INTENSIDAD_MENOS_40_RF_260]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Controlar el fuego",
+    PSI_PODER_CONTROLAR_FUEGO,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 2","Fatiga 1","4 intensidades / 80 RF","6 intensidades / 100 RF","8 intensidades / 120 RF","12 intensidades / 140 RF","16 intensidades / 160 RF","20 intensidades / 180 RF","25 intensidades / 200 RF","30 intensidades / 240 RF"]
+    [FATIGA_2,FATIGA_1,INTENSIDAD_4_RF_80,INTENSIDAD_6_RF_100,INTENSIDAD_8_RF_120,INTENSIDAD_12_RF_140,INTENSIDAD_16_RF_160,INTENSIDAD_20_RF_180, INTENSIDAD_25_RF_200,INTENSIDAD_30_RF_240]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Inmolar",
+    PSI_PODER_INMOLAR,
     1,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 4","Fatiga 2","Fatiga 1","Daño 60 / 5 metros de radio","Daño 80 / 10 metros de radio","Daño 100 / 20 metros de radio","Daño 120 / 30 metros de radio","Daño 150 / 50 metros de radio","Daño 200 / 100 metros de radio","Daño 250 / 200 metros de radio"]
+    [FATIGA_4,FATIGA_2,FATIGA_1, PSI_INMOLAR_EFEC_4, PSI_INMOLAR_EFEC_5, PSI_INMOLAR_EFEC_6, PSI_INMOLAR_EFEC_7, PSI_INMOLAR_EFEC_8, PSI_INMOLAR_EFEC_9, PSI_INMOLAR_EFEC_10]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Mantenimiento ígneo",
+    PSI_PODER_MANTENIMIENTO_IGNEO,
     2,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 4","Fatiga 2","Fatiga 1","5 intensidades","10 intensidades","15 intensidades","20 intensidades","30 intensidades","40 intensidades","50 intensidades"]
+    [FATIGA_4,FATIGA_2,FATIGA_1,INTENSIDAD_5,INTENSIDAD_10,INTENSIDAD_15,INTENSIDAD_20,INTENSIDAD_30,INTENSIDAD_40,INTENSIDAD_50]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Inmunidad al fuego",
+    PSI_PODER_INMUNIDAD_FUEGO,
     2,
     ACCION_PASIVA,
     true,
     "",
-    ["Fatiga 4","Fatiga 2","Fatiga 1","5 intensidades","10 intensidades","15 intensidades","20 intensidades","30 intensidades","40 intensidades","50 intensidades"]
+    [FATIGA_4,FATIGA_2,FATIGA_1,INTENSIDAD_5,INTENSIDAD_10,INTENSIDAD_15,INTENSIDAD_20,INTENSIDAD_30,INTENSIDAD_40,INTENSIDAD_50]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Barrera ígnea",
+    PSI_PODER_BARRERA_IGNEA,
     2,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","Fatiga 1","Daño base 60 / 5 metros de longitud","Daño base 80 / 10 metros de longitud","Daño base 120 / 20 metros de longitud","Daño base 160 / 30 metros de longitud","Daño base 200 / 40 metros de longitud","Daño base 240 / 50 metros de longitud"]
+    [FATIGA_6,FATIGA_4,FATIGA_2,FATIGA_1, PSI_BARRERA_IGNEA_EFEC_5, PSI_BARRERA_IGNEA_EFEC_6, PSI_BARRERA_IGNEA_EFEC_7, PSI_BARRERA_IGNEA_EFEC_8, PSI_BARRERA_IGNEA_EFEC_9, PSI_BARRERA_IGNEA_EFEC_10]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Aumentar temperatura ambiental",
+    PSI_PODER_AUMENTAR_TEMPERATURA,
     2,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","Fatiga 1","+5ºC / 1 kilómetro de radio","+10ºC / 5 kilómetros de radio","+15ºC / 10 kilómetros de radio","+20ºC / 25 kilómetros de radio","+30ºC / 50 kilómetros de radio","+40ºC / 100 kilómetros de radio"]
+    [FATIGA_6,FATIGA_4,FATIGA_2,FATIGA_1,"+5ºC / 1 kilómetro de radio","+10ºC / 5 kilómetros de radio","+15ºC / 10 kilómetros de radio","+20ºC / 25 kilómetros de radio","+30ºC / 50 kilómetros de radio","+40ºC / 100 kilómetros de radio"]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Consumir",
+    PSI_PODER_CONSUMIR,
     3,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","120 RF / Daño automático de 80","140 RF / Daño automático de 120","160 RF / Daño automático de 160","180 RF / Daño automático de 200","220 RF / Daño automático de 250"]
+    [FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4,"120 RF / Daño automático de 80","140 RF / Daño automático de 120","160 RF / Daño automático de 160","180 RF / Daño automático de 200","220 RF / Daño automático de 250"]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Nova",
+    PSI_PODER_NOVA,
     3,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 16","Fatiga 12","Fatiga 8","10 puntos de vida","20 puntos de vida","30 puntos de vida","40 puntos de vida","60 puntos de vida","80 puntos de vida","120 puntos de vida"]
+    [FATIGA_16,FATIGA_12,FATIGA_8,"10 puntos de vida","20 puntos de vida","30 puntos de vida","40 puntos de vida","60 puntos de vida","80 puntos de vida","120 puntos de vida"]
 ));
 discPiroquinesis.addPoder(new PoderPsiquico(
-    "Fuego mayor",
+    PSI_PODER_FUEGO_MAYOR,
     3,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 20","Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","30 intensidades","40 intensidades","50 intensidades","60 intensidades"]
+    [FATIGA_20,FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4,INTENSIDAD_30,INTENSIDAD_40,INTENSIDAD_50,INTENSIDAD_60]
 ));
 
 disciplinasPsiquicas_set.push(discPiroquinesis);

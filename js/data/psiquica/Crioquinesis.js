@@ -1,118 +1,115 @@
-var DISCIPLINA_CRIOQUINESIS = "Crioquinesis";
-var DISCIPLINA_DESCRIPCION_CRIOQUINESIS = "";
-
-
 var discCrioquinesis = new DisciplinaPsiquica(
     DISCIPLINA_CRIOQUINESIS,
     DISCIPLINA_DESCRIPCION_CRIOQUINESIS
 );
 
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Percibir temperatura",
+    PSI_PODER_PERCIBIR_TEMPERATURA,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 4","Fatiga 2","Fatiga 1","10 metros de radio","50 metros de radio","100 metros de radio","500 metros de radio","1 kilómetro de radio","10 kilómetros de radio","100 kilómetros de radio"]
+    [ FATIGA_4, FATIGA_2, FATIGA_1, RADIO_10_M, RADIO_50_M, RADIO_100_M, RADIO_500_M, RADIO_1_KM, RADIO_10_KM, RADIO_100_KM]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Congelar",
+    PSI_PODER_CONGELAR,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 8","Fatiga 6","Fatiga 4","80 RF","100 RF","120 RF","140 RF","160 RF","180 RF","220 RF"]
+    [ FATIGA_8, FATIGA_6,FATIGA_4, RF_80, RF_100, RF_120, RF_140, RF_160, RF_180, RF_220]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Crear frío",
+    PSI_PODER_CREAR_FRIO,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 1","1 intensidad","3 intensidades","5 intensidades","7 intensidades","10 intensidades","13 intensidades","16 intensidades","20 intensidades","25 intensidades"]
+    [FATIGA_1, INTENSIDAD_1, INTENSIDAD_3, INTENSIDAD_5, INTENSIDAD_7, INTENSIDAD_10, INTENSIDAD_13, INTENSIDAD_16, INTENSIDAD_20, INTENSIDAD_25]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Eliminar el frío",
+    PSI_PODER_ELIMINAR_EL_FRIO,
     1,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 1","-1 intensidad / 80 RF","-3 intensidades / 100 RF","-5 intensidades / 120 RF","-7 intensidades / 140 RF","-10 intensidades / 160 RF","-15 intensidades / 180 RF","-20 intensidades / 200 RF","-30 intensidades / 220 RF","-40 intensidades / 260 RF"]
+    [FATIGA_1, INTENSIDAD_MENOS_1_RF_80, INTENSIDAD_MENOS_3_RF_100, INTENSIDAD_MENOS_5_RF_120, INTENSIDAD_MENOS_7_RF_140, INTENSIDAD_MENOS_10_RF_160, INTENSIDAD_MENOS_15_RF_180, INTENSIDAD_MENOS_20_RF_200, INTENSIDAD_MENOS_30_RF_220, INTENSIDAD_MENOS_40_RF_260]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Control sobre el frío",
+    PSI_PODER_CONTROL_SOBRE_EL_FRIO,
     1,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 2","Fatiga 1","4 intensidades / 80 RF","6 intensidades / 100 RF","8 intensidades / 120 RF","12 intensidades / 140 RF","16 intensidades / 160 RF","20 intensidades / 180 RF","25 intensidades / 200 RF","30 intensidades / 240 RF"]
+    [FATIGA_2,FATIGA_1, INTENSIDAD_4_RF_80, INTENSIDAD_6_RF_100, INTENSIDAD_8_RF_120, INTENSIDAD_12_RF_140, INTENSIDAD_16_RF_160, INTENSIDAD_20_RF_180, INTENSIDAD_25_RF_200, INTENSIDAD_30_RF_240]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Esquirlas de hielo",
+    PSI_PODER_ESQUIRLAS_HIELO,
     2,
     ACCION_ACTIVA,
     false,
     "",
-    ["Fatiga 8","Fatiga 6","Fatiga 4","Fatiga 2","Fatiga 1","Daño base 80","Daño base 100","Daño base 120","Daño base 160 / Área de 5 metros","Daño base 200 / Área de 25 metros"]
+    [FATIGA_8,FATIGA_6,FATIGA_4,FATIGA_2,FATIGA_1, DAÑO_BASE_80, DAÑO_BASE_100, DAÑO_BASE_120, PSI_ESQUIRLAS_HIELO_EFEC_9, PSI_ESQUIRLAS_HIELO_EFEC_10]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Disminuir la temperatura ambiental",
+    PSI_PODER_DISMINUIR_TEMPERATURA,
     2,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","Fatiga 1","-5º / 1 kilómetro de radio","-10º / 5 kilómetros de radio","-15º / 10 kilómetros de radio","-20º / 25 kilómetros de radio","-30º / 50 kilómetros de radio","-40º / 100 kilómetros de radio"]
+    [FATIGA_6,FATIGA_4,FATIGA_2,FATIGA_1, PSI_DISMINUIR_TEMPERATURA_EFEC_5, PSI_DISMINUIR_TEMPERATURA_EFEC_6, PSI_DISMINUIR_TEMPERATURA_EFEC_7, PSI_DISMINUIR_TEMPERATURA_EFEC_8, PSI_DISMINUIR_TEMPERATURA_EFEC_9, PSI_DISMINUIR_TEMPERATURA_EFEC_10]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Escudo de hielo",
+    PSI_PODER_ESCUDO_HIELO,
     2,
     ACCION_PASIVA,
     true,
     "",
-    ["Fatiga 6","Fatiga 4","Fatiga 2","600 PV","800 PV","1.200 PV","1.800 PV","2.500 PV","4.000 PV","6.000 PV"]
+    [FATIGA_6,FATIGA_4,FATIGA_2, PV_600, PV_800, PV_1200, PV_1800, PV_2500, PV_4000, PV_6000]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Cristalizar",
+    PSI_PODER_CRISTALIZAR,
     2,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","Fatiga 2","120 RF","140 RF","160 RF","180 RF","220 RF"]
+    [ FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4,FATIGA_2,RF_120,RF_140,RF_160,RF_180,RF_220]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Un instante eterno",
+    PSI_PODER_UN_INSTANTE_ETERNO,
     3,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","120 RF / 5 metros de radio","140 RF / 10 metros de radio","160 RF / 20 metros de radio","180 RF / 50 metros de radio","200 RF / 100 metros de radio"]
+    [ FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4, PSI_INSTANTE_ETERNO_EFEC_6, PSI_INSTANTE_ETERNO_EFEC_7, PSI_INSTANTE_ETERNO_EFEC_8, PSI_INSTANTE_ETERNO_EFEC_9, PSI_INSTANTE_ETERNO_EFEC_10]
 ));
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Cero absoluto",
+    PSI_PODER_CERO_ABSOLUTO,
     3,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","5 metros de radio","10 metros de radio","20 metros de radio","50 metros de radio","100 metros de radio"]
+    [FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4, RADIO_5_M,RADIO_10_M, RADIO_20_M,RADIO_50_M,RADIO_100_M]
 ));
+
 discCrioquinesis.addPoder(new PoderPsiquico(
-    "Frío mayor",
+    PSI_PODER_FRIO_MAYOR,
     3,
     ACCION_ACTIVA,
     true,
     "",
-    ["Fatiga 20","Fatiga 16","Fatiga 12","Fatiga 8","Fatiga 6","Fatiga 4","30 intensidades","40 intensidades","50 intensidades","60 intensidades"]
+    [ FATIGA_20,FATIGA_16,FATIGA_12,FATIGA_8,FATIGA_6,FATIGA_4, INTENSIDAD_30, INTENSIDAD_40, INTENSIDAD_50, INTENSIDAD_60]
 ));
 
 disciplinasPsiquicas_set.push(discCrioquinesis);
 
 if (CUMPLEMENTO_WEB_1_ENABLED) {
     discCrioquinesis.addPoder(new PoderPsiquico(
-        "Inmunidad al frío",
+        PSI_PODER_INMUNIDAD_FRIO,
         2,
         ACCION_PASIVA,
         true,
-        "Permite al psíquico, o al individuo designado por este, ser inmune al efecto de varias intensidades de frío, incluso si se trata de uno de carácter sobrenatural. En el caso de que se reciba un ataque basado en dicho elemento, cada intensidad a la que es inmune disminuye 5 puntos el daño base del ataque, y aumenta en +5 las Resistencias contra sus efectos.",
-        ["Fatiga 4","Fatiga 2","Fatiga 1","5 intensidades","10 intensidades","15 intensidades","20 intensidades","30 intensidades","40 intensidades","50 intensidades"]
+        "",
+        [FATIGA_4,FATIGA_2,FATIGA_1,INTENSIDAD_5,INTENSIDAD_10, INTENSIDAD_15,INTENSIDAD_20,INTENSIDAD_30,INTENSIDAD_40,INTENSIDAD_50]
     ));
 };
