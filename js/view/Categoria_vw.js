@@ -215,3 +215,49 @@ function mostrarDetallesCategoria(event) {
 
     $("#"+DESTINO_EXPLICACION_CATEGORIA).empty().append(divGeneral);
 }
+
+function cambiarCategoria() {
+    var dialogElegirCategoria = getDiv("");
+    dialogElegirCategoria.prop("id",DIV_DIALOG_ELEGIR_CATEGORIA);
+    dialogElegirCategoria.empty();
+
+    dialogElegirCategoria.dialog({
+        modal: true,
+        autoOpen: true,
+        draggable: true,
+        resizable: true,
+        closeOnEscape: true,
+        ////show: "puff",
+        title: _l(DIAG_ELEGIR_CATEGORIA_TITULO),
+        width: ANCHO_DIALOGO,
+        height: ALTO_DIALOGO,
+        maxHeight: ALTO_DIALOGO
+    });
+
+
+
+    var gridCategorias = $("<ul></ul>").addClass("four_up tiles");
+
+    for (var i = 0; i < categorias_set.length ; i++) {
+        var categoria = categorias_set[i];
+
+        var divCategoria = boton("big primary btn pretty",_l(categoria.getNombre()) + "[" + costeCambioCategoria(personaje_actual.getCategoria(),categoria) + " " + _l(UDS_PD)+"]",!puedeElegirCategoria(categoria.getNombre()));
+        divCategoria.css("width","100%");
+
+        gridCategorias.append( $("<li></li>").append(divCategoria));
+
+        divCategoria.on("click", {categoria:categoria}, function(event) {
+            dialogElegirCategoria.dialog("close");
+            comprarCambioCategoria(personaje_actual,event.data.categoria);
+        });
+
+        divCategoria.on("mouseenter", {categoria:categoria}, mostrarDetallesCategoria);
+    }
+
+    dialogElegirCategoria.append(gridCategorias);
+
+    var divExplicacion = $("<div></div>");
+    divExplicacion.addClass(CSS_CLASS_EXPLICACION_CATEGORIA);
+    divExplicacion.attr("id",DESTINO_EXPLICACION_CATEGORIA);
+    dialogElegirCategoria.append(divExplicacion);
+}

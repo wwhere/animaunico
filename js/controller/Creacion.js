@@ -11,34 +11,7 @@ var ESTADO_GENERACION_INICIADA = "ESTADO_GENERACION_INICIADA";
 var ESTADO_GENERACION_NINGUNO = "ESTADO_GENERACION_NINGUNO";
 var ESTADO_GENERACION_PERSONAJE_HECHO = "ESTADO_GENERACION_PERSONAJE_HECHO";
 var ESTADO_GENERACION_SUBIENDO_NIVEL = "ESTADO_GENERACION_SUBIENDO_NIVEL";
-var GENERACION_INICIADA = ESTADO_GENERACION_NINGUNO;
-
-var UI_ESPECIFICAR = "Especificar";
-var UI_PREGUNTA_PUNTOS_METODO_5 = "¿Cuántos puntos quieres repartir?";
-
-var DIAG_METODO_CREACION_TITULO = "Seleccionar método de creación";
-var DIAG_ELEGIR_RAZA_TITULO = "Seleccionar raza";
-
-var DIAG_COMPRAR_VENTAJAS_TITULO = "Comprar ventajas";
-var DIAG_ELEGIR_DESVENTAJAS_TITULO = "Elegir desventajas";
-var DIAG_ELEGIR_BONOS_NATURALES_TITULO = "Elegir bonos naturales";
-var DIAG_ELEGIR_OPCIONES_TITULO = "Elegir opciones";
-var DIAG_PODERES_PSIQUICOS = "Poderes Psíquicos";
-var DIAG_PODERES_KI = "Dominios del Ki";
-var DIAG_PODERES_MAGIA = "Magia";
-var DIAG_CREACION_TECNICA = "Crear Técnica de Dominio";
-var DIAG_REASIGNA_COSTE_KI = "Reparte coste de ki";
-var DIAG_COMPRA_EQUIPO = "Compra equipo";
-var EXPLI_METODO_1 = "El método tradicional y más recomendado para generar las tiradas es el de lanzar un D10 ocho veces y apuntar las características en una hoja de papel. Ignora cualquier resultado de 1, 2 ó 3 que saques y repítelo, lo que permitirá a tu personaje no tener en ningún momento puntuaciones demasiado bajas. Una vez que tengas las ocho, sustituye la menor por un 9 para asegurar así que, incluso en el improbable caso de que no tengas ninguna cifra elevada, el personaje será excepcional en al menos un campo. A continuación reparte las cifras como prefieras, definiendo exactamente lo que quieres. Este sistema de generación proporciona unas cifras por media elevadas, pero es natural teniendo en cuenta que los personajes suelen ser individuos excepcionales.";
-var EXPLI_METODO_2 = "Consiste en tirar dos D10 ocho veces, anotando sólo el resultado más alto de los dos obtenidos. Cuando se tengan las ocho cifras, el personaje las reparte libremente entre las características. Este método asegura una media alta, pero también permite obtener algunas cifras realmente bajas.";
-var EXPLI_METODO_3 = "Este método se utiliza en el caso de que los jugadores decidan interpretar personajes comunes, sin características demasiado excepcionales. Consiste en lanzar ocho veces un dado apuntando en orden las cifras obtenidas en las casillas de características. Cualquier tirada, por alta o baja que sea, deberá aceptarse.";
-var EXPLI_METODO_4 = "El último método consiste en tirar siete veces un D10 y sumar todos los resultados obtenidos. La cifra resultante, un número entre siete y setenta, puede ser dividida libremente entre las características, pero sin que en ningún caso se pueda superar el diez.";
-var EXPLI_METODO_5 = "Se reparten 55 puntos entre las características. Cualquier diez cuesta dos puntos en vez de uno. Pueden repartirse 45 puntos o 65, según el nivel de la partida.";
-
-var ERR_PC_INSUFICIENTES = "PC insuficientes";
-var ERR_METODO_DESCONOCIDO = "Error: Metodo de generación desconocido";
-var ERR_MAX_DESVENTAJAS = "Límite de desventajas alcanzado";
-var ERR_OVERFLOW_NIVEL = "Límite de gasto del nivel previo alcanzando";
+GENERACION_INICIADA = ESTADO_GENERACION_NINGUNO;
 
 var RANGOS_HABILIDAD = "RANGOS_HABILIDAD";
 var TABLA_ARMAS = "TABLA_ARMAS";
@@ -53,7 +26,8 @@ var PERSONAJE_EN_MARCHA = false;
  */
 function iniciarGeneracion() {
     if (PERSONAJE_EN_MARCHA) {
-        var adelante = confirm("¿Seguro? Esto sustituirá al personaje actual");
+
+        var adelante = confirm(CONFIRMACION_NUEVO_PERSONAJE);
 
         if (!adelante) {
             return;
@@ -355,20 +329,8 @@ function aplicarVentajaFinalGrupo(coste, elementoPC, opcion, atributoPCGrupo, at
     }
 
     if (personaje_actual.getPCLibres() + diferencial >= coste) {
-/*        if ((atributoPCGrupo != undefined) && (coste <= diferencial)) {
-            personaje_actual.gastaPC(coste, atributoPCGrupo);
-            repartoCostes.setValor(atributoRepartoCostes,coste);
-        } else {
-            personaje_actual.gastaPC(coste - diferencial, "PC_libres_generales");
-            repartoCostes.setLibres(coste - diferencial);
-            if (atributoPCGrupo != undefined) {
-                repartoCostes[atributoRepartoCostes] = diferencial;
-                personaje_actual.setPC(0, atributoPCGrupo);
-            }
-        }*/
         personaje_actual.addVentaja(elementoPC, coste, opcion, ORIGEN_PC, true, repartoCostes, true);
         personaje_actual.updatePC();
-        //mostrarPersonajeActual();
     } else {
         alert(ERR_PC_INSUFICIENTES);
     }
@@ -474,7 +436,7 @@ function anularelementoPCComprado(event) {
  * @returns {PuedeComprar}
  */
 function comprasiPuedesPotencialPsiquico(coste) {
-    return new PuedeComprar((personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() - personaje_actual.getCVGastados() >= coste),"CVs libres insuficientes");
+    return new PuedeComprar((personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() - personaje_actual.getCVGastados() >= coste), AVISO_CVS_INSUFICIENTES);
 }
 
 /**
@@ -517,21 +479,17 @@ function compraSiPuedesCombate(tipoCompra, parametros, cantidad, coste) {
     var valorAtaque = personaje_actual.getHabilidadDePersonaje(HB_ATAQUE).valorFinalActual();
     var valorParada = personaje_actual.getHabilidadDePersonaje(HB_PARADA).valorFinalActual();
     var valorEsquiva = personaje_actual.getHabilidadDePersonaje(HB_ESQUIVA).valorFinalActual();
-    console.log("ataque:"+valorAtaque+" - parada:"+valorParada+" - esquiva:"+valorEsquiva);
     var puedeComprar = new PuedeComprar(true);
 
     if (tipoCompra == RANGOS_HABILIDAD) {
         if ((nombreHabilidad == HB_ATAQUE)||(nombreHabilidad == HB_PARADA) || (nombreHabilidad == HB_ESQUIVA)) {
             if ( desarrolloSoloAtaqueODefensa() == nombreHabilidad ) {
-                console.log("desarrollado solo ataque o defensa");
                 if (personaje_actual.gastoActualPDsAtaqueDefensa() + coste > personaje_actual.maxPDsAtaqueDefensa() / 2) {
                     puedeComprar.puedeComprar = false;
-                    puedeComprar.mensajeFallo = "Max PDs en Ataque/Defensa alcanzados (Mitad del normal por no desarrollar defensa)";
+                    puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_ATAQUE_SOLO);
                 }
             } else {
-                console.log("desarrollados ataque y defensa");
                 if (personaje_actual.gastoActualPDsAtaqueDefensa() + coste <= personaje_actual.maxPDsAtaqueDefensa()) {
-                    console.log("gastoActualPDsAtaqueDefensa:"+personaje_actual.gastoActualPDsAtaqueDefensa() + " más coste: " + (personaje_actual.gastoActualPDsAtaqueDefensa() + coste));
                     switch (nombreHabilidad) {
                         case HB_ATAQUE:
                             valorAtaque += cantidad * parametros.habilidad.getPuntosAComprar();
@@ -543,15 +501,13 @@ function compraSiPuedesCombate(tipoCompra, parametros, cantidad, coste) {
                             valorEsquiva += cantidad * parametros.habilidad.getPuntosAComprar();
                     }
                     var valorDefensa = (valorParada>valorEsquiva?valorParada:valorEsquiva);
-                    console.log("ahora son -- ataque:"+valorAtaque+" - defensa:"+valorDefensa);
-                    console.log("ataque y defensa:"+(Math.abs(valorAtaque - valorDefensa)));
                     if ((Math.abs(valorAtaque - valorDefensa) > MAX_DIF_ATAQUE_DEFENSA)) {
                         puedeComprar.puedeComprar = false;
-                        puedeComprar.mensajeFallo = "Ataque y Defensa base no pueden separarse en más de 50.";
+                        puedeComprar.mensajeFallo = _l(AVISO_ATAQUE_DEFENSA_MUY_SEPARADOS);
                     }
                 } else {
                     puedeComprar.puedeComprar = false;
-                    puedeComprar.mensajeFallo = "Max PDs en Ataque/Defensa alcanzados";
+                    puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_ATAQUE_DEFENSA);
                 }
             }
         }
@@ -580,7 +536,7 @@ function compraSiPuedesSobrenatural(tipoCompra, parametros, coste) {
         if (nombreHabilidad == HB_PROYECCION_MAGICA) {
             if (habilidadProyeccionMagica.getPDinvertidos() + coste > personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_SOBRENATURAL) / 2) {
                 puedeComprar.puedeComprar = false;
-                puedeComprar.mensajeFallo = "Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)";
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_PROYECCION_MAGICA);
             }
         }
     }
@@ -610,12 +566,14 @@ function compraSiPuedesPsiquica(tipoCompra, parametros, cantidad, coste) {
         if (nombreHabilidad == HB_PROYECCION_PSIQUICA) {
             if (habilidadProyeccionPsiquica.getPDinvertidos() + coste > personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_PSIQUICA) / 2) {
                 puedeComprar.puedeComprar = false;
-                puedeComprar.mensajeFallo = "Max PDs en Proyección Psíquica alcanzados (mitad del tope en sobrenaturales)";
+
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_PROYECCION_PSIQUICA);
             }
         } else if (nombreHabilidad == HB_CV) {
             if (  habilidadCV.valorFinalActual() + cantidad * parametros.habilidad.getPuntosAComprar() - personaje_actual.getCVGastados() < 0 ) {
                 puedeComprar.puedeComprar = false;
-                puedeComprar.mensajeFallo = "CVs ya gastados. Primero devuelvelos.";
+
+                puedeComprar.mensajeFallo = _l(AVISO_CV_YA_GASTADOS);
             }
         }
     }
@@ -658,12 +616,12 @@ function compraSiPuedes(tipoCompra, parametros, grupoPD, cantidad, coste) {
                 }
             } else {
                 puedeComprar.puedeComprar = false;
-                puedeComprar.mensajeFallo = "Max PDs en " + grupoPD + " alcanzados";
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_GRUPO) + _l(grupoPD);
                 return;
             }
         } else {
             puedeComprar.puedeComprar = false;
-            puedeComprar.mensajeFallo = "PDs insuficientes";
+            puedeComprar.mensajeFallo = _l(AVISO_PD_INSUFICIENTES);
         }
     }
 
@@ -977,17 +935,19 @@ function aumentaHabilidadClick(event) {
     var costeFinal;
     var tipoCompra = RANGOS_HABILIDAD;
 
+
     if (nombreHabilidad == HB_POTENCIAL_PSIQUICO) {
         if (cantidad > 0) {
             coste = siguienteCostePotencial(habilidadDePersonaje.CVsGastados);
             if (coste == -1) {
-                alert("No se puede aumentar más");
+
+                alert(_l(AVISO_NO_SE_PUEDE_AUMENTAR_MAS));
                 return;
             }
         } else {
             coste = previoCostePotencial(habilidadDePersonaje.CVsGastados);
             if (coste == -1) {
-                alert("No se puede disminuir más");
+                alert(AVISO_NO_SE_PUEDE_DISMINUIR_MAS);
                 return;
             }
         }
@@ -999,7 +959,7 @@ function aumentaHabilidadClick(event) {
 
         if (costeFinal < 0) {
             if (habilidadDePersonaje.getPDinvertidosActuales() < Math.abs(costeFinal)) {
-                alert("No se puede disminuir más");
+                alert(_l(AVISO_NO_SE_PUEDE_DISMINUIR_MAS));
                 return;
             }
         }
@@ -1018,111 +978,114 @@ function elegirManualApariencia() {
 }
 
 function elegirPeso() {
-    alert("Con tu tamaño, tu peso debería ser de " + getRangoPesoPorTamaño(personaje_actual.getTamaño()));
+
+    alert(INFO_PESO_RECOMENDADO + getRangoPesoPorTamaño(personaje_actual.getTamaño()));
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarPeso,isDisabled:alwaysEnabled});
 }
 
 function getRangoPesoPorTamaño(tam) {
     switch (tam) {
         case 2 :
-            return "5 a 15 kg";
+            return "5 - 15 kg";
         case 3 :
-            return "10 a 20 kg";
+            return "10 - 20 kg";
         case 4 :
-            return "20 a 30 kg";
+            return "20 - 30 kg";
         case 5:
-            return "20 a 50 kg";
+            return "20 - 50 kg";
         case 6:
-            return "30 a 50 kg";
+            return "30 - 50 kg";
         case 7:
-            return "30 a 60 kg";
+            return "30 - 60 kg";
         case 8:
-            return "35 a 70 kg";
+            return "35 - 70 kg";
         case 9:
-            return "40 a 80 kg";
+            return "40 - 80 kg";
         case 10:
-            return "40 a 90 kg";
+            return "40 - 90 kg";
         case 11:
-            return "50 a 100 kg";
+            return "50 - 100 kg";
         case 12:
-            return "50 a 120 kg";
+            return "50 - 120 kg";
         case 13:
-            return "50 a 140 kg";
+            return "50 - 140 kg";
         case 14:
-            return "50 a 150 kg";
+            return "50 - 150 kg";
         case 15:
-            return "60 a 180 kg";
+            return "60 - 180 kg";
         case 16:
-            return "70 a 220 kg";
+            return "70 - 220 kg";
         case 17:
-            return "80 a 240 kg";
+            return "80 - 240 kg";
         case 18:
-            return "90 a 260 kg";
+            return "90 - 260 kg";
         case 19:
-            return "100 a 280 kg";
+            return "100 - 280 kg";
         case 20:
-            return "110 a 320 kg";
+            return "110 - 320 kg";
         case 21:
-            return "120 a 450 kg";
+            return "120 - 450 kg";
         default:
-            return "más de 400 kg";
+            return "400 kg +";
     }
 }
 
 function getRangoAlturaPorTamaño(tam) {
     switch (tam) {
         case 2 :
-            return "0’20 a 0’60 m";
+            return "0’20 - 0’60 m";
         case 3 :
-            return "0’40 a 0’60 m";
+            return "0’40 - 0’60 m";
         case 4 :
-            return "0’60 a 1’00 m";
+            return "0’60 - 1’00 m";
         case 5:
-            return "0’80 a 1’20 m";
+            return "0’80 - 1’20 m";
         case 6:
-            return "1’00 a 1’40 m";
+            return "1’00 - 1’40 m";
         case 7:
-            return "1’10 a 1’50 m";
+            return "1’10 - 1’50 m";
         case 8:
-            return "1’20 a 1’60 m";
+            return "1’20 - 1’60 m";
         case 9:
-            return "1’30 a 1’60 m";
+            return "1’30 - 1’60 m";
         case 10:
-            return "1’40 a 1’70 m";
+            return "1’40 - 1’70 m";
         case 11:
-            return "1’40 a 1’80 m";
+            return "1’40 - 1’80 m";
         case 12:
-            return "1’50 a 1’80 m";
+            return "1’50 - 1’80 m";
         case 13:
-            return "1’50 a 1’80 m";
+            return "1’50 - 1’80 m";
         case 14:
-            return "1’60 a 1’90 m";
+            return "1’60 - 1’90 m";
         case 15:
-            return "1’60 a 2’00 m";
+            return "1’60 - 2’00 m";
         case 16:
-            return "1’70 a 2’10 m";
+            return "1’70 - 2’10 m";
         case 17:
-            return "1’70 a 2’10 m";
+            return "1’70 - 2’10 m";
         case 18:
-            return "1’80 a 2’20 m";
+            return "1’80 - 2’20 m";
         case 19:
-            return "1’90 a 2’30 m";
+            return "1’90 - 2’30 m";
         case 20:
-            return "2’00 a 2’40 m";
+            return "2’00 - 2’40 m";
         case 21:
-            return "2’10 a 2’60 m";
+            return "2’10 - 2’60 m";
         default:
-            return "más de 2'5 m";
+            return "2'5 m +";
     }
 }
 
 function elegirAltura() {
-    alert("Con tu tamaño, tu altura debería ser de " + getRangoAlturaPorTamaño(personaje_actual.getTamaño()));
+
+    alert(INFO_ALTURA_RECOMENDADA + getRangoAlturaPorTamaño(personaje_actual.getTamaño()));
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarAltura,isDisabled:alwaysEnabled});
 }
 
 function elegirPX() {
-    alert("Introduce la nueva cantidad de PX");
+
+    alert(INFO_NUEVOS_PX);
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarPX,isDisabled:alwaysEnabled});
 }
 
@@ -1190,7 +1153,8 @@ function asignarPX(parametros) {
 function eligeEspecialidad(event) {
     var habilidad = getHabilidad(event.data.nombreHabilidad);
 
-    alert("Ejemplos de especialidades " + habilidad.getEspecializacionesPosibles());
+
+    alert(INFO_EJEMPLOS_ESPECIALIDADES + habilidad.getEspecializacionesPosibles());
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{nombreHabilidad:event.data.nombreHabilidad},{principal:asignarEspecialidad,isDisabled:alwaysEnabled});
 }
 
@@ -1259,55 +1223,11 @@ function comprarCambioCategoria(personaje,nuevaCategoria) {
         personaje.cambioCategoria = nivelDeCambio;
         personaje.proximaCategoria = nuevaCategoria;
     } else {
-        alert ("PDs insuficientes");
+        alert (AVISO_PD_INSUFICIENTES);
     }
 }
 
-function cambiarCategoria() {
-    var dialogElegirCategoria = getDiv("");
-    dialogElegirCategoria.prop("id",DIV_DIALOG_ELEGIR_CATEGORIA);
-    dialogElegirCategoria.empty();
 
-    dialogElegirCategoria.dialog({
-        modal: true,
-        autoOpen: true,
-        draggable: true,
-        resizable: true,
-        closeOnEscape: true,
-        ////show: "puff",
-        title: DIAG_ELEGIR_CATEGORIA_TITULO,
-        width: ANCHO_DIALOGO,
-        height: ALTO_DIALOGO,
-        maxHeight: ALTO_DIALOGO
-    });
-
-
-
-    var gridCategorias = $("<ul></ul>").addClass("four_up tiles");
-
-    for (var i = 0; i < categorias_set.length ; i++) {
-        var categoria = categorias_set[i];
-
-        var divCategoria = boton("big primary btn pretty",_l(categoria.getNombre()) + "[" + costeCambioCategoria(personaje_actual.getCategoria(),categoria) + " " + _l(UDS_PD)+"]",!puedeElegirCategoria(categoria.getNombre()));
-        divCategoria.css("width","100%");
-
-        gridCategorias.append( $("<li></li>").append(divCategoria));
-
-        divCategoria.on("click", {categoria:categoria}, function(event) {
-            dialogElegirCategoria.dialog("close");
-            comprarCambioCategoria(personaje_actual,event.data.categoria);
-        });
-
-        divCategoria.on("mouseenter", {categoria:categoria}, mostrarDetallesCategoria);
-    }
-
-    dialogElegirCategoria.append(gridCategorias);
-
-    var divExplicacion = $("<div></div>");
-    divExplicacion.addClass(CSS_CLASS_EXPLICACION_CATEGORIA);
-    divExplicacion.attr("id",DESTINO_EXPLICACION_CATEGORIA);
-    dialogElegirCategoria.append(divExplicacion);
-}
 
 function subirNivel() {
     var nivelActual = personaje_actual.getNivel() + personaje_actual.getRaza().getModNivel();
@@ -1389,7 +1309,7 @@ function getNivelPorPX(px) {
     return nivel;
 }
 
-var ERR_NIVEL_ERRONEO = "Error: nivel erróneo";
+
 
 function getPDsPorNivel(nivel) {
     var pds = 0;

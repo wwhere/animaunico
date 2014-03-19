@@ -30,9 +30,11 @@ var venenos_set = [];
 var varios_set = [];
 
 var equipo_set = [armas_set, armaduras_set, bardas_set, yelmos_set, vestimenta_set, calzado_set, animales_set, transporte_set, embarcaciones_set, raciones_set, vivienda_set, decoracion_set, orfebreria_set, venenos_set,varios_set];
-var categorias_equipo = ["Armas", "Armaduras", "Bardas", "Yelmos", "Vestimentas", "Calzado", "Animales", "Transporte", "Embarcaciones", "Raciones", "Viviendas", "Decoraciones", "Orfebrería", "Venenos", "Varios"];
-var ERR_ARMA_DESCONOCIDA = "Error: Arma desconocida";
-var ERR_INDICE_TAM_DESCONOCIDO = "Error: tamaño desconocido";
+
+var categorias_equipo = [ EQUIPO_TIPO_ARMAS, EQUIPO_TIPO_ARMADURAS, EQUIPO_TIPO_BARDAS,
+    EQUIPO_TIPO_YELMOS, EQUIPO_TIPO_VESTIMENTAS, EQUIPO_TIPO_CALZADO, EQUIPO_TIPO_ANIMALES,
+    EQUIPO_TIPO_TRANSPORTE, EQUIPO_TIPO_EMBARCACIONES, EQUIPO_TIPO_RACIONES,
+    EQUIPO_TIPO_VIVIENDAS, EQUIPO_TIPO_DECORACIONES, EQUIPO_TIPO_ORFEBRERIA, EQUIPO_TIPO_VENENOS, EQUIPO_TIPO_VARIOS];
 
 /**
  * Inicializa las listas de equipo. Las ordena.
@@ -55,7 +57,7 @@ function getArma(nombreArma) {
             return armas_set[i]
         }
     }
-    throw ERR_ARMA_DESCONOCIDA + ": " + nombreArma;
+    throw _l(ERR_ARMA_DESCONOCIDA) + ": " + nombreArma;
 }
 
 /**
@@ -67,7 +69,7 @@ function getArma(nombreArma) {
 function armaConModificador(arma,modificador) {
     var textMod = modificadorBonito(modificador);
     var armaConMod = arma.duplicar();
-    armaConMod.setNombre(armaConMod.getNombre() + " " + textMod);
+    armaConMod.setNombre(_l(armaConMod.getNombre()) + " " + textMod);
 
     alterarCosteDisponibilidad(modificador, armaConMod);
 
@@ -132,7 +134,7 @@ function alterarCosteDisponibilidad(modificador, equipo) {
 function armaduraConModificador(armadura,modificador) {
     var textMod = modificadorBonito(modificador);
     var armaduraConMod = armadura.duplicar();
-    armaduraConMod.setNombre(armaduraConMod.getNombre() + " " + textMod);
+    armaduraConMod.setNombre(_l(armaduraConMod.getNombre()) + " " + textMod);
 
     alterarCosteDisponibilidad(modificador, armaduraConMod);
 
@@ -200,7 +202,7 @@ function armaMayor(arma, tam) {
 function equipoConModificador(equipo,modificador) {
     var textMod = modificadorBonito(modificador);
     var equipoConMod = equipo.duplicar();
-    equipoConMod.setNombre(equipoConMod.getNombre() + " " + textMod);
+    equipoConMod.setNombre(_l(equipoConMod.getNombre()) + " " + textMod); //TODO al aplicarlo de este modo no sera localizable
 
     alterarCosteDisponibilidad(modificador, equipoConMod);
 
@@ -330,34 +332,30 @@ function indiceTamaño(tam) {
             indice =  50;
             break;
         default:
-            throw ERR_INDICE_TAM_DESCONOCIDO + ": " + tam;
+            throw _l(ERR_INDICE_TAM_DESCONOCIDO) + ": " + tam;
     }
     return indice;
 }
 
-var VESTIMENTA_CALIDAD_MEDIOCRE = "mediocre";
-var VESTIMENTA_CALIDAD_NORMAL = "normal";
-var VESTIMENTA_CALIDAD_BUENA = "buena";
-var VESTIMENTA_CALIDAD_LUJOSA = "lujosa";
 
 function calidadVestimenta(itemVestimenta, calidad) {
     var vestimentaCalidad = itemVestimenta.duplicar();
     var multiplicadorPrecio = 1;
 
     switch (calidad) {
-        case VESTIMENTA_CALIDAD_MEDIOCRE :
+        case CALIDAD_MEDIOCRE :
             multiplicadorPrecio = 0.5;
-            vestimentaCalidad.setNombre(vestimentaCalidad.getNombre() + "(calidad " + calidad + ")");
+            vestimentaCalidad.setNombre(_l(vestimentaCalidad.getNombre()) + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case VESTIMENTA_CALIDAD_BUENA :
+        case CALIDAD_BUENA :
             multiplicadorPrecio = 10;
-            vestimentaCalidad.setNombre(vestimentaCalidad.getNombre() + "(calidad " + calidad + ")");
+            vestimentaCalidad.setNombre(_l(vestimentaCalidad.getNombre()) + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case VESTIMENTA_CALIDAD_LUJOSA :
+        case CALIDAD_LUJOSA :
             multiplicadorPrecio = 100;
-            vestimentaCalidad.setNombre(vestimentaCalidad.getNombre() + "(calidad " + calidad + ")");
+            vestimentaCalidad.setNombre(_l(vestimentaCalidad.getNombre()) + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case VESTIMENTA_CALIDAD_NORMAL :
+        case CALIDAD_NORMAL :
         default :
             multiplicadorPrecio = 1;
             break;
@@ -369,10 +367,6 @@ function calidadVestimenta(itemVestimenta, calidad) {
 }
 
 
-var VIVIENDA_CALIDAD_MEDIOCRE = "mediocre";
-var VIVIENDA_CALIDAD_NORMAL = "normal";
-var VIVIENDA_CALIDAD_BUENA = "buena";
-var VIVIENDA_CALIDAD_LUJOSA = "lujosa";
 
 /**
  *
@@ -391,19 +385,19 @@ function calidadVivienda(itemVivienda, calidad, esMetropolitana) {
     }
 
     switch (calidad) {
-        case VIVIENDA_CALIDAD_MEDIOCRE :
+        case CALIDAD_MEDIOCRE :
             multiplicadorPrecio *= 0.5;
-            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(calidad " + calidad + ")");
+            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(" + _l(TXT_CALIDAD) + " " + _l(calidad) + ")");
             break;
-        case VIVIENDA_CALIDAD_BUENA :
+        case CALIDAD_BUENA :
             multiplicadorPrecio *= 2;
-            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(calidad " + calidad + ")");
+            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(" + _l(TXT_CALIDAD) + " " + _l(calidad) + ")");
             break;
-        case VIVIENDA_CALIDAD_LUJOSA :
+        case CALIDAD_LUJOSA :
             multiplicadorPrecio *= 10;
-            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(calidad " + calidad + ")");
+            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case VIVIENDA_CALIDAD_NORMAL :
+        case CALIDAD_NORMAL :
         default :
             multiplicadorPrecio *= 1;
             break;
@@ -414,34 +408,30 @@ function calidadVivienda(itemVivienda, calidad, esMetropolitana) {
     return viviendaCalidad;
 }
 
-var ORFEBRERIA_CALIDAD_MEDIOCRE = "mediocre";
-var ORFEBRERIA_CALIDAD_NORMAL = "normal";
-var ORFEBRERIA_CALIDAD_BUENA = "buena";
-var ORFEBRERIA_CALIDAD_EXCELENTE = "excelente";
-var ORFEBRERIA_CALIDAD_LUJOSA = "lujosa";
+
 
 function calidadOrfebreria(itemOrfebreria, calidad) {
     var orfebreriaCalidad = itemOrfebreria.duplicar();
     var multiplicadorPrecio = 1;
 
     switch (calidad) {
-        case ORFEBRERIA_CALIDAD_MEDIOCRE :
+        case CALIDAD_MEDIOCRE :
             multiplicadorPrecio = 0.5;
             orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case ORFEBRERIA_CALIDAD_BUENA :
+        case CALIDAD_BUENA :
             multiplicadorPrecio = 2;
             orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case ORFEBRERIA_CALIDAD_EXCELENTE :
+        case CALIDAD_EXCELENTE :
             multiplicadorPrecio = 10;
             orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case ORFEBRERIA_CALIDAD_LUJOSA :
+        case CALIDAD_LUJOSA :
             multiplicadorPrecio = 100;
             orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case ORFEBRERIA_CALIDAD_NORMAL :
+        case CALIDAD_NORMAL :
         default :
             multiplicadorPrecio = 1;
             break;

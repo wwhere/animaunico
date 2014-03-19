@@ -147,20 +147,20 @@ var UI_ATAQUE = (new L("Ataque","Ataque","Attack")).getId();
 var UI_PARADA = (new L("Parada","Parada","Block")).getId();
 var UI_ESQUIVA = (new L("Esquiva","Esquiva","Dodge")).getId();
 var UI_LLEVAR_ARMADURA = (new L("Llevar Armadura","Llevar Armadura","Wear Armor")).getId();
-var UI_KI = (new L("Ki","Ki","Ki")).getId();
-var UI_ACUMULACION_KI = (new L("Acumulación de Ki","Acumulación de Ki","Ki Accumulation")).getId();
+var UI_KI = (new L("UI_Ki","Ki","Ki")).getId();
+var UI_ACUMULACION_KI = (new L("UI_ACUMULACION_KI","Acumulación de Ki","Ki Accumulation")).getId();
 var UI_KI_AGI = (new L("Ki Agilidad","Ki Agilidad","Agility Ki")).getId();
-var UI_ACUMULACION_KI_AGI = (new L("Ac. de Ki Agilidad","Ac. de Ki Agilidad","Agility Ki Accum")).getId();
-var UI_KI_DES = (new L("Ki Destreza","Ki Destreza","Dextery Ki")).getId();
-var UI_ACUMULACION_KI_DES = (new L("Ac. de Ki Destreza","Ac. de Ki Destreza","Dextery Ki Accum")).getId();
-var UI_KI_FUE = (new L("Ki Fuerza","Ki Fuerza","Strength Ki")).getId();
-var UI_ACUMULACION_KI_FUE = (new L("Ac. de Ki Fuerza","Ac. de Ki Fuerza","Strength Ki Accum")).getId();
-var UI_KI_CON = (new L("Ki Constitución","Ki Constitución","Constitution Ki")).getId();
-var UI_ACUMULACION_KI_CON = (new L("Ac. de Ki Constitución","Ac. de Ki Constitución","Constitution Ki Accum")).getId();
-var UI_KI_POD = (new L("Ki Poder","Ki Poder","Power Ki")).getId();
-var UI_ACUMULACION_KI_POD = (new L("Ac. de Ki Poder","Ac. de Ki Poder","Power Ki Accum")).getId();
-var UI_KI_VOL = (new L("Ki Voluntad","Ki Voluntad","Willpower Ki")).getId();
-var UI_ACUMULACION_KI_VOL = (new L("Ac. de Ki Voluntad","Ac. de Ki Voluntad","Willpower Ki Accum")).getId();
+var UI_ACUMULACION_KI_AGI = (new L("UI_KI_AGI","Ac. de Ki Agilidad","Agility Ki Accum")).getId();
+var UI_KI_DES = (new L("UI_KI_DES","Ki Destreza","Dextery Ki")).getId();
+var UI_ACUMULACION_KI_DES = (new L("UI_ACUMULACION_KI_DES","Ac. de Ki Destreza","Dextery Ki Accum")).getId();
+var UI_KI_FUE = (new L("UI_KI_FUE","Ki Fuerza","Strength Ki")).getId();
+var UI_ACUMULACION_KI_FUE = (new L("UI_ACUMULACION_KI_FUE","Ac. de Ki Fuerza","Strength Ki Accum")).getId();
+var UI_KI_CON = (new L("UI_KI_CON","Ki Constitución","Constitution Ki")).getId();
+var UI_ACUMULACION_KI_CON = (new L("UI_ACUMULACION_KI_CON","Ac. de Ki Constitución","Constitution Ki Accum")).getId();
+var UI_KI_POD = (new L("UI_KI_POD","Ki Poder","Power Ki")).getId();
+var UI_ACUMULACION_KI_POD = (new L("UI_ACUMULACION_KI_POD","Ac. de Ki Poder","Power Ki Accum")).getId();
+var UI_KI_VOL = (new L("UI_KI_VOL","Ki Voluntad","Willpower Ki")).getId();
+var UI_ACUMULACION_KI_VOL = (new L("UI_ACUMULACION_KI_VOL","Ac. de Ki Voluntad","Willpower Ki Accum")).getId();
 
 var UI_HABILIDAD_NATURAL = (new L("Habilidad Natural (+10)","Habilidad Natural (+10)","Natural Skill (+10)")).getId();
 var UI_BONIFICADOR_NATURAL_FISICO = (new L("Bonificador natural físico (añadir bono de característica)","Bonificador natural físico (añadir bono de característica)","Physical Natural Bonus (add ability bonus)")).getId();
@@ -348,6 +348,7 @@ var PER3 = (new L("PER","PER","PER")).getId();
 var ERR_CARACTERISTICA_ERRONEA = (new L("Error: Nombre de característica erróneo","Error: Nombre de característica erróneo","Error: Wrong ability name")).getId();
 var ERR_VALOR_CARACTERISTICA_ERRONEO = (new L("Error: Valor de característica fuera de rango","Error: Valor de característica fuera de rango","Error: Ability value out of bounds")).getId();
 
+var ERR_CATEGORIA_ERRONEA = (new L("Error: Nombre de categoría erróneo","Error: Nombre de categoría erróneo","Error: Wrong class name")).getId();
 
 var NOM_ARQ_LUCHADOR = (new L("Luchador","Luchador","Fighter")).getId();
 var NOM_ARQ_MISTICO = (new L("Místico","Místico","Mystic")).getId();
@@ -548,3 +549,211 @@ var UI_COMPRAR_TABLA_ARMAS = (new L("Comprar tabla de armas","Comprar tabla de a
 var UI_MO = (new L("dinero mo", "mo", "gp")).getId();
 var UI_MP = (new L("dinero mp", "mp", "sp")).getId();
 var UI_MC = (new L("dinero mc", "mc", "cp")).getId();
+
+
+var UI_ESPECIFICAR = (new L("Especificar","Especificar","Specify")).getId();
+var UI_PREGUNTA_PUNTOS_METODO_5 = (new L("¿Cuántos puntos quieres repartir?","¿Cuántos puntos quieres repartir?","How many points?")).getId();
+var DIAG_METODO_CREACION_TITULO = (new L("Seleccionar método de creación","Seleccionar método de creación","Select creation method")).getId();
+var DIAG_ELEGIR_RAZA_TITULO = (new L("Seleccionar raza","Seleccionar raza","Select race")).getId();
+var DIAG_COMPRAR_VENTAJAS_TITULO = (new L("Comprar ventajas","Comprar ventajas","Buy Advantages")).getId();
+var DIAG_ELEGIR_DESVENTAJAS_TITULO = (new L("Elegir desventajas","Elegir desventajas","Choose Disadvantages")).getId();
+var DIAG_ELEGIR_BONOS_NATURALES_TITULO = (new L("Elegir bonos naturales","Elegir bonos naturales","Choose natural bonuses")).getId();
+var DIAG_ELEGIR_OPCIONES_TITULO = (new L("Elegir opciones","Elegir opciones","Choose options")).getId();
+var DIAG_PODERES_PSIQUICOS = (new L("Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
+var DIAG_PODERES_KI = (new L("Dominios del Ki","Dominios del Ki","Ki")).getId();
+var DIAG_PODERES_MAGIA = (new L("Magia","Magia","Magic")).getId();
+var DIAG_CREACION_TECNICA = (new L("Crear Técnica de Dominio","Crear Técnica de Dominio","Create Ki Technique")).getId();
+var DIAG_REASIGNA_COSTE_KI = (new L("Reparte coste de ki","Reparte coste de ki","Distribute ki cost")).getId();
+var DIAG_COMPRA_EQUIPO = (new L("Compra equipo","Compra equipo","Buy Equipment")).getId();
+var EXPLI_METODO_1 = (new L("EXPLI_METODO_1",
+    "El método tradicional y más recomendado para generar las tiradas es el de lanzar un D10 ocho veces y apuntar las características en una hoja de papel. Ignora cualquier resultado de 1, 2 ó 3 que saques y repítelo, lo que permitirá a tu personaje no tener en ningún momento puntuaciones demasiado bajas. Una vez que tengas las ocho, sustituye la menor por un 9 para asegurar así que, incluso en el improbable caso de que no tengas ninguna cifra elevada, el personaje será excepcional en al menos un campo. A continuación reparte las cifras como prefieras, definiendo exactamente lo que quieres. Este sistema de generación proporciona unas cifras por media elevadas, pero es natural teniendo en cuenta que los personajes suelen ser individuos excepcionales.",
+    "Traditional method. Throw a D10 eight times. Ignore die lesser than four and repeat them. Then change a value for a 9. Then distribute the values."
+)).getId();
+var EXPLI_METODO_2 = (new L("EXPLI_METODO_2",
+    "Consiste en tirar dos D10 ocho veces, anotando sólo el resultado más alto de los dos obtenidos. Cuando se tengan las ocho cifras, el personaje las reparte libremente entre las características. Este método asegura una media alta, pero también permite obtener algunas cifras realmente bajas.",
+    "Throw two D10 eight times, keeping the higher value each time. Then distribute the values."
+)).getId();
+var EXPLI_METODO_3 = (new L("EXPLI_METODO_3",
+    "Este método se utiliza en el caso de que los jugadores decidan interpretar personajes comunes, sin características demasiado excepcionales. Consiste en lanzar ocho veces un dado apuntando en orden las cifras obtenidas en las casillas de características. Cualquier tirada, por alta o baja que sea, deberá aceptarse.",
+    "Throw a D10 eight times, and assign the values in order to the abilities."
+));
+var EXPLI_METODO_4 = (new L("EXPLI_METODO_4",
+    "Este método consiste en tirar siete veces un D10 y sumar todos los resultados obtenidos. La cifra resultante, un número entre siete y setenta, puede ser dividida libremente entre las características, pero sin que en ningún caso se pueda superar el diez.",
+    "Throw 7d10 and add up the results. Then share out the total between the abilities."
+)).getId();
+var EXPLI_METODO_5 = (new L("EXPLI_METODO_5",
+    "Se reparten 55 puntos entre las características. Cualquier diez cuesta dos puntos en vez de uno. Pueden repartirse 45 puntos o 65, según el nivel de la partida.",
+    "Share out 45, 55 or 65 points between the abilities. THe point to reach 10 costs double."
+)).getId();
+
+var ERR_PC_INSUFICIENTES = (new L("PC insuficientes","PC insuficientes","Not enough CP")).getId();
+var ERR_METODO_DESCONOCIDO = (new L("Error: Metodo de generación desconocido","Error: Metodo de generación desconocido","Error: Wrong generation method name")).getId();
+var ERR_MAX_DESVENTAJAS = (new L("Límite de desventajas alcanzado","Límite de desventajas alcanzado","Max number of disadvantages reached.")).getId();
+var ERR_OVERFLOW_NIVEL = (new L("Límite de gasto del nivel previo alcanzando","Límite de gasto del nivel previo alcanzando","Previous level value reached")).getId();
+
+var CONFIRMACION_NUEVO_PERSONAJE = (new L("¿Seguro? Esto sustituirá al personaje actual","¿Seguro? Esto sustituirá al personaje actual","Are you sure? This will end the current character")).getId();
+var AVISO_CVS_INSUFICIENTES = (new L("CVs libres insuficientes","CVs libres insuficientes","Not enough PPs")).getId();
+
+var AVISO_MAX_PD_ATAQUE_SOLO = (new L("Max PDs en Ataque/Defensa alcanzados (Mitad del normal por no desarrollar defensa)",
+    "Max PDs en Ataque/Defensa alcanzados (Mitad del normal por no desarrollar defensa)",
+    "Max DPs in Attack/Defense reached (Half the usual for developing only one)")).getId();
+var AVISO_ATAQUE_DEFENSA_MUY_SEPARADOS = (new L("Ataque y Defensa base no pueden separarse en más de 50.",
+    "Ataque y Defensa base no pueden separarse en más de 50.",
+    "Attack and Defense can nothave a difference greater than 50.")).getId();
+var AVISO_MAX_PD_ATAQUE_DEFENSA = (new L("Max PDs en Ataque/Defensa alcanzados",
+    "Max PDs en Ataque/Defensa alcanzados",
+    "Max DPs in Attack/Defense reached.")).getId();
+var AVISO_MAX_PD_PROYECCION_MAGICA = (new L("Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)",
+    "Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)",
+    "Max DPs in Magic Projection reached")).getId();
+var AVISO_CV_YA_GASTADOS = (new L("CVs ya gastados. Primero devuelvelos.",
+    "CVs ya gastados. Primero devuelvelos.",
+    "PPs already spent. First return them.")).getId();
+var AVISO_MAX_PD_PROYECCION_PSIQUICA = (new L("Max PDs en Proyección Psíquica alcanzados (mitad del tope en sobrenaturales)",
+    "Max PDs en Proyección Psíquica alcanzados (mitad del tope en sobrenaturales)",
+    "Max DPs in Psychic Projection reached")).getId();
+var AVISO_MAX_PD_GRUPO = (new L("Max PDs alcanzados en ","Max PDs alcanzados en ","Max DPs reached in ")).getId();
+var AVISO_PD_INSUFICIENTES = (new L("PDs insuficientes","PDs insuficientes","Not enough DPs")).getId();
+var AVISO_NO_SE_PUEDE_AUMENTAR_MAS = (new L("No se puede aumentar más","No se puede aumentar más","Can't get higher")).getId();
+var AVISO_NO_SE_PUEDE_DISMINUIR_MAS = (new L("No se puede disminuir más","No se puede disminuir más","Can't get lower")).getId();
+
+var INFO_PESO_RECOMENDADO = (new L("Con tu tamaño, tu peso debería ser de ","Con tu tamaño, tu peso debería ser de ",
+    "With your Size, your weight should be ")).getId();
+var INFO_ALTURA_RECOMENDADA = (new L("Con tu tamaño, tu altura debería ser de ","Con tu tamaño, tu altura debería ser de ",
+    "With your Size, your height should be ")).getId();
+var INFO_NUEVOS_PX = (new L("Introduce la nueva cantidad de PX","Introduce la nueva cantidad de PX",
+    "Input the new XP value")).getId();
+var INFO_EJEMPLOS_ESPECIALIDADES = (new L("Ejemplos de especialidades ","Ejemplos de especialidades ",
+    "Specialities examples")).getId();
+
+var ERR_NIVEL_ERRONEO = (new L("Error: nivel erróneo","Error: nivel erróneo","Error: wrong level")).getId();
+
+var ERR_ELAN_ERRONEO = (new L("Error: Elan no conocido","Error: Elan no conocido","Error: Unknown Elan")).getId();
+
+var EQUIPO_TIPO_ARMAS = (new L("Armas","Armas","Weapons")).getId();
+var EQUIPO_TIPO_ARMADURAS = (new L("Armaduras","Armaduras","Armors")).getId();
+var EQUIPO_TIPO_BARDAS = (new L("Bardas","Bardas","Barding")).getId();
+var EQUIPO_TIPO_YELMOS = (new L("Yelmos","Yelmos","Helms")).getId();
+var EQUIPO_TIPO_VESTIMENTAS = (new L("Vestimentas","Vestimentas","Clothes")).getId();
+var EQUIPO_TIPO_CALZADO = (new L("Calzado","Calzado","Shoes")).getId();
+var EQUIPO_TIPO_ANIMALES = (new L("Animales","Animales","Animals")).getId();
+var EQUIPO_TIPO_TRANSPORTE = (new L("Transporte","Transporte","Transportations")).getId();
+var EQUIPO_TIPO_EMBARCACIONES = (new L("Embarcaciones","Embarcaciones","Boats")).getId();
+var EQUIPO_TIPO_RACIONES = (new L("Raciones","Raciones","Rations")).getId();
+var EQUIPO_TIPO_VIVIENDAS = (new L("Viviendas","Viviendas","Houses")).getId();
+var EQUIPO_TIPO_DECORACIONES = (new L("Decoraciones","Decoraciones","Decorations")).getId();
+var EQUIPO_TIPO_ORFEBRERIA = (new L("Orfebrería","Orfebrería","Goldsmithing")).getId();
+var EQUIPO_TIPO_VENENOS = (new L("Venenos","Venenos","Poisons")).getId();
+var EQUIPO_TIPO_VARIOS = (new L("Varios","Varios","Others")).getId();
+
+var ERR_ARMA_DESCONOCIDA = (new L("Error: Arma desconocida","Error: Arma desconocida","Error: Unknown weapon")).getId();
+var ERR_INDICE_TAM_DESCONOCIDO = (new L("Error: tamaño desconocido","Error: tamaño desconocido","Error: Unknown size")).getId();
+
+var CALIDAD_MEDIOCRE = (new L("mediocre","mediocre","mediocre")).getId();
+var CALIDAD_NORMAL = (new L("normal","normal","normal")).getId();
+var CALIDAD_BUENA = (new L("buena","buena","good")).getId();
+var CALIDAD_LUJOSA = (new L("lujosa","lujosa","luxurious")).getId();
+
+var TXT_CALIDAD = (new L("calidad","calidad","quality")).getId();
+var CALIDAD_EXCELENTE = (new L("excelente","excelente","excellent")).getId();
+
+var TIPO_CAPACIDAD = (new L("Capacidad especial","Capacidad especial","Special ability")).getId();
+
+var TIPO_HB_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Skills")).getId();
+var HB_ATAQUE = (new L("Habilidad de Ataque","Habilidad de Ataque","Attack skill")).getId();
+var HB_PARADA = (new L("Habilidad de Parada","Habilidad de Parada","Block skill")).getId();
+var HB_ESQUIVA = (new L("Habilidad de Esquiva","Habilidad de Esquiva","Dodge skill")).getId();
+var HB_ARMADURA = (new L("Llevar Armadura","Llevar Armadura","Wear armor")).getId();
+var HB_KI = (new L("Ki","Ki","Ki")).getId();
+var HB_KI_FUE = (new L("Ki Fuerza","Ki Fuerza","Strength Ki")).getId();
+var HB_KI_DES = (new L("Ki Destreza","Ki Destreza","Dextery Ki")).getId();
+var HB_KI_AGI = (new L("Ki Agilidad","Ki Agilidad","Agility Ki")).getId();
+var HB_KI_VOL = (new L("Ki Voluntad","Ki Voluntad","Willpower Ki")).getId();
+var HB_KI_POD = (new L("Ki Poder","Ki Poder","Power Ki")).getId();
+var HB_KI_CON = (new L("Ki Constitución","Ki Constitución","Constitution Ki")).getId();
+var HB_ACUM_KI = (new L("Acumulación Ki","Acumulación Ki","Ki Accumulation")).getId();
+var HB_ACUM_KI_FUE =(new L("Acumulación Ki Fuerza","Ac. de Ki Fuerza","Strength Ki Accum")).getId();
+var HB_ACUM_KI_DES = (new L("Acumulación Ki Destreza","Ac. de Ki Destreza","Dextery Ki Accum")).getId();
+var HB_ACUM_KI_AGI =(new L("Acumulación Ki Agilidad","Ac. de Ki Agilidad","Agility Ki Accum")).getId();
+var HB_ACUM_KI_VOL = (new L("Acumulación Ki Voluntad","Ac. de Ki Voluntad","Willpower Ki Accum")).getId();
+var HB_ACUM_KI_POD = (new L("Acumulación Ki Poder","Ac. de Ki Poder","Power Ki Accum")).getId();
+var HB_ACUM_KI_CON = (new L("Acumulación Ki Constitución","Ac. de Ki Constitución","Constitution Ki Accum")).getId();
+/*TABLAS*/
+
+/***************POR AQUI********************/
+var TIPO_HB_SOBRENATURAL = "Habilidades Sobrenaturales";
+var HB_ZEON = "Zeon";
+var HB_ACT = "ACT";
+var HB_PROYECCION_MAGICA = "Proyección Mágica";
+var HB_CONVOCAR = "Convocar";
+var HB_DOMINAR = "Dominar";
+var HB_ATAR = "Atar";
+var HB_DESCONVOCAR = "Desconvocar";
+
+
+var TIPO_HB_PSIQUICA = "Habilidades Psíquicas";
+var HB_CV = "CV";
+var HB_PROYECCION_PSIQUICA = "Proyección Psíquica";
+var HB_POTENCIAL_PSIQUICO = "Potencial Psíquico";
+
+var HB_MULTIPLO_VIDA = "Múltiplos de vida";
+
+
+var TIPO_HB_ATLETICAS = "Atléticas";
+var HB_ACROBACIAS = "Acrobacias";
+var HB_ATLETISMO = "Atletismo";
+var HB_MONTAR = "Montar";
+var HB_NADAR = "Nadar";
+var HB_SALTAR = "Saltar";
+var HB_TREPAR = "Trepar";
+
+var TIPO_HB_SOCIALES = "Sociales";
+var HB_ESTILO = "Estilo";
+var HB_INTIMIDAR = "Intimidar";
+var HB_LIDERAZGO = "Liderazgo";
+var HB_PERSUASION = "Persuasión";
+
+var TIPO_HB_SUBTERFUGIO = "Subterfugio";
+var HB_CERRAJERIA = "Cerrajería";
+var HB_DISFRAZ = "Disfraz";
+var HB_OCULTARSE = "Ocultarse";
+var HB_ROBO = "Robo";
+var HB_SIGILO = "Sigilo";
+var HB_TRAMPERIA = "Trampería";
+var HB_VENENOS = "Venenos";
+
+var TIPO_HB_PERCEPTIVAS = "Perceptivas";
+var HB_ADVERTIR = "Advertir";
+var HB_BUSCAR = "Buscar";
+var HB_RASTREAR = "Rastrear";
+
+var TIPO_HB_INTELECTUALES = "Intelectuales";
+var HB_ANIMALES = "Animales";
+var HB_CIENCIA = "Ciencia";
+var HB_HERBOLARIA = "Herbolaria";
+var HB_HISTORIA = "Historia";
+var HB_MEDICINA = "Medicina";
+var HB_MEMORIZAR = "Memorizar";
+var HB_NAVEGACION = "Navegación";
+var HB_OCULTISMO = "Ocultismo";
+var HB_TASACION = "Tasación";
+var HB_VALORACION_MAGICA = "Valoración mágica";
+
+var TIPO_HB_VIGOR = "Vigor";
+var HB_FRIALDAD = "Frialdad";
+var HB_PROEZAS_FUERZA = "Proezas de fuerza";
+var HB_RESISTENCIA_DOLOR = "Resistencia al dolor";
+
+var TIPO_HB_CREATIVAS = "Creativas";
+var HB_ARTE = "Arte";
+var HB_BAILE = "Baile";
+var HB_FORJA = "Forja";
+var HB_MUSICA = "Música";
+var HB_TRUCOS_MANOS = "Trucos de manos";
+
+var PEN_ARMADURA_NO = "Sin penalizador por armadura";
+var PEN_ARMADURA_SI = "Con penalizador por armadura";
+var PEN_ARMADURA_SI_IRREDUCIBLE = "Con penalizador por armadura, no reducible";
+var PEN_ARMADURA_SI_MEDIO_REDUCIBLE = "Con penalizador por armadura, reducible a la mitad";
+
+var UI_NO_USABLE_SIN_RANGOS = "--";

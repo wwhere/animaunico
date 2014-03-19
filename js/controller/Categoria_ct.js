@@ -4,8 +4,6 @@
  */
 var categorias_set = [];
 
-var ERR_CATEGORIA_ERRONEA = "Error: Nombre de categoría erróneo";
-
 /**
  * Devuelve la Categoria que tiene el nombre indicado
  * @param {string} nombre El nombre de la categoría.

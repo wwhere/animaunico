@@ -10,8 +10,6 @@ var artesMarcialesBasicas_set = [];
 var artesMarcialesAvanzadas_set = [];
 var allArtesMarciales = {};
 
-var ERR_ARTE_MARCIAL_ERRONEA = "Error: Nombre de arte marcial erróneo";
-
 /**
  * Coste de un arte marcial
  * @type {number}
@@ -88,9 +86,10 @@ function comprobarNumeroArtesMarciales() {
         var nombre = arteMarcial.getNombre();
 
         anularArteMarcial({data:{arteMarcial:arteMarcial,esPrimera:(indice==0)}});
-        alert ("Arte marcial " + nombre + " eliminada por no tener suficietne ataque/defensa.");
+        alert (_l(ERROR_ARTE_MARCIAL_ELIMINADA_ATAQUE_BAJO) + ": " + nombre);
     }
 }
+
 
 /**
  *
@@ -114,7 +113,7 @@ function compruebaRequisitosArtesMarcialesCompradas(event) {
         var arteMarcial = artesMarciales[i];
         if (!arteMarcial.cumpleRequisitos(personaje_actual)) {
             anularArteMarcial({data:{arteMarcial:arteMarcial,esPrimera:(personaje_actual.getArtesMarciales().length == 1)}});
-            alert("Arte marcial " + arteMarcial.getNombre() + " eliminada por no cumplirse ya sus requisitos");
+            alert(ERROR_ARTE_MARCIAL_ELIMINADA_REQUISITOS + ": " + arteMarcial.getNombre());
         }
     }
 }

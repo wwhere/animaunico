@@ -4,7 +4,7 @@
  */
 var berylShajad_set =  [];
 
-var ERR_ELAN_ERRONEO = "Error: Elan no conocido";
+
 
 /**
  * Devuelve el BerylShajad indicado por el nombre
@@ -18,7 +18,7 @@ function getElan(nombre) {
             return berylShajad_set[i];
         }
     }
-    throw ERR_ELAN_ERRONEO + ": " + nombre;
+    throw _l(ERR_ELAN_ERRONEO) + ": " + nombre;
 }
 
 /**

@@ -13,66 +13,11 @@ var allHabilidades = {};
 var HABILIDAD_NO_USABLE = -99999;
 var VALOR_INICIAL_SIN_RANGOS = -30;
 
-var TIPO_CAPACIDAD = "Capacidad especial";
-
-var TIPO_HB_COMBATE = "Habilidades de Combate";
-var HB_ATAQUE = "Habilidad de Ataque";
-var HB_PARADA = "Habilidad de Parada";
-var HB_ESQUIVA = "Habilidad de Esquiva";
-var HB_ARMADURA = "Llevar Armadura";
-var HB_KI = "Ki";
-var HB_KI_FUE = "Ki Fuerza";
-var HB_KI_DES = "Ki Destreza";
-var HB_KI_AGI = "Ki Agilidad";
-var HB_KI_VOL = "Ki Voluntad";
-var HB_KI_POD = "Ki Poder";
-var HB_KI_CON = "Ki Constitución";
-var HB_ACUM_KI = "Acumulación Ki";
-var HB_ACUM_KI_FUE = "Acumulación Ki Fuerza";
-var HB_ACUM_KI_DES = "Acumulación Ki Destreza";
-var HB_ACUM_KI_AGI = "Acumulación Ki Agilidad";
-var HB_ACUM_KI_VOL = "Acumulación Ki Voluntad";
-var HB_ACUM_KI_POD = "Acumulación Ki Poder";
-var HB_ACUM_KI_CON = "Acumulación Ki Constitución";
-/*TABLAS*/
-
-var TIPO_HB_SOBRENATURAL = "Habilidades Sobrenaturales";
-var HB_ZEON = "Zeon";
-var HB_ACT = "ACT";
-var HB_PROYECCION_MAGICA = "Proyección Mágica";
-var HB_CONVOCAR = "Convocar";
-var HB_DOMINAR = "Dominar";
-var HB_ATAR = "Atar";
-var HB_DESCONVOCAR = "Desconvocar";
-
-
-var TIPO_HB_PSIQUICA = "Habilidades Psíquicas";
-var HB_CV = "CV";
-var HB_PROYECCION_PSIQUICA = "Proyección Psíquica";
-var HB_POTENCIAL_PSIQUICO = "Potencial Psíquico";
-
-var HB_MULTIPLO_VIDA = "Múltiplos de vida";
-
-
-var TIPO_HB_ATLETICAS = "Atléticas";
-var HB_ACROBACIAS = "Acrobacias";
-var HB_ATLETISMO = "Atletismo";
-var HB_MONTAR = "Montar";
-var HB_NADAR = "Nadar";
-var HB_SALTAR = "Saltar";
-var HB_TREPAR = "Trepar";
-
 /**
  *
  * @type {string[]}
  */
 var habilidades_atleticas_set = [HB_ACROBACIAS,HB_ATLETISMO,HB_MONTAR,HB_NADAR,HB_SALTAR,HB_TREPAR];
-
-var TIPO_HB_SOCIALES = "Sociales";
-var HB_ESTILO = "Estilo";
-var HB_INTIMIDAR = "Intimidar";
-var HB_LIDERAZGO = "Liderazgo";
-var HB_PERSUASION = "Persuasión";
 
 /**
  *
@@ -80,25 +25,11 @@ var HB_PERSUASION = "Persuasión";
  */
 var habilidades_sociales_set = [HB_ESTILO,HB_INTIMIDAR,HB_LIDERAZGO,HB_PERSUASION];
 
-var TIPO_HB_SUBTERFUGIO = "Subterfugio";
-var HB_CERRAJERIA = "Cerrajería";
-var HB_DISFRAZ = "Disfraz";
-var HB_OCULTARSE = "Ocultarse";
-var HB_ROBO = "Robo";
-var HB_SIGILO = "Sigilo";
-var HB_TRAMPERIA = "Trampería";
-var HB_VENENOS = "Venenos";
-
 /**
  *
  * @type {string[]}
  */
 var habilidades_subterfugio_set = [HB_CERRAJERIA,HB_DISFRAZ,HB_OCULTARSE,HB_ROBO,HB_SIGILO,HB_TRAMPERIA,HB_VENENOS];
-
-var TIPO_HB_PERCEPTIVAS = "Perceptivas";
-var HB_ADVERTIR = "Advertir";
-var HB_BUSCAR = "Buscar";
-var HB_RASTREAR = "Rastrear";
 
 /**
  *
@@ -106,41 +37,17 @@ var HB_RASTREAR = "Rastrear";
  */
 var habilidades_perceptivas_set = [HB_ADVERTIR,HB_BUSCAR,HB_RASTREAR];
 
-var TIPO_HB_INTELECTUALES = "Intelectuales";
-var HB_ANIMALES = "Animales";
-var HB_CIENCIA = "Ciencia";
-var HB_HERBOLARIA = "Herbolaria";
-var HB_HISTORIA = "Historia";
-var HB_MEDICINA = "Medicina";
-var HB_MEMORIZAR = "Memorizar";
-var HB_NAVEGACION = "Navegación";
-var HB_OCULTISMO = "Ocultismo";
-var HB_TASACION = "Tasación";
-var HB_VALORACION_MAGICA = "Valoración mágica";
-
 /**
  *
  * @type {string[]}
  */
 var habilidades_intelectuales_set = [HB_ANIMALES,HB_CIENCIA,HB_HERBOLARIA,HB_HISTORIA,HB_MEDICINA,HB_MEMORIZAR,HB_NAVEGACION,HB_OCULTISMO,HB_TASACION,HB_VALORACION_MAGICA];
 
-var TIPO_HB_VIGOR = "Vigor";
-var HB_FRIALDAD = "Frialdad";
-var HB_PROEZAS_FUERZA = "Proezas de fuerza";
-var HB_RESISTENCIA_DOLOR = "Resistencia al dolor";
-
 /**
  *
  * @type {string[]}
  */
 var habilidades_vigor_set = [HB_FRIALDAD,HB_PROEZAS_FUERZA,HB_RESISTENCIA_DOLOR];
-
-var TIPO_HB_CREATIVAS = "Creativas";
-var HB_ARTE = "Arte";
-var HB_BAILE = "Baile";
-var HB_FORJA = "Forja";
-var HB_MUSICA = "Música";
-var HB_TRUCOS_MANOS = "Trucos de manos";
 
 /**
  *
@@ -152,20 +59,30 @@ var habilidades_creativas_set = [HB_ARTE,HB_BAILE,HB_FORJA,HB_MUSICA,HB_TRUCOS_M
  *
  * @type {string[][]}
  */
-var habilidades_secundarias = [habilidades_atleticas_set, habilidades_sociales_set, habilidades_subterfugio_set, habilidades_perceptivas_set, habilidades_intelectuales_set, habilidades_vigor_set, habilidades_creativas_set];
+var habilidades_secundarias = [
+    habilidades_atleticas_set,
+    habilidades_vigor_set,
+    habilidades_perceptivas_set,
+    habilidades_intelectuales_set,
+    habilidades_sociales_set,
+    habilidades_subterfugio_set,
+    habilidades_creativas_set
+];
 
 /**
  *
  * @type {string[]}
  */
-var habilidades_secundarias_nombres_grupos = [TIPO_HB_ATLETICAS, TIPO_HB_SOCIALES, TIPO_HB_SUBTERFUGIO, TIPO_HB_PERCEPTIVAS, TIPO_HB_INTELECTUALES, TIPO_HB_VIGOR, TIPO_HB_CREATIVAS];
+var habilidades_secundarias_nombres_grupos = [
+    TIPO_HB_ATLETICAS,
+    TIPO_HB_VIGOR,
+    TIPO_HB_PERCEPTIVAS,
+    TIPO_HB_INTELECTUALES,
+    TIPO_HB_SOCIALES,
+    TIPO_HB_SUBTERFUGIO,
+    TIPO_HB_CREATIVAS
+];
 
-var PEN_ARMADURA_NO = "Sin penalizador por armadura";
-var PEN_ARMADURA_SI = "Con penalizador por armadura";
-var PEN_ARMADURA_SI_IRREDUCIBLE = "Con penalizador por armadura, no reducible";
-var PEN_ARMADURA_SI_MEDIO_REDUCIBLE = "Con penalizador por armadura, reducible a la mitad";
-
-var UI_NO_USABLE_SIN_RANGOS = "--";
 
 /**
  *
@@ -184,7 +101,7 @@ function addHabilidad(habilidad) {
 
 /**
  *
- * @param {strng} nombre
+ * @param {string} nombre
  * @returns {boolean}
  */
 function existeHabilidad(nombre) {
@@ -210,7 +127,7 @@ function getHabilidad(nombreHabilidad) {
     if (existeHabilidad(nombreHabilidad)) {
         return allHabilidades[nombreHabilidad];
     } else {
-        throw ERR_HABILIDAD_ERRONEA + " " + nombreHabilidad;
+        throw _l(ERR_HABILIDAD_ERRONEA) + " " + nombreHabilidad;
     }
 }
 
@@ -224,7 +141,7 @@ function getHabilidadesPorTipo(nombreTipo) {
     if (existeTipoHabilidad(nombreTipo)) {
         return allHabilidades[nombreTipo];
     } else {
-        throw ERR_TIPO_HABILIDAD_ERRONEO + " " + nombreTipo;
+        throw _l(ERR_TIPO_HABILIDAD_ERRONEO) + " " + nombreTipo;
     }
 }
 
