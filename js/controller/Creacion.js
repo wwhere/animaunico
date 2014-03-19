@@ -1133,10 +1133,10 @@ function elegirManualSexo() {
 function elegirClaseSocial() {
     muestraDialogoElegirOpciones(
         [
-            new OpcionMostrable(CLASE_SOCIAL_POBRE, ""),
-            new OpcionMostrable(CLASE_SOCIAL_MEDIO, ""),
-            new OpcionMostrable(CLASE_SOCIAL_ALTO, ""),
-            new OpcionMostrable(CLASE_SOCIAL_BAJA_NOBLEZA, "")
+            new OpcionMostrable(_l(CLASE_SOCIAL_POBRE),CLASE_SOCIAL_POBRE, ""),
+            new OpcionMostrable(_l(CLASE_SOCIAL_MEDIO),CLASE_SOCIAL_MEDIO, ""),
+            new OpcionMostrable(_l(CLASE_SOCIAL_ALTO),CLASE_SOCIAL_ALTO, ""),
+            new OpcionMostrable(_l(CLASE_SOCIAL_BAJA_NOBLEZA),CLASE_SOCIAL_BAJA_NOBLEZA, "")
         ],
         {},
         {

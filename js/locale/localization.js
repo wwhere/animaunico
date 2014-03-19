@@ -274,16 +274,16 @@ var ARMADURA_LOC_PETO = (new L("Peto","Peto","Chest")).getId();
 var ARMADURA_CLASE_BLANDA = (new L("Blanda","Blanda","Soft")).getId();
 var ARMADURA_CLASE_DURA = (new L("Dura","Dura","Hard")).getId();
 
-var TAM_ARMA_P = (new L("Pequeño","Pequeño","Small")).getId();
-var TAM_ARMA_P3 = (new L("P","P","S")).getId();
-var TAM_ARMA_M = (new L("Medio","Medio","Medium")).getId();
-var TAM_ARMA_M3 = (new L("M","M","M")).getId();
-var TAM_ARMA_G = (new L("Grande","Grande","Big")).getId();
-var TAM_ARMA_G3 = (new L("G","G","B")).getId();
-var TAM_ARMA_E = (new L("Enorme","Enorme","Enormous")).getId();
-var TAM_ARMA_E3 = (new L("E","E","E")).getId();
-var TAM_ARMA_GG = (new L("Gigante","Gigante","Gigantic")).getId();
-var TAM_ARMA_GG3 = (new L("GG","GG","GG")).getId();
+var TAM_ARMA_P = (new L("TAM_Pequeño","Pequeño","Small")).getId();
+var TAM_ARMA_P3 = (new L("TAM_P","P","S")).getId();
+var TAM_ARMA_M = (new L("TAM_Medio","Medio","Medium")).getId();
+var TAM_ARMA_M3 = (new L("TAM_M","M","M")).getId();
+var TAM_ARMA_G = (new L("TAM_Grande","Grande","Big")).getId();
+var TAM_ARMA_G3 = (new L("TAM_G","G","B")).getId();
+var TAM_ARMA_E = (new L("TAM_Enorme","Enorme","Enormous")).getId();
+var TAM_ARMA_E3 = (new L("TAM_E","E","E")).getId();
+var TAM_ARMA_GG = (new L("TAM_Gigante","Gigante","Gigantic")).getId();
+var TAM_ARMA_GG3 = (new L("TAM_GG","GG","GG")).getId();
 
 var CAT_ARMA_ARMA_CORTA = (new L("Arma Corta","Arma Corta","Short weapon")).getId();
 var CAT_ARMA_HACHA = (new L("Hacha","Hacha","Axe")).getId();

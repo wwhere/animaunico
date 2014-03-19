@@ -48,8 +48,8 @@ viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_ENLENTECER_EL_TIEMPO, 80));
 viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CREAR_ONDINA, 82));
 viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_CONGELAR_LA_MAGIA, 86));
 viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_EN_EL_INTERIOR_DEL_ESPEJO, 90));
-viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_SEñOR_DE_LOS_HIELOS, 92));
-viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_SEñOR_DE_LAS_AGUAS, 96));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_SEÑOR_DE_LOS_HIELOS, 92));
+viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_SEÑOR_DE_LAS_AGUAS, 96));
 viaAgua.addConjuro(new Conjuro( CONJURO_AGUA_UN_MUNDO_PERFECTO, 100));
 
 vias_set.push(viaAgua);

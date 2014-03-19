@@ -188,7 +188,7 @@ function muestraPersonales(estadoGeneracion) {
     divContenido.append(muestraPersonal(_l(UI_RAZA), _l(personaje_actual.getRaza().getNombre()), modificarPersonales,dialogoElegirRaza));
     divContenido.append(muestraPersonal(_l(UI_PESO), personaje_actual.getPeso(), modificarPersonales, elegirPeso));
     divContenido.append(muestraPersonal(_l(UI_ALTURA), personaje_actual.getAltura(), modificarPersonales, elegirAltura));
-    divContenido.append(muestraPersonal(_l(UI_ESTATUS_SOCIAL), personaje_actual.getEstatus(), modificarPersonales, elegirClaseSocial));
+    divContenido.append(muestraPersonal(_l(UI_ESTATUS_SOCIAL), _l(personaje_actual.getEstatus()), modificarPersonales, elegirClaseSocial));
     divContenido.append(muestraPersonalConDivExtra(_l(UI_CATEGORIA), _l(personaje_actual.getCategoria().getNombre()), modificarPersonales, dialogoElegirCategoria,{},
         muestraBotonPequeño(_l(UI_CAMBIAR_CAT),{},cambiarCategoria,"")));
 
