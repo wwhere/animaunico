@@ -10,7 +10,7 @@ function setIdiomaUI() {
     var lang = navigator.language || navigator.userLanguage;
 
     if ((lang.lastIndexOf("es") != -1) || (lang.lastIndexOf("spa") != -1)) {
-        IDIOMA_UI = ENG;
+        IDIOMA_UI = SPA;
     } else {
         IDIOMA_UI = ENG;
     }
