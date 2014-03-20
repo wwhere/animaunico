@@ -3569,10 +3569,28 @@ Personaje.prototype = {
      * @param {Equipo} item
      */
     compra : function(item) {
-        //TODO ajustar el cambio de monedas y enviar evento para actualizar seccion
-        this.addDinero(-1*item.getCosteDinero().getOro(),-1*item.getCosteDinero().getPlata(),-1*item.getCosteDinero().getCobre());
-        this.equipo.push(item);
+        //TODO ajustar el cambio de monedas
+        var dineroActual = this.dinero.totalEnCobre() - item.getCosteDinero().totalEnCobre();
+        var mo = 0;
+        var mp = 0;
+        var mc = 0;
 
+        if (dineroActual >= 1000) {
+            mo = Math.floor(dineroActual/1000);
+            dineroActual -= mo * 1000;
+        }
+        if (dineroActual >= 10) {
+            mp = Math.floor(dineroActual/10);
+            dineroActual -= mp*10;
+        }
+        mc = dineroActual;
+
+        this.dinero.setOro(mo);
+        this.dinero.setPlata(mp);
+        this.dinero.setCobre(mc);
+
+        this.equipo.push(item);
+        lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },
 
 //endregion
