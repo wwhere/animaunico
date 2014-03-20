@@ -232,6 +232,7 @@ var UI_BOTON_COMPRAR_EQUIPO = (new L("Comprar equipo","Comprar equipo","Buy Equi
 var UI_BOTON_LICENCIA = (new L("Agradecimientos y licencia de software","Agradecimientos y licencia de software","Thanks and software licence")).getId();
 var UI_BOTON_SOPORTE = (new L("Informa de errores","Informa de errores","Report an error")).getId();
 var UI_BOTON_COMENTARIOS = (new L("Comentarios, sugerencias ...","Comentarios, sugerencias ...","Comments, sugestions ...")).getId();
+var UI_BOTON_DONACION = (new L("donacion","Si te gusta lo que hago y quieres apoyarme para que haga más, ¡adelante!","If you like what I do, and you want to help do more, go on!")).getId();
 //endregion HTML estático
 
 var UI_PERSONALES = (new L("Datos Personales","Datos Personales","Personal Info")).getId();
