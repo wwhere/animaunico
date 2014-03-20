@@ -341,10 +341,18 @@ function Personaje(nivelInicial) {
 Personaje.prototype = {
     constructor : Personaje,
 
+    /**
+     *
+     * @returns {string}
+     */
     toString : function() {
         return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza + ")";
     },
 
+    /**
+     *
+     * @returns {Equipo[]}
+     */
     getEquipo : function() {
         return this.equipo;
     },

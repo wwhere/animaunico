@@ -103,7 +103,7 @@ function muestraVentanaCompraEquipo() {
                 var divCateg = getDiv("contenedorBotonesVentajas");
                 var gridCateg = $("<ul></ul>").addClass("four_up tiles");
 
-                contenidoDialogo.append("<h3>"+categ+"</h3>");
+                contenidoDialogo.append("<h3>"+_l(categ)+"</h3>");
 
                 for (var i =0; i < equipo_set[j].length; i++) {
                     var item = equipo_set[j][i];

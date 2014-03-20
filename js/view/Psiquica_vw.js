@@ -134,7 +134,7 @@ function appendPoderesPsiquicos(elemento, disciplinaPsiquica) {
         var botonMenos = boton("small primary pretty btn",_l("-"),(poder.getFortalecimiento() == 0));
         var divBotones = getDiv().append(botonMas).append(botonMenos);
 
-        var labelPoder = muestraValorPuntual(" [" + _l(UI_NV) + ":" + poder.getPoder().getNivel() + "]",_l(poder.getPoder().getNombre()),poder.getFortalecimiento()*10,{descripcion:_l(UI_POTENCIAL)},divBotones);
+        var labelPoder = muestraValorPuntual(" " + _l(UI_NV) + ":" + poder.getPoder().getNivel() + " ",_l(poder.getPoder().getNombre()),poder.getFortalecimiento()*10,{descripcion:_l(UI_POTENCIAL)},divBotones);
 
         divPoder.append(labelPoder);
 

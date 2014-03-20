@@ -11,7 +11,7 @@ function dialogoTablasArmas() {
     var j;
 
     for (i=0;i<CATEGORIAS_TABLAS_ARMAS.length;i++) {
-        categorias.push(new OpcionMostrable(_l(CATEGORIAS_TABLAS_ARMAS[i]),CATEGORIAS_TABLAS_ARMAS[i],CATEGORIAS_TABLAS_ARMAS[i]+"ElegirTablaArmas"));
+        categorias.push(new OpcionMostrable(_l(CATEGORIAS_TABLAS_ARMAS[i]),CATEGORIAS_TABLAS_ARMAS[i]+"ElegirTablaArmas",CATEGORIAS_TABLAS_ARMAS[i]+"ElegirTablaArmas"));
     }
 
     for (i=0; i<tablasArmas_set.length;i++) {

@@ -86,7 +86,7 @@ varios_set.push(new Equipo( EQUIPO_LIBRO_EN_BLANCO_PEQUEÑO, new Dinero(0,20,0),
 varios_set.push(new Equipo( EQUIPO_LIGA_DE_CAZA, new Dinero(0,25,0), 1, DISP_TOTAL ));
 varios_set.push(new Equipo( EQUIPO_LINTERNA_DE_ACEITE, new Dinero(0,20,0), 2, DISP_B ));
 varios_set.push(new Equipo( EQUIPO_LINTERNA_DE_VELAS, new Dinero(0,50,0), 0.25, DISP_TOTAL ));
-varios_set.push(new Equipo( EQUIPO_LONA_1_METRO_CUADRADO), new Dinero(0,20,0), 1, DISP_TOTAL );
+varios_set.push(new Equipo( EQUIPO_LONA_1_METRO_CUADRADO, new Dinero(0,20,0), 1, DISP_TOTAL ));
 varios_set.push(new Equipo( EQUIPO_MANTA, new Dinero(0,1,0), 0.2, DISP_TOTAL ));
 varios_set.push(new Equipo( EQUIPO_MOCHILA, new Dinero(0,30,0), 1, DISP_TOTAL ));
 varios_set.push(new Equipo( EQUIPO_MONOCULO, new Dinero(200,0,0), 0.1, DISP_TOTAL ));

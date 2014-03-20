@@ -337,7 +337,7 @@ function elegirConjuroSuelto() {
     var maxNivel = maxNivelConjuroSueltoPermitible();
 
     for (i = 0; i < vias_set.length; i++) {
-        categorias.push(new OpcionMostrable(_l(vias_set[i].getNombre()),vias_set[i].getNombre(),vias_set[i].getNombre()+"_viamagia"));
+        categorias.push(new OpcionMostrable(_l(vias_set[i].getNombre()),vias_set[i].getNombre()+"_viamagia",vias_set[i].getNombre()+"_viamagia"));
         var conjuros = vias_set[i].getConjuros();
         for (j = 0; j < conjuros.length; j++) {
             if ((conjuros[j].getNivel() > maxNivel) && (vias_set[i].getNombre() != VIA_LIBRE_ACCESO)) {

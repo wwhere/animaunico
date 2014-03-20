@@ -576,7 +576,7 @@ var EXPLI_METODO_2 = (new L("EXPLI_METODO_2",
 var EXPLI_METODO_3 = (new L("EXPLI_METODO_3",
     "Este método se utiliza en el caso de que los jugadores decidan interpretar personajes comunes, sin características demasiado excepcionales. Consiste en lanzar ocho veces un dado apuntando en orden las cifras obtenidas en las casillas de características. Cualquier tirada, por alta o baja que sea, deberá aceptarse.",
     "Throw a D10 eight times, and assign the values in order to the abilities."
-));
+)).getId();
 var EXPLI_METODO_4 = (new L("EXPLI_METODO_4",
     "Este método consiste en tirar siete veces un D10 y sumar todos los resultados obtenidos. La cifra resultante, un número entre siete y setenta, puede ser dividida libremente entre las características, pero sin que en ningún caso se pueda superar el diez.",
     "Throw 7d10 and add up the results. Then share out the total between the abilities."

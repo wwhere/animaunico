@@ -100,10 +100,10 @@ function dialogoPuntosCreacion(tituloDialogo, esVentajas) {
 
                 $(DIV_DESTINO_EXPLICACION_VENTAJA).empty().append(divGeneral);
             });
+            divElemento.on("mouseleave", function() {
+                //$(DIV_DESTINO_EXPLICACION_VENTAJA).empty();
+            });
         }
-        divElemento.on("mouseleave", function() {
-            //$(DIV_DESTINO_EXPLICACION_VENTAJA).empty();
-        });
 
     }
 

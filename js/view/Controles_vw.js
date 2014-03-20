@@ -374,12 +374,16 @@ function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permi
 
     if (categorias != undefined) {
         for (var j = 0; j < categorias.length; j++) {
+            /**
+             *
+             * @type {OpcionMostrable}
+             */
             var categ = categorias[j];
             var divCateg = getDiv("contenedorBotonesVentajas");
             var gridCateg = $("<ul></ul>").addClass("four_up tiles");
 
             contenidoDialogo.append("<h3>"+categ.etiqueta+"</h3>");
-            gridCateg.attr("id",categ.id.replace(/\s+/g, ''));
+            gridCateg.attr("id",categ.opcion.replace(/\s+/g, ''));
             divCateg.append(gridCateg);
             contenidoDialogo.append(divCateg);
         }
@@ -390,7 +394,7 @@ function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permi
     dialogo.append(contenidoDialogo);
 
     for (var i = 0; i < arrayOpciones.length;i++) {
-        parametros.opcion = arrayOpciones[i].id;
+        parametros.opcion = arrayOpciones[i].opcion;
         if (arrayOpciones[i].categoria != undefined) {
             parametros.categoria = arrayOpciones[i].categoria;
         }
@@ -407,7 +411,7 @@ function muestraDialogoElegirOpciones(arrayOpciones, parametros, callback, permi
         } else {
             gridGeneral.append($("<li></li>").append(botonOpcion));
         }
-        botonOpcion.on("click",{opcion: arrayOpciones[i].etiqueta, categoria: arrayOpciones[i].categoria}, function(event) {
+        botonOpcion.on("click",{opcion: arrayOpciones[i].opcion, categoria: arrayOpciones[i].categoria}, function(event) {
             dialogo.dialog("close" );
             dialogo.empty();
             parametros.opcion = event.data.opcion;

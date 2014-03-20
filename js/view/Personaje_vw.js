@@ -1285,6 +1285,11 @@ function muestraEquipamiento() {
     divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero));
 
     divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false));
+
+    /**
+     *
+     * @type {Equipo[]}
+     */
     var equipo = personaje_actual.getEquipo();
     for (var i = 0; i < equipo.length; i++) {
 
