@@ -16,46 +16,6 @@ var desventajas_set = [];
  */
 var elementosPuntosCreacion = {};
 
-var ERR_VENTAJA_ERRONEA = "Error: Nombre de ventaja erróneo";
-
-var VENTAJA = "Ventaja";
-
-var REPETIBLE_TOTAL = "Totalmente repetible";
-var REPETIBLE_OPCIONES = "Repetible eligiendo otras opciones";
-var NO_REPETIBLE = "No repetible";
-var NO_COMPRABLE = "No comprable con PC";
-
-var LISTA_CARACTERISTICAS = "Especificar Característica";
-var LISTA_TIPOS_SECUNDARIAS = "Especificar Tipo de habilidad secundaria";
-var LISTA_HABILIDADES_SECUNDARIAS = "Especioficar habilidad secundaria";
-var LISTA_DISCIPLINAS_PSIQUICAS = "Especificar disciplina psíquica";
-var LISTA_AJUSTE_TAMAÑO = "Especificar ajuste tamaño";
-var LISTA_DESCRIPCION = "Especificar una descripción";
-var LISTA_PODER_PSIQUICO ="Especificar un poder psiquico";
-var LISTA_SHAJADS_BERYLS = "Especificar Shajad o Beryl";
-var LISTA_VIAS_MAGIA = "Especificar vía de magia";
-var LISTA_DESEQUILIBRIO_SEPHIROTICO = "Especificar desequilibrio sephirotico";
-var LISTA_INTRODUCCION_USUARIO = "Introducir detalles";
-var ELEGIR_POD_VOL = "Elegir Poder o Voluntad";
-var ELEGIR_REPARTO_5_INT_POD_VOL = "Repartir 5 puntos entre INT, VOL y POD";
-var LISTA_HABILIDAD_COMBATE = "Elegir ataque, parada o esquiva";
-
-
-var ORIGEN_RAZA = "por raza";
-var ORIGEN_PC = "por PC";
-var ORIGEN_ELAN = "por Elan";
-
-var GRUPO_CARACTERISTICAS = "Ventajas de Características";
-var GRUPO_RESISTENCIAS = "Ventajas de Resistencias";
-var GRUPO_CAPACIDADES = "Ventajas de otras Capacidades";
-var GRUPO_DON = "Ventajas del Don";
-var GRUPO_PSIQUICAS = "Ventajas Psíquicas";
-var GRUPO_KI = "Ventajas del Ki";
-var GRUPO_OTRAS = "Otras Ventajas";
-var GRUPO_RAZAS = "Ventajas de Raza";
-var GRUPO_SECUNDARIAS = "Ventajas de Habilidades Secundarias";
-var GRUPO_ELAN = "Ventajas de Elan";
-
 /**
  *
  * @type {string[]}
@@ -132,7 +92,7 @@ function getVentaja(nombre) {
         }
     }
 
-    throw ERR_VENTAJA_ERRONEA;
+    throw _l(ERR_VENTAJA_ERRONEA);
 }
 
 /**
@@ -383,7 +343,7 @@ function caracteristicasSobrehumanasSylvain(coste, opcion, aplicar) {
 
 function obligadoComprarDon(coste, opcion, aplicar) {
     if (aplicar) {
-        aplicarVentajaFinal(getVentaja("Don"),2,""); //TODO si no tiene suficientes PC tendrá que limpiar sus ventajas
+        aplicarVentajaFinal(getVentaja(VENT_DON),2,""); //TODO si no tiene suficientes PC tendrá que limpiar sus ventajas
     }
 }
 
@@ -530,10 +490,12 @@ function repetirUnaTirada(coste, opcion, aplicar) {
 
     var div = $("<div></div>");
 
-    div.append("Resultado de la tirada: " + nuevaTirada);
+
+    div.append(_l(UI_RESULTADO_DE_TIRADA) + nuevaTirada);
     if (nuevaTirada < minCaracteristica) {
         nuevaTirada = minCaracteristica;
-        div.append("<br>Ajustado al mínimo del personaje: " + nuevaTirada);
+
+        div.append("<br>" + _l(UI_AJUSTADO_AL_MINIMO) + ": " + nuevaTirada);
     }
     div.append("<br>");
 
@@ -660,9 +622,9 @@ function cambiarUnaCaracteristicaPorNueve(coste, opcion, aplicar) {
  */
 function resistenciaFisicaExcepcional(coste, opcion, aplicar) {
     desactivarNotificaciones();
-    aumentaResistencia(0,0, aplicar,RF,25*coste, "Resistencia física excepcional");
-    aumentaResistencia(0,0, aplicar,RE,25*coste, "Resistencia física excepcional");
-    aumentaResistencia(0,0, aplicar,RV,25*coste, "Resistencia física excepcional");
+    aumentaResistencia(0,0, aplicar,RF,25*coste, VENT_RESISTENCIA_FISICA_EXCEPCIONAL);
+    aumentaResistencia(0,0, aplicar,RE,25*coste, VENT_RESISTENCIA_FISICA_EXCEPCIONAL);
+    aumentaResistencia(0,0, aplicar,RV,25*coste, VENT_RESISTENCIA_FISICA_EXCEPCIONAL);
     activarNotificaciones();
     lanzarEvento(EVENT_CHARACTER_SECCION_RESISTENCIAS);
 }
@@ -674,7 +636,7 @@ function resistenciaFisicaExcepcional(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function resistenciaMagicaExcepcional(coste, opcion, aplicar) {
-    aumentaResistencia(0,0, aplicar,RM,25*coste, "Resistencia mágica excepcional");
+    aumentaResistencia(0,0, aplicar,RM,25*coste, VENT_RESISTENCIA_MAGICA_EXCEPCIONAL);
 }
 
 /**
@@ -684,7 +646,7 @@ function resistenciaMagicaExcepcional(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function resistenciaPsiquicaExcepcional(coste, opcion, aplicar) {
-    aumentaResistencia(0,0, aplicar,RP,25*coste, "Resistencia psíquica excepcional");
+    aumentaResistencia(0,0, aplicar,RP,25*coste, VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL);
 }
 
 /**
@@ -784,8 +746,8 @@ function aptoEnUnaMateria(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function sentidosAgudos(coste, opcion,aplicar) {
-    var bonoA = new Bono(BONO_HABILIDAD,HB_ADVERTIR,50,"",false,BONO_ESPECIAL,"Sentidos Agudos");
-    var bonoB = new Bono(BONO_HABILIDAD,HB_BUSCAR,50,"",false,BONO_ESPECIAL,"Sentidos Agudos");
+    var bonoA = new Bono(BONO_HABILIDAD,HB_ADVERTIR,50,"",false,BONO_ESPECIAL,VENT_SENTIDOS_AGUDOS);
+    var bonoB = new Bono(BONO_HABILIDAD,HB_BUSCAR,50,"",false,BONO_ESPECIAL,VENT_SENTIDOS_AGUDOS);
 
     desactivarNotificaciones();
     if (aplicar) {
@@ -806,7 +768,7 @@ function sentidosAgudos(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function don(coste, opcion,aplicar) {
-    aumentaResistencia(0,0,aplicar,RM,10, "Don");
+    aumentaResistencia(0,0,aplicar,RM,10, VENT_DON);
     verLoSobrenatural(coste,opcion,aplicar);
     if (aplicar) {
         personaje_actual.setFlag(FLAG_DON);
@@ -837,7 +799,7 @@ function verLoSobrenatural(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function aprendizajeInnato(coste, opcion,aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,opcion,10*coste,"",true,BONO_CATEGORIA,"Aprendizaje Innato");
+    var bono = new Bono(BONO_HABILIDAD,opcion,10*coste,"",true,BONO_CATEGORIA,VENT_APRENDIZAJE_INNATO);
     if (aplicar) {
         personaje_actual.addBono(bono,false, true);
     } else {
@@ -859,7 +821,7 @@ function aprendizajeInnatoCampo(coste, opcion,aplicar) {
         valorBono = 10;
     }
 
-    var bono = new Bono(BONO_HABILIDAD,opcion,valorBono,"",true,BONO_CATEGORIA,"Aprendizaje Innato en un campo");
+    var bono = new Bono(BONO_HABILIDAD,opcion,valorBono,"",true,BONO_CATEGORIA,VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -884,7 +846,7 @@ function conocedorTodasMaterias(coste, opcion,aplicar) {
             grupoHab = habilidades_secundarias[i];
             for (var j= 0;j<grupoHab.length;j++) {
                 habi = getHabilidad(grupoHab[j]);
-                personaje_actual.addBono(new Bono(BONO_HABILIDAD,habi.getNombre(),10,"",false,BONO_ESPECIAL,"Conocedor de Todas las Materias"),false,false);
+                personaje_actual.addBono(new Bono(BONO_HABILIDAD,habi.getNombre(),10,"",false,BONO_ESPECIAL,VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS),false,false);
             }
         }
     } else {
@@ -893,7 +855,7 @@ function conocedorTodasMaterias(coste, opcion,aplicar) {
             grupoHab = habilidades_secundarias[i];
             for (var j= 0;j<grupoHab.length;j++) {
                 habi = getHabilidad(grupoHab[j]);
-                personaje_actual.removeBono(new Bono(BONO_HABILIDAD, habi.getNombre(), 10, "", false, BONO_ESPECIAL, "Conocedor de Todas las Materias"), false);
+                personaje_actual.removeBono(new Bono(BONO_HABILIDAD, habi.getNombre(), 10, "", false, BONO_ESPECIAL, VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS), false);
             }
         }
     }
@@ -917,7 +879,7 @@ function reflejosRapidos(coste, opcion,aplicar) {
         valorBono = 60;
     }
 
-    var bono = new Bono(BONO_TURNO,BONO_TURNO,valorBono,"",false,BONO_ESPECIAL,"Reflejos rápidos");
+    var bono = new Bono(BONO_TURNO,BONO_TURNO,valorBono,"",false,BONO_ESPECIAL,VENT_REFLEJOS_RAPIDOS);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -934,7 +896,7 @@ function reflejosRapidos(coste, opcion,aplicar) {
 function reaccionLenta(coste, opcion,aplicar) {
     var valorBono = 30*coste;
 
-    var bono = new Bono(BONO_TURNO,BONO_TURNO,valorBono,"",false,BONO_ESPECIAL,"Reacción lenta");
+    var bono = new Bono(BONO_TURNO,BONO_TURNO,valorBono,"",false,BONO_ESPECIAL,DESV_REACCION_LENTA);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -987,7 +949,7 @@ function armaduraMistica(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function maestroMarcial(coste, opcion,aplicar) {
-    var bono = new Bono(BONO_CM,BONO_CM,40*coste,"",false,BONO_ESPECIAL,"Maestro Marcial");
+    var bono = new Bono(BONO_CM,BONO_CM,40*coste,"",false,BONO_ESPECIAL,VENT_MAESTRO_MARCIAL);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -1059,7 +1021,7 @@ function elan(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function aptoDesarrolloMagia(coste, opcion,aplicar) {
-    var bono = new Bono(BONO_INT_APRENDER_CONJURO,BONO_INT_APRENDER_CONJURO,3,"",false,BONO_ESPECIAL,"Apto para el desarrollo de la magia");
+    var bono = new Bono(BONO_INT_APRENDER_CONJURO,BONO_INT_APRENDER_CONJURO,3,"",false,BONO_ESPECIAL,VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -1074,7 +1036,7 @@ function aptoDesarrolloMagia(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function magiaInnataMejorada(coste, opcion,aplicar) {
-    var bono = new Bono(BONO_MAGIA_INNATA,BONO_MAGIA_INNATA,10*coste,"",false,BONO_ESPECIAL,"Magia innata mejorada");
+    var bono = new Bono(BONO_MAGIA_INNATA,BONO_MAGIA_INNATA,10*coste,"",false,BONO_ESPECIAL,VENT_MAGIA_INNATA_MEJORADA);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -1549,7 +1511,7 @@ function dañoIncrementadoElan(coste, opcion, aplicar) {
  * @param {boolean} aplicar
  */
 function dificilDeMatar(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_PV,BONO_PV,10*coste,"", true,BONO_INNATO,"Difícil de matar");
+    var bono = new Bono(BONO_PV,BONO_PV,10*coste,"", true,BONO_INNATO,VENT_DIFICIL_DE_MATAR);
     if (aplicar) {
         personaje_actual.addBono(bono, false, true);
     } else {
@@ -1558,7 +1520,7 @@ function dificilDeMatar(coste, opcion, aplicar) {
 }
 
 function sentidoDelCombate(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,opcion,5,"",true,BONO_INNATO,"Sentido del combate");
+    var bono = new Bono(BONO_HABILIDAD,opcion,5,"",true,BONO_INNATO,VENT_SENTIDO_DEL_COMBATE);
 
     if (aplicar) {
         personaje_actual.addBono(bono, false, true);
@@ -1576,7 +1538,7 @@ function bonificadorNaturalIncrementado(coste, opcion, aplicar) {
 }
 
 function usoDeArmadura(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_ARMADURA,5*coste,"",true,BONO_INNATO,"Uso de armadura");
+    var bono = new Bono(BONO_HABILIDAD,HB_ARMADURA,5*coste,"",true,BONO_INNATO,VENT_USO_DE_ARMADURA);
 
     if (aplicar) {
         personaje_actual.addBono(bono, false, true);
@@ -1594,7 +1556,7 @@ function versatil(coste, opcion, aplicar) {
 }
 
 function habilidoso(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_TRUCOS_MANOS,30,"",true,BONO_ESPECIAL,"Habilidoso");
+    var bono = new Bono(BONO_HABILIDAD,HB_TRUCOS_MANOS,30,"",true,BONO_ESPECIAL,VENT_HABILIDOSO);
 
     if (aplicar) {
         personaje_actual.addBono(bono, false, true);
@@ -1604,7 +1566,7 @@ function habilidoso(coste, opcion, aplicar) {
 }
 
 function naturalezaMagica(coste, opcion, aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_ZEON,50*coste,"",true,BONO_INNATO,"Naturaleza mágica");
+    var bono = new Bono(BONO_HABILIDAD,HB_ZEON,50*coste,"",true,BONO_INNATO,VENT_NATURALEZA_MAGICA);
 
     if (aplicar) {
         personaje_actual.addBono(bono, false, true);

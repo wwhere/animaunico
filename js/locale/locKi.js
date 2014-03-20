@@ -48,7 +48,7 @@ var HAB_KI_ZEN = (new L("HAB_KI_ZEN","Zen",
     "Zen")).getId();
 
 /**** desventajas de técnicas ***/
-
+var UI_ATADURA_ELEMENTAL = (new L("Atadura Elemental","Atadura Elemental","Elemental binding")).getId();
 var KI_TECN_DESV_ATADURA_ELEMENTAL_1 = (new L("KI_TECN_DESV_ATADURA_ELEMENTAL_1","Atadura elemental (1 elemento)",
     "Elemental binding (1 element)")).getId();
 var KI_TECN_DESV_ATADURA_ELEMENTAL_2 = (new L("KI_TECN_DESV_ATADURA_ELEMENTAL_2","Atadura elemental (2 elementos)",

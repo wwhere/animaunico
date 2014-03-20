@@ -20,27 +20,6 @@ var tecnicasMuestra_set = [];
  */
 var arbolesTecnicasMuestra_set = [];
 
-var ERR_HABILIDAD_KI_DESCONOCIDA = "Error: habilidad ki desconocida";
-var ERR_TECNICA_KI_DESCONOCIDA = "Error: técnica ki desconocida";
-var ERR_EFECTO_KI_DESCONOCIDA = "Error: efecto ki desconocida";
-var ERR_VENTAJA_KI_DESCONOCIDA = "Error: ventaja de efecto ki desconocida";
-var ERR_DESVENTAJA_KI_DESCONOCIDA = "Error: desventaja ki desconocida";
-
-var ELEMENTO_AIRE = "Aire";
-var ELEMENTO_AGUA = "Agua";
-var ELEMENTO_FUEGO = "Fuego";
-var ELEMENTO_TIERRA = "Tierra";
-var ELEMENTO_LUZ = "Luz";
-var ELEMENTO_OSCURIDAD = "Oscuridad";
-
-var EFECTO_OFENSIVO = "Efecto ofensivo";
-var EFECTO_DEFENSIVO = "Efecto defensivo";
-var EFECTO_DESTRUCTIVO = "Efecto destructivo";
-var EFECTO_ACCION = "Efecto de acción";
-var EFECTO_REACCION = "Efecto de reacción";
-var EFECTO_ESOTERICO = "Efecto esotérico";
-var EFECTO_ESPECIAL = "Efecto especial";
-
 var TIPOS_EFECTOS_TECNICAS = [
     EFECTO_OFENSIVO,
     EFECTO_DEFENSIVO,
@@ -51,7 +30,7 @@ var TIPOS_EFECTOS_TECNICAS = [
     EFECTO_ESPECIAL
 ];
 
-var COSTE_VENTAJAS_AUMENTA_DOS = "Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja";
+
 /**
  *
  * @type {EfectoTecnica[]}
@@ -735,7 +714,7 @@ function puedeAñadirseDesventajaATecnica(tecnicaKi,desventaja) {
 function elegirAtaduraElemental(numAtaduras, tecnicaKi, desventajaTecnicaElegida) {
 
     var gruposOpciones = [
-        new GrupoOpciones("Atadura Elemental",[ELEMENTO_AGUA,ELEMENTO_AIRE,ELEMENTO_FUEGO,ELEMENTO_TIERRA,ELEMENTO_LUZ,ELEMENTO_OSCURIDAD],numAtaduras)
+        new GrupoOpciones(_l(UI_ATADURA_ELEMENTAL),[ELEMENTO_AGUA,ELEMENTO_AIRE,ELEMENTO_FUEGO,ELEMENTO_TIERRA,ELEMENTO_LUZ,ELEMENTO_OSCURIDAD],numAtaduras)
     ];
     parametros = {
         tecnicaKi:tecnicaKi,
@@ -776,7 +755,7 @@ function introducirCosteCMYDescripcion(minCM, maxCM, tecnicaKi, desventajaTecnic
     for (var i = minCM; i <= maxCM; i += 5) {
         arrayOpciones.push(new OpcionMostrable(i,i,""));
     }
-    desventajaTecnicaElegida.setDescripcion(prompt("Especifica la condición",""));
+    desventajaTecnicaElegida.setDescripcion(prompt(_l(UI_ESPECIFICA),""));
     parametros = {
         tecnicaKi:tecnicaKi,
         desventajaTecnicaElegida: desventajaTecnicaElegida

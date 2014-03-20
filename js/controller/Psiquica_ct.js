@@ -4,10 +4,6 @@
  */
 var disciplinasPsiquicas_set = [];
 
-var ERR_DISCIPLINA_DESCONOCIDA = "Error: Disciplina Psiquica desconocida";
-var ERR_PODER_DESCONOCIDO = "Error: Poder Psíquico desconocido";
-var ERR_CV_INSUFICIENTES = "CV insuficientes";
-
 /**
  *
  * @param {string} nombre
@@ -21,7 +17,7 @@ function getDisciplina(nombre) {
         }
     }
 
-    throw ERR_DISCIPLINA_DESCONOCIDA + ": " + nombre;
+    throw _l(ERR_DISCIPLINA_DESCONOCIDA) + ": " + nombre;
 }
 
 /**
@@ -37,7 +33,8 @@ function getPoder(disciplina, nombrePoder) {
             return poderes[i];
         }
     }
-    throw ERR_PODER_DESCONOCIDO + ": " + nombrePoder + " de la disciplina " + disciplina.getNombre();
+
+    throw _l(ERR_PODER_DESCONOCIDO) + ": " + nombrePoder + ", " + UI_DISCIPLINA + " " + disciplina.getNombre();
 }
 
 /**
@@ -45,7 +42,7 @@ function getPoder(disciplina, nombrePoder) {
  */
 function afinidadNuevaDisciplina() {
     if (personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() - personaje_actual.getCVGastados() < 1) {
-        throw ERR_CV_INSUFICIENTES;
+        throw _l(ERR_CV_INSUFICIENTES);
     }
 
     var arrayOpciones = [];

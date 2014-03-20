@@ -4,14 +4,6 @@
  */
 var tablasArmas_set = [];
 
-var ERR_TABLA_DESCONOCIDA = "Error: Tabla de Armas desconocida";
-
-var CATEGORIA_TABLA_ARMAS_GENERALES = "Tablas de armas generales";
-var CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS = "Tablas de armas arquetípicas";
-var CATEGORIA_TABLA_ARMAS_ESTILOS = "Tablas de estilos";
-var CATEGORIA_TABLA_MISTICAS = "Tablas Místicas";
-var CATEGORIA_TABLA_PSIQUICAS = "Tablas Psíquicas";
-
 /**
  *
  * @type {string[]}
@@ -36,5 +28,5 @@ function getTablaArmas(nombre) {
             return tablasArmas_set[i];
         }
     }
-    throw ERR_TABLA_DESCONOCIDA + ": " + nombre;
+    throw _l(ERR_TABLA_DESCONOCIDA) + ": " + nombre;
 }

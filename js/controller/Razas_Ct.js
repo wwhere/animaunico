@@ -4,7 +4,7 @@
  */
 var razas_set = [];
 
-var ERR_RAZA_ERRONEA = "Error: Nombre de raza erróneo";
+
 
 /**
  *
@@ -18,7 +18,7 @@ function getRaza(nombre) {
             return razas_set[i];
         }
     }
-    throw ERR_RAZA_ERRONEA;
+    throw _l(ERR_RAZA_ERRONEA);
 }
 
 

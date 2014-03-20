@@ -134,7 +134,7 @@ var UI_PD_COMBATE = (new L("PDs en combate","PDs en combate","Combat DPs")).getI
 var UI_PD_ATAQUE_DEFENSA = (new L("PDs en ataque y defensa","PDs en ataque y defensa","Attack and Defense DPs")).getId();
 var UI_PD_SOBRENATURAL = (new L("PDs en sobrenaturales","PDs en sobrenaturales","Magic DPs")).getId();
 var UI_PD_PSIQUICA = (new L("PDs en psíquicas","PDs en psíquicas","Psychic DPs")).getId();
-var UI_PD_SECUNDARIAS = (new L("PDs en secundarias","PDs en secundarias","Secondary Skills DPs")).getId();
+var UI_PD_SECUNDARIAS = (new L("PDs en secundarias","PDs en secundarias","Secondary Abilities DPs")).getId();
 
 var UI_MULTIPLO_VIDA = (new L("Múltiplo de vida","Múltiplo de vida","Life Multiple")).getId();
 var UI_PV_POR_NIVEL = (new L("PV por nivel","PV por nivel","LP per level")).getId();
@@ -162,10 +162,10 @@ var UI_ACUMULACION_KI_POD = (new L("UI_ACUMULACION_KI_POD","Ac. de Ki Poder","Po
 var UI_KI_VOL = (new L("UI_KI_VOL","Ki Voluntad","Willpower Ki")).getId();
 var UI_ACUMULACION_KI_VOL = (new L("UI_ACUMULACION_KI_VOL","Ac. de Ki Voluntad","Willpower Ki Accum")).getId();
 
-var UI_HABILIDAD_NATURAL = (new L("Habilidad Natural (+10)","Habilidad Natural (+10)","Natural Skill (+10)")).getId();
-var UI_BONIFICADOR_NATURAL_FISICO = (new L("Bonificador natural físico (añadir bono de característica)","Bonificador natural físico (añadir bono de característica)","Physical Natural Bonus (add ability bonus)")).getId();
-var UI_BONIFICADOR_NATURAL_MENTAL = (new L("Bonificador natural mental (añadir bono de característica)","Bonificador natural mental (añadir bono de característica)","Mental Natural Bonus (add ability bonus)")).getId();
-var UI_BONIFICADOR_NATURAL_EXTRA = (new L("Bonificador natural extra (añadir bono de característica)","Bonificador natural extra (añadir bono de característica)","Extra Natural Bonus (add ability bonus)")).getId();
+var UI_HABILIDAD_NATURAL = (new L("Habilidad Natural (+10)","Habilidad Natural (+10)","Natural Ability (+10)")).getId();
+var UI_BONIFICADOR_NATURAL_FISICO = (new L("Bonificador natural físico (añadir bono de característica)","Bonificador natural físico (añadir bono de característica)","Physical Natural Bonus (add attribute bonus)")).getId();
+var UI_BONIFICADOR_NATURAL_MENTAL = (new L("Bonificador natural mental (añadir bono de característica)","Bonificador natural mental (añadir bono de característica)","Mental Natural Bonus (add attribute bonus)")).getId();
+var UI_BONIFICADOR_NATURAL_EXTRA = (new L("Bonificador natural extra (añadir bono de característica)","Bonificador natural extra (añadir bono de característica)","Extra Natural Bonus (add attribute bonus)")).getId();
 var UI_BONO_NOVEL = (new L("Bono innato de Novel (+10)","Bono innato de Novel (+10)","Novel innate bonus (+10)")).getId();
 
 var UI_ELEGIR = (new L("?","?","?")).getId();
@@ -238,15 +238,15 @@ var UI_PERSONALES = (new L("Datos Personales","Datos Personales","Personal Info"
 var UI_RESISTENCIAS = (new L("Resistencias","Resistencias","Resistances")).getId();
 var UI_VENTAJAS = (new L("Ventajas","Ventajas","Advantages")).getId();
 var UI_DESVENTAJAS = (new L("Desventajas","Desventajas","Disadvantages")).getId();
-var UI_CARACTERISTICAS = (new L("Características","Características","Abilities")).getId();
+var UI_CARACTERISTICAS = (new L("Características","Características","Attributes")).getId();
 
-var UI_CARACTERISTICA = (new L("Característica","Característica","Ability")).getId();
+var UI_CARACTERISTICA = (new L("Característica","Característica","Attribute")).getId();
 var UI_VALOR = (new L("Valor","Valor","Value")).getId();
 var UI_BONO= (new L("Bono","Bono","Bonus")).getId();
 var UI_BONOS= (new L("Bonos","Bonos","Bonuses")).getId();
 
 
-var UI_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Skills")).getId();
+var UI_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Abilities")).getId();
 var UI_DOMINIOS_KI = (new L("Dominios del Ki","Dominios del Ki","Ki")).getId();
 
 var UI_SOBRENATURALES = (new L("Magia","Magia", "Magic")).getId();
@@ -254,7 +254,7 @@ var UI_CONVOCATORIA = (new L("Convocatoria","Convocatoria","Summoning")).getId()
 
 var UI_PSIQUICA = (new L("Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
 
-var UI_SECUNDARIAS = (new L("Habilidades Secundarias","Habilidades Secundarias","Secondary Skills")).getId();
+var UI_SECUNDARIAS = (new L("Habilidades Secundarias","Habilidades Secundarias","Secondary Abilities")).getId();
 
 var UI_VACIO = (new L("","","")).getId();
 
@@ -314,7 +314,7 @@ var REGLA_ARMA_TRABA_EL_ARMA = (new L("Traba el arma","Traba el arma","Weapon ca
 var REGLA_ARMA_TRABA_EL_ARMA_EXP = (new L("Artefactos que, por su diseño y características, disponen de la oportunidad de trabar o desarmar al oponente. Si realizando una parada con una de estas armas se consigue un contraataque, el personaje podrá realizar un ataque para Desarmar al adversario sin ningún tipo de penalizador.","Artefactos que, por su diseño y características, disponen de la oportunidad de trabar o desarmar al oponente. Si realizando una parada con una de estas armas se consigue un contraataque, el personaje podrá realizar un ataque para Desarmar al adversario sin ningún tipo de penalizador.","Artefactos que, por su diseño y características, disponen de la oportunidad de trabar o desarmar al oponente. Si realizando una parada con una de estas armas se consigue un contraataque, el personaje podrá realizar un ataque para Desarmar al adversario sin ningún tipo de penalizador.")).getId(); //TODO
 
 
-var AVISO_RECUPERADOS_PD_HABILIDAD = (new L("PD recuperados para ajustar valor de habilidad","PD recuperados para ajustar valor de habilidad","free DP back after adjusting skill value")).getId();
+var AVISO_RECUPERADOS_PD_HABILIDAD = (new L("PD recuperados para ajustar valor de habilidad","PD recuperados para ajustar valor de habilidad","free DP back after adjusting ability value")).getId();
 
 
 
@@ -345,8 +345,8 @@ var POD3 = (new L("POD","POD","POW")).getId();
 var VOL3 = (new L("VOL","VOL","WP")).getId();
 var PER3 = (new L("PER","PER","PER")).getId();
 
-var ERR_CARACTERISTICA_ERRONEA = (new L("Error: Nombre de característica erróneo","Error: Nombre de característica erróneo","Error: Wrong ability name")).getId();
-var ERR_VALOR_CARACTERISTICA_ERRONEO = (new L("Error: Valor de característica fuera de rango","Error: Valor de característica fuera de rango","Error: Ability value out of bounds")).getId();
+var ERR_CARACTERISTICA_ERRONEA = (new L("Error: Nombre de característica erróneo","Error: Nombre de característica erróneo","Error: Wrong attribute name")).getId();
+var ERR_VALOR_CARACTERISTICA_ERRONEO = (new L("Error: Valor de característica fuera de rango","Error: Valor de característica fuera de rango","Error: Attribute value out of bounds")).getId();
 
 var ERR_CATEGORIA_ERRONEA = (new L("Error: Nombre de categoría erróneo","Error: Nombre de categoría erróneo","Error: Wrong class name")).getId();
 
@@ -359,8 +359,8 @@ var NOM_ARQ_SIN_CATEGORIA = (new L("Sin Categoría","Sin Categoría","Novel")).g
 
 var ORIGEN_MULTIPLO_VIDA = (new L("Múltiplos de vida","Múltiplos de vida","LP Multiples")).getId();
 
-var ERR_HABILIDAD_ERRONEA = (new L("Error: Nombre de habilidad erróneo","Error: Nombre de habilidad erróneo","Error: wrong skill name")).getId();
-var ERR_TIPO_HABILIDAD_ERRONEO = (new L("Error: Nombre de tipo de habilidad erróneo","Error: Nombre de tipo de habilidad erróneo","Error: wrong skill group name")).getId();
+var ERR_HABILIDAD_ERRONEA = (new L("Error: Nombre de habilidad erróneo","Error: Nombre de habilidad erróneo","Error: wrong ability name")).getId();
+var ERR_TIPO_HABILIDAD_ERRONEO = (new L("Error: Nombre de tipo de habilidad erróneo","Error: Nombre de tipo de habilidad erróneo","Error: wrong ability group name")).getId();
 
 
 var SEXO_HOMBRE = (new L("Hombre","Hombre","Male")).getId();
@@ -464,7 +464,7 @@ new L("2ª", "2ª", "2nd");
 var UI_COMPRAR_TECNICA_EXISTENTE = (new L("Comprar técnica de dominio existente","Comprar técnica de dominio existente","Buy pre-existent technique")).getId();
 var UI_COMPRAR_HABILIDAD_KI = (new L("Comprar habilidad de ki", "Comprar habilidad de ki", "Buy Ki Ability")).getId();
 var UI_CREAR_TECNICA_DOMINIO = (new L("Crear técnica de dominio", "Crear técnica de dominio", "Design own ki technique")).getId();
-var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva vía de magia","Access to new spell list")).getId();
+var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva vía de magia","Access to new path")).getId();
 var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro suelto","Cherry pick spell")).getId();
 var UI_TOTAL = (new L("Total","Total", "Total")).getId();
 var UI_LIBRES = (new L("Libres", "Libres", "Free")).getId();
@@ -508,7 +508,7 @@ var UI_ON = (new L("ON", "ON", "ON")).getId();
 var UI_OFF = (new L("OFF", "OFF", "OFF")).getId();
 
 var UI_NIVELES_VIA = (new L("Niveles de vía","Niveles de vía","Spell levels")).getId();
-var UI_VIAS = (new L("Vías de magia","Vías de magia","Spell Lists")).getId();
+var UI_VIAS = (new L("Vías de magia","Vías de magia","Magic Paths")).getId();
 var UI_CONJUROS = (new L("Conjuros sueltos","Conjuros sueltos","Cherry picked spells")).getId();
 
 
@@ -540,7 +540,7 @@ var UI_COMPRAR_TECNICA_DE_KI = (new L("Comprar técnica del dominio","Comprar t�
 var UI_ARMA_INICIAL = (new L("Arma inicial","Arma inicial","Initial weapon")).getId();
 var UI_OTRAS_ARMAS = (new L("Otras armas", "Otras armas", "Other weapons")).getId();
 var UI_MAGIA_INNATA = (new L("Magia innata","Magia innata","Innate Magic")).getId();
-var UI_AUMENTAR_NIVELES_EN_VIAS = (new L("Aumentar niveles en vías","Aumentar niveles en vías","Raise spell lists levels")).getId();
+var UI_AUMENTAR_NIVELES_EN_VIAS = (new L("Aumentar niveles en vías","Aumentar niveles en vías","Raise magic paths levels")).getId();
 var UI_AFINIDAD_CON_DISCIPLINAS = (new L("Afinidad con disciplinas","Afinidad con disciplinas","Affinity with Disciplines")).getId();
 var UI_PODERES_DOMINADOS = (new L("Poderes dominados","Poderes dominados","Dominated powers")).getId();
 
@@ -659,10 +659,10 @@ var CALIDAD_EXCELENTE = (new L("excelente","excelente","excellent")).getId();
 
 var TIPO_CAPACIDAD = (new L("Capacidad especial","Capacidad especial","Special ability")).getId();
 
-var TIPO_HB_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Skills")).getId();
-var HB_ATAQUE = (new L("Habilidad de Ataque","Habilidad de Ataque","Attack skill")).getId();
-var HB_PARADA = (new L("Habilidad de Parada","Habilidad de Parada","Block skill")).getId();
-var HB_ESQUIVA = (new L("Habilidad de Esquiva","Habilidad de Esquiva","Dodge skill")).getId();
+var TIPO_HB_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Abilities")).getId();
+var HB_ATAQUE = (new L("Habilidad de Ataque","Habilidad de Ataque","Attack ability")).getId();
+var HB_PARADA = (new L("Habilidad de Parada","Habilidad de Parada","Block ability")).getId();
+var HB_ESQUIVA = (new L("Habilidad de Esquiva","Habilidad de Esquiva","Dodge ability")).getId();
 var HB_ARMADURA = (new L("Llevar Armadura","Llevar Armadura","Wear armor")).getId();
 var HB_KI = (new L("Ki","Ki","Ki")).getId();
 var HB_KI_FUE = (new L("Ki Fuerza","Ki Fuerza","Strength Ki")).getId();
@@ -681,79 +681,210 @@ var HB_ACUM_KI_CON = (new L("Acumulación Ki Constitución","Ac. de Ki Constituc
 /*TABLAS*/
 
 /***************POR AQUI********************/
-var TIPO_HB_SOBRENATURAL = "Habilidades Sobrenaturales";
-var HB_ZEON = "Zeon";
-var HB_ACT = "ACT";
-var HB_PROYECCION_MAGICA = "Proyección Mágica";
-var HB_CONVOCAR = "Convocar";
-var HB_DOMINAR = "Dominar";
-var HB_ATAR = "Atar";
-var HB_DESCONVOCAR = "Desconvocar";
+var TIPO_HB_SOBRENATURAL = (new L("Habilidades Sobrenaturales","Habilidades Sobrenaturales","Magic Abilities")).getId();
+var HB_ZEON = (new L("Zeon","Zeon","Zeon")).getId();
+var HB_ACT = (new L("ACT","ACT","MA")).getId();
+var HB_PROYECCION_MAGICA = (new L("Proyección Mágica","Proyección Mágica","Magic Projection")).getId();
+var HB_CONVOCAR = (new L("Convocar","Convocar","Summon")).getId();
+var HB_DOMINAR = (new L("Dominar","Dominar","Control")).getId();
+var HB_ATAR = (new L("Atar","Atar","Bind")).getId();
+var HB_DESCONVOCAR = (new L("Desconvocar","Desconvocar","Banish")).getId();
 
 
-var TIPO_HB_PSIQUICA = "Habilidades Psíquicas";
-var HB_CV = "CV";
-var HB_PROYECCION_PSIQUICA = "Proyección Psíquica";
-var HB_POTENCIAL_PSIQUICO = "Potencial Psíquico";
+var TIPO_HB_PSIQUICA = (new L("Habilidades Psíquicas","Habilidades Psíquicas","Psychic Abilities")).getId();
+var HB_CV = (new L("CV","CV","PP")).getId();
+var HB_PROYECCION_PSIQUICA = (new L("Proyección Psíquica","Proyección Psíquica","Psychic Projection")).getId();
+var HB_POTENCIAL_PSIQUICO = (new L("Potencial Psíquico","Potencial Psíquico","Psychic Potential")).getId();
 
-var HB_MULTIPLO_VIDA = "Múltiplos de vida";
+var HB_MULTIPLO_VIDA = (new L("Múltiplos de vida","Múltiplos de vida","Life Multiples")).getId();
 
 
-var TIPO_HB_ATLETICAS = "Atléticas";
-var HB_ACROBACIAS = "Acrobacias";
-var HB_ATLETISMO = "Atletismo";
-var HB_MONTAR = "Montar";
-var HB_NADAR = "Nadar";
-var HB_SALTAR = "Saltar";
-var HB_TREPAR = "Trepar";
+var TIPO_HB_ATLETICAS = (new L("Atléticas","Atléticas","Athletics")).getId();
+var HB_ACROBACIAS = (new L("Acrobacias","Acrobacias","Acrobatics")).getId();
+var HB_ATLETISMO = (new L("Atletismo","Atletismo","Athleticism")).getId();
+var HB_MONTAR = (new L("Montar","Montar","Ride")).getId();
+var HB_NADAR = (new L("Nadar","Nadar","Swim")).getId();
+var HB_SALTAR = (new L("Saltar","Saltar","Jump")).getId();
+var HB_TREPAR = (new L("Trepar","Trepar","Climb")).getId();
 
-var TIPO_HB_SOCIALES = "Sociales";
-var HB_ESTILO = "Estilo";
-var HB_INTIMIDAR = "Intimidar";
-var HB_LIDERAZGO = "Liderazgo";
-var HB_PERSUASION = "Persuasión";
+var TIPO_HB_SOCIALES = (new L("Sociales","Sociales","Social")).getId();
+var HB_ESTILO = (new L("Estilo","Estilo","Style")).getId();
+var HB_INTIMIDAR = (new L("Intimidar","Intimidar","Intimidate")).getId();
+var HB_LIDERAZGO = (new L("Liderazgo","Liderazgo","Leadership")).getId();
+var HB_PERSUASION = (new L("Persuasión","Persuasión","Persuasion")).getId();
 
-var TIPO_HB_SUBTERFUGIO = "Subterfugio";
-var HB_CERRAJERIA = "Cerrajería";
-var HB_DISFRAZ = "Disfraz";
-var HB_OCULTARSE = "Ocultarse";
-var HB_ROBO = "Robo";
-var HB_SIGILO = "Sigilo";
-var HB_TRAMPERIA = "Trampería";
-var HB_VENENOS = "Venenos";
+var TIPO_HB_SUBTERFUGIO = (new L("Subterfugio","Subterfugio","Subterfuge")).getId();
+var HB_CERRAJERIA = (new L("Cerrajería","Cerrajería","Lock Picking")).getId();
+var HB_DISFRAZ = (new L("Disfraz","Disfraz","Disguise")).getId();
+var HB_OCULTARSE = (new L("Ocultarse","Ocultarse","Hide")).getId();
+var HB_ROBO = (new L("Robo","Robo","Theft")).getId();
+var HB_SIGILO = (new L("Sigilo","Sigilo","Stealth")).getId();
+var HB_TRAMPERIA = (new L("Trampería","Trampería","Trap Lore")).getId();
+var HB_VENENOS = (new L("Venenos","Venenos","Poisons")).getId();
 
-var TIPO_HB_PERCEPTIVAS = "Perceptivas";
-var HB_ADVERTIR = "Advertir";
-var HB_BUSCAR = "Buscar";
-var HB_RASTREAR = "Rastrear";
+var TIPO_HB_PERCEPTIVAS = (new L("Perceptivas","Perceptivas","Perception")).getId();
+var HB_ADVERTIR = (new L("Advertir","Advertir","Notice")).getId();
+var HB_BUSCAR = (new L("Buscar","Buscar","Search")).getId();
+var HB_RASTREAR = (new L("Rastrear","Rastrear","Track")).getId();
 
-var TIPO_HB_INTELECTUALES = "Intelectuales";
-var HB_ANIMALES = "Animales";
-var HB_CIENCIA = "Ciencia";
-var HB_HERBOLARIA = "Herbolaria";
-var HB_HISTORIA = "Historia";
-var HB_MEDICINA = "Medicina";
-var HB_MEMORIZAR = "Memorizar";
-var HB_NAVEGACION = "Navegación";
-var HB_OCULTISMO = "Ocultismo";
-var HB_TASACION = "Tasación";
-var HB_VALORACION_MAGICA = "Valoración mágica";
+var TIPO_HB_INTELECTUALES = (new L("Intelectuales","Intelectuales","Intellectual")).getId();
+var HB_ANIMALES = (new L("Animales","Animales","Animals")).getId();
+var HB_CIENCIA = (new L("Ciencia","Ciencia","Sciences")).getId();
+var HB_HERBOLARIA = (new L("Herbolaria","Herbolaria","Herbal Lore")).getId();
+var HB_HISTORIA = (new L("Historia","Historia","History")).getId();
+var HB_MEDICINA = (new L("Medicina","Medicina","Medicine")).getId();
+var HB_MEMORIZAR = (new L("Memorizar","Memorizar","Memorize")).getId();
+var HB_NAVEGACION = (new L("Navegación","Navegación","Navigation")).getId();
+var HB_OCULTISMO = (new L("Ocultismo","Ocultismo","Occult")).getId();
+var HB_TASACION = (new L("Tasación","Tasación","Appraisal")).getId();
+var HB_VALORACION_MAGICA = (new L("Valoración mágica","Valoración mágica","Magic Appraisal")).getId();
 
-var TIPO_HB_VIGOR = "Vigor";
-var HB_FRIALDAD = "Frialdad";
-var HB_PROEZAS_FUERZA = "Proezas de fuerza";
-var HB_RESISTENCIA_DOLOR = "Resistencia al dolor";
+var TIPO_HB_VIGOR = (new L("Vigor","Vigor","Vigor")).getId();
+var HB_FRIALDAD = (new L("Frialdad","Frialdad","Composure")).getId();
+var HB_PROEZAS_FUERZA = (new L("Proezas de fuerza","Proezas de fuerza","Feats of Strength")).getId();
+var HB_RESISTENCIA_DOLOR = (new L("Resistencia al dolor","Resistencia al dolor","Withstand Pain")).getId();
 
-var TIPO_HB_CREATIVAS = "Creativas";
-var HB_ARTE = "Arte";
-var HB_BAILE = "Baile";
-var HB_FORJA = "Forja";
-var HB_MUSICA = "Música";
-var HB_TRUCOS_MANOS = "Trucos de manos";
+var TIPO_HB_CREATIVAS = (new L("Creativas","Creativas","Creative")).getId();
+var HB_ARTE = (new L("Arte","Arte","Art")).getId();
+var HB_BAILE = (new L("Baile","Baile","Dance")).getId();
+var HB_FORJA = (new L("Forja","Forja","Forging")).getId();
+var HB_MUSICA = (new L("Música","Música","Music")).getId();
+var HB_TRUCOS_MANOS = (new L("Trucos de manos","Trucos de manos","Sleight of Hand")).getId();
 
-var PEN_ARMADURA_NO = "Sin penalizador por armadura";
-var PEN_ARMADURA_SI = "Con penalizador por armadura";
-var PEN_ARMADURA_SI_IRREDUCIBLE = "Con penalizador por armadura, no reducible";
-var PEN_ARMADURA_SI_MEDIO_REDUCIBLE = "Con penalizador por armadura, reducible a la mitad";
+var PEN_ARMADURA_NO = (new L("Sin penalizador por armadura","Sin penalizador por armadura","Without Armor Penalty")).getId();
+var PEN_ARMADURA_SI = (new L("Con penalizador por armadura","Con penalizador por armadura","With Armor Penalty")).getId();
+var PEN_ARMADURA_SI_IRREDUCIBLE = (new L("Con penalizador por armadura, no reducible","Con penalizador por armadura, no reducible","With Armor Penalty, non reducible")).getId();
+var PEN_ARMADURA_SI_MEDIO_REDUCIBLE = (new L("Con penalizador por armadura, reducible a la mitad","Con penalizador por armadura, reducible a la mitad","With Armor Penalty, reducible to half")).getId();
 
-var UI_NO_USABLE_SIN_RANGOS = "--";
+var UI_NO_USABLE_SIN_RANGOS = (new L("--","--","--")).getId();
+
+var ERR_HABILIDAD_KI_DESCONOCIDA = (new L("Error: habilidad ki desconocida","Error: habilidad ki desconocida","Error: Unknown Ki Ability")).getId();
+var ERR_TECNICA_KI_DESCONOCIDA = (new L("Error: técnica ki desconocida","Error: técnica ki desconocida","Error: Unknown Ki Technique")).getId();
+var ERR_EFECTO_KI_DESCONOCIDA = (new L("Error: efecto ki desconocida","Error: efecto ki desconocida","Error: Unknown Ki effect")).getId();
+var ERR_VENTAJA_KI_DESCONOCIDA = (new L("Error: ventaja de efecto ki desconocida","Error: ventaja de efecto ki desconocida","Error: Unknown ki effect advantage")).getId();
+var ERR_DESVENTAJA_KI_DESCONOCIDA = (new L("Error: desventaja ki desconocida","Error: desventaja ki desconocida","Error: Unknown ki disadvantage")).getId();
+
+var ELEMENTO_AIRE = (new L("Aire","Aire","Air")).getId();
+var ELEMENTO_AGUA = (new L("Agua","Agua","Water")).getId();
+var ELEMENTO_FUEGO = (new L("Fuego","Fuego","Fire")).getId();
+var ELEMENTO_TIERRA = (new L("Tierra","Tierra","Earth")).getId();
+var ELEMENTO_LUZ = (new L("Luz","Luz","Light")).getId();
+var ELEMENTO_OSCURIDAD = (new L("Oscuridad","Oscuridad","Darkness")).getId();
+
+var EFECTO_OFENSIVO = (new L("Efecto ofensivo","Efecto ofensivo","Offensive effect")).getId();
+var EFECTO_DEFENSIVO = (new L("Efecto defensivo","Efecto defensivo","Defensive effect")).getId();
+var EFECTO_DESTRUCTIVO = (new L("Efecto destructivo","Efecto destructivo","Destructive effect")).getId();
+var EFECTO_ACCION = (new L("Efecto de acción","Efecto de acción","Action effect")).getId();
+var EFECTO_REACCION = (new L("Efecto de reacción","Efecto de reacción","Reaction effect")).getId();
+var EFECTO_ESOTERICO = (new L("Efecto esotérico","Efecto esotérico","Esoteric effect")).getId();
+var EFECTO_ESPECIAL = (new L("Efecto especial","Efecto especial","Special effect")).getId();
+
+var COSTE_VENTAJAS_AUMENTA_DOS = (new L("Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Each additional election adds two to the extra ki cost of this advantage")).getId();
+
+var ERR_VIA_NO_DOMINADA = (new L("Vía no dominada","Vía no dominada","Path not dominated")).getId();
+var ERR_VIA_DESCONOCIDA = (new L("Error: Vía desconocida","Error: Vía desconocida","Error: Unknown path")).getId();
+
+var VIA_LUZ = (new L("VIA Luz","Luz", "Light")).getId();
+var VIA_LUZ_DESCRIPCION = "";
+
+var VIA_OSCURIDAD = (new L("VIA Oscuridad","Oscuridad","Darkness")).getId();
+var VIA_OSCURIDAD_DESCRIPCION = "";
+
+var VIA_CREACION = (new L("VIA Creacion", "Creación", "Creation")).getId();
+var VIA_CREACION_DESCRIPCION = "";
+
+var VIA_DESTRUCCION = (new L("VIA Destrucción","Destrucción","Destruction")).getId();
+var VIA_DESTRUCCION_DESCRIPCION = "";
+
+var VIA_FUEGO = (new L("VIA Fuego","Fuego","Fire")).getId();
+var VIA_FUEGO_DESCRIPCION = "";
+
+var VIA_AGUA = (new L("VIA Agua","Agua","Water")).getId();
+var VIA_AGUA_DESCRIPCION = "";
+
+var VIA_TIERRA = (new L("VIA Tierra","Tierra", "Earth")).getId();
+var VIA_TIERRA_DESCRIPCION = "";
+
+var VIA_AIRE = (new L("VIA Aire","Aire","Air")).getId();
+var VIA_AIRE_DESCRIPCION = "";
+
+var VIA_ESENCIA = (new L("VIA Esencia","Esencia","Essence")).getId();
+var VIA_ESENCIA_DESCRIPCION = "";
+
+var VIA_ILUSION = (new L("VIA Ilusión","Ilusión","Illusion")).getId();
+var VIA_ILUSION_DESCRIPCION = "";
+
+var VIA_NIGROMANCIA = (new L("VIA Nigromancia","Nigromancia","Necromancy")).getId();
+var VIA_NIGROMANCIA_DESCRIPCION = "";
+
+var TODAS_VIAS = (new L("Todas las vías","Todas las vías","All Paths")).getId();
+
+var VIA_LIBRE_ACCESO = (new L("Libre acceso","Libre acceso","Free Access")).getId();
+var VIA_LIBRE_ACCESO_DESCRIPCION = (new L("Conjuros de libre acceso","Conjuros de libre acceso","Free Access Spells")).getId();
+
+var TIPO_CONJURO_EFECTO = (new L("EFEC_CON Efecto","Efecto","Effect")).getId();
+var TIPO_CONJURO_ATAQUE = (new L("EFEC_CON Ataque","Ataque","Attack")).getId();
+var TIPO_CONJURO_DEFENSA = (new L("EFEC_CON Defensa","Defensa","Defense")).getId();
+var TIPO_CONJURO_ANIMICO = (new L("EFEC_CON Anímico","Anímico","Animic")).getId();
+var TIPO_CONJURO_AUTOMATICO = (new L("EFEC_CON Automático","Automático","Automatic")).getId();
+var TIPO_CONJURO_DETECCION = (new L("EFEC_CON Detección","Detección","Detection")).getId();
+var TIPO_CONJURO_ESCUDO = (new L("EFEC_CON Escudo","Escudo","Shield")).getId();
+
+var AVISO_NIVELES_VIA_INSUFICIENTES = (new L("No tienes suficientes niveles de vía libres","No tienes suficientes niveles de vía libres","Not enough path levels")).getId();
+
+var ERR_DISCIPLINA_DESCONOCIDA = (new L("Error: Disciplina Psiquica desconocida","Error: Disciplina Psiquica desconocida","Error: Unknown psychic discipline")).getId();
+var ERR_PODER_DESCONOCIDO = (new L("Error: Poder Psíquico desconocido","Error: Poder Psíquico desconocido","Error: Unknown Psychic Power")).getId();
+var ERR_CV_INSUFICIENTES = (new L("CV insuficientes","CV insuficientes","Not enough PPs")).getId();
+var UI_DISCIPLINA = (new L("disciplina","disciplina","discipline")).getId();
+var ERR_RAZA_ERRONEA = (new L("Error: Nombre de raza erróneo","Error: Nombre de raza erróneo","Error: wrong race name")).getId();
+
+var ERR_TABLA_DESCONOCIDA = (new L("Error: Tabla de Armas desconocida","Error: Tabla de Armas desconocida","Error: Unknown Weapon table")).getId();
+
+var CATEGORIA_TABLA_ARMAS_GENERALES = (new L("Tablas de armas generales","Tablas de armas generales","General weapon modules")).getId();
+var CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS = (new L("Tablas de armas arquetípicas","Tablas de armas arquetípicas","Archetypic Weapon modules")).getId();
+var CATEGORIA_TABLA_ARMAS_ESTILOS = (new L("Tablas de estilos","Tablas de estilos","Combat styles")).getId();
+var CATEGORIA_TABLA_MISTICAS = (new L("Tablas Místicas","Tablas Místicas","Mystic modules")).getId();
+var CATEGORIA_TABLA_PSIQUICAS = (new L("Tablas Psíquicas","Tablas Psíquicas","Psychic modules")).getId();
+
+var ERR_VENTAJA_ERRONEA = (new L("Error: Nombre de ventaja erróneo","Error: Nombre de ventaja erróneo","Error: wrong advantage name")).getId();
+
+var VENTAJA = (new L("Ventaja","Ventaja","Advantage")).getId();
+
+var REPETIBLE_TOTAL = (new L("Totalmente repetible","Totalmente repetible","Always repeatable")).getId();
+var REPETIBLE_OPCIONES = (new L("Repetible eligiendo otras opciones","Repetible eligiendo otras opciones","Repeatable with other options")).getId();
+var NO_REPETIBLE = (new L("No repetible","No repetible","Unrepeatable")).getId();
+var NO_COMPRABLE = (new L("No comprable con PC","No comprable con PC","Can not be bought with CP")).getId();
+
+var LISTA_CARACTERISTICAS = (new L("Especificar Característica","Especificar Característica","Specify Attribute")).getId();
+var LISTA_TIPOS_SECUNDARIAS = (new L("Especificar Tipo de habilidad secundaria","Especificar Tipo de habilidad secundaria","Especify secondary abilities group")).getId();
+var LISTA_HABILIDADES_SECUNDARIAS = (new L("Especificar habilidad secundaria","Especificar habilidad secundaria","Specify secondary ability")).getId();
+var LISTA_DISCIPLINAS_PSIQUICAS = (new L("Especificar disciplina psíquica","Especificar disciplina psíquica","Specify psychic discipline")).getId();
+var LISTA_AJUSTE_TAMAÑO = (new L("Especificar ajuste tamaño","Especificar ajuste tamaño","Specify size adjustment")).getId();
+var LISTA_DESCRIPCION = (new L("Especificar una descripción","Especificar una descripción","Specify description")).getId();
+var LISTA_PODER_PSIQUICO = (new L("Especificar un poder psiquico","Especificar un poder psiquico","Specify psychic power")).getId();
+var LISTA_SHAJADS_BERYLS = (new L("Especificar Shajad o Beryl","Especificar Shajad o Beryl","Specify Beryl or Shajad")).getId();
+var LISTA_VIAS_MAGIA = (new L("Especificar vía de magia","Especificar vía de magia","Specify magic Path")).getId();
+var LISTA_DESEQUILIBRIO_SEPHIROTICO = (new L("Especificar desequilibrio sephirotico","Especificar desequilibrio sephirotico","Specify elemental compatibility")).getId();
+var LISTA_INTRODUCCION_USUARIO = (new L("Introducir detalles","Introducir detalles","Write details")).getId();
+var ELEGIR_POD_VOL = (new L("Elegir Poder o Voluntad","Elegir Poder o Voluntad","Choose POW or WP")).getId();
+var ELEGIR_REPARTO_5_INT_POD_VOL = (new L("Repartir 5 puntos entre INT, VOL y POD","Repartir 5 puntos entre INT, VOL y POD","Distribute 5 points between INT, WP and POW")).getId();
+var LISTA_HABILIDAD_COMBATE = (new L("Elegir ataque, parada o esquiva","Elegir ataque, parada o esquiva","Choose attack, block or dodge")).getId();
+
+
+var ORIGEN_RAZA = (new L("por raza","por raza","from Race")).getId();
+var ORIGEN_PC = (new L("por PC","por PC","from CP")).getId();
+var ORIGEN_ELAN = (new L("por Elan","por Elan","from Elan")).getId();
+
+var GRUPO_CARACTERISTICAS = (new L("Ventajas de Características","Ventajas de Características","Attribute advantages")).getId();
+var GRUPO_RESISTENCIAS = (new L("Ventajas de Resistencias","Ventajas de Resistencias","Resistance advantages")).getId();
+var GRUPO_CAPACIDADES = (new L("Ventajas de otras Capacidades","Ventajas de otras Capacidades","Other abilities advantages")).getId();
+var GRUPO_DON = (new L("Ventajas del Don","Ventajas del Don","Gift advantages")).getId();
+var GRUPO_PSIQUICAS = (new L("Ventajas Psíquicas","Ventajas Psíquicas","Psychic advantages")).getId();
+var GRUPO_KI = (new L("Ventajas del Ki","Ventajas del Ki","Ki advantages")).getId();
+var GRUPO_OTRAS = (new L("Otras Ventajas","Otras Ventajas","Other advantages")).getId();
+var GRUPO_RAZAS = (new L("Ventajas de Raza","Ventajas de Raza","Race advantages")).getId();
+var GRUPO_SECUNDARIAS = (new L("Ventajas de Habilidades Secundarias","Ventajas de Habilidades Secundarias","Secondary abilities advantages")).getId();
+var GRUPO_ELAN = (new L("Ventajas de Elan","Ventajas de Elan","Elan advantages")).getId();
+
+var UI_RESULTADO_DE_TIRADA = (new L("Resultado de la tirada: ","Resultado de la tirada: ","Result of the roll")).getId();
+var UI_AJUSTADO_AL_MINIMO = (new L("Ajustado al mínimo del personaje","Ajustado al mínimo del personaje","Adjusted to character minimum")).getId();
