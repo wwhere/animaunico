@@ -889,3 +889,36 @@ var GRUPO_ELAN = (new L("Ventajas de Elan","Ventajas de Elan","Elan advantages")
 
 var UI_RESULTADO_DE_TIRADA = (new L("Resultado de la tirada: ","Resultado de la tirada: ","Result of the roll")).getId();
 var UI_AJUSTADO_AL_MINIMO = (new L("Ajustado al mínimo del personaje","Ajustado al mínimo del personaje","Adjusted to character minimum")).getId();
+
+var UI_PERSIS_METODO_SERVIDOR = (new L("Método base: Servidor de personajes","Método base: Servidor de personajes","Base method: CHaracter server")).getId();
+var UI_PERSIS_METODO_SERVIDOR_DESC = (new L("UI_PERSIS_METODO_SERVIDOR_DESC",
+    "Puedes guardar tu personaje en el servidor de personajes de Anima: Único.<br>Te pedirá usuario y contraseña. Si no tienes ninguno, puedes <a href='http://www.helechaloscuro.net/cake/users/add' target='_blank'>REGISTRARTE</a>.",
+    "You can save your character in the character server of Anima: UNICO.<br> It will ask for username and password. If you have none, you can <a href='http://www.helechaloscuro.net/cake/users/add' target='_blank'>SIGN UP</a>.")).getId();
+var UI_PERSIS_METODO_SERVIDOR_CARGA_DESC = (new L("UI_PERSIS_METODO_SERVIDOR_CARGA_DESC",
+    "Puedes cargar un personaje del servidor de personajes de Anima: Único.",
+    "You can load a character from the character server of Anima: UNICO")).getId();
+var UI_PERSIS_METODO_SERVIDOR_CARGA_TEXTO = (new L("Accede al servidor de personajes","Accede al servidor de personajes","Access to the character server")).getId();
+
+var UI_PERSIS_METODO_ENLACE = (new L("Método 1: Enlace de descarga","Método 1: Enlace de descarga","Method 1: Download link")).getId();
+var UI_PERSIS_METODO_ENLACE_DESC = (new L("UI_PERSIS_METODO_ENLACE_DESC",
+    "En algunos navegadores puedes descargarlo directamente como fichero con el siguiente enlace:",
+    "In some web browsers you can download your character directly from the following link:")).getId();
+var UI_PERSIS_METODO_ENLACE_TEXTO = (new L("Descarga en fichero de texto","Descarga en fichero de texto","Download as text file")).getId();
+var UI_PERSIS_METODO_CARGA_FICHERO = (new L("Método 1: Carga el fichero","Método 1: Carga el fichero","Method 1: Load the file")).getId();
+var UI_PERSIS_METODO_CARGA_FICHERO_DESC = (new L("UI_PERSIS_METODO_CARGA_FICHERO_DESC",
+    "En algunos navegadores puedes cargar directamente el fichero de texto .animaUnico:",
+    "In some web browsers you can directly load the text file directly:")).getId();
+
+var UI_PERSIS_METODO_COPIA = (new L("Método 2: Copia y pega","Método 2: Copia y pega","Method 2: Copy & Paste")).getId();
+var UI_PERSIS_METODO_COPIA_DESC = (new L(UI_PERSIS_METODO_COPIA_DESC,
+    "Si lo anterior no te funciona, puedes copiar el siguiente texto (¡entero! No te dejes nada) a algún fichero de texto y guardarlo manualmente.  No es necesario que le pongas .animaUnico como extensión para que la aplicación pueda cargarlo más tarde. Si lo prefieres, pulsa el botón para facilitar el copiado.",
+    "If the others don't work, you can copy the following text (full! don't leave a comma) to some local file text and save it manually. Yo don't need to name it .animaUnico for the application to load it later. If you want help, click the button for an easier copy job")).getId();
+var UI_PERSIS_METODO_COPIA_TEXTO = (new L("Copia","Copia","Copy")).getId();
+var UI_PERSIS_METODO_COPIA_GUIA = (new L("UI_PERSIS_METODO_COPIA_GUIA",
+    "Ahora copia al portapapeles pulsando Control+C (o Cmd+C) y luego pégalo donde quieras con Control+v (o Cmd+v)",
+    "Now copy to the clipboard pressing Control+C (or Cmd+C) and then paste it where you want with Control+v (or Cmd+v)")).getId()
+
+var UI_PERSIS_METODO_COPIA_CARGA_DESC = (new L("UI_PERSIS_METODO_COPIA_CARGA_DESC",
+    "Si lo anterior no te funciona, puedes copiar el texto que te descargaste y pegarlo en el siguiente cuadro de texto. Luego dale al botón cargar.",
+    "If the others don't work, you can copy the text you downloaded or copied and pasted and paste it in the following textbox. Then press the load button")).getId();
+var UI_PERSIS_METODO_COPIA_CARGA = (new L("Carga", "Carga", "Load")).getId();

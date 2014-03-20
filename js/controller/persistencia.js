@@ -9,7 +9,6 @@ function doLogin() {
         password: $("input#password").val(),
         data: '{ "username"="'+$("input#username").val()+'","password":"'+$("input#password").val()+'" }',
         success: function (){
-            console.log("Exito");
             //TODO esconder boton login
         }
     });
@@ -23,15 +22,16 @@ function muestraDialogoGuardarPersonaje() {
 
     /**Metodo 0: servidor */
     var enlaceServidorDiv = $("<div></div>");
-    var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append("Método base: Servidor de personajes");
+
+    var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append(_l(UI_PERSIS_METODO_SERVIDOR));
     var textoServidor = getDiv(CSS_TEXTO_SMALL);
-    var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes guardar tu personaje en el servidor de personajes de Anima: Único.<br>Te pedirá usuario y contraseña. Si no tienes ninguno, puedes <a href='http://www.helechaloscuro.net/cake/users/add' target='_blank'>REGISTRARTE</a>.");
+    var explicacionServidor = getDiv().append(_l(UI_PERSIS_METODO_SERVIDOR_DESC));
 
     var formServidor = $("<form name='salvaPersonaje' action='http://www.helechaloscuro.net/cake/personajes/salva' method='post' target='_blank'>" +
         "<textarea name='nombre' hidden>"+personaje_actual.getNombre()+"</textarea> " +
         "<textarea name='categoria' hidden>"+personaje_actual.getStringCategoria() +"</textarea> " +
         "<input type='text' name='nivel' hidden value='"+personaje_actual.getNivel()+"'/> " +
-        "<textarea name='raza' hidden>"+personaje_actual.getRaza().toString() +"</textarea> " +
+        "<textarea name='raza' hidden>"+_l(personaje_actual.getRaza().toString()) +"</textarea> " +
         "<textarea name='json' hidden>"+personajeSerializado+"</textarea> " +
         "<input type='submit' value='Guardar'/>" +
         "</form>" );
@@ -47,24 +47,25 @@ function muestraDialogoGuardarPersonaje() {
 
     /**Metodo 1: por enlace de descarga */
     var enlaceDescargaDiv = $("<div></div>");
-    var tituloEnlace = getDiv(CSS_SUBTITULO_SECCION).append("Método 1: Enlace de descarga");
+
+    var tituloEnlace = getDiv(CSS_SUBTITULO_SECCION).append(_l(UI_PERSIS_METODO_ENLACE));
     var textoEnlace = getDiv(CSS_TEXTO_SMALL);
-    var explicacionEnlace = getDiv().append("En algunos navegadores puedes descargarlo directamente como fichero con el siguiente enlace:");
-    var enlace = $("<a href='#' onclick='descarga();'>Descarga en fichero de texto</a>");
+    var explicacionEnlace = getDiv().append(_l(UI_PERSIS_METODO_ENLACE_DESC));
+
+    var enlace = $("<a href='#' onclick='descarga();'>" + _l(UI_PERSIS_METODO_ENLACE_TEXTO) + "</a>");
     dialogo.append(enlaceDescargaDiv.append(tituloEnlace).append(textoEnlace.append(explicacionEnlace).append(enlace)));
 
     /**Mettodo 2: por copia y pega*/
     var copiaPegaDiv = $("<div></div>");
-    var tituloCopiaPega = getDiv(CSS_SUBTITULO_SECCION).append("Método 2: Copia y pega");
+    var tituloCopiaPega = getDiv(CSS_SUBTITULO_SECCION).append(_l(UI_PERSIS_METODO_COPIA));
     var textoCopiaPega = getDiv(CSS_TEXTO_SMALL);
-    var explicacionCopiaPega = getDiv().append("Si lo anterior no te funciona, puedes copiar el siguiente texto (¡entero! No te dejes nada) a algún fichero de texto y guardarlo manualmente.  No es necesario que" +
-        "le pongas .animaUnico como extensión para que la aplicación pueda cargarlo más tarde. Si lo prefieres, pulsa el botón para facilitar el copiado.");
+    var explicacionCopiaPega = getDiv().append(_l(UI_PERSIS_METODO_COPIA_DESC));
     var copiaPega = $("<textarea></textarea>").append(personajeSerializado);
-    var botonCopiaPega = muestraBotonPequeño("Copia",{texto:personajeSerializado},copiaAlPortapapeles);
+    var botonCopiaPega = muestraBotonPequeño(_l(UI_PERSIS_METODO_COPIA_TEXTO),{texto:personajeSerializado},copiaAlPortapapeles);
     dialogo.append(copiaPegaDiv.append(tituloCopiaPega).append(textoCopiaPega.append(explicacionCopiaPega).append(copiaPega).append(botonCopiaPega)));
 
     /**Mettodo 3: web storage*/
-    var webStorageDiv = $("<div></div>");
+/*    var webStorageDiv = $("<div></div>");
     var tituloWebStorage = getDiv(CSS_SUBTITULO_SECCION).append("Método 3: Almacenamiento Web");
     var textoWebStorage = getDiv(CSS_TEXTO_SMALL);
     var explicacionWebStorage = "";
@@ -76,7 +77,7 @@ function muestraDialogoGuardarPersonaje() {
 
     var botonWebStorage = muestraBotonPequeño("Guarda en el navegador",{texto:personajeSerializado},guardaEnWebStorage);
     dialogo.append(webStorageDiv.append(tituloWebStorage).append(textoWebStorage.append(explicacionWebStorage).append(botonWebStorage)));
-
+*/
     dialogo.dialog({
         modal: true,
         autoOpen: true,
@@ -84,14 +85,14 @@ function muestraDialogoGuardarPersonaje() {
         resizable: false,
         closeOnEscape: true,
         ////show: "puff",
-        title: "Guardar personaje",
+        title: _l(UI_BOTON_GUARDAR),
         width: 500,
         height: 500
     });
 }
 
 function copiaAlPortapapeles(event) {
-    window.prompt("Ahora copia al portapapeles pulsando Control+C (o Cmd+C) y luego pégalo donde quieras con Control+v (o Cmd+v)", event.data.texto);
+    window.prompt(_l(UI_PERSIS_METODO_COPIA_GUIA), event.data.texto);
 }
 
 function descarga() {
@@ -113,17 +114,20 @@ function muestraDialogoCargarPersonaje() {
 
     /**Metodo 0: servidor */
     var enlaceServidorDiv = $("<div></div>");
-    var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append("Método base: Servidor de personajes");
+    var tituloServidor = getDiv(CSS_SUBTITULO_SECCION).append(_l(UI_PERSIS_METODO_SERVIDOR));
     var textoServidor = getDiv(CSS_TEXTO_SMALL);
-    var explicacionServidor = getDiv().append("Si tienes conexión de internet, puedes cargar un personaje del servidor de personajes de Anima: Único.");
-    var enlaceCargaServidor = $("<a href='http://helechaloscuro.net/cake/personajes/index' target='_blank'>Accede al servidor de personajes</a>");
+
+    var explicacionServidor = getDiv().append(_l(UI_PERSIS_METODO_SERVIDOR_CARGA_DESC));
+    var enlaceCargaServidor = $("<a href='http://helechaloscuro.net/cake/personajes/index' target='_blank'>" + _l(UI_PERSIS_METODO_SERVIDOR_CARGA_TEXTO) + "</a>");
     dialogo.append(enlaceServidorDiv.append(tituloServidor).append(textoServidor.append(explicacionServidor).append(enlaceCargaServidor)));
 
     /**Metodo 1: carga de fichero */
     var enlaceDescargaDiv = $("<div></div>");
-    var tituloEnlace = getDiv(CSS_SUBTITULO_SECCION).append("Método 1: Carga el fichero");
+
+    var tituloEnlace = getDiv(CSS_SUBTITULO_SECCION).append(_l(UI_PERSIS_METODO_CARGA_FICHERO));
     var textoEnlace = getDiv(CSS_TEXTO_SMALL);
-    var explicacionEnlace = getDiv().append("En algunos navegadores puedes cargar directamente el fichero de texto .animaUnico:");
+
+    var explicacionEnlace = getDiv().append(_l(UI_PERSIS_METODO_CARGA_FICHERO_DESC));
     var inputDiv = $("<input>");
     inputDiv.attr("type","file");
     inputDiv.attr("id","loadCharacterFile");
@@ -138,15 +142,17 @@ function muestraDialogoCargarPersonaje() {
 
     /**Mettodo 2: por copia y pega*/
     var copiaPegaDiv = $("<div></div>");
-    var tituloCopiaPega = getDiv(CSS_SUBTITULO_SECCION).append("Método 2: Copia y pega");
+    var tituloCopiaPega = getDiv(CSS_SUBTITULO_SECCION).append(_l(UI_PERSIS_METODO_COPIA));
     var textoCopiaPega = getDiv(CSS_TEXTO_SMALL);
-    var explicacionCopiaPega = getDiv().append("Si lo anterior no te funciona, puedes copiar el texto que te descargaste y pegarlo en el siguiente cuadro de texto. Luego dale al botón cargar.");
+
+    var explicacionCopiaPega = getDiv().append(_l(UI_PERSIS_METODO_COPIA_CARGA_DESC));
     var copiaPega = $("<textarea></textarea>").attr("id","zonaCargaPersonaje");
-    var botonCopiaPega = muestraBotonPequeño("Carga",{},cargaCopiaPega);
+
+    var botonCopiaPega = muestraBotonPequeño(UI_PERSIS_METODO_COPIA_CARGA,{},cargaCopiaPega);
     dialogo.append(copiaPegaDiv.append(tituloCopiaPega).append(textoCopiaPega.append(explicacionCopiaPega).append(copiaPega).append(botonCopiaPega)));
 
     /**Mettodo 3: web storage*/
-    var webStorageDiv = $("<div></div>");
+/*    var webStorageDiv = $("<div></div>");
     var tituloWebStorage = getDiv(CSS_SUBTITULO_SECCION).append("Método 3: Almacenamiento Web");
     var textoWebStorage = getDiv(CSS_TEXTO_SMALL);
     var explicacionWebStorage = "";
@@ -159,11 +165,8 @@ function muestraDialogoCargarPersonaje() {
     } else {
         explicacionWebStorage = getDiv().append("Tu navegador no permite usar este método. Lo siento.");
     }
-
-
-
     dialogo.append(webStorageDiv.append(tituloWebStorage).append(textoWebStorage.append(explicacionWebStorage).append(listaPersonajes)));
-
+*/
 
     dialogo.dialog({
         modal: true,
@@ -172,7 +175,7 @@ function muestraDialogoCargarPersonaje() {
         resizable: false,
         closeOnEscape: true,
         ////show: "puff",
-        title: "Cargar personaje",
+        title: _l(UI_BOTON_CARGAR),
         width: 500,
         height: 500
     });

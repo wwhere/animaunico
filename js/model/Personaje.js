@@ -365,9 +365,9 @@ Personaje.prototype = {
         for (var i = 1; i <= this.nivel; i++) {
             if ((this.categoriasPorNiveles[i].toString() != catActual) || (numCategorias == 0)) {
                 if (numCategorias == 1) {
-                    cadena += catActual + " " + nivelActual;
+                    cadena += _l(catActual) + " " + nivelActual;
                 } else if (numCategorias > 1) {
-                    cadena += "/" + catActual + " " + nivelActual;
+                    cadena += "/" + _l(catActual) + " " + nivelActual;
                 }
                 catActual = this.categoriasPorNiveles[i].toString();
                 numCategorias++;
@@ -376,9 +376,9 @@ Personaje.prototype = {
             nivelActual++;
         }
         if (numCategorias == 1) {
-            cadena += catActual + " " + nivelActual;
+            cadena += _l(catActual) + " " + nivelActual;
         } else if (numCategorias > 1) {
-            cadena += "/" + catActual + " " + nivelActual;
+            cadena += "/" + _l(catActual) + " " + nivelActual;
         }
 
         return cadena;
