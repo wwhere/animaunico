@@ -136,20 +136,20 @@ var UI_PD_SOBRENATURAL = (new L("PDs en sobrenaturales","PDs en sobrenaturales",
 var UI_PD_PSIQUICA = (new L("PDs en psíquicas","PDs en psíquicas","Psychic DPs")).getId();
 var UI_PD_SECUNDARIAS = (new L("PDs en secundarias","PDs en secundarias","Secondary Abilities DPs")).getId();
 
-var UI_MULTIPLO_VIDA = (new L("Múltiplo de vida","Múltiplo de vida","Life Multiple")).getId();
-var UI_PV_POR_NIVEL = (new L("PV por nivel","PV por nivel","LP per level")).getId();
-var UI_TURNO_POR_NIVEL = (new L("Turno por nivel","Turno por nivel","Init per level")).getId();
-var UI_CM_POR_NIVEL = (new L("CM por nivel","CM por nivel","MK per level")).getId();
-var UI_NIVELES_PARA_CV = (new L("Niveles para CV","Niveles para CV","Levels for PP")).getId();
+var UI_MULTIPLO_VIDA = (new L("UI Múltiplo de vida","Múltiplo de vida","Life Multiple")).getId();
+var UI_PV_POR_NIVEL = (new L("UI PV por nivel","PV por nivel","LP per level")).getId();
+var UI_TURNO_POR_NIVEL = (new L("UI Turno por nivel","Turno por nivel","Init per level")).getId();
+var UI_CM_POR_NIVEL = (new L("UI CM por nivel","CM por nivel","MK per level")).getId();
+var UI_NIVELES_PARA_CV = (new L("UI Niveles para CV","Niveles para CV","Levels for PP")).getId();
 
-var UI_LIMITE_COMBATE = (new L("Máximo en Combate","Máximo en Combate","Combat Max")).getId();
-var UI_ATAQUE = (new L("Ataque","Ataque","Attack")).getId();
-var UI_PARADA = (new L("Parada","Parada","Block")).getId();
-var UI_ESQUIVA = (new L("Esquiva","Esquiva","Dodge")).getId();
-var UI_LLEVAR_ARMADURA = (new L("Llevar Armadura","Llevar Armadura","Wear Armor")).getId();
+var UI_LIMITE_COMBATE = (new L("UI Máximo en Combate","Máximo en Combate","Combat Max")).getId();
+var UI_ATAQUE = (new L("UI Ataque","Ataque","Attack")).getId();
+var UI_PARADA = (new L("UI Parada","Parada","Block")).getId();
+var UI_ESQUIVA = (new L("UI Esquiva","Esquiva","Dodge")).getId();
+var UI_LLEVAR_ARMADURA = (new L("UI Llevar Armadura","Llevar Armadura","Wear Armor")).getId();
 var UI_KI = (new L("UI_Ki","Ki","Ki")).getId();
 var UI_ACUMULACION_KI = (new L("UI_ACUMULACION_KI","Acumulación de Ki","Ki Accumulation")).getId();
-var UI_KI_AGI = (new L("Ki Agilidad","Ki Agilidad","Agility Ki")).getId();
+var UI_KI_AGI = (new L("UI Ki Agilidad","Ki Agilidad","Agility Ki")).getId();
 var UI_ACUMULACION_KI_AGI = (new L("UI_KI_AGI","Ac. de Ki Agilidad","Agility Ki Accum")).getId();
 var UI_KI_DES = (new L("UI_KI_DES","Ki Destreza","Dextery Ki")).getId();
 var UI_ACUMULACION_KI_DES = (new L("UI_ACUMULACION_KI_DES","Ac. de Ki Destreza","Dextery Ki Accum")).getId();
@@ -171,26 +171,26 @@ var UI_BONO_NOVEL = (new L("Bono innato de Novel (+10)","Bono innato de Novel (+
 var UI_ELEGIR = (new L("?","?","?")).getId();
 
 var UI_LIMITE_SOBRENATURAL = (new L("Máximo en Sobrenatural","Máximo en Sobrenatural","Magic Max")).getId();
-var UI_ZEON = (new L("Zeon","Zeon","Zeon")).getId();
-var UI_ACT = (new L("ACT","ACT","MA")).getId();
-var UI_PROYECCION_MAGICA = (new L("Proyección Mágica","Proyección Mágica","Magic Projection")).getId();
-var UI_CONVOCAR = (new L("Convocar","Convocar","Summon")).getId();
-var UI_DOMINAR = (new L("Dominar","Dominar","Control")).getId();
-var UI_ATAR = (new L("Atar","Atar","Bind")).getId();
-var UI_DESCONVOCAR = (new L("Desconvocar","Desconvocar","Banish")).getId();
+var UI_ZEON = (new L("UI Zeon","Zeon","Zeon")).getId();
+var UI_ACT = (new L("UI ACT","ACT","MA")).getId();
+var UI_PROYECCION_MAGICA = (new L("UI Proyección Mágica","Proyección Mágica","Magic Projection")).getId();
+var UI_CONVOCAR = (new L("UI Convocar","Convocar","Summon")).getId();
+var UI_DOMINAR = (new L("UI Dominar","Dominar","Control")).getId();
+var UI_ATAR = (new L("UI Atar","Atar","Bind")).getId();
+var UI_DESCONVOCAR = (new L("UI Desconvocar","Desconvocar","Banish")).getId();
 
 var UI_LIMITE_PSIQUICA = (new L("Máximo en Psíquica","Máximo en Psíquica","Psychic Max")).getId();
-var UI_CV = (new L("CV","CV","PP")).getId();
-var UI_PROYECCION_PSIQUICA = (new L("Proyección Psíquica","Proyección Psíquica","Psychic Projection")).getId();
-var UI_POTENCIAL_PSIQUICO = (new L("Potencial Psíquico","Potencial Psíquico","Psychic Potential")).getId();
+var UI_CV = (new L("UI CV","CV","PP")).getId();
+var UI_PROYECCION_PSIQUICA = (new L("UI Proyección Psíquica","Proyección Psíquica","Psychic Projection")).getId();
+var UI_POTENCIAL_PSIQUICO = (new L("UI Potencial Psíquico","Potencial Psíquico","Psychic Potential")).getId();
 
-var UI_ATLETICAS = (new L("Atléticas","Atléticas","Athletics")).getId();
-var UI_SOCIALES = (new L("Sociales","Sociales","Social")).getId();
-var UI_PERCEPTIVAS = (new L("Perceptivas","Perceptivas","Perception")).getId();
-var UI_INTELECTUALES = (new L("Intelectuales","Intelectuales","Intellectual")).getId();
-var UI_VIGOR = (new L("Vigor","Vigor","Vigor")).getId();
-var UI_SUBTERFUGIO = (new L("Subterfugio","Subterfugio","Subterfuge")).getId();
-var UI_CREATIVAS = (new L("Creativas","Creativas","Creative")).getId();
+var UI_ATLETICAS = (new L("UI Atléticas","Atléticas","Athletics")).getId();
+var UI_SOCIALES = (new L("UI Sociales","Sociales","Social")).getId();
+var UI_PERCEPTIVAS = (new L("UI Perceptivas","Perceptivas","Perception")).getId();
+var UI_INTELECTUALES = (new L("UI Intelectuales","Intelectuales","Intellectual")).getId();
+var UI_VIGOR = (new L("UI Vigor","Vigor","Vigor")).getId();
+var UI_SUBTERFUGIO = (new L("UI Subterfugio","Subterfugio","Subterfuge")).getId();
+var UI_CREATIVAS = (new L("UI Creativas","Creativas","Creative")).getId();
 
 var UI_COSTES_REDUCIDOS = (new L("Costes Reducidos","Costes Reducidos","Reduced Costs")).getId();
 var UI_BONOS_INNATOS = (new L("Bonos innatos","Bonos innatos","Innate Bonus")).getId();
@@ -246,15 +246,15 @@ var UI_BONO= (new L("Bono","Bono","Bonus")).getId();
 var UI_BONOS= (new L("Bonos","Bonos","Bonuses")).getId();
 
 
-var UI_COMBATE = (new L("Habilidades de Combate","Habilidades de Combate","Combat Abilities")).getId();
-var UI_DOMINIOS_KI = (new L("Dominios del Ki","Dominios del Ki","Ki")).getId();
+var UI_COMBATE = (new L("UI Habilidades de Combate","Habilidades de Combate","Combat Abilities")).getId();
+var UI_DOMINIOS_KI = (new L("UI Dominios del Ki","Dominios del Ki","Ki")).getId();
 
-var UI_SOBRENATURALES = (new L("Magia","Magia", "Magic")).getId();
+var UI_SOBRENATURALES = (new L("UI Magia","Magia", "Magic")).getId();
 var UI_CONVOCATORIA = (new L("Convocatoria","Convocatoria","Summoning")).getId();
 
-var UI_PSIQUICA = (new L("Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
+var UI_PSIQUICA = (new L("UI Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
 
-var UI_SECUNDARIAS = (new L("Habilidades Secundarias","Habilidades Secundarias","Secondary Abilities")).getId();
+var UI_SECUNDARIAS = (new L("UI Habilidades Secundarias","Habilidades Secundarias","Secondary Abilities")).getId();
 
 var UI_VACIO = (new L("","","")).getId();
 
@@ -357,7 +357,7 @@ var NOM_ARQ_ACECHADOR = (new L("Acechador","Acechador","Prowler")).getId();
 var NOM_ARQ_DOMINE = (new L("Domine","Domine","Domine")).getId();
 var NOM_ARQ_SIN_CATEGORIA = (new L("Sin Categoría","Sin Categoría","Novel")).getId();
 
-var ORIGEN_MULTIPLO_VIDA = (new L("Múltiplos de vida","Múltiplos de vida","LP Multiples")).getId();
+var ORIGEN_MULTIPLO_VIDA = (new L("orig Múltiplos de vida","Múltiplos de vida","LP Multiples")).getId();
 
 var ERR_HABILIDAD_ERRONEA = (new L("Error: Nombre de habilidad erróneo","Error: Nombre de habilidad erróneo","Error: wrong ability name")).getId();
 var ERR_TIPO_HABILIDAD_ERRONEO = (new L("Error: Nombre de tipo de habilidad erróneo","Error: Nombre de tipo de habilidad erróneo","Error: wrong ability group name")).getId();
@@ -518,7 +518,7 @@ var UI_NIVELES_LIBRES_A_REPARTIR = (new L("Niveles libres a repartir","Niveles l
 
 var UI_NV = (new L("Nv", "Nv", "Lv")).getId();
 var UI_NIVELES_VIA_GASTADOS = (new L("niveles gastados", "niveles gastados", "spent levels")).getId();
-var UI_LIBRE_ACCESO = (new L("Libre acceso", "Libre acceso", "Free access")).getId();
+var UI_LIBRE_ACCESO = (new L("UI Libre acceso", "Libre acceso", "Free access")).getId();
 
 var UI_DISCIPLINAS_DOMINADAS = (new L("Disciplinas dominadas","Disciplinas dominadas","Dominated Disciplines")).getId();
 var UI_CVS_POTENCIAL = (new L("CVs, Potencial Psíquico e Innatos","CVs, Potencial Psíquico e Innatos","PP, Psychic Potential and Innates")).getId();
@@ -636,14 +636,14 @@ var EQUIPO_TIPO_BARDAS = (new L("Bardas","Bardas","Barding")).getId();
 var EQUIPO_TIPO_YELMOS = (new L("Yelmos","Yelmos","Helms")).getId();
 var EQUIPO_TIPO_VESTIMENTAS = (new L("Vestimentas","Vestimentas","Clothes")).getId();
 var EQUIPO_TIPO_CALZADO = (new L("Calzado","Calzado","Shoes")).getId();
-var EQUIPO_TIPO_ANIMALES = (new L("Animales","Animales","Animals")).getId();
+var EQUIPO_TIPO_ANIMALES = (new L("equ Animales","Animales","Animals")).getId();
 var EQUIPO_TIPO_TRANSPORTE = (new L("Transporte","Transporte","Transportations")).getId();
 var EQUIPO_TIPO_EMBARCACIONES = (new L("Embarcaciones","Embarcaciones","Boats")).getId();
 var EQUIPO_TIPO_RACIONES = (new L("Raciones","Raciones","Rations")).getId();
 var EQUIPO_TIPO_VIVIENDAS = (new L("Viviendas","Viviendas","Houses")).getId();
 var EQUIPO_TIPO_DECORACIONES = (new L("Decoraciones","Decoraciones","Decorations")).getId();
 var EQUIPO_TIPO_ORFEBRERIA = (new L("Orfebrería","Orfebrería","Goldsmithing")).getId();
-var EQUIPO_TIPO_VENENOS = (new L("Venenos","Venenos","Poisons")).getId();
+var EQUIPO_TIPO_VENENOS = (new L("equ Venenos","Venenos","Poisons")).getId();
 var EQUIPO_TIPO_VARIOS = (new L("Varios","Varios","Others")).getId();
 
 var ERR_ARMA_DESCONOCIDA = (new L("Error: Arma desconocida","Error: Arma desconocida","Error: Unknown weapon")).getId();
