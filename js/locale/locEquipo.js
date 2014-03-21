@@ -1,211 +1,211 @@
 /*********ARMADURA*************/
 
 var ARMADURA_ACOLCHADA = (new L("ARMADURA_ACOLCHADA","Acolchada",
-    "Acolchada")).getId();
+    "Padded")).getId();
 var ARMADURA_COTA_CUERO = (new L("ARMADURA_COTA_CUERO","Cota de cuero",
-    "Cota de cuero")).getId();
+    "Leather Coat")).getId();
 var ARMADURA_GABARDINA = (new L("ARMADURA_GABARDINA","Gabardina",
-    "Gabardina")).getId();
+    "Armored Longcoat")).getId();
 var ARMADURA_PIEL = (new L("ARMADURA_PIEL","Piel",
-    "Piel")).getId();
+    "Fur")).getId();
 var ARMADURA_COMPLETA_CUERO = (new L("ARMADURA_COMPLETA_CUERO","Completa de cuero",
-    "Completa de cuero")).getId();
+    "Complete Leather")).getId();
 var ARMADURA_CUERO_ENDURECIDO = (new L("ARMADURA_CUERO_ENDURECIDO","Cuero endurecido",
-    "Cuero endurecido")).getId();
+    "Hardened Leather")).getId();
 var ARMADURA_CUERO_TACHONADO = (new L("ARMADURA_CUERO_TACHONADO","Cuero tachonado",
-    "Cuero tachonado")).getId();
+    "Studded Leather")).getId();
 var ARMADURA_MALLAS = (new L("ARMADURA_MALLAS","Mallas",
-    "Mallas")).getId();
+    "Chainmail")).getId();
 var ARMADURA_PETO = (new L("ARMADURA_PETO","Peto",
-    "Peto")).getId();
+    "Breastplate")).getId();
 var ARMADURA_PIEZAS = (new L("ARMADURA_PIEZAS","Piezas",
-    "Piezas")).getId();
+    "Partial Plate")).getId();
 var ARMADURA_ANILLAS = (new L("ARMADURA_ANILLAS","Anillas",
-    "Anillas")).getId();
+    "Byrnie")).getId();
 var ARMADURA_SEMICOMPLETA = (new L("ARMADURA_SEMICOMPLETA","Semicompleta",
-    "Semicompleta")).getId();
+    "Half Plate")).getId();
 var ARMADURA_ESCAMAS = (new L("ARMADURA_ESCAMAS","Escamas",
-    "Escamas")).getId();
+    "Scale Mail")).getId();
 var ARMADURA_PLACAS = (new L("ARMADURA_PLACAS","Placas",
-    "Placas")).getId();
+    "Light Plate")).getId();
 var ARMADURA_COMPLETA = (new L("ARMADURA_COMPLETA","Completa",
-    "Completa")).getId();
+    "Full Plate")).getId();
 var ARMADURA_COMPLETA_PESADA = (new L("ARMADURA_COMPLETA_PESADA","Completa pesada",
-    "Completa pesada")).getId();
+    "Full Heavy Plate")).getId();
 var ARMADURA_CAMPAÑA_PESADA = (new L("ARMADURA_CAMPAÑA_PESADA","De campaña pesada",
-    "De campaña pesada")).getId();
+    "Full Field Plate")).getId();
 
 var BARDA_LIGERA = (new L("BARDA_LIGERA","Barda ligera",
-    "Barda ligera")).getId();
+    "Light Barding")).getId();
 var BARDA_PESADA = (new L("BARDA_PESADA","Barda pesada",
-    "Barda pesada")).getId();
+    "Heavy Barding")).getId();
 
 var YELMO_ANILLA = (new L("YELMO_ANILLA","Anilla",
-    "Anilla")).getId();
+    "Circlet")).getId();
 var YELMO_FRENTON = (new L("YELMO_FRENTON","Frentón",
-    "Frentón")).getId();
+    "Forehead Protector")).getId();
 var YELMO_CORONILLA = (new L("YELMO_CORONILLA","Coronilla",
-    "Coronilla")).getId();
+    "Casque")).getId();
 var YELMO_CAPUCHA_CUERO = (new L("YELMO_CAPUCHA_CUERO","Capucha de cuero",
-    "Capucha de cuero")).getId();
+    "Leather Hood")).getId();
 var YELMO_CAPUCHA_MALLA = (new L("YELMO_CAPUCHA_MALLA","Capucha de mallas",
-    "Capucha de mallas")).getId();
+    "Mail Coif")).getId();
 var YELMO_COMPLETO_ABIERTO = (new L("YELMO_COMPLETO_ABIERTO","Completo abierto",
-    "Completo abierto")).getId();
+    "Open Helm")).getId();
 var YELMO_COMPLETO_CERRADO = (new L("YELMO_COMPLETO_CERRADO","Completo cerrado",
-    "Completo cerrado")).getId();
+    "Great Helm")).getId();
 
 
 
 /***********ARMAS************/
 var ARMA_ABANICO_COMBATE = (new L("ARMA_ABANICO_COMBATE","Abanico de combate",
-    "Abanico de combate")).getId();
+    "Tessen (War Fan)")).getId();
 var ARMA_ALABARDA = (new L("ARMA_ALABARDA","Alabarda",
-    "Alabarda")).getId();
+    "Halberd")).getId();
 var ARMA_ANCIANO_PRIMAVERA = (new L("ARMA_ANCIANO_PRIMAVERA","Anciano de primavera",
-    "Anciano de primavera")).getId();
+    "Haru No Okina")).getId();
 var ARMA_ARCABUZ = (new L("ARMA_ARCABUZ","Arcabuz",
-    "Arcabuz")).getId();
+    "Arquebus")).getId();
 var ARMA_ARCO_CORTO = (new L("ARMA_ARCO_CORTO","Arco corto",
-    "Arco corto")).getId();
+    "Short Bow")).getId();
 var ARMA_ARCO_LARGO = (new L("ARMA_ARCO_LARGO","Arco largo",
-    "Arco largo")).getId();
+    "Long Bow")).getId();
 var ARMA_ARCO_LARGO_COMPUESTO = (new L("ARMA_ARCO_LARGO_COMPUESTO","Arco largo compuesto",
-    "Arco largo compuesto")).getId();
+    "Composite Bow")).getId();
 var ARMA_ARPON = (new L("ARMA_ARPON","Arpón",
-    "Arpón")).getId();
+    "Harpoon")).getId();
 var ARMA_BALA = (new L("ARMA_BALA","Bala",
-    "Bala")).getId();
+    "Pistol Shot")).getId();
 var ARMA_BALA_CAÑON = (new L("ARMA_BALA_CAÑON","Bala de cañón",
-    "Bala de cañón")).getId();
+    "Cannonball")).getId();
 var ARMA_BALISTA_LIGERA = (new L("ARMA_BALISTA_LIGERA","Balista ligera",
-    "Balista ligera")).getId();
+    "Light Ballista")).getId();
 var ARMA_BALISTA_PESADA = (new L("ARMA_BALISTA_PESADA","Balista pesada",
-    "Balista pesada")).getId();
+    "Heavy Ballista")).getId();
 var ARMA_BALLESTA = (new L("ARMA_BALLESTA","Ballesta",
-    "Ballesta")).getId();
+    "Crossbow")).getId();
 var ARMA_BALLESTA_MANO = (new L("ARMA_BALLESTA_MANO","Ballesta de mano",
-    "Ballesta de mano")).getId();
+    "Miniature Crossbow")).getId();
 var ARMA_BALLESTA_PESADA = (new L("ARMA_BALLESTA_PESADA","Ballesta pesada",
-    "Ballesta pesada")).getId();
+    "Heavy Crossbow")).getId();
 var ARMA_BALLESTA_REPETICION = (new L("ARMA_BALLESTA_REPETICION","Ballesta de repetición",
-    "Ballesta de repetición")).getId();
+    "Repeating Crossbow")).getId();
 var ARMA_BOLAS = (new L("ARMA_BOLAS","Bolas",
-    "Bolas")).getId();
+    "Spiked Ball")).getId();
 var ARMA_BOLEADORAS = (new L("ARMA_BOLEADORAS","Boleadoras",
-    "Boleadoras")).getId();
+    "Bolas")).getId();
 var ARMA_BUMERAN = (new L("ARMA_BUMERAN","Bumerán",
-    "Bumerán")).getId();
+    "Boomerang")).getId();
 var ARMA_CADENA = (new L("ARMA_CADENA","Cadena",
-    "Cadena")).getId();
+    "Chain")).getId();
 var ARMA_CAÑON = (new L("ARMA_CAÑON","Cañón",
-    "Cañón")).getId();
+    "Cannon")).getId();
 var ARMA_CERBATANA = (new L("ARMA_CERBATANA","Cerbatana",
-    "Cerbatana")).getId();
+    "Blowgun")).getId();
 var ARMA_CESTUS = (new L("ARMA_CESTUS","Cestus",
     "Cestus")).getId();
 var ARMA_CIMITARRA = (new L("ARMA_CIMITARRA","Cimitarra",
-    "Cimitarra")).getId();
+    "Scimitar")).getId();
 var ARMA_CUERVO = (new L("ARMA_CUERVO","Cuervo",
-    "Cuervo")).getId();
+    "Raven")).getId();
 var ARMA_DAGA = (new L("ARMA_DAGA","Daga",
-    "Daga")).getId();
+    "Dagger")).getId();
 var ARMA_DAGA_PARADA = (new L("ARMA_DAGA_PARADA","Daga de parada",
-    "Daga de parada")).getId();
+    "Parrying Dagger")).getId();
 var ARMA_DARDOS_MANO = (new L("ARMA_DARDOS_MANO","Dardos de mano",
-    "Dardos de mano")).getId();
+    "Darts")).getId();
 var ARMA_DARDO_CERBATANA = (new L("ARMA_DARDO_CERBATANA","Dardo de cerbatana",
-    "Dardo de cerbatana")).getId();
+    "Blowgun Darts")).getId();
 var ARMA_ESCUDO = (new L("ARMA_ESCUDO","Escudo",
-    "Escudo")).getId();
+    "Shield")).getId();
 var ARMA_ESCUDO_CORPORAL = (new L("ARMA_ESCUDO_CORPORAL","Escudo corporal",
-    "Escudo corporal")).getId();
+    "Full Shield")).getId();
 var ARMA_ESPADA_ANCHA = (new L("ARMA_ESPADA_ANCHA","Espada ancha",
-    "Espada ancha")).getId();
+    "Broadsword")).getId();
 var ARMA_ESPADA_BASTARDA = (new L("ARMA_ESPADA_BASTARDA","Espada bastarda",
-    "Espada bastarda")).getId();
+    "Bastard Sword")).getId();
 var ARMA_ESPADA_CORTA = (new L("ARMA_ESPADA_CORTA","Espada corta",
-    "Espada corta")).getId();
+    "Short Sword")).getId();
 var ARMA_ESPADA_LARGA = (new L("ARMA_ESPADA_LARGA","Espada larga",
-    "Espada larga")).getId();
+    "Long Sword")).getId();
 var ARMA_ESTILETE = (new L("ARMA_ESTILETE","Estilete",
-    "Estilete")).getId();
+    "Stiletto")).getId();
 var ARMA_ESTOQUE = (new L("ARMA_ESTOQUE","Estoque",
-    "Estoque")).getId();
+    "Rapier")).getId();
 var ARMA_FLECHA_DESCARGA = (new L("ARMA_FLECHA_DESCARGA","Flecha de descarga",
-    "Flecha de descarga")).getId();
+    "Standard Arrow")).getId();
 var ARMA_FLECHA_FAJO = (new L("ARMA_FLECHA_FAJO","Flecha de fajo",
-    "Flecha de fajo")).getId();
+    "Flight Arrow")).getId();
 var ARMA_FLECHA_MELLA = (new L("ARMA_FLECHA_MELLA","Flecha de mella",
-    "Flecha de mella")).getId();
+    "Armor-piercing Arrow")).getId();
 var ARMA_FLORETE = (new L("ARMA_FLORETE","Florete",
-    "Florete")).getId();
+    "Foil")).getId();
 var ARMA_GARFIO = (new L("ARMA_GARFIO","Garfio",
-    "Garfio")).getId();
+    "Hook")).getId();
 var ARMA_GARRAS = (new L("ARMA_GARRAS","Garras",
-    "Garras")).getId();
+    "Claws")).getId();
 var ARMA_GARROTE = (new L("ARMA_GARROTE","Garrote",
-    "Garrote")).getId();
+    "Club")).getId();
 var ARMA_GRAN_MARTILLO_GUERRA = (new L("ARMA_GRAN_MARTILLO_GUERRA","Gran martillo de guerra",
-    "Gran martillo de guerra")).getId();
+    "Great Warhammer")).getId();
 var ARMA_GUADAÑA = (new L("ARMA_GUADAÑA","Guadaña",
-    "Guadaña")).getId();
+    "Scythe")).getId();
 var ARMA_HACHA_DOS_MANOS = (new L("ARMA_HACHA_DOS_MANOS","Hacha a dos manos",
-    "Hacha a dos manos")).getId();
+    "Two-handed Axe")).getId();
 var ARMA_HACHA_GUERRA = (new L("ARMA_HACHA_GUERRA","Hacha de guerra",
-    "Hacha de guerra")).getId();
+    "Battle Axe")).getId();
 var ARMA_HACHA_MANO = (new L("ARMA_HACHA_MANO","Hacha de mano",
-    "Hacha de mano")).getId();
+    "Hand Axe")).getId();
 var ARMA_JABALINA = (new L("ARMA_JABALINA","Jabalina",
-    "Jabalina")).getId();
+    "Javelin")).getId();
 var ARMA_KATANA = (new L("ARMA_KATANA","Katana",
     "Katana")).getId();
 var ARMA_KATANA_DOBLE_HOJA = (new L("ARMA_KATANA_DOBLE_HOJA","Katana de doble hoja",
-    "Katana de doble hoja")).getId();
+    "Two-bladed Katana")).getId();
 var ARMA_KATAR = (new L("ARMA_KATAR","Katar",
     "Katar")).getId();
 var ARMA_KUSARI_GAMA = (new L("ARMA_KUSARI_GAMA","Kusari-Gama",
     "Kusari-Gama")).getId();
 var ARMA_LANZA = (new L("ARMA_LANZA","Lanza",
-    "Lanza")).getId();
+    "Lance")).getId();
 var ARMA_LANZA_CABALLERIA = (new L("ARMA_LANZA_CABALLERIA","Lanza de caballería",
-    "Lanza de caballería")).getId();
+    "Cavalry Lance")).getId();
 var ARMA_LATIGO = (new L("ARMA_LATIGO","Látigo",
-    "Látigo")).getId();
+    "Whip")).getId();
 var ARMA_LAZO = (new L("ARMA_LAZO","Lazo",
-    "Lazo")).getId();
+    "Lasso")).getId();
 var ARMA_MANDOBLE = (new L("ARMA_MANDOBLE","Mandoble",
-    "Mandoble")).getId();
+    "Two-handed Sword")).getId();
 var ARMA_MANGUAL = (new L("ARMA_MANGUAL","Mangual",
-    "Mangual")).getId();
+    "Large Multi-headed Flail")).getId();
 var ARMA_MARTILLO_GUERRA = (new L("ARMA_MARTILLO_GUERRA","Martillo de guerra",
-    "Martillo de guerra")).getId();
+    "Warhammer")).getId();
 var ARMA_MAYAL = (new L("ARMA_MAYAL","Mayal",
-    "Mayal")).getId();
+    "Flail")).getId();
 var ARMA_MAZA = (new L("ARMA_MAZA","Maza",
-    "Maza")).getId();
+    "Mace")).getId();
 var ARMA_MAZA_PESADA = (new L("ARMA_MAZA_PESADA","Maza pesada",
-    "Maza pesada")).getId();
+    "Heavy Battle-mace")).getId();
 var ARMA_NO_DACHI = (new L("ARMA_NO_DACHI","No-Dachi",
-    "No-Dachi")).getId();
+    "Nodachi")).getId();
 var ARMA_NUNCHAKU = (new L("ARMA_NUNCHAKU","Nunchaku",
-    "Nunchaku")).getId();
+    "Nunchakus")).getId();
 var ARMA_PISTOLA_MECHA = (new L("ARMA_PISTOLA_MECHA","Pistola de mecha",
-    "Pistola de mecha")).getId();
+    "Matchlock Pistol")).getId();
 var ARMA_QUEBRADORA = (new L("ARMA_QUEBRADORA","Quebradora",
-    "Quebradora")).getId();
+    "Sword Breaker")).getId();
 var ARMA_RED_GLADIADOR = (new L("ARMA_RED_GLADIADOR","Red de gladiador",
-    "Red de gladiador")).getId();
+    "Gladiator's Net")).getId();
 var ARMA_RODELA = (new L("ARMA_RODELA","Rodela",
-    "Rodela")).getId();
+    "Buckler")).getId();
 var ARMA_SABLE = (new L("ARMA_SABLE","Sable",
-    "Sable")).getId();
+    "Saber")).getId();
 var ARMA_SAETA = (new L("ARMA_SAETA","Saeta",
-    "Saeta")).getId();
+    "Crossbow bolt")).getId();
 var ARMA_SAETA_LIGERA = (new L("ARMA_SAETA_LIGERA","Saeta ligera",
-    "Saeta ligera")).getId();
+    "Light Crossbow Bolt")).getId();
 var ARMA_SAETA_PESADA = (new L("ARMA_SAETA_PESADA","Saeta pesada",
-    "Saeta pesada")).getId();
+    "Heavy Crossbow Bolt")).getId();
 var ARMA_SAI = (new L("ARMA_SAI","Sai",
     "Sai")).getId();
 var ARMA_SHUKO = (new L("ARMA_SHUKO","Shuko",
@@ -213,357 +213,330 @@ var ARMA_SHUKO = (new L("ARMA_SHUKO","Shuko",
 var ARMA_SHURIKEN = (new L("ARMA_SHURIKEN","Shuriken",
     "Shuriken")).getId();
 var ARMA_SIN_ARMAS = (new L("ARMA_SIN_ARMAS","Sin armas",
-    "Sin armas")).getId();
+    "Unarmed")).getId();
 var ARMA_TANTO = (new L("ARMA_TANTO","Tanto",
     "Tanto")).getId();
 var ARMA_TONFA = (new L("ARMA_TONFA","Tonfa",
     "Tonfa")).getId();
 var ARMA_TRIDENTE = (new L("ARMA_TRIDENTE","Tridente",
-    "Tridente")).getId();
+    "Trident")).getId();
 var ARMA_TURCUS = (new L("ARMA_TURCUS","Turcus",
-    "Turcus")).getId();
+    "Chakram")).getId();
 var ARMA_VARA = (new L("ARMA_VARA","Vara",
-    "Vara")).getId();
+    "Quarterstaff")).getId();
 var ARMA_VIROTE_LIGERO = (new L("ARMA_VIROTE_LIGERO","Virote ligero",
-    "Virote ligero")).getId();
+    "Light Quarrel")).getId();
 var ARMA_VIROTE_PESADO = (new L("ARMA_VIROTE_PESADO","Virote pesado",
-    "Virote pesado")).getId();
+    "Heavy Quarrel")).getId();
 var ARMA_POLVORA = (new L("ARMA_POLVORA","Pólvora (2 disparos)",
-    "Pólvora (2 disparos)")).getId();
+    "Gunpowder (2 Shots)")).getId();
 
 
 /********equipo**************/
 
 var EQUIPO_ABANICO = (new L("EQUIPO_ABANICO","Abanico",
-    "Abanico")).getId();
+    "Fan")).getId();
 var EQUIPO_ABRIGO = (new L("EQUIPO_ABRIGO","Abrigo",
-    "Abrigo")).getId();
+    "Coat")).getId();
 var EQUIPO_ACEITE = (new L("EQUIPO_ACEITE","Aceite",
-    "Aceite")).getId();
+    "Oil")).getId();
 var EQUIPO_ACQUA_TOFFANA = (new L("EQUIPO_ACQUA_TOFFANA","Acqua Toffana",
     "Acqua Toffana")).getId();
 var EQUIPO_ALFOMBRA = (new L("EQUIPO_ALFOMBRA","Alfombra",
-    "Alfombra")).getId();
+    "Carpet")).getId();
 var EQUIPO_AL_BALADIN = (new L("EQUIPO_AL_BALADIN","Al-Baladín",
-    "Al-Baladín")).getId();
+    "Al-Baladin")).getId();
 var EQUIPO_ANILLO = (new L("EQUIPO_ANILLO","Anillo",
-    "Anillo")).getId();
+    "Ring")).getId();
 var EQUIPO_ANTORCHA = (new L("EQUIPO_ANTORCHA","Antorcha",
-    "Antorcha")).getId();
+    "Torch")).getId();
 var EQUIPO_ARCON_GRANDE = (new L("EQUIPO_ARCON_GRANDE","Arcón grande",
-    "Arcón grande")).getId();
+    "Large Chest")).getId();
 var EQUIPO_ARCON_PEQUEÑO = (new L("EQUIPO_ARCON_PEQUEÑO","Arcón pequeño",
-    "Arcón pequeño")).getId();
+    "Small Chest")).getId();
 var EQUIPO_ARPON = (new L("EQUIPO_ARPON","Arpón",
-    "Arpón")).getId();
+    "Harpoon")).getId();
 var EQUIPO_ARSENICO_REAL = (new L("EQUIPO_ARSENICO_REAL","Arsénico real",
-    "Arsénico real")).getId();
+    "Royal Arsenic")).getId();
 var EQUIPO_ATROPINA = (new L("EQUIPO_ATROPINA","Atropina",
-    "Atropina")).getId();
+    "Atropine")).getId();
 var EQUIPO_BARCA = (new L("EQUIPO_BARCA","Barca",
-    "Barca")).getId();
+    "Boat")).getId();
 var EQUIPO_BARCO_DE_GUERRA = (new L("EQUIPO_BARCO_DE_GUERRA","Barco de guerra",
-    "Barco de guerra")).getId();
+    "Warship")).getId();
 var EQUIPO_BARRIL = (new L("EQUIPO_BARRIL","Barril",
-    "Barril")).getId();
+    "Barrel")).getId();
 var EQUIPO_BASTON_ARTISTICO = (new L("EQUIPO_BASTON_ARTISTICO","Bastón artístico",
-    "Bastón artístico")).getId();
+    "Decorated Cane")).getId();
 var EQUIPO_BASTON_NORMAL = (new L("EQUIPO_BASTON_NORMAL","Bastón normal",
-    "Bastón normal")).getId();
+    "Walking Stick")).getId();
 var EQUIPO_BELLADONA = (new L("EQUIPO_BELLADONA","Belladona",
     "Belladona")).getId();
 var EQUIPO_BOLSA_GRANDE = (new L("EQUIPO_BOLSA_GRANDE","Bolsa grande",
-    "Bolsa grande")).getId();
+    "Large Bag")).getId();
 var EQUIPO_BOLSA_PEQUEÑA = (new L("EQUIPO_BOLSA_PEQUEÑA","Bolsa pequeña",
-    "Bolsa pequeña")).getId();
+    "Small Bag")).getId();
 var EQUIPO_BOTAS_DE_VIAJE = (new L("EQUIPO_BOTAS_DE_VIAJE","Botas de viaje",
-    "Botas de viaje")).getId();
+    "Walking Boots")).getId();
 var EQUIPO_BOTELLA_DE_CRISTAL_GRANDE = (new L("EQUIPO_BOTELLA_DE_CRISTAL_GRANDE","Botella de cristal grande",
-    "Botella de cristal grande")).getId();
+    "Large Glass Bottle")).getId();
 var EQUIPO_BOTELLA_DE_CRISTAL_PEQUEÑA = (new L("EQUIPO_BOTELLA_DE_CRISTAL_PEQUEÑA","Botella de cristal pequeña",
-    "Botella de cristal pequeña")).getId();
+    "Small Glass Bottle")).getId();
 var EQUIPO_BROCHE = (new L("EQUIPO_BROCHE","Broche",
-    "Broche")).getId();
+    "Brooch")).getId();
 var EQUIPO_BUEY_DE_CARGA = (new L("EQUIPO_BUEY_DE_CARGA","Buey de carga",
-    "Buey de carga")).getId();
+    "Working Ox")).getId();
 var EQUIPO_BUFANDA = (new L("EQUIPO_BUFANDA","Bufanda",
-    "Bufanda")).getId();
+    "Scarf")).getId();
 var EQUIPO_CABALLO = (new L("EQUIPO_CABALLO","Caballo",
-    "Caballo")).getId();
+    "Horse")).getId();
 var EQUIPO_CABALLO_DE_GUERRA = (new L("EQUIPO_CABALLO_DE_GUERRA","Caballo de guerra",
-    "Caballo de guerra")).getId();
+    "Warhorse")).getId();
 var EQUIPO_CADENA_LIGERA_1_METRO = (new L("EQUIPO_CADENA_LIGERA_1_METRO","Cadena ligera (1 metro)",
-    "Cadena ligera (1 metro)")).getId();
+    "Light Chain (3 feet)")).getId();
 var EQUIPO_CADENA_PESADA_1_METRO = (new L("EQUIPO_CADENA_PESADA_1_METRO","Cadena pesada (1 metro)",
-    "Cadena pesada (1 metro)")).getId();
+    "Heavy Chain (3 feet)")).getId();
 var EQUIPO_CAJA = (new L("EQUIPO_CAJA","Caja",
-    "Caja")).getId();
+    "Box")).getId();
 var EQUIPO_CALZONCILLOS = (new L("EQUIPO_CALZONCILLOS","Calzoncillos",
-    "Calzoncillos")).getId();
+    "Men's Underwear")).getId();
 var EQUIPO_CAMISA = (new L("EQUIPO_CAMISA","Camisa",
-    "Camisa")).getId();
+    "Shirt")).getId();
 var EQUIPO_CAMPANA = (new L("EQUIPO_CAMPANA","Campana",
-    "Campana")).getId();
+    "Bell")).getId();
 var EQUIPO_CANDELABROS = (new L("EQUIPO_CANDELABROS","Candelabros",
-    "Candelabros")).getId();
+    "Candelabra")).getId();
 var EQUIPO_CANTARIDINA = (new L("EQUIPO_CANTARIDINA","Cantaridina",
-    "Cantaridina")).getId();
+    "Cantharidin")).getId();
 var EQUIPO_CAPA = (new L("EQUIPO_CAPA","Capa",
-    "Capa")).getId();
+    "Cap")).getId();
 var EQUIPO_CARCAJ_DE_FLECHAS = (new L("EQUIPO_CARCAJ_DE_FLECHAS","Carcaj de flechas",
-    "Carcaj de flechas")).getId();
+    "Quiver of Arrows")).getId();
 var EQUIPO_CARRETA = (new L("EQUIPO_CARRETA","Carreta",
-    "Carreta")).getId();
+    "Cart")).getId();
 var EQUIPO_CARROMATO_DE_TELA = (new L("EQUIPO_CARROMATO_DE_TELA","Carromato de tela",
-    "Carromato de tela")).getId();
+    "Cloth-enclosed Wagon")).getId();
 var EQUIPO_CARROMATO_VIVIENDA_DE_MADERA = (new L("EQUIPO_CARROMATO_VIVIENDA_DE_MADERA","Carromato vivienda de madera",
-    "Carromato vivienda de madera")).getId();
+    "Wood-enclosed Wagon")).getId();
 var EQUIPO_CARRUAJE_LUJOSO = (new L("EQUIPO_CARRUAJE_LUJOSO","Carruaje lujoso",
-    "Carruaje lujoso")).getId();
+    "Luxurious Coach")).getId();
 var EQUIPO_CARRUAJE_NORMAL = (new L("EQUIPO_CARRUAJE_NORMAL","Carruaje normal",
-    "Carruaje normal")).getId();
+    "Standard Coach")).getId();
 var EQUIPO_CASA = (new L("EQUIPO_CASA","Casa",
-    "Casa")).getId();
+    "House")).getId();
 var EQUIPO_CASERON = (new L("EQUIPO_CASERON","Caserón",
-    "Caserón")).getId();
+    "Large House")).getId();
 var EQUIPO_CASTILLO = (new L("EQUIPO_CASTILLO","Castillo",
-    "Castillo")).getId();
+    "Castle")).getId();
 var EQUIPO_CATALEJO = (new L("EQUIPO_CATALEJO","Catalejo",
-    "Catalejo")).getId();
+    "Spyglass")).getId();
 var EQUIPO_CEPO_PEQUEÑO = (new L("EQUIPO_CEPO_PEQUEÑO","Cepo pequeño",
-    "Cepo pequeño")).getId();
+    "Small Trap")).getId();
 var EQUIPO_CERRADURA_BUENA = (new L("EQUIPO_CERRADURA_BUENA","Cerradura buena",
-    "Cerradura buena")).getId();
+    "Good Lock")).getId();
 var EQUIPO_CERRADURA_EXCELENTE = (new L("EQUIPO_CERRADURA_EXCELENTE","Cerradura excelente",
-    "Cerradura excelente")).getId();
+    "Excellent Lock")).getId();
 var EQUIPO_CERRADURA_NORMAL = (new L("EQUIPO_CERRADURA_NORMAL","Cerradura normal",
-    "Cerradura normal")).getId();
+    "Decent Lock")).getId();
 var EQUIPO_CESTO_GRANDE = (new L("EQUIPO_CESTO_GRANDE","Cesto grande",
-    "Cesto grande")).getId();
+    "Large Basket")).getId();
 var EQUIPO_CESTO_PEQUEÑO = (new L("EQUIPO_CESTO_PEQUEÑO","Cesto pequeño",
-    "Cesto pequeño")).getId();
+    "Small Basket")).getId();
 var EQUIPO_CETRO = (new L("EQUIPO_CETRO","Cetro",
-    "Cetro")).getId();
+    "Scepter")).getId();
 var EQUIPO_CHABOLA = (new L("EQUIPO_CHABOLA","Chabola",
-    "Chabola")).getId();
+    "Shack")).getId();
 var EQUIPO_CHALECO = (new L("EQUIPO_CHALECO","Chaleco",
-    "Chaleco")).getId();
+    "Vest")).getId();
 var EQUIPO_CHAQUETA = (new L("EQUIPO_CHAQUETA","Chaqueta",
-    "Chaqueta")).getId();
+    "Jacket")).getId();
 var EQUIPO_CIANURO = (new L("EQUIPO_CIANURO","Cianuro",
-    "Cianuro")).getId();
+    "Cyanide")).getId();
 var EQUIPO_CINTURON = (new L("EQUIPO_CINTURON","Cinturón",
-    "Cinturón")).getId();
+    "Belt")).getId();
 var EQUIPO_COLLAR = (new L("EQUIPO_COLLAR","Collar",
-    "Collar")).getId();
+    "Necklace")).getId();
 var EQUIPO_CORONA = (new L("EQUIPO_CORONA","Corona",
-    "Corona")).getId();
+    "Crown")).getId();
 var EQUIPO_CRISTALERA = (new L("EQUIPO_CRISTALERA","Cristalera",
-    "Cristalera")).getId();
+    "Glass China Cabinet")).getId();
 var EQUIPO_CRUCERO = (new L("EQUIPO_CRUCERO","Crucero",
-    "Crucero")).getId();
+    "Cruiser")).getId();
 var EQUIPO_CRUCERO_PEQUEÑO = (new L("EQUIPO_CRUCERO_PEQUEÑO","Crucero pequeño",
-    "Crucero pequeño")).getId();
+    "Small Cruiser")).getId();
 var EQUIPO_CRUZ = (new L("EQUIPO_CRUZ","Cruz",
-    "Cruz")).getId();
+    "Cross")).getId();
 var EQUIPO_CUBO = (new L("EQUIPO_CUBO","Cubo",
-    "Cubo")).getId();
+    "Bucket")).getId();
 var EQUIPO_CUERDA_BUENA_10M = (new L("EQUIPO_CUERDA_BUENA","Cuerda buena (10 m)",
-    "Cuerda buena (10 m)")).getId();
+    "Good Rope (30 foot)")).getId();
 var EQUIPO_CUERDA_EXCELENTE_10M = (new L("EQUIPO_CUERDA_EXCELENTE","Cuerda excelente (10m)",
-    "Cuerda excelente (10m)")).getId();
+    "Excellent Rope (30 foot)")).getId();
 var EQUIPO_CUERDA_NORMAL_10M = (new L("EQUIPO_CUERDA_NORMAL","Cuerda normal (10 m)",
-    "Cuerda normal (10 m)")).getId();
+    "Decent Rope (30 foot)")).getId();
 var EQUIPO_CURARE = (new L("EQUIPO_CURARE","Curare",
     "Curare")).getId();
 var EQUIPO_DIADEMA = (new L("EQUIPO_DIADEMA","Diadema",
-    "Diadema")).getId();
+    "Diadem")).getId();
 var EQUIPO_ESCALERA_DE_CUERDA_10M = (new L("EQUIPO_ESCALERA_DE_CUERDA","Escalera de cuerda (10m)",
-    "Escalera de cuerda (10m)")).getId();
+    "Rope Ladder (30 foot)")).getId();
 var EQUIPO_ESCUDO_DE_ARMAS = (new L("EQUIPO_ESCUDO_DE_ARMAS","Escudo de armas",
-    "Escudo de armas")).getId();
+    "Coat of Arms")).getId();
 var EQUIPO_ESPEJO_PEQUEÑO_DE_CRISTAL = (new L("EQUIPO_ESPEJO_PEQUEÑO_DE_CRISTAL","Espejo pequeño de cristal",
-    "Espejo pequeño de cristal")).getId();
+    "Small Glass Mirror")).getId();
 var EQUIPO_ESPEJO_PEQUEÑO_DE_METAL = (new L("EQUIPO_ESPEJO_PEQUEÑO_DE_METAL","Espejo pequeño de metal",
-    "Espejo pequeño de metal")).getId();
+    "Small Metal Mirror")).getId();
 var EQUIPO_GAFAS = (new L("EQUIPO_GAFAS","Gafas",
-    "Gafas")).getId();
+    "Spectacles")).getId();
 var EQUIPO_GANZUAS = (new L("EQUIPO_GANZUAS","Ganzúas",
-    "Ganzúas")).getId();
+    "Lock Pick")).getId();
 var EQUIPO_GARFIO = (new L("EQUIPO_GARFIO","Garfio",
-    "Garfio")).getId();
+    "Hook")).getId();
 var EQUIPO_GUANTES = (new L("EQUIPO_GUANTES","Guantes",
-    "Guantes")).getId();
+    "Gloves")).getId();
 var EQUIPO_HEBILLA = (new L("EQUIPO_HEBILLA","Hebilla",
-    "Hebilla")).getId();
+    "Buckle")).getId();
 var EQUIPO_JABON = (new L("EQUIPO_JABON","Jabón",
-    "Jabón")).getId();
+    "Soap")).getId();
 var EQUIPO_KIMONO_DE_HOMBRE = (new L("EQUIPO_KIMONO_DE_HOMBRE","Kimono de hombre",
-    "Kimono de hombre")).getId();
+    "Man's Kimono")).getId();
 var EQUIPO_KIMONO_DE_MUJER = (new L("EQUIPO_KIMONO_DE_MUJER","Kimono de mujer",
-    "Kimono de mujer")).getId();
+    "Woman's Kimono")).getId();
 var EQUIPO_LENCERIA = (new L("EQUIPO_LENCERIA","Lencería",
-    "Lencería")).getId();
+    "Lingerie")).getId();
 var EQUIPO_LIBRO_EN_BLANCO_GRANDE = (new L("EQUIPO_LIBRO_EN_BLANCO_GRANDE","Libro en blanco grande",
-    "Libro en blanco grande")).getId();
+    "Large Blank-paged Book")).getId();
 var EQUIPO_LIBRO_EN_BLANCO_PEQUEÑO = (new L("EQUIPO_LIBRO_EN_BLANCO_PEQUEÑO","Libro en blanco pequeño",
-    "Libro en blanco pequeño")).getId();
+    "Small Blank-paged Book")).getId();
 var EQUIPO_LIGA_DE_CAZA = (new L("EQUIPO_LIGA_DE_CAZA","Liga de caza",
-    "Liga de caza")).getId();
+    "Lime Stick")).getId();
 var EQUIPO_LINTERNA_DE_ACEITE = (new L("EQUIPO_LINTERNA_DE_ACEITE","Linterna de aceite",
-    "Linterna de aceite")).getId();
+    "Oil Lamp")).getId();
 var EQUIPO_LINTERNA_DE_VELAS = (new L("EQUIPO_LINTERNA_DE_VELAS","Linterna de velas",
-    "Linterna de velas")).getId();
+    "Lantern for Candles")).getId();
 var EQUIPO_LONA_1_METRO_CUADRADO = (new L("EQUIPO_LONA_1_METRO_CUADRADO","Lona (1 metro cuadrado)",
-    "Lona (1 metro cuadrado)")).getId();
+    "Canvas (1 Square Yard)")).getId();
 var EQUIPO_MANSION = (new L("EQUIPO_MANSION","Mansión",
-    "Mansión")).getId();
+    "Mansion")).getId();
 var EQUIPO_MANTA = (new L("EQUIPO_MANTA","Manta",
-    "Manta")).getId();
+    "Blanket")).getId();
 var EQUIPO_MITONES = (new L("EQUIPO_MITONES","Mitones",
-    "Mitones")).getId();
+    "Mittens")).getId();
 var EQUIPO_MOCHILA = (new L("EQUIPO_MOCHILA","Mochila",
-    "Mochila")).getId();
+    "Backpack")).getId();
 var EQUIPO_MONOCULO = (new L("EQUIPO_MONOCULO","Monóculo",
-    "Monóculo")).getId();
+    "Monocle")).getId();
 var EQUIPO_MULA_DE_CARGA = (new L("EQUIPO_MULA_DE_CARGA","Mula de carga",
-    "Mula de carga")).getId();
+    "Pack Mule")).getId();
 var EQUIPO_MUSCARINA = (new L("EQUIPO_MUSCARINA","Muscarina",
-    "Muscarina")).getId();
+    "Muscarine")).getId();
 var EQUIPO_ODRE = (new L("EQUIPO_ODRE","Odre",
-    "Odre")).getId();
+    "Wineskin")).getId();
 var EQUIPO_PALACIO = (new L("EQUIPO_PALACIO","Palacio",
-    "Palacio")).getId();
+    "Palace")).getId();
 var EQUIPO_PANTALON = (new L("EQUIPO_PANTALON","Pantalón",
-    "Pantalón")).getId();
+    "Pants")).getId();
 var EQUIPO_PAPEL = (new L("EQUIPO_PAPEL","Papel",
-    "Papel")).getId();
+    "Paper")).getId();
 var EQUIPO_PAPIRO = (new L("EQUIPO_PAPIRO","Papiro",
-    "Papiro")).getId();
+    "Papyrus")).getId();
 var EQUIPO_PASADOR = (new L("EQUIPO_PASADOR","Pasador",
-    "Pasador")).getId();
+    "Slide")).getId();
 var EQUIPO_PAÑUELO = (new L("EQUIPO_PAÑUELO","Pañuelo",
-    "Pañuelo")).getId();
+    "Handkerchief")).getId();
 var EQUIPO_PEINETA = (new L("EQUIPO_PEINETA","Peineta",
-    "Peineta")).getId();
+    "Comb")).getId();
 var EQUIPO_PENDIENTES = (new L("EQUIPO_PENDIENTES","Pendientes",
-    "Pendientes")).getId();
+    "Earrings")).getId();
 var EQUIPO_PERFUME_BUENO = (new L("EQUIPO_PERFUME_BUENO","Perfume bueno",
-    "Perfume bueno")).getId();
+    "Good Perfume")).getId();
 var EQUIPO_PERFUME_EXCELENTE = (new L("EQUIPO_PERFUME_EXCELENTE","Perfume excelente",
-    "Perfume excelente")).getId();
+    "Excellent Perfume")).getId();
 var EQUIPO_PERFUME_NORMAL = (new L("EQUIPO_PERFUME_NORMAL","Perfume normal",
-    "Perfume normal")).getId();
+    "Decent Perfume")).getId();
 var EQUIPO_PERGAMINO = (new L("EQUIPO_PERGAMINO","Pergamino",
-    "Pergamino")).getId();
+    "Parchment")).getId();
 var EQUIPO_PIEDRA_DE_AFILAR = (new L("EQUIPO_PIEDRA_DE_AFILAR","Piedra de afilar",
-    "Piedra de afilar")).getId();
+    "Sharpening Stone")).getId();
 var EQUIPO_PULSERA = (new L("EQUIPO_PULSERA","Pulsera",
-    "Pulsera")).getId();
+    "Bracelet")).getId();
 var EQUIPO_PURA_SANGRE = (new L("EQUIPO_PURA_SANGRE","Pura sangre",
-    "Pura sangre")).getId();
+    "Purebred Horse")).getId();
 var EQUIPO_RACIONES_DE_VIAJE_BUENAS = (new L("EQUIPO_RACIONES_DE_VIAJE_BUENAS","Raciones de viaje buenas",
-    "Raciones de viaje buenas")).getId();
+    "Field Rations (Good)")).getId();
 var EQUIPO_RACIONES_DE_VIAJE_EXCELENTES = (new L("EQUIPO_RACIONES_DE_VIAJE_EXCELENTES","Raciones de viaje excelentes",
-    "Raciones de viaje excelentes")).getId();
+    "Field Rations (Excellent)")).getId();
 var EQUIPO_RACIONES_DE_VIAJE_MEDIOCRES = (new L("EQUIPO_RACIONES_DE_VIAJE_MEDIOCRES","Raciones de viaje mediocres",
-    "Raciones de viaje mediocres")).getId();
+    "Field Rations (Mediocre)")).getId();
 var EQUIPO_RACIONES_DE_VIAJE_NORMALES = (new L("EQUIPO_RACIONES_DE_VIAJE_NORMALES","Raciones de viaje normales",
-    "Raciones de viaje normales")).getId();
+    "Field Rations (Decent)")).getId();
 var EQUIPO_RED_DE_PESCA_1M = (new L("EQUIPO_RED_DE_PESCA_1M","Red de pesca (1m)",
-    "Red de pesca (1m)")).getId();
+    "Fishing Net (3 foot)")).getId();
 var EQUIPO_RELOJ_DE_ARENA = (new L("EQUIPO_RELOJ_DE_ARENA","Reloj de arena",
-    "Reloj de arena")).getId();
+    "Hourglass")).getId();
 var EQUIPO_RELOJ_DE_ENGRANAJE = (new L("EQUIPO_RELOJ_DE_ENGRANAJE","Reloj de engranaje",
-    "Reloj de engranaje")).getId();
+    "Mechanical Clock")).getId();
 var EQUIPO_ROPA_INTERIOR_FEMENINA = (new L("EQUIPO_ROPA_INTERIOR_FEMENINA","Ropa interior femenina",
-    "Ropa interior femenina")).getId();
+    "Women's Underwear")).getId();
 var EQUIPO_ROSARIO = (new L("EQUIPO_ROSARIO","Rosario",
-    "Rosario")).getId();
+    "Rosary")).getId();
 var EQUIPO_SACO_GRANDE = (new L("EQUIPO_SACO_GRANDE","Saco grande",
-    "Saco grande")).getId();
+    "Large Sack")).getId();
 var EQUIPO_SACO_PEQUEÑO = (new L("EQUIPO_SACO_PEQUEÑO","Saco pequeño",
-    "Saco pequeño")).getId();
+    "Small Sack")).getId();
 var EQUIPO_SAN_BERNARDO = (new L("EQUIPO_SAN_BERNARDO","San Bernardo",
-    "San Bernardo")).getId();
+    "Saint Bernard")).getId();
 var EQUIPO_SAVIA_DE_RAMALEN = (new L("EQUIPO_SAVIA_DE_RAMALEN","Savia de Ramalen",
-    "Savia de Ramalen")).getId();
+    "Ramalen Sap")).getId();
 var EQUIPO_SILBATO = (new L("EQUIPO_SILBATO","Silbato",
-    "Silbato")).getId();
+    "Whistle")).getId();
 var EQUIPO_SOMBRERO = (new L("EQUIPO_SOMBRERO","Sombrero",
-    "Sombrero")).getId();
+    "Broad-brimmed Hat")).getId();
 var EQUIPO_TALLO = (new L("EQUIPO_TALLO","Tallo",
-    "Tallo")).getId();
+    "Thallium")).getId();
 var EQUIPO_TAPICES = (new L("EQUIPO_TAPICES","Tapices",
-    "Tapices")).getId();
+    "Tapestry")).getId();
 var EQUIPO_TIENDA_DE_LUJO = (new L("EQUIPO_TIENDA_DE_LUJO","Tienda de lujo",
-    "Tienda de lujo")).getId();
+    "Luxurious Tent")).getId();
 var EQUIPO_TIENDA_GRANDE = (new L("EQUIPO_TIENDA_GRANDE","Tienda grande",
-    "Tienda grande")).getId();
+    "Large Tent")).getId();
 var EQUIPO_TIENDA_PABELLON = (new L("EQUIPO_TIENDA_PABELLON","Tienda pabellón",
-    "Tienda pabellón")).getId();
+    "Pavilion Tent")).getId();
 var EQUIPO_TIENDA_PEQUEÑA = (new L("EQUIPO_TIENDA_PEQUEÑA","Tienda pequeña",
-    "Tienda pequeña")).getId();
+    "Small Tent")).getId();
 var EQUIPO_TINTA_DE_ESCRIBIR = (new L("EQUIPO_TINTA_DE_ESCRIBIR","Tinta de escribir",
-    "Tinta de escribir")).getId();
+    "Ink")).getId();
 var EQUIPO_TIZA = (new L("EQUIPO_TIZA","Tiza",
-    "Tiza")).getId();
+    "Chalk")).getId();
 var EQUIPO_TORO_DE_CARGA = (new L("EQUIPO_TORO_DE_CARGA","Toro de carga",
-    "Toro de carga")).getId();
+    "Pack Bull")).getId();
 var EQUIPO_TORO_DE_MONTA = (new L("EQUIPO_TORO_DE_MONTA","Toro de monta",
-    "Toro de monta")).getId();
+    "Riding Bull")).getId();
 var EQUIPO_TRAJE_DE_GALA_HOMBRE = (new L("EQUIPO_TRAJE_DE_GALA_HOMBRE","Traje de gala (hombre)",
-    "Traje de gala (hombre)")).getId();
+    "Man's Formal Outfit")).getId();
 var EQUIPO_TRINEO = (new L("EQUIPO_TRINEO","Trineo",
-    "Trineo")).getId();
+    "Sleigh")).getId();
 var EQUIPO_TUNICA = (new L("EQUIPO_TUNICA","Túnica",
-    "Túnica")).getId();
+    "Tunic")).getId();
 var EQUIPO_VELERO_DE_DOS_PALOS = (new L("EQUIPO_VELERO_DE_DOS_PALOS","Velero de dos palos",
-    "Velero de dos palos")).getId();
+    "Two-masted Sailing Vessel")).getId();
 var EQUIPO_VELERO_DE_TRES_PALOS = (new L("EQUIPO_VELERO_DE_TRES_PALOS","Velero de tres palos",
-    "Velero de tres palos")).getId();
+    "Three-masted Sailing Vessel")).getId();
 var EQUIPO_VELERO_DE_UN_PALO = (new L("EQUIPO_VELERO_DE_UN_PALO","Velero de un palo",
-    "Velero de un palo")).getId();
+    "Single-masted Sailing Vessel")).getId();
 var EQUIPO_VENENO_DE_COBRA_BLANCA = (new L("EQUIPO_VENENO_DE_COBRA_BLANCA","Veneno de cobra blanca",
-    "Veneno de cobra blanca")).getId();
+    "White Cobra Venom")).getId();
 var EQUIPO_VENENO_DE_SERPIENTE = (new L("EQUIPO_VENENO_DE_SERPIENTE","Veneno de serpiente",
-    "Veneno de serpiente")).getId();
+    "Serpent's Venom")).getId();
 var EQUIPO_VESTIDO = (new L("EQUIPO_VESTIDO","Vestido",
-    "Vestido")).getId();
+    "Dress")).getId();
 var EQUIPO_VESTIDO_DE_GALA_MUJER = (new L("EQUIPO_VESTIDO_DE_GALA_MUJER","Vestido de gala (mujer)",
-    "Vestido de gala (mujer)")).getId();
+    "Ball Gown")).getId();
 var EQUIPO_VINAGRE_DE_SATURNO = (new L("EQUIPO_VINAGRE_DE_SATURNO","Vinagre de Saturno",
-    "Vinagre de Saturno")).getId();
+    "Salt of Saturn")).getId();
 var EQUIPO_YESCA_PEDERNAL = (new L("EQUIPO_YESCA_PEDERNAL","Yesca y pedernal",
-    "Yesca y pedernal")).getId();
+    "Flint and Tinder")).getId();
 var EQUIPO_ZAPATOS = (new L("EQUIPO_ZAPATOS","Zapatos",
-    "Zapatos")).getId();
+    "Shoes")).getId();
 var EQUIPO_ZUECOS = (new L("EQUIPO_ZUECOS","Zuecos",
-    "Zuecos")).getId();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "Clogs")).getId();
