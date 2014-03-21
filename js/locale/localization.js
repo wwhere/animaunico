@@ -910,7 +910,7 @@ var UI_PERSIS_METODO_CARGA_FICHERO_DESC = (new L("UI_PERSIS_METODO_CARGA_FICHERO
     "In some web browsers you can directly load the text file directly:")).getId();
 
 var UI_PERSIS_METODO_COPIA = (new L("Método 2: Copia y pega","Método 2: Copia y pega","Method 2: Copy & Paste")).getId();
-var UI_PERSIS_METODO_COPIA_DESC = (new L(UI_PERSIS_METODO_COPIA_DESC,
+var UI_PERSIS_METODO_COPIA_DESC = (new L("UI_PERSIS_METODO_COPIA_DESC",
     "Si lo anterior no te funciona, puedes copiar el siguiente texto (¡entero! No te dejes nada) a algún fichero de texto y guardarlo manualmente.  No es necesario que le pongas .animaUnico como extensión para que la aplicación pueda cargarlo más tarde. Si lo prefieres, pulsa el botón para facilitar el copiado.",
     "If the others don't work, you can copy the following text (full! don't leave a comma) to some local file text and save it manually. Yo don't need to name it .animaUnico for the application to load it later. If you want help, click the button for an easier copy job")).getId();
 var UI_PERSIS_METODO_COPIA_TEXTO = (new L("Copia","Copia","Copy")).getId();
