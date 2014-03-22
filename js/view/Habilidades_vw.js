@@ -220,7 +220,7 @@ function muestraDialogoElegirOpcionHabilidad(callback,parametro,soloFisicasOMent
 
     for (i = 0; i < habilidades_secundarias.length;i++) {
         grupoHabi = habilidades_secundarias[i];
-        categorias.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),habilidades_secundarias_nombres_grupos[i],habilidades_secundarias_nombres_grupos[i]+"_tipo"+soloFisicasOMentales));
+        categorias.push(new OpcionMostrable(_l(habilidades_secundarias_nombres_grupos[i]),habilidades_secundarias_nombres_grupos[i]+"_tipo"+soloFisicasOMentales,habilidades_secundarias_nombres_grupos[i]+"_tipo"+soloFisicasOMentales));
         for (j = 0; j < grupoHabi.length; j++) {
             habi = getHabilidad(grupoHabi[j]);
             if ((soloFisicasOMentales == TIPO_BONIFICADOR_NATURAL_EXTRA) || (soloFisicasOMentales == "habNatural") ||

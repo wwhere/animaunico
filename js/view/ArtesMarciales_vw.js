@@ -52,8 +52,8 @@ function prepararDialogoArtesMarciales() {
     var categorias = [];
     var i;
 
-    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_BASICAS),UI_ARTES_MARCIALES_BASICAS,CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
-    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_AVANZADAS),UI_ARTES_MARCIALES_AVANZADAS,CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
+    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_BASICAS),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL));
+    categorias.push(new OpcionMostrable(_l(UI_ARTES_MARCIALES_AVANZADAS),CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL,CATEGORIA_AVANZADA + TAG_ID_ARTE_MARCIAL));
 
     for (i=0;i<artesMarcialesBasicas_set.length;i++) {
         arrayArtesMarciales.push(new OpcionMostrable(_l(artesMarcialesBasicas_set[i].getNombre()),artesMarcialesBasicas_set[i].getNombre(),CATEGORIA_BASICA + TAG_ID_ARTE_MARCIAL,_l(artesMarcialesBasicas_set[i].getDescripcion()) + "<hr>" + _l(artesMarcialesBasicas_set[i].getDescripcionVentajas())));

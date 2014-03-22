@@ -640,7 +640,7 @@ function dialogoRecolocacionCosteKi(costeKi) {
 function muestraBotonMasMenosCosteKi(costeKi, caracDestino) {
     var div = $("<div></div>");
     var divMas = boton("small primary pretty btn",_l("+"));
-    var divMenos = boton("small secondary pretty btn",_l("+"));
+    var divMenos = boton("small secondary pretty btn",_l("-"));
 
 //    divMas.css("width","1rem");
   //  divMenos.css("width","1rem");
