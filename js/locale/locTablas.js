@@ -6,7 +6,7 @@ var TABLA_ARMA_MIXTA = (new L("TABLA_ARMA_MIXTA","Arma mixta",
     "Mixed-class weapon")).getId();
 var TABLA_ARMA_MIXTA_DESC = (new L("TABLA_ARMA_MIXTA_DESC","Otorga la capacidad de usar un arma mixta que tiene, por lo menos, un mismo tipo en común con otra que el personaje ya conoce.",
     "Otorga la capacidad de usar un arma mixta que tiene, por lo menos, un mismo tipo en común con otra que el personaje ya conoce.")).getId();
-var TABLA_ARMA_DISTINTA_DESARMADO = (new L("TABLA_ARMA_DISTINTA_DESARMADO","Arma distinta_Desarmado",
+var TABLA_ARMA_DISTINTA_DESARMADO = (new L("TABLA_ARMA_DISTINTA_DESARMADO","Arma distinta/Desarmado",
     "Different type / unarmed")).getId();
 var TABLA_ARMA_DISTINTA_DESARMADO_DESC = (new L("TABLA_ARMA_DISTINTA_DESARMADO_DESC","Otorga la capacidad de usar un arma de un tipo que no conoce el personaje.",
     "Otorga la capacidad de usar un arma de un tipo que no conoce el personaje.")).getId();

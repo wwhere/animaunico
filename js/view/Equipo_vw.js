@@ -77,7 +77,7 @@ function dialogoElegirArma(categoriasPermitidas, callback, parametros) {
         }
 
         if (!yaListada) {
-            categorias.push(new OpcionMostrable(categoriaLoc,categoria,categoriaLimpia+"ElegirArma"));
+            categorias.push(new OpcionMostrable(categoriaLoc,categoriaLimpia+"ElegirArma",categoriaLimpia+"ElegirArma"));
         }
 
         arrayArmas.push(new OpcionMostrable(_l(arma.nombre),arma.nombre,categoriaLimpia+"ElegirArma"));
