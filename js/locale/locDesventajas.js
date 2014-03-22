@@ -1,5 +1,5 @@
 ﻿var DESV_REDUCIR_DOS_PUNTOS_A_UNA_CARACTERISTICA = (new L("DESV_Reducir dos puntos a una característica","Reducir dos puntos a una característica",
-    "Deduct two points from a characteristic")).getId();
+    "Deduct Two Points from a Characteristic")).getId();
 var DESV_REDUCIR_DOS_PUNTOS_A_UNA_CARACTERISTICA_DESC = (new L("DESV_Reducir dos puntos a una característica_DESC","Reduce en dos puntos una de las características básicas. Limitación: Esta desventaja sólo puede adquirirse en una ocasión. No es posible disminuir una característica por debajo de 3.",
     "Reduce en dos puntos una de las características básicas. Limitación: Esta desventaja sólo puede adquirirse en una ocasión. No es posible disminuir una característica por debajo de 3.")).getId();
 var DESV_SALUD_ENFERMIZA = (new L("DESV_Salud enfermiza","Salud enfermiza",
@@ -15,7 +15,7 @@ var DESV_MIOPIA = (new L("DESV_Miopía","Miopía",
 var DESV_MIOPIA_DESC = (new L("DESV_Miopía_DESC","Aplicará un negativo de –50 a cualquier tirada de la habilidad Advertir o Buscar en la que se emplee la vista y un –3 a cualquier control de Percepción que la requiera. Este penalizador también se aplicará a la puntería. Si consigue unas gafas, el negativo penalizador se reduciría como el Director de Juego considere conveniente.",
     "Aplicará un negativo de –50 a cualquier tirada de la habilidad Advertir o Buscar en la que se emplee la vista y un –3 a cualquier control de Percepción que la requiera. Este penalizador también se aplicará a la puntería. Si consigue unas gafas, el negativo penalizador se reduciría como el Director de Juego considere conveniente.")).getId();
 var DESV_VULNERABILIDAD_A_LOS_VENENOS = (new L("DESV_Vulnerabilidad a los venenos","Vulnerabilidad a los venenos",
-    "Susceptible to poisons")).getId();
+    "Susceptible to Poisons")).getId();
 var DESV_VULNERABILIDAD_A_LOS_VENENOS_DESC = (new L("DESV_Vulnerabilidad a los venenos_DESC","La RV del personaje queda reducida a la mitad.",
     "La RV del personaje queda reducida a la mitad.")).getId();
 var DESV_FACIL_POSESION = (new L("DESV_Fácil posesión","Fácil posesión",
@@ -23,7 +23,7 @@ var DESV_FACIL_POSESION = (new L("DESV_Fácil posesión","Fácil posesión",
 var DESV_FACIL_POSESION_DESC = (new L("DESV_Fácil posesión_DESC","El personaje aplica un negativo de –50 a cualquier RP o RM que realice contra algún tipo de dominio o posesión capaz de modificar su conducta.",
     "El personaje aplica un negativo de –50 a cualquier RP o RM que realice contra algún tipo de dominio o posesión capaz de modificar su conducta.")).getId();
 var DESV_VULNERABILIDAD_A_LA_MAGIA = (new L("DESV_Vulnerabilidad a la magia","Vulnerabilidad a la magia",
-    "Susceptible to magic")).getId();
+    "Susceptible to Magic")).getId();
 var DESV_VULNERABILIDAD_A_LA_MAGIA_DESC = (new L("DESV_Vulnerabilidad a la magia_DESC","La RM del personaje queda reducida a la mitad.",
     "La RM del personaje queda reducida a la mitad.")).getId();
 var DESV_VULNERABILIDAD_AL_FRIO = (new L("DESV_Vulnerable al frío","Vulnerable al frío",
@@ -91,15 +91,15 @@ var DESV_REACCION_LENTA = (new L("DESV_Reacción lenta","Reacción lenta",
 var DESV_REACCION_LENTA_DESC = (new L("DESV_Reacción lenta_DESC","El personaje aplicará un penalizador especial de –30 a su turno. El punto de desventaja adicional aumenta este negativo hasta –60.",
     "El personaje aplicará un penalizador especial de –30 a su turno. El punto de desventaja adicional aumenta este negativo hasta –60.")).getId();
 var DESV_ARMA_EXCLUSIVA = (new L("DESV_Arma exclusiva","Arma exclusiva",
-    "Exclusive weapon")).getId();
+    "Exclusive Weapon")).getId();
 var DESV_ARMA_EXCLUSIVA_DESC = (new L("DESV_Arma exclusiva_DESC","El personaje aplicará un penalizador de –30 a su habilidad de combate con cualquier arma distinta a la suya. Limitación: Esta desventaja sólo puede ser adquirida por los arquetipos de Luchador, Acechador, Domine o Sin Categoría.",
     "El personaje aplicará un penalizador de –30 a su habilidad de combate con cualquier arma distinta a la suya. Limitación: Esta desventaja sólo puede ser adquirida por los arquetipos de Luchador, Acechador, Domine o Sin Categoría.")).getId();
 var DESV_ADICCION_O_VICIO_GRAVE = (new L("DESV_Adicción o vicio grave","Adicción o vicio grave",
-    "Addiction or serious vice")).getId();
+    "Addiction or Serious Vice")).getId();
 var DESV_ADICCION_O_VICIO_GRAVE_DESC = (new L("DESV_Adicción o vicio grave_DESC","El personaje aplicará un penalizador acumulativo de –10 por cada día que transcurra sin satisfacer su vicio.",
     "El personaje aplicará un penalizador acumulativo de –10 por cada día que transcurra sin satisfacer su vicio.")).getId();
 var DESV_VULNERABILIDAD_AL_DOLOR = (new L("DESV_Vulnerable al dolor","Vulnerable al dolor",
-    "Vulnerable to pain")).getId();
+    "Vulnerable to Pain")).getId();
 var DESV_VULNERABILIDAD_AL_DOLOR_DESC = (new L("DESV_Vulnerable al dolor_DESC","Dobla cualquier penalizador causado por el dolor, ya sea producido por críticos o efectos místicos.",
     "Dobla cualquier penalizador causado por el dolor, ya sea producido por críticos o efectos místicos.")).getId();
 var DESV_EXHAUSTO = (new L("DESV_Exhausto","Exhausto",
@@ -122,7 +122,7 @@ var DESV_PATOSO = (new L("DESV_Patoso","Patoso",
 var DESV_PATOSO_DESC = (new L("DESV_Patoso_DESC","Sufre un penalizador de -30 a toda habilidad manual que requiera coordinación y un -3 a todos los controles enfrentados de DES.",
     "Sufre un penalizador de -30 a toda habilidad manual que requiera coordinación y un -3 a todos los controles enfrentados de DES.")).getId();
 var DESV_SIN_BONIFICADOR_NATURAL = (new L("DESV_Sin bonificador natural","Sin bonificador natural",
-    "Without any natural bonus")).getId();
+    "Without Any Natural Bonus")).getId();
 var DESV_SIN_BONIFICADOR_NATURAL_DESC = (new L("DESV_Sin bonificador natural_DESC","No aplica el bonificador natural por nivel.",
     "No aplica el bonificador natural por nivel.")).getId();
 var DESV_INSUFRIBLE = (new L("DESV_Insufrible","Insufrible",
@@ -145,7 +145,7 @@ var DESV_MALDITO_DESC = (new L("DESV_Maldito_DESC","Interpretado por el DJ.",
 /*******************DON********************/
 
 var DESV_OBLIGACION_ORAL = (new L("DESV_OBLIGACION_ORAL","Obligación oral",
-    "Oral requirement")).getId();
+    "Oral Requirement")).getId();
 var DESV_OBLIGACION_ORAL_DESC = (new L("DESV_OBLIGACION_ORAL_DESC","El personaje debe de tener la capacidad de hablar para acumular magia y realizar sus conjuros.",
     "El personaje debe de tener la capacidad de hablar para acumular magia y realizar sus conjuros.")).getId();
 var DESV_OBLIGACION_SOMATICA = (new L("DESV_OBLIGACION_SOMATICA","Obligación somática",
@@ -157,7 +157,7 @@ var DESV_EXTENUACION_MAGICA = (new L("DESV_EXTENUACION_MAGICA","Extenuación má
 var DESV_EXTENUACION_MAGICA_DESC = (new L("DESV_EXTENUACION_MAGICA_DESC","El mago perderá un punto de Cansancio al lanzar un conjuro con un potencial superior a 100, dos si es mayor a 300 y tres si lo es de 500.",
     "El mago perderá un punto de Cansancio al lanzar un conjuro con un potencial superior a 100, dos si es mayor a 300 y tres si lo es de 500.")).getId();
 var DESV_LENTA_RECUPERACION_DE_LA_MAGIA = (new L("DESV_LENTA_RECUPERACION_DE_LA_MAGIA","Lenta recuperación de magia",
-    "Slow recovery of Magic")).getId();
+    "Slow Recovery of Magic")).getId();
 var DESV_LENTA_RECUPERACION_DE_LA_MAGIA_DESC = (new L("DESV_LENTA_RECUPERACION_DE_LA_MAGIA_DESC","La regeneración zeónica del personaje se reduce a la mitad.",
     "La regeneración zeónica del personaje se reduce a la mitad.")).getId();
 var DESV_MAGIA_ATADA_A_ACCION = (new L("DESV_MAGIA_ATADA_A_ACCION","Magia atada a acción",
@@ -181,18 +181,18 @@ var DESV_BRUJERIA_DESC = (new L("DESV_BRUJERIA_DESC","El hechicero requiere obli
 /***********PSIQUICA ***************/
 
 var DESV_EXTENUACION_PSIQUICA = (new L("DESV_EXTENUACION_PSIQUICA","Extenuación psíquica",
-    "Psychic exhaustion")).getId();
+    "Psychic Exhaustion")).getId();
 var DESV_EXTENUACION_PSIQUICA_DESC = (new L("DESV_EXTENUACION_PSIQUICA_DESC","El personaje pierde el doble de puntos de Cansancio de lo que indique su fatiga psíquica. Límitación: Esta desventaja no puede cogerse en combinación con Resistencia a la fatiga psíquica.",
     "El personaje pierde el doble de puntos de Cansancio de lo que indique su fatiga psíquica. Límitación: Esta desventaja no puede cogerse en combinación con Resistencia a la fatiga psíquica.")).getId();
 var DESV_SIN_CONCENTRACION = (new L("DESV_SIN_CONCENTRACION","Sin concentración",
-    "No concentration")).getId();
+    "No Concentration")).getId();
 var DESV_SIN_CONCENTRACION_DESC = (new L("DESV_SIN_CONCENTRACION_DESC","Un psíquico con esta desventaja no podrá aplicar bonificadores a su potencial psíquico concentrándose.",
     "Un psíquico con esta desventaja no podrá aplicar bonificadores a su potencial psíquico concentrándose.")).getId();
 var DESV_PODER_UNICO = (new L("DESV_PODER_UNICO","Poder único",
-    "One power at a time")).getId();
+    "One Power at a Time")).getId();
 var DESV_PODER_UNICO_DESC = (new L("DESV_PODER_UNICO_DESC","El psíquico sólo podrá utilizar un único poder psíquico por asalto. Ello no le impide seguir usando otros mantenidos, siempre que los originara en asaltos anteriores.",
     "El psíquico sólo podrá utilizar un único poder psíquico por asalto. Ello no le impide seguir usando otros mantenidos, siempre que los originara en asaltos anteriores.")).getId();
 var DESV_CONSUMICION_PSIQUICA = (new L("DESV_CONSUMICION_PSIQUICA","Consumición psíquica",
-    "Psychic consumption")).getId();
+    "Psychic Consumption")).getId();
 var DESV_CONSUMICION_PSIQUICA_DESC = (new L("DESV_CONSUMICION_PSIQUICA_DESC","Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.",
     "Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.")).getId();
