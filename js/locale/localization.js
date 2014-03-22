@@ -115,7 +115,7 @@ var UI_NIVEL = (new L("Nivel","Nivel","Level")).getId();
 var UI_PX = (new L("Puntos de Experiencia","Puntos de Experiencia","Experience Points")).getId();
 var UI_ARQUETIPO = (new L("Arquetipo","Arquetipo","Archetype")).getId();
 var UI_TURNO = (new L("Turno","Turno","Initiative")).getId();
-var UI_TABLAS = (new L("Tablas","Tablas","Modules/Tables")).getId();
+var UI_TABLAS = (new L("Tablas","Tablas","Modules")).getId();
 var UI_ARTES_MARCIALES = (new L("Artes Marciales","Artes Marciales","Martial Arts")).getId();
 var UI_CM = (new L("CM","CM","MK")).getId();
 var UI_ARMADURA = (new L("Armadura","Armadura","Armor")).getId();
@@ -545,7 +545,7 @@ var UI_AUMENTAR_NIVELES_EN_VIAS = (new L("Aumentar niveles en vías","Aumentar n
 var UI_AFINIDAD_CON_DISCIPLINAS = (new L("Afinidad con disciplinas","Afinidad con disciplinas","Affinity with Disciplines")).getId();
 var UI_PODERES_DOMINADOS = (new L("Poderes dominados","Poderes dominados","Dominated powers")).getId();
 
-var UI_COMPRAR_TABLA_ARMAS = (new L("Comprar tabla de armas","Comprar tabla de armas","Buy Table Weapon/Combat Style")).getId();
+var UI_COMPRAR_TABLA_ARMAS = (new L("Comprar tabla de armas","Comprar tabla de armas","Buy Weapon/Style Modules")).getId();
 
 var UI_MO = (new L("dinero mo", "mo", "gp")).getId();
 var UI_MP = (new L("dinero mp", "mp", "sp")).getId();

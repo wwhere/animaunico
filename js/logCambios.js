@@ -2,7 +2,7 @@
  * Created by Guille on 5/12/13.
  */
 
-var CURRENT_VERSION = 26;
+var CURRENT_VERSION = 27;
 
 function mostrarLogCambios() {
     $("#logCambios").dialog({
@@ -11,7 +11,7 @@ function mostrarLogCambios() {
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: UI_DIALOGO_LOG_CAMBIOS_TITULO,
+        title: _l(UI_DIALOGO_LOG_CAMBIOS_TITULO),
         position: "center",
         closeOnEscape: true,
         width: ANCHO_DIALOGO,
@@ -29,7 +29,7 @@ function mostrarLicencia() {
         draggable: true,
         resizable: false,
         ////show: "puff",
-        title: UI_DIALOGO_LICENCIA_TITULO,
+        title: _l(UI_DIALOGO_LICENCIA_TITULO),
         position: "center",
         closeOnEscape: true,
         width: ANCHO_DIALOGO,
