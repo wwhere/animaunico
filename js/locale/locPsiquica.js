@@ -190,19 +190,19 @@ var DISCIPLINA_ENERGIA = (new L("DISCIPLINA_ENERGIA","Energía",
     "Energy")).getId();
 var DISCIPLINA_DESCRIPCION_ENERGIA = (new L("DISCIPLINA_DESCRIPCION_ENERGIA","",
     "")).getId();
-var METRO_CubicO_1 = (new L("METRO_CubicO_1","1 metro cúbico",
+var METRO_CUBICO_1 = (new L("METRO_CubicO_1","1 metro cúbico",
     "3 Cubic Feet")).getId();
-var METRO_CubicO_2 = (new L("METRO_CubicO_2","2 metros cúbicos",
+var METRO_CUBICO_2 = (new L("METRO_CubicO_2","2 metros cúbicos",
     "5 Cubic Feet")).getId();
-var METRO_CubicO_3 = (new L("METRO_CubicO_3","3 metros cúbicos",
+var METRO_CUBICO_3 = (new L("METRO_CubicO_3","3 metros cúbicos",
     "10 Cubic Feet")).getId();
-var METRO_CubicO_4 = (new L("METRO_CubicO_4","4 metros cúbicos",
+var METRO_CUBICO_4 = (new L("METRO_CubicO_4","4 metros cúbicos",
     "15 Cubic Feet")).getId();
-var METRO_CubicO_5 = (new L("METRO_CubicO_5","5 metros cúbicos",
+var METRO_CUBICO_5 = (new L("METRO_CubicO_5","5 metros cúbicos",
     "60 Cubic Feet")).getId();
-var METRO_CubicO_10 = (new L("METRO_CubicO_10","10 metros cúbicos",
+var METRO_CUBICO_10 = (new L("METRO_CubicO_10","10 metros cúbicos",
     "100 Cubic Feet")).getId();
-var METRO_CubicO_20 = (new L("METRO_CubicO_20","20 metros cúbicos",
+var METRO_CUBICO_20 = (new L("METRO_CubicO_20","20 metros cúbicos",
     "200 Cubic Feet")).getId();
 var DAÑO_50 = (new L("DAÑO_50","Daño 50",
     "Damage 50")).getId();
@@ -460,7 +460,7 @@ var PSI_PODER_CARGAR_CON_SENTIMIENTOS = (new L("PSI_PODER_CARGAR_CON_SENTIMIENTO
     "Infuse Feelings")).getId();
 var PSI_PODER_TRASLADAR_SENTIDOS = (new L("PSI_PODER_TRASLADAR_SENTIDOS","Trasladar los sentidos",
     "Project Senses")).getId();
-var PSI_PODER_Area = (new L("PSI_PODER_Area","Área",
+var PSI_PODER_AREA = (new L("PSI_PODER_Area","Área",
     "Area")).getId();
 var PSI_PODER_DESTRUIR_SENTIMIENTOS = (new L("PSI_PODER_DESTRUIR_SENTIMIENTOS","Destruir sentimientos",
     "Destroy Feelings")).getId();
@@ -508,7 +508,7 @@ var PSI_PODER_CONTROL_MENTAL = (new L("PSI_PODER_CONTROL_MENTAL","Control mental
     "Mind Control")).getId();
 var PSI_PODER_MUERTE_PSIQUICA = (new L("PSI_PODER_MUERTE_PSIQUICA","Muerte psíquica",
     "Psychic Death")).getId();
-var PSI_PODER_TELEPATIA_Area = (new L("PSI_PODER_TELEPATIA_Area","Área",
+var PSI_PODER_TELEPATIA_AREA = (new L("PSI_PODER_TELEPATIA_Area","Área",
     "Area")).getId();
 var DISCIPLINA_TELEQUINESIS = (new L("DISCIPLINA_TELEQUINESIS","Telequinesis",
     "Psychokinesis")).getId();
