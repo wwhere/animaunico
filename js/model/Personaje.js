@@ -3569,7 +3569,6 @@ Personaje.prototype = {
      * @param {Equipo} item
      */
     compra : function(item) {
-        //TODO ajustar el cambio de monedas
         var dineroActual = this.dinero.totalEnCobre() - item.getCosteDinero().totalEnCobre();
         var mo = 0;
         var mp = 0;
@@ -3593,6 +3592,42 @@ Personaje.prototype = {
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },
 
+    /**
+     *
+     * @param {Equipo} item
+     */
+    vende : function(item) {
+        var dineroActual = this.dinero.totalEnCobre() + item.getCosteDinero().totalEnCobre();
+        var mo = 0;
+        var mp = 0;
+        var mc = 0;
+
+        if (dineroActual >= 1000) {
+            mo = Math.floor(dineroActual/1000);
+            dineroActual -= mo * 1000;
+        }
+        if (dineroActual >= 10) {
+            mp = Math.floor(dineroActual/10);
+            dineroActual -= mp*10;
+        }
+        mc = dineroActual;
+
+        this.dinero.setOro(mo);
+        this.dinero.setPlata(mp);
+        this.dinero.setCobre(mc);
+
+        this.equipo = limpiarArrayObjetosPorCampo(this.equipo,"nombre",item.getNombre());
+        lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+    },
+
+    /**
+     *
+     * @param {Equipo} item
+     */
+    quitaEquipo : function(item) {
+        this.equipo = limpiarArrayObjetosPorCampo(this.equipo,"nombre",item.getNombre());
+        lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+    },
 //endregion
 
 //region Flags

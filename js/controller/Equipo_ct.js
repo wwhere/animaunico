@@ -441,3 +441,14 @@ function calidadOrfebreria(itemOrfebreria, calidad) {
 
     return orfebreriaCalidad;
 }
+
+function quitarEquipo(event) {
+    var item = event.data.item;
+
+    if (personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_INICIADA) {
+        personaje_actual.vende(item);
+    } else {
+        personaje_actual.quitaEquipo(item);
+    }
+
+}

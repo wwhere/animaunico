@@ -1301,6 +1301,7 @@ function muestraEquipamiento() {
         divV.append(divNombre);
         var divCoste = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" [" + itemEquipo.getCosteDinero().toString() + "]");
         divV.append(divCoste);
+        divV.append(muestraBotonAnular(quitarEquipo,{item: itemEquipo}));
         divEquipo.append(divV);
     }
 
@@ -1309,6 +1310,8 @@ function muestraEquipamiento() {
     if (equipo.length == 0) {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
+
+
 
     div.append(divContenido);
     return div;
