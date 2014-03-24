@@ -206,8 +206,6 @@ function dominarPoder(parametros) {
     var disciplina = parametros.disciplina;
     var nombrePoder = parametros.opcion;
 
-    var nombreDisciplina = disciplina.getNombre();
-
     personaje_actual.addPoderDominado(disciplina,getPoder(disciplina,nombrePoder));
     personaje_actual.addCVGastados(1);
 }

@@ -1130,7 +1130,7 @@ function muestraCVLibres() {
 function muestraDisciplinasYPoderes(muestraBotones) {
     var div = getDiv("");
     var i;
-    var divDisciplinas = getDiv(CSS_TEXTO_SMALL);
+    var divDisciplinas = getDiv(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_BLOCK);
     div.append(muestraSubtitulo(UI_AFINIDAD_CON_DISCIPLINAS, false));
 
     if (muestraBotones) {
@@ -1142,9 +1142,10 @@ function muestraDisciplinasYPoderes(muestraBotones) {
     }
 
     for (i=0; i < personaje_actual.disciplinasPsiquicas.length;i++) {
-        var divDisciplina = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_BLOCK).append(_l(personaje_actual.disciplinasPsiquicas[i].nombre));
+        var divDisciplina = getDiv(CSS_TEXTO_SMALL);
+        var divNombreDisciplina = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(_l(personaje_actual.disciplinasPsiquicas[i].getNombre()));
         addToolTip(divDisciplina,_l(personaje_actual.disciplinasPsiquicas[i].getDescripcion()));
-        divDisciplinas.append(divDisciplina);
+        divDisciplinas.append(divDisciplina.append(divNombreDisciplina));
     }
 
     div.append(divDisciplinas);

@@ -893,23 +893,23 @@ function parseArrayCaracSecunTecnica(v) {
  * @param {string} v
  * @returns {DisciplinaPsiquica[]}
  */
-function parseArrayDisciplinaPsiquica(v) {
+function parseArrayDisciplinaPsiquicaAccedida(v) {
     var array = [];
 
     for (var i = 0; i < v.length;i++) {
-        var elemento = new DisciplinaPsiquica("","");
-        parseDisciplinaPsiquica(elemento,v[i]);
+        var elemento = new DisciplinaPsiquicaAccedida("");
+        parseDisciplinaPsiquicaAccedida(elemento,v[i]);
         array.push(elemento);
     }
 
     return array;
 }
 
-function parseDisciplinaPsiquica(elemento, texto) {
+function parseDisciplinaPsiquicaAccedida(elemento, texto) {
     parseObject(texto,function(k,v) {
         switch (k) {
-            case 'poderesPsiquicos':
-                elemento[k] = parseArrayPoderPsiquico(v);
+            case 'disciplina':
+                elemento[k] = getDisciplina(v);
                 break;
             default:
                 elemento[k] = v;
@@ -959,8 +959,7 @@ function parsePoderPsiquicoDominado(elemento, texto) {
                 elemento[k] = parsePoderPsiquico(v);
                 break;
             case 'disciplina':
-                elemento[k] = new DisciplinaPsiquica("","");
-                parseDisciplinaPsiquica(elemento[k],v);
+                elemento[k] = getDisciplina(v);
                 break;
             default:
                 elemento[k] = v;
@@ -1071,7 +1070,7 @@ function cargarPersonaje(cadena) {
                 personaje_actual.numTecnicas = parseNumTecnicas(v);
                 break;
             case 'disciplinasPsiquicas':
-                personaje_actual[k] = parseArrayDisciplinaPsiquica(v);
+                personaje_actual[k] = parseArrayDisciplinaPsiquicaAccedida(v);
                 break;
             case 'poderesPsiquicosDominados':
                 personaje_actual[k] = parseArrayPoderPsiquicoDominado(v);
