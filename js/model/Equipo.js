@@ -239,6 +239,10 @@ Equipo.prototype = {
 
     toString: function() {
         return _l(this.nombre);
+    },
+
+    toJSON : function() {
+        return this.nombre;
     }
 };
 

@@ -36,6 +36,17 @@ var categorias_equipo = [ EQUIPO_TIPO_ARMAS, EQUIPO_TIPO_ARMADURAS, EQUIPO_TIPO_
     EQUIPO_TIPO_TRANSPORTE, EQUIPO_TIPO_EMBARCACIONES, EQUIPO_TIPO_RACIONES,
     EQUIPO_TIPO_VIVIENDAS, EQUIPO_TIPO_DECORACIONES, EQUIPO_TIPO_ORFEBRERIA, EQUIPO_TIPO_VENENOS, EQUIPO_TIPO_VARIOS];
 
+function getEquipo(nombreItem) {
+    for (var i = 0; i < equipo_set.length; i++) {
+        for (var j=0; j < equipo_set[i].length;j++) {
+            if (equipo_set[i][j].getNombre() == nombreItem) {
+                return equipo_set[i][j];
+            }
+        }
+    }
+    throw ERR_EQUIPO_DESCONOCIDO + ":" + nombreItem;
+}
+
 /**
  * Inicializa las listas de equipo. Las ordena.
  */
@@ -452,3 +463,4 @@ function quitarEquipo(event) {
     }
 
 }
+

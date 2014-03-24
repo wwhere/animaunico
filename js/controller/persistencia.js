@@ -598,6 +598,25 @@ function parseArma(texto) {
 /**
  *
  * @param {string} v
+ * @returns {Arma[]}
+ */
+function parseArrayEquipo(v) {
+    var equipo = [];
+
+    for (var i = 0; i < v.length;i++) {
+        equipo.push(parseEquipo(v[i]));
+    }
+
+    return equipo;
+}
+
+function parseEquipo(texto) {
+    return getEquipo(texto);
+}
+
+/**
+ *
+ * @param {string} v
  * @returns {TablaArmasComprada[]}
  */
 function parseArrayTablasArmasComprada(v) {
@@ -1077,6 +1096,9 @@ function cargarPersonaje(cadena) {
                 break;
             case 'dinero':
                 personaje_actual[k] = parseDinero(v);
+                break;
+            case 'equipo':
+                personaje_actual[k] = parseArrayEquipo(v);
                 break;
             default:
                 personaje_actual[k] = v;
