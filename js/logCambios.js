@@ -2,7 +2,7 @@
  * Created by Guille on 5/12/13.
  */
 
-var CURRENT_VERSION = 29;
+var CURRENT_VERSION = 30;
 
 function mostrarLogCambios() {
     $("#logCambios").dialog({
