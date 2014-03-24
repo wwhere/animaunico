@@ -62,6 +62,10 @@ function dialogoCV() {
 
 
         var zonasDisciplinas = getDiv();
+        /**
+         *
+         * @type {DisciplinaPsiquicaAccedida[]}
+         */
         var disciplinasPsiquicas = personaje_actual.getDisciplinasPsiquicas();
         for (var i = 0; i < disciplinasPsiquicas.length; i++) {
             titulo = $("<h3></h3>").append(_l(disciplinasPsiquicas[i].getNombre()));
@@ -69,7 +73,7 @@ function dialogoCV() {
             titulo.append(muestraBotonAnular(eliminarAfinidadDisciplina,{disciplina: disciplinasPsiquicas[i]}));
 
             contenido = getDiv().attr("id","disciplinaPsiquica" + disciplinasPsiquicas[i].getNombre().replace(/\s+/g, ''));
-            appendPoderesPsiquicos(contenido,disciplinasPsiquicas[i]);
+            appendPoderesPsiquicos(contenido,disciplinasPsiquicas[i].disciplina);
 
             zonasDisciplinas.append(titulo).append(contenido);
         }
