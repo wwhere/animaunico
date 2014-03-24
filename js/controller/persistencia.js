@@ -375,6 +375,17 @@ function parseArrayCategorias(v) {
     return categorias;
 }
 
+function parseArrayAumentosCaracteristicas(v) {
+    var aumentos = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var aumento = new AumentoCaracteristicas();
+        parseStandard(aumento,v[i]);
+        aumentos.push(aumento);
+    }
+
+    return aumentos;
+}
 /**
  *
  * @param {string} v
@@ -1000,6 +1011,9 @@ function cargarPersonaje(cadena) {
             case 'categoria':
             case 'proximaCategoria':
                 personaje_actual[k] = getCategoria(v);
+                break;
+            case 'aumentosCaracteristicas':
+                personaje_actual.aumentosCaracteristicas = parseArrayAumentosCaracteristicas(v);
                 break;
             case 'categoriasPorNiveles':
                 personaje_actual.categoriasPorNiveles = parseArrayCategorias(v);
