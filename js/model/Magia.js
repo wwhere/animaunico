@@ -91,6 +91,15 @@ ViaMagia.prototype = {
         throw ERR_CONJURO_DESCONOCIDO + ": " + nombreConjuro;
     },
 
+    hasConjuro : function(nombreConjuro) {
+        for (var i = 0; i < this.conjuros.length; i++) {
+            if (this.conjuros[i].getNombre() == nombreConjuro) {
+                return true;
+            }
+        }
+        return false;
+    },
+
     /**
      *
      * @param {Conjuro} conjuro

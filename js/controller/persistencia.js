@@ -322,7 +322,33 @@ function parseNivelEnVia(nivelEnVia,texto) {
                 nivelEnVia[k] = parseViaMagia(v);
                 break;
             case 'conjurosLibres':
-                nivelEnVia[k] = parseArrayConjuros(v);
+                //nivelEnVia[k] = parseArrayConjurosLibres(v, nivelEnVia);
+                break;
+            case 'nivel4':
+            case 'nivel8':
+            case 'nivel14':
+            case 'nivel18':
+            case 'nivel24':
+            case 'nivel28':
+            case 'nivel34':
+            case 'nivel38':
+            case 'nivel44':
+            case 'nivel48':
+            case 'nivel54':
+            case 'nivel58':
+            case 'nivel64':
+            case 'nivel68':
+            case 'nivel74':
+            case 'nivel78':
+            case 'nivel84':
+            case 'nivel88':
+            case 'nivel94':
+            case 'nivel98':
+                nivelEnVia[k] = parseConjuroLibre(v, k.substr(5));
+                if (!nivelEnVia.conjurosLibres) {
+                    nivelEnVia.conjurosLibres = [];
+                }
+                nivelEnVia.conjurosLibres.push(nivelEnVia[k]);
                 break;
             default:
                 nivelEnVia[k] = v;
@@ -358,12 +384,22 @@ function parseArrayConjuros(v) {
     var conjuros = [];
 
     for (var i = 0; i < v.length;i++) {
-        var conjuro = new Conjuro("",1,"",[],"",new NivelesConjuro(0,0,0,0,false),new NivelesConjuro(0,0,0,0,false),new NivelesConjuro(0,0,0,0,false),new NivelesConjuro(0,0,0,0,false));
-        parseConjuro(conjuro,v[i]);
+        //var conjuro = new Conjuro("",1,"",[],"",new NivelesConjuro(0,0,0,0,false),new NivelesConjuro(0,0,0,0,false),new NivelesConjuro(0,0,0,0,false),new NivelesConjuro(0,0,0,0,false));
+        //parseConjuro(conjuro,v[i]);
+        var conjuro = getConjuro(v[i]);
         conjuros.push(conjuro);
     }
 
     return conjuros;
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {Conjuro[]}
+ */
+function parseConjuroLibre(v, nivelAprendido) {
+    return getConjuroLibreAprendido(getConjuroLibreAcceso(v),nivelAprendido);
 }
 
 function parseConjuro(conjuro, texto) {

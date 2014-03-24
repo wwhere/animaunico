@@ -67,8 +67,16 @@ function maxNivelConjuroSueltoPermitible() {
  */
 function getConjuroLibreAcceso(nombreConjuro) {
     var viaLibre = getVia(VIA_LIBRE_ACCESO);
-
     return viaLibre.getConjuroPorNombre(nombreConjuro);
+}
+
+function getConjuro(nombreConjuro) {
+    for (var i = 0; i < vias_set.length; i++) {
+        if (vias_set[i].hasConjuro(nombreConjuro)) {
+            return vias_set[i].getConjuroPorNombre(nombreConjuro);
+        }
+    }
+    throw ERR_CONJURO_DESCONOCIDO + ": " + nombreConjuro;
 }
 
 /**
