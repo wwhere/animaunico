@@ -4149,8 +4149,16 @@ var USO_AUM_NO = "no";
 var USO_AUM_PC = "PC";
 
 function AumentoCaracteristicas() {
+    /**
+     *
+     * @type {string}
+     */
     this.estado = EST_AUM_LIBRE;
 
+    /**
+     *
+     * @type {string}
+     */
     this.uso = USO_AUM_NO;
 }
 
