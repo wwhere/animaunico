@@ -649,6 +649,7 @@ var EQUIPO_TIPO_VARIOS = (new L("Varios","Varios","Others")).getId();
 
 var ERR_ARMA_DESCONOCIDA = (new L("Error: Arma desconocida","Error: Arma desconocida","Error: Unknown weapon")).getId();
 var ERR_INDICE_TAM_DESCONOCIDO = (new L("Error: tamaño desconocido","Error: tamaño desconocido","Error: Unknown size")).getId();
+var ERR_EQUIPO_DESCONOCIDO = (new L("Error: Equipo desconocida","Error: Equipo desconocida","Error: Unknown equipment")).getId();
 
 var CALIDAD_MEDIOCRE = (new L("mediocre","mediocre","mediocre")).getId();
 var CALIDAD_NORMAL = (new L("normal","normal","normal")).getId();

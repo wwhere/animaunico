@@ -335,6 +335,10 @@ function Personaje(nivelInicial) {
 
     //endregion Presencia, gnosis, natura
 
+    /**
+     *
+     * @type {Equipo[]}
+     */
     this.equipo = [];
 }
 
