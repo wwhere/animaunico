@@ -1292,15 +1292,27 @@ function muestraEquipamiento() {
      * @type {Equipo[]}
      */
     var equipo = personaje_actual.getEquipo();
+    var divEquipo = getDiv("row");
+
     for (var i = 0; i < equipo.length; i++) {
-        divContenido.append(
-            equipo[i].toString()
-        );
+        var itemEquipo = equipo[i];
+
+        var divV = getDiv(CSS_TEXTO_SMALL);
+        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(itemEquipo.toString());
+        divV.append(divNombre);
+        var divCoste = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" [" + itemEquipo.getCosteDinero().toString() + "]");
+        divV.append(divCoste);
+        divV.append(muestraBotonAnular(quitarEquipo,{item: itemEquipo}));
+        divEquipo.append(divV);
     }
+
+    divContenido.append(divEquipo);
 
     if (equipo.length == 0) {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
+
+
 
     div.append(divContenido);
     return div;
