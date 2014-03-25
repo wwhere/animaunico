@@ -340,6 +340,18 @@ function Personaje(nivelInicial) {
      * @type {Equipo[]}
      */
     this.equipo = [];
+
+    /**
+     *
+     * @type {string}
+     */
+    this.descripcion = "";
+
+    /**
+     *
+     * @type {string}
+     */
+    this.trasfondo = "";
 }
 
 Personaje.prototype = {

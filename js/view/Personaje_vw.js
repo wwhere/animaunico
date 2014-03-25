@@ -13,6 +13,7 @@ var DIV_DESTINO_SECUNDARIAS = "#divSecundarias";
 var DIV_DESTINO_DESARROLLO = "#divDesarrollo";
 var DIV_DESTINO_ELAN = "#divElan";
 var DIV_DESTINO_EQUIPO ="#divEquipamiento";
+var DIV_DESTINO_DESCRIPCION ="#divDescripcion";
 
 var listenerActivado = false;
 
@@ -49,6 +50,7 @@ function muestraPersonaje() {
     $(DIV_DESTINO_PSIQUICA).empty().append(muestraPsiquica(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_ELAN).empty().append(muestraElan(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_EQUIPO).empty().append(muestraEquipamiento());
+    $(DIV_DESTINO_DESCRIPCION).empty().append(muestraDescripcion());
 
     enableButtonsPasosCreacion(personaje_actual.GENERACION_INICIADA);
 
@@ -1313,6 +1315,28 @@ function muestraEquipamiento() {
     }
 
 
+
+    div.append(divContenido);
+    return div;
+}
+
+function muestraDescripcion() {
+    var div = recuadroBase();
+    var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
+
+    div.append(muestraSubtitulo(UI_DESCRIPCION_TRASFONDO, true));
+
+    divContenido.append(muestraSubtitulo(UI_DESCRIPCION, false));
+
+    var divDescripcion = getDiv("row");
+
+    divContenido.append(divDescripcion);
+
+    divContenido.append(muestraSubtitulo(UI_TRASFONDO, false));
+
+    var divTrasfondo = getDiv("row");
+
+    divContenido.append(divTrasfondo);
 
     div.append(divContenido);
     return div;
