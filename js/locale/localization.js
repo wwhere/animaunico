@@ -566,6 +566,10 @@ var DIAG_PODERES_MAGIA = (new L("Magia","Magia","Magic")).getId();
 var DIAG_CREACION_TECNICA = (new L("Crear Técnica de Dominio","Crear Técnica de Dominio","Create Ki Technique")).getId();
 var DIAG_REASIGNA_COSTE_KI = (new L("Reparte coste de ki","Reparte coste de ki","Distribute ki cost")).getId();
 var DIAG_COMPRA_EQUIPO = (new L("Compra equipo","Compra equipo","Buy Equipment")).getId();
+var EXPLI_METODO_0 = (new L("EXPLI_METODO_0",
+    "Reparto libre de los valores que desees a cada característica.",
+    "Free distribution of points between attributes."
+)).getId();
 var EXPLI_METODO_1 = (new L("EXPLI_METODO_1",
     "El método tradicional y más recomendado para generar las tiradas es el de lanzar un D10 ocho veces y apuntar las características en una hoja de papel. Ignora cualquier resultado de 1, 2 ó 3 que saques y repítelo, lo que permitirá a tu personaje no tener en ningún momento puntuaciones demasiado bajas. Una vez que tengas las ocho, sustituye la menor por un 9 para asegurar así que, incluso en el improbable caso de que no tengas ninguna cifra elevada, el personaje será excepcional en al menos un campo. A continuación reparte las cifras como prefieras, definiendo exactamente lo que quieres. Este sistema de generación proporciona unas cifras por media elevadas, pero es natural teniendo en cuenta que los personajes suelen ser individuos excepcionales.",
     "Traditional method. Throw a D10 eight times. Ignore die lesser than four and repeat them. Then change a value for a 9. Then distribute the values."

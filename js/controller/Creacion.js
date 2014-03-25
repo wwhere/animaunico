@@ -74,6 +74,9 @@ function iniciarGeneracion() {
  */
 function generarMetodo(metodo) {
     switch (metodo) {
+        case 0:
+            generarMetodo0();
+            break;
         case 1:
             generarMetodo1();
             break;
@@ -103,6 +106,9 @@ function generarMetodo(metodo) {
  */
 function getExplicacionMetodo(metodo) {
     switch (metodo) {
+        case 0:
+            return EXPLI_METODO_0;
+            break;
         case 1:
             return EXPLI_METODO_1;
             break;
@@ -122,6 +128,13 @@ function getExplicacionMetodo(metodo) {
             throw ERR_METODO_DESCONOCIDO;
             break;
     }
+}
+
+/**
+ *
+ */
+function generarMetodo0() {
+    mostrarDialogoRepartoPuntosCaracteristicas(0, false, true);
 }
 
 /**
@@ -202,7 +215,7 @@ function generarMetodo4() {
     for (var i = 0; i < 7; i++) {
         total += d10();
     }
-    mostrarDialogoRepartoPuntosCaracteristicas(total,false);
+    mostrarDialogoRepartoPuntosCaracteristicas(total, false, false);
 }
 
 /**
@@ -219,7 +232,7 @@ function metodo5PuntosElegidos(parametros) {
     } else {
         total = parseInt(parametros.opcion);
     }
-    mostrarDialogoRepartoPuntosCaracteristicas(total,true);
+    mostrarDialogoRepartoPuntosCaracteristicas(total, true, false);
 }
 
 /**
