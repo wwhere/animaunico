@@ -29,7 +29,7 @@ function mostrarDialogoTipoGeneracion() {
         numeroMetodos = 5;
     }
 
-    for (var i = 1; i <= numeroMetodos; i++) {
+    for (var i = 0; i <= numeroMetodos; i++) {
         var divTipo = getDiv("two columns");
         var divBoton = boton("big primary btn pretty",_l(UI_BTN_TIPO) + " " + i);
         divBoton.css("width","100%");
@@ -247,7 +247,7 @@ function nuevoValorAbandonado(valor) {
  * @param {number} total El total de puntos a repartir
  * @param {boolean} diezCuestaDoble Indica si el décimo punto cuesta doble
  */
-function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
+function mostrarDialogoRepartoPuntosCaracteristicas(total, diezCuestaDoble, repartoLibre) {
     var dialogo = getDiv("");
     dialogo.attr("id",DIV_DIALOGO_REPARTO_CARACTERISTICAS);
 
@@ -285,7 +285,7 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
             divContenidoValor.addClass("spinnerMetodo4");
             divContenidoValor.spinner({
                 incremental: false,
-                max: 10,
+                max: repartoLibre?20:10,
                 min: 1,
                 page: 1
             });
@@ -296,17 +296,25 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
                 var paso = newValue - currentValue;
                 var actualizar = false;
 
-                if ((newValue <= 10) && (newValue >= 1)) {
+                if (newValue > repartoLibre?20:10 ) {
+                    newValue = repartoLibre?20:10;
+                } else if (newValue < 1) {
+                    newValue = 1;
+                }
+
+
+                if ((newValue <= repartoLibre?20:10) && (newValue >= 1)) {
                     if (paso > 0) {
-                        if (puntosLibres >= paso) {
+                        if (repartoLibre ||(puntosLibres >= paso)) {
                             actualizar = true;
                         }
                     } else {
-                        if (puntosLibres <= puntosTotales-7+paso) {
+                        if (repartoLibre ||(puntosLibres <= puntosTotales-7+paso)) {
                             actualizar = true;
                         }
                     }
                 }
+
 
                 if (actualizar) {
                     if (diezCuestaDoble) {
@@ -339,7 +347,7 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total,diezCuestaDoble) {
 
             dialogo.dialog( "option", "buttons", [ {
                 text: "Ok",
-                disabled: (puntosLibres > 0),
+                disabled: (puntosLibres > 0) && !repartoLibre,
                 click: function() {
                     $( this ).dialog( "close" );
                     activarNotificaciones();
