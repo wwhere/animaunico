@@ -59,6 +59,8 @@ class PersonajesController extends AppController {
                     'categoria' => $this->request->data('categoria'),
                     'nivel' => $this->request->data('nivel'),
                     'raza' => $this->request->data('raza'),
+                    'descripcion' => $this->request->data('descripcion'),
+                    'trasfondo' => $this->request->data('trasfondo'),
                     'json' => $this->request->data('json'),
                     'user_id' => $this->Auth->user('id')
                 )

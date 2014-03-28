@@ -97,6 +97,8 @@ var UI_TAMAÑO = (new L("Tamaño","Tamaño","Size")).getId();
 var UI_ESTATUS_SOCIAL = (new L("Estatus Social","Estatus Social","Social Status")).getId();
 var UI_EQUIPAMIENTO = (new L("Secc Equipamiento", "Equipamiento", "Equipment")).getId();
 var UI_DINERO = (new L("Secc Dinero", "Dinero", "Money")).getId();
+var UI_DESCRIPCION_TRASFONDO = (new L("Secc Descripcion Trasfondo", "Descripción y trasfondo", "Description and background")).getId();
+var UI_TRASFONDO = (new L("Secc Trasfondo", "Trasfondo", "Background")).getId();
 
 var CLASE_SOCIAL_POBRE = (new L("CS_Pobre","Pobre","Poor")).getId();
 var CLASE_SOCIAL_MEDIO = (new L("CS_Media","Media","Medium")).getId();
