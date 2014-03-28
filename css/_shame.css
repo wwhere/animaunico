@@ -1,7 +1,0 @@
-/* shame */
-.ie8 .xxwide, .ie8 .xwide, .ie8 .wide, .ie8 .normal, .ie8 .narrow, .ie8 .xnarrow { display: inline; }
-.ie8 .xxwide + input, .ie8 .xwide + input, .ie8 .wide + input, .ie8 .normal + input, .ie8 .narrow + input, .ie8 .xnarrow + input { display: inline; margin: 0 0 0 -.25em; }
-.ie8 .ttip:before, .ie8 .ttip:after { display: none; }
-.ie8 .ttip:hover:before, .ie8 .ttip:hover:after { display: block; }
-
-.ie9 .radio.checked i, .ie9 .checkbox.checked i { top: 0; }

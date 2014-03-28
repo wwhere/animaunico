@@ -340,6 +340,18 @@ function Personaje(nivelInicial) {
      * @type {Equipo[]}
      */
     this.equipo = [];
+
+    /**
+     *
+     * @type {string}
+     */
+    this.descripcion = "";
+
+    /**
+     *
+     * @type {string}
+     */
+    this.trasfondo = "";
 }
 
 Personaje.prototype = {
@@ -351,6 +363,40 @@ Personaje.prototype = {
      */
     toString : function() {
         return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza + ")";
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getTrasfondo: function() {
+        return this.trasfondo;
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setTrasfondo: function(valor) {
+        this.trasfondo = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setDescripcion: function(valor) {
+        this.descripcion = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getDescripcion : function() {
+        return this.descripcion;
     },
 
     /**

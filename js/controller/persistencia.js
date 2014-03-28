@@ -32,6 +32,8 @@ function muestraDialogoGuardarPersonaje() {
         "<textarea name='categoria' hidden>"+personaje_actual.getStringCategoria() +"</textarea> " +
         "<input type='text' name='nivel' hidden value='"+personaje_actual.getNivel()+"'/> " +
         "<textarea name='raza' hidden>"+_l(personaje_actual.getRaza().toString()) +"</textarea> " +
+        "<textarea name='descripcion' hidden>"+personaje_actual.getDescripcion() +"</textarea> " +
+        "<textarea name='trasfondo' hidden>"+personaje_actual.getTrasfondo() +"</textarea> " +
         "<textarea name='json' hidden>"+personajeSerializado+"</textarea> " +
         "<input type='submit' value='Guardar'/>" +
         "</form>" );
@@ -1101,6 +1103,7 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseArrayEquipo(v);
                 break;
             default:
+                console.log(k + " = " + v);
                 personaje_actual[k] = v;
         }
     });
