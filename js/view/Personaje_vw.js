@@ -1330,15 +1330,35 @@ function muestraDescripcion() {
 
     var divDescripcion = getDiv("row");
 
+    var textAreaDescripcion = $("<textArea></textArea>").addClass("textAreaAU").attr("id","descripcionPersonaje").append(personaje_actual.getDescripcion());
+
+    divDescripcion.append(textAreaDescripcion);
+
     divContenido.append(divDescripcion);
 
     divContenido.append(muestraSubtitulo(UI_TRASFONDO, false));
 
     var divTrasfondo = getDiv("row");
 
+    var textAreaTrasfondo = $("<textArea></textArea>").addClass("textAreaAU").attr("id","trasfondoPersonaje").append(personaje_actual.getTrasfondo());
+
+    divTrasfondo.append(textAreaTrasfondo);
+
+
     divContenido.append(divTrasfondo);
 
     div.append(divContenido);
+
+    DISPATCHER.on("change","#descripcionPersonaje", function() {
+        console.log("Editando descripcion");
+        personaje_actual.setDescripcion($(this).val());
+    });
+
+    DISPATCHER.on("change","#trasfondoPersonaje", function() {
+        console.log("Editando trasfondo");
+        personaje_actual.setTrasfondo($(this).val());
+    });
+
     return div;
 }
 
