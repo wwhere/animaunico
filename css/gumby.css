@@ -1773,3 +1773,7 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 ul.listaCambios { list-style-type: circle; }
 
 .textAreaAU { width: 100%; height: 120px; border: black; padding: 5px; font-family: Tahoma, sans-serif !important; font-size: x-small !important; background-color: #547595; border-radius: 1em; margin-top: 1em; color: black; }
+
+.colorGris { color: grey; }
+
+.colorPalidGreen { color: palegreen; }

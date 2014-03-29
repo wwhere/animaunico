@@ -343,7 +343,7 @@ function Personaje(nivelInicial) {
      *
      * @type {EquipoComprado[]}
      */
-    this.equipo = [];
+    this.equipoComprado = [];
 
     /**
      *
@@ -452,7 +452,7 @@ Personaje.prototype = {
      * @returns {EquipoComprado[]}
      */
     getEquipo : function() {
-        return this.equipo;
+        return this.equipoComprado;
     },
 
     /**
@@ -837,6 +837,21 @@ Personaje.prototype = {
         this.addBono(bonoAGI, true, false);
         if (notificar)
             lanzarEvento(EVENT_CHARACTER_SECCION_CAPACIDADES);
+    },
+
+    /**
+     * Devuelve el turno fijo del personaje
+     * @returns {number}
+     */
+    getTurnoFijo : function() {
+        var turno = this.turnoBase;
+
+        var bonos = this.getBonos(BONO_TURNO,BONO_TURNO,CATEGORIA_BONO_CUALQUIERA);
+        for (var i = 0; i < bonos.length; i++) {
+            turno += bonos[i].getBonoParaNivel(this.nivel,this);
+        }
+
+        return turno;
     },
 
 //endregion Capacidades Físicas
@@ -3737,12 +3752,15 @@ Personaje.prototype = {
 
         if (esArma(item)) {
             this.armas.push(itemComprado);
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else if (esArmadura(item)) {
             this.armaduras.push(itemComprado);
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else if (esYelmo(item)) {
             this.yelmos.push(itemComprado);
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else {
-            this.equipo.push(itemComprado);
+            this.equipoComprado.push(itemComprado);
         }
 
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
@@ -3782,12 +3800,15 @@ Personaje.prototype = {
     quitaEquipo : function(item) {
         if (esArmaComprada(item)) {
             this.armas = limpiarArrayObjetosPorFuncion(this.armas,getNombre,item.getNombre());
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else if (esArmaduraComprada(item)) {
             this.armaduras = limpiarArrayObjetosPorFuncion(this.armaduras,getNombre,item.getNombre());
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else if (esYelmoComprado(item)) {
             this.yelmos = limpiarArrayObjetosPorFuncion(this.yelmos,getNombre,item.getNombre());
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else {
-            this.equipo = limpiarArrayObjetosPorFuncion(this.equipo,getNombre,item.getNombre());
+            this.equipoComprado = limpiarArrayObjetosPorFuncion(this.equipoComprado,getNombre,item.getNombre());
         }
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },

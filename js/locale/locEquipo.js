@@ -540,3 +540,89 @@ var EQUIPO_ZAPATOS = (new L("EQUIPO_ZAPATOS","Zapatos",
     "Shoes")).getId();
 var EQUIPO_ZUECOS = (new L("EQUIPO_ZUECOS","Zuecos",
     "Clogs")).getId();
+
+/***REGLAS ESPECIALES***/
+
+var REGLA_ARMA_PRECISA = (new L("REGLA_ARMA_PRECISA","Precisa","Precise")).getId();
+var REGLA_ARMA_PRECISA_EXP = "Este tipo de armas permite al personaje disminuir a la mitad los penalizadores de los golpes apuntados, y los de la maniobra de Engatillar. Sólo se aplica en ataques cuerpo a cuerpo, no con proyectiles lanzados.";
+
+var REGLA_ARMA_DOS_MANOS = (new L("REGLA_ARMA_DOS_MANOS","Arma a dos manos","Two handed weapon")).getId();
+var REGLA_ARMA_DOS_MANOS_EXP = "Son las que se usan necesariamente con ambas manos. Las de este tipo permiten al personaje doblar el bono de Fuerza para calcular su daño final.";
+
+var REGLA_ARMA_UNA_O_DOS_MANOS = (new L("REGLA_ARMA_UNA_O_DOS_MANOS","Arma a una o dos manos","One or Two handed weapon")).getId();
+var REGLA_ARMA_UNA_O_DOS_MANOS_EXP = "Pueden utilizarse indistintamente con una o ambas manos. Si se usan con las dos, también permiten doblar el bono de Fuerza para calcular su daño final. En ellas aparecen indicados dos números en la fuerza requerida; el primero es el necesario para usarla con dos manos, y el segundo con sólo una.";
+
+var REGLA_ARMA_COMPLEJA = (new L("REGLA_ARMA_COMPLEJA","Compleja","Complex")).getId();
+var REGLA_ARMA_COMPLEJA_EXP = "Esta clase de armas es excepcionalmente difícil de utilizar. Por ello, un personaje aumenta dos puntos su índice de Pifia, fracasando con un resultado de 5 en un D100. Si alcanza la maestría con ella, desaparece completamente este penalizador.";
+
+var REGLA_ARMA_LANZABLE = (new L("REGLA_ARMA_LANZABLE","Lanzable","Throwable")).getId();
+var REGLA_ARMA_LANZABLE_EXP = "Todas las armas con esta regla especial están equilibradas o pensadas para ser usadas a distancia. Los personajes que tengan habilidad con ellas podrán emplearlas tanto físicamente como arrojándolas, sin la necesidad de adquirir la Tabla de armas de lanzamiento.";
+
+var REGLA_ARMA_PRESA = (new L("REGLA_ARMA_PRESA","Presa","Grappling")).getId();
+var REGLA_ARMA_PRESA_EXP = "Son aquellas que permiten, a quienes las empleen, utilizar maniobras específicas de Presa para atrapar al oponente. Al contrario de lo que ocurre con las manos desnudas, al presar con ellas, un personaje no puede elegir usar sus propias características, sino que deberá utilizar la Fuerza natural del arma. Dicha característica representa su capacidad innata para trabar a sus adversarios. Naturalmente, se siguen utilizando los bonificadores a los controles enfrentados que se apliquen por la diferencia entre las habilidades de los contendientes. En el caso de las armas de calidad, cada bono natural de +5 añade un +1 a su Fuerza para presar.";
+
+var REGLA_ARMA_TRABA_EL_ARMA = (new L("REGLA_ARMA_TRABA_EL_ARMA","Traba el arma","Weapon Lock")).getId();
+var REGLA_ARMA_TRABA_EL_ARMA_EXP = "Artefactos que, por su diseño y características, disponen de la oportunidad de trabar o desarmar al oponente. Si realizando una parada con una de estas armas se consigue un contraataque, el personaje podrá realizar un ataque para Desarmar al adversario sin ningún tipo de penalizador.";
+
+var REGLA_LANZA_CABALLERIA = (new L("REGLA_LANZA_CABALLERIA","Lanza de caballería", "Cavalry Lance")).getId() ; //TODO
+
+var REGLA_RED_GLADIADOR = (new L("REGLA_RED_GLADIADOR","Red de gladiador", "Gladiator net")).getId();//TODO
+var REGLA_ANCIANO_PRIMAVERA = (new L("REGLA_ANCIANO_PRIMAVERA","Anciano de primavera",
+    "Haru No Okina")).getId(); //TODO
+var REGLA_CUERVO = (new L("REGLA_CUERVO","Cuervo",
+    "Raven")).getId(); //TODO
+var REGLA_KATANA_DOBLE_HOJA = (new L("REGLA_KATANA_DOBLE_HOJA","Katana de doble hoja",
+    "Two-bladed Katana")).getId(); //TODO
+var REGLA_KUSARI_GAMA = (new L("REGLA_KUSARI_GAMA","Kusari-Gama",
+    "Kusari-Gama")).getId(); //TODO
+var REGLA_SHUKO = (new L("REGLA_SHUKO","Shuko",
+    "Shuko")).getId(); //TODO
+var REGLA_BUMERAN = (new L("REGLA_BUMERAN","Bumerán",
+    "Boomerang")).getId(); //TODO
+var REGLA_KATAR = (new L("REGLA_KATAR","Katar",
+    "Katar")).getId(); //TODO
+var REGLA_ESCUDO_CORPORAL = (new L("REGLA_ESCUDO_CORPORAL","Escudo corporal",
+    "Full Shield")).getId(); //TODO +30 a la parada,     +15 a la esquiva
+var REGLA_ESCUDO = (new L("REGLA_ESCUDO","Escudo",
+    "Shield")).getId(); //TODO +20 a la parada,     +10 a la esquiva
+var REGLA_RODELA = (new L("REGLA_RODELA","Rodela",
+    "Buckler")).getId(); //TODO +10 a la parada,     +5 a la esquiva
+var REGLA_ARCABUZ = (new L("REGLA_ARCABUZ","Arcabuz",
+    "Arquebus")).getId(); //TODO
+var REGLA_BALISTA_LIGERA = (new L("REGLA_BALISTA_LIGERA","Balista ligera",
+    "Light Ballista")).getId();
+var REGLA_BALISTA_PESADA = (new L("REGLA_BALISTA_PESADA","Balista pesada",
+    "Heavy Ballista")).getId();
+var REGLA_BALLESTA = (new L("REGLA_BALLESTA","Ballesta",
+    "Crossbow")).getId();
+var REGLA_BALLESTA_MANO = (new L("REGLA_BALLESTA_MANO","Ballesta de mano",
+    "Miniature Crossbow")).getId();
+var REGLA_BALLESTA_REPETICION = (new L("REGLA_BALLESTA_REPETICION","Ballesta de repetición",
+    "Repeating Crossbow")).getId();
+var REGLA_BALLESTA_PESADA = (new L("REGLA_BALLESTA_PESADA","Ballesta pesada",
+    "Heavy Crossbow")).getId();
+var REGLA_BOLEADORAS = (new L("REGLA_BOLEADORAS","Boleadoras",
+    "Bolas")).getId();
+var REGLA_CAÑON = (new L("REGLA_CAÑON","Cañón",
+    "Cannon")).getId();
+var REGLA_TURCUS = (new L("REGLA_TURCUS","Turcus",
+    "Chakram")).getId();
+var REGLA_PISTOLA_MECHA = (new L("REGLA_PISTOLA_MECHA","Pistola de mecha",
+    "Matchlock Pistol")).getId();
+var REGLA_FLECHA_FAJO = (new L("REGLA_FLECHA_FAJO","Flecha de fajo",
+    "Flight Arrow")).getId();
+var REGLA_FLECHA_MELLA = (new L("REGLA_FLECHA_MELLA","Flecha de mella",
+    "Armor-piercing Arrow")).getId();
+var MUNICION_PISTOLA_MECHA = (new L("MUNICION_PISTOLA_MECHA","Munición: Pistola mecha","Ammunition: Matchlock pistol")).getId();
+var MUNICION_ARCABUZ = (new L("MUNICION_ARCABUZ","Munición: Arcabuz","Ammunition: Arquebus")).getId();
+var MUNICION_CERBATANA = (new L("MUNICION_CERBATANA","Munición: Cerbatana","Ammunition: Blowgun")).getId();
+var MUNICION_CAÑON = (new L("MUNICION_CAÑON","Munición: Cañón","Ammunition: Cannon")).getId();
+var MUNICION_ARCO_CORTO = (new L("MUNICION_ARCO_CORTO","Munición: Arco corto","Ammunition: Short bow")).getId();
+var MUNICION_ARCO_LARGO = (new L("MUNICION_ARCO_LARGO","Munición: Arco largo","Ammunition: Long bow")).getId();
+var MUNICION_ARCO_LARGO_COMPUESTO = (new L("MUNICION_ARCO_LARGO_COMPUESTO","Munición: Arco largo compuesto","Ammunition: Composite bow")).getId();
+var MUNICION_BALLESTA = (new L("MUNICION_BALLESTA","Munición: Ballesta","Ammunition: Crossbow")).getId();
+var MUNICION_BALLESTA_REPETICION = (new L("MUNICION_BALLESTA_REPETICION","Munición: Ballesta de repetición","Ammunition: Repeating Crossbow")).getId();
+var MUNICION_BALLESTA_LIGERA = (new L("MUNICION_BALLESTA_LIGERA","Munición: Ballesta de mano","Ammunition: Miniature Crossbow")).getId();
+var MUNICION_BALLESTA_PESADA = (new L("MUNICION_BALLESTA_PESADA","Munición: Ballesta pesada","Ammunition: Heavy Crossbow")).getId();
+var MUNICION_BALISTA_LIGERA = (new L("MUNICION_BALISTA_LIGERA","Munición: Balista ligera","Ammunition: Light Ballista")).getId();
+var MUNICION_BALISTA_PESADA = (new L("MUNICION_BALISTA_PESADA","Munición: Balista pesada","Ammunition: Heavy Ballista")).getId();

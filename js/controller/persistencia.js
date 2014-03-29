@@ -660,6 +660,27 @@ function parseArrayArmaduraComprada(v) {
  * @param {string} v
  * @returns {EquipoComprado[]}
  */
+function parseArrayEquipo(v,armas,armaduras,yelmos,equipo) {
+    for (var i = 0; i < v.length;i++) {
+        var item = getEquipo(v[i]);
+        if (esArma(item)) {
+            armas.push(new ArmaComprada(item,0));
+        } else if (esArmadura(item)) {
+            armaduras.push(new ArmaduraComprada(item,0));
+        } else if (esYelmo(item)) {
+            yelmos.push(new YelmoComprado(item,0));
+        } else {
+            equipo.push(new EquipoComprado(item,0,""));
+        }
+
+    }
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {EquipoComprado[]}
+ */
 function parseArrayEquipoComprado(v) {
     var equipo = [];
 
@@ -1201,6 +1222,17 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseDinero(v);
                 break;
             case 'equipo':
+                var armas = [];
+                var armaduras = [];
+                var yelmos = [];
+                var equipo = [];
+                parseArrayEquipo(v,armas,armaduras,yelmos,equipo);
+                personaje_actual.equipoComprado = equipo;
+                personaje_actual.armas = armas;
+                personaje_actual.armaduras = armaduras;
+                personaje_actual.yelmos = yelmos;
+                break;
+            case 'equipoComprado':
                 personaje_actual[k] = parseArrayEquipoComprado(v);
                 break;
             case 'armas':

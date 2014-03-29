@@ -39,6 +39,8 @@ var CSS_TEXTO_SMALL = "textoSmall";
 var CSS_FLOAT_LEFT = "floatLeft";
 var CSS_TEXTO_CENTRO = "textCenter";
 var CSS_VALOR_ABANDONADO = "valorCaracteristicaTachado";
+var CSS_COLOR_GRIS = "colorGris";
+var CSS_COLOR_PALIDGREEN = "colorPalidGreen";
 
 function getDiv(clase) {
     return $("<div></div>").addClass(clase);

@@ -801,6 +801,9 @@ function muestraCombate(estadoGeneracion) {
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES],muestraBotones));
 
+    divContenido.append(muestraSubtitulo(UI_ESTADISTICAS_ARMAS, false));
+    divContenido.append(muestraArmas());
+
     div.append(divContenido);
     return div;
 }
