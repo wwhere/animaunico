@@ -2704,6 +2704,8 @@ Personaje.prototype = {
 
         this.tablasArmas.push(new TablaArmasComprada(tabla,""));
         lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+        lanzarEvento(EVENT_CHARACTER_SECCION_PSIQUICA);
     },
 
     /**
