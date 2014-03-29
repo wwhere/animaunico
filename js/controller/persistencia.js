@@ -1164,6 +1164,7 @@ function cargarPersonaje(cadena) {
             case 'capaArmaduraDura':
             case 'capaArmaduraBlanda1':
             case 'capaArmaduraBlanda2':
+            case 'capaYelmo':
                 personaje_actual[k] = parseTipoArmadura(v);
                 break;
             case 'elan':

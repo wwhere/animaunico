@@ -958,3 +958,10 @@ var UI_PERSIS_METODO_COPIA_CARGA_DESC = (new L("UI_PERSIS_METODO_COPIA_CARGA_DES
     "Si lo anterior no te funciona, puedes copiar el texto que te descargaste y pegarlo en el siguiente cuadro de texto. Luego dale al botón cargar.",
     "If the others don't work, you can copy the text you downloaded or copied and pasted and paste it in the following textbox. Then press the load button")).getId();
 var UI_PERSIS_METODO_COPIA_CARGA = (new L("Carga", "Carga", "Load")).getId();
+
+var UI_EQUIPADO = (new L("UI_EQUIPADO","Equip.","Equip.")).getId();
+var UI_PRECIO = (new L("UI_PRECIO","Precio","Cost")).getId();
+var UI_VENDER = (new L("UI_VENDER","Vender","Sell")).getId();
+var UI_QUITAR = (new L("UI_QUITAR","Quitar","Drop")).getId();
+var UI_TIPO = (new L("UI_TIPO","Tipo","Type")).getId();
+var UI_YELMO = (new L("UI_YELMO","Yelmo","Helm")).getId();

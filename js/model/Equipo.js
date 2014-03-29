@@ -423,7 +423,7 @@ Arma.prototype.toJSON = function() {
  * @param {number[]} tas
  * @constructor
  */
-function Armadura(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorArmadura,penalizadorNatural,restriccionMovimiento,entereza,presencia,localizacion,clase,tas) {
+function Armadura(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorNatural,restriccionMovimiento,entereza,presencia,localizacion,clase,tas) {
     Armadura.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0);
 
     /** @type number */
@@ -742,6 +742,12 @@ function ArmaComprada(arma, modificador) {
      * @type {number}
      */
     this.modificador = modificador;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.equipado = true;
 }
 
 ArmaComprada.prototype = {
@@ -757,6 +763,21 @@ ArmaComprada.prototype = {
         return base
     },
 
+    /**
+     *
+     * @returns {boolean}
+     */
+    isEquipado : function() {
+        return this.equipado;
+    },
+
+    /**
+     *
+     * @param {boolean} valor
+     */
+    setEquipado : function(valor) {
+        this.equipado = valor;
+    },
 
     /**
      *
@@ -957,6 +978,12 @@ function ArmaduraComprada(armadura, modificador) {
      * @type {number}
      */
     this.modificador = modificador;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.equipado = false;
 }
 
 ArmaduraComprada.prototype = {
@@ -975,6 +1002,22 @@ ArmaduraComprada.prototype = {
 
         return base;
     },
+    /**
+     *
+     * @returns {boolean}
+     */
+    isEquipado : function() {
+        return this.equipado;
+    },
+
+    /**
+     *
+     * @param {boolean} valor
+     */
+    setEquipado : function(valor) {
+        this.equipado = valor;
+    },
+
 
     /**
      *
@@ -1123,10 +1166,33 @@ function YelmoComprado(yelmo, modificador) {
      * @type {number}
      */
     this.modificador = modificador;
+
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.equipado = false;
 }
 
 YelmoComprado.prototype = {
     constructor : YelmoComprado,
+    /**
+     *
+     * @returns {boolean}
+     */
+    isEquipado : function() {
+        return this.equipado;
+    },
+
+    /**
+     *
+     * @param {boolean} valor
+     */
+    setEquipado : function(valor) {
+        this.equipado = valor;
+    },
+
 
     /**
      *

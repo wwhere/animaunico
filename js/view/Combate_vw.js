@@ -49,6 +49,9 @@ function muestraArmas() {
     for (var i = 0; i < listaArmas.length ; i++) {
         var arma = listaArmas[i];
 
+        if (!arma.isEquipado())
+            continue;
+
         var divRow = getDiv("row");
         divRow.append(getDiv("two columns").addClass(CSS_COLOR_GRIS).append(_l(UI_ARMA)));
         divRow.append(getDiv("two columns").addClass(CSS_COLOR_GRIS).append(_l(UI_ATAQUE)));

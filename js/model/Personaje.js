@@ -112,6 +112,9 @@ function Personaje(nivelInicial) {
     /** @type TipoArmadura */
     this.capaArmaduraBlanda2 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
 
+    /** @type TipoArmadura */
+    this.capaYelmo = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
+
     //endregion Armadura
 
     //region Elan
@@ -1145,10 +1148,37 @@ Personaje.prototype = {
      * @returns {number}
      */
     getArmadura : function(taArmadura) {
+        var valorDura, valorBlanda1, valorBlanda2 = 0;
+        var naturalUsada = false;
 
-        //TODO completar calculo de armadura combinada
+        if (this.capaArmaduraBlanda1.getNombre() == ARMADURA_NINGUNA) {
+            valorBlanda1 = this.armaduraNatural.getTA(taArmadura);
+            naturalUsada = true;
+        } else {
+            valorBlanda1 = this.capaArmaduraBlanda1.getTA(taArmadura);
+        }
+        if ((this.capaArmaduraBlanda2.getNombre() == ARMADURA_NINGUNA) && !naturalUsada) {
+            valorBlanda2 = this.armaduraNatural.getTA(taArmadura);
+            naturalUsada = true;
+        } else {
+            valorBlanda2 = this.capaArmaduraBlanda2.getTA(taArmadura);
+        }
+        if ((this.capaArmaduraDura.getNombre() == ARMADURA_NINGUNA) && !naturalUsada) {
+            valorDura = this.armaduraNatural.getTA(taArmadura);
+        } else {
+            valorDura = this.capaArmaduraDura.getTA(taArmadura);
+        }
 
-        return this.armaduraNatural.getTA(taArmadura);
+        var valorFinal;// = Math.floor(valorDura/2) + Math.floor(valorBlanda1/2) + Math.floor(valorBlanda2/2);
+        if ((valorDura>=valorBlanda1)&&(valorDura>=valorBlanda2)) {
+            valorFinal = valorDura  + Math.floor(valorBlanda1/2) + Math.floor(valorBlanda2/2);
+        } else if ((valorBlanda1>=valorDura)&&(valorBlanda1>=valorBlanda2)) {
+            valorFinal = valorBlanda1  + Math.floor(valorDura/2) + Math.floor(valorBlanda2/2);
+        } else {
+            valorFinal = valorBlanda2  + Math.floor(valorDura/2) + Math.floor(valorBlanda1/2);
+        }
+
+        return valorFinal;
     },
 
     /**
