@@ -1314,7 +1314,7 @@ function muestraEquipamiento() {
 
     /**
      *
-     * @type {Equipo[]}
+     * @type {EquipoComprado[]}
      */
     var equipo = personaje_actual.getEquipo();
     var divEquipo = getDiv("row");
@@ -1337,7 +1337,85 @@ function muestraEquipamiento() {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMAS, false));
 
+    /**
+     *
+     * @type {ArmaComprada[]}
+     */
+    var armas = personaje_actual.getArmas();
+    var divEquipoArmas = getDiv("row");
+
+    for (i = 0; i < armas.length; i++) {
+        var itemArma = armas[i];
+
+        var divVArma = getDiv(CSS_TEXTO_SMALL);
+        var divNombreArma = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(itemArma.toString());
+        divVArma.append(divNombreArma);
+        var divCosteArma = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" [" + itemArma.getCosteDinero().toString() + "]");
+        divVArma.append(divCosteArma);
+        divVArma.append(muestraBotonAnular(quitarEquipo,{item: itemArma}));
+        divEquipoArmas.append(divVArma);
+    }
+
+    divContenido.append(divEquipoArmas);
+
+    if (armas.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMADURAS, false));
+
+    /**
+     *
+     * @type {ArmaduraComprada[]}
+     */
+    var armaduras = personaje_actual.getArmaduras();
+    var divEquipoArmaduras = getDiv("row");
+
+    for (i = 0; i < armaduras.length; i++) {
+        var itemArmadura = armaduras[i];
+
+        var divVArmadura = getDiv(CSS_TEXTO_SMALL);
+        var divNombreArmadura = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(itemArmadura.toString());
+        divVArmadura.append(divNombreArmadura);
+        var divCosteArmadura = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" [" + itemArmadura.getCosteDinero().toString() + "]");
+        divVArmadura.append(divCosteArmadura);
+        divVArmadura.append(muestraBotonAnular(quitarEquipo,{item: itemArmadura}));
+        divEquipoArmaduras.append(divVArmadura);
+    }
+
+    divContenido.append(divEquipoArmaduras);
+
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_YELMOS, false));
+
+    if (armaduras.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+    /**
+     *
+     * @type {YelmoComprado[]}
+     */
+    var yelmos = personaje_actual.getYelmos();
+    var divEquipoYelmos = getDiv("row");
+
+    for (i = 0; i < yelmos.length; i++) {
+        var itemYelmo = yelmos[i];
+
+        var divVYelmo = getDiv(CSS_TEXTO_SMALL);
+        var divNombreYelmo = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(itemYelmo.toString());
+        divVYelmo.append(divNombreYelmo);
+        var divCosteYelmo = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE).append(" [" + itemYelmo.getCosteDinero().toString() + "]");
+        divVYelmo.append(divCosteYelmo);
+        divVYelmo.append(muestraBotonAnular(quitarEquipo,{item: itemYelmo}));
+        divEquipoYelmos.append(divVYelmo);
+    }
+
+    divContenido.append(divEquipoYelmos);
+
+    if (yelmos.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
 
     div.append(divContenido);
     return div;

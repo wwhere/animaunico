@@ -96,6 +96,9 @@ var UI_APARIENCIA = (new L("Apariencia","Apariencia","Appeareance")).getId();
 var UI_TAMAÑO = (new L("Tamaño","Tamaño","Size")).getId();
 var UI_ESTATUS_SOCIAL = (new L("Estatus Social","Estatus Social","Social Status")).getId();
 var UI_EQUIPAMIENTO = (new L("Secc Equipamiento", "Equipamiento", "Equipment")).getId();
+var UI_EQUIPAMIENTO_ARMAS = (new L("Secc Equipamiento armas", "Armas", "Weapons")).getId();
+var UI_EQUIPAMIENTO_ARMADURAS = (new L("Secc Equipamiento armaduras", "Armaduras", "Armors")).getId();
+var UI_EQUIPAMIENTO_YELMOS = (new L("Secc Equipamiento yelmos", "Yelmos", "Helms")).getId();
 var UI_DINERO = (new L("Secc Dinero", "Dinero", "Money")).getId();
 var UI_DESCRIPCION_TRASFONDO = (new L("Secc Descripcion Trasfondo", "Descripción y trasfondo", "Description and background")).getId();
 var UI_TRASFONDO = (new L("Secc Trasfondo", "Trasfondo", "Background")).getId();
@@ -657,13 +660,25 @@ var ERR_ARMA_DESCONOCIDA = (new L("Error: Arma desconocida","Error: Arma descono
 var ERR_INDICE_TAM_DESCONOCIDO = (new L("Error: tamaño desconocido","Error: tamaño desconocido","Error: Unknown size")).getId();
 var ERR_EQUIPO_DESCONOCIDO = (new L("Error: Equipo desconocida","Error: Equipo desconocida","Error: Unknown equipment")).getId();
 
-var CALIDAD_MEDIOCRE = (new L("mediocre","mediocre","mediocre")).getId();
-var CALIDAD_NORMAL = (new L("normal","normal","normal")).getId();
-var CALIDAD_BUENA = (new L("buena","buena","good")).getId();
-var CALIDAD_LUJOSA = (new L("lujosa","lujosa","luxurious")).getId();
+var CALIDAD_VESTIMENTA_MEDIOCRE = (new L("CALIDAD_VESTIMENTA_MEDIOCRE","mediocre","mediocre")).getId();
+var CALIDAD_VESTIMENTA_BUENA = (new L("CALIDAD_VESTIMENTA_BUENA","buena","good")).getId();
+var CALIDAD_VESTIMENTA_LUJOSA = (new L("CALIDAD_VESTIMENTA_LUJOSA","lujosa","luxurious")).getId();
+
+var CALIDAD_VIVIENDA_MEDIOCRE = (new L("CALIDAD_VIVIENDA_MEDIOCRE","mediocre","mediocre")).getId();
+var CALIDAD_VIVIENDA_BUENA = (new L("CALIDAD_VIVIENDA_BUENA","buena","good")).getId();
+var CALIDAD_VIVIENDA_LUJOSA = (new L("CALIDAD_VIVIENDA_LUJOSA","lujosa","luxurious")).getId();
+var CALIDAD_VIVIENDA_METROPOLITANA = (new L("CALIDAD_VIVIENDA_METROPOLITANA","metropolitana","metropolitan")).getId();
+var CALIDAD_VIVIENDA_METROPOLITANA_MEDIOCRE = (new L("CALIDAD_VIVIENDA_METROPOLITANA_MEDIOCRE","metropolitana mediocre","mediocre metropolitan")).getId();
+var CALIDAD_VIVIENDA_METROPOLITANA_BUENA = (new L("CALIDAD_VIVIENDA_METROPOLITANA_BUENA","metropolitana buena","good metropolitan")).getId();
+var CALIDAD_VIVIENDA_METROPOLITANA_LUJOSA = (new L("CALIDAD_VIVIENDA_METROPOLITANA_LUJOSA","metropolitana lujosa","luxurious metropolitan")).getId();
+
+var CALIDAD_ORFEBRERIA_MEDIOCRE = (new L("CALIDAD_ORFEBRERIA_MEDIOCRE","mediocre","mediocre")).getId();
+var CALIDAD_ORFEBRERIA_BUENA = (new L("CALIDAD_ORFEBRERIA_BUENA","buena","good")).getId();
+var CALIDAD_ORFEBRERIA_EXCELENTE = (new L("CALIDAD_ORFEBRERIA_EXCELENTE","excelente","excellent")).getId();
+var CALIDAD_ORFEBRERIA_LUJOSA = (new L("CALIDAD_ORFEBRERIA_LUJOSA","lujosa","luxurious")).getId();
+
 
 var TXT_CALIDAD = (new L("calidad","calidad","quality")).getId();
-var CALIDAD_EXCELENTE = (new L("excelente","excelente","excellent")).getId();
 
 var TIPO_CAPACIDAD = (new L("Capacidad especial","Capacidad especial","Special ability")).getId();
 

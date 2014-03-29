@@ -122,6 +122,7 @@ function Equipo(nombre, costeDinero, peso, disponibilidad, entereza, presencia, 
      * @type {string}
      */
     this.nombre = nombre;
+
     /**
      *
      * @type {Dinero}
@@ -152,6 +153,7 @@ function Equipo(nombre, costeDinero, peso, disponibilidad, entereza, presencia, 
      * @type {number}
      */
     this.bonoHabilidad = bonoHabilidad;
+
 }
 
 Equipo.prototype = {
@@ -306,6 +308,7 @@ function Arma(nombre, costeDinero, peso, disponibilidad, categorias, velocidad, 
 
     /** @type number */
     this.modificadorTADefensor = 0;
+
 }
 
 extend(Arma,Equipo);
@@ -512,6 +515,7 @@ function Armadura(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penal
 
     /** @type number[] */
     this.tas = tas;
+
 }
 
 extend(Armadura,Equipo);
@@ -607,6 +611,7 @@ function Yelmo(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penaliza
 
     /** @type number[] */
     this.tas = tas;
+
 }
 
 extend(Yelmo,Equipo);
@@ -674,6 +679,649 @@ Yelmo.prototype.toJSON = function() {
 };
 
 
+/**
+ *
+ * @param {Equipo} equipo
+ * @constructor
+ * @param {number} [modificador]
+ * @param {string} [calidad]
+ */
+function EquipoComprado(equipo, modificador, calidad) {
+    /**
+     *
+     * @type {Equipo}
+     */
+    this.equipo = equipo;
+
+    if (!calidad)
+        calidad = "";
+    /**
+     *
+     * @type {string}
+     */
+    this.calidad = calidad;
+
+    if (!modificador)
+        modificador = 0;
+    /**
+     *
+     * @type {number}
+     */
+    this.modificador = modificador;
+}
+
+EquipoComprado.prototype = {
+    constructor : EquipoComprado,
+
+    /**
+     *
+     * @returns {string}
+     */
+    toString : function() {
+        var base = this.equipo.toString();
+
+        if (this.modificador != 0) {
+            base += " " + modificadorBonito(this.modificador);
+        }
+
+        return base;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.equipo.getNombre();
+    },
+
+    /**
+     *
+     * @returns {Dinero}
+     */
+    getCosteDinero : function() {
+        var costeCobre = getCosteConModificador(this.modificador,this.equipo);
+        if (costeCobre == INCALCULABLE) {
+            return new Dinero(INCALCULABLE,INCALCULABLE,INCALCULABLE);
+        } else {
+            costeCobre *= getMultiplicadorPrecioPorCalidadDeEquipo(this.calidad);
+            return new Dinero(Math.floor(costeCobre/1000),Math.floor((costeCobre%1000)/10),Math.floor(costeCobre%10));
+        }
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPeso : function() {
+        return this.equipo.getPeso();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getDisponibilidad : function() {
+        return getDisponibilidadConModificador(this.modificador,this.equipo);
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getEntereza : function() {
+        return this.equipo.getEntereza() + this.modificador*2;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPresencia : function() {
+        var presBase = this.equipo.getPresencia();
+        if (this.modificador > 0) {
+            presBase += this.modificador * 10;
+        }
+        return presBase;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getBonoHabilidad : function() {
+        return this.equipo.getBonoHabilidad() + this.modificador*2;
+    }
+};
+
+/**
+ *
+ * @param {Arma} arma
+ * @param {number} [modificador]
+ * @constructor
+ */
+function ArmaComprada(arma, modificador) {
+    /**
+     *
+     * @type {Arma}
+     */
+    this.arma = arma;
+
+    if (!modificador)
+        modificador = 0;
+    /**
+     *
+     * @type {number}
+     */
+    this.modificador = modificador;
+}
+
+ArmaComprada.prototype = {
+    constructor: ArmaComprada,
+
+    toString: function() {
+        var base = this.arma.getNombre();
+
+        if (this.calidad != "") {
+            base += " " + modificadorBonito(this.calidad);
+        }
+
+        return base
+    },
 
 
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.arma.getNombre();
+    },
 
+    /**
+     *
+     * @returns {Dinero}
+     */
+    getCosteDinero : function() {
+        var costeCobre = getCosteConModificador(this.modificador,this.arma);
+        if (costeCobre == INCALCULABLE) {
+            return new Dinero(INCALCULABLE,INCALCULABLE,INCALCULABLE);
+        } else {
+            return new Dinero(Math.floor(costeCobre/1000),Math.floor((costeCobre%1000)/10),Math.floor(costeCobre%10));
+        }
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPeso : function() {
+        return this.arma.getPeso();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getDisponibilidad : function() {
+        return getDisponibilidadConModificador(this.modificador,this.arma);
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getEntereza : function() {
+        return this.arma.getEntereza() + this.modificador*2;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPresencia : function() {
+        var presBase = this.arma.getPresencia();
+        if (this.modificador > 0) {
+            presBase += this.modificador * 10;
+        }
+        return presBase;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getCategoria : function() {
+        return this.arma.getCategoria();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getCategoriaLoc : function() {
+        return this.arma.getCategoriaLoc();
+    },
+
+    /**
+     *
+     * @returns {string[]}
+     */
+    getCategorias : function() {
+        return this.arma.getCategorias();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getVelocidad : function() {
+        return this.arma.getVelocidad() + this.modificador;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getDañoBase : function() {
+        return this.arma.getDañoBase() + this.modificador*2;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getRotura : function() {
+        return this.arma.getRotura() + 2 * (this.modificador/5);
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getFueReq : function() {
+        return this.arma.getFueReq();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getFueReq2Manos : function() {
+        return this.arma.getFueReq2Manos();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getCriticoPrimario : function() {
+        return this.arma.getCriticoPrimario();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getCriticoSecundario : function() {
+        return this.arma.getCriticoSecundario();
+    },
+
+    /**
+     *
+     * @returns {string[]}
+     */
+    getEspecial : function() {
+        return this.arma.getEspecial();
+    },
+
+    /**
+     *
+     * @returns {*}
+     */
+    getBonoDaño : function() {
+        return this.getBonoDaño();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getModificadorAtaqueParada : function() {
+        return this.arma.getModificadorAtaqueParada() + this.modificador;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getModificadorTADefensor : function() {
+        return this.arma.getModificadorTADefensor() - (this.modificador/5);
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getTamaño : function() {
+        return this.arma.getTamaño();
+    }
+
+};
+
+/**
+ *
+ * @param {Armadura} armadura
+ * @param {number} [modificador]
+ * @constructor
+ */
+function ArmaduraComprada(armadura, modificador) {
+    /**
+     *
+     * @type {Armadura}
+     */
+    this.armadura = armadura;
+
+    if (!modificador)
+        modificador = 0;
+    /**
+     *
+     * @type {number}
+     */
+    this.modificador = modificador;
+}
+
+ArmaduraComprada.prototype = {
+    constructor : ArmaduraComprada,
+
+    /**
+     *
+     * @returns {string}
+     */
+    toString : function() {
+        var base = this.armadura.toString();
+
+        if (this.modificador != 0) {
+            base += " " + modificadorBonito(this.modificador);
+        }
+
+        return base;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.armadura.getNombre();
+    },
+
+    /**
+     *
+     * @returns {Dinero}
+     */
+    getCosteDinero : function() {
+        var costeCobre = getCosteConModificador(this.modificador,this.armadura);
+        if (costeCobre == INCALCULABLE) {
+            return new Dinero(INCALCULABLE,INCALCULABLE,INCALCULABLE);
+        } else {
+            return new Dinero(Math.floor(costeCobre/1000),Math.floor((costeCobre%1000)/10),Math.floor(costeCobre%10));
+        }
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPeso : function() {
+        return this.armadura.getPeso();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getDisponibilidad : function() {
+        return getDisponibilidadConModificador(this.modificador,this.armadura);
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getEntereza : function() {
+        return this.armadura.getEntereza() + this.modificador;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPresencia : function() {
+        var presBase = this.armadura.getPresencia();
+        if (this.modificador > 0) {
+            presBase += this.modificador * 10;
+        }
+        return presBase;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getRequisitoArmadura : function() {
+        var requisito = this.armadura.getRequisitoArmadura();
+        requisito -= this.modificador;
+        if (requisito <0) {
+            requisito = 0;
+        }
+        return requisito;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPenalizadorNatural :  function() {
+        var penalizador = this.armadura.getPenalizadorNatural();
+
+        penalizador += this.modificador;
+
+        if (penalizador > 0) {
+            penalizador = 0;
+        }
+        return penalizador;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getRestriccionMovimiento : function() {
+        var rest = this.armadura.getRestriccionMovimiento();
+
+        rest -= (this.modificador/5);
+
+        if (rest < 0) {
+            rest = 0;
+        }
+        return rest;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getLocalizacion : function() {
+        return this.armadura.getLocalizacion();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getClase : function() {
+        return this.armadura.getClase();
+    },
+
+    /**
+     *
+     * @returns {number[]}
+     */
+    getTAs : function() {
+        var modificadorEntre5 = this.modificador/5;
+
+        return sumarArmadura(this.armadura.getTAs(),[modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5]);
+    }
+};
+
+/**
+ *
+ * @param {Yelmo} yelmo
+ * @param {number} [modificador]
+ * @constructor
+ */
+function YelmoComprado(yelmo, modificador) {
+    /**
+     *
+     * @type {Yelmo}
+     */
+    this.yelmo = yelmo;
+
+    if (!modificador)
+        modificador = 0;
+    /**
+     *
+     * @type {number}
+     */
+    this.modificador = modificador;
+}
+
+YelmoComprado.prototype = {
+    constructor : YelmoComprado,
+
+    /**
+     *
+     * @returns {string}
+     */
+    toString : function() {
+        var base = this.yelmo.toString();
+
+        if (this.modificador != 0) {
+            base += " " + modificadorBonito(this.modificador);
+        }
+
+        return base;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.yelmo.getNombre();
+    },
+
+    /**
+     *
+     * @returns {Dinero}
+     */
+    getCosteDinero : function() {
+        var costeCobre = getCosteConModificador(this.modificador,this.yelmo);
+        if (costeCobre == INCALCULABLE) {
+            return new Dinero(INCALCULABLE,INCALCULABLE,INCALCULABLE);
+        } else {
+            return new Dinero(Math.floor(costeCobre/1000),Math.floor((costeCobre%1000)/10),Math.floor(costeCobre%10));
+        }
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPeso : function() {
+        return this.yelmo.getPeso();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getDisponibilidad : function() {
+        return getDisponibilidadConModificador(this.modificador,this.yelmo);
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getEntereza : function() {
+        return this.yelmo.getEntereza() + this.modificador;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPresencia : function() {
+        var presBase = this.yelmo.getPresencia();
+        if (this.modificador > 0) {
+            presBase += this.modificador * 10;
+        }
+        return presBase;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getRequisitoArmadura : function() {
+        var requisito = this.yelmo.getRequisitoArmadura();
+        requisito -= this.modificador;
+        if (requisito <0) {
+            requisito = 0;
+        }
+        return requisito;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getPenalizadorPercepcion :  function() {
+        var penalizador = this.yelmo.getPenalizadorPercepcion();
+
+        /*penalizador += this.modificador;
+
+        if (penalizador > 0) {
+            penalizador = 0;
+        }*/
+        return penalizador;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getLocalizacion : function() {
+        return this.yelmo.getLocalizacion();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getClase : function() {
+        return this.yelmo.getClase();
+    },
+
+    /**
+     *
+     * @returns {number[]}
+     */
+    getTAs : function() {
+        var modificadorEntre5 = this.modificador/5;
+
+        return sumarArmadura(this.yelmo.getTAs(),[modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5]);
+    }
+};

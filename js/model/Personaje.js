@@ -341,9 +341,27 @@ function Personaje(nivelInicial) {
 
     /**
      *
-     * @type {Equipo[]}
+     * @type {EquipoComprado[]}
      */
     this.equipo = [];
+
+    /**
+     *
+     * @type {ArmaComprada[]}
+     */
+    this.armas = [];
+
+    /**
+     *
+     * @type {ArmaduraComprada[]}
+     */
+    this.armaduras = [];
+
+     /**
+     *
+     * @type {YelmoComprado[]}
+     */
+    this.yelmos = [];
 
     /**
      *
@@ -431,12 +449,40 @@ Personaje.prototype = {
 
     /**
      *
-     * @returns {Equipo[]}
+     * @returns {EquipoComprado[]}
      */
     getEquipo : function() {
         return this.equipo;
     },
 
+    /**
+     *
+     * @returns {ArmaComprada[]}
+     */
+    getArmas : function() {
+        return this.armas;
+    },
+
+    /**
+     *
+     * @returns {ArmaduraComprada[]}
+     */
+    getArmaduras : function() {
+        return this.armaduras;
+    },
+
+    /**
+     *
+     * @returns {YelmoComprado[]}
+     */
+    getYelmos : function() {
+        return this.yelmos;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
     getStringCategoria : function() {
         var cadena = "";
         var catActual = "";
@@ -3654,9 +3700,23 @@ Personaje.prototype = {
     /**
      *
      * @param {Equipo} item
+     * @param {number} [modificador]
+     * @param {string} [calidad]
      */
-    compra : function(item) {
-        var dineroActual = this.dinero.totalEnCobre() - item.getCosteDinero().totalEnCobre();
+    compra : function(item, modificador, calidad) {
+        if (!modificador) modificador = 0;
+        if (!calidad) calidad = "";
+        var itemComprado;
+        if (esArma(item)) {
+            itemComprado = new ArmaComprada(item,modificador);
+        } else if (esArmadura(item)) {
+            itemComprado = new ArmaduraComprada(item,modificador);
+        } else if (esYelmo(item)) {
+            itemComprado = new YelmoComprado(item,modificador);
+        } else {
+            itemComprado = new EquipoComprado(item,modificador,calidad);
+        }
+        var dineroActual = this.dinero.totalEnCobre() - itemComprado.getCosteDinero().totalEnCobre();
         var mo = 0;
         var mp = 0;
         var mc = 0;
@@ -3675,13 +3735,22 @@ Personaje.prototype = {
         this.dinero.setPlata(mp);
         this.dinero.setCobre(mc);
 
-        this.equipo.push(item);
+        if (esArma(item)) {
+            this.armas.push(itemComprado);
+        } else if (esArmadura(item)) {
+            this.armaduras.push(itemComprado);
+        } else if (esYelmo(item)) {
+            this.yelmos.push(itemComprado);
+        } else {
+            this.equipo.push(itemComprado);
+        }
+
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },
 
     /**
      *
-     * @param {Equipo} item
+     * @param {EquipoComprado|ArmaComprada|ArmaduraComprada|YelmoComprado} item
      */
     vende : function(item) {
         var dineroActual = this.dinero.totalEnCobre() + item.getCosteDinero().totalEnCobre();
@@ -3703,16 +3772,23 @@ Personaje.prototype = {
         this.dinero.setPlata(mp);
         this.dinero.setCobre(mc);
 
-        this.equipo = limpiarArrayObjetosPorCampo(this.equipo,"nombre",item.getNombre());
-        lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+        this.quitaEquipo(item);
     },
 
     /**
      *
-     * @param {Equipo} item
+     * @param {EquipoComprado|ArmaComprada|ArmaduraComprada|YelmoComprado} item
      */
     quitaEquipo : function(item) {
-        this.equipo = limpiarArrayObjetosPorCampo(this.equipo,"nombre",item.getNombre());
+        if (esArmaComprada(item)) {
+            this.armas = limpiarArrayObjetosPorFuncion(this.armas,getNombre,item.getNombre());
+        } else if (esArmaduraComprada(item)) {
+            this.armaduras = limpiarArrayObjetosPorFuncion(this.armaduras,getNombre,item.getNombre());
+        } else if (esYelmoComprado(item)) {
+            this.yelmos = limpiarArrayObjetosPorFuncion(this.yelmos,getNombre,item.getNombre());
+        } else {
+            this.equipo = limpiarArrayObjetosPorFuncion(this.equipo,getNombre,item.getNombre());
+        }
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },
 //endregion
