@@ -1,0 +1,183 @@
+{
+    'Abel' : {
+        'Libro' : 'Gaia 1',
+        'Clase baja' : {
+            'min' : 1,
+            'max': 10,
+            'dinero': 5,
+            'Raices': [
+                {
+                    'Habilidad': 'Atletismo',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Montar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Nadar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Advertir',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Trucos de manos',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Persuasion',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Historia (local)',
+                    'Bono': 10
+                }
+            ]
+        },
+        'Clase media' : {
+            'min' : 11,
+            'max': 60,
+            'dinero': 1000,
+            'Raices': [
+
+                {
+                    'Habilidad': 'Atletismo',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Montar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Nadar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Advertir',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Trucos de manos',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Persuasion',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Historia (local)',
+                    'Bono': 10
+                }
+            ]
+        },
+        'Burgués' : {
+            'min' : 61,
+            'max': 90,
+            'dinero': 20000,
+            'Raices': [
+
+                {
+                    'Habilidad': 'Montar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Nadar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Persuasión',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Estilo',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Tasación',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Historia (local)',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Baile',
+                    'Bono': 10
+                }
+            ]
+        },
+        'Nobleza' : {
+            'min' : 91,
+            'max': 100,
+            'dinero': 150000,
+            'Raices': [
+
+                {
+                    'Habilidad': 'Atletismo',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Montar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Nadar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Advertir',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Trucos de manos',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Persuasion',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Historia (local)',
+                    'Bono': 10
+                }
+            ]
+        },
+        'Alta nobleza' : {
+            'costePC': 2,
+            'dinero': 1000000,
+            'Raices': [
+
+                {
+                    'Habilidad': 'Montar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Nadar',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Persuasión',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Estilo',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Tasación',
+                    'Bono': 15
+                },
+                {
+                    'Habilidad': 'Historia (local)',
+                    'Bono': 10
+                },
+                {
+                    'Habilidad': 'Baile',
+                    'Bono': 10
+                }
+            ]
+        }
+    }
+}
