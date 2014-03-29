@@ -922,9 +922,9 @@ function ajusteTamaño(coste, opcion,aplicar) {
  */
 function armaduraNatural(coste, opcion,aplicar) {
     if (aplicar) {
-        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural(),[2,2,2,2,2,2,0]));
+        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[2,2,2,2,2,2,0]));
     } else {
-        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural(),[-2,-2,-2,-2,-2,-2,0]));
+        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[-2,-2,-2,-2,-2,-2,0]));
     }
 }
 
@@ -936,9 +936,9 @@ function armaduraNatural(coste, opcion,aplicar) {
  */
 function armaduraMistica(coste, opcion,aplicar) {
     if (aplicar) {
-        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural(),[0,0,0,0,0,0,4]));
+        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[0,0,0,0,0,0,4]));
     } else {
-        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural(),[0,0,0,0,0,0,-4]));
+        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[0,0,0,0,0,0,-4]));
     }
 }
 

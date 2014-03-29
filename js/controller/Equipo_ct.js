@@ -456,3 +456,26 @@ function esArmaduraComprada(item) {
 function esYelmoComprado(item) {
     return item.hasOwnProperty('yelmo');
 }
+
+function desequipaArmaduras(duras) {
+    for (var i = 0; i < personaje_actual.armaduras.length; i++) {
+        if ((duras && (personaje_actual.armaduras[i].getClase() == ARMADURA_CLASE_DURA)) || (!duras && (personaje_actual.armaduras[i].getClase() == ARMADURA_CLASE_BLANDA))) {
+            personaje_actual.armaduras[i].setEquipado(false);
+        }
+    }
+}
+
+function desequipaArmadura(nombre) {
+    for (var i = 0; i < personaje_actual.armaduras.length; i++) {
+        if (personaje_actual.armaduras[i].toString() == nombre) {
+            personaje_actual.armaduras[i].setEquipado(false);
+            return;
+        }
+    }
+}
+
+function desequipaYelmos() {
+    for (var i = 0; i < personaje_actual.yelmos.length; i++) {
+        personaje_actual.yelmos[i].setEquipado(false);
+    }
+}

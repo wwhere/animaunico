@@ -68,6 +68,119 @@ function aplicaEfectosGnosis(gnosis, personaje) {
     }
 }
 
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaComprada} arma
+ */
+function getAtaqueFinalConArma(personaje,arma) {
+    var ataqueBase = personaje[HB_ATAQUE].valorFinalActual();
+
+    if (!personaje.hasArmaManejada(arma.arma.getNombre())) {
+        var penalizador = -60;
+        var catArma = arma.getCategoria();
+
+        //si similar -20
+        var tiposArmasConocidos = personaje.getTiposArmasConocidos(false);
+        for (var i = 0; i < tiposArmasConocidos.length; i++) {
+            if (catArma == tiposArmasConocidos[i]) {
+                penalizador = -20;
+                break;
+            }
+        }
+
+        if (penalizador == -60) {
+            //si mixta -40
+            var tiposArmasMixtos = getTiposMixtos(personaje_actual.getTiposArmasConocidos(true));
+            for (i = 0; i < tiposArmasMixtos.length; i++) {
+                if (catArma == tiposArmasMixtos[i]) {
+                    penalizador = -20;
+                    break;
+                }
+            }
+
+        }
+
+        ataqueBase += penalizador;
+    }
+
+    ataqueBase += arma.getModificadorAtaqueParada();
+    return ataqueBase;
+}
+
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaComprada} arma
+ */
+function getDefensaFinalConArma(personaje,arma) {
+    var paradaBase = personaje[HB_PARADA].valorFinalActual();
+    if (!personaje.hasArmaManejada(arma.arma.getNombre())) {
+        var penalizador = -60;
+        var catArma = arma.getCategoria();
+
+        //si similar -20
+        var tiposArmasConocidos = personaje.getTiposArmasConocidos(false);
+        for (var i = 0; i < tiposArmasConocidos.length; i++) {
+            if (catArma == tiposArmasConocidos[i]) {
+                penalizador = -20;
+                break;
+            }
+        }
+
+        if (penalizador == -60) {
+            //si mixta -40
+            var tiposArmasMixtos = getTiposMixtos(personaje_actual.getTiposArmasConocidos(true));
+            for (i = 0; i < tiposArmasMixtos.length; i++) {
+                if (catArma == tiposArmasMixtos[i]) {
+                    penalizador = -20;
+                    break;
+                }
+            }
+
+        }
+
+        paradaBase += penalizador;
+    }
+
+    paradaBase += arma.getModificadorAtaqueParada();
+    return paradaBase;
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaComprada} arma
+ */
+function getDañoFinalConArma(personaje,arma) {
+    var daño = arma.getDañoBase();
+    switch (arma.getBonoDaño()) {
+        case BONO_FUE:
+        default:
+            daño += personaje.getBonoCaracteristica(FUE);
+            break;
+        case BONO_POD:
+            daño += personaje.getBonoCaracteristica(POD);
+            break;
+    }
+
+    return daño;
+}
+
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaComprada} arma
+ */
+function getTurnoFinalConArma(personaje,arma) {
+    return personaje.getTurnoFijo() + arma.getVelocidad();
+}
+
+
+
+
 /*
 25:
 

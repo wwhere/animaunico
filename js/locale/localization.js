@@ -121,8 +121,10 @@ var UI_PX = (new L("Puntos de Experiencia","Puntos de Experiencia","Experience P
 var UI_ARQUETIPO = (new L("Arquetipo","Arquetipo","Archetype")).getId();
 var UI_TURNO = (new L("Turno","Turno","Initiative")).getId();
 var UI_TABLAS = (new L("Tablas","Tablas","Modules")).getId();
+var UI_ESTADISTICAS_ARMAS = (new L("UI_ESTADISTICAS_ARMAS","Armas","Weapons")).getId();
 var UI_ARTES_MARCIALES = (new L("Artes Marciales","Artes Marciales","Martial Arts")).getId();
 var UI_CM = (new L("CM","CM","MK")).getId();
+var UI_ARMA = (new L("UI_ARMA","Arma", "Weapon")).getId();
 var UI_ARMADURA = (new L("Armadura","Armadura","Armor")).getId();
 var UI_ARMAS_MANEJADAS = (new L("Armas manejadas","Armas manejadas","Weapons known")).getId();
 var UI_CAPACIDADES_FISICAS = (new L("Capacidades físicas","Capacidades físicas","Physical Abilities")).getId();
@@ -149,6 +151,18 @@ var UI_NIVELES_PARA_CV = (new L("UI Niveles para CV","Niveles para CV","Levels f
 
 var UI_LIMITE_COMBATE = (new L("UI Máximo en Combate","Máximo en Combate","Combat Max")).getId();
 var UI_ATAQUE = (new L("UI Ataque","Ataque","Attack")).getId();
+var UI_DEFENSA = (new L("UI Defensa","Defensa","Defense")).getId();
+var UI_DAÑO_BASE = (new L("UI_DAÑO_BASE","Daño base","Base Dmg.")).getId();
+var UI_DAÑO_FINAL = (new L("UI_DAÑO_FINAL","Daño final","Final Dmg.")).getId();
+var UI_VELOCIDAD = (new L("UI_VELOCIDAD","Velocidad","Speed")).getId();
+var UI_TURNO_FINAL = (new L("UI_TURNO_FINAL","Turno final","Final Init.")).getId();
+var UI_CRITICO_1 = (new L("UI_CRITICO_1","Crit. 1","Crit. 1")).getId();
+var UI_CRITICO_2 = (new L("UI_CRITICO_2","Crit. 2","Crit. 2")).getId();
+var UI_CADENCIA_DE_FUEGO = (new L("UI_CADENCIA_DE_FUEGO","CdF","ROF")).getId();
+var UI_ESPECIAL = (new L("UI_ESPECIAL","Especial","Special")).getId();
+var UI_ENTEREZA = (new L("UI_ENTEREZA","Entereza","Fortitude")).getId();
+var UI_ROTURA = (new L("UI_ROTURA","Rotura","Breakage")).getId();
+var UI_PRESENCIA = (new L("UI_PRESENCIA","Presencia","Presence")).getId();
 var UI_PARADA = (new L("UI Parada","Parada","Block")).getId();
 var UI_ESQUIVA = (new L("UI Esquiva","Esquiva","Dodge")).getId();
 var UI_LLEVAR_ARMADURA = (new L("UI Llevar Armadura","Llevar Armadura","Wear Armor")).getId();
@@ -944,3 +958,10 @@ var UI_PERSIS_METODO_COPIA_CARGA_DESC = (new L("UI_PERSIS_METODO_COPIA_CARGA_DES
     "Si lo anterior no te funciona, puedes copiar el texto que te descargaste y pegarlo en el siguiente cuadro de texto. Luego dale al botón cargar.",
     "If the others don't work, you can copy the text you downloaded or copied and pasted and paste it in the following textbox. Then press the load button")).getId();
 var UI_PERSIS_METODO_COPIA_CARGA = (new L("Carga", "Carga", "Load")).getId();
+
+var UI_EQUIPADO = (new L("UI_EQUIPADO","Equip.","Equip.")).getId();
+var UI_PRECIO = (new L("UI_PRECIO","Precio","Cost")).getId();
+var UI_VENDER = (new L("UI_VENDER","Vender","Sell")).getId();
+var UI_QUITAR = (new L("UI_QUITAR","Quitar","Drop")).getId();
+var UI_TIPO = (new L("UI_TIPO","Tipo","Type")).getId();
+var UI_YELMO = (new L("UI_YELMO","Yelmo","Helm")).getId();
