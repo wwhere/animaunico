@@ -125,7 +125,7 @@ var UI_ARMAS_MANEJADAS = (new L("Armas manejadas","Armas manejadas","Weapons kno
 var UI_CAPACIDADES_FISICAS = (new L("Capacidades físicas","Capacidades físicas","Physical Abilities")).getId();
 var UI_DESARROLLO = (new L("Desarrollo del personaje","Desarrollo del personaje","Character Development")).getId();
 var UI_ELAN = (new L("Elan","Elan","Elan")).getId();
-
+var UI_DESEQUILIBRIO_OFENSIVO_MAGICO = (new L("UI_DESEQUILIBRIO_OFENSIVO_MAGICO","Desequilibrio Ofensivo Mágico","Magical Offensive Unbalance")).getId();
 var UI_DESCRIPCION = (new L("Descripción","Descripción","Description")).getId();
 
 var UI_COSTE_KI = (new L("Coste de Ki","Coste de Ki","Ki Cost")).getId();

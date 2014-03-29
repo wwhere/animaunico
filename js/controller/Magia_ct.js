@@ -387,3 +387,9 @@ function compraConjuroSuelto(parametros) {
 
     personaje_actual.addConjuroSuelto(conjuro);
 }
+
+function asignarDesequilibrioOfensivoMagico(parametros) {
+    var nuevoDesequilibrio = parametros.opcion;
+
+    personaje_actual.setDesequilibrioOfensivoMagico(parseInt(nuevoDesequilibrio));
+}

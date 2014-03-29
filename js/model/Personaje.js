@@ -284,6 +284,10 @@ function Personaje(nivelInicial) {
     //endregion Ajustes Habilidades Primarias: Combate
 
     //region Ajustes Habilidades Primarias: Magia
+
+    this.desequilibrioOfensivoMagico = 0;
+    this.desequilibrioOfensivoMagicoPrevio = 0;
+    this.desequilibrioOfensivoMagicoCambioMaximo = 30;
     //endregion Ajustes Habilidades Primarias: Magia
 
     //region Ajustes Habilidades Primarias: Psíquica
@@ -366,6 +370,32 @@ Personaje.prototype = {
     },
 
     /**
+     *
+     * @returns {number}
+     */
+    getDesequilibrioOfensivoMagico : function() {
+        return this.desequilibrioOfensivoMagico;
+    },
+
+    /**
+     *
+     * @param {number} valor
+     */
+    setDesequilibrioOfensivoMagico : function(valor) {
+        this.desequilibrioOfensivoMagico = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    puedeAjustarDesequilibrioOfensivoMagico : function() {
+        return this[HB_PROYECCION_MAGICA].getPDinvertidos() > 0
+    },
+
+
+/**
      *
      * @returns {string}
      */
@@ -2038,6 +2068,9 @@ Personaje.prototype = {
             this.PD_libres += 100*numNiveles;
             this.PD_totales += 100*numNiveles;
 
+            this.desequilibrioOfensivoMagicoPrevio = this.desequilibrioOfensivoMagico;
+            this.desequilibrioOfensivoMagicoCambioMaximo = 0;
+
             for (i = this.nivel+1;i <= this.nivel+numNiveles;i++) {
                 if (i % 2 == 0) {
                     this.aumentosCaracteristicas.push(new AumentoCaracteristicas());
@@ -2066,6 +2099,8 @@ Personaje.prototype = {
                 this.viasMagia[i].setAnulable(false);
             }
             this.nivelMagiaGastadoPrevio = this.nivelMagiaGastado;
+
+            this.desequilibrioOfensivoMagicoCambioMaximo += 10;
 
             for (i=0; i < this.allHabilidades.length; i++)  {
                 this.allHabilidades[i].subirNivel();

@@ -756,6 +756,28 @@ function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
         (nombreHabilidad == HB_POTENCIAL_PSIQUICO));
 }
 
+function muestraDesequilibrioOfensivoMagico() {
+    var divRow = getDiv("row");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL);
+    var divValor = getDiv("one columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL);
+
+    divEtiqueta.append(_l(UI_DESEQUILIBRIO_OFENSIVO_MAGICO) + ":");
+
+    divValor.append(modificadorBonito(parseInt(personaje_actual.getDesequilibrioOfensivoMagico())));
+
+    divRow.append(divEtiqueta).append(divValor);
+
+    if ((personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_INICIADA) || (personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
+        if (personaje_actual.puedeAjustarDesequilibrioOfensivoMagico()) {
+            var divAppend = getDiv("push_one three columns");
+            divAppend.append(muestraBotonPequeño(_l(UI_ESPECIFICAR),{},elegirDesequilibrioOfensivoMagico,"botonEspecificarDesequilibrioOfensivoMagico"));
+            divRow.append(divAppend);
+        }
+    }
+
+    return divRow;
+}
+
 function muestraCombate(estadoGeneracion) {
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
@@ -978,6 +1000,7 @@ function muestraSobrenatural(estadoGeneracion) {
     divContenido.append(muestraHabilidadPrimaria(HB_ZEON,_l(UI_ZEON),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_ACT,_l(UI_ACT),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_MAGICA,_l(UI_PROYECCION_MAGICA),muestraBotones));
+    divContenido.append(muestraDesequilibrioOfensivoMagico());
 
     divContenido.append(muestraMagiaInnata());
 

@@ -156,3 +156,20 @@ function muestraBotonElegirConjuroSuelto() {
 
     return botonDiv;
 }
+
+function elegirDesequilibrioOfensivoMagico() {
+    var arrayOpciones = [];
+    var numOpciones = (personaje_actual.desequilibrioOfensivoMagicoCambioMaximo / 5);
+    var valorActual = personaje_actual.desequilibrioOfensivoMagico;
+
+    for (i = 1; i <= numOpciones; i++) {
+        var valorMas = valorActual + i*5;
+        var valorMenos = valorActual -i*5;
+        if (valorMas <= 30)
+            arrayOpciones.push(new OpcionMostrable(modificadorBonito(valorMas),valorMas,""));
+        if (valorMenos >= -30)
+            arrayOpciones.push(new OpcionMostrable(valorMenos,valorMenos,""));
+    }
+    muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: asignarDesequilibrioOfensivoMagico, isDisabled: alwaysEnabled}, true);
+
+}
