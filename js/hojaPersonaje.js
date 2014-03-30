@@ -36,6 +36,7 @@ var CSS_MUESTRA_INLINE_BLOCK = "muestraInlineBlock";
 var CSS_TEXTO_ITALIC = "textoItalic";
 var CSS_TEXTO_SMALLER = "textoSmaller";
 var CSS_TEXTO_SMALL = "textoSmall";
+var CSS_TEXTO_XSMALL = "textoXsmall";
 var CSS_FLOAT_LEFT = "floatLeft";
 var CSS_TEXTO_CENTRO = "textCenter";
 var CSS_VALOR_ABANDONADO = "valorCaracteristicaTachado";

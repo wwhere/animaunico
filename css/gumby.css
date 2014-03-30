@@ -1736,6 +1736,8 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 .textoSmall { font-size: 10px; font-size: 0.625rem; }
 
+.textoXsmall { font-size: 6px; font-size: 0.375rem; }
+
 .etiquetaEfectoTecnica { display: inline; font-weight: 700; color: #3fa384; }
 
 .textCenter { text-align: center; }
