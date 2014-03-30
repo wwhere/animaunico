@@ -173,3 +173,17 @@ function elegirDesequilibrioOfensivoMagico() {
     muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: asignarDesequilibrioOfensivoMagico, isDisabled: alwaysEnabled}, true);
 
 }
+
+function muestraElementalismo() {
+    var divRow = getDiv("row");
+
+    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_ELEMENTALISMO));
+
+    var divValorBase = getDiv("two columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(_l(personaje_actual.elementalismo));
+
+    var divBoton = getDiv("push_one one column").append(muestraBotonPequeño(_l(UI_ESPECIFICAR),{},eligeElementalismo));
+
+    divRow.append(divEtiqueta).append(divValorBase).append(divBoton);
+
+    return divRow;
+}

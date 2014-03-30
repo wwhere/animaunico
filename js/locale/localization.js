@@ -966,10 +966,11 @@ var UI_QUITAR = (new L("UI_QUITAR","Quitar","Drop")).getId();
 var UI_TIPO = (new L("UI_TIPO","Tipo","Type")).getId();
 var UI_YELMO = (new L("UI_YELMO","Yelmo","Helm")).getId();
 
+var UI_ELEMENTALISMO = (new L("UI_ELEMENTALISMO","No","No")).getId();
 var ELEMENTALISMO_NINGUNO = (new L("ELEMENTALISMO_NINGUNO","ELEMENTALISMO_NINGUNO","ELEMENTALISMO_NINGUNO")).getId();
-var ELEMENTALISMO_AIRE = (new L("ELEMENTALISMO_AIRE","Elementalismo: Aire","Elementalism: Air")).getId();
-var ELEMENTALISMO_TIERRA = (new L("ELEMENTALISMO_TIERRA","Elementalismo: Tierra","Elementalism: Earth")).getId();
-var ELEMENTALISMO_AGUA = (new L("ELEMENTALISMO_AGUA","Elementalismo: Agua","Elementalism: Water")).getId();
-var ELEMENTALISMO_FUEGO = (new L("ELEMENTALISMO_FUEGO","Elementalismo: Fuego","Elementalism: Fire")).getId();
-var ELEMENTALISMO_LUZ = (new L("ELEMENTALISMO_LUZ","Elementalismo: Luz","Elementalism: Light")).getId();
-var ELEMENTALISMO_OSCURIDAD = (new L("ELEMENTALISMO_OSCURIDAD","Elementalismo: Oscuridad","Elementalism: Darkness")).getId();
+var ELEMENTALISMO_AIRE = (new L("ELEMENTALISMO_AIRE","Aire","Air")).getId();
+var ELEMENTALISMO_TIERRA = (new L("ELEMENTALISMO_TIERRA","Tierra","Earth")).getId();
+var ELEMENTALISMO_AGUA = (new L("ELEMENTALISMO_AGUA","Agua","Water")).getId();
+var ELEMENTALISMO_FUEGO = (new L("ELEMENTALISMO_FUEGO","Fuego","Fire")).getId();
+var ELEMENTALISMO_LUZ = (new L("ELEMENTALISMO_LUZ","Luz","Light")).getId();
+var ELEMENTALISMO_OSCURIDAD = (new L("ELEMENTALISMO_OSCURIDAD","Oscuridad","Darkness")).getId();
