@@ -597,19 +597,141 @@ function parseArma(texto) {
     return getArma(texto);
 }
 
+function parseYelmoComprado(elemento,texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'yelmo':
+                elemento[k] = parseEquipo(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
+}
+
 /**
  *
  * @param {string} v
- * @returns {Arma[]}
+ * @returns {YelmoComprado[]}
  */
-function parseArrayEquipo(v) {
+function parseArrayYelmoComprado(v) {
     var equipo = [];
 
     for (var i = 0; i < v.length;i++) {
-        equipo.push(parseEquipo(v[i]));
+        var item = new YelmoComprado("",0);
+        parseYelmoComprado(item,v[i]);
+        equipo.push(item);
     }
 
     return equipo;
+}
+
+function parseArmaduraComprada(elemento,texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'armadura':
+                elemento[k] = parseEquipo(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {ArmaduraComprada[]}
+ */
+function parseArrayArmaduraComprada(v) {
+    var equipo = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var item = new ArmaduraComprada("",0);
+        parseArmaduraComprada(item,v[i]);
+        equipo.push(item);
+    }
+
+    return equipo;
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {EquipoComprado[]}
+ */
+function parseArrayEquipo(v,armas,armaduras,yelmos,equipo) {
+    for (var i = 0; i < v.length;i++) {
+        var item = getEquipo(v[i]);
+        if (esArma(item)) {
+            armas.push(new ArmaComprada(item,0));
+        } else if (esArmadura(item)) {
+            armaduras.push(new ArmaduraComprada(item,0));
+        } else if (esYelmo(item)) {
+            yelmos.push(new YelmoComprado(item,0));
+        } else {
+            equipo.push(new EquipoComprado(item,0,""));
+        }
+
+    }
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {EquipoComprado[]}
+ */
+function parseArrayEquipoComprado(v) {
+    var equipo = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var item = new EquipoComprado("",0,"");
+        parseEquipoComprado(item,v[i]);
+        equipo.push(item);
+    }
+
+    return equipo;
+}
+
+function parseArmaComprada(elemento,texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'arma':
+                elemento[k] = parseArma(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {ArmaComprada[]}
+ */
+function parseArrayArmaComprada(v) {
+    var equipo = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var item = new ArmaComprada("",0);
+        parseArmaComprada(item,v[i]);
+        equipo.push(item);
+    }
+
+    return equipo;
+}
+
+function parseEquipoComprado(elemento,texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'equipo':
+                elemento[k] = parseEquipo(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
 }
 
 function parseEquipo(texto) {
@@ -1042,6 +1164,7 @@ function cargarPersonaje(cadena) {
             case 'capaArmaduraDura':
             case 'capaArmaduraBlanda1':
             case 'capaArmaduraBlanda2':
+            case 'capaYelmo':
                 personaje_actual[k] = parseTipoArmadura(v);
                 break;
             case 'elan':
@@ -1100,7 +1223,27 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseDinero(v);
                 break;
             case 'equipo':
-                personaje_actual[k] = parseArrayEquipo(v);
+                var armas = [];
+                var armaduras = [];
+                var yelmos = [];
+                var equipo = [];
+                parseArrayEquipo(v,armas,armaduras,yelmos,equipo);
+                personaje_actual.equipoComprado = equipo;
+                personaje_actual.armas = armas;
+                personaje_actual.armaduras = armaduras;
+                personaje_actual.yelmos = yelmos;
+                break;
+            case 'equipoComprado':
+                personaje_actual[k] = parseArrayEquipoComprado(v);
+                break;
+            case 'armas':
+                personaje_actual[k] = parseArrayArmaComprada(v);
+                break;
+            case 'armaduras':
+                personaje_actual[k] = parseArrayArmaduraComprada(v);
+                break;
+            case 'yelmos':
+                personaje_actual[k] = parseArrayYelmoComprado(v);
                 break;
             default:
                 console.log(k + " = " + v);

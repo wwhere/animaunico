@@ -91,17 +91,19 @@ function dialogoElegirArma(categoriasPermitidas, callback, parametros) {
 
 function muestraVentanaCompraEquipo() {
     var dialogo = getDiv();
+    var zonaActual;
+    var contenidoDialogo;
 
-    var actualizarDialogoEquipo = function() {
+    var actualizarDialogoEquipo = function(activo) {
         dialogo.empty();
-        var contenidoDialogo = getDiv("");
+        contenidoDialogo = getDiv("");
 
         var gridGeneral = $("<ul></ul>").addClass("four_up tiles");
 
             for (var j = 0; j < categorias_equipo.length; j++) {
                 var categ = categorias_equipo[j];
                 var divCateg = getDiv("contenedorBotonesVentajas");
-                var gridCateg = $("<ul></ul>").addClass("four_up tiles");
+                var gridCateg = $("<ul></ul>").addClass("four_up tiles").addClass(CSS_TEXTO_SMALL);
 
                 contenidoDialogo.append("<h3>"+_l(categ)+"</h3>");
 
@@ -128,11 +130,13 @@ function muestraVentanaCompraEquipo() {
         dialogo.append(contenidoDialogo);
 
             contenidoDialogo.accordion({
-                heightStyle: "content"
+                heightStyle: "content",
+                active: activo,
+                collapsible: true
             });
     };
 
-    actualizarDialogoEquipo();
+    actualizarDialogoEquipo(false);
 
     dialogo.dialog({
         modal: true,
@@ -152,5 +156,7 @@ function muestraVentanaCompraEquipo() {
         removeActualizador(EVENT_CHARACTER_SECCION_EQUIPO,actualizarDialogoEquipo);
     });
 
-    addActualizador(EVENT_CHARACTER_SECCION_EQUIPO,actualizarDialogoEquipo);
+    addActualizador(EVENT_CHARACTER_SECCION_EQUIPO,function() {
+        actualizarDialogoEquipo($(contenidoDialogo).accordion("option","active"));
+    });
 }

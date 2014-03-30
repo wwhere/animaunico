@@ -9,6 +9,11 @@ var armas_set = [];
  */
 var armaduras_set = [];
 var bardas_set = [];
+
+/**
+ *
+ * @type {Yelmo[]}
+ */
 var yelmos_set = [];
 
 /**
@@ -16,26 +21,77 @@ var yelmos_set = [];
  * @type {Equipo[]}
  */
 var vestimenta_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var calzado_set = [];
-
+/**
+ *
+ * @type {Equipo[]}
+ */
 var animales_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var transporte_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var embarcaciones_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var raciones_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var vivienda_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var decoracion_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var orfebreria_set = [];
-
+/**
+ *
+ * @type {Equipo[]}
+ */
 var venenos_set = [];
+/**
+ *
+ * @type {Equipo[]}
+ */
 var varios_set = [];
 
+/**
+ *
+ * @type {Equipo[][]}
+ */
 var equipo_set = [armas_set, armaduras_set, bardas_set, yelmos_set, vestimenta_set, calzado_set, animales_set, transporte_set, embarcaciones_set, raciones_set, vivienda_set, decoracion_set, orfebreria_set, venenos_set,varios_set];
 
+/**
+ *
+ * @type {string[]}
+ */
 var categorias_equipo = [ EQUIPO_TIPO_ARMAS, EQUIPO_TIPO_ARMADURAS, EQUIPO_TIPO_BARDAS,
     EQUIPO_TIPO_YELMOS, EQUIPO_TIPO_VESTIMENTAS, EQUIPO_TIPO_CALZADO, EQUIPO_TIPO_ANIMALES,
     EQUIPO_TIPO_TRANSPORTE, EQUIPO_TIPO_EMBARCACIONES, EQUIPO_TIPO_RACIONES,
     EQUIPO_TIPO_VIVIENDAS, EQUIPO_TIPO_DECORACIONES, EQUIPO_TIPO_ORFEBRERIA, EQUIPO_TIPO_VENENOS, EQUIPO_TIPO_VARIOS];
 
+/**
+ *
+ * @param {string} nombreItem
+ * @returns {Equipo}
+ */
 function getEquipo(nombreItem) {
     for (var i = 0; i < equipo_set.length; i++) {
         for (var j=0; j < equipo_set[i].length;j++) {
@@ -44,16 +100,16 @@ function getEquipo(nombreItem) {
             }
         }
     }
-    throw ERR_EQUIPO_DESCONOCIDO + ":" + nombreItem;
+    throw _l(ERR_EQUIPO_DESCONOCIDO) + ":" + nombreItem;
 }
 
 /**
  * Inicializa las listas de equipo. Las ordena.
  */
 function initEquipo() {
-    armas_set.sort(SortPorAtributoNombre);
-    armaduras_set.sort(SortPorAtributoNombre);
-
+    for (var i = 0; i < equipo_set.length; i++) {
+        equipo_set[i].sort(SortPorAtributoNombre);
+    }
 }
 
 /**
@@ -72,104 +128,62 @@ function getArma(nombreArma) {
 }
 
 /**
- * Aplica un modificador de -5 a +25 a un arma y devuelve el arma modificada
- * @param {Arma} arma El arma a modificar
- * @param {number} modificador El modificador, en múltiplos de 5. Puede ser -5,0,5,10,15,20,25
- * @returns {Arma}
+ *
+ * @param {number} modificador
+ * @param {Equipo} equipo
+ * @returns {number}
  */
-function armaConModificador(arma,modificador) {
-    var textMod = modificadorBonito(modificador);
-    var armaConMod = arma.duplicar();
-    armaConMod.setNombre(_l(armaConMod.getNombre()) + " " + textMod);
+function getCosteConModificador(modificador, equipo) {
+    var costeCobre = equipo.getCosteDinero().totalEnCobre();
 
-    alterarCosteDisponibilidad(modificador, armaConMod);
-
-    if (modificador > 0) {
-        armaConMod.rotura += 2*(modificador/5);
-        armaConMod.presencia += modificador*10;
-        armaConMod.entereza += modificador*2;
-        armaConMod.dañoBase += modificador*2;
-        armaConMod.modificadorAtaqueParada = modificador;
-        armaConMod.velocidad += modificador;
-        armaConMod.modificadorTADefensor -= modificador/5;
-    } else if (modificador == -5) {
-        armaConMod.rotura += 2*(modificador/5);
-        armaConMod.entereza += modificador*2;
-        armaConMod.dañoBase += modificador*2;
-        armaConMod.modificadorAtaqueParada = modificador;
-        armaConMod.velocidad += modificador;
-        armaConMod.modificadorTADefensor -= modificador/5;
+    if (costeCobre == INCALCULABLE) {
+        return INCALCULABLE;
     }
 
-    return armaConMod;
-}
-
-/**
- * Altera el coste (atributo costeDinero) y la disponibilidad (atributo disponibilidad) de una pieza de equipo con modificador
- * @param {number} modificador Puede ser -5,0,5,10,15,20,25
- * @param {Equipo} equipo La pieza de equipo
- */
-function alterarCosteDisponibilidad(modificador, equipo) {
     switch (modificador) {
         case -5:
-            equipo.getCosteDinero().setOro(equipo.getCosteDinero().getOro()/2);
-            equipo.getCosteDinero().setPlata(equipo.getCosteDinero().getPlata()/2);
-            equipo.getCosteDinero().setCobre(equipo.getCosteDinero().getCobre()/2);
+            costeCobre /= 2;
             break;
         case 0:
             break;
         case 5:
-            equipo.getCosteDinero().setOro(equipo.getCosteDinero().getOro()*20);
-            equipo.getCosteDinero().setPlata(equipo.getCosteDinero().getPlata()*20);
-            equipo.getCosteDinero().setCobre(equipo.getCosteDinero().getCobre()*20);
-            equipo.setDisponibilidad(DISP_A);
+            costeCobre *= 20;
             break;
         case 10:
         case 15:
         case 20:
         case 25:
-            equipo.getCosteDinero().setOro(INCALCULABLE);
-            equipo.getCosteDinero().setPlata(INCALCULABLE);
-            equipo.getCosteDinero().setCobre(INCALCULABLE);
-            equipo.setDisponibilidad(NO_DISPONIBLE);
+            costeCobre = INCALCULABLE;
             break;
     }
+
+    return costeCobre;
 }
 
 /**
- * Aplica un modificador de -5 a +25 a una armadura y devuelve la armadura modificada
- * @param {Armadura} armadura La armadura a modificar
- * @param {number} modificador El modificador, en múltiplos de 5. Puede ser -5,0,5,10,15,20,25
- * @returns {Armadura}
+ *
+ * @param {number} modificador
+ * @param {Equipo} equipo
+ * @returns {string}
  */
-function armaduraConModificador(armadura,modificador) {
-    var textMod = modificadorBonito(modificador);
-    var armaduraConMod = armadura.duplicar();
-    armaduraConMod.setNombre(_l(armaduraConMod.getNombre()) + " " + textMod);
+function getDisponibilidadConModificador(modificador, equipo) {
+    var disponibilidad = equipo.getDisponibilidad();
 
-    alterarCosteDisponibilidad(modificador, armaduraConMod);
-
-    var modificadorEntre5 = modificador/5;
-
-    armaduraConMod.penalizadorNatural += modificador;
-    if (armaduraConMod.penalizadorNatural  > 0) {
-        armaduraConMod.penalizadorNatural = 0;
+    switch (modificador) {
+        case -5:
+        case 0:
+            break;
+        case 5:
+            disponibilidad = DISP_A;
+            break;
+        case 10:
+        case 15:
+        case 20:
+        case 25:
+            disponibilidad = NO_DISPONIBLE;
+            break;
     }
-    armaduraConMod.requisitoArmadura -= modificador;
-    if (armaduraConMod.requisitoArmadura < 0) {
-        armaduraConMod.requisitoArmadura = 0;
-    }
-    armaduraConMod.tas = sumarArmadura(armaduraConMod.tas,[modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5]);
-    if (modificador > 0) {
-        armaduraConMod.presencia += modificador*10;
-    }
-    armaduraConMod.entereza += modificador;
-    armaduraConMod.restriccionMovimiento -= modificadorEntre5;
-    if (armaduraConMod.restriccionMovimiento < 0) {
-        armaduraConMod.restriccionMovimiento = 0;
-    }
-
-    return armaduraConMod;
+    return disponibilidad;
 }
 
 /**
@@ -202,28 +216,6 @@ function armaMayor(arma, tam) {
     }
 
     return newArma;
-}
-
-/**
- * Aplica un modificador a una pieza de equipo (ni arma ni armadura)
- * @param equipo Equipo La pieza de equipo a modificar.
- * @param modificador number Puede ser -5,0,5,10,15,20 o 25
- * @returns {Equipo}
- */
-function equipoConModificador(equipo,modificador) {
-    var textMod = modificadorBonito(modificador);
-    var equipoConMod = equipo.duplicar();
-    equipoConMod.setNombre(_l(equipoConMod.getNombre()) + " " + textMod); //TODO al aplicarlo de este modo no sera localizable
-
-    alterarCosteDisponibilidad(modificador, equipoConMod);
-
-    if (modificador > 0) {
-        equipoConMod.presencia += modificador*10;
-    }
-    equipoConMod.entereza += modificador*2;
-    equipoConMod.bonoHabilidad += 10;
-
-    return equipoConMod;
 }
 
 /**
@@ -348,109 +340,56 @@ function indiceTamaño(tam) {
     return indice;
 }
 
-
-function calidadVestimenta(itemVestimenta, calidad) {
-    var vestimentaCalidad = itemVestimenta.duplicar();
+function getMultiplicadorPrecioPorCalidadDeEquipo(calidad) {
     var multiplicadorPrecio = 1;
 
     switch (calidad) {
-        case CALIDAD_MEDIOCRE :
+        case CALIDAD_VESTIMENTA_MEDIOCRE :
             multiplicadorPrecio = 0.5;
-            vestimentaCalidad.setNombre(_l(vestimentaCalidad.getNombre()) + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case CALIDAD_BUENA :
+        case CALIDAD_VESTIMENTA_BUENA :
             multiplicadorPrecio = 10;
-            vestimentaCalidad.setNombre(_l(vestimentaCalidad.getNombre()) + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case CALIDAD_LUJOSA :
+        case CALIDAD_VESTIMENTA_LUJOSA :
             multiplicadorPrecio = 100;
-            vestimentaCalidad.setNombre(_l(vestimentaCalidad.getNombre()) + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
             break;
-        case CALIDAD_NORMAL :
-        default :
-            multiplicadorPrecio = 1;
-            break;
-    }
-
-    vestimentaCalidad.costeDinero.multiplica(multiplicadorPrecio);
-
-    return vestimentaCalidad;
-}
-
-
-
-/**
- *
- * @param {Equipo} itemVivienda
- * @param {string} calidad
- * @param {boolean} esMetropolitana
- * @returns {Equipo}
- */
-function calidadVivienda(itemVivienda, calidad, esMetropolitana) {
-    var viviendaCalidad = itemVivienda.duplicar();
-    var multiplicadorPrecio = 1;
-
-    if (esMetropolitana) {
-        multiplicadorPrecio = 2;
-        viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(metropolitana)");
-    }
-
-    switch (calidad) {
-        case CALIDAD_MEDIOCRE :
-            multiplicadorPrecio *= 0.5;
-            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(" + _l(TXT_CALIDAD) + " " + _l(calidad) + ")");
-            break;
-        case CALIDAD_BUENA :
-            multiplicadorPrecio *= 2;
-            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(" + _l(TXT_CALIDAD) + " " + _l(calidad) + ")");
-            break;
-        case CALIDAD_LUJOSA :
-            multiplicadorPrecio *= 10;
-            viviendaCalidad.setNombre(viviendaCalidad.getNombre() + "(" + _l(TXT_CALIDAD) + " " + calidad + ")");
-            break;
-        case CALIDAD_NORMAL :
-        default :
-            multiplicadorPrecio *= 1;
-            break;
-    }
-
-    viviendaCalidad.costeDinero.multiplica(multiplicadorPrecio);
-
-    return viviendaCalidad;
-}
-
-
-
-function calidadOrfebreria(itemOrfebreria, calidad) {
-    var orfebreriaCalidad = itemOrfebreria.duplicar();
-    var multiplicadorPrecio = 1;
-
-    switch (calidad) {
-        case CALIDAD_MEDIOCRE :
+        case CALIDAD_VIVIENDA_MEDIOCRE :
             multiplicadorPrecio = 0.5;
-            orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case CALIDAD_BUENA :
+        case CALIDAD_VIVIENDA_BUENA :
+        case CALIDAD_VIVIENDA_METROPOLITANA :
             multiplicadorPrecio = 2;
-            orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case CALIDAD_EXCELENTE :
+        case CALIDAD_VIVIENDA_LUJOSA :
             multiplicadorPrecio = 10;
-            orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case CALIDAD_LUJOSA :
+        case CALIDAD_VIVIENDA_METROPOLITANA_MEDIOCRE :
+            multiplicadorPrecio = 1;
+            break;
+        case CALIDAD_VIVIENDA_METROPOLITANA_BUENA :
+            multiplicadorPrecio = 4;
+            break;
+        case CALIDAD_VIVIENDA_METROPOLITANA_LUJOSA :
+            multiplicadorPrecio = 20;
+            break;
+        case CALIDAD_ORFEBRERIA_MEDIOCRE :
+            multiplicadorPrecio = 0.5;
+            break;
+        case CALIDAD_ORFEBRERIA_BUENA :
+            multiplicadorPrecio = 2;
+            break;
+        case CALIDAD_ORFEBRERIA_EXCELENTE :
+            multiplicadorPrecio = 10;
+            break;
+        case CALIDAD_ORFEBRERIA_LUJOSA :
             multiplicadorPrecio = 100;
-            orfebreriaCalidad.setNombre(orfebreriaCalidad.getNombre() + "(calidad " + calidad + ")");
             break;
-        case CALIDAD_NORMAL :
         default :
             multiplicadorPrecio = 1;
             break;
     }
 
-    orfebreriaCalidad.costeDinero.multiplica(multiplicadorPrecio);
-
-    return orfebreriaCalidad;
+    return multiplicadorPrecio;
 }
 
 function quitarEquipo(event) {
@@ -464,3 +403,79 @@ function quitarEquipo(event) {
 
 }
 
+/**
+ *
+ * @param {Equipo} item
+ * @returns {boolean}
+ */
+function esArma(item) {
+    return item.hasOwnProperty('modificadorAtaqueParada');
+}
+
+/**
+ *
+ * @param {Equipo} item
+ * @returns {boolean}
+ */
+function esArmadura(item) {
+    return item.hasOwnProperty('penalizadorNatural');
+}
+
+/**
+ *
+ * @param {Equipo} item
+ * @returns {boolean}
+ */
+function esYelmo(item) {
+    return item.hasOwnProperty('penalizadorPercepcion');
+}
+
+/**
+ *
+ * @param {ArmaComprada|EquipoComprado|ArmaduraComprada|YelmoComprado} item
+ * @returns {boolean}
+ */
+function esArmaComprada(item) {
+    return item.hasOwnProperty('arma');
+}
+
+/**
+ *
+ * @param {ArmaComprada|EquipoComprado|ArmaduraComprada|YelmoComprado} item
+ * @returns {boolean}
+ */
+function esArmaduraComprada(item) {
+    return item.hasOwnProperty('armadura');
+}
+
+/**
+ *
+ * @param {ArmaComprada|EquipoComprado|ArmaduraComprada|YelmoComprado} item
+ * @returns {boolean}
+ */
+function esYelmoComprado(item) {
+    return item.hasOwnProperty('yelmo');
+}
+
+function desequipaArmaduras(duras) {
+    for (var i = 0; i < personaje_actual.armaduras.length; i++) {
+        if ((duras && (personaje_actual.armaduras[i].getClase() == ARMADURA_CLASE_DURA)) || (!duras && (personaje_actual.armaduras[i].getClase() == ARMADURA_CLASE_BLANDA))) {
+            personaje_actual.armaduras[i].setEquipado(false);
+        }
+    }
+}
+
+function desequipaArmadura(nombre) {
+    for (var i = 0; i < personaje_actual.armaduras.length; i++) {
+        if (personaje_actual.armaduras[i].toString() == nombre) {
+            personaje_actual.armaduras[i].setEquipado(false);
+            return;
+        }
+    }
+}
+
+function desequipaYelmos() {
+    for (var i = 0; i < personaje_actual.yelmos.length; i++) {
+        personaje_actual.yelmos[i].setEquipado(false);
+    }
+}

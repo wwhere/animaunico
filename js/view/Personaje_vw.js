@@ -801,6 +801,9 @@ function muestraCombate(estadoGeneracion) {
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES],muestraBotones));
 
+    divContenido.append(muestraSubtitulo(UI_ESTADISTICAS_ARMAS, false));
+    divContenido.append(muestraArmas());
+
     div.append(divContenido);
     return div;
 }
@@ -950,7 +953,25 @@ function muestraCombateHabilidadesGenerales(muestraBotones) {
 
 function muestraArmadura() {
     var div = getDiv(CSS_TEXTO_SMALL).addClass("sixteen colgrid");
-    var divRow = getDiv("row");
+    var divDescripcion = getDiv("row");
+    var divArmadura1 = getDiv("five columns").addClass(CSS_TEXTO_CENTRO);
+    var divArmadura2 = getDiv("six columns").addClass(CSS_TEXTO_CENTRO);
+    var divArmadura3 = getDiv("five columns").addClass(CSS_TEXTO_CENTRO);
+
+    if (personaje_actual.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
+        divArmadura1.append("[" + _l(personaje_actual.capaArmaduraDura.getNombre()) + "]");
+    }
+    if (personaje_actual.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
+        divArmadura2.append("[" + _l(personaje_actual.capaArmaduraBlanda1.getNombre()) + "]");
+    }
+    if (personaje_actual.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
+        divArmadura3.append("[" + _l(personaje_actual.capaArmaduraBlanda2.getNombre()) + "]");
+    }
+    divDescripcion.append(divArmadura1).append(divArmadura2).append(divArmadura3);
+    div.append(divDescripcion);
+
+    var divRowArmadura = getDiv("row");
+
     for (var i = 0; i < TAS_ARMADURA.length; i++) {
         var divTA = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE);
         var divValor = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE);
@@ -963,9 +984,38 @@ function muestraArmadura() {
         divCol
             .append(divTA.append(_l(TAS_ARMADURA[i]) + ":"))
             .append(divValor.append(personaje_actual.getArmadura(TAS_ARMADURA[i])));
-        divRow.append(divCol);
+        divRowArmadura.append(divCol);
     }
-    div.append(divRow);
+    div.append(divRowArmadura);
+
+    if (personaje_actual.capaYelmo.getNombre() != ARMADURA_NINGUNA) {
+        var divDescripcionYelmo = getDiv("row");
+        var divYelmo = getDiv("centered five columns").addClass(CSS_TEXTO_CENTRO);
+
+        divYelmo.append("[" + _l(UI_YELMO) + ": " + _l(personaje_actual.capaYelmo.getNombre()) + "]");
+
+        divDescripcionYelmo.append(divYelmo);
+        div.append(divDescripcionYelmo);
+
+        var divRowYelmo = getDiv("row");
+
+        for (i = 0; i < TAS_ARMADURA.length; i++) {
+            var divTAYelmo = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE);
+            var divValorYelmo = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_INLINE);
+            var divColYelmo;
+            if (i == 0) {
+                divColYelmo = getDiv("push_one two columns");
+            } else {
+                divColYelmo = getDiv("two columns");
+            }
+            divColYelmo
+                .append(divTAYelmo.append(_l(TAS_ARMADURA[i]) + ":"))
+                .append(divValorYelmo.append(personaje_actual.capaYelmo.getTA(TAS_ARMADURA[i])));
+            divRowYelmo.append(divColYelmo);
+        }
+        div.append(divRowYelmo);
+    }
+
     return div;
 }
 
@@ -1314,7 +1364,7 @@ function muestraEquipamiento() {
 
     /**
      *
-     * @type {Equipo[]}
+     * @type {EquipoComprado[]}
      */
     var equipo = personaje_actual.getEquipo();
     var divEquipo = getDiv("row");
@@ -1337,7 +1387,211 @@ function muestraEquipamiento() {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMAS, false));
 
+    /**
+     *
+     * @type {ArmaComprada[]}
+     */
+    var armas = personaje_actual.getArmas();
+    var divEquipoArmas = getDiv("row").addClass(CSS_TEXTO_SMALL);
+
+    var etiquetaEliminar= (personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_INICIADA)?_l(UI_VENDER):_l(UI_QUITAR);
+    var divCabeceraArmas = getDiv("row");
+    divCabeceraArmas.
+        append(getDiv("one column").append(_l(UI_EQUIPADO))).
+        append(getDiv("five columns").append(_l(UI_ARMA))).
+        append(getDiv("four columns").append(_l(UI_PRECIO))).
+        append(getDiv("two columns").append(etiquetaEliminar));
+
+    divEquipoArmas.append(divCabeceraArmas);
+
+    for (i = 0; i < armas.length; i++) {
+        var itemArma = armas[i];
+        var divVArma = getDiv(CSS_TEXTO_SMALL).addClass("row");
+
+        var inputCheckEquipado = $("<input>").attr("type","checkbox").attr("id","arma"+i);
+        if (itemArma.isEquipado()) {
+            $(inputCheckEquipado).attr("checked",true);
+        }
+        var divCheckEquipado = getDiv("one column").attr("id","checkArma"+i).addClass(CSS_MUESTRA_INLINE).addClass(CSS_TEXTO_CENTRO);
+        divCheckEquipado.append(inputCheckEquipado);
+        divVArma.append(divCheckEquipado);
+        $("#checkArma"+i).button();
+
+        var divNombreArma = getDiv(CSS_ETIQUETA).addClass("five columns").addClass(CSS_MUESTRA_INLINE).append(itemArma.toString());
+        divVArma.append(divNombreArma);
+
+        var divCosteArma = getDiv(CSS_VALOR_PERSONALES).addClass("four columns").addClass(CSS_MUESTRA_INLINE).append(" [" + itemArma.getCosteDinero().toString() + "]");
+        divVArma.append(divCosteArma);
+
+        var divBotonVender = getDiv("two columns").append(muestraBotonAnular(quitarEquipo,{item: itemArma}));
+        divVArma.append(divBotonVender);
+
+        $(inputCheckEquipado).on("click",{arma:itemArma}, function(ev) {
+            ev.data.arma.setEquipado(!ev.data.arma.isEquipado());
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+        });
+        divEquipoArmas.append(divVArma);
+    }
+
+    divContenido.append(divEquipoArmas);
+
+    if (armas.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMADURAS, false));
+
+    /**
+     *
+     * @type {ArmaduraComprada[]}
+     */
+    var armaduras = personaje_actual.getArmaduras();
+    var divEquipoArmaduras = getDiv("row").addClass(CSS_TEXTO_SMALL);
+
+    var divCabeceraArmaduras = getDiv("row");
+    divCabeceraArmaduras.
+        append(getDiv("one column").append(_l(UI_EQUIPADO))).
+        append(getDiv("four columns").append(_l(UI_ARMADURA))).
+        append(getDiv("one columns").append(_l(UI_TIPO))).
+        append(getDiv("four columns").append(_l(UI_PRECIO))).
+        append(getDiv("two columns").append(etiquetaEliminar));
+
+    divEquipoArmaduras.append(divCabeceraArmaduras);
+
+    for (i = 0; i < armaduras.length; i++) {
+        var itemArmadura = armaduras[i];
+        var divVArmadura = getDiv(CSS_TEXTO_SMALL).addClass("row");
+
+        var inputCheckEquipadoArmadura = $("<input>").attr("type","checkbox").attr("id","armadura"+i);
+        if (itemArmadura.isEquipado()) {
+            $(inputCheckEquipadoArmadura).attr("checked",true);
+        }
+        var divCheckEquipadoArmadura = getDiv("one column").attr("id","checkArmadura"+i).addClass(CSS_MUESTRA_INLINE).addClass(CSS_TEXTO_CENTRO);
+        divCheckEquipadoArmadura.append(inputCheckEquipadoArmadura);
+        divVArmadura.append(divCheckEquipadoArmadura);
+        $("#checkArmadura"+i).button();
+
+        var divNombreArmadura = getDiv(CSS_ETIQUETA).addClass("four columns").addClass(CSS_MUESTRA_INLINE).append(itemArmadura.toString());
+        divVArmadura.append(divNombreArmadura);
+
+        var divTipoArmadura = getDiv(CSS_ETIQUETA).addClass("one column").addClass(CSS_MUESTRA_INLINE).append(_l(itemArmadura.getClase()));
+        divVArmadura.append(divTipoArmadura);
+
+        var divCosteArmadura = getDiv(CSS_VALOR_PERSONALES).addClass("four columns").addClass(CSS_MUESTRA_INLINE).append(" [" + itemArmadura.getCosteDinero().toString() + "]");
+        divVArmadura.append(divCosteArmadura);
+
+        var divBotonVenderArmadura = getDiv("two columns").append(muestraBotonAnular(quitarEquipo,{item: itemArmadura}));
+        divVArmadura.append(divBotonVenderArmadura);
+
+        $(inputCheckEquipadoArmadura).on("click",{armadura:itemArmadura}, function(ev) {
+            var armadura = ev.data.armadura;
+
+            if (armadura.getClase() == ARMADURA_CLASE_DURA) {
+                if (!armadura.isEquipado()) {
+                    desequipaArmaduras(true);
+                    personaje_actual.capaArmaduraDura = new TipoArmadura(armadura.toString(),armadura.getTAs(),false);
+                } else {
+                    personaje_actual.capaArmaduraDura = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],false);
+                }
+            } else {
+                if (!armadura.isEquipado()) {
+                    if (personaje_actual.capaArmaduraBlanda1.getNombre() == ARMADURA_NINGUNA) {
+                        personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                    } else if (personaje_actual.capaArmaduraBlanda2.getNombre() == ARMADURA_NINGUNA) {
+                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                    } else {
+                        desequipaArmadura(personaje_actual.capaArmaduraBlanda2.getNombre());
+                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                    }
+                } else {
+                    if (personaje_actual.capaArmaduraBlanda1.getNombre() == armadura.toString()) {
+                        personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
+                    } else {
+                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
+                    }
+                }
+            }
+            ev.data.armadura.setEquipado(!ev.data.armadura.isEquipado());
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+            lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+        });
+
+        divEquipoArmaduras.append(divVArmadura);
+    }
+
+    divContenido.append(divEquipoArmaduras);
+
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_YELMOS, false));
+
+    if (armaduras.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+    /**
+     *
+     * @type {YelmoComprado[]}
+     */
+    var yelmos = personaje_actual.getYelmos();
+    var divEquipoYelmos = getDiv("row").addClass(CSS_TEXTO_SMALL);
+
+    var divCabeceraYelmos = getDiv("row");
+    divCabeceraYelmos.
+        append(getDiv("one column").append(_l(UI_EQUIPADO))).
+        append(getDiv("four columns").append(_l(UI_YELMO))).
+        append(getDiv("one columns").append(_l(UI_TIPO))).
+        append(getDiv("four columns").append(_l(UI_PRECIO))).
+        append(getDiv("two columns").append(etiquetaEliminar));
+
+    divEquipoYelmos.append(divCabeceraYelmos);
+
+    for (i = 0; i < yelmos.length; i++) {
+        var itemYelmo = yelmos[i];
+        var divVYelmo = getDiv(CSS_TEXTO_SMALL).addClass("row");
+
+        var inputCheckEquipadoYelmo = $("<input>").attr("type","checkbox").attr("id","yelmo"+i);
+        if (itemYelmo.isEquipado()) {
+            $(inputCheckEquipadoYelmo).attr("checked",true);
+        }
+        var divCheckEquipadoYelmo = getDiv("one column").attr("id","checkYelmo"+i).addClass(CSS_MUESTRA_INLINE).addClass(CSS_TEXTO_CENTRO);
+        divCheckEquipadoYelmo.append(inputCheckEquipadoYelmo);
+        divVYelmo.append(divCheckEquipadoYelmo);
+        $("#checkYelmo"+i).button();
+
+        var divNombreYelmo = getDiv(CSS_ETIQUETA).addClass("four columns").addClass(CSS_MUESTRA_INLINE).append(itemYelmo.toString());
+        divVYelmo.append(divNombreYelmo);
+
+        var divTipoYelmo = getDiv(CSS_ETIQUETA).addClass("one column").addClass(CSS_MUESTRA_INLINE).append(_l(itemYelmo.getClase()));
+        divVYelmo.append(divTipoYelmo);
+
+        var divCosteYelmo = getDiv(CSS_VALOR_PERSONALES).addClass("four columns").addClass(CSS_MUESTRA_INLINE).append(" [" + itemYelmo.getCosteDinero().toString() + "]");
+        divVYelmo.append(divCosteYelmo);
+
+        var divBotonVenderYelmo = getDiv("two columns").append(muestraBotonAnular(quitarEquipo,{item: itemYelmo}));
+        divVYelmo.append(divBotonVenderYelmo);
+
+        $(inputCheckEquipadoYelmo).on("click",{yelmo:itemYelmo}, function(ev) {
+            var yelmo = ev.data.yelmo;
+
+            if (!yelmo.isEquipado()) {
+                desequipaYelmos();
+                personaje_actual.capaYelmo = new TipoArmadura(yelmo.toString(),yelmo.getTAs(),false);
+            } else {
+                personaje_actual.capaYelmo = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
+            }
+
+            ev.data.yelmo.setEquipado(!ev.data.yelmo.isEquipado());
+            lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+        });
+
+        divEquipoYelmos.append(divVYelmo);
+    }
+
+    divContenido.append(divEquipoYelmos);
+
+    if (yelmos.length == 0) {
+        divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
 
     div.append(divContenido);
     return div;
