@@ -98,42 +98,55 @@ function muestraVentanaCompraEquipo() {
         dialogo.empty();
         contenidoDialogo = getDiv("");
 
-        var gridGeneral = $("<ul></ul>").addClass("four_up tiles");
+        for (var j = 0; j < categorias_equipo.length; j++) {
+            var categ = categorias_equipo[j];
+            var divCateg = getDiv("contenedorBotonesVentajas");
+            var gridCateg = $("<ul></ul>").addClass("three_up tiles").addClass(CSS_TEXTO_SMALL);
 
-            for (var j = 0; j < categorias_equipo.length; j++) {
-                var categ = categorias_equipo[j];
-                var divCateg = getDiv("contenedorBotonesVentajas");
-                var gridCateg = $("<ul></ul>").addClass("four_up tiles").addClass(CSS_TEXTO_SMALL);
+            contenidoDialogo.append("<h3>"+_l(categ)+"</h3>");
 
-                contenidoDialogo.append("<h3>"+_l(categ)+"</h3>");
+            for (var i =0; i < equipo_set[j].length; i++) {
+                var item = equipo_set[j][i];
+                var itemNormal = new EquipoComprado(item,0,"");
+                var itemBueno = new EquipoComprado(item,5,"");
+                var itemMalo = new EquipoComprado(item,-5,"");
+                var labelNormal = itemNormal.toString() + " [" + itemNormal.getCosteDinero().toString() + "]";
+                var labelBueno = itemBueno.toString() + " [" + itemBueno.getCosteDinero().toString() + "]";
+                var labelMalo = itemMalo.toString() + " [" + itemMalo.getCosteDinero().toString() + "]";
+                var botonItemNormal = boton("big pretty primary btn",labelNormal,!personaje_actual.puedeGastarse(itemNormal.getCosteDinero())).addClass("botonDialogoOpciones").css("width","100%");
+                var botonItemBueno = boton("big pretty primary btn",labelBueno,!personaje_actual.puedeGastarse(itemBueno.getCosteDinero())).addClass("botonDialogoOpciones").css("width","100%");
+                var botonItemMalo = boton("big pretty primary btn",labelMalo,!personaje_actual.puedeGastarse(itemMalo.getCosteDinero())).addClass("botonDialogoOpciones").css("width","100%");
 
-                for (var i =0; i < equipo_set[j].length; i++) {
-                    var item = equipo_set[j][i];
-                    var label = item.toString() + " [" + item.getCosteDinero().toString() + "]";
-                    var botonItem = boton("big pretty primary btn",label,!personaje_actual.puedeGastarse(item.getCosteDinero()));
-                    botonItem.addClass("botonDialogoOpciones");
-                    botonItem.css("width","100%");
+                gridCateg.append($("<li></li>").append(botonItemMalo));
+                gridCateg.append($("<li></li>").append(botonItemNormal));
+                gridCateg.append($("<li></li>").append(botonItemBueno));
 
-                    gridCateg.append($("<li></li>").append(botonItem));
+                botonItemMalo.on("click",{item: item}, function(event) {
+                    var item = event.data.item;
+                    personaje_actual.compra(item,-5);
+                });
+                botonItemBueno.on("click",{item: item}, function(event) {
+                    var item = event.data.item;
+                    personaje_actual.compra(item,5);
+                });
+                botonItemNormal.on("click",{item: item}, function(event) {
+                    var item = event.data.item;
+                    personaje_actual.compra(item,0);
+                });
 
-                    botonItem.on("click",{item: item}, function(event) {
-                        item = event.data.item;
-                        personaje_actual.compra(item);
-                    });
 
-
-                }
-                divCateg.append(gridCateg);
-                contenidoDialogo.append(divCateg);
             }
+            divCateg.append(gridCateg);
+            contenidoDialogo.append(divCateg);
+        }
 
         dialogo.append(contenidoDialogo);
 
-            contenidoDialogo.accordion({
-                heightStyle: "content",
-                active: activo,
-                collapsible: true
-            });
+        contenidoDialogo.accordion({
+            heightStyle: "content",
+            active: activo,
+            collapsible: true
+        });
     };
 
     actualizarDialogoEquipo(false);
