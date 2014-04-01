@@ -254,6 +254,7 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total, diezCuestaDoble, repa
     desactivarNotificaciones();
 
     var actualizaDialogoReparto = function(puntosTotales, puntosLibres) {
+        console.log("Actualizo dialogo");
         var divValorTotal = getDiv("");
         var divZonaCaracteristicas = getDiv("");
 
@@ -280,30 +281,32 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total, diezCuestaDoble, repa
             var divContenidoValor = $("<input>");
             divContenidoValor.prop("type","number");
             divContenidoValor.prop("value",personaje_actual.getCaracteristica(CARACTERISTICAS_NOMBRES[i]));
-
+            console.log("-"+CARACTERISTICAS_NOMBRES[i]+"="+personaje_actual.getCaracteristica(CARACTERISTICAS_NOMBRES[i]));
             divContenidoValor.addClass(CSS_MUESTRA_INLINE);
             divContenidoValor.addClass("spinnerMetodo4");
             divContenidoValor.spinner({
                 incremental: false,
-                max: repartoLibre?20:10,
+                max: (repartoLibre?20:10),
                 min: 1,
                 page: 1
             });
             divContenidoValor.on("change",{caracteristica:CARACTERISTICAS_NOMBRES[i],divSpinner:divContenidoValor}, function(event, ui) {
+                console.log("Cambia el valor de " +event.data.caracteristica);
                 var caracteristica = event.data.caracteristica;
                 var currentValue = personaje_actual.getCaracteristica(caracteristica);
                 var newValue = event.data.divSpinner.spinner("value");
                 var paso = newValue - currentValue;
                 var actualizar = false;
+                console.log("new value="+newValue+"/currentValue="+currentValue);
 
-                if (newValue > repartoLibre?20:10 ) {
-                    newValue = repartoLibre?20:10;
+                if (newValue > (repartoLibre?20:10) ) {
+                    newValue = (repartoLibre?20:10);
                 } else if (newValue < 1) {
                     newValue = 1;
                 }
 
 
-                if ((newValue <= repartoLibre?20:10) && (newValue >= 1)) {
+                if ((newValue <= (repartoLibre?20:10)) && (newValue >= 1)) {
                     if (paso > 0) {
                         if (repartoLibre ||(puntosLibres >= paso)) {
                             actualizar = true;
