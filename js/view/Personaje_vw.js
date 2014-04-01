@@ -1071,6 +1071,8 @@ function muestraSobrenatural(estadoGeneracion) {
     divContenido.append(muestraHabilidadPrimaria(HB_ATAR,_l(UI_ATAR),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_DESCONVOCAR,_l(UI_DESCONVOCAR),muestraBotones));
 
+    divContenido.append(muestraElementalismo());
+
     div.append(divContenido);
     return div;
 }
