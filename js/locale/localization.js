@@ -966,8 +966,8 @@ var UI_QUITAR = (new L("UI_QUITAR","Quitar","Drop")).getId();
 var UI_TIPO = (new L("UI_TIPO","Tipo","Type")).getId();
 var UI_YELMO = (new L("UI_YELMO","Yelmo","Helm")).getId();
 
-var UI_ELEMENTALISMO = (new L("UI_ELEMENTALISMO","No","No")).getId();
-var ELEMENTALISMO_NINGUNO = (new L("ELEMENTALISMO_NINGUNO","ELEMENTALISMO_NINGUNO","ELEMENTALISMO_NINGUNO")).getId();
+var UI_ELEMENTALISMO = (new L("UI_ELEMENTALISMO","Elementalismo","Elementalismo")).getId();
+var ELEMENTALISMO_NINGUNO = (new L("ELEMENTALISMO_NINGUNO","No","No")).getId();
 var ELEMENTALISMO_AIRE = (new L("ELEMENTALISMO_AIRE","Aire","Air")).getId();
 var ELEMENTALISMO_TIERRA = (new L("ELEMENTALISMO_TIERRA","Tierra","Earth")).getId();
 var ELEMENTALISMO_AGUA = (new L("ELEMENTALISMO_AGUA","Agua","Water")).getId();

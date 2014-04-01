@@ -1589,6 +1589,11 @@ Personaje.prototype = {
     getConjurosSueltos : function() {
         return this.conjurosSueltos;
     },
+
+    setElementalismo : function(valor) {
+        this.elementalismo = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
 //endregion Magia
 
 //region Bonos y Costes Reducidos

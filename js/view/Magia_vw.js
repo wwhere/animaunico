@@ -181,9 +181,27 @@ function muestraElementalismo() {
 
     var divValorBase = getDiv("two columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(_l(personaje_actual.elementalismo));
 
-    var divBoton = getDiv("push_one one column").append(muestraBotonPequeño(_l(UI_ESPECIFICAR),{},eligeElementalismo));
+    var divBoton = getDiv("push_one one column").append(muestraBotonPequeño(_l(UI_ESPECIFICAR),{},eligeElementalismo,""));
 
-    divRow.append(divEtiqueta).append(divValorBase).append(divBoton);
+    divRow.append(divEtiqueta).append(divValorBase);
+
+    if ((personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_INICIADA) ||(personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
+        divRow.append(divBoton);
+    }
 
     return divRow;
+}
+
+function eligeElementalismo() {
+    var arrayOpciones = [];
+
+    arrayOpciones.push(new OpcionMostrable(_l(ELEMENTALISMO_AGUA),ELEMENTALISMO_AGUA,""));
+    arrayOpciones.push(new OpcionMostrable(_l(ELEMENTALISMO_FUEGO),ELEMENTALISMO_FUEGO,""));
+    arrayOpciones.push(new OpcionMostrable(_l(ELEMENTALISMO_AIRE),ELEMENTALISMO_AIRE,""));
+    arrayOpciones.push(new OpcionMostrable(_l(ELEMENTALISMO_TIERRA),ELEMENTALISMO_TIERRA,""));
+    arrayOpciones.push(new OpcionMostrable(_l(ELEMENTALISMO_LUZ),ELEMENTALISMO_LUZ,""));
+    arrayOpciones.push(new OpcionMostrable(_l(ELEMENTALISMO_OSCURIDAD),ELEMENTALISMO_OSCURIDAD,""));
+
+    muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: asignarElementalismo, isDisabled: alwaysEnabled}, true);
+
 }
