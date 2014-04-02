@@ -399,31 +399,6 @@ Personaje.prototype = {
         return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza + ")";
     },
 
-    /**
-     *
-     * @returns {number}
-     */
-    getDesequilibrioOfensivoMagico : function() {
-        return this.desequilibrioOfensivoMagico;
-    },
-
-    /**
-     *
-     * @param {number} valor
-     */
-    setDesequilibrioOfensivoMagico : function(valor) {
-        this.desequilibrioOfensivoMagico = valor;
-        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
-    },
-
-    /**
-     *
-     * @returns {boolean}
-     */
-    puedeAjustarDesequilibrioOfensivoMagico : function() {
-        return this[HB_PROYECCION_MAGICA].getPDinvertidos() > 0
-    },
-
 
 /**
      *
@@ -1594,6 +1569,33 @@ Personaje.prototype = {
         this.elementalismo = valor;
         lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getDesequilibrioOfensivoMagico : function() {
+        return this.desequilibrioOfensivoMagico;
+    },
+
+    /**
+     *
+     * @param {number} valor
+     */
+    setDesequilibrioOfensivoMagico : function(valor) {
+        this.desequilibrioOfensivoMagico = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    puedeAjustarDesequilibrioOfensivoMagico : function() {
+        return this[HB_PROYECCION_MAGICA].getPDinvertidos() > 0
+    },
+
+
 //endregion Magia
 
 //region Bonos y Costes Reducidos
@@ -4091,7 +4093,9 @@ Personaje.prototype = {
 
                 for (i = 0; i < this.tablasArmas.length; i++) {
                     tablaArmas = this.tablasArmas[i];
-                    gasto += tablaArmas.getCoste(this);
+                    if ((tablaArmas.getCategoriaTabla() != CATEGORIA_TABLA_MISTICAS) && (tablaArmas.getCategoriaTabla() != CATEGORIA_TABLA_PSIQUICAS)) {
+                        gasto += tablaArmas.getCoste(this);
+                    }
                 }
 
                 for (i = 0; i < this.artesMarciales.length; i++) {
