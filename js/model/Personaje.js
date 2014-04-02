@@ -28,6 +28,18 @@ function Personaje(nivelInicial) {
 
     /** @type string  */
     this.peso = "10 kg";
+
+    /**
+     *
+     * @type {string}
+     */
+    this.descripcion = "";
+
+    /**
+     *
+     * @type {string}
+     */
+    this.trasfondo = "";
     //endregion Datos Personales
 
     //region Caracteristicas
@@ -134,6 +146,12 @@ function Personaje(nivelInicial) {
 
     /** @type number */
     this.nivelMagiaGastadoPrevio = 0;
+
+    /**
+     *
+     * @type {string}
+     */
+    this.elementalismo = ELEMENTALISMO_NINGUNO;
     //endregion Magia
 
     //region Bonos y Costes Reducidos
@@ -325,23 +343,6 @@ function Personaje(nivelInicial) {
     //region Equipo y dinero
     /** @type Dinero */
     this.dinero = new Dinero(0,0,5);
-    //endregion
-
-    //region Flags
-    /** @type string[] */
-    this.flags = [];
-    //endregion Flags
-
-    //region Presencia, gnosis, natura
-
-    /**
-     *
-     * @type {number}
-     */
-    this.gnosis = 10;
-
-    //endregion Presencia, gnosis, natura
-
     /**
      *
      * @type {EquipoComprado[]}
@@ -360,23 +361,31 @@ function Personaje(nivelInicial) {
      */
     this.armaduras = [];
 
-     /**
+    /**
      *
      * @type {YelmoComprado[]}
      */
     this.yelmos = [];
 
-    /**
-     *
-     * @type {string}
-     */
-    this.descripcion = "";
+
+    //endregion
+
+    //region Flags
+    /** @type string[] */
+    this.flags = [];
+    //endregion Flags
+
+    //region Presencia, gnosis, natura
 
     /**
      *
-     * @type {string}
+     * @type {number}
      */
-    this.trasfondo = "";
+    this.gnosis = 10;
+
+    //endregion Presencia, gnosis, natura
+
+
 }
 
 Personaje.prototype = {
@@ -1579,6 +1588,11 @@ Personaje.prototype = {
      */
     getConjurosSueltos : function() {
         return this.conjurosSueltos;
+    },
+
+    setElementalismo : function(valor) {
+        this.elementalismo = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
 //endregion Magia
 

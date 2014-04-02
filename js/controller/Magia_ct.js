@@ -393,3 +393,9 @@ function asignarDesequilibrioOfensivoMagico(parametros) {
 
     personaje_actual.setDesequilibrioOfensivoMagico(parseInt(nuevoDesequilibrio));
 }
+
+function asignarElementalismo(parametros) {
+    var nuevoElementalismo = parametros.opcion;
+
+    personaje_actual.setElementalismo(nuevoElementalismo);
+}
