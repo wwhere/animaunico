@@ -179,7 +179,62 @@ function getTurnoFinalConArma(personaje,arma) {
 }
 
 
+/**
+ *
+ * @param {Personaje} personaje
+ */
+function getPenalizadorTodaAccionPorArmaduraActual(personaje) {
+    var capasArmadura = [];
+    if (personaje.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraBlanda1);
+    }
+    if (personaje.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraBlanda2);
+    }
+    if (personaje.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraDura);
+    }
 
+    return penalizadorTodaAccionPorArmadura(personaje,capasArmadura);
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ */
+function getPenalizadorNaturalPorArmaduraActual(personaje) {
+    var capasArmadura = [];
+    if (personaje.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraBlanda1);
+    }
+    if (personaje.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraBlanda2);
+    }
+    if (personaje.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraDura);
+    }
+
+    return penalizadorNaturalPorArmadura(personaje,capasArmadura);
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ */
+function getPenalizadorMovimientoPorArmaduraActual(personaje) {
+    var capasArmadura = [];
+    if (personaje.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraBlanda1);
+    }
+    if (personaje.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraBlanda2);
+    }
+    if (personaje.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
+        capasArmadura.push(personaje.capaArmaduraDura);
+    }
+
+    return getPenalizadorMovimientoPorArmaduraActual(personaje,capasArmadura);
+}
 
 /*
 25:

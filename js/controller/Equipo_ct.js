@@ -479,3 +479,98 @@ function desequipaYelmos() {
         personaje_actual.yelmos[i].setEquipado(false);
     }
 }
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaduraComprada[]} armadura
+ * @returns {number}
+ */
+function penalizadorTodaAccionPorArmadura(personaje, armadura) {
+    var requisito = armadura.getRequisitoArmadura();
+    var penalizador;
+    for (var i = 0; i < armadura.length; i++) {
+        requisito += armadura[i].getRequisitoArmadura();
+    }
+
+    /**
+     *
+     * @type {HabilidadDePersonaje}
+     */
+    var habilidad = personaje[HB_ARMADURA];
+    var valor = habilidad.valorFinalActual();
+
+    if (valor >= requisito) {
+        penalizador =  0;
+    } else {
+        penalizador = requisito - valor;
+    }
+
+    return penalizador;
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaduraComprada[]} armadura
+ * @returns {number}
+ */
+function penalizadorNaturalPorArmadura(personaje, armadura) {
+    var requisito = 0;
+    var penalizador = 0;
+
+    for (var i = 0; i < armadura.length; i++) {
+        requisito += armadura[i].getRequisitoArmadura();
+        penalizador += armadura[i].getPenalizadorNatural();
+    }
+
+    /**
+     *
+     * @type {HabilidadDePersonaje}
+     */
+    var habilidad = personaje[HB_ARMADURA];
+    var valor = habilidad.valorFinalActual();
+
+    if (valor > requisito) {
+        penalizador += valor-requisito;
+    }
+
+    if (penalizador > 0)
+        penalizador = 0;
+
+    penalizador += -20*(armadura.length-1);
+
+    return penalizador;
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaduraComprada[]} armadura
+ * @returns {number}
+ */
+function penalizadorMovimientoPorArmadura(personaje, armadura) {
+    var requisito = 0;
+    var penalizador = 0;
+
+    for (var i = 0; i < armadura.length; i++) {
+        requisito += armadura[i].getRequisitoArmadura();
+        penalizador += armadura[i].getRestriccionMovimiento();
+    }
+
+    /**
+     *
+     * @type {HabilidadDePersonaje}
+     */
+    var habilidad = personaje[HB_ARMADURA];
+    var valor = habilidad.valorFinalActual();
+
+    if (valor > requisito) {
+        penalizador -= Math.floor((valor-requisito)/50);
+    }
+
+    if (penalizador < 0)
+        penalizador = 0;
+
+    return penalizador;
+}
