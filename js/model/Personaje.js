@@ -4349,7 +4349,7 @@ TipoArmadura.prototype = {
     constructor : TipoArmadura,
 
     toString : function() {
-        var cadena = "[";
+        /*var cadena = "[";
         for (var i = 0; i < this.TAs.length;i++) {
             cadena += this.TAs[i];
             if (i < this.TAs.length-1) {
@@ -4357,7 +4357,8 @@ TipoArmadura.prototype = {
             }
         }
         cadena += "]"
-        return cadena;
+        return cadena;*/
+        return _l(this.nombre);
     },
 
     getNombre : function() {

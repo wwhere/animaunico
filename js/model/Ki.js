@@ -298,7 +298,7 @@ NivelEfectoTecnica.prototype = {
     },
 
     toJSON : function() {
-        return this.nombre+"--"+this.nombreEfectoTecnica;
+        return this.nombre.replace("+","_PLUS_")+"--"+this.nombreEfectoTecnica;
     }
 };
 
@@ -488,7 +488,7 @@ NivelVentajaTecnica.prototype = {
     },
 
     toJSON : function() {
-        return this.nombre+"--"+this.nombreVentajaTecnica+"--"+this.nombreEfectoTecnica;
+        return this.nombre.replace("+","_PLUS_")+"--"+this.nombreVentajaTecnica+"--"+this.nombreEfectoTecnica;
     }
 };
 
@@ -705,6 +705,33 @@ TecnicaKi.prototype = {
         return this.nombre;
     },
 
+    toString : function() {
+        var cadena = this.nombre + ": " + _l(UI_NV) + " " + this.nivel+"; ";
+
+        cadena += _l(UI_CM) + ": " + this.getCosteCM() + "; ";
+        cadena += _l(UI_COSTE_KI) + ": " + this.getCosteKi().toString() + "; ";
+        if (this.isMantenida()) {
+            cadena += _l(UI_COSTE_MANTENIMIENTO) + ": " + this.getCosteMantenimiento().toString() + "; ";
+        }
+
+        cadena += _l(UI_EFECTOS_DE_LA_TECNICA) + ": ";
+
+        if (this.efectoPrimario)
+            cadena += this.efectoPrimario.getNombreCompleto();
+
+        for (var i = 0; i < this.efectosSecundarios.length; i++) {
+            cadena += ", " + this.efectosSecundarios[i].getNombreCompleto();
+        }
+
+        cadena += _l(UI_DESVENTAJAS_DE_LA_TECNICA) + ": ";
+
+        for ( i = 0; i < this.desventajas.length; i++) {
+            cadena += ", " + this.desventajas[i].getNombreCompleto();
+        }
+
+        return cadena;
+    },
+
     /**
      *
      * @param {string} valor
@@ -911,15 +938,11 @@ TecnicaKi.prototype = {
     fijaComoPrimario : function(efectoTecnica) {
         if (this.puedeFijarComoPrimario(efectoTecnica)) {
             efectoTecnica.setPrimario(true);
-            if (this.efectoPrimario) {
-                delete this.allEfectos[this.efectoPrimario.getNombre()];
-            }
             this.efectoPrimario = undefined;
             if (this.hasEfecto(efectoTecnica)) {
                 this.removeEfectoSecundario(efectoTecnica);
             }
             this.efectoPrimario = efectoTecnica;
-            this.allEfectos[efectoTecnica.getNombre()] = efectoTecnica;
             lanzarEvento(EVENT_TECNICA_CREACION);
         }
     },
@@ -961,7 +984,6 @@ TecnicaKi.prototype = {
                 this.removeEfectoSecundario(efectoSecundario);
             }
             this.efectosSecundarios.push(efectoSecundario);
-            this.allEfectos[efectoSecundario.getNombre()] = efectoSecundario;
             lanzarEvento(EVENT_TECNICA_CREACION);
         }
     },
@@ -981,7 +1003,22 @@ TecnicaKi.prototype = {
      * @returns {boolean}
      */
     hasEfecto : function(efectoTecnica) {
-        return (this.allEfectos[efectoTecnica.getNombre()] != undefined);
+        var loTiene = false;
+        var nombreEfecto = efectoTecnica.getNombre();
+        if (this.efectoPrimario) {
+            if (this.efectoPrimario.getNombre() == nombreEfecto) {
+                loTiene = true;
+            }
+        }
+        if (!loTiene) {
+            for (var i = 0; i < this.efectosSecundarios.length;i++) {
+                if (this.efectosSecundarios[i].getNombre() == nombreEfecto) {
+                    loTiene = true;
+                    break;
+                }
+            }
+        }
+        return loTiene;
     },
 
     /**
@@ -990,7 +1027,16 @@ TecnicaKi.prototype = {
      * @returns {EfectoTecnicaElegido}
      */
     getEfecto : function(nombreEfecto) {
-        return this.allEfectos[nombreEfecto];
+        if (this.efectoPrimario.getNombre() == nombreEfecto) {
+            return this.efectoPrimario;
+        } else {
+            for (var i = 0; i < this.efectosSecundarios.length;i++) {
+                if (this.efectosSecundarios[i].getNombre() == nombreEfecto) {
+                    return this.efectosSecundarios[i];
+                }
+            }
+        }
+        throw _l(ERR_EFECTO_KI_DESCONOCIDA) + ": " + nombreEfecto;
     },
 
     /**
@@ -1225,8 +1271,10 @@ function EfectoTecnicaElegido(efectoTecnica, nivelEfectoTecnica) {
      *
      * @type {CosteKi}
      */
-    this.costeKi = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
-    this.costeKi.setCoste(efectoTecnica.getCaracPrimaria(),nivelEfectoTecnica.getCosteSecundario());
+    if (efectoTecnica) {
+        this.costeKi = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
+        this.costeKi.setCoste(efectoTecnica.getCaracPrimaria(),nivelEfectoTecnica.getCosteSecundario());
+
 
     /**
      *
@@ -1240,9 +1288,12 @@ function EfectoTecnicaElegido(efectoTecnica, nivelEfectoTecnica) {
      * @type {CaracSecunTecnica[]}
      */
     var caracSec = this.efectoTecnica.getCaracSecundarias();
+
     for (var i = 0; i < caracSec.length; i++) {
         this.costeKi.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
         this.costeMantenimiento.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
+    }
+
     }
 
 }
@@ -1640,6 +1691,17 @@ DesventajaTecnicaElegida.prototype = {
         return nombre;
     },
 
+    getNombreCompleto : function() {
+        var nombre = _l(this.desventajaTecnica.getNombre());
+        if (this.hasDescripcionPropia) {
+            nombre += " (" + _l(this.descripcion) + ")";
+        }
+        if (this.isAtaduraElemental()) {
+            nombre += " [" + this.getAtaduraElemental().toString() + "]";
+        }
+        return nombre;
+    },
+
     /**
      *
      * @returns {Array}
@@ -1817,22 +1879,22 @@ ElementosAfines.prototype = {
         var str = "";
 
         if (this.agua) {
-            str += "agua,";
+            str += _l(ELEMENTO_AGUA) + ",";
         }
         if (this.fuego) {
-            str += "fuego,";
+            str += _l(ELEMENTO_FUEGO) +",";
         }
         if (this.aire) {
-            str += "aire,";
+            str += _l(ELEMENTO_AIRE) +",";
         }
         if (this.tierra) {
-            str += "tierra,";
+            str += _l(ELEMENTO_TIERRA) +",";
         }
         if (this.luz) {
-            str += "luz,";
+            str += _l(ELEMENTO_LUZ)+",";
         }
         if (this.oscuridad) {
-            str += "oscuridad,";
+            str += _l(ELEMENTO_OSCURIDAD)+",";
         }
 
         if (str.length > 0) {
@@ -2112,6 +2174,14 @@ function TecnicaKiComprada(tecnicaKi) {
 
 TecnicaKiComprada.prototype = {
     constructor : TecnicaKiComprada,
+
+    /**
+     *
+     * @returns {*}
+     */
+    toString : function() {
+        return this.tecnicaKi.toString();
+    },
 
     /**
      *

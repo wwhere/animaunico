@@ -1143,6 +1143,58 @@ ArmaduraComprada.prototype = {
         var modificadorEntre5 = this.modificador/5;
 
         return sumarArmadura(this.armadura.getTAs(),[modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5]);
+    },
+
+    isBlanda : function() {
+        return (this.armadura.getClase() == ARMADURA_CLASE_BLANDA);
+    },
+
+    getTA : function(taArmadura) {
+        var tipos = this.getTAs();
+        var ta = 0;
+        switch (taArmadura) {
+            case ATAQUE_FIL3:
+            case ATAQUE_FIL:
+                ta = tipos[0];
+                break;
+            case ATAQUE_CON3:
+            case ATAQUE_CON:
+                ta =  tipos[1];
+                break;
+            case ATAQUE_PEN3:
+            case ATAQUE_PEN:
+                ta =  tipos[2];
+                break;
+            case ATAQUE_CAL3:
+            case ATAQUE_CAL:
+                ta =  tipos[3];
+                break;
+            case ATAQUE_FRI3:
+            case ATAQUE_FRI:
+                ta =  tipos[4];
+                break;
+            case ATAQUE_ELE3:
+            case ATAQUE_ELE:
+                ta =  tipos[5];
+                break;
+            case ATAQUE_ENE3:
+            case ATAQUE_ENE:
+                ta =  tipos[6];
+                break;
+        }
+        return ta;
+    },
+
+    isCero : function() {
+        var cero = true;
+        var tipos = this.getTAs();
+        for (var i = 0; i < tipos.length;i++) {
+            if (tipos[i] != 0) {
+                cero = false;
+                break;
+            }
+        }
+        return cero;
     }
 };
 
@@ -1317,5 +1369,57 @@ YelmoComprado.prototype = {
         var modificadorEntre5 = this.modificador/5;
 
         return sumarArmadura(this.yelmo.getTAs(),[modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5,modificadorEntre5]);
+    },
+
+    isBlanda : function() {
+        return (this.yelmo.getClase() == ARMADURA_CLASE_BLANDA);
+    },
+
+    getTA : function(taArmadura) {
+        var tipos = this.getTAs();
+        var ta = 0;
+        switch (taArmadura) {
+            case ATAQUE_FIL3:
+            case ATAQUE_FIL:
+                ta = tipos[0];
+                break;
+            case ATAQUE_CON3:
+            case ATAQUE_CON:
+                ta =  tipos[1];
+                break;
+            case ATAQUE_PEN3:
+            case ATAQUE_PEN:
+                ta =  tipos[2];
+                break;
+            case ATAQUE_CAL3:
+            case ATAQUE_CAL:
+                ta =  tipos[3];
+                break;
+            case ATAQUE_FRI3:
+            case ATAQUE_FRI:
+                ta =  tipos[4];
+                break;
+            case ATAQUE_ELE3:
+            case ATAQUE_ELE:
+                ta =  tipos[5];
+                break;
+            case ATAQUE_ENE3:
+            case ATAQUE_ENE:
+                ta =  tipos[6];
+                break;
+        }
+        return ta;
+    },
+
+    isCero : function() {
+        var cero = true;
+        var tipos = this.getTAs();
+        for (var i = 0; i < tipos.length;i++) {
+            if (tipos[i] != 0) {
+                cero = false;
+                break;
+            }
+        }
+        return cero;
     }
 };

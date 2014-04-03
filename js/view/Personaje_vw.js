@@ -908,6 +908,10 @@ function muestraHabilidadesKi(muestraBotones) {
  */
 function muestraTecnicasKi(muestraBotones) {
     var div = getDiv("");
+    /**
+     *
+     * @type {TecnicaKiComprada[]}
+     */
     var tecnicasKi = personaje_actual.getTecnicasKi();
 
     div.append(muestraSubtitulo(UI_TECNICAS_KI, false));
@@ -922,11 +926,53 @@ function muestraTecnicasKi(muestraBotones) {
 
     for (var i = 0; i < tecnicasKi.length; i++) {
         var divTecnica = getDiv("");
+        var tecn = tecnicasKi[i];
 
-        divTecnica.append(_l(tecnicasKi[i].getNombre()));
+        div.append("<hr>");
+
+
+
+        var divNombre = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_CAMPO_PERSONALES).addClass(CSS_MUESTRA_BLOCK).addClass("six columns").append(_l(tecn.getNombre()));
+        var divNivel = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_ETIQUETA_PERSONALES).addClass(CSS_MUESTRA_BLOCK).addClass("six columns").append(_l(UI_NV) + " " + tecn.getNivel());
+        var divCM = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("two columns").append(_l(UI_CM) + " " + tecn.getCosteCM());
+        var divKi= getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("ten columns").append(_l(UI_COSTE_KI) + " " + tecn.getCosteKi().toString());
+        var divMantenimiento = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("twelve columns").append(_l(UI_COSTE_MANTENIMIENTO) + " " + tecn.getCosteMantenimiento().toString());
+
+        divTecnica.
+            append(
+                getDiv("row").
+                    append(divNombre).append(divNivel)).
+            append(
+                getDiv("row").
+                    append(divCM).append(divKi));
+
+        if (tecn.isMantenida()) {
+            divTecnica.append(getDiv("row").append(divMantenimiento));
+        }
+
+        divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTOS_DE_LA_TECNICA) + ": "));
+
+        if (tecn.efectoPrimario)
+            divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(tecn.getEfectoPrimario().getNombreCompleto()));
+
+        var efectosSecundarios = tecn.getEfectosSecundarios();
+        for (var j = 0; j < efectosSecundarios.length; j++) {
+            divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(efectosSecundarios[j].getNombreCompleto()));
+        }
+
+        var desventajas = tecn.getDesventajas();
+        if (desventajas.length > 1) {
+            divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + ": "));
+            for ( j = 0; j < desventajas.length; j++) {
+                divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(desventajas[j].getNombreCompleto()));
+            }
+        }
+        divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_DESCRIPCION) + ": " + tecn.getDescripcion()));
+
         if (muestraBotones) {
             divTecnica.append(muestraBotonAnular(anularTecnicaKi,{tecnicaKi: tecnicasKi[i]}));
         }
+
 
         div.append(divTecnica);
     }
@@ -959,13 +1005,13 @@ function muestraArmadura() {
     var divArmadura3 = getDiv("five columns").addClass(CSS_TEXTO_CENTRO);
 
     if (personaje_actual.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura1.append("[" + _l(personaje_actual.capaArmaduraDura.getNombre()) + "]");
+        divArmadura1.append("[" + personaje_actual.capaArmaduraDura.toString() + "]");
     }
     if (personaje_actual.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura2.append("[" + _l(personaje_actual.capaArmaduraBlanda1.getNombre()) + "]");
+        divArmadura2.append("[" + personaje_actual.capaArmaduraBlanda1.toString() + "]");
     }
     if (personaje_actual.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura3.append("[" + _l(personaje_actual.capaArmaduraBlanda2.getNombre()) + "]");
+        divArmadura3.append("[" + personaje_actual.capaArmaduraBlanda2.toString() + "]");
     }
     divDescripcion.append(divArmadura1).append(divArmadura2).append(divArmadura3);
     div.append(divDescripcion);
@@ -992,7 +1038,7 @@ function muestraArmadura() {
         var divDescripcionYelmo = getDiv("row");
         var divYelmo = getDiv("centered five columns").addClass(CSS_TEXTO_CENTRO);
 
-        divYelmo.append("[" + _l(UI_YELMO) + ": " + _l(personaje_actual.capaYelmo.getNombre()) + "]");
+        divYelmo.append("[" + _l(UI_YELMO) + ": " + personaje_actual.capaYelmo.toString() + "]");
 
         divDescripcionYelmo.append(divYelmo);
         div.append(divDescripcionYelmo);
@@ -1496,22 +1542,22 @@ function muestraEquipamiento() {
             if (armadura.getClase() == ARMADURA_CLASE_DURA) {
                 if (!armadura.isEquipado()) {
                     desequipaArmaduras(true);
-                    personaje_actual.capaArmaduraDura = new TipoArmadura(armadura.toString(),armadura.getTAs(),false);
+                    personaje_actual.capaArmaduraDura = armadura;
                 } else {
                     personaje_actual.capaArmaduraDura = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],false);
                 }
             } else {
                 if (!armadura.isEquipado()) {
                     if (personaje_actual.capaArmaduraBlanda1.getNombre() == ARMADURA_NINGUNA) {
-                        personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                        personaje_actual.capaArmaduraBlanda1 = armadura;
                     } else if (personaje_actual.capaArmaduraBlanda2.getNombre() == ARMADURA_NINGUNA) {
-                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                        personaje_actual.capaArmaduraBlanda2 = armadura;
                     } else {
-                        desequipaArmadura(personaje_actual.capaArmaduraBlanda2.getNombre());
-                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                        desequipaArmadura(personaje_actual.capaArmaduraBlanda2.toString());
+                        personaje_actual.capaArmaduraBlanda2 = armadura;
                     }
                 } else {
-                    if (personaje_actual.capaArmaduraBlanda1.getNombre() == armadura.toString()) {
+                    if (personaje_actual.capaArmaduraBlanda1.toString() == armadura.toString()) {
                         personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
                     } else {
                         personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
@@ -1580,13 +1626,14 @@ function muestraEquipamiento() {
 
             if (!yelmo.isEquipado()) {
                 desequipaYelmos();
-                personaje_actual.capaYelmo = new TipoArmadura(yelmo.toString(),yelmo.getTAs(),false);
+                personaje_actual.capaYelmo = yelmo;
             } else {
                 personaje_actual.capaYelmo = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
             }
 
             ev.data.yelmo.setEquipado(!ev.data.yelmo.isEquipado());
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+            lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
         });
 
         divEquipoYelmos.append(divVYelmo);
