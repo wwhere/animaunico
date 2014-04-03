@@ -959,13 +959,13 @@ function muestraArmadura() {
     var divArmadura3 = getDiv("five columns").addClass(CSS_TEXTO_CENTRO);
 
     if (personaje_actual.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura1.append("[" + _l(personaje_actual.capaArmaduraDura.getNombre()) + "]");
+        divArmadura1.append("[" + personaje_actual.capaArmaduraDura.toString() + "]");
     }
     if (personaje_actual.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura2.append("[" + _l(personaje_actual.capaArmaduraBlanda1.getNombre()) + "]");
+        divArmadura2.append("[" + personaje_actual.capaArmaduraBlanda1.toString() + "]");
     }
     if (personaje_actual.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura3.append("[" + _l(personaje_actual.capaArmaduraBlanda2.getNombre()) + "]");
+        divArmadura3.append("[" + personaje_actual.capaArmaduraBlanda2.toString() + "]");
     }
     divDescripcion.append(divArmadura1).append(divArmadura2).append(divArmadura3);
     div.append(divDescripcion);
@@ -992,7 +992,7 @@ function muestraArmadura() {
         var divDescripcionYelmo = getDiv("row");
         var divYelmo = getDiv("centered five columns").addClass(CSS_TEXTO_CENTRO);
 
-        divYelmo.append("[" + _l(UI_YELMO) + ": " + _l(personaje_actual.capaYelmo.getNombre()) + "]");
+        divYelmo.append("[" + _l(UI_YELMO) + ": " + personaje_actual.capaYelmo.toString() + "]");
 
         divDescripcionYelmo.append(divYelmo);
         div.append(divDescripcionYelmo);
@@ -1496,22 +1496,22 @@ function muestraEquipamiento() {
             if (armadura.getClase() == ARMADURA_CLASE_DURA) {
                 if (!armadura.isEquipado()) {
                     desequipaArmaduras(true);
-                    personaje_actual.capaArmaduraDura = new TipoArmadura(armadura.toString(),armadura.getTAs(),false);
+                    personaje_actual.capaArmaduraDura = armadura;
                 } else {
                     personaje_actual.capaArmaduraDura = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],false);
                 }
             } else {
                 if (!armadura.isEquipado()) {
                     if (personaje_actual.capaArmaduraBlanda1.getNombre() == ARMADURA_NINGUNA) {
-                        personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                        personaje_actual.capaArmaduraBlanda1 = armadura;
                     } else if (personaje_actual.capaArmaduraBlanda2.getNombre() == ARMADURA_NINGUNA) {
-                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                        personaje_actual.capaArmaduraBlanda2 = armadura;
                     } else {
-                        desequipaArmadura(personaje_actual.capaArmaduraBlanda2.getNombre());
-                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(armadura.toString(),armadura.getTAs(),true);
+                        desequipaArmadura(personaje_actual.capaArmaduraBlanda2.toString());
+                        personaje_actual.capaArmaduraBlanda2 = armadura;
                     }
                 } else {
-                    if (personaje_actual.capaArmaduraBlanda1.getNombre() == armadura.toString()) {
+                    if (personaje_actual.capaArmaduraBlanda1.toString() == armadura.toString()) {
                         personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
                     } else {
                         personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
@@ -1580,13 +1580,14 @@ function muestraEquipamiento() {
 
             if (!yelmo.isEquipado()) {
                 desequipaYelmos();
-                personaje_actual.capaYelmo = new TipoArmadura(yelmo.toString(),yelmo.getTAs(),false);
+                personaje_actual.capaYelmo = yelmo;
             } else {
                 personaje_actual.capaYelmo = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
             }
 
             ev.data.yelmo.setEquipado(!ev.data.yelmo.isEquipado());
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+            lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
         });
 
         divEquipoYelmos.append(divVYelmo);
