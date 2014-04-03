@@ -205,3 +205,34 @@ function eligeElementalismo() {
     muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: asignarElementalismo, isDisabled: alwaysEnabled}, true);
 
 }
+function muestraInvocaciones(muestraBotones) {
+    var div = getDiv("");
+    var i;
+    var divInvocaciones = getDiv("row");
+
+    var invocaciones = personaje_actual.getInvocaciones();
+
+    if (muestraBotones) {
+        div.append(muestraBotonElegirInvocacion());
+    } else if (invocaciones.length == 0) {
+        div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+
+    for (i=0; i < invocaciones.length;i++) {
+        var invocacion = invocaciones[i];
+        var divInvocacion = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("six columns");
+        divInvocacion.append(invocacion.toString()).append(muestraBotonAnular(eliminarInvocacion,{invocacion: invocacion}));
+        divInvocaciones.append(divInvocacion);
+    }
+
+    div.append(divInvocaciones);
+    return div;
+}
+
+function muestraBotonElegirInvocacion() {
+    var botonDiv = boton("small primary pretty btn",_l(UI_ELEGIR_INVOCACION));
+
+    botonDiv.on("click",{},elegirInvocacion);
+
+    return botonDiv;
+}

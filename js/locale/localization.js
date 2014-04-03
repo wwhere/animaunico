@@ -271,7 +271,7 @@ var UI_DOMINIOS_KI = (new L("UI Dominios del Ki","Dominios del Ki","Ki")).getId(
 
 var UI_SOBRENATURALES = (new L("UI Magia","Magia", "Magic")).getId();
 var UI_CONVOCATORIA = (new L("Convocatoria","Convocatoria","Summoning")).getId();
-
+var UI_INVOCACIONES = (new L("UI_INVOCACIONES","Invocaciones","Invocations")).getId();
 var UI_PSIQUICA = (new L("UI Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
 
 var UI_SECUNDARIAS = (new L("UI Habilidades Secundarias","Habilidades Secundarias","Secondary Abilities")).getId();
@@ -489,6 +489,8 @@ var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro
 var UI_TOTAL = (new L("Total","Total", "Total")).getId();
 var UI_LIBRES = (new L("Libres", "Libres", "Free")).getId();
 var UI_LIBRE = (new L("Libre", "Libre", "Free")).getId();
+
+var UI_ELEGIR_INVOCACION = (new L("UI_ELEGIR_INVOCACION","Añadir Invocación","Add Invocation")).getId();
 
 var DIAG_ELEGIR_CATEGORIA_TITULO = (new L("Seleccionar categoría","Seleccionar categoría","Choose class")).getId();
 
@@ -821,6 +823,9 @@ var COSTE_VENTAJAS_AUMENTA_DOS = (new L("Cada elección adicional aumenta dos pu
 var ERR_VIA_NO_DOMINADA = (new L("Vía no dominada","Vía no dominada","Path not dominated")).getId();
 var ERR_VIA_DESCONOCIDA = (new L("Error: Vía desconocida","Error: Vía desconocida","Error: Unknown path")).getId();
 
+var ERR_INVOCACION_DESCONCODIA = (new L("ERR_INVOCACION_DESCONCODIA","Invocación desconocida","Invocation unknown")).getId();
+
+
 var VIA_LUZ = (new L("VIA Luz","Luz", "Light")).getId();
 var VIA_LUZ_DESCRIPCION = "";
 
@@ -966,6 +971,7 @@ var UI_QUITAR = (new L("UI_QUITAR","Quitar","Drop")).getId();
 var UI_TIPO = (new L("UI_TIPO","Tipo","Type")).getId();
 var UI_YELMO = (new L("UI_YELMO","Yelmo","Helm")).getId();
 
+
 var UI_ELEMENTALISMO = (new L("UI_ELEMENTALISMO","Elementalismo","Elementalismo")).getId();
 var ELEMENTALISMO_NINGUNO = (new L("ELEMENTALISMO_NINGUNO","No","No")).getId();
 var ELEMENTALISMO_AIRE = (new L("ELEMENTALISMO_AIRE","Aire","Air")).getId();
@@ -974,3 +980,6 @@ var ELEMENTALISMO_AGUA = (new L("ELEMENTALISMO_AGUA","Agua","Water")).getId();
 var ELEMENTALISMO_FUEGO = (new L("ELEMENTALISMO_FUEGO","Fuego","Fire")).getId();
 var ELEMENTALISMO_LUZ = (new L("ELEMENTALISMO_LUZ","Luz","Light")).getId();
 var ELEMENTALISMO_OSCURIDAD = (new L("ELEMENTALISMO_OSCURIDAD","Oscuridad","Darkness")).getId();
+
+var INVOCACIONES_ARCANOS = (new L("INVOCACIONES_ARCANOS","Arcanos","Arcana")).getId();
+

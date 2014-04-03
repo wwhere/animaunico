@@ -30,6 +30,7 @@ module.exports = function(grunt) {
                     "js/locale/locRazas.js",
                     "js/locale/locTablas.js",
                     "js/locale/locVentajas.js",
+                    "js/locale/locInvocaciones.js",
 
                     "js/libros.js",
                     "js/mainAnimaUnico.js",
@@ -60,6 +61,9 @@ module.exports = function(grunt) {
                     "js/data/magia/ViaNigromancia.js",
                     "js/data/magia/ViaOscuridad.js",
                     "js/data/magia/ViaTierra.js",
+
+                    "js/model/Invocacion.js",
+                    "js/data/magia/invocaciones.js",
 
                     "js/model/DisciplinaPsiquica.js",
                     "js/controller/Psiquica_ct.js",

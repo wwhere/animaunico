@@ -1031,6 +1031,23 @@ function parseArrayCaracSecunTecnica(v) {
     return array;
 }
 
+
+
+/**
+ *
+ * @param {string} v
+ * @returns {Invocacion[]}
+ */
+function parseArrayInvocaciones(v) {
+    var array = [];
+
+    for (var i = 0; i < v.length;i++) {
+        array.push(getInvocacion(v[i]));
+    }
+
+    return array;
+}
+
 /**
  *
  * @param {string} v
@@ -1215,6 +1232,9 @@ function cargarPersonaje(cadena) {
                 break;
             case 'disciplinasPsiquicas':
                 personaje_actual[k] = parseArrayDisciplinaPsiquicaAccedida(v);
+                break;
+            case 'invocaciones':
+                personaje_actual[k] = parseArrayInvocaciones(v);
                 break;
             case 'poderesPsiquicosDominados':
                 personaje_actual[k] = parseArrayPoderPsiquicoDominado(v);
