@@ -10,6 +10,23 @@ var vias_set = [];
  */
 var VIAS_MAGICAS = [VIA_LUZ,VIA_OSCURIDAD,VIA_CREACION,VIA_DESTRUCCION,VIA_FUEGO,VIA_AGUA,VIA_TIERRA,VIA_AIRE,VIA_ESENCIA,VIA_ILUSION,VIA_NIGROMANCIA];
 
+
+/**
+ *
+ * @type {Invocacion[]}
+ */
+var invocaciones_arcanos_set = [];
+
+/**
+ *
+ * @type {Invocacion[][]}
+ */
+var invocaciones_set = [invocaciones_arcanos_set];
+var invocaciones_nombres_grupos = [INVOCACIONES_ARCANOS];
+
+var todasInvocaciones = {};
+
+
 /**
  * 
  * @param {number} nivelConjuro
@@ -392,4 +409,71 @@ function asignarDesequilibrioOfensivoMagico(parametros) {
     var nuevoDesequilibrio = parametros.opcion;
 
     personaje_actual.setDesequilibrioOfensivoMagico(parseInt(nuevoDesequilibrio));
+}
+
+/**
+ *
+ * @param {string} nombreInvocacion
+ * @returns {Invocacion}
+ */
+function getInvocacion(nombreInvocacion) {
+    if (todasInvocaciones[nombreInvocacion]) {
+        return todasInvocaciones[nombreInvocacion];
+    } else {
+        throw ERR_INVOCACION_DESCONCODIA + ": " + nombreInvocacion;
+    }
+}
+
+function elegirInvocacion() {
+    var arrayOpciones = [];
+    var categorias = [];
+    var i, j;
+
+    for (i = 0; i < invocaciones_set.length; i++) {
+        categorias.push(new OpcionMostrable(_l(invocaciones_nombres_grupos[i]),invocaciones_nombres_grupos[i],invocaciones_nombres_grupos[i]));
+        for (j = 0; j < invocaciones_set[i].length; j++) {
+            arrayOpciones.push(new OpcionMostrable(invocaciones_set[i][j].toString(),invocaciones_set[i][j].getNombre(),invocaciones_nombres_grupos[i]));
+        }
+    }
+
+    muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: añadeInvocacion, isDisabled: noPuedeElegirInvocacion}, true, categorias);
+}
+
+/**
+ *
+ * @param {{opcion:string}} parametros
+ * @returns {boolean}
+ */
+function noPuedeElegirInvocacion(parametros) {
+    var invocacion = getInvocacion(parametros.opcion);
+    var invocacionesProhibidas = invocacion.getProhibidos();
+    var puede = true;
+    if (personaje_actual.hasInvocacion(parametros.opcion)) {
+        puede = false;
+    }
+    for (var i = 0; i < invocacionesProhibidas.length; i++) {
+        if (personaje_actual.hasInvocacion(invocacionesProhibidas[i])) {
+            puede = false;
+        }
+    }
+
+    return !puede;
+}
+
+/**
+ *
+ * @param {{opcion:string}} parametros
+ */
+function añadeInvocacion(parametros) {
+    var invocacion = getInvocacion(parametros.opcion);
+
+    personaje_actual.addInvocacion(invocacion);
+}
+
+/**
+ *
+ * @param {{data:{invocacion:Invocacion}}} event
+ */
+function eliminarInvocacion(event) {
+    personaje_actual.removeInvocacion(event.data.invocacion.getNombre());
 }

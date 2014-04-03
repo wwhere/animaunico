@@ -134,6 +134,12 @@ function Personaje(nivelInicial) {
 
     /** @type number */
     this.nivelMagiaGastadoPrevio = 0;
+
+    /**
+     *
+     * @type {Invocacion[]}
+     */
+    this.invocaciones = [];
     //endregion Magia
 
     //region Bonos y Costes Reducidos
@@ -1580,6 +1586,47 @@ Personaje.prototype = {
     getConjurosSueltos : function() {
         return this.conjurosSueltos;
     },
+
+    /**
+     *
+     * @returns {Invocacion[]}
+     */
+    getInvocaciones : function() {
+        return this.invocaciones;
+    },
+
+    /**
+     *
+     * @param {string} nombreInvocacion
+     * @returns {boolean}
+     */
+    hasInvocacion : function(nombreInvocacion) {
+        for (var i = 0; i < this.invocaciones.length; i++) {
+            if (this.invocaciones[i].getNombre() == nombreInvocacion) {
+                return true;
+            }
+        }
+        return false;
+    },
+
+    /**
+     *
+     * @param {Invocacion} invocacion
+     */
+    addInvocacion : function(invocacion) {
+        this.invocaciones.push(invocacion);
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
+    /**
+     *
+     * @param {string} nombreInvocacion
+     */
+    removeInvocacion : function(nombreInvocacion) {
+        this.invocaciones = limpiarArrayObjetosPorCampo(this.invocaciones,'nombre',nombreInvocacion)
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
 //endregion Magia
 
 //region Bonos y Costes Reducidos
