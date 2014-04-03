@@ -908,6 +908,10 @@ function muestraHabilidadesKi(muestraBotones) {
  */
 function muestraTecnicasKi(muestraBotones) {
     var div = getDiv("");
+    /**
+     *
+     * @type {TecnicaKiComprada[]}
+     */
     var tecnicasKi = personaje_actual.getTecnicasKi();
 
     div.append(muestraSubtitulo(UI_TECNICAS_KI, false));

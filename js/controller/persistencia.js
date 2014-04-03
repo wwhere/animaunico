@@ -725,7 +725,7 @@ function parseArrayArmaComprada(v) {
 function parseEquipoComprado(elemento,texto) {
     parseObject(texto,function(k,v) {
         switch (k) {
-            case 'equipo':
+            case 'equipoComprado':
                 elemento[k] = parseEquipo(v);
                 break;
             default:
@@ -840,44 +840,64 @@ function parseHabilidadKi(texto) {
 /**
  *
  * @param {string} v
- * @returns {TecnicaKi[]}
+ * @returns {TecnicaKiComprada[]}
  */
-function parseArrayTecnicaKi(v) {
+function parseArrayTecnicaKiComprada(v) {
     var tecs = [];
-
+    console.log("Parseando técnicas...");
     for (var i = 0; i < v.length;i++) {
-        var tecnica = new TecnicaKi(1);
-        parseTecnicaKi(tecnica,v[i]);
+        console.log("-Nueva técnica");
+        var tecnica = new TecnicaKiComprada("");
+        parseTecnicaKiComprada(tecnica,v[i]);
         tecs.push(tecnica);
     }
-
+    console.log("Termino de parsear técnicas...");
     return tecs;
+}
+
+function parseTecnicaKiComprada(elemento,texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'tecnicaKi':
+                var tecnica = new TecnicaKi(1);
+                parseTecnicaKi(tecnica,v);
+                elemento[k] = tecnica;
+                break;
+            default:
+                console.log("-"+k+": "+v);
+                elemento[k] = v;
+        }
+    });
 }
 
 function parseTecnicaKi(elemento,texto) {
     parseObject(texto,function(k,v) {
         switch (k) {
             case 'efectoPrimario':
+                console.log("--Efecto primario: "+v);
                 if (v == false) {
                     elemento[k] = false;
                 } else {
                     elemento[k] = new EfectoTecnicaElegido();
                     parseEfectoTecnicaElegido(elemento[k], v);
-                    elemento.allEfectos[k] = elemento[k];
                 }
                 break;
             case 'efectosSecundarios':
+                console.log("--Efectos Secundarios: "+v);
                 elemento[k] = parseArrayEfectoTecnicaElegido(v, elemento);
                 break;
             case 'desventajas':
+                console.log("--Desventajas: "+v);
                 elemento[k] = parseArrayDesventajaTecnicaElegida(v);
                 break;
             case 'ataduraElemental':
+                console.log("--Atadura: "+v);
                 elemento[k] = new ElementosAfines([]);
                 parseStandard(elemento[k],v);
                 break;
             case 'costeKi':
             case 'costeMantenimiento':
+                console.log("--Coste (ki o mant): "+v);
                 if (v == false) {
                     elemento[k] = false;
                 } else {
@@ -885,7 +905,11 @@ function parseTecnicaKi(elemento,texto) {
                     parseStandard(elemento[k],v);
                 }
                 break;
+            case 'allEfectos':
+                console.log("--All efectos: (lo ignoro)");
+                break;
             default:
+                console.log("--"+k+": "+v);
                 elemento[k] = v;
         }
     });
@@ -897,7 +921,6 @@ function parseArrayEfectoTecnicaElegido(v, tecnica) {
     for (var i = 0; i < v.length;i++) {
         var elemento = new EfectoTecnicaElegido();
         parseEfectoTecnicaElegido(elemento, v[i]);
-        tecnica.allEfectos[elemento.getNombre()] = elemento;
         array.push(elemento);
     }
 
@@ -936,7 +959,7 @@ function parseEfectoTecnica(texto) {
 
 function parseNivelEfectoTecnica(texto) {
     var valores = texto.split("--");
-    var nombreNivelEfectoTecnica = valores[0];
+    var nombreNivelEfectoTecnica = valores[0].replace("_PLUS_","+");
     var nombreEfectoTecnica = valores[1];
     var efecto = getEfectoTecnicaKi(nombreEfectoTecnica);
     return efecto.getNivelEfectoPorNombre(nombreNivelEfectoTecnica);
@@ -1225,7 +1248,7 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseArrayHabilidadKiComprada(v);
                 break;
             case 'tecnicasKi':
-                personaje_actual[k] = parseArrayTecnicaKi(v);
+                personaje_actual[k] = parseArrayTecnicaKiComprada(v);
                 break;
             case 'numTecnicas':
                 personaje_actual.numTecnicas = parseNumTecnicas(v);
