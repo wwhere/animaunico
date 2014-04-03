@@ -926,11 +926,53 @@ function muestraTecnicasKi(muestraBotones) {
 
     for (var i = 0; i < tecnicasKi.length; i++) {
         var divTecnica = getDiv("");
+        var tecn = tecnicasKi[i];
 
-        divTecnica.append(_l(tecnicasKi[i].toString()));
+        div.append("<hr>");
+
+
+
+        var divNombre = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_CAMPO_PERSONALES).addClass(CSS_MUESTRA_BLOCK).addClass("six columns").append(_l(tecn.getNombre()));
+        var divNivel = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_ETIQUETA_PERSONALES).addClass(CSS_MUESTRA_BLOCK).addClass("six columns").append(_l(UI_NV) + " " + tecn.getNivel());
+        var divCM = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("two columns").append(_l(UI_CM) + " " + tecn.getCosteCM());
+        var divKi= getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("ten columns").append(_l(UI_COSTE_KI) + " " + tecn.getCosteKi().toString());
+        var divMantenimiento = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("twelve columns").append(_l(UI_COSTE_MANTENIMIENTO) + " " + tecn.getCosteMantenimiento().toString());
+
+        divTecnica.
+            append(
+                getDiv("row").
+                    append(divNombre).append(divNivel)).
+            append(
+                getDiv("row").
+                    append(divCM).append(divKi));
+
+        if (tecn.isMantenida()) {
+            divTecnica.append(getDiv("row").append(divMantenimiento));
+        }
+
+        divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTOS_DE_LA_TECNICA) + ": "));
+
+        if (tecn.efectoPrimario)
+            divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(tecn.getEfectoPrimario().getNombreCompleto()));
+
+        var efectosSecundarios = tecn.getEfectosSecundarios();
+        for (var j = 0; j < efectosSecundarios.length; j++) {
+            divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(efectosSecundarios[j].getNombreCompleto()));
+        }
+
+        var desventajas = tecn.getDesventajas();
+        if (desventajas.length > 1) {
+            divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + ": "));
+            for ( j = 0; j < desventajas.length; j++) {
+                divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(desventajas[j].getNombreCompleto()));
+            }
+        }
+        divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_DESCRIPCION) + ": " + tecn.getDescripcion()));
+
         if (muestraBotones) {
             divTecnica.append(muestraBotonAnular(anularTecnicaKi,{tecnicaKi: tecnicasKi[i]}));
         }
+
 
         div.append(divTecnica);
     }

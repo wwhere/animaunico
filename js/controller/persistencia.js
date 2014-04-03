@@ -844,14 +844,11 @@ function parseHabilidadKi(texto) {
  */
 function parseArrayTecnicaKiComprada(v) {
     var tecs = [];
-    console.log("Parseando técnicas...");
     for (var i = 0; i < v.length;i++) {
-        console.log("-Nueva técnica");
         var tecnica = new TecnicaKiComprada("");
         parseTecnicaKiComprada(tecnica,v[i]);
         tecs.push(tecnica);
     }
-    console.log("Termino de parsear técnicas...");
     return tecs;
 }
 
@@ -864,7 +861,6 @@ function parseTecnicaKiComprada(elemento,texto) {
                 elemento[k] = tecnica;
                 break;
             default:
-                console.log("-"+k+": "+v);
                 elemento[k] = v;
         }
     });
@@ -874,7 +870,6 @@ function parseTecnicaKi(elemento,texto) {
     parseObject(texto,function(k,v) {
         switch (k) {
             case 'efectoPrimario':
-                console.log("--Efecto primario: "+v);
                 if (v == false) {
                     elemento[k] = false;
                 } else {
@@ -883,21 +878,17 @@ function parseTecnicaKi(elemento,texto) {
                 }
                 break;
             case 'efectosSecundarios':
-                console.log("--Efectos Secundarios: "+v);
                 elemento[k] = parseArrayEfectoTecnicaElegido(v, elemento);
                 break;
             case 'desventajas':
-                console.log("--Desventajas: "+v);
                 elemento[k] = parseArrayDesventajaTecnicaElegida(v);
                 break;
             case 'ataduraElemental':
-                console.log("--Atadura: "+v);
                 elemento[k] = new ElementosAfines([]);
                 parseStandard(elemento[k],v);
                 break;
             case 'costeKi':
             case 'costeMantenimiento':
-                console.log("--Coste (ki o mant): "+v);
                 if (v == false) {
                     elemento[k] = false;
                 } else {
@@ -906,10 +897,8 @@ function parseTecnicaKi(elemento,texto) {
                 }
                 break;
             case 'allEfectos':
-                console.log("--All efectos: (lo ignoro)");
                 break;
             default:
-                console.log("--"+k+": "+v);
                 elemento[k] = v;
         }
     });
@@ -1289,7 +1278,6 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseArrayYelmoComprado(v);
                 break;
             default:
-                console.log(k + " = " + v);
                 personaje_actual[k] = v;
         }
     });
