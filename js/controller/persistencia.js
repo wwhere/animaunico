@@ -725,7 +725,7 @@ function parseArrayArmaComprada(v) {
 function parseEquipoComprado(elemento,texto) {
     parseObject(texto,function(k,v) {
         switch (k) {
-            case 'equipo':
+            case 'equipoComprado':
                 elemento[k] = parseEquipo(v);
                 break;
             default:
@@ -840,18 +840,30 @@ function parseHabilidadKi(texto) {
 /**
  *
  * @param {string} v
- * @returns {TecnicaKi[]}
+ * @returns {TecnicaKiComprada[]}
  */
-function parseArrayTecnicaKi(v) {
+function parseArrayTecnicaKiComprada(v) {
     var tecs = [];
-
     for (var i = 0; i < v.length;i++) {
-        var tecnica = new TecnicaKi(1);
-        parseTecnicaKi(tecnica,v[i]);
+        var tecnica = new TecnicaKiComprada("");
+        parseTecnicaKiComprada(tecnica,v[i]);
         tecs.push(tecnica);
     }
-
     return tecs;
+}
+
+function parseTecnicaKiComprada(elemento,texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'tecnicaKi':
+                var tecnica = new TecnicaKi(1);
+                parseTecnicaKi(tecnica,v);
+                elemento[k] = tecnica;
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
 }
 
 function parseTecnicaKi(elemento,texto) {
@@ -863,7 +875,6 @@ function parseTecnicaKi(elemento,texto) {
                 } else {
                     elemento[k] = new EfectoTecnicaElegido();
                     parseEfectoTecnicaElegido(elemento[k], v);
-                    elemento.allEfectos[k] = elemento[k];
                 }
                 break;
             case 'efectosSecundarios':
@@ -885,6 +896,8 @@ function parseTecnicaKi(elemento,texto) {
                     parseStandard(elemento[k],v);
                 }
                 break;
+            case 'allEfectos':
+                break;
             default:
                 elemento[k] = v;
         }
@@ -897,7 +910,6 @@ function parseArrayEfectoTecnicaElegido(v, tecnica) {
     for (var i = 0; i < v.length;i++) {
         var elemento = new EfectoTecnicaElegido();
         parseEfectoTecnicaElegido(elemento, v[i]);
-        tecnica.allEfectos[elemento.getNombre()] = elemento;
         array.push(elemento);
     }
 
@@ -936,7 +948,7 @@ function parseEfectoTecnica(texto) {
 
 function parseNivelEfectoTecnica(texto) {
     var valores = texto.split("--");
-    var nombreNivelEfectoTecnica = valores[0];
+    var nombreNivelEfectoTecnica = valores[0].replace("_PLUS_","+");
     var nombreEfectoTecnica = valores[1];
     var efecto = getEfectoTecnicaKi(nombreEfectoTecnica);
     return efecto.getNivelEfectoPorNombre(nombreNivelEfectoTecnica);
@@ -1225,7 +1237,7 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseArrayHabilidadKiComprada(v);
                 break;
             case 'tecnicasKi':
-                personaje_actual[k] = parseArrayTecnicaKi(v);
+                personaje_actual[k] = parseArrayTecnicaKiComprada(v);
                 break;
             case 'numTecnicas':
                 personaje_actual.numTecnicas = parseNumTecnicas(v);
@@ -1266,7 +1278,6 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = parseArrayYelmoComprado(v);
                 break;
             default:
-                console.log(k + " = " + v);
                 personaje_actual[k] = v;
         }
     });
