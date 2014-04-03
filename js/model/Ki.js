@@ -705,6 +705,33 @@ TecnicaKi.prototype = {
         return this.nombre;
     },
 
+    toString : function() {
+        var cadena = this.nombre + ": " + _l(UI_NV) + " " + this.nivel+"; ";
+
+        cadena += _l(UI_CM) + ": " + this.getCosteCM() + "; ";
+        cadena += _l(UI_COSTE_KI) + ": " + this.getCosteKi().toString() + "; ";
+        if (this.isMantenida()) {
+            cadena += _l(UI_COSTE_MANTENIMIENTO) + ": " + this.getCosteMantenimiento().toString() + "; ";
+        }
+
+        cadena += _l(UI_EFECTOS_DE_LA_TECNICA) + ": ";
+
+        if (this.efectoPrimario)
+            cadena += this.efectoPrimario.getNombreCompleto();
+
+        for (var i = 0; i < this.efectosSecundarios.length; i++) {
+            cadena += ", " + this.efectosSecundarios[i].getNombreCompleto();
+        }
+
+        cadena += _l(UI_DESVENTAJAS_DE_LA_TECNICA) + ": ";
+
+        for ( i = 0; i < this.desventajas.length; i++) {
+            cadena += ", " + this.desventajas[i].getNombreCompleto();
+        }
+
+        return cadena;
+    },
+
     /**
      *
      * @param {string} valor
@@ -1640,6 +1667,17 @@ DesventajaTecnicaElegida.prototype = {
         return nombre;
     },
 
+    getNombreCompleto : function() {
+        var nombre = _l(this.desventajaTecnica.getNombre());
+        if (this.hasDescripcionPropia) {
+            nombre += " (" + _l(this.descripcion) + ")";
+        }
+        if (this.isAtaduraElemental()) {
+            nombre += " [" + this.getAtaduraElemental().toString() + "]";
+        }
+        return nombre;
+    },
+
     /**
      *
      * @returns {Array}
@@ -1817,22 +1855,22 @@ ElementosAfines.prototype = {
         var str = "";
 
         if (this.agua) {
-            str += "agua,";
+            str += _l(ELEMENTO_AGUA) + ",";
         }
         if (this.fuego) {
-            str += "fuego,";
+            str += _l(ELEMENTO_FUEGO) +",";
         }
         if (this.aire) {
-            str += "aire,";
+            str += _l(ELEMENTO_AIRE) +",";
         }
         if (this.tierra) {
-            str += "tierra,";
+            str += _l(ELEMENTO_TIERRA) +",";
         }
         if (this.luz) {
-            str += "luz,";
+            str += _l(ELEMENTO_LUZ)+",";
         }
         if (this.oscuridad) {
-            str += "oscuridad,";
+            str += _l(ELEMENTO_OSCURIDAD)+",";
         }
 
         if (str.length > 0) {

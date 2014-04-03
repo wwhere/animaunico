@@ -923,7 +923,7 @@ function muestraTecnicasKi(muestraBotones) {
     for (var i = 0; i < tecnicasKi.length; i++) {
         var divTecnica = getDiv("");
 
-        divTecnica.append(_l(tecnicasKi[i].getNombre()));
+        divTecnica.append(_l(tecnicasKi[i].toString()));
         if (muestraBotones) {
             divTecnica.append(muestraBotonAnular(anularTecnicaKi,{tecnicaKi: tecnicasKi[i]}));
         }
