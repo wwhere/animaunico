@@ -1073,6 +1073,9 @@ function muestraSobrenatural(estadoGeneracion) {
 
     divContenido.append(muestraElementalismo());
 
+    divContenido.append(muestraSubtitulo(UI_INVOCACIONES, false));
+    divContenido.append(muestraInvocaciones(muestraBotones));
+
     div.append(divContenido);
     return div;
 }

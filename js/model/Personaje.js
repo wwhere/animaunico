@@ -152,6 +152,11 @@ function Personaje(nivelInicial) {
      * @type {string}
      */
     this.elementalismo = ELEMENTALISMO_NINGUNO;
+
+    /**
+     * @type {Invocacion[]}
+     */
+    this.invocaciones = [];
     //endregion Magia
 
     //region Bonos y Costes Reducidos
@@ -1572,10 +1577,31 @@ Personaje.prototype = {
 
     /**
      *
+     * @returns {Invocacion[]}
+     */
+    getInvocaciones : function() {
+        return this.invocaciones;
+    },
+
+    /**
+     *
      * @returns {number}
      */
     getDesequilibrioOfensivoMagico : function() {
         return this.desequilibrioOfensivoMagico;
+    },
+
+    /**
+     * @param {string} nombreInvocacion
+     * @returns {boolean}
+     */
+    hasInvocacion : function(nombreInvocacion) {
+        for (var i = 0; i < this.invocaciones.length; i++) {
+            if (this.invocaciones[i].getNombre() == nombreInvocacion) {
+                return true;
+            }
+        }
+        return false;
     },
 
     /**
@@ -1588,11 +1614,28 @@ Personaje.prototype = {
     },
 
     /**
+     * @param {Invocacion} invocacion
+     */
+    addInvocacion : function(invocacion) {
+        this.invocaciones.push(invocacion);
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
+    /**
      *
      * @returns {boolean}
      */
     puedeAjustarDesequilibrioOfensivoMagico : function() {
         return this[HB_PROYECCION_MAGICA].getPDinvertidos() > 0
+    },
+
+
+    /**
+     * @param {string} nombreInvocacion
+     */
+    removeInvocacion : function(nombreInvocacion) {
+        this.invocaciones = limpiarArrayObjetosPorCampo(this.invocaciones,'nombre',nombreInvocacion)
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
 
 
