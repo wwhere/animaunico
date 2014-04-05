@@ -335,3 +335,7 @@ var VENT_ALIADO_PODEROSO = (new L("VENT_ALIADO_PODEROSO","Aliado poderoso",
     "Aliado poderoso")).getId();
 var VENT_ALIADO_PODEROSO_DESC = (new L("VENT_ALIADO_PODEROSO_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo.",
     "Los efectos de esta ventaja se aplican únicamente al plano interpretativo.")).getId();
+var VENT_SANGRE_ANTIGUA = (new L("VENT_SANGRE_ANTIGUA","Sangre antigua",
+    "Sangre antigua")).getId();
+var VENT_SANGRE_ANTIGUA_DESC = (new L("VENT_SANGRE_ANTIGUA_DESC","Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.",
+    "Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.")).getId();
