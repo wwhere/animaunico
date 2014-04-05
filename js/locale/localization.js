@@ -983,3 +983,13 @@ var ELEMENTALISMO_OSCURIDAD = (new L("ELEMENTALISMO_OSCURIDAD","Oscuridad","Dark
 
 var INVOCACIONES_ARCANOS = (new L("INVOCACIONES_ARCANOS","Arcanos","Arcana")).getId();
 
+var UI_PENALIZADOR_TODA_ACCION = (new L("UI_PENALIZADOR_TODA_ACCION","Penalizador a toda acción","All actions penalty")).getId();
+var UI_PENALIZADOR_NATURAL = (new L("UI_PENALIZADOR_NATURAL", "Penalizador natural por armadura", "Armor natural penalty")).getId();
+
+/*************ORIGENES DE BONOS*/
+var ORIGEN_CARAC = (new L("ORIGEN_CARAC","Característica","Attribute")).getId();
+var ORIGEN_CATEGORIA = (new L("ORIGEN_CATEGORIA","Categoría","Class")).getId();
+var ORIGEN_HABILIDAD_NATURAL = (new L("ORIGEN_HABILIDAD_NATURAL","Habilidad Natural","Natural ability")).getId();
+var ORIGEN_BONIFICADOR_NATURAL = (new L("ORIGEN_BONIFICADOR_NATURAL","Bonificador Natural","Natural bonus")).getId();
+var ORIGEN_ARMADURA = (new L("ORIGEN_ARMADURA","Armadura","Armor")).getId();
+/****************************/

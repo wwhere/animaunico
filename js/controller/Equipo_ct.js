@@ -227,7 +227,10 @@ function armaMayor(arma, tam) {
 function sumarArmadura(valoresTA_1,valoresTA_2) {
     var salida =  [];
     for (var i=0;i<valoresTA_1.length;i++) {
-        salida.push(valoresTA_1[i]+valoresTA_2[i]);
+        var valor = valoresTA_1[i]+valoresTA_2[i];
+        if (valor < 0)
+            valor = 0;
+        salida.push(valor);
     }
     return salida;
 }
@@ -478,4 +481,101 @@ function desequipaYelmos() {
     for (var i = 0; i < personaje_actual.yelmos.length; i++) {
         personaje_actual.yelmos[i].setEquipado(false);
     }
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaduraComprada[]} armadura
+ * @returns {number}
+ */
+function penalizadorTodaAccionPorArmadura(personaje, armadura) {
+    var requisito = 0;
+    var penalizador;
+    for (var i = 0; i < armadura.length; i++) {
+        requisito += armadura[i].getRequisitoArmadura();
+    }
+
+    /**
+     *
+     * @type {HabilidadDePersonaje}
+     */
+    var habilidad = personaje[HB_ARMADURA];
+    var valor = habilidad.valorFinalActual();
+
+    if (valor >= requisito) {
+        penalizador =  0;
+    } else {
+        if (requisito > 0)
+            penalizador = requisito - valor;
+    }
+
+    return penalizador;
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaduraComprada[]} armadura
+ * @returns {number}
+ */
+function penalizadorNaturalPorArmadura(personaje, armadura) {
+    var requisito = 0;
+    var penalizador = 0;
+
+    for (var i = 0; i < armadura.length; i++) {
+        requisito += armadura[i].getRequisitoArmadura();
+        penalizador += armadura[i].getPenalizadorNatural();
+    }
+
+    /**
+     *
+     * @type {HabilidadDePersonaje}
+     */
+    var habilidad = personaje[HB_ARMADURA];
+    var valor = habilidad.valorFinalActual();
+
+    if (valor > requisito) {
+        penalizador += valor-requisito;
+    }
+
+    if (penalizador > 0)
+        penalizador = 0;
+
+    if (armadura.length > 1)
+        penalizador += -20*(armadura.length-1);
+
+    return penalizador;
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ * @param {ArmaduraComprada[]} armadura
+ * @returns {number}
+ */
+function penalizadorMovimientoPorArmadura(personaje, armadura) {
+    var requisito = 0;
+    var penalizador = 0;
+
+    for (var i = 0; i < armadura.length; i++) {
+        requisito += armadura[i].getRequisitoArmadura();
+        penalizador += armadura[i].getRestriccionMovimiento();
+    }
+
+    /**
+     *
+     * @type {HabilidadDePersonaje}
+     */
+    var habilidad = personaje[HB_ARMADURA];
+    var valor = habilidad.valorFinalActual();
+
+    if (valor > requisito) {
+        penalizador -= Math.floor((valor-requisito)/50);
+    }
+
+    if (penalizador < 0)
+        penalizador = 0;
+
+    return penalizador;
 }

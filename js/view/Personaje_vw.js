@@ -796,7 +796,19 @@ function muestraCombate(estadoGeneracion) {
     divContenido.append(muestraArmadura());
 
     divContenido.append(muestraSubtitulo(UI_TURNO, false));
-    divContenido.append(muestraValorConBonos(_l(UI_TURNO), personaje_actual.turnoBase, personaje_actual.getBonos(BONO_TURNO, BONO_TURNO, CATEGORIA_BONO_CUALQUIERA)));
+
+    var divTurno = getDiv(CSS_CAMPO_PERSONALES);
+    var divEtiqueta = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL);
+    var divValor = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL);
+    var tooltip = "";
+
+    divEtiqueta.append(_l(UI_TURNO) + ":");
+    divValor.append(personaje_actual.getTurnoFijo());
+    tooltip = personaje_actual.getExplicacionTurnoFijo();
+    addToolTip(divValor,tooltip);
+    divTurno.append(divEtiqueta).append(divValor);
+
+    divContenido.append(divTurno);
 
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES],muestraBotones));
@@ -999,21 +1011,21 @@ function muestraCombateHabilidadesGenerales(muestraBotones) {
 
 function muestraArmadura() {
     var div = getDiv(CSS_TEXTO_SMALL).addClass("sixteen colgrid");
-    var divDescripcion = getDiv("row");
-    var divArmadura1 = getDiv("five columns").addClass(CSS_TEXTO_CENTRO);
-    var divArmadura2 = getDiv("six columns").addClass(CSS_TEXTO_CENTRO);
-    var divArmadura3 = getDiv("five columns").addClass(CSS_TEXTO_CENTRO);
+    var divDescripcion = $("<ul></ul>").addClass("three_up tiles").addClass(CSS_TEXTO_SMALL);
 
-    if (personaje_actual.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura1.append("[" + personaje_actual.capaArmaduraDura.toString() + "]");
+    for (var j = 0; j < personaje_actual.armaduras.length; j++) {
+        if (personaje_actual.armaduras[j].isEquipado()) {
+            var divArmadura = getDiv(CSS_MUESTRA_INLINE).append(personaje_actual.armaduras[j].toString());
+            addToolTip(divArmadura,personaje_actual.armaduras[j].getTAs().toString());
+            divDescripcion.append($("<li></li>").
+                append(divArmadura).
+                append(muestraBotonPequeño("X",{armadura: personaje_actual.armaduras[j]},function(params) {
+                    params.armadura.setEquipado(false);
+                    lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+                    lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+                },"")));
+        }
     }
-    if (personaje_actual.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura2.append("[" + personaje_actual.capaArmaduraBlanda1.toString() + "]");
-    }
-    if (personaje_actual.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
-        divArmadura3.append("[" + personaje_actual.capaArmaduraBlanda2.toString() + "]");
-    }
-    divDescripcion.append(divArmadura1).append(divArmadura2).append(divArmadura3);
     div.append(divDescripcion);
 
     var divRowArmadura = getDiv("row");
@@ -1033,6 +1045,9 @@ function muestraArmadura() {
         divRowArmadura.append(divCol);
     }
     div.append(divRowArmadura);
+
+    var divRowPenalizador = getDiv("row").append(_l(UI_PENALIZADOR_TODA_ACCION) + ": " + getPenalizadorTodaAccionPorArmaduraActual(personaje_actual));
+    div.append(divRowPenalizador);
 
     if (personaje_actual.capaYelmo.getNombre() != ARMADURA_NINGUNA) {
         var divDescripcionYelmo = getDiv("row");
@@ -1385,8 +1400,13 @@ function muestraSecundarias(estadoGeneracion) {
             if (habilidadDePersonaje.getEspecializacion() != "") {
                 etiqueta += " (" + _l(habilidadDePersonaje.getEspecializacion()) + ")";
             }
+            var bonos = personaje_actual.getBonos(BONO_HABILIDAD, habilidadDePersonaje.getHabilidad().getNombre(), CATEGORIA_BONO_CUALQUIERA);
+            if (habilidadDePersonaje.getPenalizadorArmadura()) {
+                var penalizaroArmadura = new Bono(BONO_HABILIDAD,habilidadDePersonaje.getHabilidad().getNombre(),getPenalizadorNaturalPorArmaduraActual(personaje_actual),"",false,BONO_NATURAL,ORIGEN_ARMADURA);
+                bonos.push(penalizaroArmadura);
+            }
             divContenido.append(
-                muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), personaje_actual.getBonos(BONO_HABILIDAD, habilidadDePersonaje.getHabilidad().getNombre(), CATEGORIA_BONO_CUALQUIERA), coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), false)
+                muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), bonos, coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), false)
             );
         }
     }
@@ -1540,27 +1560,23 @@ function muestraEquipamiento() {
             var armadura = ev.data.armadura;
 
             if (armadura.getClase() == ARMADURA_CLASE_DURA) {
-                if (!armadura.isEquipado()) {
-                    desequipaArmaduras(true);
-                    personaje_actual.capaArmaduraDura = armadura;
-                } else {
-                    personaje_actual.capaArmaduraDura = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],false);
-                }
+                desequipaArmaduras(true);
             } else {
                 if (!armadura.isEquipado()) {
-                    if (personaje_actual.capaArmaduraBlanda1.getNombre() == ARMADURA_NINGUNA) {
-                        personaje_actual.capaArmaduraBlanda1 = armadura;
-                    } else if (personaje_actual.capaArmaduraBlanda2.getNombre() == ARMADURA_NINGUNA) {
-                        personaje_actual.capaArmaduraBlanda2 = armadura;
-                    } else {
-                        desequipaArmadura(personaje_actual.capaArmaduraBlanda2.toString());
-                        personaje_actual.capaArmaduraBlanda2 = armadura;
+                    var primeraBlanda = false;
+                    var numBlandas = 0;
+                    for (var k = 0; k < personaje_actual.armaduras.length; k++) {
+                        if (personaje_actual.armaduras[k].isEquipado()) {
+                            if (personaje_actual.armaduras[k].getClase() == ARMADURA_CLASE_BLANDA) {
+                                if (!primeraBlanda) {
+                                    primeraBlanda = personaje_actual.armaduras[k];
+                                }
+                                numBlandas++;
+                            }
+                        }
                     }
-                } else {
-                    if (personaje_actual.capaArmaduraBlanda1.toString() == armadura.toString()) {
-                        personaje_actual.capaArmaduraBlanda1 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
-                    } else {
-                        personaje_actual.capaArmaduraBlanda2 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
+                    if (numBlandas == 2) {
+                        primeraBlanda.setEquipado(false);
                     }
                 }
             }
