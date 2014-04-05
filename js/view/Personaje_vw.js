@@ -246,7 +246,8 @@ function muestraDesarrollo(estadoGeneracion) {
         divContenido.append(muestraPersonal(_l(UI_PUNTOS_CREACION), personaje_actual.getPCTotales() +
             "(" + personaje_actual.getPC("PC_libres_generales") + " " + _l(UI_PUNTOS_SIN_USAR) + ")" +
             "(" + personaje_actual.getPC("PC_libres_don") + " " + _l(UI_PC_DON) + ")" +
-            "(" + personaje_actual.getPC("PC_libres_psiquicas") + " " + _l(UI_PC_PSIQUICA) + ")", false));
+            "(" + personaje_actual.getPC("PC_libres_psiquicas") + " " + _l(UI_PC_PSIQUICA) + ")" +
+            "(" + personaje_actual.getPC("PC_libres_trasfondo") + " " + _l(UI_PC_TRASFONDO) + ")", false));
     }
 
     if (mostrarPDyPCArriba) {

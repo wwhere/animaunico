@@ -26,6 +26,7 @@ var categoriasDeVentajasComprables = [
     GRUPO_CAPACIDADES,
     GRUPO_SECUNDARIAS,
     GRUPO_KI,
+    GRUPO_TRASFONDO,
     GRUPO_DON,
     GRUPO_PSIQUICAS,
     GRUPO_OTRAS
@@ -708,6 +709,21 @@ function fondosIniciales(coste, opcion, aplicar) {
         personaje_actual.addDinero(mo,0,0);
     } else {
         personaje_actual.addDinero(-1 * mo,0,0);
+    }
+}
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
+function deudas(coste, opcion, aplicar) {
+    personaje_actual._dinero_por_deudas = personaje_actual.getDinero().totalEnCobre();
+    if (aplicar) {
+        personaje_actual.addDinero(0,0,-1*personaje_actual._dinero_por_deudas);
+    } else {
+        personaje_actual.addDinero(0,0,personaje_actual._dinero_por_deudas);
     }
 }
 

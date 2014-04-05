@@ -310,3 +310,32 @@ var VENT_DESEQUILIBRIO_ELEMENTAL = (new L("VENT_DESEQUILIBRIO_ELEMENTAL","Desequ
     "Elemental Compatibility")).getId();
 var VENT_DESEQUILIBRIO_ELEMENTAL_DESC = (new L("VENT_DESEQUILIBRIO_ELEMENTAL_DESC","El personaje dispone de un bono especial de +20 a su ACT y un +20 a su RM en la vía mágica que elija. Cuando utilice conjuros de la vía opuesta, aplicará un penalizador de –20 a su ACT y un –20 a su RM. Si la vía elegida es la nigromancia, el penalizador se aplicará a todas las demás.",
     "El personaje dispone de un bono especial de +20 a su ACT y un +20 a su RM en la vía mágica que elija. Cuando utilice conjuros de la vía opuesta, aplicará un penalizador de –20 a su ACT y un –20 a su RM. Si la vía elegida es la nigromancia, el penalizador se aplicará a todas las demás.")).getId();
+
+var VENT_FAMA = (new L("VENT_FAMA","Fama",
+    "Fama")).getId();
+var VENT_FAMA_DESC = (new L("VENT_FAMA_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo. El jugador debe determinar la causa de la fama de su personaje en el momento de su creación. Esta ventaja otorga 40 ó 65 puntos de fama, dependiendo de los PC que invierta.",
+    "Los efectos de esta ventaja se aplican únicamente al plano interpretativo. El jugador debe determinar la causa de la fama de su personaje en el momento de su creación. Esta ventaja otorga 40 ó 65 puntos de fama, dependiendo de los PC que invierta.")).getId();
+var VENT_RAICES_CULTURALES = (new L("VENT_RAICES_CULTURALES","Raíces culturales",
+    "Raíces culturales")).getId();
+var VENT_RAICES_CULTURALES_DESC = (new L("VENT_RAICES_CULTURALES_DESC","Esta ventaja otorga un bono especial a varias habilidades secundarias, atendiendo a la posición social y al país de origen del personaje.",
+    "Esta ventaja otorga un bono especial a varias habilidades secundarias, atendiendo a la posición social y al país de origen del personaje.")).getId();
+var VENT_SANTO = (new L("VENT_SANTO","Santo",
+    "Santo")).getId();
+var VENT_SANTO_DESC = (new L("VENT_SANTO_DESC","Los efectos de esta ventaja son únicamente a nivel interpretativo.",
+    "Los efectos de esta ventaja son únicamente a nivel interpretativo.")).getId();
+var VENT_POSICION_SOCIAL = (new L("VENT_POSICION_SOCIAL","Posición social",
+    "Posición social")).getId();
+var VENT_POSICION_SOCIAL_DESC = (new L("VENT_POSICION_SOCIAL_DESC","Además de sus efectos en el plano interpretativo, esta ventaja otorga al personaje acceso a las clases reservadas de cada principado, sin la necesidad de que realice ninguna tirada de dados. Su valor en Puntos de Creación depende, consecuentemente, del nivel de dichas clases.",
+    "Además de sus efectos en el plano interpretativo, esta ventaja otorga al personaje acceso a las clases reservadas de cada principado, sin la necesidad de que realice ninguna tirada de dados. Su valor en Puntos de Creación depende, consecuentemente, del nivel de dichas clases.")).getId();
+var VENT_CONTACTOS = (new L("VENT_CONTACTOS","Contactos",
+    "Contactos")).getId();
+var VENT_CONTACTOS_DESC = (new L("VENT_CONTACTOS_DESC","Siempre que lo requiera, un individuo con esta ventaja puede usar sus contactos para obtener información o ayuda limitada dentro de sus ámbitos de influencia.",
+    "Siempre que lo requiera, un individuo con esta ventaja puede usar sus contactos para obtener información o ayuda limitada dentro de sus ámbitos de influencia.")).getId();
+var VENT_ALIADO_PODEROSO = (new L("VENT_ALIADO_PODEROSO","Aliado poderoso",
+    "Aliado poderoso")).getId();
+var VENT_ALIADO_PODEROSO_DESC = (new L("VENT_ALIADO_PODEROSO_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo.",
+    "Los efectos de esta ventaja se aplican únicamente al plano interpretativo.")).getId();
+var VENT_SANGRE_ANTIGUA = (new L("VENT_SANGRE_ANTIGUA","Sangre antigua",
+    "Sangre antigua")).getId();
+var VENT_SANGRE_ANTIGUA_DESC = (new L("VENT_SANGRE_ANTIGUA_DESC","Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.",
+    "Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.")).getId();

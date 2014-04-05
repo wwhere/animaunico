@@ -360,6 +360,8 @@ function aplicarVentajaFinal(elementoPC, coste, opcion) {
         aplicarVentajaFinalGrupo(coste, elementoPC, opcion, "PC_libres_don", "don");
     } else if (elementoPC.getGrupo() == GRUPO_PSIQUICAS) {
         aplicarVentajaFinalGrupo(coste, elementoPC, opcion, "PC_libres_psiquicas", "psiquica");
+    } else if (elementoPC.getGrupo() == GRUPO_TRASFONDO) {
+        aplicarVentajaFinalGrupo(coste, elementoPC, opcion, "PC_libres_trasfondo", "trasfondo");
     } else {
         aplicarVentajaFinalGrupo(coste, elementoPC, opcion);
     }
@@ -658,7 +660,7 @@ function compra(tipoCompra, parametros, coste) {
             break;
         case TABLA_ARMAS:
             var tabla = getTablaArmas(parametros.tablaArmas.getNombre());
-            if (tabla.getTipoTabla() == TABLA_ESPECIAL) {
+            if ((tabla.getTipoTabla() == TABLA_ESPECIAL) && (tabla.getOpciones()[0] != TABLA_REPETIBLE)) {
                 personaje_actual.addTablaArmasEspecial(parametros.tablaArmas.getNombre(), parametros.opcion);
             } else {
                 personaje_actual.addTablaArmas(parametros.tablaArmas.getNombre());
@@ -854,6 +856,8 @@ function compraTablaArmasEspecial(tablaArmas, tipoCompra, costeFinal) {
         } else if (efectoTabla == TABLA_TIPOLOGIA) {
             var tiposArmas = getAllTipos();
             dialogoElegirTipoArma(tiposArmas, {principal: compraTablaEspecial, isDisabled: noPuedeComprarManejoTipo}, {tablaArmas: tablaArmas, tipoCompra: tipoCompra, costeFinal: costeFinal});
+        } else if (efectoTabla == TABLA_REPETIBLE) {
+            compraTablaEspecial({tablaArmas: tablaArmas, tipoCompra: tipoCompra, costeFinal: costeFinal})
         }
     }
 }

@@ -183,6 +183,12 @@ function Personaje(nivelInicial) {
     /** @type number */
     this.PC_psiquicas = 0;
 
+    /**
+     *
+     * @type {number}
+     */
+    this.PC_trasfondo = 0;
+
     /** @type number */
     this.PC_libres_generales = 3;
 
@@ -191,6 +197,12 @@ function Personaje(nivelInicial) {
 
     /** @type number */
     this.PC_libres_psiquicas = 0;
+
+    /**
+     *
+     * @type {number}
+     */
+    this.PC_libres_trasfondo = 0;
 
     /** @type {number}*/
     this.aumentosCaracteristicasLibres = getAumentosCaracteristicasPorNivel(nivelInicial);
@@ -1995,8 +2007,8 @@ Personaje.prototype = {
         var i,j;
         this.PC_don = 0;
         this.PC_psiquicas = 0;
+        this.PC_trasfondo = 0;
         this.PC_generales = 3;
-
 
         var desactivado = false;
         if (notificacionesActivas) {
@@ -2011,6 +2023,8 @@ Personaje.prototype = {
                 this.PC_don -= this.desventajas[i].getPc();
             } else if (this.desventajas[i].getVentaja().getGrupo() == GRUPO_PSIQUICAS) {
                 this.PC_psiquicas -= this.desventajas[i].getPc();
+            } else if (this.desventajas[i].getVentaja().getGrupo() == GRUPO_TRASFONDO) {
+                this.PC_trasfondo -= this.desventajas[i].getPc();
             } else if (this.desventajas[i].getVentaja().getGrupo() != GRUPO_RAZAS) {
                 this.PC_generales -= this.desventajas[i].getPc();
             }
@@ -2018,6 +2032,7 @@ Personaje.prototype = {
 
         this.PC_libres_don = this.PC_don;
         this.PC_libres_psiquicas = this.PC_psiquicas;
+        this.PC_libres_trasfondo = this.PC_trasfondo;
         this.PC_libres_generales = this.PC_generales;
 
         for (i = 0; i < this.ventajas.length;i++) {
@@ -2025,6 +2040,8 @@ Personaje.prototype = {
                 this.PC_libres_don -= this.ventajas[i].getPc();
             } else if ((this.ventajas[i].getVentaja().getGrupo() == GRUPO_PSIQUICAS) && !(this.ventajas[i].getVentaja().isBasica)) {
                 this.PC_libres_psiquicas -= this.ventajas[i].getPc();
+            } else if ((this.ventajas[i].getVentaja().getGrupo() == GRUPO_TRASFONDO)) {
+                this.PC_libres_trasfondo -= this.ventajas[i].getPc();
             } else if (this.ventajas[i].getVentaja().getGrupo() != GRUPO_RAZAS){
                 this.PC_libres_generales -= this.ventajas[i].getPc();
             }
@@ -2037,6 +2054,10 @@ Personaje.prototype = {
         if (this.PC_libres_psiquicas < 0) {
             this.PC_libres_generales += this.PC_libres_psiquicas;
             this.PC_libres_psiquicas = 0;
+        }
+        if (this.PC_libres_trasfondo < 0) {
+            this.PC_libres_generales += this.PC_libres_trasfondo;
+            this.PC_libres_trasfondo = 0;
         }
         if (this.PC_libres_generales < 0) {
             var aumentosAGastar = 0 - this.PC_libres_generales;
@@ -2979,9 +3000,12 @@ Personaje.prototype = {
         }
 
         var tablasLimpias = [];
+        var borrada = false;
         for (i = 0; i < this.tablasArmas.length;i++) {
-            if (((this.tablasArmas[i].getNombre() != tabla.getNombre()) || (this.tablasArmas[i].getOpcion() != tabla.getOpcion()))) {
+            if ((((this.tablasArmas[i].getNombre() != tabla.getNombre()) || (this.tablasArmas[i].getOpcion() != tabla.getOpcion()))) || borrada) {
                 tablasLimpias.push(this.tablasArmas[i]);
+            } else {
+                borrada = true;
             }
         }
 
