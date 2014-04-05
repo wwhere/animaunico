@@ -23,7 +23,7 @@ var habilidades_atleticas_set = [HB_ACROBACIAS,HB_ATLETISMO,HB_MONTAR,HB_NADAR,H
  *
  * @type {string[]}
  */
-var habilidades_sociales_set = [HB_ESTILO,HB_INTIMIDAR,HB_LIDERAZGO,HB_PERSUASION];
+var habilidades_sociales_set = [HB_COMERCIAR,HB_CONOCIMIENTO_DE_LAS_CALLES,HB_ESTILO,HB_ETIQUETA,HB_INTIMIDAR,HB_LIDERAZGO,HB_PERSUASION];
 
 /**
  *
@@ -41,7 +41,7 @@ var habilidades_perceptivas_set = [HB_ADVERTIR,HB_BUSCAR,HB_RASTREAR];
  *
  * @type {string[]}
  */
-var habilidades_intelectuales_set = [HB_ANIMALES,HB_CIENCIA,HB_HERBOLARIA,HB_HISTORIA,HB_MEDICINA,HB_MEMORIZAR,HB_NAVEGACION,HB_OCULTISMO,HB_TASACION,HB_VALORACION_MAGICA];
+var habilidades_intelectuales_set = [HB_ANIMALES,HB_CIENCIA,HB_HERBOLARIA,HB_HISTORIA,HB_LEY,HB_MEDICINA,HB_MEMORIZAR,HB_NAVEGACION,HB_OCULTISMO,HB_TACTICA,HB_TASACION,HB_VALORACION_MAGICA];
 
 /**
  *
@@ -214,7 +214,10 @@ function initHabilidadesSecundariasAtleticas() {
  *
  */
 function initHabilidadesSecundariasSociales() {
+    addHabilidad(new Habilidad(HB_COMERCIAR, TIPO_HB_SOCIALES, false, INT, false, PEN_ARMADURA_NO, LISTA_COMERCIOS, 5, 1));
+    addHabilidad(new Habilidad(HB_CONOCIMIENTO_DE_LAS_CALLES, TIPO_HB_SOCIALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_ESTILO, TIPO_HB_SOCIALES, false, POD, false, PEN_ARMADURA_NO, [], 5, 1));
+    addHabilidad(new Habilidad(HB_ETIQUETA, TIPO_HB_SOCIALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_INTIMIDAR, TIPO_HB_SOCIALES, false, VOL, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_LIDERAZGO, TIPO_HB_SOCIALES, false, POD, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_PERSUASION, TIPO_HB_SOCIALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
@@ -250,10 +253,12 @@ function initHabilidadesSecundariasIntelectuales() {
     addHabilidad(new Habilidad(HB_CIENCIA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, LISTA_CIENCIAS, 5, 1));
     addHabilidad(new Habilidad(HB_HERBOLARIA, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_HISTORIA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, LISTA_TEMAS_HISTORIA, 5, 1));
+    addHabilidad(new Habilidad(HB_LEY, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, [], 5, 1)); //TODO filtrar si no se usa el libro
     addHabilidad(new Habilidad(HB_MEDICINA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_MEMORIZAR, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_NAVEGACION, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_OCULTISMO, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
+    addHabilidad(new Habilidad(HB_TACTICA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_TASACION, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_VALORACION_MAGICA, TIPO_HB_INTELECTUALES, false, POD, true, PEN_ARMADURA_NO, [], 5, 1));
 }

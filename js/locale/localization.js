@@ -448,6 +448,8 @@ var UI_ESP_CLAVICORDIO =  (new L("Clavicordio","Clavicordio","Clavichord")).getI
 var UI_ESP_ARPA =  (new L("Arpa","Arpa","Harp")).getId();
 var UI_ESP_JUEGOS_CARTAS =  (new L("Juegos de cartas","Juegos de cartas","Card games")).getId();
 var UI_ESP_MALABARES =  (new L("Malabares","Malabares","Juggling")).getId();
+var UI_JOYERIA =  (new L("Joyería","Joyería","Jeweler")).getId();
+var UI_PESCADO =  (new L("Pescado","Pescado","Fish")).getId();
 
 var ATAQUE_FIL = (new L("ata FILo","FILo","CUTting")).getId();
 var ATAQUE_CON = (new L("ata CONtundente","CONtundente","IMPact")).getId();
@@ -752,6 +754,9 @@ var HB_ESTILO = (new L("Estilo","Estilo","Style")).getId();
 var HB_INTIMIDAR = (new L("Intimidar","Intimidar","Intimidate")).getId();
 var HB_LIDERAZGO = (new L("Liderazgo","Liderazgo","Leadership")).getId();
 var HB_PERSUASION = (new L("Persuasión","Persuasión","Persuasion")).getId();
+var HB_COMERCIAR = (new L("Comerciar","Comerciar","Comerce")).getId();
+var HB_CONOCIMIENTO_DE_LAS_CALLES = (new L("Conocimiento de las calles","Conocimiento de las calles","Streetwise")).getId();
+var HB_ETIQUETA = (new L("Etiqueta","Etiqueta","Etiqueta")).getId();
 
 var TIPO_HB_SUBTERFUGIO = (new L("Subterfugio","Subterfugio","Subterfuge")).getId();
 var HB_CERRAJERIA = (new L("Cerrajería","Cerrajería","Lock Picking")).getId();
@@ -778,6 +783,8 @@ var HB_NAVEGACION = (new L("Navegación","Navegación","Navigation")).getId();
 var HB_OCULTISMO = (new L("Ocultismo","Ocultismo","Occult")).getId();
 var HB_TASACION = (new L("Tasación","Tasación","Appraisal")).getId();
 var HB_VALORACION_MAGICA = (new L("Valoración mágica","Valoración mágica","Magic Appraisal")).getId();
+var HB_LEY = (new L("Ley","Ley","Law")).getId();
+var HB_TACTICA = (new L("Táctica","Táctica","Tactic")).getId();
 
 var TIPO_HB_VIGOR = (new L("Vigor","Vigor","Vigor")).getId();
 var HB_FRIALDAD = (new L("Frialdad","Frialdad","Composure")).getId();
