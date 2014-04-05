@@ -360,6 +360,8 @@ function aplicarVentajaFinal(elementoPC, coste, opcion) {
         aplicarVentajaFinalGrupo(coste, elementoPC, opcion, "PC_libres_don", "don");
     } else if (elementoPC.getGrupo() == GRUPO_PSIQUICAS) {
         aplicarVentajaFinalGrupo(coste, elementoPC, opcion, "PC_libres_psiquicas", "psiquica");
+    } else if (elementoPC.getGrupo() == GRUPO_TRASFONDO) {
+        aplicarVentajaFinalGrupo(coste, elementoPC, opcion, "PC_libres_trasfondo", "trasfondo");
     } else {
         aplicarVentajaFinalGrupo(coste, elementoPC, opcion);
     }

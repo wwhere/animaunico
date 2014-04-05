@@ -465,3 +465,73 @@ addDesventaja(new Ventaja(
     [FLAG_PANTALLA_ENABLED]
 ));
 //endregion Pantalla del Director
+
+addDesventaja(new Ventaja(
+    DESV_PARIA,
+    "",
+    DESV_PARIA_DESC,
+    NO_REPETIBLE,
+    [-1],
+    [],
+    true,
+    [],
+    [],
+    GRUPO_TRASFONDO,
+    [FLAG_GAIA_1_ENABLED]
+));
+
+addDesventaja(new Ventaja(
+    DESV_ENEMIGO_PODEROSO,
+    "",
+    DESV_ENEMIGO_PODEROSO_DESC,
+    REPETIBLE_OPCIONES,
+    [-1,-2],
+    [],
+    true,
+    [LISTA_DESCRIPCION],
+    [],
+    GRUPO_TRASFONDO,
+    [FLAG_GAIA_1_ENABLED]
+));
+
+addDesventaja(new Ventaja(
+    DESV_DEUDAS,
+    "",
+    DESV_DEUDAS_DESC,
+    NO_REPETIBLE,
+    [-1],
+    [],
+    true,
+    [],
+    [deudas],
+    GRUPO_TRASFONDO,
+    [FLAG_GAIA_1_ENABLED]
+));
+
+addDesventaja(new Ventaja(
+    DESV_CODIGO_DE_CONDUCTA,
+    "",
+    DESV_CODIGO_DE_CONDUCTA_DESC,
+    NO_REPETIBLE,
+    [-1],
+    [],
+    true,
+    [],
+    [],
+    GRUPO_TRASFONDO,
+    [FLAG_GAIA_1_ENABLED]
+));
+
+addDesventaja(new Ventaja(
+    DESV_SECRETO_INCONFESABLE,
+    "",
+    DESV_SECRETO_INCONFESABLE_DESC,
+    REPETIBLE_OPCIONES,
+    [-1],
+    [],
+    true,
+    [LISTA_DESCRIPCION],
+    [],
+    GRUPO_TRASFONDO,
+    [FLAG_GAIA_1_ENABLED]
+));

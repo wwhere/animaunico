@@ -196,3 +196,24 @@ var DESV_CONSUMICION_PSIQUICA = (new L("DESV_CONSUMICION_PSIQUICA","Consumición
     "Psychic Consumption")).getId();
 var DESV_CONSUMICION_PSIQUICA_DESC = (new L("DESV_CONSUMICION_PSIQUICA_DESC","Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.",
     "Si un psíquico sufre un fracaso psíquico, pierde automáticamente los mismos puntos de vida que la cantidad por la que no alcanzó el potencial mínimo requerido.")).getId();
+
+var DESV_PARIA = (new L("DESV_PARIA","Paria",
+    "Paria")).getId();
+var DESV_PARIA_DESC = (new L("DESV_PARIA_DESC","El personaje es automáticamente considerado un paria en todos los círculos sociales",
+    "El personaje es automáticamente considerado un paria en todos los círculos sociales")).getId();
+var DESV_ENEMIGO_PODEROSO = (new L("DESV_ENEMIGO_PODEROSO","Enemigo poderoso",
+    "Enemigo poderoso")).getId();
+var DESV_ENEMIGO_PODEROSO_DESC = (new L("DESV_ENEMIGO_PODEROSO_DESC","Los efectos de esta desventaja se aplican únicamente al plano interpretativo.",
+    "Los efectos de esta desventaja se aplican únicamente al plano interpretativo.")).getId();
+var DESV_DEUDAS = (new L("DESV_DEUDAS","Deudas",
+    "Deudas")).getId();
+var DESV_DEUDAS_DESC = (new L("DESV_DEUDAS_DESC","Sin importar su estatus social, el personaje no comienza con más pertenencias que las que lleva encima, viéndose obligado a amortizar una deuda valorada en más de 10.000 escudos de oro. Otra posibilidad es que deba pagar obligatoriamente 500 escudos de oro todos los meses.",
+    "Sin importar su estatus social, el personaje no comienza con más pertenencias que las que lleva encima, viéndose obligado a amortizar una deuda valorada en más de 10.000 escudos de oro. Otra posibilidad es que deba pagar obligatoriamente 500 escudos de oro todos los meses.")).getId();
+var DESV_CODIGO_DE_CONDUCTA = (new L("DESV_CODIGO_DE_CONDUCTA","Código de conducta",
+    "Código de conducta")).getId();
+var DESV_CODIGO_DE_CONDUCTA_DESC = (new L("DESV_CODIGO_DE_CONDUCTA_DESC","El personaje debe seguir un estricto código de conducta, relacionado de algún modo con su país de origen.",
+    "El personaje debe seguir un estricto código de conducta, relacionado de algún modo con su país de origen.")).getId();
+var DESV_SECRETO_INCONFESABLE = (new L("DESV_SECRETO_INCONFESABLE","Secreto inconfesable",
+    "Secreto inconfesable")).getId();
+var DESV_SECRETO_INCONFESABLE_DESC = (new L("DESV_SECRETO_INCONFESABLE_DESC","El jugador y el Director de Juego deben determinar, conjuntamente, la naturaleza del secreto y las consecuencias de que este pudiera salir a la luz.",
+    "El jugador y el Director de Juego deben determinar, conjuntamente, la naturaleza del secreto y las consecuencias de que este pudiera salir a la luz.")).getId();

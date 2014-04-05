@@ -116,6 +116,7 @@ var UI_AUMENTOS_CARACTERISTICAS = (new L("Aumentos de características","Aumento
 var UI_PUNTOS_SIN_USAR = (new L("sin usar","sin usar","free")).getId();
 var UI_PC_DON = (new L("del Don","del Don","from Gift")).getId();
 var UI_PC_PSIQUICA = (new L("de psíquica","de psíquica","from Psychic")).getId();
+var UI_PC_TRASFONDO = (new L("de trasfondo", "de trasfondo", "from Background")).getId();
 var UI_NIVEL = (new L("Nivel","Nivel","Level")).getId();
 var UI_PX = (new L("Puntos de Experiencia","Puntos de Experiencia","Experience Points")).getId();
 var UI_ARQUETIPO = (new L("Arquetipo","Arquetipo","Archetype")).getId();
@@ -927,6 +928,7 @@ var GRUPO_OTRAS = (new L("Otras Ventajas","Otras Ventajas","Other advantages")).
 var GRUPO_RAZAS = (new L("Ventajas de Raza","Ventajas de Raza","Race advantages")).getId();
 var GRUPO_SECUNDARIAS = (new L("Ventajas de Habilidades Secundarias","Ventajas de Habilidades Secundarias","Secondary abilities advantages")).getId();
 var GRUPO_ELAN = (new L("Ventajas de Elan","Ventajas de Elan","Elan advantages")).getId();
+var GRUPO_TRASFONDO = (new L("GRUPO_TRASFONDO","Ventajas de Trasfondo","Background advantages")).getId();
 
 var UI_RESULTADO_DE_TIRADA = (new L("Resultado de la tirada: ","Resultado de la tirada: ","Result of the roll")).getId();
 var UI_AJUSTADO_AL_MINIMO = (new L("Ajustado al mínimo del personaje","Ajustado al mínimo del personaje","Adjusted to character minimum")).getId();
