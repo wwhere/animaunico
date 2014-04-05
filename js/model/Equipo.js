@@ -1061,7 +1061,10 @@ ArmaduraComprada.prototype = {
      * @returns {number}
      */
     getEntereza : function() {
-        return this.armadura.getEntereza() + this.modificador;
+        var ente = this.armadura.getEntereza() + this.modificador;
+        if (ente < 0)
+            ente = 0;
+        return ente;
     },
 
     /**

@@ -178,8 +178,54 @@ function getTurnoFinalConArma(personaje,arma) {
     return personaje.getTurnoFijo() + arma.getVelocidad();
 }
 
+function getExplicacionTurnoFinalConArma(personaje, arma) {
+    return personaje.getExplicacionTurnoFijo() + " " + modificadorBonito(arma.getVelocidad()) + " (" + _l(UI_ARMA) + ")";
+}
 
 
+/**
+ *
+ * @param {Personaje} personaje
+ */
+function getPenalizadorTodaAccionPorArmaduraActual(personaje) {
+    var capasArmadura = [];
+    for (var i = 0; i < personaje.armaduras.length; i++) {
+        if (personaje.armaduras[i].isEquipado()) {
+            capasArmadura.push(personaje.armaduras[i]);
+        }
+    }
+
+    return penalizadorTodaAccionPorArmadura(personaje,capasArmadura);
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ */
+function getPenalizadorNaturalPorArmaduraActual(personaje) {
+    var capasArmadura = [];
+    for (var i = 0; i < personaje.armaduras.length; i++) {
+        if (personaje.armaduras[i].isEquipado()) {
+            capasArmadura.push(personaje.armaduras[i]);
+        }
+    }
+    return penalizadorNaturalPorArmadura(personaje,capasArmadura);
+}
+
+/**
+ *
+ * @param {Personaje} personaje
+ */
+function getPenalizadorMovimientoPorArmaduraActual(personaje) {
+    var capasArmadura = [];
+    for (var i = 0; i < personaje.armaduras.length; i++) {
+        if (personaje.armaduras[i].isEquipado()) {
+            capasArmadura.push(personaje.armaduras[i]);
+        }
+    }
+
+    return penalizadorMovimientoPorArmadura(personaje,capasArmadura);
+}
 
 /*
 25:

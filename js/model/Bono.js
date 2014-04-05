@@ -14,12 +14,7 @@ var BONO_INT_APRENDER_CONJURO = "bono a la INT para aprender conjuros";
 var BONO_MAGIA_INNATA = "bono a la magia innata";
 /***************************/
 
-/*************ORIGENES DE BONOS*/
-var ORIGEN_CARAC = "Característica";
-var ORIGEN_CATEGORIA = "Categoría";
-var ORIGEN_HABILIDAD_NATURAL = "Habilidad Natural";
-var ORIGEN_BONIFICADOR_NATURAL = "Bonificador Natural";
-/****************************/
+
 
 /************CATEGORIAS DE BONOS*/
 var BONO_INNATO = "Innato";
