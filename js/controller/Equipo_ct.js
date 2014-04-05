@@ -227,7 +227,10 @@ function armaMayor(arma, tam) {
 function sumarArmadura(valoresTA_1,valoresTA_2) {
     var salida =  [];
     for (var i=0;i<valoresTA_1.length;i++) {
-        salida.push(valoresTA_1[i]+valoresTA_2[i]);
+        var valor = valoresTA_1[i]+valoresTA_2[i];
+        if (valor < 0)
+            valor = 0;
+        salida.push(valor);
     }
     return salida;
 }
@@ -487,7 +490,7 @@ function desequipaYelmos() {
  * @returns {number}
  */
 function penalizadorTodaAccionPorArmadura(personaje, armadura) {
-    var requisito = armadura.getRequisitoArmadura();
+    var requisito = 0;
     var penalizador;
     for (var i = 0; i < armadura.length; i++) {
         requisito += armadura[i].getRequisitoArmadura();
@@ -503,7 +506,8 @@ function penalizadorTodaAccionPorArmadura(personaje, armadura) {
     if (valor >= requisito) {
         penalizador =  0;
     } else {
-        penalizador = requisito - valor;
+        if (requisito > 0)
+            penalizador = requisito - valor;
     }
 
     return penalizador;
@@ -538,7 +542,8 @@ function penalizadorNaturalPorArmadura(personaje, armadura) {
     if (penalizador > 0)
         penalizador = 0;
 
-    penalizador += -20*(armadura.length-1);
+    if (armadura.length > 1)
+        penalizador += -20*(armadura.length-1);
 
     return penalizador;
 }

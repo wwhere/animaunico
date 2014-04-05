@@ -27,7 +27,7 @@ function Habilidad(nombre, tipo, esPrincipal, caracteristica, isConocimiento, pe
     /** @type boolean */
     this.esConocimiento = isConocimiento;
 
-    /** @type number */
+    /** @type boolean */
     this.penalizadorArmadura = penalizadorArmadura;
 
     /** @type string[] */
@@ -85,7 +85,7 @@ Habilidad.prototype = {
 
     /**
      *
-     * @returns {number}
+     * @returns {boolean}
      */
     getPenalizadorArmadura : function() {
         return this.penalizadorArmadura;
@@ -171,6 +171,14 @@ HabilidadDePersonaje.prototype = {
      */
     getNombre : function() {
         return this.habilidad.getNombre()
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    getPenalizadorArmadura : function() {
+        return this.habilidad.getPenalizadorArmadura();
     },
 
     /**

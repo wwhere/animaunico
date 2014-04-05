@@ -116,15 +116,6 @@ function Personaje(nivelInicial) {
     this.armaduraNatural = new TipoArmadura(ARMADURA_NATURAL,[0,0,0,0,0,0,0],true);
 
     /** @type TipoArmadura */
-    this.capaArmaduraDura = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],false);
-
-    /** @type TipoArmadura */
-    this.capaArmaduraBlanda1 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
-
-    /** @type TipoArmadura */
-    this.capaArmaduraBlanda2 = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
-
-    /** @type TipoArmadura */
     this.capaYelmo = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
 
     //endregion Armadura
@@ -690,7 +681,7 @@ Personaje.prototype = {
      * @returns {number}
      */
     getTipoMovimiento : function() {
-        return this.tipoMovimiento;
+        return this.tipoMovimiento - getPenalizadorMovimientoPorArmaduraActual(this);
     },
 
     /**
@@ -842,6 +833,21 @@ Personaje.prototype = {
         for (var i = 0; i < bonos.length; i++) {
             turno += bonos[i].getBonoParaNivel(this.nivel,this);
         }
+
+        turno += getPenalizadorNaturalPorArmaduraActual(this);
+
+        return turno;
+    },
+
+    getExplicacionTurnoFijo : function() {
+        var turno = this.turnoBase + " (" + _l(UI_BASE) + ")";
+
+        var bonos = this.getBonos(BONO_TURNO,BONO_TURNO,CATEGORIA_BONO_CUALQUIERA);
+        for (var i = 0; i < bonos.length; i++) {
+            turno += " " + modificadorBonito(bonos[i].getBonoParaNivel(this.nivel,this)) + " (" + bonos[i].getOrigen() + ")";
+        }
+
+        turno += " " + modificadorBonito(getPenalizadorNaturalPorArmaduraActual(this)) + " (" + _l(UI_PENALIZADOR_NATURAL) + ")";
 
         return turno;
     },
@@ -1137,28 +1143,40 @@ Personaje.prototype = {
      * @returns {number}
      */
     getArmadura : function(taArmadura) {
-        var valorDura, valorBlanda1, valorBlanda2 = 0;
+        var valorDura = 0, valorBlanda1 = 0, valorBlanda2 = 0;
         var naturalUsada = false;
 
-        if (this.capaArmaduraBlanda1.getNombre() == ARMADURA_NINGUNA) {
-            valorBlanda1 = this.armaduraNatural.getTA(taArmadura);
-            naturalUsada = true;
-        } else {
-            valorBlanda1 = this.capaArmaduraBlanda1.getTA(taArmadura);
-        }
-        if ((this.capaArmaduraBlanda2.getNombre() == ARMADURA_NINGUNA) && !naturalUsada) {
-            valorBlanda2 = this.armaduraNatural.getTA(taArmadura);
-            naturalUsada = true;
-        } else {
-            valorBlanda2 = this.capaArmaduraBlanda2.getTA(taArmadura);
-        }
-        if ((this.capaArmaduraDura.getNombre() == ARMADURA_NINGUNA) && !naturalUsada) {
-            valorDura = this.armaduraNatural.getTA(taArmadura);
-        } else {
-            valorDura = this.capaArmaduraDura.getTA(taArmadura);
+        for (var i = 0; i < this.armaduras.length; i++) {
+            if (this.armaduras[i].isEquipado()) {
+                if (this.armaduras[i].getClase() == ARMADURA_CLASE_DURA) {
+                    if (this.armaduras[i].getTA(taArmadura) > valorDura) {
+                        valorDura = this.armaduras[i].getTA(taArmadura);
+                    }
+                } else if (this.armaduras[i].getClase() == ARMADURA_CLASE_BLANDA) {
+                    if (this.armaduras[i].getTA(taArmadura) > valorBlanda1) {
+                        if (valorBlanda1 > valorBlanda2) {
+                            valorBlanda2 = valorBlanda1;
+                        }
+                        valorBlanda1 = this.armaduras[i].getTA(taArmadura);
+                    } else if (this.armaduras[i].getTA(taArmadura) > valorBlanda2) {
+                        valorBlanda2 = this.armaduras[i].getTA(taArmadura);
+                    }
+                }
+            }
         }
 
-        var valorFinal;// = Math.floor(valorDura/2) + Math.floor(valorBlanda1/2) + Math.floor(valorBlanda2/2);
+        if (this.armaduraNatural.getTA(taArmadura) > valorBlanda1) {
+            if (valorBlanda1 > valorBlanda2) {
+                valorBlanda2 = valorBlanda1;
+            }
+            valorBlanda1 = this.armaduraNatural.getTA(taArmadura);
+
+        } else if (this.armaduraNatural.getTA(taArmadura) > valorBlanda2) {
+            valorBlanda2 = this.armaduraNatural.getTA(taArmadura);
+        }
+        //TODO la armadura natural solo contara como blanda
+
+        var valorFinal;
         if ((valorDura>=valorBlanda1)&&(valorDura>=valorBlanda2)) {
             valorFinal = valorDura  + Math.floor(valorBlanda1/2) + Math.floor(valorBlanda2/2);
         } else if ((valorBlanda1>=valorDura)&&(valorBlanda1>=valorBlanda2)) {
@@ -1187,14 +1205,6 @@ Personaje.prototype = {
         lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
     },
 
-    /**
-     *
-     * @param {number[]} armadura
-     */
-    addCapaArmadura : function(armadura) {
-        this.capasArmadura.push(armadura);
-        lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
-    },
 
 //endregion Armadura
 

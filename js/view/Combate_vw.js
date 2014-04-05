@@ -67,7 +67,9 @@ function muestraArmas() {
         divRowArma.append(getDiv("two columns").addClass(CSS_COLOR_PALIDGREEN).append(getDefensaFinalConArma(personaje_actual,arma)));
         divRowArma.append(getDiv("two columns").addClass(CSS_COLOR_PALIDGREEN).append(arma.getDañoBase()));
         divRowArma.append(getDiv("two columns").addClass(CSS_COLOR_PALIDGREEN).append(getDañoFinalConArma(personaje_actual,arma)));
-        divRowArma.append(getDiv("two columns").addClass(CSS_COLOR_PALIDGREEN).append(getTurnoFinalConArma(personaje_actual,arma)));
+        var divTurno = getDiv("two columns").addClass(CSS_COLOR_PALIDGREEN).append(getTurnoFinalConArma(personaje_actual,arma));
+        addToolTip(divTurno,getExplicacionTurnoFinalConArma(personaje_actual,arma));
+        divRowArma.append(divTurno);
         div.append(divRowArma);
 
         var divRow2 = getDiv("row");

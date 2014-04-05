@@ -178,6 +178,10 @@ function getTurnoFinalConArma(personaje,arma) {
     return personaje.getTurnoFijo() + arma.getVelocidad();
 }
 
+function getExplicacionTurnoFinalConArma(personaje, arma) {
+    return personaje.getExplicacionTurnoFijo() + " " + modificadorBonito(arma.getVelocidad()) + " (" + _l(UI_ARMA) + ")";
+}
+
 
 /**
  *
@@ -185,14 +189,10 @@ function getTurnoFinalConArma(personaje,arma) {
  */
 function getPenalizadorTodaAccionPorArmaduraActual(personaje) {
     var capasArmadura = [];
-    if (personaje.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraBlanda1);
-    }
-    if (personaje.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraBlanda2);
-    }
-    if (personaje.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraDura);
+    for (var i = 0; i < personaje.armaduras.length; i++) {
+        if (personaje.armaduras[i].isEquipado()) {
+            capasArmadura.push(personaje.armaduras[i]);
+        }
     }
 
     return penalizadorTodaAccionPorArmadura(personaje,capasArmadura);
@@ -204,16 +204,11 @@ function getPenalizadorTodaAccionPorArmaduraActual(personaje) {
  */
 function getPenalizadorNaturalPorArmaduraActual(personaje) {
     var capasArmadura = [];
-    if (personaje.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraBlanda1);
+    for (var i = 0; i < personaje.armaduras.length; i++) {
+        if (personaje.armaduras[i].isEquipado()) {
+            capasArmadura.push(personaje.armaduras[i]);
+        }
     }
-    if (personaje.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraBlanda2);
-    }
-    if (personaje.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraDura);
-    }
-
     return penalizadorNaturalPorArmadura(personaje,capasArmadura);
 }
 
@@ -223,17 +218,13 @@ function getPenalizadorNaturalPorArmaduraActual(personaje) {
  */
 function getPenalizadorMovimientoPorArmaduraActual(personaje) {
     var capasArmadura = [];
-    if (personaje.capaArmaduraBlanda1.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraBlanda1);
-    }
-    if (personaje.capaArmaduraBlanda2.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraBlanda2);
-    }
-    if (personaje.capaArmaduraDura.getNombre() != ARMADURA_NINGUNA) {
-        capasArmadura.push(personaje.capaArmaduraDura);
+    for (var i = 0; i < personaje.armaduras.length; i++) {
+        if (personaje.armaduras[i].isEquipado()) {
+            capasArmadura.push(personaje.armaduras[i]);
+        }
     }
 
-    return getPenalizadorMovimientoPorArmaduraActual(personaje,capasArmadura);
+    return penalizadorMovimientoPorArmadura(personaje,capasArmadura);
 }
 
 /*
