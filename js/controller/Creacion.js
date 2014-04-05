@@ -658,7 +658,7 @@ function compra(tipoCompra, parametros, coste) {
             break;
         case TABLA_ARMAS:
             var tabla = getTablaArmas(parametros.tablaArmas.getNombre());
-            if (tabla.getTipoTabla() == TABLA_ESPECIAL) {
+            if ((tabla.getTipoTabla() == TABLA_ESPECIAL) && (tabla.getOpciones()[0] != TABLA_REPETIBLE)) {
                 personaje_actual.addTablaArmasEspecial(parametros.tablaArmas.getNombre(), parametros.opcion);
             } else {
                 personaje_actual.addTablaArmas(parametros.tablaArmas.getNombre());
@@ -854,6 +854,8 @@ function compraTablaArmasEspecial(tablaArmas, tipoCompra, costeFinal) {
         } else if (efectoTabla == TABLA_TIPOLOGIA) {
             var tiposArmas = getAllTipos();
             dialogoElegirTipoArma(tiposArmas, {principal: compraTablaEspecial, isDisabled: noPuedeComprarManejoTipo}, {tablaArmas: tablaArmas, tipoCompra: tipoCompra, costeFinal: costeFinal});
+        } else if (efectoTabla == TABLA_REPETIBLE) {
+            compraTablaEspecial({tablaArmas: tablaArmas, tipoCompra: tipoCompra, costeFinal: costeFinal})
         }
     }
 }

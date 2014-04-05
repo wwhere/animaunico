@@ -745,7 +745,7 @@ function parseEquipo(texto) {
  */
 function parseArrayTablasArmasComprada(v) {
     var tablas = [];
-    var tablaTemp = new TablaArmas("","","",0,"",[],"");
+    var tablaTemp = new TablaArmas("", "", "", 0, "", [], "", []);
 
     for (var i = 0; i < v.length;i++) {
         var tabla = new TablaArmasComprada(tablaTemp,"");

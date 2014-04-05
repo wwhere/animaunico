@@ -106,3 +106,36 @@ var TABLA_TABLA_DE_PROYECCION_PSIQUICA = (new L("TABLA_TABLA_DE_PROYECCION_PSIQU
     "Psychic Projection Module")).getId();
 var TABLA_TABLA_DE_PROYECCION_PSIQUICA_DESC = (new L("TABLA_TABLA_DE_PROYECCION_PSIQUICA_DESC","Otorga la capacidad de usar las habilidades de combate del personaje como Proyección Psíquica. La ofensiva se utiliza para atacar, y la defensiva para levantar escudos. Sólo se emplea la habilidad base, no los puntos de mejora innata que proporcionan algunas categorías de combate.",
     "Otorga la capacidad de usar las habilidades de combate del personaje como Proyección Psíquica. La ofensiva se utiliza para atacar, y la defensiva para levantar escudos. Sólo se emplea la habilidad base, no los puntos de mejora innata que proporcionan algunas categorías de combate.")).getId();
+
+var TABLA_TABLA_DE_DESVIO = (new L("TABLA_TABLA_DE_DESVIO","Tabla de Desvío",
+    "Tabla de Desvío")).getId();
+var TABLA_TABLA_DE_DESVIO_DESC = (new L("TABLA_TABLA_DE_DESVIO_DESC","El luchador puede sumar el valor de su característica de Destreza a la Entereza de su arma cuando para ataques",
+    "El luchador puede sumar el valor de su característica de Destreza a la Entereza de su arma cuando para ataques")).getId();
+var TABLA_TABLA_DE_REDUCCION_DE_ARMADURA = (new L("TABLA_TABLA_DE_REDUCCION_DE_ARMADURA","Tabla de Reducción de Armadura",
+    "Tabla de Reducción de Armadura")).getId();
+var TABLA_TABLA_DE_REDUCCION_DE_ARMADURA_DESC = (new L("TABLA_TABLA_DE_REDUCCION_DE_ARMADURA_DESC","Permite al luchador restar un punto de la Armadura de cualquier adversario. Esta habilidad se suma a cualquier otro modificador que el personaje tuviese, ya sea gracias a armas de calidad o Técnicas de Ki.",
+    "Permite al luchador restar un punto de la Armadura de cualquier adversario. Esta habilidad se suma a cualquier otro modificador que el personaje tuviese, ya sea gracias a armas de calidad o Técnicas de Ki.")).getId();
+var TABLA_TABLA_DE_COMBATE_A_CIEGAS = (new L("TABLA_TABLA_DE_COMBATE_A_CIEGAS","Tabla de Combate a Ciegas",
+    "Tabla de Combate a Ciegas")).getId();
+var TABLA_TABLA_DE_COMBATE_A_CIEGAS_DESC = (new L("TABLA_TABLA_DE_COMBATE_A_CIEGAS_DESC","El personaje reduce a la mitad los penalizadores a la acción que sufre en combate por Ceguera, ya sea parcial o completa.",
+    "El personaje reduce a la mitad los penalizadores a la acción que sufre en combate por Ceguera, ya sea parcial o completa.")).getId();
+var TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO = (new L("TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO","Tabla de Disparo en Movimiento",
+    "Tabla de Disparo en Movimiento")).getId();
+var TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO_DESC = (new L("TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO_DESC","Elimina el penalizador de -10 al ataque con proyectiles por desplazarse a más de una cuarta parte de su tipo de movimiento, y reduce disparar a la mitad, (es decir, a sólo -25) cuando corre a su velocidad máxima.",
+    "Elimina el penalizador de -10 al ataque con proyectiles por desplazarse a más de una cuarta parte de su tipo de movimiento, y reduce disparar a la mitad, (es decir, a sólo -25) cuando corre a su velocidad máxima.")).getId();
+var TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO = (new L("TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO","Tabla de Blanco en Movimiento",
+    "Tabla de Blanco en Movimiento")).getId();
+var TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO_DESC = (new L("TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO_DESC","Reduce a la mitad el penalizador de la Tabla 44 por disparar a blancos en movimiento. Por tanto, el personaje sólo sufre un negativo de -10 si su objetivo se desplaza a más de velocidad 8, -20 si lo hace a velocidad 10 y -30 si es superior.",
+    "Reduce a la mitad el penalizador de la Tabla 44 por disparar a blancos en movimiento. Por tanto, el personaje sólo sufre un negativo de -10 si su objetivo se desplaza a más de velocidad 8, -20 si lo hace a velocidad 10 y -30 si es superior.")).getId();
+var TABLA_TABLA_DE_VARIOS_BLANCOS = (new L("TABLA_TABLA_DE_VARIOS_BLANCOS","Tabla de Varios blancos",
+    "Tabla de Varios blancos")).getId();
+var TABLA_TABLA_DE_VARIOS_BLANCOS_DESC = (new L("TABLA_TABLA_DE_VARIOS_BLANCOS_DESC","El personaje no sufre el penalizador de -10 por cambiar de blanco al ejecutar disparos o lanzamientos.",
+    "El personaje no sufre el penalizador de -10 por cambiar de blanco al ejecutar disparos o lanzamientos.")).getId();
+var TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES = (new L("TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES","Tabla de Defensa contra proyectiles",
+    "Tabla de Defensa contra proyectiles")).getId();
+var TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES_DESC","Cuando utiliza un arma de clase Mandoble, el personaje puede parar proyectiles como si tuviera un escudo, a la hora de aplicar los penalizadores pertinentes.",
+    "Cuando utiliza un arma de clase Mandoble, el personaje puede parar proyectiles como si tuviera un escudo, a la hora de aplicar los penalizadores pertinentes.")).getId();
+var TABLA_TABLA_DE_ATAQUE_ADICIONAL = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL","Tabla de Ataque adicional",
+    "Tabla de Ataque adicional")).getId();
+var TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC","Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.",
+    "Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.")).getId();

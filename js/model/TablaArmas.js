@@ -10,7 +10,8 @@
  * @param {string} categoria
  * @constructor
  */
-function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, categoria) {
+function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, categoria, flagsNecesarios) {
+    flagsNecesarios = flagsNecesarios || [];
     /**
      *
      * @type {string}
@@ -52,6 +53,12 @@ function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, ca
      * @type {string[]}
      */
     this.opciones = opciones;
+
+    /**
+     *
+     * @type {string[]}
+     */
+    this.flagsNecesarios = flagsNecesarios;
 }
 
 TablaArmas.prototype = {

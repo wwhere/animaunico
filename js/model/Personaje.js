@@ -2979,9 +2979,12 @@ Personaje.prototype = {
         }
 
         var tablasLimpias = [];
+        var borrada = false;
         for (i = 0; i < this.tablasArmas.length;i++) {
-            if (((this.tablasArmas[i].getNombre() != tabla.getNombre()) || (this.tablasArmas[i].getOpcion() != tabla.getOpcion()))) {
+            if ((((this.tablasArmas[i].getNombre() != tabla.getNombre()) || (this.tablasArmas[i].getOpcion() != tabla.getOpcion()))) || borrada) {
                 tablasLimpias.push(this.tablasArmas[i]);
+            } else {
+                borrada = true;
             }
         }
 
