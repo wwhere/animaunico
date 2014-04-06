@@ -114,9 +114,8 @@ function getVia(nombreVia) {
 /**
  *
  * @param {number} inteligencia
- * @returns {number}
  */
-function nivelMagiaMaximoPorInteligencia(inteligencia) {
+function updateNivelMagiaPorInteligencia(inteligencia) {
     var nivelMaximo = 0;
     
     switch (inteligencia) {
@@ -174,7 +173,13 @@ function nivelMagiaMaximoPorInteligencia(inteligencia) {
             break;
     }
 
-    return nivelMaximo;
+    if (!personaje_actual.hasFlag(FLAG_DON)) {
+        nivelMaximo = 0;
+    }
+
+    var bono = new Bono(BONO_HABILIDAD,HB_NIVEL_DE_VIA,nivelMaximo,"",false,BONO_CARACTERISTICA,ORIGEN_CARAC);
+    console.log("Bono a nivel de via " + nivelMaximo);
+    personaje_actual.addBono(bono,true,false);
 }
 
 /**
@@ -240,7 +245,7 @@ function accesoNuevaVia() {
 function aplicarAccesoVia(parametros) {
     var nombreVia = parametros.opcion;
 
-    personaje_actual.addNivelVia(nombreVia,2);
+    personaje_actual.addNivelVia(nombreVia, 2, false);
     personaje_actual.addNivelMagiaGastado(2 * personaje_actual.getCosteVia(nombreVia));
 }
 
@@ -297,7 +302,7 @@ function aumentaNivelViaClick(event) {
         return;
     }
 
-    personaje_actual.addNivelVia(nivelEnVia.getVia().getNombre(),cantidad);
+    personaje_actual.addNivelVia(nivelEnVia.getVia().getNombre(), cantidad, false);
     personaje_actual.addNivelMagiaGastado(costeFinal);
 }
 

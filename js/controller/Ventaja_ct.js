@@ -965,7 +965,7 @@ function armaduraMistica(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function maestroMarcial(coste, opcion,aplicar) {
-    var bono = new Bono(BONO_CM,BONO_CM,40*coste,"",false,BONO_ESPECIAL,VENT_MAESTRO_MARCIAL);
+    var bono = new Bono(BONO_HABILIDAD,HB_CM,40*coste,"",false,BONO_ESPECIAL,VENT_MAESTRO_MARCIAL);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {
@@ -1067,10 +1067,15 @@ function magiaInnataMejorada(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function conocimientoNaturalVia(coste, opcion,aplicar) {
+    var bono = new Bono(BONO_HABILIDAD,HB_NIVEL_DE_VIA,40,opcion,false,BONO_ESPECIAL,VENT_CONOCIMIENTO_NATURAL_DE_VIA);
     if (aplicar) {
-        personaje_actual.addNivelVia(opcion,40);
+        personaje_actual.addBono(bono,false,false);
+        personaje_actual.addNivelMagiaGastado(40);
+        personaje_actual.addNivelVia(opcion, 40, true);
     } else {
-        personaje_actual.addNivelVia(opcion,-40);
+        personaje_actual.removeBono(bono,false);
+        personaje_actual.addNivelMagiaGastado(-40);
+        personaje_actual.addNivelVia(opcion, -40, true);
     }
 }
 

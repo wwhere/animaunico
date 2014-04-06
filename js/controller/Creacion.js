@@ -525,6 +525,11 @@ function compraSiPuedesCombate(tipoCompra, parametros, cantidad, coste) {
                     puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_ATAQUE_DEFENSA);
                 }
             }
+        } else if (nombreHabilidad == HB_CM) {
+            if (personaje_actual[HB_CM].getPDinvertidos() + coste > Math.floor(personaje_actual.getPDTotales()/10)) {
+                puedeComprar.puedeComprar = false;
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_CM);
+            }
         }
     }
     return puedeComprar;
@@ -552,6 +557,11 @@ function compraSiPuedesSobrenatural(tipoCompra, parametros, coste) {
             if (habilidadProyeccionMagica.getPDinvertidos() + coste > personaje_actual.maxPDsGrupoHabilidad(TIPO_HB_SOBRENATURAL) / 2) {
                 puedeComprar.puedeComprar = false;
                 puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_PROYECCION_MAGICA);
+            }
+        } else if (nombreHabilidad == HB_NIVEL_DE_VIA) {
+            if (personaje_actual[HB_NIVEL_DE_VIA].getPDinvertidos() + coste > Math.floor(personaje_actual.getPDTotales()/10)) {
+                puedeComprar.puedeComprar = false;
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_NIVEL_VIA);
             }
         }
     }

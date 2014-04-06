@@ -1097,7 +1097,7 @@ Personaje.prototype = {
             this.addBono(bonoPv,false,false);
             var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,categoria.turnoPorNivel,"", true,BONO_CATEGORIA,ORIGEN_CATEGORIA,{categoriaPersonaje:categoria.getNombre()});
             this.addBono(bonoTurno,false,false);
-            var bonoCM = new Bono(BONO_CM,BONO_CM,categoria.CMPorNivel,"", true,BONO_CATEGORIA,ORIGEN_CATEGORIA,{categoriaPersonaje:categoria.getNombre()});
+            var bonoCM = new Bono(BONO_HABILIDAD,HB_CM,categoria.CMPorNivel,"", true,BONO_CATEGORIA,ORIGEN_CATEGORIA,{categoriaPersonaje:categoria.getNombre()});
             this.addBono(bonoCM,false,false);
 
             var bonosInnatos = categoria.getBonosInnatos();
@@ -1328,7 +1328,7 @@ Personaje.prototype = {
      */
     nivelMagiaMaximo : function() {
         if (this.hasFlag(FLAG_DON)) {
-            return nivelMagiaMaximoPorInteligencia(this.getCaracteristica(INT));
+            return this[HB_NIVEL_DE_VIA].valorFinalActual();
         } else {
             return 0;
         }
@@ -1429,15 +1429,18 @@ Personaje.prototype = {
      * @param {string} nombreVia
      * @param {number} nivel
      */
-    addNivelVia : function(nombreVia, nivel) {
+    addNivelVia : function (nombreVia, nivel, esNivelMinimo) {
         if (this.hasVia(nombreVia)) {
-            this.viasMagia[nombreVia].addNivel(nivel);
+            this.viasMagia[nombreVia].addNivel(nivel, esNivelMinimo);
             if (this.viasMagia[nombreVia].getNivel() == 0) {
                 this.removeViaMagia(nombreVia);
             }
         } else {
             var via = getVia(nombreVia);
             var nivelEnVia = new NivelEnVia(via,nivel);
+            if (esNivelMinimo) {
+                nivelEnVia.setNivelMinimo(nivel);
+            }
             this.viasMagia.push(nivelEnVia);
             this.viasMagia[nombreVia] = nivelEnVia;
         }
@@ -1677,7 +1680,6 @@ Personaje.prototype = {
                 lanzarEvento(EVENT_CHARACTER_SECCION_KI);
                 lanzarEvento(EVENT_CHARACTER_SECCION_SECUNDARIAS);
                 break;
-            case BONO_CM :
             case BONO_KI :
                 lanzarEvento(EVENT_CHARACTER_SECCION_KI);
                 break;
@@ -2692,7 +2694,7 @@ Personaje.prototype = {
         }
 
         this.addBono(
-            new Bono(BONO_CM,BONO_CM,arteMarcial.getBonoCM(),"",false,BONO_INNATO,arteMarcial.getNombre()),
+            new Bono(BONO_HABILIDAD,HB_CM,arteMarcial.getBonoCM(),"",false,BONO_INNATO,arteMarcial.getNombre()),
             false,
             false
         );
@@ -2715,7 +2717,7 @@ Personaje.prototype = {
             this.removeBono(bonos[i], true);
         }
 
-        this.removeBono(new Bono(BONO_CM, BONO_CM, arteMarcial.getBonoCM(), "", false, BONO_INNATO, arteMarcial.getNombre()), true);
+        this.removeBono(new Bono(BONO_HABILIDAD, HB_CM, arteMarcial.getBonoCM(), "", false, BONO_INNATO, arteMarcial.getNombre()), true);
 
         var artesLimpias = [];
         for (i = 0; i < this.artesMarciales.length; i++) {
@@ -3331,12 +3333,7 @@ Personaje.prototype = {
      * @return {number}
      */
     getCMTotal : function() {
-        var bonos = personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA);
-        var valor = 0;
-        for (var i = 0; i < bonos.length; i++) {
-            valor += bonos[i].getBonoParaNivel(this.nivel,personaje_actual);
-        }
-        return valor;
+        return this[HB_CM].valorFinalActual();
     },
 
     /**
@@ -4155,6 +4152,7 @@ Personaje.prototype = {
                     this[HB_ESQUIVA].getPDinvertidos() +
                     this[HB_PARADA].getPDinvertidos() +
                     this[HB_ARMADURA].getPDinvertidos() +
+                    this[HB_CM].getPDinvertidos() +
                     this[HB_ACUM_KI_AGI].getPDinvertidos() +
                     this[HB_ACUM_KI_CON].getPDinvertidos() +
                     this[HB_ACUM_KI_DES].getPDinvertidos() +
@@ -4181,6 +4179,7 @@ Personaje.prototype = {
                 break;
             case TIPO_HB_SOBRENATURAL:
                 gasto = this[HB_ZEON].getPDinvertidos() +
+                    this[HB_NIVEL_DE_VIA].getPDinvertidos() +
                     this[HB_ACT].getPDinvertidos() +
                     this[HB_PROYECCION_MAGICA].getPDinvertidos() +
                     this[HB_CONVOCAR].getPDinvertidos() +

@@ -532,7 +532,7 @@ var UI_CREAR = (new L("Crear","Crear","Create")).getId();
 var UI_ON = (new L("ON", "ON", "ON")).getId();
 var UI_OFF = (new L("OFF", "OFF", "OFF")).getId();
 
-var UI_NIVELES_VIA = (new L("Niveles de vía","Niveles de vía","Spell levels")).getId();
+var UI_NIVELES_VIA = (new L("Niveles de vía","Niveles de vía","Path levels")).getId();
 var UI_VIAS = (new L("Vías de magia","Vías de magia","Magic Paths")).getId();
 var UI_CONJUROS = (new L("Conjuros sueltos","Conjuros sueltos","Cherry picked spells")).getId();
 
@@ -632,9 +632,13 @@ var AVISO_ATAQUE_DEFENSA_MUY_SEPARADOS = (new L("Ataque y Defensa base no pueden
 var AVISO_MAX_PD_ATAQUE_DEFENSA = (new L("Max PDs en Ataque/Defensa alcanzados",
     "Max PDs en Ataque/Defensa alcanzados",
     "Max DPs in Attack/Defense reached.")).getId();
+var AVISO_MAX_PD_CM = (new L("AVISO_MAX_PD_CM", "Max PDs en CM alcanzados",
+    "Max DPs in KM reached.")).getId();
 var AVISO_MAX_PD_PROYECCION_MAGICA = (new L("Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)",
     "Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)",
     "Max DPs in Magic Projection reached")).getId();
+var AVISO_MAX_PD_NIVEL_VIA = (new L("AVISO_MAX_PD_NIVEL_VIA","Max PDs en Nivel de Vía alcanzados",
+    "Max DPs in Path Level reached")).getId();
 var AVISO_CV_YA_GASTADOS = (new L("CVs ya gastados. Primero devuelvelos.",
     "CVs ya gastados. Primero devuelvelos.",
     "PPs already spent. First return them.")).getId();
@@ -706,6 +710,7 @@ var HB_ATAQUE = (new L("Habilidad de Ataque","Habilidad de Ataque","Attack abili
 var HB_PARADA = (new L("Habilidad de Parada","Habilidad de Parada","Block ability")).getId();
 var HB_ESQUIVA = (new L("Habilidad de Esquiva","Habilidad de Esquiva","Dodge ability")).getId();
 var HB_ARMADURA = (new L("Llevar Armadura","Llevar Armadura","Wear armor")).getId();
+var HB_CM = (new L("HB_CM","CM","MK")).getId();
 var HB_KI = (new L("Ki","Ki","Ki")).getId();
 var HB_KI_FUE = (new L("Ki Fuerza","Ki Fuerza","Strength Ki")).getId();
 var HB_KI_DES = (new L("Ki Destreza","Ki Destreza","Dextery Ki")).getId();
@@ -724,6 +729,7 @@ var HB_ACUM_KI_CON = (new L("Acumulación Ki Constitución","Ac. de Ki Constituc
 
 /***************POR AQUI********************/
 var TIPO_HB_SOBRENATURAL = (new L("Habilidades Sobrenaturales","Habilidades Sobrenaturales","Magic Abilities")).getId();
+var HB_NIVEL_DE_VIA = (new L("HB_NIVEL_DE_VIA","Nivel de vía","Path levels")).getId();
 var HB_ZEON = (new L("Zeon","Zeon","Zeon")).getId();
 var HB_ACT = (new L("ACT","ACT","MA")).getId();
 var HB_PROYECCION_MAGICA = (new L("Proyección Mágica","Proyección Mágica","Magic Projection")).getId();
