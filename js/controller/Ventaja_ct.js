@@ -1619,3 +1619,51 @@ function novato(coste, opcion, aplicar) {
 }
 
 //endregion Pantalla del Director
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
+function kiImperceptible(coste, opcion,aplicar) {
+    var bono = new Bono(BONO_KI,HAB_KI_OCULTACION_KI,10,"",true,BONO_ESPECIAL,VENT_KI_IMPERCEPTIBLE);
+    if (aplicar) {
+        personaje_actual.addBono(bono,false,true);
+    } else {
+        personaje_actual.removeBono(bono,true);
+    }
+}
+
+function poderInnato(coste, opcion, aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_PODER_INNATO);
+    } else {
+        personaje_actual.removeFlag(FLAG_PODER_INNATO);
+    }
+}
+
+function tecnicasDesvinculadas(coste, opcion, aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_TECNICAS_DESVINCULADAS);
+    } else {
+        personaje_actual.removeFlag(FLAG_TECNICAS_DESVINCULADAS);
+    }
+}
+
+function percepcionDelKi(coste, opcion,aplicar) {
+    var bono = new Bono(BONO_KI,HAB_KI_DETECCION_KI,10,"",true,BONO_ESPECIAL,VENT_PERCEPCION_DEL_KI);
+    if (aplicar) {
+        personaje_actual.addBono(bono,false,true);
+    } else {
+        personaje_actual.removeBono(bono,true);
+    }
+}
+
+function limiteDual(coste, opcion,aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_LIMITE_DUAL);
+    } else {
+        personaje_actual.removeFlag(FLAG_LIMITE_DUAL);
+    }
+}

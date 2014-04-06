@@ -3282,10 +3282,12 @@ Personaje.prototype = {
         } else {
             var nivelTecnica = tecnicaKi.getNivel();
 
-            if (nivelTecnica == 2) {
-                puede = (this.numTecnicas["nivel1"] >= 2);
-            } else if (nivelTecnica == 3) {
-                puede = (this.numTecnicas["nivel2"] >= 2);
+            if (!this.hasFlag(FLAG_TECNICAS_DESVINCULADAS)) {
+                if (nivelTecnica == 2) {
+                    puede = (this.numTecnicas["nivel1"] >= 2);
+                } else if (nivelTecnica == 3) {
+                    puede = (this.numTecnicas["nivel2"] >= 2);
+                }
             }
 
             //TODO limitar por atadura elemental?
