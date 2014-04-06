@@ -936,3 +936,20 @@ function efectoKiEscudoFisico(aplicar) {
 
     }
 }
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoNemesisCuerpoDeVacio(aplicar) {
+    desactivarNotificaciones();
+    aumentaResistencia(0,0, aplicar,RF,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RE,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RV,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RM,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RP,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    activarNotificaciones();
+    lanzarEvento(EVENT_CHARACTER_SECCION_RESISTENCIAS);
+}
+
+

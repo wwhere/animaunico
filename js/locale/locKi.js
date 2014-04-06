@@ -448,3 +448,46 @@ var HAB_KI_CONTROL_DE_LA_EDAD = (new L("HAB_KI_CONTROL_DE_LA_EDAD","Control de l
     "Control de la edad")).getId();
 var HAB_KI_IMITACION_DE_TECNICAS = (new L("HAB_KI_IMITACION_DE_TECNICAS","Imitación de técnicas",
     "Imitación de técnicas")).getId();
+
+var HAB_NEMESIS_USO_DEL_NEMESIS = (new L("HAB_NEMESIS_USO_DEL_NEMESIS","Uso del Némesis",
+    "Uso del Némesis")).getId();
+var HAB_NEMESIS_ARMADURA_DE_VACIO = (new L("HAB_NEMESIS_ARMADURA_DE_VACIO","Armadura de Vacío",
+    "Armadura de Vacío")).getId();
+var HAB_NEMESIS_NOHT = (new L("HAB_NEMESIS_NOHT","Noht",
+    "Noht")).getId();
+var HAB_NEMESIS_ANULACION_DE_KI = (new L("HAB_NEMESIS_ANULACION_DE_KI","Anulación de Ki",
+    "Anulación de Ki")).getId();
+var HAB_NEMESIS_ANULACION_DE_KI_MAYOR = (new L("HAB_NEMESIS_ANULACION_DE_KI_MAYOR","Anulación de Ki Mayor",
+    "Anulación de Ki Mayor")).getId();
+var HAB_NEMESIS_ANULACION_DE_MAGIA = (new L("HAB_NEMESIS_ANULACION_DE_MAGIA","Anulación de Magia",
+    "Anulación de Magia")).getId();
+var HAB_NEMESIS_ANULACION_DE_MAGIA_MAYOR = (new L("HAB_NEMESIS_ANULACION_DE_MAGIA_MAYOR","Anulación de Magia Mayor",
+    "Anulación de Magia Mayor")).getId();
+var HAB_NEMESIS_ANULACION_DE_MATRICES = (new L("HAB_NEMESIS_ANULACION_DE_MATRICES","Anulación de Matrices",
+    "Anulación de Matrices")).getId();
+var HAB_NEMESIS_ANULACION_DE_MATRICES_MAYOR = (new L("HAB_NEMESIS_ANULACION_DE_MATRICES_MAYOR","Anulación de Matrices Mayor",
+    "Anulación de Matrices Mayor")).getId();
+var HAB_NEMESIS_ANULACION_DE_LAZOS = (new L("HAB_NEMESIS_ANULACION_DE_LAZOS","Anulación de Lazos",
+    "Anulación de Lazos")).getId();
+var HAB_NEMESIS_EXTRUSION_DE_VACIO = (new L("HAB_NEMESIS_EXTRUSION_DE_VACIO","Extrusión de Vacío",
+    "Extrusión de Vacío")).getId();
+var HAB_NEMESIS_CUERPO_DE_VACIO = (new L("HAB_NEMESIS_CUERPO_DE_VACIO","Cuerpo de Vacío",
+    "Cuerpo de Vacío")).getId();
+var HAB_NEMESIS_SIN_NECESIDADES = (new L("HAB_NEMESIS_SIN_NECESIDADES","Sin Necesidades",
+    "Sin Necesidades")).getId();
+var HAB_NEMESIS_MOVIMIENTO_DE_VACIO = (new L("HAB_NEMESIS_MOVIMIENTO_DE_VACIO","Movimiento de Vacío",
+    "Movimiento de Vacío")).getId();
+var HAB_NEMESIS_FORMA_DE_VACIO = (new L("HAB_NEMESIS_FORMA_DE_VACIO","Forma de Vacío",
+    "Forma de Vacío")).getId();
+var HAB_NEMESIS_ESENCIA_DE_VACIO = (new L("HAB_NEMESIS_ESENCIA_DE_VACIO","Esencia de Vacío",
+    "Esencia de Vacío")).getId();
+var HAB_NEMESIS_UNO_CON_LA_NADA = (new L("HAB_NEMESIS_UNO_CON_LA_NADA","Uno con la Nada",
+    "Uno con la Nada")).getId();
+var HAB_NEMESIS_AURA_DE_VACIO = (new L("HAB_NEMESIS_AURA_DE_VACIO","Aura de Vacío",
+    "Aura de Vacío")).getId();
+var HAB_NEMESIS_INDETECCION = (new L("HAB_NEMESIS_INDETECCION","Indetección",
+    "Indetección")).getId();
+var HAB_NEMESIS_INHUMANIDAD = (new L("HAB_NEMESIS_INHUMANIDAD","Inhumanidad (Némesis)",
+    "Inhumanidad (Némesis)")).getId();
+var HAB_NEMESIS_ZEN = (new L("HAB_NEMESIS_ZEN","Zen (Némesis)",
+    "Zen (Némesis)")).getId();
