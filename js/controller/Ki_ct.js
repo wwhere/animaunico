@@ -10,6 +10,13 @@ var allHabilidadesKi = {};
 
 /**
  *
+ * @type {Limite[]}
+ */
+var limites_set = [];
+var allLimites = {};
+
+/**
+ *
  * @type {TecnicaKi[]}
  */
 var tecnicasMuestra_set = [];
@@ -952,4 +959,71 @@ function efectoNemesisCuerpoDeVacio(aplicar) {
     lanzarEvento(EVENT_CHARACTER_SECCION_RESISTENCIAS);
 }
 
+
+function anularLimite(event) {
+    var limite = event.data.limite;
+
+    desactivarNotificaciones();
+    personaje_actual.addCMGastado(-1 * limite.coste);
+    activarNotificaciones();
+    personaje_actual.removeLimite(limite);
+}
+
+function comprarLimite() {
+    var arrayOpciones = [];
+
+    for (var i = 0; i < limites_set.length; i++) {
+        arrayOpciones.push(new OpcionMostrable(_l(limites_set[i].nombre),limites_set[i].nombre,"",limites_set[i].coste + " " + _l(UI_CM)));
+    }
+
+    muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: eligeLimite , isDisabled:noPuedeComprarLimite}, true);
+}
+
+function getLimite(nombreLimite) {
+    if (allLimites[nombreLimite]) {
+        return allLimites[nombreLimite];
+    } else {
+        throw _l(ERR_LIMITE_DESCONOCIDO) + ": " + nombreLimite;
+    }
+}
+
+/**
+ *
+ * @param {{opcion:string}} parametros
+ */
+function eligeLimite(parametros) {
+    var limite = getLimite(parametros.opcion);
+
+    desactivarNotificaciones();
+    personaje_actual.addCMGastado(limite.coste);
+    activarNotificaciones();
+    personaje_actual.addLimite(limite);
+}
+
+function noPuedeComprarLimite(parametros) {
+    /**
+     *
+     * @type {Limite}
+     */
+    var limite = getLimite(parametros.opcion);
+    var puede = true;
+
+    if (personaje_actual.hasLimite(limite)) {
+        puede = false;
+    }
+
+    if((personaje_actual.getLimite().length == 1) && (!personaje_actual.hasFlag(FLAG_LIMITE_DUAL))) {
+        puede = false;
+    }
+
+    if (personaje_actual.getLimite().length > 1) {
+        puede =false;
+    }
+
+    if (limite.coste > personaje_actual.getCMTotal()-personaje_actual.getCMGastado()) {
+        puede = false;
+    }
+
+    return !puede;
+}
 

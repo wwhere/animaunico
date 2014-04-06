@@ -486,6 +486,7 @@ new L("2ª", "2ª", "2nd");
 
 var UI_COMPRAR_TECNICA_EXISTENTE = (new L("Comprar técnica de dominio existente","Comprar técnica de dominio existente","Buy pre-existent technique")).getId();
 var UI_COMPRAR_HABILIDAD_KI = (new L("Comprar habilidad de ki", "Comprar habilidad de ki", "Buy Ki Ability")).getId();
+var UI_COMPRAR_LIMITE = (new L("UI_COMPRAR_LIMITE", "Comprar Límite", "Buy Limit")).getId();
 var UI_CREAR_TECNICA_DOMINIO = (new L("Crear técnica de dominio", "Crear técnica de dominio", "Design own ki technique")).getId();
 var UI_ACCESO_NUEVA_VIA = (new L("Acceso a nueva vía de magia","Acceso a nueva vía de magia","Access to new path")).getId();
 var UI_COMPRAR_CONJURO_SUELTO = (new L("Comprar conjuro suelto","Comprar conjuro suelto","Cherry pick spell")).getId();
@@ -513,6 +514,7 @@ var UI_SINCRONIZACION = (new L("Sincronizacion", "Sincronización", "Synchroniza
 var UI_CONOCIMIENTO_MARCIAL = (new L("Conocimiento Marcial","Conocimiento Marcial","Martial Knowledge")).getId();
 var UI_HABILIDADES_KI = (new L("Habilidades del Ki","Habilidades del Ki","Ki Abilities")).getId();
 var UI_TECNICAS_KI = (new L("Técnicas de Dominio","Técnicas de Dominio","Ki Techniques")).getId();
+var UI_LIMITE = (new L("UI_LIMITE","Límite","Limit")).getId();
 
 var UI_MINIMO = (new L("Minimo", "Mínimo", "Min.")).getId();
 var UI_MAXIMO = (new L("Maximo", "Máximo", "Max.")).getId();
@@ -1008,3 +1010,5 @@ var ORIGEN_HABILIDAD_NATURAL = (new L("ORIGEN_HABILIDAD_NATURAL","Habilidad Natu
 var ORIGEN_BONIFICADOR_NATURAL = (new L("ORIGEN_BONIFICADOR_NATURAL","Bonificador Natural","Natural bonus")).getId();
 var ORIGEN_ARMADURA = (new L("ORIGEN_ARMADURA","Armadura","Armor")).getId();
 /****************************/
+
+var ERR_LIMITE_DESCONOCIDO = (new L("ERR_LIMITE_DESCONOCIDO", "Error: Límite desconocido", "Error: Unknown Limit")).getId();

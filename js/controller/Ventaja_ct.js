@@ -1665,5 +1665,9 @@ function limiteDual(coste, opcion,aplicar) {
         personaje_actual.setFlag(FLAG_LIMITE_DUAL);
     } else {
         personaje_actual.removeFlag(FLAG_LIMITE_DUAL);
+        if (personaje_actual.getLimite().length > 1) {
+            anularLimite({data:{limite:personaje_actual.limite[1]}});
+        }
     }
+    lanzarEvento(EVENT_CHARACTER_SECCION_KI);
 }
