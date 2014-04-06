@@ -558,6 +558,11 @@ function compraSiPuedesSobrenatural(tipoCompra, parametros, coste) {
                 puedeComprar.puedeComprar = false;
                 puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_PROYECCION_MAGICA);
             }
+        } else if (nombreHabilidad == HB_NIVEL_DE_VIA) {
+            if (personaje_actual[HB_NIVEL_DE_VIA].getPDinvertidos() + coste > Math.floor(personaje_actual.getPDTotales()/10)) {
+                puedeComprar.puedeComprar = false;
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_NIVEL_VIA);
+            }
         }
     }
     return puedeComprar;

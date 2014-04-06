@@ -1328,7 +1328,7 @@ Personaje.prototype = {
      */
     nivelMagiaMaximo : function() {
         if (this.hasFlag(FLAG_DON)) {
-            return nivelMagiaMaximoPorInteligencia(this.getCaracteristica(INT));
+            return this[HB_NIVEL_DE_VIA].valorFinalActual();
         } else {
             return 0;
         }
@@ -1429,15 +1429,18 @@ Personaje.prototype = {
      * @param {string} nombreVia
      * @param {number} nivel
      */
-    addNivelVia : function(nombreVia, nivel) {
+    addNivelVia : function (nombreVia, nivel, esNivelMinimo) {
         if (this.hasVia(nombreVia)) {
-            this.viasMagia[nombreVia].addNivel(nivel);
+            this.viasMagia[nombreVia].addNivel(nivel, esNivelMinimo);
             if (this.viasMagia[nombreVia].getNivel() == 0) {
                 this.removeViaMagia(nombreVia);
             }
         } else {
             var via = getVia(nombreVia);
             var nivelEnVia = new NivelEnVia(via,nivel);
+            if (esNivelMinimo) {
+                nivelEnVia.setNivelMinimo(nivel);
+            }
             this.viasMagia.push(nivelEnVia);
             this.viasMagia[nombreVia] = nivelEnVia;
         }
@@ -4176,6 +4179,7 @@ Personaje.prototype = {
                 break;
             case TIPO_HB_SOBRENATURAL:
                 gasto = this[HB_ZEON].getPDinvertidos() +
+                    this[HB_NIVEL_DE_VIA].getPDinvertidos() +
                     this[HB_ACT].getPDinvertidos() +
                     this[HB_PROYECCION_MAGICA].getPDinvertidos() +
                     this[HB_CONVOCAR].getPDinvertidos() +

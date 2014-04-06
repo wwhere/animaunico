@@ -374,9 +374,15 @@ NivelEnVia.prototype = {
      *
      * @param {number} valor
      */
-    addNivel : function(valor) {
-        if (this.getNivel()+valor >= this.nivelMinimo)
+    addNivel : function (valor, ignoraNivelMinimo) {
+        if ((this.getNivel()+valor >= this.nivelMinimo) ||ignoraNivelMinimo) {
             this.setNivel(this.getNivel()+valor);
+            if (ignoraNivelMinimo) {
+                if (this.nivelMinimo > this.nivel) {
+                    this.nivelMinimo = this.nivel;
+                }
+            }
+        }
     },
 
     /**

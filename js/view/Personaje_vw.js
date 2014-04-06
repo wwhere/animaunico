@@ -422,6 +422,8 @@ function muestraCaracteristicas(estadoGeneracion) {
     div.append(muestraSubtitulo(UI_CARACTERISTICAS, true));
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
+    updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
+
     var divRow = getDiv(CSS_TEXTO_SMALL);
     divRow.addClass("row");
     var divNombre = getDiv("four columns");
@@ -1113,11 +1115,15 @@ function muestraManejoArmas() {
 function muestraSobrenatural(estadoGeneracion) {
     var div = recuadroBase();
 
+    updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
+
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
     div.append(muestraSubtitulo(UI_SOBRENATURALES, true));
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
+    var muestraBotonesNivelVia = muestraBotones && FLAG_ARCANA_EXXET_ENABLED;
+    divContenido.append(muestraHabilidadPrimaria(HB_NIVEL_DE_VIA,_l(UI_NIVELES_VIA),muestraBotonesNivelVia));
     divContenido.append(muestraHabilidadPrimaria(HB_ZEON,_l(UI_ZEON),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_ACT,_l(UI_ACT),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_MAGICA,_l(UI_PROYECCION_MAGICA),muestraBotones));

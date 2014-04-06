@@ -1,4 +1,5 @@
 var COSTE_CM = 1;
+var COSTE_NIVEL_DE_VIA = 1;
 
 //noinspection FunctionTooLongJS
 /**
@@ -256,6 +257,9 @@ Categoria.prototype =  {
             case HB_ACUM_KI_POD :
             case HB_ACUM_KI_FUE :
                 return this.acumulacionKi;
+                break;
+            case HB_NIVEL_DE_VIA :
+                return COSTE_NIVEL_DE_VIA;
                 break;
             case HB_ZEON :
                 return this.zeon;
