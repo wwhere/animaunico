@@ -79,6 +79,7 @@ module.exports = function(grunt) {
 
                     "js/model/HabilidadKi.js",
                     "js/model/Ki.js",
+                    "js/model/Limite.js",
                     "js/controller/Ki_ct.js",
                     "js/data/ki/habilidadesKi.js",
                     "js/data/ki/efectosTecnicas/desventajasTecnicas.js",
@@ -92,6 +93,7 @@ module.exports = function(grunt) {
                     "js/data/ki/tecnicas/celeritas.js",
                     "js/data/ki/tecnicas/ignis.js",
                     "js/data/ki/tecnicas/elDragon.js",
+                    "js/data/ki/limites.js",
 
                     "js/model/Ventaja.js",
                     "js/controller/Ventaja_ct.js",

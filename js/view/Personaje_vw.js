@@ -855,6 +855,8 @@ function muestraKi(estadoGeneracion) {
 
     divContenido.append(muestraTecnicasKi(muestraBotones));
 
+    divContenido.append(muestraLimite(muestraBotones));
+
     div.append(divContenido);
     return div;
 }
@@ -877,6 +879,51 @@ function muestraCMPersonaje(muestraBotones) {
     return divCM;
 }
 
+function muestraLimite(muestraBotones) {
+    var div = getDiv("");
+    var puedeComprar = true;
+    div.append(muestraSubtitulo(UI_LIMITE, false));
+
+    if ((personaje_actual.getLimite().length == 1) && (!personaje_actual.hasFlag(FLAG_LIMITE_DUAL))) {
+        puedeComprar = false;
+    } else if (personaje_actual.limite.length == 2) {
+        puedeComprar = false;
+    }
+
+    if (muestraBotones) {
+        var boton = botonComprarNuevo(_l(UI_COMPRAR_HABILIDAD_KI),"",comprarLimite,{});
+        div.append(boton);
+        if (!puedeComprar) {
+            disableButton(boton);
+        }
+    }
+
+    var limites = personaje_actual.getLimite();
+
+    if (limites.length == 0) {
+        div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+    for (var i = 0; i < limites.length; i++) {
+        var divLimite = getDiv("");
+        var puedeVender = true;
+
+        divLimite.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(limites[i].nombre)));
+
+        if (!limites[i].anulable) {
+            puedeVender = false;
+        }
+        if (muestraBotones) {
+            var botonVende = muestraBotonAnular(anularLimite,{limite: limites[i]});
+               divLimite.append(botonVende);
+            if (!puedeVender) {
+                disableButton(botonVende);
+            }
+        }
+        div.append(divLimite);
+    }
+
+    return div;
+}
 
 /**
  *

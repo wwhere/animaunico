@@ -373,3 +373,132 @@ var KI_TECNICA_OBERON = (new L("KI_TECNICA_OBERON","Oberon",
     "Oberon")).getId();
 var KI_TECNICA_GARUDA = (new L("KI_TECNICA_GARUDA","Garuda",
     "Garuda")).getId();
+
+/*********/
+
+var HAB_KI_MOVIMIENTO_DE_MASAS = (new L("HAB_KI_MOVIMIENTO_DE_MASAS","Movimiento de masas",
+    "Movimiento de masas")).getId();
+var HAB_KI_ARMADURA_DE_ENERGIA_MAYOR = (new L("HAB_KI_ARMADURA_DE_ENERGIA_MAYOR","Armadura de energía mayor",
+    "Armadura de energía mayor")).getId();
+var HAB_KI_HAB_KI_ARMADURA_DE_ENERGIA_ARCANA = (new L("HAB_KI_HAB_KI_ARMADURA_DE_ENERGIA_ARCANA","Armadura de energía arcana",
+    "Armadura de energía arcana")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_FUEGO = (new L("HAB_KI_ATAQUE_ELEMENTAL_FUEGO","Ataque elemental (Fuego)",
+    "Ataque elemental (Fuego)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_AIRE = (new L("HAB_KI_ATAQUE_ELEMENTAL_AIRE","Ataque elemental (Aire)",
+    "Ataque elemental (Aire)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_AGUA = (new L("HAB_KI_ATAQUE_ELEMENTAL_AGUA","Ataque elemental (Agua)",
+    "Ataque elemental (Agua)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_TIERRA = (new L("HAB_KI_ATAQUE_ELEMENTAL_TIERRA","Ataque elemental (Tierra)",
+    "Ataque elemental (Tierra)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_LUZ = (new L("HAB_KI_ATAQUE_ELEMENTAL_LUZ","Ataque elemental (Luz)",
+    "Ataque elemental (Luz)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_OSCURIDAD = (new L("HAB_KI_ATAQUE_ELEMENTAL_OSCURIDAD","Ataque elemental (Oscuridad)",
+    "Ataque elemental (Oscuridad)")).getId();
+var HAB_KI_DAÑO_INCREMENTADO = (new L("HAB_KI_DAÑO_INCREMENTADO","Daño incrementado",
+    "Daño incrementado")).getId();
+var HAB_KI_ALCANCE_INCREMENTADO = (new L("HAB_KI_ALCANCE_INCREMENTADO","Alcance incrementado",
+    "Alcance incrementado")).getId();
+var HAB_KI_VELOCIDAD_INCREMENTADA = (new L("HAB_KI_VELOCIDAD_INCREMENTADA","Velocidad incrementada",
+    "Velocidad incrementada")).getId();
+var HAB_KI_ABSORCION_DE_ENERGIA = (new L("HAB_KI_ABSORCION_DE_ENERGIA","Absorción de energía",
+    "Absorción de energía")).getId();
+var HAB_KI_ESCUDO_FISICO = (new L("HAB_KI_ESCUDO_FISICO","Escudo físico",
+    "Escudo físico")).getId();
+var HAB_KI_CURACION_SUPERIOR = (new L("HAB_KI_CURACION_SUPERIOR","Curación superior",
+    "Curación superior")).getId();
+var HAB_KI_ESTABILIZAR = (new L("HAB_KI_ESTABILIZAR","Estabilizar",
+    "Estabilizar")).getId();
+var HAB_KI_SACRIFICIO_VITAL = (new L("HAB_KI_SACRIFICIO_VITAL","Sacrificio vital",
+    "Sacrificio vital")).getId();
+var HAB_KI_AURA_DE_OCULTACION = (new L("HAB_KI_AURA_DE_OCULTACION","Aura de ocultación",
+    "Aura de ocultación")).getId();
+var HAB_KI_INMUNIDAD_ELEMENTAL_FUEGO = (new L("HAB_KI_INMUNIDAD_ELEMENTAL_FUEGO","Inmunidad elemental (Fuego)",
+    "Inmunidad elemental (Fuego)")).getId();
+var HAB_KI_INMUNIDAD_ELEMENTAL_FRIO = (new L("HAB_KI_INMUNIDAD_ELEMENTAL_FRIO","Inmunidad elemental (Frío)",
+    "Inmunidad elemental (Frío)")).getId();
+var HAB_KI_INMUNIDAD_ELEMENTAL_ELECTRICIDAD = (new L("HAB_KI_INMUNIDAD_ELEMENTAL_ELECTRICIDAD","Inmunidad elemental (Electricidad)",
+    "Inmunidad elemental (Electricidad)")).getId();
+var HAB_KI_RESTITUIR_A_OTROS = (new L("HAB_KI_RESTITUIR_A_OTROS","Restituir a otros",
+    "Restituir a otros")).getId();
+var HAB_KI_INCREMENTO_SUPERIOR = (new L("HAB_KI_INCREMENTO_SUPERIOR","Incremento superior",
+    "Incremento superior")).getId();
+var HAB_KI_TECNICAS_DE_COMBATE_IMPROVISADAS = (new L("HAB_KI_TECNICAS_DE_COMBATE_IMPROVISADAS","Técnicas de combate improvisadas",
+    "Técnicas de combate improvisadas")).getId();
+var HAB_KI_FORZAR_TECNICAS = (new L("HAB_KI_FORZAR_TECNICAS","Forzar técnicas",
+    "Forzar técnicas")).getId();
+var HAB_KI_AURA_DE_COMBATE = (new L("HAB_KI_AURA_DE_COMBATE","Aura de combate",
+    "Aura de combate")).getId();
+var HAB_KI_DOMINIO_FISICO = (new L("HAB_KI_DOMINIO_FISICO","Dominio físico",
+    "Dominio físico")).getId();
+var HAB_KI_CAMBIO_FISICO = (new L("HAB_KI_CAMBIO_FISICO","Cambio físico",
+    "Cambio físico")).getId();
+var HAB_KI_CAMBIO_SUPERIOR = (new L("HAB_KI_CAMBIO_SUPERIOR","Cambio superior",
+    "Cambio superior")).getId();
+var HAB_KI_MULTIPLICACION_DE_CUERPOS = (new L("HAB_KI_MULTIPLICACION_DE_CUERPOS","Multiplicación de cuerpos",
+    "Multiplicación de cuerpos")).getId();
+var HAB_KI_MULTIPLICACION_DE_CUERPOS_MAYOR = (new L("HAB_KI_MULTIPLICACION_DE_CUERPOS_MAYOR","Multiplicación de cuerpos mayor",
+    "Multiplicación de cuerpos mayor")).getId();
+var HAB_KI_MULTIPLICACION_DE_CUERPOS_ARCANA = (new L("HAB_KI_MULTIPLICACION_DE_CUERPOS_ARCANA","Multiplicación de cuerpos arcana",
+    "Multiplicación de cuerpos arcana")).getId();
+var HAB_KI_MAGNITUD = (new L("HAB_KI_MAGNITUD","Magnitud",
+    "Magnitud")).getId();
+var HAB_KI_MAGNITUD_ARCANA = (new L("HAB_KI_MAGNITUD_ARCANA","Magnitud arcana",
+    "Magnitud arcana")).getId();
+var HAB_KI_CONTROL_DE_LA_EDAD = (new L("HAB_KI_CONTROL_DE_LA_EDAD","Control de la edad",
+    "Control de la edad")).getId();
+var HAB_KI_IMITACION_DE_TECNICAS = (new L("HAB_KI_IMITACION_DE_TECNICAS","Imitación de técnicas",
+    "Imitación de técnicas")).getId();
+
+var HAB_NEMESIS_USO_DEL_NEMESIS = (new L("HAB_NEMESIS_USO_DEL_NEMESIS","Uso del Némesis",
+    "Uso del Némesis")).getId();
+var HAB_NEMESIS_ARMADURA_DE_VACIO = (new L("HAB_NEMESIS_ARMADURA_DE_VACIO","Armadura de Vacío",
+    "Armadura de Vacío")).getId();
+var HAB_NEMESIS_NOHT = (new L("HAB_NEMESIS_NOHT","Noht",
+    "Noht")).getId();
+var HAB_NEMESIS_ANULACION_DE_KI = (new L("HAB_NEMESIS_ANULACION_DE_KI","Anulación de Ki",
+    "Anulación de Ki")).getId();
+var HAB_NEMESIS_ANULACION_DE_KI_MAYOR = (new L("HAB_NEMESIS_ANULACION_DE_KI_MAYOR","Anulación de Ki Mayor",
+    "Anulación de Ki Mayor")).getId();
+var HAB_NEMESIS_ANULACION_DE_MAGIA = (new L("HAB_NEMESIS_ANULACION_DE_MAGIA","Anulación de Magia",
+    "Anulación de Magia")).getId();
+var HAB_NEMESIS_ANULACION_DE_MAGIA_MAYOR = (new L("HAB_NEMESIS_ANULACION_DE_MAGIA_MAYOR","Anulación de Magia Mayor",
+    "Anulación de Magia Mayor")).getId();
+var HAB_NEMESIS_ANULACION_DE_MATRICES = (new L("HAB_NEMESIS_ANULACION_DE_MATRICES","Anulación de Matrices",
+    "Anulación de Matrices")).getId();
+var HAB_NEMESIS_ANULACION_DE_MATRICES_MAYOR = (new L("HAB_NEMESIS_ANULACION_DE_MATRICES_MAYOR","Anulación de Matrices Mayor",
+    "Anulación de Matrices Mayor")).getId();
+var HAB_NEMESIS_ANULACION_DE_LAZOS = (new L("HAB_NEMESIS_ANULACION_DE_LAZOS","Anulación de Lazos",
+    "Anulación de Lazos")).getId();
+var HAB_NEMESIS_EXTRUSION_DE_VACIO = (new L("HAB_NEMESIS_EXTRUSION_DE_VACIO","Extrusión de Vacío",
+    "Extrusión de Vacío")).getId();
+var HAB_NEMESIS_CUERPO_DE_VACIO = (new L("HAB_NEMESIS_CUERPO_DE_VACIO","Cuerpo de Vacío",
+    "Cuerpo de Vacío")).getId();
+var HAB_NEMESIS_SIN_NECESIDADES = (new L("HAB_NEMESIS_SIN_NECESIDADES","Sin Necesidades",
+    "Sin Necesidades")).getId();
+var HAB_NEMESIS_MOVIMIENTO_DE_VACIO = (new L("HAB_NEMESIS_MOVIMIENTO_DE_VACIO","Movimiento de Vacío",
+    "Movimiento de Vacío")).getId();
+var HAB_NEMESIS_FORMA_DE_VACIO = (new L("HAB_NEMESIS_FORMA_DE_VACIO","Forma de Vacío",
+    "Forma de Vacío")).getId();
+var HAB_NEMESIS_ESENCIA_DE_VACIO = (new L("HAB_NEMESIS_ESENCIA_DE_VACIO","Esencia de Vacío",
+    "Esencia de Vacío")).getId();
+var HAB_NEMESIS_UNO_CON_LA_NADA = (new L("HAB_NEMESIS_UNO_CON_LA_NADA","Uno con la Nada",
+    "Uno con la Nada")).getId();
+var HAB_NEMESIS_AURA_DE_VACIO = (new L("HAB_NEMESIS_AURA_DE_VACIO","Aura de Vacío",
+    "Aura de Vacío")).getId();
+var HAB_NEMESIS_INDETECCION = (new L("HAB_NEMESIS_INDETECCION","Indetección",
+    "Indetección")).getId();
+var HAB_NEMESIS_INHUMANIDAD = (new L("HAB_NEMESIS_INHUMANIDAD","Inhumanidad (Némesis)",
+    "Inhumanidad (Némesis)")).getId();
+var HAB_NEMESIS_ZEN = (new L("HAB_NEMESIS_ZEN","Zen (Némesis)",
+    "Zen (Némesis)")).getId();
+
+/** LIMITES **/
+
+var LIMITE_MORS = (new L("LIMITE_MORS","Mors: Límite de la Muerte","Mors: Límite de la Muerte")).getId();
+var LIMITE_CENORUS = (new L("LIMITE_CENORUS","Cenorus: Límite del Sacrificio","Cenorus: Límite del Sacrificio")).getId();
+var LIMITE_CAELUM = (new L("LIMITE_CAELUM","Caelum: Límite del Peligro","Caelum: Límite del Peligro")).getId();
+var LIMITE_AGON = (new L("LIMITE_AGON","Agon: Límite de la Guerra","Agon: Límite de la Guerra")).getId();
+var LIMITE_CUSTODIUM = (new L("LIMITE_CUSTODIUM","Custodium: Límite del Guardián","Custodium: Límite del Guardián")).getId();
+var LIMITE_CRUOR = (new L("LIMITE_CRUOR","Cruor: Límite de la Sangre","Cruor: Límite de la Sangre")).getId();
+var LIMITE_TERMINUS = (new L("LIMITE_TERMINUS","Terminus: Límite de Fin","Terminus: Límite de Fin")).getId();
+

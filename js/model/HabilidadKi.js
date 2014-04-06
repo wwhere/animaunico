@@ -9,8 +9,9 @@
  * @param {function} [efecto]
  * @param {boolean} isHabilidad
  * @param {string} [nombreHabilidadMedia]
+ * @param {string[]} flagsNecesarios
  */
-function HabilidadKi(nombre, descripcion, costeCM, requisitos, efecto, isHabilidad, nombreHabilidadMedia) {
+function HabilidadKi(nombre, descripcion, costeCM, requisitos, efecto, isHabilidad, nombreHabilidadMedia, flagsNecesarios) {
     /** @type string */
     this.nombre = nombre;
 
@@ -31,6 +32,12 @@ function HabilidadKi(nombre, descripcion, costeCM, requisitos, efecto, isHabilid
 
     /** @type {string} */
     this.nombreHabilidadMedia = nombreHabilidadMedia || "";
+
+    /**
+     *
+     * @type {string[]}
+     */
+    this.flagsNecesarios = flagsNecesarios;
 }
 
 HabilidadKi.prototype = {

@@ -310,6 +310,12 @@ function Personaje(nivelInicial) {
      */
     this.numTecnicas = {nivel1:0,nivel2:0,nivel3:0};
 
+    /**
+     *
+     * @type {Limite[]}
+     */
+    this.limite = [];
+
     //endregion Ajustes Habilidades Primarias: Combate
 
     //region Ajustes Habilidades Primarias: Magia
@@ -2283,6 +2289,10 @@ Personaje.prototype = {
             }
             this.nivelMagiaGastadoPrevio = this.nivelMagiaGastado;
 
+            for (i = 0; i < this.limite.length; i++) {
+                this.limite[i].anulable = false;
+            }
+
             this.desequilibrioOfensivoMagicoCambioMaximo += 10;
 
             for (i=0; i < this.allHabilidades.length; i++)  {
@@ -3282,10 +3292,12 @@ Personaje.prototype = {
         } else {
             var nivelTecnica = tecnicaKi.getNivel();
 
-            if (nivelTecnica == 2) {
-                puede = (this.numTecnicas["nivel1"] >= 2);
-            } else if (nivelTecnica == 3) {
-                puede = (this.numTecnicas["nivel2"] >= 2);
+            if (!this.hasFlag(FLAG_TECNICAS_DESVINCULADAS)) {
+                if (nivelTecnica == 2) {
+                    puede = (this.numTecnicas["nivel1"] >= 2);
+                } else if (nivelTecnica == 3) {
+                    puede = (this.numTecnicas["nivel2"] >= 2);
+                }
             }
 
             //TODO limitar por atadura elemental?
@@ -3377,6 +3389,51 @@ Personaje.prototype = {
      */
     getArmaInicial : function() {
         return this.armaInicial;
+    },
+
+    /**
+     *
+     * @returns {Limite[]}
+     */
+    getLimite : function() {
+        return this.limite;
+    },
+
+    /**
+     *
+     * @param {Limite} valor
+     */
+    addLimite : function(valor) {
+        this.limite.push(valor);
+        lanzarEvento(EVENT_CHARACTER_SECCION_KI);
+    },
+
+    /**
+     *
+     * @param {Limite} valor
+     */
+    removeLimite : function(valor) {
+        var limiteLimpio = [];
+        for (var i = 0; i < this.limite.length; i++) {
+            if (this.limite[i].nombre != valor.nombre) {
+                limiteLimpio.push(this.limite[i]);
+            }
+        }
+        this.limite = limiteLimpio;
+        lanzarEvento(EVENT_CHARACTER_SECCION_KI);
+    },
+
+    /**
+     *
+     * @param {Limite} valor
+     */
+    hasLimite : function(valor) {
+        for (var i = 0; i < this.limite.length; i++) {
+            if (this.limite[i].nombre == valor.nombre) {
+                return true
+            }
+        }
+        return false;
     },
 //endregion Habilidades Primarias: Combate
 

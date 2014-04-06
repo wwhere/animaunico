@@ -139,3 +139,41 @@ var TABLA_TABLA_DE_ATAQUE_ADICIONAL = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL","
     "Tabla de Ataque adicional")).getId();
 var TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC","Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.",
     "Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.")).getId();
+
+var TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES = (new L("TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES","Tabla de Acumulación de Proyectiles",
+    "Tabla de Acumulación de Proyectiles")).getId();
+var TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES_DESC","Un luchador puede usar la maniobra Acumulación de Proyectiles sin sufrir penalizadores a su Habilidad Ofensiva. Por lo tanto, aplicará un -10 a su Turno por cada proyectil adicional que lance con esa maniobra, pero no un -5 a su Habilidad de Ataque.",
+    "Un luchador puede usar la maniobra Acumulación de Proyectiles sin sufrir penalizadores a su Habilidad Ofensiva. Por lo tanto, aplicará un -10 a su Turno por cada proyectil adicional que lance con esa maniobra, pero no un -5 a su Habilidad de Ataque.")).getId();
+var TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO = (new L("TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO","Tabla de Segunda Arma: Estilo Defensivo",
+    "Tabla de Segunda Arma: Estilo Defensivo")).getId();
+var TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO_DESC = (new L("TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO_DESC","Un luchador que porte un arma de mano adicional puede utilizarla para mejorar su capacidad defensiva en lugar de para atacar, de manera que pueda detener un segundo ataque sin aplicar penalizador alguno a su Habilidad Defensiva. De este modo, el segundo ataque no sufre ningún penalizador, el tercero sufre un -30 (como si fuera el segundo ataque), el cuarto un -50 (como si fuera el tercero) y así consecutivamente. Si un personaje quiere usar su arma de este modo, no puede hacer un ataque adicional con ella.",
+    "Un luchador que porte un arma de mano adicional puede utilizarla para mejorar su capacidad defensiva en lugar de para atacar, de manera que pueda detener un segundo ataque sin aplicar penalizador alguno a su Habilidad Defensiva. De este modo, el segundo ataque no sufre ningún penalizador, el tercero sufre un -30 (como si fuera el segundo ataque), el cuarto un -50 (como si fuera el tercero) y así consecutivamente. Si un personaje quiere usar su arma de este modo, no puede hacer un ataque adicional con ella.")).getId();
+var TABLA_TABLA_DE_CRITICO_INCREMENTADO = (new L("TABLA_TABLA_DE_CRITICO_INCREMENTADO","Tabla de Crítico Incrementado",
+    "Tabla de Crítico Incrementado")).getId();
+var TABLA_TABLA_DE_CRITICO_INCREMENTADO_DESC = (new L("TABLA_TABLA_DE_CRITICO_INCREMENTADO_DESC","Permite al luchador aplicar un +10 a las tiradas para calcular su Nivel de Crítico.",
+    "Permite al luchador aplicar un +10 a las tiradas para calcular su Nivel de Crítico.")).getId();
+var TABLA_TABLA_DE_ATAQUE_INUSUAL = (new L("TABLA_TABLA_DE_ATAQUE_INUSUAL","Tabla de Ataque Inusual",
+    "Tabla de Ataque Inusual")).getId();
+var TABLA_TABLA_DE_ATAQUE_INUSUAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_INUSUAL_DESC","Permite a un personaje usar el Crítico Secundario de las armas que sepa manejar, sin ninguna clase de penalizador a su habilidad.",
+    "Permite a un personaje usar el Crítico Secundario de las armas que sepa manejar, sin ninguna clase de penalizador a su habilidad.")).getId();
+var TABLA_TABLA_DE_PRESA_INUSUAL = (new L("TABLA_TABLA_DE_PRESA_INUSUAL","Tabla de Presa Inusual",
+    "Tabla de Presa Inusual")).getId();
+var TABLA_TABLA_DE_PRESA_INUSUAL_DESC = (new L("TABLA_TABLA_DE_PRESA_INUSUAL_DESC","Permite realizar una maniobra de Presa con armas que no tengan dicha regla especial, aplicando un penalizador de -60 en lugar del -40 habitual. Si la maniobra tiene éxito, el personaje utiliza para el Control Enfrentado de Características su Destreza, aunque con un penalizador de -3 a su valor.",
+    "Permite realizar una maniobra de Presa con armas que no tengan dicha regla especial, aplicando un penalizador de -60 en lugar del -40 habitual. Si la maniobra tiene éxito, el personaje utiliza para el Control Enfrentado de Características su Destreza, aunque con un penalizador de -3 a su valor.")).getId();
+var TABLA_TABLA_DE_GUARDAESPALDAS = (new L("TABLA_TABLA_DE_GUARDAESPALDAS","Tabla de Guardaespaldas",
+    "Tabla de Guardaespaldas")).getId();
+var TABLA_TABLA_DE_GUARDAESPALDAS_DESC = (new L("TABLA_TABLA_DE_GUARDAESPALDAS_DESC","Reduce a -10 los penalizadores aplicables por tratar de cubrir o apartar de la trayectoria de un ataque a otra persona. No otorga ninguna ventaja si el personaje emplea escudos sobrenaturales.",
+    "Reduce a -10 los penalizadores aplicables por tratar de cubrir o apartar de la trayectoria de un ataque a otra persona. No otorga ninguna ventaja si el personaje emplea escudos sobrenaturales.")).getId();
+var TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS = (new L("TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS","Tabla de Movimiento en Espacios Reducidos",
+    "Tabla de Movimiento en Espacios Reducidos")).getId();
+var TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS_DESC = (new L("TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS_DESC","Reduce a la mitad los penalizadores aplicables por atacar o defenderse en el interior de un espacio reducido.",
+    "Reduce a la mitad los penalizadores aplicables por atacar o defenderse en el interior de un espacio reducido.")).getId();
+var TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO = (new L("TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO","Tabla de Esquiva con Escudo",
+    "Tabla de Esquiva con Escudo")).getId();
+var TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO_DESC = (new L("TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO_DESC","Permite a un personaje que esquive empleando un escudo beneficiarse del bono que otorga el escudo a la parada en lugar de a la esquiva. Es decir, un luchador esquivando obtendría un bono de +20 por usar un escudo medio en lugar de +10.",
+    "Permite a un personaje que esquive empleando un escudo beneficiarse del bono que otorga el escudo a la parada en lugar de a la esquiva. Es decir, un luchador esquivando obtendría un bono de +20 por usar un escudo medio en lugar de +10.")).getId();
+var TABLA_TABLA_DE_SUJECION = (new L("TABLA_TABLA_DE_SUJECION","Tabla de Sujeción",
+    "Tabla de Sujeción")).getId();
+var TABLA_TABLA_DE_SUJECION_DESC = (new L("TABLA_TABLA_DE_SUJECION_DESC","Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.",
+    "Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.")).getId();
+

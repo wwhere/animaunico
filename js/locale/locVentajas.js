@@ -339,3 +339,46 @@ var VENT_SANGRE_ANTIGUA = (new L("VENT_SANGRE_ANTIGUA","Sangre antigua",
     "Sangre antigua")).getId();
 var VENT_SANGRE_ANTIGUA_DESC = (new L("VENT_SANGRE_ANTIGUA_DESC","Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.",
     "Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.")).getId();
+
+
+var VENT_ACUMULACION_PLENA = (new L("VENT_ACUMULACION_PLENA","Acumulación plena",
+    "Acumulación plena")).getId();
+var VENT_ACUMULACION_PLENA_DESC = (new L("VENT_ACUMULACION_PLENA_DESC","El personaje no reduce sus Acumulaciones de Ki por realizar Acciones pasivas o activas. A efectos de juego, siempre goza de su Acumulación plena, sin importar lo que haga durante el Turno.",
+    "El personaje no reduce sus Acumulaciones de Ki por realizar Acciones pasivas o activas. A efectos de juego, siempre goza de su Acumulación plena, sin importar lo que haga durante el Turno.")).getId();
+var VENT_APRENDIZAJE_MARCIAL = (new L("VENT_APRENDIZAJE_MARCIAL","Aprendizaje marcial",
+    "Aprendizaje marcial")).getId();
+var VENT_APRENDIZAJE_MARCIAL_DESC = (new L("VENT_APRENDIZAJE_MARCIAL_DESC","Alguien con esta ventaja incrementa en dos niveles el Grado de aprendizaje que le otorgue su CM",
+    "Alguien con esta ventaja incrementa en dos niveles el Grado de aprendizaje que le otorgue su CM")).getId();
+var VENT_KI_IMPERCEPTIBLE = (new L("VENT_KI_IMPERCEPTIBLE","Ki imperceptible",
+    "Ki imperceptible")).getId();
+var VENT_KI_IMPERCEPTIBLE_DESC = (new L("VENT_KI_IMPERCEPTIBLE_DESC","Esta ventaja otorga un bono especial de +10 a Ocultación del Ki por nivel.",
+    "Esta ventaja otorga un bono especial de +10 a Ocultación del Ki por nivel.")).getId();
+var VENT_PODER_INNATO = (new L("VENT_PODER_INNATO","Poder innato",
+    "Poder innato")).getId();
+var VENT_PODER_INNATO_DESC = (new L("VENT_PODER_INNATO_DESC","A la hora de calcular sus puntos de Ki iniciales, en lugar de utilizar con normalidad el valor básico de sus Características, el personaje emplea tan sólo su atributo de Poder y multiplica por seis la cantidad que este le otorgue. Los puntos adicionales por tener un valor de Característica superior a 10, también se multiplican. Esta ventaja sólo puede ser escogida en el caso de que se utilicen las reglas opcionales de Unificación de puntos de Ki.",
+    "A la hora de calcular sus puntos de Ki iniciales, en lugar de utilizar con normalidad el valor básico de sus Características, el personaje emplea tan sólo su atributo de Poder y multiplica por seis la cantidad que este le otorgue. Los puntos adicionales por tener un valor de Característica superior a 10, también se multiplican. Esta ventaja sólo puede ser escogida en el caso de que se utilicen las reglas opcionales de Unificación de puntos de Ki.")).getId();
+var VENT_TECNICAS_DESVINCULADAS = (new L("VENT_TECNICAS_DESVINCULADAS","Técnicas desvinculadas",
+    "Técnicas desvinculadas")).getId();
+var VENT_TECNICAS_DESVINCULADAS_DESC = (new L("VENT_TECNICAS_DESVINCULADAS_DESC","El personaje puede desarrollar o aprender Técnicas de Dominio con libertad, sin la necesidad de seguir las reglas de Árbol. Es decir, no necesita Técnicas de nivel inferior para aprender otras de nivel superior.",
+    "El personaje puede desarrollar o aprender Técnicas de Dominio con libertad, sin la necesidad de seguir las reglas de Árbol. Es decir, no necesita Técnicas de nivel inferior para aprender otras de nivel superior.")).getId();
+var VENT_ACUMULACION_DE_KI_INCREMENTADA = (new L("VENT_ACUMULACION_DE_KI_INCREMENTADA","Acumulación de ki incrementada",
+    "Acumulación de ki incrementada")).getId();
+var VENT_ACUMULACION_DE_KI_INCREMENTADA_DESC = (new L("VENT_ACUMULACION_DE_KI_INCREMENTADA_DESC","Si el personaje no realiza ninguna otra Acción durante el asalto, activa ni pasiva, que no sea Acumular Ki, puede sumar un +1 al valor de todas sus Acumulaciones de Ki durante ese asalto. La inversión de un punto de Creación adicional incrementa este bono a +2.",
+    "Si el personaje no realiza ninguna otra Acción durante el asalto, activa ni pasiva, que no sea Acumular Ki, puede sumar un +1 al valor de todas sus Acumulaciones de Ki durante ese asalto. La inversión de un punto de Creación adicional incrementa este bono a +2.")).getId();
+var VENT_PERCEPCION_DEL_KI = (new L("VENT_PERCEPCION_DEL_KI","Percepción del ki",
+    "Percepción del ki")).getId();
+var VENT_PERCEPCION_DEL_KI_DESC = (new L("VENT_PERCEPCION_DEL_KI_DESC","Esta ventaja otorga un bono especial de +10 a Detección del Ki por nivel.",
+    "Esta ventaja otorga un bono especial de +10 a Detección del Ki por nivel.")).getId();
+var VENT_LIMITE_DUAL = (new L("VENT_LIMITE_DUAL","Límite dual",
+    "Límite dual")).getId();
+var VENT_LIMITE_DUAL_DESC = (new L("VENT_LIMITE_DUAL_DESC","El personaje puede escoger hasta dos Límites en lugar de uno.",
+    "El personaje puede escoger hasta dos Límites en lugar de uno.")).getId();
+var VENT_INUTILIDAD_GESTUAL = (new L("VENT_INUTILIDAD_GESTUAL","Inutilidad gestual",
+    "Inutilidad gestual")).getId();
+var VENT_INUTILIDAD_GESTUAL_DESC = (new L("VENT_INUTILIDAD_GESTUAL_DESC","El personaje no reduce su Acumulación de Ki, incluso si no es capaz de usar las manos.",
+    "El personaje no reduce su Acumulación de Ki, incluso si no es capaz de usar las manos.")).getId();
+var VENT_SELLOS_MAGISTRALES = (new L("VENT_SELLOS_MAGISTRALES","Sellos magistrales",
+    "Sellos magistrales")).getId();
+var VENT_SELLOS_MAGISTRALES_DESC = (new L("VENT_SELLOS_MAGISTRALES_DESC","A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.",
+    "A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.")).getId();
+

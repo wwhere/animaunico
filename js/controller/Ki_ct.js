@@ -10,6 +10,13 @@ var allHabilidadesKi = {};
 
 /**
  *
+ * @type {Limite[]}
+ */
+var limites_set = [];
+var allLimites = {};
+
+/**
+ *
  * @type {TecnicaKi[]}
  */
 var tecnicasMuestra_set = [];
@@ -823,3 +830,200 @@ function puedeComprarseEfecto(tecnicaKi, efecto, esPrincipal) {
 
     return puede;
 }
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalFuego(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalAgua(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalAire(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalTierra(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalLuz(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalOscuridad(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiDañoIncrementado(aplicar) {
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_DAÑO_INCREMENTADO)
+    if (aplicar) {
+        personaje_actual.addBono(bonoDaño,false,false);
+    } else {
+        personaje_actual.removeBono(bonoDaño,false);
+    }
+}
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiVelocidadIncrementada(aplicar) {
+    var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,10,"",false,BONO_ESPECIAL,HAB_KI_VELOCIDAD_INCREMENTADA)
+    if (aplicar) {
+        personaje_actual.addBono(bonoTurno,false,false);
+    } else {
+        personaje_actual.removeBono(bonoTurno,false);
+    }
+}
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiEscudoFisico(aplicar) {
+    //TODO barrera de daño igual a presencia
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoNemesisCuerpoDeVacio(aplicar) {
+    desactivarNotificaciones();
+    aumentaResistencia(0,0, aplicar,RF,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RE,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RV,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RM,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    aumentaResistencia(0,0, aplicar,RP,20, HAB_NEMESIS_CUERPO_DE_VACIO);
+    activarNotificaciones();
+    lanzarEvento(EVENT_CHARACTER_SECCION_RESISTENCIAS);
+}
+
+
+function anularLimite(event) {
+    var limite = event.data.limite;
+
+    desactivarNotificaciones();
+    personaje_actual.addCMGastado(-1 * limite.coste);
+    activarNotificaciones();
+    personaje_actual.removeLimite(limite);
+}
+
+function comprarLimite() {
+    var arrayOpciones = [];
+
+    for (var i = 0; i < limites_set.length; i++) {
+        arrayOpciones.push(new OpcionMostrable(_l(limites_set[i].nombre),limites_set[i].nombre,"",limites_set[i].coste + " " + _l(UI_CM)));
+    }
+
+    muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: eligeLimite , isDisabled:noPuedeComprarLimite}, true);
+}
+
+function getLimite(nombreLimite) {
+    if (allLimites[nombreLimite]) {
+        return allLimites[nombreLimite];
+    } else {
+        throw _l(ERR_LIMITE_DESCONOCIDO) + ": " + nombreLimite;
+    }
+}
+
+/**
+ *
+ * @param {{opcion:string}} parametros
+ */
+function eligeLimite(parametros) {
+    var limite = getLimite(parametros.opcion);
+
+    desactivarNotificaciones();
+    personaje_actual.addCMGastado(limite.coste);
+    activarNotificaciones();
+    personaje_actual.addLimite(limite);
+}
+
+function noPuedeComprarLimite(parametros) {
+    /**
+     *
+     * @type {Limite}
+     */
+    var limite = getLimite(parametros.opcion);
+    var puede = true;
+
+    if (personaje_actual.hasLimite(limite)) {
+        puede = false;
+    }
+
+    if((personaje_actual.getLimite().length == 1) && (!personaje_actual.hasFlag(FLAG_LIMITE_DUAL))) {
+        puede = false;
+    }
+
+    if (personaje_actual.getLimite().length > 1) {
+        puede =false;
+    }
+
+    if (limite.coste > personaje_actual.getCMTotal()-personaje_actual.getCMGastado()) {
+        puede = false;
+    }
+
+    return !puede;
+}
+

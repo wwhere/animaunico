@@ -178,7 +178,6 @@ function updateNivelMagiaPorInteligencia(inteligencia) {
     }
 
     var bono = new Bono(BONO_HABILIDAD,HB_NIVEL_DE_VIA,nivelMaximo,"",false,BONO_CARACTERISTICA,ORIGEN_CARAC);
-    console.log("Bono a nivel de via " + nivelMaximo);
     personaje_actual.addBono(bono,true,false);
 }
 
