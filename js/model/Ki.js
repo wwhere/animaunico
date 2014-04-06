@@ -851,12 +851,17 @@ TecnicaKi.prototype = {
         for (i=0; i < this.efectosSecundarios.length;i++) {
             coste += this.efectosSecundarios[i].getCosteCM();
         }
-        for (i=0; i < this.desventajas.length;i++) {
-            coste += this.desventajas[i].getCosteCM();
-        }
 
         if (this.isMantenida()) {
             coste += this.nivel * 10;
+        }
+
+        var minCosteTrasDesventajas = math.floor(coste/2);
+        for (i=0; i < this.desventajas.length;i++) {
+            coste += this.desventajas[i].getCosteCM();
+        }
+        if (coste < minCosteTrasDesventajas) {
+            coste = minCosteTrasDesventajas;
         }
 
         if (coste < this.minCM) {
