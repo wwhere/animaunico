@@ -159,6 +159,14 @@ function d10() {
     return Math.floor(Math.random()*10) + 1;
 }
 
+function d100() {
+    return Math.floor(Math.random()*100) + 1;
+}
+
+function d(caras) {
+    return Math.floor(Math.random()*caras) + 1;
+}
+
 var FLAG_CONOCEDOR_TODAS_MATERIAS = "FLAG_CONOCEDOR_TODAS_MATERIAS";
 var FLAG_DON = "FLAG_DON";
 var FLAG_DESARROLLAR_VALORACION_MAGICA = "FLAG_DESARROLLAR_VALORACION_MAGICA";

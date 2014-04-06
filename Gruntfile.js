@@ -31,6 +31,7 @@ module.exports = function(grunt) {
                     "js/locale/locTablas.js",
                     "js/locale/locVentajas.js",
                     "js/locale/locInvocaciones.js",
+                    "js/locale/locOrigenes.js",
 
                     "js/libros.js",
                     "js/mainAnimaUnico.js",
@@ -180,6 +181,10 @@ module.exports = function(grunt) {
                     "js/data/categorias/tao.js",
                     "js/data/categorias/tecnicista.js",
                     "js/data/categorias/warlock.js",
+
+                    "js/model/Origen.js",
+                    "js/controller/Origen.js",
+                    "js/data/origenes/origenes.js",
 
                     "js/model/Personaje.js",
                     "js/controller/Personaje_ct.js",
