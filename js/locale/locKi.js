@@ -494,11 +494,18 @@ var HAB_NEMESIS_ZEN = (new L("HAB_NEMESIS_ZEN","Zen (Némesis)",
 
 /** LIMITES **/
 
-var LIMITE_MORS = (new L("LIMITE_MORS","Mors: Límite de la Muerte","Mors: Límite de la Muerte")).getId();
-var LIMITE_CENORUS = (new L("LIMITE_CENORUS","Cenorus: Límite del Sacrificio","Cenorus: Límite del Sacrificio")).getId();
-var LIMITE_CAELUM = (new L("LIMITE_CAELUM","Caelum: Límite del Peligro","Caelum: Límite del Peligro")).getId();
-var LIMITE_AGON = (new L("LIMITE_AGON","Agon: Límite de la Guerra","Agon: Límite de la Guerra")).getId();
-var LIMITE_CUSTODIUM = (new L("LIMITE_CUSTODIUM","Custodium: Límite del Guardián","Custodium: Límite del Guardián")).getId();
-var LIMITE_CRUOR = (new L("LIMITE_CRUOR","Cruor: Límite de la Sangre","Cruor: Límite de la Sangre")).getId();
-var LIMITE_TERMINUS = (new L("LIMITE_TERMINUS","Terminus: Límite de Fin","Terminus: Límite de Fin")).getId();
+var LIMITE_MORS = (new L("LIMITE_MORS","Mors: Límite de la Muerte",
+    "Mors: Límite de la Muerte")).getId();
+var LIMITE_CENORUS = (new L("LIMITE_CENORUS","Cenorus: Límite del Sacrificio",
+    "Cenorus: Límite del Sacrificio")).getId();
+var LIMITE_CAELUM = (new L("LIMITE_CAELUM","Caelum: Límite del Peligro",
+    "Caelum: Límite del Peligro")).getId();
+var LIMITE_AGON = (new L("LIMITE_AGON","Agon: Límite de la Guerra",
+    "Agon: Límite de la Guerra")).getId();
+var LIMITE_CUSTODIUM = (new L("LIMITE_CUSTODIUM","Custodium: Límite del Guardián",
+    "Custodium: Límite del Guardián")).getId();
+var LIMITE_CRUOR = (new L("LIMITE_CRUOR","Cruor: Límite de la Sangre",
+    "Cruor: Límite de la Sangre")).getId();
+var LIMITE_TERMINUS = (new L("LIMITE_TERMINUS","Terminus: Límite de Fin",
+    "Terminus: Límite de Fin")).getId();
 
