@@ -93,6 +93,7 @@ module.exports = function(grunt) {
                     "js/data/ki/tecnicas/celeritas.js",
                     "js/data/ki/tecnicas/ignis.js",
                     "js/data/ki/tecnicas/elDragon.js",
+                    "js/data/ki/tecnicas/complementoWeb1.js",
                     "js/data/ki/limites.js",
 
                     "js/model/Ventaja.js",

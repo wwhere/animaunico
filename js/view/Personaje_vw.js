@@ -1001,8 +1001,6 @@ function muestraTecnicasKi(muestraBotones) {
 
         div.append("<hr>");
 
-
-
         var divNombre = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_CAMPO_PERSONALES).addClass(CSS_MUESTRA_BLOCK).addClass("six columns").append(_l(tecn.getNombre()));
         var divNivel = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_ETIQUETA_PERSONALES).addClass(CSS_MUESTRA_BLOCK).addClass("six columns").append(_l(UI_NV) + " " + tecn.getNivel());
         var divCM = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("two columns").append(_l(UI_CM) + " " + tecn.getCosteCM());
@@ -1023,7 +1021,7 @@ function muestraTecnicasKi(muestraBotones) {
 
         divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTOS_DE_LA_TECNICA) + ": "));
 
-        if (tecn.efectoPrimario)
+        if (tecn.getEfectoPrimario())
             divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(tecn.getEfectoPrimario().getNombreCompleto()));
 
         var efectosSecundarios = tecn.getEfectosSecundarios();
@@ -1032,7 +1030,7 @@ function muestraTecnicasKi(muestraBotones) {
         }
 
         var desventajas = tecn.getDesventajas();
-        if (desventajas.length > 1) {
+        if (desventajas.length > 0) {
             divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + ": "));
             for ( j = 0; j < desventajas.length; j++) {
                 divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_MUESTRA_BLOCK).addClass(CSS_COLOR_PALIDGREEN).append(desventajas[j].getNombreCompleto()));
