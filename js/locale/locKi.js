@@ -373,3 +373,78 @@ var KI_TECNICA_OBERON = (new L("KI_TECNICA_OBERON","Oberon",
     "Oberon")).getId();
 var KI_TECNICA_GARUDA = (new L("KI_TECNICA_GARUDA","Garuda",
     "Garuda")).getId();
+
+/*********/
+
+var HAB_KI_MOVIMIENTO_DE_MASAS = (new L("HAB_KI_MOVIMIENTO_DE_MASAS","Movimiento de masas",
+    "Movimiento de masas")).getId();
+var HAB_KI_ARMADURA_DE_ENERGIA_MAYOR = (new L("HAB_KI_ARMADURA_DE_ENERGIA_MAYOR","Armadura de energía mayor",
+    "Armadura de energía mayor")).getId();
+var HAB_KI_HAB_KI_ARMADURA_DE_ENERGIA_ARCANA = (new L("HAB_KI_HAB_KI_ARMADURA_DE_ENERGIA_ARCANA","Armadura de energía arcana",
+    "Armadura de energía arcana")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_FUEGO = (new L("HAB_KI_ATAQUE_ELEMENTAL_FUEGO","Ataque elemental (Fuego)",
+    "Ataque elemental (Fuego)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_AIRE = (new L("HAB_KI_ATAQUE_ELEMENTAL_AIRE","Ataque elemental (Aire)",
+    "Ataque elemental (Aire)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_AGUA = (new L("HAB_KI_ATAQUE_ELEMENTAL_AGUA","Ataque elemental (Agua)",
+    "Ataque elemental (Agua)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_TIERRA = (new L("HAB_KI_ATAQUE_ELEMENTAL_TIERRA","Ataque elemental (Tierra)",
+    "Ataque elemental (Tierra)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_LUZ = (new L("HAB_KI_ATAQUE_ELEMENTAL_LUZ","Ataque elemental (Luz)",
+    "Ataque elemental (Luz)")).getId();
+var HAB_KI_ATAQUE_ELEMENTAL_OSCURIDAD = (new L("HAB_KI_ATAQUE_ELEMENTAL_OSCURIDAD","Ataque elemental (Oscuridad)",
+    "Ataque elemental (Oscuridad)")).getId();
+var HAB_KI_DAÑO_INCREMENTADO = (new L("HAB_KI_DAÑO_INCREMENTADO","Daño incrementado",
+    "Daño incrementado")).getId();
+var HAB_KI_ALCANCE_INCREMENTADO = (new L("HAB_KI_ALCANCE_INCREMENTADO","Alcance incrementado",
+    "Alcance incrementado")).getId();
+var HAB_KI_VELOCIDAD_INCREMENTADA = (new L("HAB_KI_VELOCIDAD_INCREMENTADA","Velocidad incrementada",
+    "Velocidad incrementada")).getId();
+var HAB_KI_ABSORCION_DE_ENERGIA = (new L("HAB_KI_ABSORCION_DE_ENERGIA","Absorción de energía",
+    "Absorción de energía")).getId();
+var HAB_KI_ESCUDO_FISICO = (new L("HAB_KI_ESCUDO_FISICO","Escudo físico",
+    "Escudo físico")).getId();
+var HAB_KI_CURACION_SUPERIOR = (new L("HAB_KI_CURACION_SUPERIOR","Curación superior",
+    "Curación superior")).getId();
+var HAB_KI_ESTABILIZAR = (new L("HAB_KI_ESTABILIZAR","Estabilizar",
+    "Estabilizar")).getId();
+var HAB_KI_SACRIFICIO_VITAL = (new L("HAB_KI_SACRIFICIO_VITAL","Sacrificio vital",
+    "Sacrificio vital")).getId();
+var HAB_KI_AURA_DE_OCULTACION = (new L("HAB_KI_AURA_DE_OCULTACION","Aura de ocultación",
+    "Aura de ocultación")).getId();
+var HAB_KI_INMUNIDAD_ELEMENTAL_FUEGO = (new L("HAB_KI_INMUNIDAD_ELEMENTAL_FUEGO","Inmunidad elemental (Fuego)",
+    "Inmunidad elemental (Fuego)")).getId();
+var HAB_KI_INMUNIDAD_ELEMENTAL_FRIO = (new L("HAB_KI_INMUNIDAD_ELEMENTAL_FRIO","Inmunidad elemental (Frío)",
+    "Inmunidad elemental (Frío)")).getId();
+var HAB_KI_INMUNIDAD_ELEMENTAL_ELECTRICIDAD = (new L("HAB_KI_INMUNIDAD_ELEMENTAL_ELECTRICIDAD","Inmunidad elemental (Electricidad)",
+    "Inmunidad elemental (Electricidad)")).getId();
+var HAB_KI_RESTITUIR_A_OTROS = (new L("HAB_KI_RESTITUIR_A_OTROS","Restituir a otros",
+    "Restituir a otros")).getId();
+var HAB_KI_INCREMENTO_SUPERIOR = (new L("HAB_KI_INCREMENTO_SUPERIOR","Incremento superior",
+    "Incremento superior")).getId();
+var HAB_KI_TECNICAS_DE_COMBATE_IMPROVISADAS = (new L("HAB_KI_TECNICAS_DE_COMBATE_IMPROVISADAS","Técnicas de combate improvisadas",
+    "Técnicas de combate improvisadas")).getId();
+var HAB_KI_FORZAR_TECNICAS = (new L("HAB_KI_FORZAR_TECNICAS","Forzar técnicas",
+    "Forzar técnicas")).getId();
+var HAB_KI_AURA_DE_COMBATE = (new L("HAB_KI_AURA_DE_COMBATE","Aura de combate",
+    "Aura de combate")).getId();
+var HAB_KI_DOMINIO_FISICO = (new L("HAB_KI_DOMINIO_FISICO","Dominio físico",
+    "Dominio físico")).getId();
+var HAB_KI_CAMBIO_FISICO = (new L("HAB_KI_CAMBIO_FISICO","Cambio físico",
+    "Cambio físico")).getId();
+var HAB_KI_CAMBIO_SUPERIOR = (new L("HAB_KI_CAMBIO_SUPERIOR","Cambio superior",
+    "Cambio superior")).getId();
+var HAB_KI_MULTIPLICACION_DE_CUERPOS = (new L("HAB_KI_MULTIPLICACION_DE_CUERPOS","Multiplicación de cuerpos",
+    "Multiplicación de cuerpos")).getId();
+var HAB_KI_MULTIPLICACION_DE_CUERPOS_MAYOR = (new L("HAB_KI_MULTIPLICACION_DE_CUERPOS_MAYOR","Multiplicación de cuerpos mayor",
+    "Multiplicación de cuerpos mayor")).getId();
+var HAB_KI_MULTIPLICACION_DE_CUERPOS_ARCANA = (new L("HAB_KI_MULTIPLICACION_DE_CUERPOS_ARCANA","Multiplicación de cuerpos arcana",
+    "Multiplicación de cuerpos arcana")).getId();
+var HAB_KI_MAGNITUD = (new L("HAB_KI_MAGNITUD","Magnitud",
+    "Magnitud")).getId();
+var HAB_KI_MAGNITUD_ARCANA = (new L("HAB_KI_MAGNITUD_ARCANA","Magnitud arcana",
+    "Magnitud arcana")).getId();
+var HAB_KI_CONTROL_DE_LA_EDAD = (new L("HAB_KI_CONTROL_DE_LA_EDAD","Control de la edad",
+    "Control de la edad")).getId();
+var HAB_KI_IMITACION_DE_TECNICAS = (new L("HAB_KI_IMITACION_DE_TECNICAS","Imitación de técnicas",
+    "Imitación de técnicas")).getId();

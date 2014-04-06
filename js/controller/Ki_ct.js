@@ -823,3 +823,116 @@ function puedeComprarseEfecto(tecnicaKi, efecto, esPrincipal) {
 
     return puede;
 }
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalFuego(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalAgua(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalAire(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalTierra(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalLuz(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiAtaqueElementalOscuridad(aplicar) {
+    //TODO ataque elemental
+    if (aplicar) {
+
+    } else {
+
+    }
+}
+
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiDañoIncrementado(aplicar) {
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_DAÑO_INCREMENTADO)
+    if (aplicar) {
+        personaje_actual.addBono(bonoDaño,false,false);
+    } else {
+        personaje_actual.removeBono(bonoDaño,false);
+    }
+}
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiVelocidadIncrementada(aplicar) {
+    var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,10,"",false,BONO_ESPECIAL,HAB_KI_VELOCIDAD_INCREMENTADA)
+    if (aplicar) {
+        personaje_actual.addBono(bonoTurno,false,false);
+    } else {
+        personaje_actual.removeBono(bonoTurno,false);
+    }
+}
+
+/**
+ *
+ * @param {boolean} aplicar
+ */
+function efectoKiEscudoFisico(aplicar) {
+    //TODO barrera de daño igual a presencia
+    if (aplicar) {
+
+    } else {
+
+    }
+}
