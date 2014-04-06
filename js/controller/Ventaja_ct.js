@@ -965,7 +965,7 @@ function armaduraMistica(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function maestroMarcial(coste, opcion,aplicar) {
-    var bono = new Bono(BONO_CM,BONO_CM,40*coste,"",false,BONO_ESPECIAL,VENT_MAESTRO_MARCIAL);
+    var bono = new Bono(BONO_HABILIDAD,HB_CM,40*coste,"",false,BONO_ESPECIAL,VENT_MAESTRO_MARCIAL);
     if (aplicar) {
         personaje_actual.addBono(bono,false,true);
     } else {

@@ -50,11 +50,11 @@ function dialogoCM() {
  * @returns {jQuery}
  */
 function muestraCM() {
-    var div = $("<div></div>");
+    var div = getDiv("");
     div.append(muestraSubtitulo(UI_CONOCIMIENTO_MARCIAL, false));
-    var divCM = $("<div></div>").addClass(CSS_ETIQUETA_EFECTO_TECNICA);
-    divCM.append(muestraValorConBonos(_l(UI_CONOCIMIENTO_MARCIAL), 0, personaje_actual.getBonos(BONO_CM, BONO_CM, CATEGORIA_BONO_CUALQUIERA)).addClass(CSS_MUESTRA_INLINE));
-    divCM.append(" - " + _l(UI_CM) + " " + _l(UI_LIBRE) + ": " + (personaje_actual.getCMTotal() - personaje_actual.getCMGastado()));
+    var divCM = getDiv(CSS_ETIQUETA_EFECTO_TECNICA);
+    divCM.append(muestraHabilidadPrimaria(HB_CM,_l(UI_CM),FLAG_DOMINUS_EXXET_ENABLED));
+    divCM.append(getDiv(CSS_ETIQUETA_EFECTO_TECNICA).append(_l(UI_CM) + " " + _l(UI_LIBRE) + ": " + (personaje_actual.getCMTotal() - personaje_actual.getCMGastado())));
     div.append(divCM);
     return div;
 }

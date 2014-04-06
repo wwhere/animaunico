@@ -1,4 +1,4 @@
-
+var COSTE_CM = 1;
 
 //noinspection FunctionTooLongJS
 /**
@@ -235,6 +235,9 @@ Categoria.prototype =  {
                 break;
             case HB_ARMADURA :
                 return this.habArmadura;
+                break;
+            case HB_CM :
+                return COSTE_CM;
                 break;
             case HB_KI :
             case HB_KI_DES :

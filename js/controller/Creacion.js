@@ -525,6 +525,11 @@ function compraSiPuedesCombate(tipoCompra, parametros, cantidad, coste) {
                     puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_ATAQUE_DEFENSA);
                 }
             }
+        } else if (nombreHabilidad == HB_CM) {
+            if (personaje_actual[HB_CM].getPDinvertidos() + coste > Math.floor(personaje_actual.getPDTotales()/10)) {
+                puedeComprar.puedeComprar = false;
+                puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_CM);
+            }
         }
     }
     return puedeComprar;

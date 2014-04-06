@@ -162,6 +162,7 @@ function initHabilidadesCombate() {
     addHabilidad(new Habilidad(HB_PARADA, TIPO_HB_COMBATE, true, DES, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_ESQUIVA, TIPO_HB_COMBATE, true, AGI, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_ARMADURA, TIPO_HB_COMBATE, true, FUE, false, PEN_ARMADURA_NO, [], 5, 1));
+    addHabilidad(new Habilidad(HB_CM, TIPO_HB_COMBATE, true, "", false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_KI_FUE, TIPO_HB_COMBATE, true, FUE, false, PEN_ARMADURA_NO, [], 1, 1));
     addHabilidad(new Habilidad(HB_KI_DES, TIPO_HB_COMBATE, true, DES, false, PEN_ARMADURA_NO, [], 1, 1));
     addHabilidad(new Habilidad(HB_KI_AGI, TIPO_HB_COMBATE, true, AGI, false, PEN_ARMADURA_NO, [], 1, 1));

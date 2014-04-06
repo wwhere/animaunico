@@ -632,6 +632,8 @@ var AVISO_ATAQUE_DEFENSA_MUY_SEPARADOS = (new L("Ataque y Defensa base no pueden
 var AVISO_MAX_PD_ATAQUE_DEFENSA = (new L("Max PDs en Ataque/Defensa alcanzados",
     "Max PDs en Ataque/Defensa alcanzados",
     "Max DPs in Attack/Defense reached.")).getId();
+var AVISO_MAX_PD_CM = (new L("AVISO_MAX_PD_CM", "Max PDs en CM alcanzados",
+    "Max DPs in KM reached.")).getId();
 var AVISO_MAX_PD_PROYECCION_MAGICA = (new L("Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)",
     "Max PDs en Proyección Mágica alcanzados (mitad del tope en sobrenaturales)",
     "Max DPs in Magic Projection reached")).getId();
@@ -706,6 +708,7 @@ var HB_ATAQUE = (new L("Habilidad de Ataque","Habilidad de Ataque","Attack abili
 var HB_PARADA = (new L("Habilidad de Parada","Habilidad de Parada","Block ability")).getId();
 var HB_ESQUIVA = (new L("Habilidad de Esquiva","Habilidad de Esquiva","Dodge ability")).getId();
 var HB_ARMADURA = (new L("Llevar Armadura","Llevar Armadura","Wear armor")).getId();
+var HB_CM = (new L("HB_CM","CM","MK")).getId();
 var HB_KI = (new L("Ki","Ki","Ki")).getId();
 var HB_KI_FUE = (new L("Ki Fuerza","Ki Fuerza","Strength Ki")).getId();
 var HB_KI_DES = (new L("Ki Destreza","Ki Destreza","Dextery Ki")).getId();
