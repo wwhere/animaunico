@@ -374,6 +374,31 @@ var KI_TECNICA_OBERON = (new L("KI_TECNICA_OBERON","Oberon",
 var KI_TECNICA_GARUDA = (new L("KI_TECNICA_GARUDA","Garuda",
     "Garuda")).getId();
 
+var KI_ARBOL_SIRIUS = (new L("KI_ARBOL_SIRIUS","Sirius",
+    "Sirius")).getId();
+var KI_TECNICA_ITAMI = (new L("KI_TECNICA_ITAMI","Itami",
+    "Itami")).getId();
+var KI_TECNICA_HAKAI = (new L("KI_TECNICA_HAKAI","Hakai",
+    "Hakai")).getId();
+var KI_TECNICA_TOMERU = (new L("KI_TECNICA_TOMERU","Tomeru",
+    "Tomeru")).getId();
+var KI_TECNICA_YOWAI = (new L("KI_TECNICA_YOWAI","Yowai",
+    "Yowai")).getId();
+var KI_TECNICA_KOROSU = (new L("KI_TECNICA_KOROSU","Korosu",
+    "Korosu")).getId();
+
+var KI_ARBOL_BASIS = (new L("KI_ARBOL_BASIS","Basis",
+    "Basis")).getId();
+var KI_TECNICA_ESCUDO_DEL_ALBA = (new L("KI_TECNICA_ESCUDO_DEL_ALBA","Escudo del Alba",
+    "Shield of Dawn")).getId();
+var KI_TECNICA_TAJO_CARMESI = (new L("KI_TECNICA_TAJO_CARMESI","Tajo Carmesí",
+    "Crimson Slash")).getId();
+var KI_TECNICA_DESTELLO_FINAL = (new L("KI_TECNICA_DESTELLO_FINAL","Destello Final",
+    "Final Flash")).getId();
+var KI_TECNICA_IMPLOSION = (new L("KI_TECNICA_IMPLOSION","Implosión",
+    "Implosion")).getId();
+var KI_TECNICA_EL_LATIDO_DEL_TRUENO = (new L("KI_TECNICA_EL_LATIDO_DEL_TRUENO","El Latido del Trueno",
+    "Heartbeat of Thunder")).getId();
 /*********/
 
 var HAB_KI_MOVIMIENTO_DE_MASAS = (new L("HAB_KI_MOVIMIENTO_DE_MASAS","Movimiento de masas",
