@@ -29,6 +29,20 @@ var CLASE_BURGUES = (new L("CLASE_BURGUES","Burgués",
     "Bourgeois")).getId();
 var CLASE_ALTA_BURGUESIA = (new L("CLASE_ALTA_BURGUESIA","Alta burguesía",
     "High Bourgeois")).getId();
+var CLASE_NORTEÑO_DESHONRADO = (new L("CLASE_NORTEÑO_DESHONRADO","Norteño deshonrado",
+    "Dishonored northerner")).getId();
+var CLASE_NORTEÑO_DESTERRADO = (new L("CLASE_NORTEÑO_DESTERRADO","Norteño desterrado",
+    "Exiled northerner")).getId();
+var CLASE_CAMPESINO = (new L("CLASE_CAMPESINO","Campesino",
+    "Peasant")).getId();
+var CLASE_NORTEÑO = (new L("CLASE_NORTEÑO","Norteño",
+    "Northerner")).getId();
+var CLASE_ERLING = (new L("CLASE_ERLING","Erling",
+    "Erling")).getId();
+var CLASE_SKLAMO = (new L("CLASE_SKLAMO","Sklamo",
+    "Sklamo")).getId();
+var CLASE_ESCALDO_HONORABLE = (new L("CLASE_ESCALDO_HONORABLE","Escaldo honorable",
+    "Honorable skald")).getId();
 
 var CLASE_NOBLEZA = (new L("CLASE_NOBLEZA","Nobleza",
     "Nobility")).getId();
@@ -41,6 +55,8 @@ var IDIOMA_AILISH = (new L("IDIOMA_AILISH", "Ailish",
     "Ailish")).getId();
 var IDIOMA_YAMATO = (new L("IDIOMA_YAMATO", "Yamato",
     "Yamato")).getId();
+var IDIOMA_ARKES = (new L("IDIOMA_ARKES", "Arkes",
+    "Arkes")).getId();
 
 
 var ORIGEN_ABEL = (new L("ORIGEN_ABEL", "Abel",
