@@ -23,6 +23,8 @@ var CLASE_ALTA_NOBLEZA = (new L("CLASE_ALTA_NOBLEZA","Alta nobleza",
     "High nobility")).getId();
 var CLASE_BAJA = (new L("CLASE_BAJA","Clase baja",
     "Low class")).getId();
+var CLASE_POBRE = (new L("CLASE_POBRE","Clase pobre",
+    "Poor class")).getId();
 var CLASE_MEDIA = (new L("CLASE_MEDIA","Clase media",
     "Medium class")).getId();
 var CLASE_BURGUES = (new L("CLASE_BURGUES","Burgués",
@@ -37,17 +39,28 @@ var CLASE_CAMPESINO = (new L("CLASE_CAMPESINO","Campesino",
     "Peasant")).getId();
 var CLASE_NORTEÑO = (new L("CLASE_NORTEÑO","Norteño",
     "Northerner")).getId();
+var CLASE_NORTEÑO_POBRE = (new L("CLASE_NORTEÑO_POBRE","Norteño pobre",
+    "Poor northerner")).getId();
 var CLASE_ERLING = (new L("CLASE_ERLING","Erling",
     "Erling")).getId();
+var CLASE_SAERINMIR = (new L("CLASE_SAERINMIR","Saerinmir",
+    "Saerinmir")).getId();
 var CLASE_SKLAMO = (new L("CLASE_SKLAMO","Sklamo",
     "Sklamo")).getId();
 var CLASE_ESCALDO_HONORABLE = (new L("CLASE_ESCALDO_HONORABLE","Escaldo honorable",
     "Honorable skald")).getId();
-
 var CLASE_NOBLEZA = (new L("CLASE_NOBLEZA","Nobleza",
     "Nobility")).getId();
 var CLASE_NOMADA = (new L("CLASE_NOMADA","Nómada",
     "Nomad")).getId();
+var CLASE_LOCHGJEST = (new L("CLASE_LOCHGJEST","Lochgjest",
+    "Lochgjest")).getId();
+var CLASE_PRIMERA_CASTA = (new L("CLASE_PRIMERA_CASTA","Primera Casta",
+    "Primera Casta")).getId();
+var CLASE_ZIGEUNER = (new L("CLASE_ZIGEUNER","Zigeuner",
+    "Zigeuner")).getId();
+var CLASE_ADINERADA = (new L("CLASE_ADINERADA","Clase adinerada",
+    "Wealthy class")).getId();
 
 var IDIOMA_LATIN = (new L("IDIOMA_LATIN", "Latín",
     "Latin")).getId();
@@ -57,6 +70,10 @@ var IDIOMA_YAMATO = (new L("IDIOMA_YAMATO", "Yamato",
     "Yamato")).getId();
 var IDIOMA_ARKES = (new L("IDIOMA_ARKES", "Arkes",
     "Arkes")).getId();
+var IDIOMA_HERMITAL = (new L("IDIOMA_HERMITAL", "Hermital",
+    "Hermital")).getId();
+var IDIOMA_TARAZV = (new L("IDIOMA_TARAZV", "Tarazv",
+    "Tarazv")).getId();
 
 
 var ORIGEN_ABEL = (new L("ORIGEN_ABEL", "Abel",

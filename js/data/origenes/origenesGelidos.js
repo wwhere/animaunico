@@ -355,23 +355,19 @@ origen = new Origen(
     ['Adamsdatter','Aslaksdotter','Clemensdatter','Danchertsen','Doth','Frey','Gjevik','Hakonsson','Kitteslvik','Morseth','Olrich','Skjeldulvsson','Thygesdatter','Vosbein','Wadel','Wenzel'],
     ['Hildestheinn','Castillo de Gaïtende','Annar','Mullenheinn','Alfrothul','Schild'],
     0,
-    {},/******TODO POR AQUI***********/
+    {},
     [
         {
-            nombre: CLASE_BAJA,
+            nombre: CLASE_NORTEÑO_POBRE,
             rango: 20,
-            dinero: new Dinero(0,0,1),
+            dinero: new Dinero(0,0,3),
             bonos: [
                 {
                     habilidad: HB_ATLETISMO,
                     bono: 20
                 },
                 {
-                    habilidad: HB_NADAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_SALTAR,
+                    habilidad: HB_TREPAR,
                     bono: 20
                 },
                 {
@@ -383,77 +379,7 @@ origen = new Origen(
                     bono: 20
                 },
                 {
-                    habilidad: HB_OCULTARSE,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_ROBO,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_SIGILO,
-                    bono: 20
-                }
-            ]
-        },
-        {
-            nombre: CLASE_MEDIA,
-            rango: 80,
-            dinero: new Dinero(0,20,0),
-            bonos: [
-                {
-                    habilidad: HB_ATLETISMO,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_NADAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_SALTAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_INTIMIDAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_ADVERTIR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_OCULTARSE,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_ROBO,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_SIGILO,
-                    bono: 20
-                }
-            ]
-        },
-        {
-            nombre: CLASE_BURGUES,
-            rango: 90,
-            dinero: new Dinero(5,0,0),
-            bonos: [
-                {
-                    habilidad: HB_MONTAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_NADAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_PERSUASION,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_ADVERTIR,
+                    habilidad: HB_RASTREAR,
                     bono: 20
                 },
                 {
@@ -461,15 +387,89 @@ origen = new Origen(
                     bono: 20
                 },
                 {
+                    habilidad: HB_PROEZAS_FUERZA,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_RESISTENCIA_DOLOR,
+                    bono: 20
+                }
+            ]
+        },
+        {
+            nombre: CLASE_NORTEÑO,
+            rango: 60,
+            dinero: new Dinero(0,50,0),
+            bonos: [
+                {
+                    habilidad: HB_ATLETISMO,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_TREPAR,
+                    bono: 20
+                },
+                {
                     habilidad: HB_INTIMIDAR,
                     bono: 20
                 },
                 {
-                    habilidad: HB_HISTORIA,
+                    habilidad: HB_ADVERTIR,
                     bono: 20
                 },
                 {
-                    habilidad: HB_TASACION,
+                    habilidad: HB_RASTREAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_FRIALDAD,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_PROEZAS_FUERZA,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_RESISTENCIA_DOLOR,
+                    bono: 20
+                }
+            ]
+        },
+        {
+            nombre: CLASE_SAERINMIR,
+            rango: 85,
+            dinero: new Dinero(0,50,0),
+            bonos: [
+                {
+                    habilidad: HB_ATLETISMO,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_TREPAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_INTIMIDAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_ADVERTIR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_NADAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_FRIALDAD,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_NAVEGACION,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_RESISTENCIA_DOLOR,
                     bono: 20
                 }
             ]
@@ -477,26 +477,10 @@ origen = new Origen(
         {
             nombre: CLASE_NOBLEZA,
             rango: 100,
-            dinero: new Dinero(30,0,0),
+            dinero: new Dinero(50,0,0),
             bonos: [
                 {
-                    habilidad: HB_MONTAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_NADAR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_PERSUASION,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_ADVERTIR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_FRIALDAD,
+                    habilidad: HB_ATLETISMO,
                     bono: 20
                 },
                 {
@@ -504,11 +488,23 @@ origen = new Origen(
                     bono: 20
                 },
                 {
+                    habilidad: HB_ADVERTIR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_LIDERAZGO,
+                    bono: 40
+                },
+                {
+                    habilidad: HB_FRIALDAD,
+                    bono: 20
+                },
+                {
                     habilidad: HB_HISTORIA,
                     bono: 20
                 },
                 {
-                    habilidad: HB_TASACION,
+                    habilidad: HB_RESISTENCIA_DOLOR,
                     bono: 20
                 }
             ]
@@ -520,20 +516,18 @@ allOrigenes[origen.nombre] = origen;
 origenes_set.push(origen);
 
 origen = new Origen(
-    ORIGEN_BELLAFONTE,
+    ORIGEN_HENDELL,
     function() {
         var azar = d100();
 
-        if (azar <= 80) {
-            return ETNIA_VILDIAN;
-        } else if (azar <= 91) {
-            return ETNIA_DAEVAR;
-        } else if (azar <= 98) {
+        if (azar <= 92) {
+            return ETNIA_NORNE ;
+        } else if (azar <= 97) {
             return ETNIA_ASHER ;
         } else if (azar <= 99) {
-            return ETNIA_AION ;
+            return ETNIA_ZINNER ;
         } else  {
-            var azar2 = d(5);
+            var azar2 = d(6);
 
             switch (azar2) {
                 case 1:
@@ -541,64 +535,29 @@ origen = new Origen(
                 case 2:
                     return ETNIA_RYUAN;
                 case 3:
-                    return ETNIA_ZINNER ;
+                    return  ETNIA_DAEVAR;
                 case 4:
-                    return ETNIA_NORNE;
+                    return ETNIA_VILDIAN;
                 case 5:
+                    return ETNIA_AION ;
+                case 6:
                 default:
                     return ETNIA_TAYAHAR;
             }
         }
     },
-    [IDIOMA_LATIN],
-    ['Agostino','Ángelo','Benito','Cirocco','Darío','Domani','Donato','Fabrizio','Gaetano','Giancarlo','Gustavo','Lazzaro','Maurizio','Nicola','Paolo','Umberto'],
-    ['Alda','Andrea','Benita','Camila','Cinzia','Emanuele','Gia','Luca','Luciana','Melita','Mistico','Natalia','Ornella','Paola','Rocío','Sarafina','Valeria','Viviana'],
-    ['Abatti','Accidio','Barberi','Bezzo','Cacicia','Choisio','Messina','Nicoletti','Ozello','Preatoni','Sacane','Tarsitano','Teresi','Testa','Ubertino','Zafrano'],
-    ['Raverna','Faro de Lucerna','Elisio','Cedonia','Ascani','Puerto de Ripia','Enna','Ciavolo','Musevera'],
-    1,
-    {
-        nombre: CLASE_ALTA_NOBLEZA,
-        dinero: new Dinero(800,0,0),
-        bonos: [
-            {
-                habilidad: HB_ATLETISMO,
-                bono: 20
-            },
-            {
-                habilidad: HB_MONTAR,
-                bono: 30
-            },
-            {
-                habilidad: HB_LIDERAZGO,
-                bono: 40
-            },
-            {
-                habilidad: HB_ADVERTIR,
-                bono: 10
-            },
-            {
-                habilidad: HB_FRIALDAD,
-                bono: 20
-            },
-            {
-                habilidad: HB_HISTORIA,
-                bono: 20
-            },
-            {
-                habilidad: HB_OCULTISMO,
-                bono: 20
-            },
-            {
-                habilidad: HB_BAILE,
-                bono: 20
-            }
-        ]
-    },
+    [IDIOMA_HERMITAL,IDIOMA_LATIN],
+    ['Adrian','Andrei','Bronislav','Feofan','Ferapont','Fyodor','Igor','Ilari','Isidor','Ivan','Maksim','Mikhail','Nikolai','Rolan','Shura','Vlasi','Yasha','Yulian','Yuriy'],
+    ['Alisa','Annushka','Ivanna','Manya','Marfa','Sasha','Sofya','Tanya','Uliana','Valeriya','Yesfir','Yevdokiya','Yuliya','Zhanna','Zinaida'],
+    ['Abramova','Aleksanshkin','Artamova','Balakirev','Batalova','Budarin','Bzowski','Chernekov','Donkova','Gaidar','Gerviev','Koukleva','Kulikova','Militenko','Omelchenko','Radinov','Shcerbina','Svartsevich','Vertinskaya','Zheronkina'],
+    ['Bastión Karlsrude, El Dragón','Bastión Hymir, El Halcón','Bastión Gilnangor, La Serpiente','Bastión Redgafer, El Erizo','Bastión Olafer, El Gigante','Bastión Bergenfaur, La Araña','Muninborg','Ritgernhauf','Nackasen'],
+    0,
+    {},
     [
         {
-            nombre: CLASE_BAJA,
+            nombre: CLASE_CAMPESINO,
             rango: 20,
-            dinero: new Dinero(0,0,4),
+            dinero: new Dinero(0,0,2),
             bonos: [
                 {
                     habilidad: HB_ATLETISMO,
@@ -606,22 +565,6 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_MONTAR,
-                    bono: 30
-                },
-                {
-                    habilidad: HB_NADAR,
-                    bono: 10
-                },
-                {
-                    habilidad: HB_ADVERTIR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_FRIALDAD,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_PROEZAS_FUERZA,
                     bono: 20
                 },
                 {
@@ -629,15 +572,27 @@ origen = new Origen(
                     bono: 20
                 },
                 {
-                    habilidad: HB_OCULTISMO,
+                    habilidad: HB_ADVERTIR,
                     bono: 20
+                },
+                {
+                    habilidad: HB_RASTREAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_ANIMALES,
+                    bono: 30
+                },
+                {
+                    habilidad: HB_HERBOLARIA,
+                    bono: 30
                 }
             ]
         },
         {
-            nombre: CLASE_MEDIA,
-            rango: 80,
-            dinero: new Dinero(0,80,0),
+            nombre: CLASE_NORTEÑO,
+            rango: 65,
+            dinero: new Dinero(0,50,0),
             bonos: [
                 {
                     habilidad: HB_ATLETISMO,
@@ -645,22 +600,6 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_MONTAR,
-                    bono: 30
-                },
-                {
-                    habilidad: HB_NADAR,
-                    bono: 10
-                },
-                {
-                    habilidad: HB_ADVERTIR,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_FRIALDAD,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_PROEZAS_FUERZA,
                     bono: 20
                 },
                 {
@@ -668,15 +607,70 @@ origen = new Origen(
                     bono: 20
                 },
                 {
-                    habilidad: HB_OCULTISMO,
+                    habilidad: HB_INTIMIDAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_ADVERTIR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_RASTREAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_ANIMALES,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_PROEZAS_FUERZA,
                     bono: 20
                 }
             ]
         },
         {
-            nombre: CLASE_NOBLEZA,
+            nombre: CLASE_LOCHGJEST,
+            rango: 90,
+            dinero: new Dinero(0,30,0),
+            bonos: [
+                {
+                    habilidad: HB_ATLETISMO,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_NADAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_ADVERTIR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_RASTREAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_RESISTENCIA_DOLOR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_OCULTARSE,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_SIGILO,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_MEMORIZAR,
+                    bono: 20
+                }
+            ]
+        },
+        {
+            nombre: CLASE_PRIMERA_CASTA,
             rango: 100,
-            dinero: new Dinero(100,0,0),
+            dinero: new Dinero(70,0,0),
             bonos: [
                 {
                     habilidad: HB_ATLETISMO,
@@ -684,30 +678,30 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_MONTAR,
-                    bono: 30
+                    bono: 20
+                },
+                {
+                    habilidad: HB_HISTORIA,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_INTIMIDAR,
+                    bono: 20
+                },
+                {
+                    habilidad: HB_ADVERTIR,
+                    bono: 20
                 },
                 {
                     habilidad: HB_LIDERAZGO,
-                    bono: 40
-                },
-                {
-                    habilidad: HB_ADVERTIR,
-                    bono: 10
-                },
-                {
-                    habilidad: HB_FRIALDAD,
                     bono: 20
                 },
                 {
-                    habilidad: HB_HISTORIA,
+                    habilidad: HB_PERSUASION,
                     bono: 20
                 },
                 {
-                    habilidad: HB_OCULTISMO,
-                    bono: 20
-                },
-                {
-                    habilidad: HB_BAILE,
+                    habilidad: HB_TASACION,
                     bono: 20
                 }
             ]
