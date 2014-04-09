@@ -37,7 +37,7 @@ origen = new Origen(
     ['Arcos','Balitiu','Boji','Christinel','Cristea','Dancescu','Eliade','Ivanescu','Luca','Nicolae','Szekely','Tomescu','Urzica','Vlas','Zeklos'],
     ['Schlotterstein','Jaarenghäff','Monasterio de Stelea','Torda','Villa de Tres Cruces','Dürgabenh'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_BAJA,
@@ -66,6 +66,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_MITOS_LOCALES,
                     bono: 20
                 },
                 {
@@ -101,6 +102,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_MITOS_LOCALES,
                     bono: 20
                 },
                 {
@@ -144,6 +146,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_MITOS_LOCALES,
                     bono: 40
                 }
             ]
@@ -167,6 +170,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_MITOS_LOCALES,
                     bono: 30
                 },
                 {
@@ -218,7 +222,7 @@ origen = new Origen(
     ['Ampte','Breed','Buckout','Conklin','Dag','De Graff','Devenpeck','Haswell','Hogarth','Lansing','Mesick','Ostrander','Spoor','Van Keuren','Van Schoonhoven','Vanderspeigle','Westerveldt'],
     ['Puerto de Tibas','Puerto Rue','Pragna','Monasterio de Kirion','Puerto Ánfora','Enkido','Terrasanta','Lukka','Anateri'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_POBRE,

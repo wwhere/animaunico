@@ -41,7 +41,7 @@ origen = new Origen(
     ['Agius','Anderson','Attard','Borges','Brakys','Cassar','Durand','Faria','Galea','Grech','Laurens','Lynch','Major','Martius','Morison','Reid','Vicens'],
     ['Darel','Bryanta','Bethar','Buen Descanso','Ecamus','Arkángel','Tiberias','Leazhar','Neria','Yirath','Sura','Puerto de Eien','Puerto de Eburah','Eyran','Tharsis','Urim','Lonel','Sepher','Hod'],
     2,
-    {
+    [{
         nombre: CLASE_ALTA_NOBLEZA,
         dinero: new Dinero(1000,0,0),
         bonos: [
@@ -62,7 +62,8 @@ origen = new Origen(
                 bono: 20
             },
             {
-                habilidad: HB_MUSICA,
+                habilidad: ELEGIR,
+                opciones: [HB_MUSICA,HB_ARTE],
                 bono: 20
             },
             {
@@ -71,10 +72,11 @@ origen = new Origen(
             },
             {
                 habilidad: HB_HISTORIA,
+                especializacion: UI_ESP_LOCAL,
                 bono: 20
             }
         ]
-    },
+    }],
     [
         {
             nombre: CLASE_BAJA,
@@ -107,6 +109,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -142,6 +145,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -177,6 +181,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -203,7 +208,8 @@ origen = new Origen(
                     bono: 20
                 },
                 {
-                    habilidad: HB_MUSICA,
+                    habilidad: ELEGIR,
+                    opciones: [HB_MUSICA,HB_ARTE],
                     bono: 20
                 },
                 {
@@ -212,6 +218,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -261,7 +268,7 @@ origen = new Origen(
     ['Anastasia',' Baptiste',' Chloe',' Cornelius','Cynthia',' Diodorus',' Diotrephes',' Dorcas',' Eneas','Helen',' Jasper',' Lydia',' Otis',' Penélope',' Polyxena','Sophronia',' Teophilus',' Timotheus'],
     ['Eustace','Calysta','Hausser'],
     1,
-    {
+    [{
         nombre: CLASE_ALTA_NOBLEZA,
         dinero: new Dinero(600,0,0),
         bonos: [
@@ -294,11 +301,12 @@ origen = new Origen(
                 bono: 20
             },
             {
-                habilidad: HB_MUSICA,
+                habilidad: ELEGIR,
+                opciones: [HB_MUSICA,HB_ARTE],
                 bono: 20
             }
         ]
-    },
+    }],
     [
         {
             nombre: CLASE_BAJA,
@@ -412,7 +420,8 @@ origen = new Origen(
                     bono: 20
                 },
                 {
-                    habilidad: HB_MUSICA,
+                    habilidad: ELEGIR,
+                    opciones: [HB_MUSICA,HB_ARTE],
                     bono: 20
                 }
             ]
@@ -462,7 +471,7 @@ origen = new Origen(
     ['Abduvaliyev','Bakics','Demko','Guran','Hamori','Hara','Imanci','Kajetan','Kasnar','Maloros','Ordina','Telek','Vasary','Veligan','Wessely','Zavadsky','Zsoldos'],
     ['Lacan','Lenci','Farna','Arklo','Fathia'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_BAJA,
@@ -645,7 +654,7 @@ origen = new Origen(
     ['Aparina','Baikov','Baranova','Belotserkovsky','Czartoryksa','Demine','Galiyeva','Gergiev','Ivakina','Katzev','Kursinska','Lutrova','Milyukov','Ortoff','Privalova','Shanin','Tretyak','Zarakova'],
     ['Nikoleva','Tzer','Ogara','Sendel','Shkar','Sillermay','Rakvara','Eron','Taranov','Pernov','Puerto Leena','Fuerte Garrison'],
     1,
-    {
+    [{
         nombre: CLASE_ALTA_NOBLEZA,
         dinero: new Dinero(600,0,0),
         bonos: [
@@ -675,10 +684,11 @@ origen = new Origen(
             },
             {
                 habilidad: HB_HISTORIA,
+                especializacion: UI_ESP_LOCAL,
                 bono: 20
             }
         ]
-    },
+    }],
     [
         {
             nombre: CLASE_BAJA,
@@ -711,6 +721,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -750,6 +761,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -789,6 +801,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -838,7 +851,7 @@ origen = new Origen(
     ['Abercrombie','Abernethy','Adair','Athol','Ballard','Barr','Campbell','Conway','Cormac','Dougall','Flaherty','Kavanagh','McFadden','McNamara','Owen','Sullivan'],
     ['Sylvania','Grafthon','Annan','Faolan','Keith','Desmont','Gretma','Reston','Belfort','Nairn','Herne'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_BAJA,
@@ -949,6 +962,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -980,7 +994,7 @@ origen = new Origen(
     ['Adams','Austin','Belth','Bevan','Bound','Canton','Clement','Devonald','Francis','Hughes','Kendrick','Landeg','Mendus','Nash','Rees','Treharne','Trevor','Voyle','Wynne','Yorath'],
     ['Hécate','Valle de Ospren','Siebenvolken','Hannelone','Ícarus','Torre de los Vientos','Valle de Adalia','Falsten','Hermingen','Rievem','Sölliken','Renroth', 'Benken'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_BAJA,
@@ -1142,7 +1156,7 @@ origen = new Origen(
     ['Auvrey','Bellecote','Dunham','Dunmore','Elison','Everlee','Frick','Falken','Galdwinn','Harford','Heridan','Jareth','Laith','Markham','Ormand','Remington','Stanfield','Turner','Tannor','Wilburn'],
     ['Londure','Iborr','Faro de Bronwen','Bhrame','Karh','Dylaen','Arboleda de Gwenlynn','Kalmar','Ennis','Renvyl','Navan'],
     1,
-    {
+    [{
         nombre: CLASE_ALTA_BURGUESIA,
         dinero: new Dinero(500,0,0),
         bonos: [
@@ -1164,6 +1178,7 @@ origen = new Origen(
             },
             {
                 habilidad: HB_HISTORIA,
+                especializacion: UI_ESP_LOCAL,
                 bono: 20
             },
             {
@@ -1175,7 +1190,7 @@ origen = new Origen(
                 bono: 10
             }
         ]
-    },
+    }],
     [
         {
             nombre: CLASE_BAJA,
@@ -1196,6 +1211,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -1227,6 +1243,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -1262,6 +1279,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -1317,7 +1335,7 @@ origen = new Origen(
     ['Adamski','Aviza','Bielenda','Ceran','Czekaj','Derda','Dubilas','Faron','Harasym','Jaktorowo','Kalak','Nowak','Parzysz','Polek','Rawa','Tokarski','Wyrostek','Zachemski'],
     ['Aldon','Bendek','La iglesia de San Bernabé','Castillo de Odessa','Kassia','Brudge','Berke','Reisz','Terhel'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_BAJA,
@@ -1403,24 +1421,25 @@ origen = new Origen(
                     bono: 20
                 },
                 {
-                    habilidad: HB_NADAR,
-                    bono: 30
+                    habilidad: HB_LIDERAZGO,
+                    bono: 20
                 },
                 {
                     habilidad: HB_ADVERTIR,
                     bono: 20
                 },
                 {
-                    habilidad: HB_ANIMALES,
+                    habilidad: HB_PERSUASION,
                     bono: 20
                 },
                 {
-                    habilidad: HB_HERBOLARIA,
+                    habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
                     habilidad: HB_NAVEGACION,
-                    bono: 30
+                    bono: 40
                 }
             ]
         }

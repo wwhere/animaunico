@@ -37,7 +37,7 @@ origen = new Origen(
     ['Aachen','Adler','Barth','Berg','Eichel','Esisenberg','Fassbinder','Fiedler','Gloeckner','Hertz','Hirsch','Kalb','Mauser','Nacht','Reinhard','Roth','Sankt','Schneider','Strauss','Weiss'],
     ['Aubrey','Wilkend','Kaine','Reindhold','Waldemar','Seifer','El Monasterio de la Sagrada Iluminación','Schank','Hausburz','Reine'],
     1,
-    {
+    [{
         nombre: CLASE_ALTA_NOBLEZA,
         dinero: new Dinero(900,0,0),
         bonos: [
@@ -67,6 +67,7 @@ origen = new Origen(
             },
             {
                 habilidad: HB_HISTORIA,
+                especializacion: UI_ESP_LOCAL,
                 bono: 20
             },
             {
@@ -74,7 +75,7 @@ origen = new Origen(
                 bono: 20
             }
         ]
-    },
+    }],
     [
         {
             nombre: CLASE_BAJA,
@@ -111,6 +112,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -150,6 +152,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 }
             ]
@@ -177,6 +180,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -220,6 +224,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -271,7 +276,7 @@ origen = new Origen(
     ['Abbazia','Bellanti','Bianco','Corizzi','D´Agostino','Di Amato','Di Benedetto','Di Blasi','Di Gaetano','Di Luca','Dinolfo','Florio','Geraci','Marciano','Parrino','Pelligrino','Ridulfo','Scacciaferro','Vitale'],
     ['Bastel','Albino','Caliardo','Uzure','Dedo de Hierro','Itzelhaya','Caoria','Harma','Terravecchia'],
     0,
-    {},
+    [],
     [
         {
             nombre: CLASE_BAJA,
@@ -382,6 +387,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -421,6 +427,7 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
@@ -472,7 +479,7 @@ origen = new Origen(
     ['Abatti','Accidio','Barberi','Bezzo','Cacicia','Choisio','Messina','Nicoletti','Ozello','Preatoni','Sacane','Tarsitano','Teresi','Testa','Ubertino','Zafrano'],
     ['Raverna','Faro de Lucerna','Elisio','Cedonia','Ascani','Puerto de Ripia','Enna','Ciavolo','Musevera'],
     1,
-    {
+    [{
         nombre: CLASE_ALTA_NOBLEZA,
         dinero: new Dinero(800,0,0),
         bonos: [
@@ -498,10 +505,12 @@ origen = new Origen(
             },
             {
                 habilidad: HB_HISTORIA,
+                especializacion: UI_ESP_LOCAL,
                 bono: 20
             },
             {
                 habilidad: HB_OCULTISMO,
+                especializacion: UI_ESP_RELIGION,
                 bono: 20
             },
             {
@@ -509,7 +518,7 @@ origen = new Origen(
                 bono: 20
             }
         ]
-    },
+    }],
     [
         {
             nombre: CLASE_BAJA,
@@ -542,10 +551,12 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_RELIGION,
                     bono: 20
                 }
             ]
@@ -581,10 +592,12 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_RELIGION,
                     bono: 20
                 }
             ]
@@ -616,10 +629,12 @@ origen = new Origen(
                 },
                 {
                     habilidad: HB_HISTORIA,
+                    especializacion: UI_ESP_LOCAL,
                     bono: 20
                 },
                 {
                     habilidad: HB_OCULTISMO,
+                    especializacion: UI_ESP_RELIGION,
                     bono: 20
                 },
                 {

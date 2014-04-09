@@ -438,6 +438,7 @@ var UI_ESP_ECONOMIA =  (new L("Economía","Economía","Economics")).getId();
 var UI_ESP_PINTURA =  (new L("Pintura","Pintura","Painting")).getId();
 var UI_ESP_ESCULTURA =  (new L("Escultura","Escultura","Sculpting")).getId();
 var UI_ESP_BAILES_SALON =  (new L("Baile de Salón","Baile de Salón","Formal Dancing")).getId();
+var UI_ESP_RELIGION =  (new L("UI_ESP_RELIGION","Religion","Religion")).getId();
 var UI_ESP_BAILES_ESPHERIA =  (new L("Bailes de Espheria","Bailes de Espheria","Spheria Dances")).getId();
 var UI_ESP_BAILES_ANTIGUOS =  (new L("Bailes Antiguos","Bailes Antiguos","Old Dances")).getId();
 var UI_ESP_ARMADURAS_PESADAS =  (new L("Armaduras pesadas","Armaduras pesadas","Heavy Armor")).getId();
@@ -448,6 +449,10 @@ var UI_ESP_CLAVICORDIO =  (new L("Clavicordio","Clavicordio","Clavichord")).getI
 var UI_ESP_ARPA =  (new L("Arpa","Arpa","Harp")).getId();
 var UI_ESP_JUEGOS_CARTAS =  (new L("Juegos de cartas","Juegos de cartas","Card games")).getId();
 var UI_ESP_MALABARES =  (new L("Malabares","Malabares","Juggling")).getId();
+var UI_ESP_CRISTIANA = (new L("UI_ESP_CRISTIANA","Cristiana","Christian")).getId();
+var UI_ESP_LOCAL = (new L("UI_ESP_LOCAL","Local","Local")).getId();
+var UI_ESP_MITOS_LOCALES = (new L("UI_ESP_MITOS_LOCALES","Mitos locales","Local myths")).getId();
+
 var UI_JOYERIA =  (new L("Joyería","Joyería","Jeweler")).getId();
 var UI_PESCADO =  (new L("Pescado","Pescado","Fish")).getId();
 

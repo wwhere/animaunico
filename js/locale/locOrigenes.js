@@ -1,3 +1,5 @@
+var ELEGIR = "ELEGIR";
+
 var ETNIA_ASHER = (new L("ETNIA_ASHER", "Asher",
     "Asher")).getId();
 var ETNIA_AION = (new L("ETNIA_AION", "Aion",
@@ -61,6 +63,12 @@ var CLASE_ZIGEUNER = (new L("CLASE_ZIGEUNER","Zigeuner",
     "Zigeuner")).getId();
 var CLASE_ADINERADA = (new L("CLASE_ADINERADA","Clase adinerada",
     "Wealthy class")).getId();
+var CLASE_INDIGENTE = (new L("CLASE_INDIGENTE","Indigente",
+    "Indigent")).getId();
+var CLASE_CARDENAL = (new L("CLASE_CARDENAL","Cardenal",
+    "Cardinal")).getId();
+var CLASE_SACERDOTE = (new L("CLASE_SACERDOTE","Sacerdote",
+    "Priest")).getId();
 
 var IDIOMA_LATIN = (new L("IDIOMA_LATIN", "Latín",
     "Latin")).getId();
@@ -74,7 +82,10 @@ var IDIOMA_HERMITAL = (new L("IDIOMA_HERMITAL", "Hermital",
     "Hermital")).getId();
 var IDIOMA_TARAZV = (new L("IDIOMA_TARAZV", "Tarazv",
     "Tarazv")).getId();
-
+var IDIOMA_OGASHIMA = (new L("IDIOMA_OGASHIMA", "Ogashima",
+    "Ogashima")).getId();
+var IDIOMA_JASHU = (new L("IDIOMA_JASHU", "Jashu",
+    "Jashu")).getId();
 
 var ORIGEN_ABEL = (new L("ORIGEN_ABEL", "Abel",
     "Abel")).getId();
