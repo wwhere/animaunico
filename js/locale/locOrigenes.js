@@ -69,6 +69,14 @@ var CLASE_CARDENAL = (new L("CLASE_CARDENAL","Cardenal",
     "Cardinal")).getId();
 var CLASE_SACERDOTE = (new L("CLASE_SACERDOTE","Sacerdote",
     "Priest")).getId();
+var CLASE_BUROCRATA = (new L("CLASE_BUROCRATA","Burócrata",
+    "Bureaucrat")).getId();
+var CLASE_NOMADA_POBRE = (new L("CLASE_NOMADA_POBRE","Nómada pobre",
+    "Poor nomad")).getId();
+var CLASE_NOMADA_MEDIO = (new L("CLASE_NOMADA_MEDIO","Nomada medio",
+    "Medium nomad")).getId();
+var CLASE_NOMADA_RICO = (new L("CLASE_NOMADA_RICO","Nómada rico",
+    "Rich nomad")).getId();
 
 var IDIOMA_LATIN = (new L("IDIOMA_LATIN", "Latín",
     "Latin")).getId();
