@@ -77,6 +77,36 @@ var CLASE_NOMADA_MEDIO = (new L("CLASE_NOMADA_MEDIO","Nomada medio",
     "Medium nomad")).getId();
 var CLASE_NOMADA_RICO = (new L("CLASE_NOMADA_RICO","Nómada rico",
     "Rich nomad")).getId();
+var CLASE_INDIGENA_POBRE = (new L("CLASE_INDIGENA_POBRE","Indígena pobre",
+    "Poor native")).getId();
+var CLASE_INDIGENA_DE_CLASE_MEDIA = (new L("CLASE_INDIGENA_DE_CLASE_MEDIA","Indígena de clase media",
+    "Medium class native")).getId();
+var CLASE_CIUDADANO_DE_CLASE_MEDIA = (new L("CLASE_CIUDADANO_DE_CLASE_MEDIA","Ciudadano de clase media",
+    "Medium class citizen")).getId();
+var CLASE_ALTA = (new L("CLASE_ALTA","Clase alta",
+    "High class")).getId();
+var CLASE_HABITANTE_DE_LA_SABANA_POBRE = (new L("CLASE_HABITANTE_DE_LA_SABANA_POBRE","Habitante de la sabana pobre",
+    "Poor inhabitant of the savanna")).getId();
+var CLASE_HABITANTE_DE_LA_SABANA_MEDIO = (new L("CLASE_HABITANTE_DE_LA_SABANA_MEDIO","Habitante de la sabana medio",
+    "Medium inhabitant of the savanna")).getId();
+var CLASE_HABITANTE_DE_LA_SABANA_RICO = (new L("CLASE_HABITANTE_DE_LA_SABANA_RICO","Habitante de la sabana rico",
+    "Rich inhabitant of the savanna")).getId();
+var CLASE_SABIO_POBRE = (new L("CLASE_SABIO_POBRE","Sabio pobre",
+    "Poor sage")).getId();
+var CLASE_SABIO_MEDIO = (new L("CLASE_SABIO_MEDIO","Sabio medio",
+    "Medium sage")).getId();
+var CLASE_SABIO_RICO = (new L("CLASE_SABIO_RICO","Sabio rico",
+    "Rich sage")).getId();
+var CLASE_GUERRERO_POBRE = (new L("CLASE_GUERRERO_POBRE","Guerrero pobre",
+    "Poor warrior")).getId();
+var CLASE_GUERRERO_MEDIO = (new L("CLASE_GUERRERO_MEDIO","Guerrero medio",
+    "Medium warrior")).getId();
+var CLASE_GUERRERO_RICO = (new L("CLASE_GUERRERO_RICO","Guerrero rico",
+    "Rich warrior")).getId();
+var CLASE_SAMURAI_CORTESANO = (new L("CLASE_SAMURAI_CORTESANO","Samurái cortesano",
+    "Courtesan samurai")).getId();
+var CLASE_SAMURAI_GUERRERO = (new L("CLASE_SAMURAI_GUERRERO","Samurái guerrero",
+    "Warrior samurai")).getId();
 
 var IDIOMA_LATIN = (new L("IDIOMA_LATIN", "Latín",
     "Latin")).getId();
@@ -84,6 +114,8 @@ var IDIOMA_AILISH = (new L("IDIOMA_AILISH", "Ailish",
     "Ailish")).getId();
 var IDIOMA_YAMATO = (new L("IDIOMA_YAMATO", "Yamato",
     "Yamato")).getId();
+var IDIOMA_YAMATO_SHUN = (new L("IDIOMA_YAMATO_SHUN", "Yamato Shun",
+    "Yamato Shun")).getId();
 var IDIOMA_ARKES = (new L("IDIOMA_ARKES", "Arkes",
     "Arkes")).getId();
 var IDIOMA_HERMITAL = (new L("IDIOMA_HERMITAL", "Hermital",
@@ -94,6 +126,14 @@ var IDIOMA_OGASHIMA = (new L("IDIOMA_OGASHIMA", "Ogashima",
     "Ogashima")).getId();
 var IDIOMA_JASHU = (new L("IDIOMA_JASHU", "Jashu",
     "Jashu")).getId();
+var IDIOMA_KANNAWA = (new L("IDIOMA_KANNAWA", "Kannawa",
+    "Kannawa")).getId();
+var IDIOMA_SHEEHAM = (new L("IDIOMA_SHEEHAM", "Sheeham",
+    "Sheeham")).getId();
+var IDIOMA_KOLA = (new L("IDIOMA_KOLA", "Kola",
+    "Kola")).getId();
+var IDIOMA_IRULA = (new L("IDIOMA_IRULA", "Irula",
+    "Irula")).getId();
 
 var ORIGEN_ABEL = (new L("ORIGEN_ABEL", "Abel",
     "Abel")).getId();
@@ -162,8 +202,6 @@ var ORIGEN_LANNET = (new L("ORIGEN_LANNET", "Lannet",
 var ORIGEN_SHIVAT = (new L("ORIGEN_SHIVAT", "Shivat",
     "Shivat")).getId();
 
-var ORIGEN_EL_MAR_INTERIOR = (new L("ORIGEN_EL_MAR_INTERIOR", "El Mar Interior",
-    "The Inner Sea")).getId();
 
 
 

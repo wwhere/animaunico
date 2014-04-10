@@ -23,3 +23,23 @@ function getRaza(nombre) {
 
 
 
+function getColorOjosAzar(etnia) {
+    switch (etnia) {
+        case ETNIA_ASHER:
+
+    }
+}
+
+function getColorPeloAzar(etnia) {
+    switch (etnia) {
+        case ETNIA_ASHER:
+
+    }
+}
+
+function getColorPielAzar(etnia) {
+    switch (etnia) {
+        case ETNIA_ASHER:
+
+    }
+}
