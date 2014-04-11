@@ -202,6 +202,26 @@ var ORIGEN_LANNET = (new L("ORIGEN_LANNET", "Lannet",
 var ORIGEN_SHIVAT = (new L("ORIGEN_SHIVAT", "Shivat",
     "Shivat")).getId();
 
+var PELO_NEGRO = (new L("PELO_NEGRO","Pelo negro", "Black hair")).getId();
+var PELO_MORENO = (new L("PELO_MORENO","Pelo moreno", "Brown hair")).getId();
+var PELO_CASTAÑO = (new L("PELO_CASTAÑO","Pelo castaño", "Hazel hair")).getId();
+var PELO_RUBIO = (new L("PELO_RUBIO","Pelo rubio", "Blond hair")).getId();
+var PELO_BLANCO = (new L("PELO_BLANCO","Pelo blanco", "White hair")).getId();
+var PELO_RUBIO_PLATINO = (new L("PELO_RUBIO_PLATINO","Pelo rubio platino", "Platinum blond hair")).getId();
+var PELO_PELIRROJO = (new L("PELO_PELIRROJO","Pelirrojo", "Red hair")).getId();
+var PELO_ANARANJADO = (new L("PELO_ANARANJADO","Pelo anaranjado", "Auburn hair")).getId();
+var PELO_GRIS = (new L("PELO_GRIS","Pelo gris", "Grey hair")).getId();
 
+var OJOS_CASTAÑO = (new L("OJOS_CASTAÑO","Ojos castaños", "Brown eyes")).getId();
+var OJOS_AMBAR = (new L("OJOS_AMBAR","Ojos ámbar", "Amber eyes")).getId();
+var OJOS_AVELLANA = (new L("OJOS_AVELLANA","Ojos avellana", "Hazel eyes")).getId();
+var OJOS_VERDE = (new L("OJOS_VERDE","Ojos verdes", "Green eyes")).getId();
+var OJOS_AZUL = (new L("OJOS_AZUL","Ojos azules", "Blue eyes")).getId();
+var OJOS_GRIS = (new L("OJOS_GRIS","Ojos grises", "Gray eyes")).getId();
 
+var PIEL_OSCURA_BRUÑIDA = (new L("PIEL_OSCURA_BRUÑIDA","Piel oscura y bruñida", "Dark and burnished skin")).getId();
+var OJOS_ALMENDRADOS = (new L("OJOS_ALMENDRADOS","Ojos almendrados", "Almond shaped eyes")).getId();
 
+var PIEL_PALIDA = (new L("PIEL_PALIDA","Piel pálida", "Pale skin")).getId();
+var PIEL_MORENA = (new L("PIEL_MORENA","Piel morena", "Tanned skin")).getId();
+var PIEL_NEGRA = (new L("PIEL_NEGRA","Piel negra", "Black skin")).getId();
