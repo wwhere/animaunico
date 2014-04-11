@@ -8,7 +8,7 @@
  * @param {string[]} nombresFemeninos
  * @param {string[]} apellidos
  * @param {number} costePosicionSocial
- * @param {{nombre: string, dinero: Dinero, bonos: {habilidad:string,bono:number}[]}}clasePosicionSocial
+ * @param {{nombre: string, dinero: Dinero, bonos: {habilidad:string,bono:number}[]}[]}clasePosicionSocial
  * @param {{nombre: string, rango: number, dinero: Dinero, bonos: {habilidad:string,bono:number}[]}[]} posiblesClases
  * @param {string[]} lugaresOrigen
  */
@@ -63,13 +63,13 @@ function Origen(nombre, etniaAlAzar, idiomas, nombresMasculinos, nombresFemenino
 
     /**
      *
-     * @type {{nombre: string, dinero: Dinero}}
+     * @type {{nombre: string, dinero: Dinero, bonos: {habilidad:string,[opciones]:string[],[especializacion]:string,bono:number}[]}[]}
      */
     this.clasePosicionSocial = clasePosicionSocial;
 
     /**
      *
-     * @type {{nombre: string, rango: number, dinero: Dinero}[]}
+     * @type {{nombre: string, rango: number, dinero: Dinero, bonos: {habilidad:string,[opciones]:string[],[especializacion]:string,bono:number}[]}[]}
      */
     this.posiblesClases = posiblesClases;
 }
