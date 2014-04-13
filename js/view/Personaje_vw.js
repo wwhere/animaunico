@@ -61,6 +61,7 @@ function muestraPersonaje() {
 
 function activaListenerCambiosPersonaje() {
     DISPATCHER.on(EVENT_CHARACTER_SECCION_PERSONALES,{evento: EVENT_CHARACTER_SECCION_PERSONALES}, recargaSeccionPersonaje);
+    DISPATCHER.on(EVENT_CHARACTER_SECCION_DESCRIPCION,{evento: EVENT_CHARACTER_SECCION_DESCRIPCION}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_CAPACIDADES,{evento: EVENT_CHARACTER_SECCION_CAPACIDADES}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_CARACTERISTICAS,{evento: EVENT_CHARACTER_SECCION_CARACTERISTICAS}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_DESARROLLO,{evento: EVENT_CHARACTER_SECCION_DESARROLLO}, recargaSeccionPersonaje);
@@ -143,6 +144,10 @@ function recargaSeccionPersonaje(event) {
             divDestino = DIV_DESTINO_EQUIPO;
             funcionRecarga = muestraEquipamiento;
             break;
+        case EVENT_CHARACTER_SECCION_DESCRIPCION:
+            divDestino = DIV_DESTINO_DESCRIPCION;
+            funcionRecarga = muestraDescripcion;
+            break;
     }
     enableButtonsPasosCreacion(personaje_actual.GENERACION_INICIADA);
     $(divDestino).empty().append(funcionRecarga(personaje_actual.GENERACION_INICIADA));
@@ -190,6 +195,8 @@ function muestraPersonales(estadoGeneracion) {
     divContenido.append(muestraPersonal(_l(UI_RAZA), _l(personaje_actual.getRaza().getNombre()), modificarPersonales,dialogoElegirRaza));
     divContenido.append(muestraPersonal(_l(UI_PESO), personaje_actual.getPeso(), modificarPersonales, elegirPeso));
     divContenido.append(muestraPersonal(_l(UI_ALTURA), personaje_actual.getAltura(), modificarPersonales, elegirAltura));
+    divContenido.append(muestraPersonal(_l(UI_NACION), _l(personaje_actual.getOrigen()), modificarPersonales, elegirOrigen));
+    divContenido.append(muestraPersonal(_l(UI_ETNIA), _l(personaje_actual.getEtnia()), modificarPersonales, elegirEtnia));
     divContenido.append(muestraPersonal(_l(UI_ESTATUS_SOCIAL), _l(personaje_actual.getEstatus()), modificarPersonales, elegirClaseSocial));
     divContenido.append(muestraPersonalConDivExtra(_l(UI_CATEGORIA), _l(personaje_actual.getCategoria().getNombre()), modificarPersonales, dialogoElegirCategoria,{},
         muestraBotonPequeño(_l(UI_CAMBIAR_CAT),{},cambiarCategoria,"")));
