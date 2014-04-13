@@ -38,32 +38,24 @@ function iniciarGeneracion() {
     personaje_actual.setRaza(getRaza(RAZA_HUMANO));
     personaje_actual.setCategoria(CATEGORIA_NOVEL);
 
-    switch (d10()) {
-        case 1:
-            personaje_actual.setClaseSocial(CLASE_SOCIAL_POBRE);
-            break;
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-            personaje_actual.setClaseSocial(CLASE_SOCIAL_MEDIO);
-            break;
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-            personaje_actual.setClaseSocial(CLASE_SOCIAL_ALTO);
-            break;
-        case 10:
-        default:
-            personaje_actual.setClaseSocial(CLASE_SOCIAL_BAJA_NOBLEZA);
-    }
-
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;
     activarNotificaciones();
     mostrarPersonajeActual();
     mostrarDialogoTipoGeneracion();
+}
+
+/**
+ *
+ * @returns {string}
+ */
+function getSexoAzar() {
+    var azar = d(2);
+    if (azar = 1) {
+        return SEXO_HOMBRE;
+    } else {
+        return SEXO_MUJER;
+    }
 }
 /***** PASO 1: Características *****/
 
@@ -1110,6 +1102,16 @@ function elegirAltura() {
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarAltura,isDisabled:alwaysEnabled});
 }
 
+function elegirOrigen() {
+    //todo
+    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarOrigen,isDisabled:alwaysEnabled});
+}
+
+function elegirEtnia() {
+    //todo
+    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarEtnia,isDisabled:alwaysEnabled});
+}
+
 function elegirPX() {
 
     alert(INFO_NUEVOS_PX);
@@ -1164,6 +1166,14 @@ function asignarPeso(parametros) {
 
 function asignarAltura(parametros) {
     personaje_actual.setAltura(parametros.opcion);
+}
+
+function asignarOrigen(parametros) {
+    personaje_actual.setOrigen(parametros.opcion);
+}
+
+function asignarEtnia(parametros) {
+    personaje_actual.setEtnia(parametros.opcion);
 }
 
 function asignarPX(parametros) {

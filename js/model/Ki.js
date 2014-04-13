@@ -856,7 +856,7 @@ TecnicaKi.prototype = {
             coste += this.nivel * 10;
         }
 
-        var minCosteTrasDesventajas = math.floor(coste/2);
+        var minCosteTrasDesventajas = Math.floor(coste/2);
         for (i=0; i < this.desventajas.length;i++) {
             coste += this.desventajas[i].getCosteCM();
         }

@@ -183,8 +183,16 @@ module.exports = function(grunt) {
                     "js/data/categorias/warlock.js",
 
                     "js/model/Origen.js",
-                    "js/controller/Origen.js",
-                    "js/data/origenes/origenes.js",
+                    "js/controller/Origen_ct.js",
+                    "js/data/origenes/origenesAbel.js",
+                    "js/data/origenes/origenesAlEnneth.js",
+                    "js/data/origenes/origenesAzur.js",
+                    "js/data/origenes/origenesComercio.js",
+                    "js/data/origenes/origenesEpiscopales.js",
+                    "js/data/origenes/origenesGelidos.js",
+                    "js/data/origenes/origenesIndependientes.js",
+                    "js/data/origenes/origenesOrientales.js",
+                    "js/data/origenes/origenesOscuras.js",
 
                     "js/model/Personaje.js",
                     "js/controller/Personaje_ct.js",

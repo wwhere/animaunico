@@ -57,7 +57,7 @@ function getNombreFemeninoAzar(nombreOrigen) {
  * @param {string} nombreOrigen
  * @returns {string}
  */
-function getLugarorigenAzar(nombreOrigen) {
+function getLugarOrigenAzar(nombreOrigen) {
     var origen = getOrigen(nombreOrigen);
 
     if (!origen) {
@@ -142,22 +142,71 @@ function getClaseSocialAzar(nombreOrigen) {
     var origen = getOrigen(nombreOrigen);
 
     if (!origen) {
-        origen = getOrigenAzar();
-    }
+        switch (d10()) {
+            case 1:
+                return CLASE_SOCIAL_POBRE;
+                break;
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                return CLASE_SOCIAL_MEDIO;
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                return CLASE_SOCIAL_ALTO;
+                break;
+            case 10:
+            default:
+                return CLASE_SOCIAL_BAJA_NOBLEZA;
+        }
+    } else {
 
     var clase = d(100);
-
-    for (var i = 0; i < origen.posiblesClases.length; i++) {
-        if (clase <= origen.posiblesClases[i].rango) {
-            return origen.posiblesClases[i].nombre;
+        for (var i = 0; i < origen.posiblesClases.length; i++) {
+            if (clase <= origen.posiblesClases[i].rango) {
+                return origen.posiblesClases[i].nombre;
+            }
         }
     }
 }
 
+/**
+ *
+ * @param {string} nombreOrigen
+ * @param {string} nombreClaseSocial
+ * @returns {Dinero}
+ */
 function getDineroInicial(nombreOrigen,nombreClaseSocial) {
     var origen = getOrigen(nombreOrigen);
 
     if (!origen) {
-        return 0;
+        switch (nombreClaseSocial) {
+            case CLASE_SOCIAL_POBRE:
+                break;
+            case CLASE_SOCIAL_MEDIO:
+                break;
+            case CLASE_SOCIAL_ALTO:
+                break;
+            case CLASE_SOCIAL_BAJA_NOBLEZA:
+            default:
+                break;
+
+        }
+    } else {
+        for (var i = 0;i< origen.clasePosicionSocial.length; i++) {
+            if (origen.clasePosicionSocial[i].nombre == nombreClaseSocial) {
+                return origen.clasePosicionSocial[i].dinero;
+            }
+        }
+        for (i = 0;i< origen.posiblesClases.length; i++) {
+            if (origen.posiblesClases[i].nombre == nombreClaseSocial) {
+                return origen.posiblesClases[i].dinero;
+            }
+        }
     }
+
+    return new Dinero(0,0,0);
 }

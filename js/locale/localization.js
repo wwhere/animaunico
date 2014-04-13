@@ -1017,3 +1017,8 @@ var ORIGEN_ARMADURA = (new L("ORIGEN_ARMADURA","Armadura","Armor")).getId();
 /****************************/
 
 var ERR_LIMITE_DESCONOCIDO = (new L("ERR_LIMITE_DESCONOCIDO", "Error: Límite desconocido", "Error: Unknown Limit")).getId();
+
+var UI_VIENE_DE = (new L("UI_VIENE_DE","Viene de","Comes from")).getId();
+var UI_HABLA = (new L("UI_HABLA","Habla","Can speak")).getId();
+var UI_NACION = (new L("UI_NACION","Nación de origen","Nation of origin")).getId();
+var UI_ETNIA = (new L("UI_ETNIA","Etnia","Ethnicity")).getId();

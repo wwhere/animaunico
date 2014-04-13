@@ -10,18 +10,30 @@ function Personaje(nivelInicial) {
         nivelInicial = 1;
     }
 
+    /**
+     *
+     * @type {string}
+     */
+    this.origen = getOrigenAzar().nombre;
+
+    /** @type string */
+    this.sexo = getSexoAzar();
+
     //region Datos Personales
     /** @type string */
     this.nombre = "Donoban";
 
-    /** @type string */
-    this.sexo = SEXO_HOMBRE;
+    if (this.sexo == SEXO_HOMBRE) {
+        this.nombre = getNombreMasculinoAzar(this.origen);
+    } else {
+        this.nombre = getNombreFemeninoAzar(this.origen);
+    }
 
     /**
      *
      * @type {string}
      */
-    this.claseSocial = CLASE_SOCIAL_POBRE;
+    this.claseSocial = getClaseSocialAzar(this.origen);
 
     /** @type string  */
     this.altura = "0.5 m";
@@ -33,13 +45,26 @@ function Personaje(nivelInicial) {
      *
      * @type {string}
      */
-    this.descripcion = "";
+    this.etnia = getEtniaAzar(this.origen);
 
     /**
      *
      * @type {string}
      */
-    this.trasfondo = "";
+    this.descripcion = getDescripcionAzar(this.etnia);
+
+    /**
+     *
+     * @type {string}
+     */
+    this.idiomas = getIdiomas(this.origen);
+    var cadena_idiomas = "";
+    for (var idi = 0; idi < this.idiomas.length; idi++) {
+        cadena_idiomas += _l(this.idiomas[idi]);
+        if (idi < this.idiomas.length-1)
+            cadena_idiomas += ", ";
+    }
+    this.trasfondo = _l(UI_VIENE_DE) + " " + getLugarOrigenAzar(this.origen) + ". " + _l(UI_HABLA) + " " + cadena_idiomas + ".";
     //endregion Datos Personales
 
     //region Caracteristicas
@@ -356,7 +381,7 @@ function Personaje(nivelInicial) {
 
     //region Equipo y dinero
     /** @type Dinero */
-    this.dinero = new Dinero(0,0,5);
+    this.dinero = getDineroInicial(this.origen,this.claseSocial);
     /**
      *
      * @type {EquipoComprado[]}
@@ -424,11 +449,46 @@ Personaje.prototype = {
 
     /**
      *
+     * @returns {string}
+     */
+    getOrigen : function() {
+        return this.origen;
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setOrigen: function(valor) {
+        this.origen = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+
+    /**
+     *
+     * @returns {string}
+     */
+    getEtnia : function() {
+        return this.etnia;
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setEtnia: function(valor) {
+        this.etnia = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+    /**
+     *
      * @param {string} valor
      */
     setTrasfondo: function(valor) {
         this.trasfondo = valor;
-        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+        lanzarEvento(EVENT_CHARACTER_SECCION_DESCRIPCION);
     },
 
     /**
@@ -437,7 +497,7 @@ Personaje.prototype = {
      */
     setDescripcion: function(valor) {
         this.descripcion = valor;
-        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+        lanzarEvento(EVENT_CHARACTER_SECCION_DESCRIPCION);
     },
 
     /**
