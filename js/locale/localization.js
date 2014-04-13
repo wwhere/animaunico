@@ -6,6 +6,14 @@ var IDIOMA_UI = ENG;
 
 var diccionario = {};
 
+function idioma(idioma) {
+    IDIOMA_UI = idioma;
+
+    mostrarPersonajeActual();
+
+    //TODO actualizar menús
+}
+
 function setIdiomaUI() {
     var lang = navigator.language || navigator.userLanguage;
 
@@ -231,6 +239,7 @@ var UI_TITULO = (new L("TituloAnima", "Anima: UNICO - Generador de personajes", 
 var UI_MENU_PERSONAJE = (new L("Personaje", "Personaje", "Character")).getId();
 var UI_MENU_CREACION = (new L("Creacion", "Creación", "Generation")).getId();
 var UI_MENU_SOPORTE = (new L("Soporte", "Soporte", "Support")).getId();
+
 var UI_BOTON_CREACION = (new L("Iniciar Creación","Iniciar Creación","Start Creation")).getId();
 var UI_BOTON_RAZA = (new L("Elegir Raza","Elegir Raza","Choose Race")).getId();
 var UI_BOTON_CATEGORIA = (new L("Elegir Categoría","Elegir Categoría","Choose Class")).getId();
@@ -249,6 +258,7 @@ var UI_BOTON_SUBIR_NIEVL = (new L("Subir nivel","Subir nivel","Level Up")).getId
 var UI_BOTON_GUARDAR = (new L("Guardar personaje","Guardar personaje","Save Character")).getId();
 var UI_BOTON_CARGAR = (new L("Cargar personaje","Cargar personaje","Load Character")).getId();
 var UI_BOTON_COMPRAR_EQUIPO = (new L("Comprar equipo","Comprar equipo","Buy Equipment")).getId();
+
 var UI_BOTON_LICENCIA = (new L("Agradecimientos y licencia de software","Agradecimientos y licencia de software","Thanks and software licence")).getId();
 var UI_BOTON_SOPORTE = (new L("Informa de errores","Informa de errores","Report an error")).getId();
 var UI_BOTON_COMENTARIOS = (new L("Comentarios, sugerencias ...","Comentarios, sugerencias ...","Comments, sugestions ...")).getId();
