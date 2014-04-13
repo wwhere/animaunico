@@ -1671,3 +1671,26 @@ function limiteDual(coste, opcion,aplicar) {
     }
     lanzarEvento(EVENT_CHARACTER_SECCION_KI);
 }
+
+function posicionSocial(coste, opcion, aplicar) {
+    var origen = getOrigen(personaje_actual.getOrigen());
+    if (aplicar) {
+        personaje_actual._viejaClase = personaje_actual.claseSocial;
+        if (origen.clasePosicionSocial.length > 1) {
+            personaje_actual.setClaseSocial(opcion);
+        } else {
+            personaje_actual.setClaseSocial(origen.clasePosicionSocial[0].nombre);
+        }
+    } else {
+        personaje_actual.setClaseSocial(personaje_actual._viejaClase);
+    }
+}
+
+function raicesCulturales(coste, opcion, aplicar) {
+    var origen = getOrigen(personaje_actual.getOrigen());
+    if (aplicar) {
+//TODO
+    } else {
+
+    }
+}

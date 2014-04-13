@@ -277,6 +277,16 @@ function aplicarElementoPC(event) {
     var isVentaja = event.data.isVentaja;
     var costes = elementoPC.getCostes();
 
+    if (elementoPC.nombre == VENT_POSICION_SOCIAL) {
+        var origen = getOrigen(personaje_actual.getOrigen());
+
+        if (origen) {
+            if (origen.costePosicionSocial != 0) {
+                costes = [];
+                costes.push(origen.costePosicionSocial);
+            }
+        }
+    }
     if (costes.length > 1) {
         var arrayOpciones = [];
         for (var i=0; i < costes.length;i++) {
@@ -298,6 +308,18 @@ function aplicarElementoPCPaso2(parametros) {
     var isVentaja = parametros.isVentaja;
 
     var elegir = elementoPC.getElegir();
+    if (elementoPC.nombre = VENT_POSICION_SOCIAL) {
+        var origen = getOrigen(personaje_actual.getOrigen());
+
+        if (origen) {
+            if (origen.clasePosicionSocial.length > 1) {
+                elegir = [];
+                for (var i = 0; i < origen.clasePosicionSocial.length;i++) {
+                    elegir.push(origen.clasePosicionSocial[i]);
+                }
+            }
+        }
+    }
     if (elegir.length > 0) {
         muestraDialogoElegirOpcion(elegir[0],{elementoPC: elementoPC,coste: coste, isVentaja: isVentaja},{principal: aplicarElementoPCFinal, isDisabled: opcionElementoPCNoValida});
     } else {

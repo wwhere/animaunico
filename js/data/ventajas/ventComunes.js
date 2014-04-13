@@ -64,9 +64,9 @@ addVentaja(new Ventaja( VENT_ARTEFACTO, "", VENT_ARTEFACTO_DESC, REPETIBLE_TOTAL
 addVentaja(new Ventaja( VENT_CURTIDO, "", VENT_CURTIDO_DESC, NO_REPETIBLE, [1,2,3], [], true, [], [curtido], GRUPO_TRASFONDO ));
 addVentaja(new Ventaja( VENT_FONDOS_INICIALES, "", VENT_FONDOS_INICIALES_DESC, NO_REPETIBLE, [1,2,3], [], true, [], [fondosIniciales], GRUPO_TRASFONDO ));
 addVentaja(new Ventaja( VENT_FAMA, "", VENT_FAMA_DESC, NO_REPETIBLE, [1,2], [], true, [], [], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] )); //TODO puntos de fama
-addVentaja(new Ventaja( VENT_RAICES_CULTURALES, "", VENT_RAICES_CULTURALES_DESC, NO_REPETIBLE, [1], [], true, [], [], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] ));
+addVentaja(new Ventaja( VENT_RAICES_CULTURALES, "", VENT_RAICES_CULTURALES_DESC, NO_REPETIBLE, [1], [], true, [], [raicesCulturales], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] ));
 addVentaja(new Ventaja( VENT_SANTO, "", VENT_SANTO_DESC, NO_REPETIBLE, [2], [], true, [], [], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] ));
-addVentaja(new Ventaja( VENT_POSICION_SOCIAL, "", VENT_POSICION_SOCIAL_DESC, NO_REPETIBLE, [1,2], [], true, [], [], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] )); //TODO segun logar de origen
+addVentaja(new Ventaja( VENT_POSICION_SOCIAL, "", VENT_POSICION_SOCIAL_DESC, NO_REPETIBLE, [1,2], [], true, [], [posicionSocial], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] )); //TODO segun logar de origen
 addVentaja(new Ventaja( VENT_CONTACTOS, "", VENT_CONTACTOS_DESC, REPETIBLE_OPCIONES, [1,2,3], [], true, [LISTA_DESCRIPCION], [], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] ));
 addVentaja(new Ventaja( VENT_ALIADO_PODEROSO, "", VENT_ALIADO_PODEROSO_DESC, REPETIBLE_OPCIONES, [1,2,3], [], true, [LISTA_DESCRIPCION], [], GRUPO_TRASFONDO,[FLAG_GAIA_1_ENABLED] ));
 addVentaja(new Ventaja( VENT_SANGRE_ANTIGUA, "", VENT_SANGRE_ANTIGUA_DESC, NO_REPETIBLE, [2], [], true, [], [], GRUPO_OTRAS,[FLAG_GAIA_1_ENABLED] ));
