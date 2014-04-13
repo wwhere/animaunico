@@ -7,11 +7,20 @@ var IDIOMA_UI = ENG;
 var diccionario = {};
 
 function idioma(idioma) {
+    console.log("Paso a idioma " + idioma);
     IDIOMA_UI = idioma;
 
     mostrarPersonajeActual();
 
     //TODO actualizar menús
+}
+
+function cambiaIdiomaEspañol() {
+    idioma(SPA);
+}
+
+function cambiaIdiomaIngles() {
+    idioma(ENG);
 }
 
 function setIdiomaUI() {
