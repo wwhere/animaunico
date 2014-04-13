@@ -69,7 +69,11 @@ function muestraControles() {
     $("#"+BOTON_LOG).off("click",mostrarLogCambios);
     $("#"+BOTON_LICENCIA).off("click",mostrarLicencia);
     $("#"+BOTON_COMPRAR_EQUIPO).off("click",muestraVentanaCompraEquipo);
+    $("#BOTON_IDIOMA_ESPAÑOL").off("click",cambiaIdiomaEspañol);
+    $("#BOTON_IDIOMA_INGLES").off("click",cambiaIdiomaIngles);
 
+    $("#BOTON_IDIOMA_ESPAÑOL").on("click",cambiaIdiomaEspañol);
+    $("#BOTON_IDIOMA_INGLES").on("click",cambiaIdiomaIngles);
     $("#"+BOTON_ELAN).on("click",dialogoElan);
     $("#"+BOTON_MAGIA).on("click",dialogoMagia);
     $("#"+BOTON_CV).on("click",dialogoCV);
