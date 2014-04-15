@@ -1687,10 +1687,36 @@ function posicionSocial(coste, opcion, aplicar) {
 }
 
 function raicesCulturales(coste, opcion, aplicar) {
+    /**
+     *
+     * @type {Origen}
+     */
     var origen = getOrigen(personaje_actual.getOrigen());
-    if (aplicar) {
-//TODO
-    } else {
 
+    if (origen) {
+
+        /**
+         *
+         * @type {{habilidad:string,bono:number,[especializacion]:string,[opciones]:string[]}[]}
+         */
+        var bonos = getBonosRaicesCulturales(personaje_actual.getOrigen(),personaje_actual.getEstatus());
+        for (var i = 0; i < bonos.length; i++) {
+            var esteBono = bonos[i];
+            var habilidad = esteBono.habilidad;
+            var bonus = esteBono.bono;
+            var espe = "";
+            if (esteBono.especializacion) {
+                espe = esteBono.especializacion;
+            }
+            if (bono.habilidad = ELEGIR) {
+
+            }
+
+        }
+        if (aplicar) {
+
+        } else {
+
+        }
     }
 }

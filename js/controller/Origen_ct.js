@@ -34,7 +34,7 @@ function getNombreMasculinoAzar(nombreOrigen) {
         origen = getOrigenAzar();
     }
 
-    return origen.nombresMasculinos[d(origen.nombresMasculinos.length)-1] + " " + origen.apellidos[d(origen.apellidos.length)-1];
+    return origen.getNombreMasculino() + " " + origen.getApellido();
 }
 
 /**
@@ -49,7 +49,7 @@ function getNombreFemeninoAzar(nombreOrigen) {
         origen = getOrigenAzar();
     }
 
-    return origen.nombresFemeninos[d(origen.nombresFemeninos.length)-1] + " " + origen.apellidos[d(origen.apellidos.length)-1];
+    return origen.getNombreFemenino() + " " + origen.getApellido();
 }
 
 /**
@@ -209,4 +209,31 @@ function getDineroInicial(nombreOrigen,nombreClaseSocial) {
     }
 
     return new Dinero(0,0,0);
+}
+
+/**
+ *
+ * @param {string} nombreOrigen
+ * @param {string} nombreClaseSocial
+ * @returns {Array}
+ */
+function getBonosRaicesCulturales(nombreOrigen,nombreClaseSocial) {
+    var origen = getOrigen(nombreOrigen);
+
+    if (!origen) {
+        return [];
+    } else {
+        for (var i = 0;i< origen.clasePosicionSocial.length; i++) {
+            if (origen.clasePosicionSocial[i].nombre == nombreClaseSocial) {
+                return origen.clasePosicionSocial[i].bonos;
+            }
+        }
+        for (i = 0;i< origen.posiblesClases.length; i++) {
+            if (origen.posiblesClases[i].nombre == nombreClaseSocial) {
+                return origen.posiblesClases[i].bonos;
+            }
+        }
+    }
+
+    return [];
 }
