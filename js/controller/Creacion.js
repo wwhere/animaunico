@@ -1125,12 +1125,20 @@ function elegirAltura() {
 }
 
 function elegirOrigen() {
-    //todo
-    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarOrigen,isDisabled:alwaysEnabled});
+    var array_opciones = [];
+    for (var i = 0; i < origenes_set.length;i++) {
+        array_opciones.push(new OpcionMostrable(_l(origenes_set[i].getNombre()),origenes_set[i].getNombre(), ""));
+    }
+    array_opciones.push(new OpcionMostrable(_l(UI_ESPECIFICAR),UI_ESPECIFICAR,""));
+    muestraDialogoElegirOpciones(array_opciones,{},{principal:asignarOrigen,isDisabled:alwaysEnabled},true);
 }
 
 function elegirEtnia() {
-    //todo
+    var array_opciones = [];
+    for (var i = 0; i < etnias_set.length;i++) {
+        array_opciones.push(new OpcionMostrable(_l(etnias_set[i]),etnias_set[i], ""));
+    }
+    array_opciones.push(new OpcionMostrable(_l(UI_ESPECIFICAR),UI_ESPECIFICAR,""));
     muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{},{principal:asignarEtnia,isDisabled:alwaysEnabled});
 }
 
@@ -1145,19 +1153,37 @@ function elegirManualSexo() {
 }
 
 function elegirClaseSocial() {
+    var array_opciones = [
+        new OpcionMostrable(_l(CLASE_SOCIAL_POBRE),CLASE_SOCIAL_POBRE, CLASES_SOCIALES_GENERICAS),
+        new OpcionMostrable(_l(CLASE_SOCIAL_MEDIO),CLASE_SOCIAL_MEDIO, CLASES_SOCIALES_GENERICAS),
+        new OpcionMostrable(_l(CLASE_SOCIAL_ALTO),CLASE_SOCIAL_ALTO, CLASES_SOCIALES_GENERICAS),
+        new OpcionMostrable(_l(CLASE_SOCIAL_BAJA_NOBLEZA),CLASE_SOCIAL_BAJA_NOBLEZA, CLASES_SOCIALES_GENERICAS)
+    ];
+
+    var categorias = [
+        new OpcionMostrable(_l(CLASES_SOCIALES_GENERICAS),CLASES_SOCIALES_GENERICAS,"")
+    ];
+
+    var origen = getOrigen(personaje_actual.getOrigen());
+
+    if (origen) {
+        var clases = origen.posiblesClases;
+
+        categorias.push(new OpcionMostrable(_l(CLASES_SOCIALES_ORIGEN),CLASES_SOCIALES_ORIGEN,""));
+        for (var i = 0; i < clases.length; i++) {
+            array_opciones.push(new OpcionMostrable(_l(clases[i].nombre),clases[i].nombre, CLASES_SOCIALES_ORIGEN));
+        }
+    }
+
     muestraDialogoElegirOpciones(
-        [
-            new OpcionMostrable(_l(CLASE_SOCIAL_POBRE),CLASE_SOCIAL_POBRE, ""),
-            new OpcionMostrable(_l(CLASE_SOCIAL_MEDIO),CLASE_SOCIAL_MEDIO, ""),
-            new OpcionMostrable(_l(CLASE_SOCIAL_ALTO),CLASE_SOCIAL_ALTO, ""),
-            new OpcionMostrable(_l(CLASE_SOCIAL_BAJA_NOBLEZA),CLASE_SOCIAL_BAJA_NOBLEZA, "")
-        ],
+        array_opciones,
         {},
         {
             principal: asignarClaseSocial,
             isDisabled: alwaysEnabled
         },
-        true
+        true,
+        categorias
     );
 }
 
@@ -1191,11 +1217,19 @@ function asignarAltura(parametros) {
 }
 
 function asignarOrigen(parametros) {
-    personaje_actual.setOrigen(parametros.opcion);
+    if (parametros.opcion == UI_ESPECIFICAR) {
+        personaje_actual.setOrigen(prompt(_l(UI_ESPECIFICA)));
+    } else {
+        personaje_actual.setOrigen(parametros.opcion);
+    }
 }
 
 function asignarEtnia(parametros) {
-    personaje_actual.setEtnia(parametros.opcion);
+    if (parametros.opcion == UI_ESPECIFICAR) {
+        personaje_actual.setEtnia(prompt(_l(UI_ESPECIFICA)));
+    } else {
+        personaje_actual.setEtnia(parametros.opcion);
+    }
 }
 
 function asignarPX(parametros) {

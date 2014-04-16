@@ -460,7 +460,23 @@ Personaje.prototype = {
      * @param {string} valor
      */
     setOrigen: function(valor) {
-        this.origen = valor;
+        var claseGenerica = CLASE_SOCIAL_MEDIO;
+        var nuevaClase = getClaseSocialAzar(valor);
+
+        if (this.hasFlag(FLAG_RAICES_CULTURALES)) {
+            var coste = getVentaja(VENT_RAICES_CULTURALES).getCostes()[0];
+            raicesCulturales(coste,"",false);
+
+            this.setClaseSocial(claseGenerica);
+            this.origen = valor;
+            this.setClaseSocial(nuevaClase);
+
+            raicesCulturales(coste,"",true);
+        } else {
+            this.setClaseSocial(claseGenerica);
+            this.origen = valor;
+            this.setClaseSocial(nuevaClase);
+        }
         lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
     },
 
@@ -614,9 +630,19 @@ Personaje.prototype = {
     setClaseSocial : function(claseSocial) {
         var dineroPrevio = getDineroInicial(this.origen,this.claseSocial);
         this.getDinero().addCobre(-1 * dineroPrevio.totalEnCobre());
-        this.claseSocial = claseSocial;
+
+        if (this.hasFlag(FLAG_RAICES_CULTURALES)) {
+            var coste = getVentaja(VENT_RAICES_CULTURALES).getCostes()[0];
+            raicesCulturales(coste,"",false);
+            this.claseSocial = claseSocial;
+            raicesCulturales(coste,"",true);
+        } else {
+            this.claseSocial = claseSocial;
+        }
+
         var dineroNuevo = getDineroInicial(this.origen,claseSocial);
         this.getDinero().addCobre(dineroNuevo.totalEnCobre());
+
         lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },

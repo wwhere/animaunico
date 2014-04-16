@@ -5,6 +5,19 @@
 origenes_set = [];
 allOrigenes = {};
 
+etnias_set = [
+ ETNIA_ASHER ,
+ ETNIA_AION ,
+ ETNIA_TAYAHAR,
+ ETNIA_ZINNER,
+ ETNIA_RYUAN ,
+ ETNIA_NORNE ,
+ ETNIA_VILDIAN,
+ ETNIA_DAEVAR,
+ ETNIA_KWA ,
+ ETNIA_CELSUS
+];
+
 /**
  *
  * @returns {Origen}
@@ -185,13 +198,17 @@ function getDineroInicial(nombreOrigen,nombreClaseSocial) {
     if (!origen) {
         switch (nombreClaseSocial) {
             case CLASE_SOCIAL_POBRE:
+                return new Dinero(0,0,5);
                 break;
             case CLASE_SOCIAL_MEDIO:
+                return new Dinero(1,0,0);
                 break;
             case CLASE_SOCIAL_ALTO:
+                return new Dinero(20,0,0);
                 break;
             case CLASE_SOCIAL_BAJA_NOBLEZA:
             default:
+                return new Dinero(150,0,0);
                 break;
 
         }
