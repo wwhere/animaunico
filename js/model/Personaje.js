@@ -460,7 +460,23 @@ Personaje.prototype = {
      * @param {string} valor
      */
     setOrigen: function(valor) {
-        this.origen = valor;
+        var claseGenerica = CLASE_SOCIAL_MEDIO;
+        var nuevaClase = getClaseSocialAzar(valor);
+
+        if (this.hasFlag(FLAG_RAICES_CULTURALES)) {
+            var coste = getVentaja(VENT_RAICES_CULTURALES).getCostes()[0];
+            raicesCulturales(coste,"",false);
+
+            this.setClaseSocial(claseGenerica);
+            this.origen = valor;
+            this.setClaseSocial(nuevaClase);
+
+            raicesCulturales(coste,"",true);
+        } else {
+            this.setClaseSocial(claseGenerica);
+            this.origen = valor;
+            this.setClaseSocial(nuevaClase);
+        }
         lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
     },
 
@@ -612,33 +628,21 @@ Personaje.prototype = {
      * @param {string} claseSocial
      */
     setClaseSocial : function(claseSocial) {
-        switch (this.claseSocial) {
-            case CLASE_SOCIAL_POBRE:
-                this.getDinero().addCobre(-5);
-                break;
-            case CLASE_SOCIAL_MEDIO:
-                personaje_actual.getDinero().addOro(-1);
-                break;
-            case CLASE_SOCIAL_ALTO:
-                personaje_actual.getDinero().addOro(-20);
-                break;
-            case CLASE_SOCIAL_BAJA_NOBLEZA:
-                personaje_actual.getDinero().addOro(-150);
+        var dineroPrevio = getDineroInicial(this.origen,this.claseSocial);
+        this.getDinero().addCobre(-1 * dineroPrevio.totalEnCobre());
+
+        if (this.hasFlag(FLAG_RAICES_CULTURALES)) {
+            var coste = getVentaja(VENT_RAICES_CULTURALES).getCostes()[0];
+            raicesCulturales(coste,"",false);
+            this.claseSocial = claseSocial;
+            raicesCulturales(coste,"",true);
+        } else {
+            this.claseSocial = claseSocial;
         }
-        this.claseSocial = claseSocial;
-        switch (this.claseSocial) {
-            case CLASE_SOCIAL_POBRE:
-                this.getDinero().addCobre(5);
-                break;
-            case CLASE_SOCIAL_MEDIO:
-                personaje_actual.getDinero().addOro(1);
-                break;
-            case CLASE_SOCIAL_ALTO:
-                personaje_actual.getDinero().addOro(20);
-                break;
-            case CLASE_SOCIAL_BAJA_NOBLEZA:
-                personaje_actual.getDinero().addOro(150);
-        }
+
+        var dineroNuevo = getDineroInicial(this.origen,claseSocial);
+        this.getDinero().addCobre(dineroNuevo.totalEnCobre());
+
         lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },
@@ -2520,7 +2524,19 @@ Personaje.prototype = {
             }
         }
 
+/*        if ((ventaja.getNombre() == VENT_POSICION_SOCIAL) ||(ventaja.getNombre() == VENT_RAICES_CULTURALES)) {
+            var origen = getOrigen(personaje_actual.getOrigen());
 
+            if (!origen) {
+                puede = false;
+            } else {
+                if (ventaja.getNombre() == VENT_POSICION_SOCIAL) {
+                    if (origen.clasePosicionSocial.length == 0) {
+                        puede = false;
+                    }
+                }
+            }
+        }*/
 
         return puede;
     },
