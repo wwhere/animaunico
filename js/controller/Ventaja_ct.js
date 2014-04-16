@@ -1671,3 +1671,77 @@ function limiteDual(coste, opcion,aplicar) {
     }
     lanzarEvento(EVENT_CHARACTER_SECCION_KI);
 }
+
+function posicionSocial(coste, opcion, aplicar) {
+    var origen = getOrigen(personaje_actual.getOrigen());
+    if (aplicar) {
+        personaje_actual._viejaClase = personaje_actual.claseSocial;
+        if (origen.clasePosicionSocial.length > 1) {
+            personaje_actual.setClaseSocial(opcion);
+        } else {
+            personaje_actual.setClaseSocial(origen.clasePosicionSocial[0].nombre);
+        }
+    } else {
+        personaje_actual.setClaseSocial(personaje_actual._viejaClase);
+    }
+}
+
+function raicesCulturales(coste, opcion, aplicar) {
+    /**
+     *
+     * @type {Origen}
+     */
+    var origen = getOrigen(personaje_actual.getOrigen());
+
+    if (origen) {
+        /**
+         *
+         * @type {{habilidad:string,bono:number,[especializacion]:string,[opciones]:string[]}[]}
+         */
+        var bonos = getBonosRaicesCulturales(personaje_actual.getOrigen(),personaje_actual.getEstatus());
+        for (var i = 0; i < bonos.length; i++) {
+            var esteBono = bonos[i];
+            var habilidad = esteBono.habilidad;
+            var bonus = esteBono.bono;
+            var espe = "";
+            if (esteBono.especializacion) {
+                espe = esteBono.especializacion;
+            }
+            if (habilidad == ELEGIR) {
+                var arrayOpciones = [];
+                for (var j=0; j < esteBono.opciones.length;j++) {
+                    arrayOpciones.push(new OpcionMostrable(modificadorBonito(bonus) + " " + _l(esteBono.opciones[j]),esteBono.opciones[j],""));
+                }
+                muestraDialogoElegirOpciones(arrayOpciones, {aplicar: aplicar, especializacion: espe, bonus: bonus}, {principal: aplicarRaizCultural, isDisabled: alwaysEnabled}, true);
+
+            } else {
+                aplicarRaizCultural({aplicar:aplicar,opcion:habilidad,bonus:bonus,especializacion:espe});
+            }
+        }
+        if (aplicar) {
+            personaje_actual.setFlag(FLAG_RAICES_CULTURALES);
+        } else {
+            personaje_actual.removeFlag(FLAG_RAICES_CULTURALES);
+        }
+        lanzarEvento(EVENT_CHARACTER_SECCION_SECUNDARIAS);
+    }
+}
+
+/**
+ *
+ * @param {{aplicar: boolean, opcion: string, bonus: number, [especializacion]: string}} parametros
+ */
+function aplicarRaizCultural(parametros) {
+    var bono = new Bono(BONO_HABILIDAD,parametros.opcion,parametros.bonus,"",false,BONO_ESPECIAL,VENT_RAICES_CULTURALES);
+    if (parametros.aplicar) {
+        personaje_actual.addBono(bono,false,false);
+        if (parametros.especializacion != "") {
+            personaje_actual.setEspecializacionHabilidadSecundaria(parametros.opcion,parametros.especializacion);
+        }
+    } else {
+        personaje_actual.removeBono(bono,false);
+        if (parametros.especializacion != "") {
+            personaje_actual.setEspecializacionHabilidadSecundaria(parametros.opcion,"");
+        }
+    }
+}

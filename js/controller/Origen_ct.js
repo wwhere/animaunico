@@ -5,6 +5,19 @@
 origenes_set = [];
 allOrigenes = {};
 
+etnias_set = [
+ ETNIA_ASHER ,
+ ETNIA_AION ,
+ ETNIA_TAYAHAR,
+ ETNIA_ZINNER,
+ ETNIA_RYUAN ,
+ ETNIA_NORNE ,
+ ETNIA_VILDIAN,
+ ETNIA_DAEVAR,
+ ETNIA_KWA ,
+ ETNIA_CELSUS
+];
+
 /**
  *
  * @returns {Origen}
@@ -34,7 +47,7 @@ function getNombreMasculinoAzar(nombreOrigen) {
         origen = getOrigenAzar();
     }
 
-    return origen.nombresMasculinos[d(origen.nombresMasculinos.length)-1] + " " + origen.apellidos[d(origen.apellidos.length)-1];
+    return origen.getNombreMasculino() + " " + origen.getApellido();
 }
 
 /**
@@ -49,7 +62,7 @@ function getNombreFemeninoAzar(nombreOrigen) {
         origen = getOrigenAzar();
     }
 
-    return origen.nombresFemeninos[d(origen.nombresFemeninos.length)-1] + " " + origen.apellidos[d(origen.apellidos.length)-1];
+    return origen.getNombreFemenino() + " " + origen.getApellido();
 }
 
 /**
@@ -185,13 +198,17 @@ function getDineroInicial(nombreOrigen,nombreClaseSocial) {
     if (!origen) {
         switch (nombreClaseSocial) {
             case CLASE_SOCIAL_POBRE:
+                return new Dinero(0,0,5);
                 break;
             case CLASE_SOCIAL_MEDIO:
+                return new Dinero(1,0,0);
                 break;
             case CLASE_SOCIAL_ALTO:
+                return new Dinero(20,0,0);
                 break;
             case CLASE_SOCIAL_BAJA_NOBLEZA:
             default:
+                return new Dinero(150,0,0);
                 break;
 
         }
@@ -209,4 +226,31 @@ function getDineroInicial(nombreOrigen,nombreClaseSocial) {
     }
 
     return new Dinero(0,0,0);
+}
+
+/**
+ *
+ * @param {string} nombreOrigen
+ * @param {string} nombreClaseSocial
+ * @returns {Array}
+ */
+function getBonosRaicesCulturales(nombreOrigen,nombreClaseSocial) {
+    var origen = getOrigen(nombreOrigen);
+
+    if (!origen) {
+        return [];
+    } else {
+        for (var i = 0;i< origen.clasePosicionSocial.length; i++) {
+            if (origen.clasePosicionSocial[i].nombre == nombreClaseSocial) {
+                return origen.clasePosicionSocial[i].bonos;
+            }
+        }
+        for (i = 0;i< origen.posiblesClases.length; i++) {
+            if (origen.posiblesClases[i].nombre == nombreClaseSocial) {
+                return origen.posiblesClases[i].bonos;
+            }
+        }
+    }
+
+    return [];
 }
