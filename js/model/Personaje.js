@@ -2503,6 +2503,10 @@ Personaje.prototype = {
             if (!personaje_actual.hasFlag(FLAG_PSIQUICO)) {
                 puede = false;
             }
+        } else if ((ventaja.getGrupo() == GRUPO_LEGADOS) && (!ventaja.isBasica)) {
+            if (!personaje_actual.hasFlag(FLAG_SANGRE_LATENTE)) {
+                puede = false;
+            }
         }
 
         for (var i = 0; i < this.prohibidos.length; i++) {
