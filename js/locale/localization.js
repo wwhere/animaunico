@@ -850,6 +850,10 @@ var ELEMENTO_TIERRA = (new L("Tierra","Tierra","Earth")).getId();
 var ELEMENTO_LUZ = (new L("Luz","Luz","Light")).getId();
 var ELEMENTO_OSCURIDAD = (new L("Oscuridad","Oscuridad","Darkness")).getId();
 
+var ELEMENTO_FRIO = (new L("ELEMENTO_FRIO","Frío","Cold")).getId();
+var ELEMENTO_ELECTRICIDAD = (new L("ELEMENTO_ELECTRICIDAD","Electricidad","Electricity")).getId();
+
+
 var EFECTO_OFENSIVO = (new L("Efecto ofensivo","Efecto ofensivo","Offensive effect")).getId();
 var EFECTO_DEFENSIVO = (new L("Efecto defensivo","Efecto defensivo","Defensive effect")).getId();
 var EFECTO_DESTRUCTIVO = (new L("Efecto destructivo","Efecto destructivo","Destructive effect")).getId();
@@ -968,6 +972,7 @@ var GRUPO_RAZAS = (new L("Ventajas de Raza","Ventajas de Raza","Race advantages"
 var GRUPO_SECUNDARIAS = (new L("Ventajas de Habilidades Secundarias","Ventajas de Habilidades Secundarias","Secondary abilities advantages")).getId();
 var GRUPO_ELAN = (new L("Ventajas de Elan","Ventajas de Elan","Elan advantages")).getId();
 var GRUPO_TRASFONDO = (new L("GRUPO_TRASFONDO","Ventajas de Trasfondo","Background advantages")).getId();
+var GRUPO_LEGADOS = (new L("GRUPO_LEGADOS","Legados de Sangre","Blood Legacies")).getId();
 
 var UI_RESULTADO_DE_TIRADA = (new L("Resultado de la tirada: ","Resultado de la tirada: ","Result of the roll")).getId();
 var UI_AJUSTADO_AL_MINIMO = (new L("Ajustado al mínimo del personaje","Ajustado al mínimo del personaje","Adjusted to character minimum")).getId();

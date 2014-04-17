@@ -382,3 +382,101 @@ var VENT_SELLOS_MAGISTRALES = (new L("VENT_SELLOS_MAGISTRALES","Sellos magistral
 var VENT_SELLOS_MAGISTRALES_DESC = (new L("VENT_SELLOS_MAGISTRALES_DESC","A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.",
     "A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.")).getId();
 
+/**legados***/
+
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO","Sangre de Aeon: Lazo Elemental - Kagutsuchi (Fuego)",
+    "Sangre de Aeon: Lazo Elemental - Kagutsuchi (Fuego)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE","Sangre de Aeon: Lazo Elemental - Boreas (Aire)",
+    "Sangre de Aeon: Lazo Elemental - Boreas (Aire)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO","Sangre de Aeon: Lazo Elemental - Niflheim (Frío)",
+    "Sangre de Aeon: Lazo Elemental - Niflheim (Frío)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD","Sangre de Aeon: Lazo Elemental - Rudraksha (Electricidad)",
+    "Sangre de Aeon: Lazo Elemental - Rudraksha (Electricidad)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA","Sangre de Aeon: Lazo Elemental - Ran (Agua)",
+    "Sangre de Aeon: Lazo Elemental - Ran (Agua)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA","Sangre de Aeon: Lazo Elemental - Toa (Tierra)",
+    "Sangre de Aeon: Lazo Elemental - Toa (Tierra)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD","Sangre de Aeon: Lazo Elemental - Phandemonium (Oscuridad)",
+    "Sangre de Aeon: Lazo Elemental - Phandemonium (Oscuridad)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ","Sangre de Aeon: Lazo Elemental - Shephirah (Luz)",
+    "Sangre de Aeon: Lazo Elemental - Shephirah (Luz)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ_DESC","",
+    "")).getId();
+var VENT_LOS_OJOS_DE_LA_MUERTE = (new L("VENT_LOS_OJOS_DE_LA_MUERTE","Los Ojos de la Muerte",
+    "Los Ojos de la Muerte")).getId();
+var VENT_LOS_OJOS_DE_LA_MUERTE_DESC= (new L("VENT_LOS_OJOS_DE_LA_MUERTE_DESC","",
+    "")).getId();
+var VENT_OJOS_DEL_ALMA = (new L("VENT_OJOS_DEL_ALMA","Ojos del Alma",
+    "Ojos del Alma")).getId();
+var VENT_OJOS_DEL_ALMA_DESC= (new L("VENT_OJOS_DEL_ALMA_DESC","",
+    "")).getId();
+var VENT_LEGADO_DE_LA_LUNA = (new L("VENT_LEGADO_DE_LA_LUNA","Legado de la Luna (Tsukiyomi)",
+    "Legado de la Luna (Tsukiyomi)")).getId();
+var VENT_LEGADO_DE_LA_LUNA_DESC= (new L("VENT_LEGADO_DE_LA_LUNA_DESC","",
+    "")).getId();
+var VENT_LA_SANGRE_DE_UROBOROS = (new L("VENT_LA_SANGRE_DE_UROBOROS","La Sangre de Uroboros",
+    "La Sangre de Uroboros")).getId();
+var VENT_LA_SANGRE_DE_UROBOROS_DESC= (new L("VENT_LA_SANGRE_DE_UROBOROS_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_LAS_GRANDES_BESTIAS = (new L("VENT_SANGRE_DE_LAS_GRANDES_BESTIAS","Sangre de las Grandes Bestias",
+    "Sangre de las Grandes Bestias")).getId();
+var VENT_SANGRE_DE_LAS_GRANDES_BESTIAS_DESC= (new L("VENT_SANGRE_DE_LAS_GRANDES_BESTIAS_DESC","",
+    "")).getId();
+var VENT_OJOS_DEL_DESTINO = (new L("VENT_OJOS_DEL_DESTINO","Ojos del Destino",
+    "Ojos del Destino")).getId();
+var VENT_OJOS_DEL_DESTINO_DESC= (new L("VENT_OJOS_DEL_DESTINO_DESC","",
+    "")).getId();
+var VENT_SANGRE_ETERNA = (new L("VENT_SANGRE_ETERNA","Sangre Eterna",
+    "Sangre Eterna")).getId();
+var VENT_SANGRE_ETERNA_DESC= (new L("VENT_SANGRE_ETERNA_DESC","",
+    "")).getId();
+var VENT_LA_SANGRE_DE_OROCHI = (new L("VENT_LA_SANGRE_DE_OROCHI","La Sangre de Orochi",
+    "La Sangre de Orochi")).getId();
+var VENT_LA_SANGRE_DE_OROCHI_DESC= (new L("VENT_LA_SANGRE_DE_OROCHI_DESC","",
+    "")).getId();
+var VENT_DEVORADOR_DE_EXISTENCIA = (new L("VENT_DEVORADOR_DE_EXISTENCIA","Devorador de Existencia",
+    "Devorador de Existencia")).getId();
+var VENT_DEVORADOR_DE_EXISTENCIA_DESC= (new L("VENT_DEVORADOR_DE_EXISTENCIA_DESC","",
+    "")).getId();
+var VENT_ESENCIA_VENENOSA = (new L("VENT_ESENCIA_VENENOSA","Esencia Venenosa",
+    "Esencia Venenosa")).getId();
+var VENT_ESENCIA_VENENOSA_DESC= (new L("VENT_ESENCIA_VENENOSA_DESC","",
+    "")).getId();
+var VENT_ARMAS_NATURALES = (new L("VENT_ARMAS_NATURALES","Armas Naturales",
+    "Armas Naturales")).getId();
+var VENT_ARMAS_NATURALES_DESC= (new L("VENT_ARMAS_NATURALES_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_LOS_MUERTOS = (new L("VENT_SANGRE_DE_LOS_MUERTOS","Sangre de los Muertos",
+    "Sangre de los Muertos")).getId();
+var VENT_SANGRE_DE_LOS_MUERTOS_DESC= (new L("VENT_SANGRE_DE_LOS_MUERTOS_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_KAMI_GENUS_LOCI = (new L("VENT_SANGRE_DE_KAMI_GENUS_LOCI","Sangre de Kami - Genus Loci",
+    "Sangre de Kami - Genus Loci")).getId();
+var VENT_SANGRE_DE_KAMI_GENUS_LOCI_DESC= (new L("VENT_SANGRE_DE_KAMI_GENUS_LOCI_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA = (new L("VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA","Sangre de Kami - Señor de la Guerra",
+    "Sangre de Kami - Señor de la Guerra")).getId();
+var VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA_DESC= (new L("VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA_DESC","",
+    "")).getId();
+var VENT_SANGRE_DE_EL_DRAGON = (new L("VENT_SANGRE_DE_EL_DRAGON","Sangre de El Dragón",
+    "Sangre de El Dragón")).getId();
+var VENT_SANGRE_DE_EL_DRAGON_DESC= (new L("VENT_SANGRE_DE_EL_DRAGON_DESC","",
+    "")).getId();
+var VENT_SANGRE_LATENTE = (new L("VENT_SANGRE_LATENTE","Sangre Latente",
+    "Sangre Latente")).getId();
+var VENT_SANGRE_LATENTE_DESC= (new L("VENT_SANGRE_LATENTE_DESC","",
+    "")).getId();
