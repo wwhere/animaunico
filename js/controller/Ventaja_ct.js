@@ -1672,6 +1672,7 @@ function limiteDual(coste, opcion,aplicar) {
     lanzarEvento(EVENT_CHARACTER_SECCION_KI);
 }
 
+
 function posicionSocial(coste, opcion, aplicar) {
     var origen = getOrigen(personaje_actual.getOrigen());
     if (aplicar) {
@@ -1745,3 +1746,134 @@ function aplicarRaizCultural(parametros) {
         }
     }
 }
+
+function afinidadElemental(elemento, aplicar) {
+    var flag ="";
+    switch (elemento) {
+        case ELEMENTO_FUEGO:
+            flag = FLAG_AFINIDAD_ELEMENTAL_FUEGO;
+            break;
+        case ELEMENTO_AIRE:
+            flag = FLAG_AFINIDAD_ELEMENTAL_AIRE;
+            break;
+        case ELEMENTO_FRIO:
+            flag = FLAG_AFINIDAD_ELEMENTAL_FRIO;
+            break;
+        case ELEMENTO_TIERRA:
+            flag = FLAG_AFINIDAD_ELEMENTAL_TIERRA;
+            break;
+        case ELEMENTO_ELECTRICIDAD:
+            flag = FLAG_AFINIDAD_ELEMENTAL_ELECTRICIDAD;
+            break;
+        case ELEMENTO_LUZ:
+            flag = FLAG_AFINIDAD_ELEMENTAL_LUZ;
+            break;
+        case ELEMENTO_OSCURIDAD:
+        default:
+            flag = FLAG_AFINIDAD_ELEMENTAL_OSCURIDAD;
+            break;
+    }
+    if (aplicar) {
+        personaje_actual.setFlag(flag);
+    } else {
+        personaje_actual.removeFlag(flag);
+    }
+    lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+    lanzarEvento(EVENT_CHARACTER_SECCION_KI);
+}
+
+function empatiaElemental(elemento, aplicar) {
+    var flag ="";
+    switch (elemento) {
+        case ELEMENTO_FUEGO:
+            flag = FLAG_EMPATIA_ELEMENTAL_FUEGO;
+            break;
+        case ELEMENTO_AIRE:
+            flag = FLAG_EMPATIA_ELEMENTAL_AIRE;
+            break;
+        case ELEMENTO_AGUA:
+            flag = FLAG_EMPATIA_ELEMENTAL_AGUA;
+            break;
+        case ELEMENTO_LUZ:
+            flag = FLAG_EMPATIA_ELEMENTAL_LUZ;
+            break;
+        case ELEMENTO_OSCURIDAD:
+        default:
+            flag = FLAG_EMPATIA_ELEMENTAL_OSCURIDAD;
+            break;
+    }
+    if (aplicar) {
+        personaje_actual.setFlag(flag);
+    } else {
+        personaje_actual.removeFlag(flag);
+    }
+    lanzarEvento(EVENT_CHARACTER_SECCION_KI);
+}
+
+//afinidad +10 daño base ataques elementales de ese elemento
+//empatía -5CM al coste de éfectos ki de ese elemento. Min coste 5 por efecto
+function legadoSangreKagutsuchi(coste, opcion, aplicar) {
+    afinidadElemental(ELEMENTO_FUEGO,aplicar);
+    empatiaElemental(ELEMENTO_FUEGO,aplicar);
+}
+
+function legadoSangreBoreas(coste, opcion, aplicar) {
+    afinidadElemental(ELEMENTO_AIRE,aplicar);
+    empatiaElemental(ELEMENTO_AIRE,aplicar);}
+
+function legadoSangreNiflheim(coste, opcion, aplicar) {
+    afinidadElemental(ELEMENTO_FRIO,aplicar);
+}
+
+function legadoSangreRudraksha(coste, opcion, aplicar) {
+    afinidadElemental(ELEMENTO_ELECTRICIDAD,aplicar);
+}
+
+function legadoSangreRan(coste, opcion, aplicar) {
+    empatiaElemental(ELEMENTO_AGUA,aplicar);
+}
+
+function legadoSangreToa(coste, opcion, aplicar) {
+    aumentaRegeneracion(0,"",aplicar,1,VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA);
+    afinidadElemental(ELEMENTO_TIERRA,aplicar);
+}
+
+function legadoSangrePhandemonium(coste, opcion, aplicar) {
+    afinidadElemental(ELEMENTO_OSCURIDAD,aplicar);
+    empatiaElemental(ELEMENTO_OSCURIDAD,aplicar);
+}
+
+function legadoSangreShephirah(coste, opcion, aplicar) {
+    afinidadElemental(ELEMENTO_LUZ,aplicar);
+    empatiaElemental(ELEMENTO_LUZ,aplicar);
+}
+
+function sangreDeLasGrandesBestias(coste, opcion, aplicar) {
+    //TODO 40, 80 o 120 pd para poderes de mounstruo (no habilidades esenciales). No afectan al nivel de personaje
+}
+
+function esenciaVenenosa(coste, opcion, aplicar) {
+    aumentaResistencia(coste,opcion,aplicar,RV,20,VENT_ESENCIA_VENENOSA);
+}
+
+function armasNaturales(coste, opcion, aplicar) {
+    //TODO armas naturales. Daño base 40, turno +20.
+    //TODO elegir 2 de dominus, pag 82
+}
+
+function sangreDeElDragon(coste, opcion, aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_SANGRE_DE_EL_DRAGON);
+    } else {
+        personaje_actual.removeFlag(FLAG_SANGRE_DE_EL_DRAGON);
+    }
+}
+
+function sangreLatente(coste, opcion, aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_SANGRE_LATENTE);
+    } else {//TODO SANGRE LATENTE
+        personaje_actual.removeFlag(FLAG_SANGRE_LATENTE);
+    }
+}
+
