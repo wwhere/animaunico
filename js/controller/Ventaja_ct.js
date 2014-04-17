@@ -25,6 +25,7 @@ var categoriasDeVentajasComprables = [
     GRUPO_RESISTENCIAS,
     GRUPO_CAPACIDADES,
     GRUPO_SECUNDARIAS,
+    GRUPO_LEGADOS,
     GRUPO_KI,
     GRUPO_TRASFONDO,
     GRUPO_DON,
