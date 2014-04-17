@@ -2509,6 +2509,7 @@ Personaje.prototype = {
             }
         }
 
+
         for (var i = 0; i < this.prohibidos.length; i++) {
             var elementoProhibido = this.prohibidos[i];
             if (elementoProhibido.getTipo() == VENTAJA) {
