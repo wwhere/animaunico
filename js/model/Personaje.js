@@ -2508,8 +2508,10 @@ Personaje.prototype = {
                 puede = false;
             }
         } else if ((ventaja.getGrupo() == GRUPO_LEGADOS) && (!ventaja.isBasica)) {
-            if (!personaje_actual.hasFlag(FLAG_SANGRE_LATENTE)) {
-                puede = false;
+            if (personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_SUBIENDO_NIVEL) {
+                if (!personaje_actual.hasFlag(FLAG_SANGRE_LATENTE)) {
+                    puede = false;
+                }
             }
         }
 
