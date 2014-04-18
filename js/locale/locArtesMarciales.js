@@ -45,8 +45,19 @@ var A_M_PANKRATION_SUPREMO_D_V = (new L("A_M_PANKRATION_SUPREMO_D_V","",
 
 var A_M_SHOTOKAN = (new L("A_M_SHOTOKAN","Shotokan",
     "Shotokan")).getId();
-var A_M_SHOTOKAN_D_V = (new L("A_M_SHOTOKAN_D_V","Tiene un daño base de 30 más el bono de Fuerza de su usuario. Ataca en Contundentes.",
-    "Tiene un daño base de 30 más el bono de Fuerza de su usuario. Ataca en Contundentes.")).getId();
+var A_M_SHOTOKAN_BASE = (new L("A_M_SHOTOKAN_BASE","Shotokan",
+    "Shotokan")).getId();
+var A_M_SHOTOKAN_BASE_D_V = (new L("A_M_SHOTOKAN_BASE_D_V","",
+    "")).getId();
+var A_M_SHOTOKAN_AVANZADO = (new L("A_M_SHOTOKAN_AVANZADO","Shotokan",
+    "Shotokan")).getId();
+var A_M_SHOTOKAN_AVANZADO_D_V = (new L("A_M_SHOTOKAN_AVANZADO_D_V","",
+    "")).getId();
+var A_M_SHOTOKAN_SUPREMO = (new L("A_M_SHOTOKAN_SUPREMO","Shotokan",
+    "Shotokan")).getId();
+var A_M_SHOTOKAN_SUPREMO_D_V = (new L("A_M_SHOTOKAN_SUPREMO_D_V","",
+    "")).getId();
+
 var A_M_GRAPPLING = (new L("A_M_GRAPPLING","Grappling",
     "Grappling")).getId();
 var A_M_GRAPPLING_D_V = (new L("A_M_GRAPPLING_D_V","El Grappling permite ejecutar las maniobras de combate Presa y Derribo sin ningún tipo de penalizador. Da una base de daño de 20 más el bono de Fuerza, y ataca en Contundentes.",

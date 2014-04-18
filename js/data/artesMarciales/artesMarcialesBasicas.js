@@ -187,17 +187,63 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [20,BONO_FUE],
     [ATAQUE_CON3, ATAQUE_PEN3]
 ));
-/****POR AQUI*****/
+
 artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_SHOTOKAN_BASE,
     A_M_SHOTOKAN,
-    A_M_SHOTOKAN,
-    A_M_SHOTOKAN_D_V,
+    "",
+    A_M_SHOTOKAN_BASE_D_V,
+    true,
+    GRADO_BASE,
     [],
+    0,
+    [
+        new Bono(BONO_HABILIDAD, HB_ATAQUE,5, ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_SHOTOKAN_BASE)
+    ],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_SHOTOKAN_AVANZADO,
+    A_M_SHOTOKAN,
+    "",
+    A_M_SHOTOKAN_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_SHOTOKAN_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 120),
+        new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
+            new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
+            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+        ],0)
+    ],
     10,
-    [new Bono(BONO_HABILIDAD, HB_ATAQUE,10, ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_SHOTOKAN)],
+    [
+        new Bono(BONO_HABILIDAD, HB_ATAQUE,5, ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_SHOTOKAN_AVANZADO)
+    ],
     [30,BONO_FUE],
     [ATAQUE_CON3]
 ));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_SHOTOKAN_SUPREMO,
+    A_M_SHOTOKAN,
+    "",
+    A_M_SHOTOKAN_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_SHOTOKAN_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 200)
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD, HB_ATAQUE,10, ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_SHOTOKAN_AVANZADO)
+    ],
+    [50,BONO_FUE],
+    [ATAQUE_CON3]
+));
+
 artesMarcialesBasicas_set.push(new ArteMarcial(
     A_M_GRAPPLING,
     A_M_GRAPPLING,
