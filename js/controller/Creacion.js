@@ -308,7 +308,7 @@ function aplicarElementoPCPaso2(parametros) {
     var isVentaja = parametros.isVentaja;
 
     var elegir = elementoPC.getElegir();
-    if (elementoPC.nombre = VENT_POSICION_SOCIAL) {
+    if (elementoPC.nombre == VENT_POSICION_SOCIAL) {
         var origen = getOrigen(personaje_actual.getOrigen());
 
         if (origen) {
