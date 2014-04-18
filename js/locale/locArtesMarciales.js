@@ -45,43 +45,143 @@ var A_M_PANKRATION_SUPREMO_D_V = (new L("A_M_PANKRATION_SUPREMO_D_V","",
 
 var A_M_SHOTOKAN = (new L("A_M_SHOTOKAN","Shotokan",
     "Shotokan")).getId();
-var A_M_SHOTOKAN_BASE = (new L("A_M_SHOTOKAN_BASE","Shotokan",
-    "Shotokan")).getId();
+var A_M_SHOTOKAN_BASE = (new L("A_M_SHOTOKAN_BASE","Shotokan - Base",
+    "Shotokan - Base")).getId();
 var A_M_SHOTOKAN_BASE_D_V = (new L("A_M_SHOTOKAN_BASE_D_V","",
     "")).getId();
-var A_M_SHOTOKAN_AVANZADO = (new L("A_M_SHOTOKAN_AVANZADO","Shotokan",
-    "Shotokan")).getId();
+var A_M_SHOTOKAN_AVANZADO = (new L("A_M_SHOTOKAN_AVANZADO","Shotokan - Avanzado",
+    "Shotokan - Advanced")).getId();
 var A_M_SHOTOKAN_AVANZADO_D_V = (new L("A_M_SHOTOKAN_AVANZADO_D_V","",
     "")).getId();
-var A_M_SHOTOKAN_SUPREMO = (new L("A_M_SHOTOKAN_SUPREMO","Shotokan",
-    "Shotokan")).getId();
+var A_M_SHOTOKAN_SUPREMO = (new L("A_M_SHOTOKAN_SUPREMO","Shotokan - Supremo",
+    "Shotokan - Supreme")).getId();
 var A_M_SHOTOKAN_SUPREMO_D_V = (new L("A_M_SHOTOKAN_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_BOXEO = (new L("A_M_BOXEO","Boxeo",
+    "Boxing")).getId();
+var A_M_BOXEO_BASE = (new L("A_M_BOXEO_BASE","Boxeo - Base",
+    "Boxing - Base")).getId();
+var A_M_BOXEO_BASE_D_V = (new L("A_M_BOXEO_BASE_D_V","",
+    "")).getId();
+var A_M_BOXEO_AVANZADO = (new L("A_M_BOXEO_AVANZADO","Boxeo - Avanzado",
+    "Boxing - Advanced")).getId();
+var A_M_BOXEO_AVANZADO_D_V = (new L("A_M_BOXEO_AVANZADO_D_V","",
+    "")).getId();
+var A_M_BOXEO_SUPREMO = (new L("A_M_BOXEO_SUPREMO","Boxeo - Supremo",
+    "Boxing - Supreme")).getId();
+var A_M_BOXEO_SUPREMO_D_V = (new L("A_M_BOXEO_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_MOAI_THAI = (new L("A_M_MOAI_THAI","Moai Thai",
+    "Muay Thai")).getId();
+var A_M_MOAI_THAI_BASE = (new L("A_M_MOAI_THAI_BASE","Moai Thai - Base",
+    "Muay Thai - Base")).getId();
+var A_M_MOAI_THAI_BASE_D_V = (new L("A_M_MOAI_THAI_BASE_D_V","",
+    "")).getId();
+var A_M_MOAI_THAI_AVANZADO = (new L("A_M_MOAI_THAI_AVANZADO","Moai Thai - Avanzado",
+    "Muay Thai - Advanced")).getId();
+var A_M_MOAI_THAI_AVANZADO_D_V = (new L("A_M_MOAI_THAI_AVANZADO_D_V","",
+    "")).getId();
+var A_M_MOAI_THAI_SUPREMO = (new L("A_M_MOAI_THAI_SUPREMO","Moai Thai - Supremo",
+    "Muay Thai - Supreme")).getId();
+var A_M_MOAI_THAI_SUPREMO_D_V = (new L("A_M_MOAI_THAI_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_CAPOEIRA = (new L("A_M_CAPOEIRA","Capoeira",
+    "Capoeira")).getId();
+var A_M_CAPOEIRA_BASE = (new L("A_M_CAPOEIRA_BASE","Capoeira - Base",
+    "Capoeira - Base")).getId();
+var A_M_CAPOEIRA_BASE_D_V = (new L("A_M_CAPOEIRA_BASE_D_V","",
+    "")).getId();
+var A_M_CAPOEIRA_AVANZADO = (new L("A_M_CAPOEIRA_AVANZADO","Capoeira - Avanzado",
+    "Capoeira - Advanced")).getId();
+var A_M_CAPOEIRA_AVANZADO_D_V = (new L("A_M_CAPOEIRA_AVANZADO_D_V","",
+    "")).getId();
+var A_M_CAPOEIRA_SUPREMO = (new L("A_M_CAPOEIRA_SUPREMO","Capoeira - Supremo",
+    "Capoeira - Supreme")).getId();
+var A_M_CAPOEIRA_SUPREMO_D_V = (new L("A_M_CAPOEIRA_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_MALLA_YUDDHA = (new L("A_M_MALLA_YUDDHA","Malla-yuddha",
+    "Malla-yuddha")).getId();
+var A_M_MALLA_YUDDHA_BASE = (new L("A_M_MALLA_YUDDHA_BASE","Malla-yuddha - Base",
+    "Malla-yuddha - Base")).getId();
+var A_M_MALLA_YUDDHA_BASE_D_V = (new L("A_M_MALLA_YUDDHA_BASE_D_V","",
+    "")).getId();
+var A_M_MALLA_YUDDHA_AVANZADO = (new L("A_M_MALLA_YUDDHA_AVANZADO","Malla-yuddha - Avanzado",
+    "Malla-yuddha - Advanced")).getId();
+var A_M_MALLA_YUDDHA_AVANZADO_D_V = (new L("A_M_MALLA_YUDDHA_AVANZADO_D_V","",
+    "")).getId();
+var A_M_MALLA_YUDDHA_SUPREMO = (new L("A_M_MALLA_YUDDHA_SUPREMO","Malla-yuddha - Supremo",
+    "Malla-yuddha - Supreme")).getId();
+var A_M_MALLA_YUDDHA_SUPREMO_D_V = (new L("A_M_MALLA_YUDDHA_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_SAMBO = (new L("A_M_SAMBO","Sambo",
+    "Sambo")).getId();
+var A_M_SAMBO_BASE = (new L("A_M_SAMBO_BASE","Sambo - Base",
+    "Sambo - Base")).getId();
+var A_M_SAMBO_BASE_D_V = (new L("A_M_SAMBO_BASE_D_V","",
+    "")).getId();
+var A_M_SAMBO_AVANZADO = (new L("A_M_SAMBO_AVANZADO","Sambo - Avanzado",
+    "Sambo - Advanced")).getId();
+var A_M_SAMBO_AVANZADO_D_V = (new L("A_M_SAMBO_AVANZADO_D_V","",
+    "")).getId();
+var A_M_SAMBO_SUPREMO = (new L("A_M_SAMBO_SUPREMO","Sambo - Supremo",
+    "Sambo - Supreme")).getId();
+var A_M_SAMBO_SUPREMO_D_V = (new L("A_M_SAMBO_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_KEMPO = (new L("A_M_KEMPO","Kempo",
+    "Kempo")).getId();
+var A_M_KEMPO_BASE = (new L("A_M_KEMPO_BASE","Kempo - Base",
+    "Kempo - Base")).getId();
+var A_M_KEMPO_BASE_D_V = (new L("A_M_KEMPO_BASE_D_V","",
+    "")).getId();
+var A_M_KEMPO_AVANZADO = (new L("A_M_KEMPO_AVANZADO","Kempo - Avanzado",
+    "Kempo - Advanced")).getId();
+var A_M_KEMPO_AVANZADO_D_V = (new L("A_M_KEMPO_AVANZADO_D_V","",
+    "")).getId();
+var A_M_KEMPO_SUPREMO = (new L("A_M_KEMPO_SUPREMO","Kempo - Supremo",
+    "Kempo - Supreme")).getId();
+var A_M_KEMPO_SUPREMO_D_V = (new L("A_M_KEMPO_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_TAE_KWON_DO = (new L("A_M_TAE_KWON_DO","Tae Kwon Do",
+    "Tae Kwon Do")).getId();
+var A_M_TAE_KWON_DO_BASE = (new L("A_M_TAE_KWON_DO_BASE","Tae Kwon Do - Base",
+    "Tae Kwon Do - Base")).getId();
+var A_M_TAE_KWON_DO_BASE_D_V = (new L("A_M_TAE_KWON_DO_BASE_D_V","",
+    "")).getId();
+var A_M_TAE_KWON_DO_AVANZADO = (new L("A_M_TAE_KWON_DO_AVANZADO","Tae Kwon Do - Avanzado",
+    "Tae Kwon Do - Advanced")).getId();
+var A_M_TAE_KWON_DO_AVANZADO_D_V = (new L("A_M_TAE_KWON_DO_AVANZADO_D_V","",
+    "")).getId();
+var A_M_TAE_KWON_DO_SUPREMO = (new L("A_M_TAE_KWON_DO_SUPREMO","Tae Kwon Do - Supremo",
+    "Tae Kwon Do - Supreme")).getId();
+var A_M_TAE_KWON_DO_SUPREMO_D_V = (new L("A_M_TAE_KWON_DO_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_LAMA = (new L("A_M_LAMA","Lama",
+    "Lama")).getId();
+var A_M_LAMA_BASE = (new L("A_M_LAMA_BASE","Lama - Base",
+    "Lama - Base")).getId();
+var A_M_LAMA_BASE_D_V = (new L("A_M_LAMA_BASE_D_V","",
+    "")).getId();
+var A_M_LAMA_AVANZADO = (new L("A_M_LAMA_AVANZADO","Lama - Avanzado",
+    "Lama - Advanced")).getId();
+var A_M_LAMA_AVANZADO_D_V = (new L("A_M_LAMA_AVANZADO_D_V","",
+    "")).getId();
+var A_M_LAMA_SUPREMO = (new L("A_M_LAMA_SUPREMO","Lama - Supremo",
+    "Lama - Supreme")).getId();
+var A_M_LAMA_SUPREMO_D_V = (new L("A_M_LAMA_SUPREMO_D_V","",
     "")).getId();
 
 var A_M_GRAPPLING = (new L("A_M_GRAPPLING","Grappling",
     "Grappling")).getId();
 var A_M_GRAPPLING_D_V = (new L("A_M_GRAPPLING_D_V","El Grappling permite ejecutar las maniobras de combate Presa y Derribo sin ningún tipo de penalizador. Da una base de daño de 20 más el bono de Fuerza, y ataca en Contundentes.",
     "El Grappling permite ejecutar las maniobras de combate Presa y Derribo sin ningún tipo de penalizador. Da una base de daño de 20 más el bono de Fuerza, y ataca en Contundentes.")).getId();
-var A_M_CAPOEIRA = (new L("A_M_CAPOEIRA","Capoeira",
-    "Capoeira")).getId();
-var A_M_CAPOEIRA_D_V = (new L("A_M_CAPOEIRA_D_V","Los movimientos de Capoeira son tan desbocados que, cuando el personaje realice una maniobra de Ataque en área, se considerará que está utilizando un arma grande y podrá afectar a cinco adversarios. Causa un daño de 20 más el bono de Fuerza, y ataca en Contundentes.",
-    "Los movimientos de Capoeira son tan desbocados que, cuando el personaje realice una maniobra de Ataque en área, se considerará que está utilizando un arma grande y podrá afectar a cinco adversarios. Causa un daño de 20 más el bono de Fuerza, y ataca en Contundentes.")).getId();
-var A_M_KEMPO = (new L("A_M_KEMPO","Kempo",
-    "Kempo")).getId();
-var A_M_KEMPO_D_V = (new L("A_M_KEMPO_D_V","Los rápidos encadenamientos de golpes permiten al maestro de Kempo realizar los ataques adicionales con un penalizador de –10 a su habilidad, en lugar del –25 habitual. Da una base de daño 20 más el bono de Fuerza, y ataca en Contundentes.",
-    "Los rápidos encadenamientos de golpes permiten al maestro de Kempo realizar los ataques adicionales con un penalizador de –10 a su habilidad, en lugar del –25 habitual. Da una base de daño 20 más el bono de Fuerza, y ataca en Contundentes.")).getId();
-var A_M_MOAI_THAI  = (new L("A_M_MOAI_THAI ","Moai Thai",
-    "Muay Thai")).getId();
-var A_M_MOAI_THAI_D_V  = (new L("A_M_MOAI_THAI_D_V ","Tiene un daño base de 20 más el triple del bono de Fuerza de su usuario. Ataca en Contundentes.",
-    "Tiene un daño base de 20 más el triple del bono de Fuerza de su usuario. Ataca en Contundentes.")).getId();
-var A_M_SAMBO = (new L("A_M_SAMBO","Sambo",
-    "Sambo")).getId();
-var A_M_SAMBO_D_V = (new L("A_M_SAMBO_D_V","Los practicantes de Sambo pueden reducir a la mitad los penalizadores de las siguientes maniobras de combate: Presa, Ataque en área, Derribo y Desarmar. Otorga una base de daño de 20 más el bono de Fuerza del personaje (redondeando en grupos de 10 hacía arriba), y ataca en Contundentes.",
-    "Los practicantes de Sambo pueden reducir a la mitad los penalizadores de las siguientes maniobras de combate: Presa, Ataque en área, Derribo y Desarmar. Otorga una base de daño de 20 más el bono de Fuerza del personaje (redondeando en grupos de 10 hacía arriba), y ataca en Contundentes.")).getId();
-var A_M_TAE_KWON_DO = (new L("A_M_TAE_KWON_DO","Tae Kwon Do",
-    "Tae Kwon Do")).getId();
-var A_M_TAE_KWON_DO_D_V = (new L("A_M_TAE_KWON_DO_D_V","Otorga una base de daño de 20 más el bono de Fuerza (redondeando en grupos de 10 hacía arriba). Permite realizar un ataque adicional con las piernas una vez que el personaje haya agotado todos sus otros ataques. Este ataque sufre tan sólo un penalizador de –20 a su habilidad, actuando de igual manera que lo hacen las armas adicionales. Puede realizarse incluso tras haber utilizado algún arma. Ataca en Contundentes.",
-    "Otorga una base de daño de 20 más el bono de Fuerza (redondeando en grupos de 10 hacía arriba). Permite realizar un ataque adicional con las piernas una vez que el personaje haya agotado todos sus otros ataques. Este ataque sufre tan sólo un penalizador de –20 a su habilidad, actuando de igual manera que lo hacen las armas adicionales. Puede realizarse incluso tras haber utilizado algún arma. Ataca en Contundentes.")).getId();
 var A_M_TAI_CHI = (new L("A_M_TAI_CHI","Tai Chi",
     "Tai Chi")).getId();
 var A_M_TAI_CHI_D_V = (new L("A_M_TAI_CHI_D_V","El Tai Chi otorga una base de daño de 20 más el doble del bono de Poder (redondeando en grupos de 10 hacía arriba), en representación del uso de la energía interna. Puesto que el Ki sólo lo utiliza como potenciador, ataca en Contundentes y no en energía.",
