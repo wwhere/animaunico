@@ -102,6 +102,7 @@ module.exports = function(grunt) {
                     "js/data/ventajas/ventComunes.js",
                     "js/data/ventajas/ventDon.js",
                     "js/data/ventajas/ventPsiquicos.js",
+                    "js/data/ventajas/legados.js",
                     "js/data/desventajas/desvComunes.js",
                     "js/data/desventajas/desvDon.js",
                     "js/data/desventajas/desvPsiquicos.js",
