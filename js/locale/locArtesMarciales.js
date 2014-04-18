@@ -1,7 +1,48 @@
 var A_M_AIKIDO = (new L("A_M_AIKIDO","Aikido",
     "Aikido")).getId();
-var A_M_AIKIDO_D_V = (new L("A_M_AIKIDO_D_V","El daño del Aikido es de 10 más el bono de Fuerza de su usuario, pero al realizar un contraataque, añade el doble del bono de Fuerza de su contrincante (con un bono mínimo de +5). Ataca en Contundentes y permite sujetar a sus adversarios fácilmente, por lo que no aplica penalizadores al realizar una maniobra de Presa durante un contraataque.",
-    "XXX")).getId();
+var A_M_AIKIDO_BASE = (new L("A_M_AIKIDO_BASE","Aikido - Base",
+    "Aikido - Base")).getId();
+var A_M_AIKIDO_BASE_D_V = (new L("A_M_AIKIDO_BASE_D_V","",
+    "")).getId();
+var A_M_AIKIDO_AVANZADO = (new L("A_M_AIKIDO_AVANZADO","Aikido - Avanzado",
+    "Aikido - Advanced")).getId();
+var A_M_AIKIDO_AVANZADO_D_V = (new L("A_M_AIKIDO_AVANZADO_D_V","",
+    "")).getId();
+var A_M_AIKIDO_SUPREMO = (new L("A_M_AIKIDO_SUPREMO","Aikido - Supremo",
+    "Aikido - Supreme")).getId();
+var A_M_AIKIDO_SUPREMO_D_V = (new L("A_M_AIKIDO_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_KUNG_FU = (new L("A_M_KUNG_FU","Kung Fu",
+    "Kung Fu")).getId();
+var A_M_KUNG_FU_BASE = (new L("A_M_KUNG_FU_BASE","Kung Fu - Base",
+    "Kung Fu - Base")).getId();
+var A_M_KUNG_FU_BASE_D_V = (new L("A_M_KUNG_FU_BASE_D_V","",
+    "")).getId();
+var A_M_KUNG_FU_AVANZADO = (new L("A_M_KUNG_FU_AVANZADO","Kung Fu - Avanzado",
+    "Kung Fu - Advanced")).getId();
+var A_M_KUNG_FU_AVANZADO_D_V = (new L("A_M_KUNG_FU_AVANZADO_D_V","",
+    "")).getId();
+var A_M_KUNG_FU_SUPREMO = (new L("A_M_KUNG_FU_SUPREMO","Kung Fu - Supremo",
+    "Kung Fu - Supreme")).getId();
+var A_M_KUNG_FU_SUPREMO_D_V = (new L("A_M_KUNG_FU_SUPREMO_D_V","",
+    "")).getId();
+
+var A_M_PANKRATION = (new L("A_M_PANKRATION","Pankration",
+    "Pankration")).getId();
+var A_M_PANKRATION_BASE = (new L("A_M_PANKRATION_BASE","Pankration - Base",
+    "Pankration - Base")).getId();
+var A_M_PANKRATION_BASE_D_V = (new L("A_M_PANKRATION_BASE_D_V","",
+    "")).getId();
+var A_M_PANKRATION_AVANZADO = (new L("A_M_PANKRATION_AVANZADO","Pankration - Avanzado",
+    "Pankration - Advanced")).getId();
+var A_M_PANKRATION_AVANZADO_D_V = (new L("A_M_PANKRATION_AVANZADO_D_V","",
+    "")).getId();
+var A_M_PANKRATION_SUPREMO = (new L("A_M_PANKRATION_SUPREMO","Pankration - Supremo",
+    "Pankration - Supreme")).getId();
+var A_M_PANKRATION_SUPREMO_D_V = (new L("A_M_PANKRATION_SUPREMO_D_V","",
+    "")).getId();
+
 var A_M_SHOTOKAN = (new L("A_M_SHOTOKAN","Shotokan",
     "Shotokan")).getId();
 var A_M_SHOTOKAN_D_V = (new L("A_M_SHOTOKAN_D_V","Tiene un daño base de 30 más el bono de Fuerza de su usuario. Ataca en Contundentes.",
@@ -14,10 +55,6 @@ var A_M_CAPOEIRA = (new L("A_M_CAPOEIRA","Capoeira",
     "Capoeira")).getId();
 var A_M_CAPOEIRA_D_V = (new L("A_M_CAPOEIRA_D_V","Los movimientos de Capoeira son tan desbocados que, cuando el personaje realice una maniobra de Ataque en área, se considerará que está utilizando un arma grande y podrá afectar a cinco adversarios. Causa un daño de 20 más el bono de Fuerza, y ataca en Contundentes.",
     "Los movimientos de Capoeira son tan desbocados que, cuando el personaje realice una maniobra de Ataque en área, se considerará que está utilizando un arma grande y podrá afectar a cinco adversarios. Causa un daño de 20 más el bono de Fuerza, y ataca en Contundentes.")).getId();
-var A_M_KUNG_FU = (new L("A_M_KUNG_FU","Kung Fu",
-    "Kung Fu")).getId();
-var A_M_KUNG_FU_D_V = (new L("A_M_KUNG_FU_D_V","Un maestro de Kung Fu puede elegir aplicar un bono de +10 entre sus habilidades de ataque, parada, esquiva, daño o turno, según le convenga cada asalto. Debe decidir dónde empleará el bono antes de que se inicie el cálculo de la iniciativa. En el caso de que lo utilice para mejorar la habilidad de ataque, parada o esquiva, no se considera como un bono innato por categoría, por lo que puede aumentarlas por encima de +50. El Kung Fu da una base de daño de 20 más el bono de Fuerza, y ataca en Contundentes.",
-    "Un maestro de Kung Fu puede elegir aplicar un bono de +10 entre sus habilidades de ataque, parada, esquiva, daño o turno, según le convenga cada asalto. Debe decidir dónde empleará el bono antes de que se inicie el cálculo de la iniciativa. En el caso de que lo utilice para mejorar la habilidad de ataque, parada o esquiva, no se considera como un bono innato por categoría, por lo que puede aumentarlas por encima de +50. El Kung Fu da una base de daño de 20 más el bono de Fuerza, y ataca en Contundentes.")).getId();
 var A_M_KEMPO = (new L("A_M_KEMPO","Kempo",
     "Kempo")).getId();
 var A_M_KEMPO_D_V = (new L("A_M_KEMPO_D_V","Los rápidos encadenamientos de golpes permiten al maestro de Kempo realizar los ataques adicionales con un penalizador de –10 a su habilidad, en lugar del –25 habitual. Da una base de daño 20 más el bono de Fuerza, y ataca en Contundentes.",
@@ -78,3 +115,8 @@ var A_M_HAKYOUKUKEN = (new L("A_M_HAKYOUKUKEN","Hakyoukuken",
     "Hakyoukuken")).getId();
 var A_M_HAKYOUKUKEN_D_V = (new L("A_M_HAKYOUKUKEN_D_V",    "Bono de +20 al daño final del arte marcial empleado. La mayor parte de armaduras no ofrecen protección contra sus ataques, por lo que restan –2 a su TA si son blandas. Al destrozar internamente a sus enemigos, se añade un +20 a las tiradas para calcular el nivel del crítico de un ataque con este arte marcial. Esta última habilidad sólo sirve contra seres orgánicos.",
     "Bono de +20 al daño final del arte marcial empleado. La mayor parte de armaduras no ofrecen protección contra sus ataques, por lo que restan –2 a su TA si son blandas. Al destrozar internamente a sus enemigos, se añade un +20 a las tiradas para calcular el nivel del crítico de un ataque con este arte marcial. Esta última habilidad sólo sirve contra seres orgánicos.")).getId();
+
+var GRADO_BASE = (new L("GRADO_BASE","Grado Base","Base Level")).getId();
+var GRADO_AVANZADO  = (new L("GRADO_AVANZADO","Grado Avanzado","Advanced Level")).getId();
+var GRADO_SUPREMO  = (new L("GRADO_SUPREMO","Grado Supremo","Supreme Level")).getId();
+var GRADO_ARCANO  = (new L("GRADO_ARCANO","Grado Arcano","Arcane Level")).getId();

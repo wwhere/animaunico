@@ -698,7 +698,7 @@ function compra(tipoCompra, parametros, coste) {
             }
             personaje_actual.addArteMarcial(parametros.arteMarcial.getNombre());
             personaje_actual.addPDLibres(-1 * coste);
-            if (personaje_actual.numArtesMarciales() == 1) {
+            if (personaje_actual.getArtesMarciales().length == 1) {
                 vigilaRequisitosArtesMarciales(true);
             }
             break;
@@ -934,17 +934,17 @@ function compraTablaEspecial(parametros) {
 function anularArteMarcial(event) {
     var arteMarcial = event.data.arteMarcial;
     var esPrimera = event.data.esPrimera;
-
-    if (esPrimera) {
-        vigilaRequisitosArtesMarciales(false);
-    }
+    var esTao = (personaje_actual.getCategoria().getNombre() == CAT_TAO);
 
     if (personaje_actual.hasFlag(FLAG_SIN_ARMAS_POR_ARTES_MARCIALES)) {
         personaje_actual.removeArmaManejada(ARMA_SIN_ARMAS);
     }
 
-    personaje_actual.addPDLibres(costeArteMarcial(esPrimera));
+    personaje_actual.addPDLibres(costeArteMarcial(arteMarcial.getGrado(),arteMarcial.isBasica(),esPrimera,esTao));
     personaje_actual.removeArteMarcial(arteMarcial.getNombre());
+    if (personaje_actual.getArtesMarciales().length == 0) {
+        vigilaRequisitosArtesMarciales(false);
+    }
 }
 
 /**
@@ -956,10 +956,16 @@ function aplicarArteMarcial(parametros) {
     var arteMarcial = getArteMarcial(nombreArteMarcial);
     var esPrimera;
     var coste;
+    var esTao = (personaje_actual.getCategoria().getNombre() == CAT_TAO);
 
     esPrimera = (personaje_actual.numArtesMarciales() == 0);
-
-    coste = costeArteMarcial(esPrimera);
+    if (!esPrimera) {
+        var familia = arteMarcial.getFamilia();
+        if (personaje_actual.getArtesMarciales()[0].getFamilia() == familia) {
+            esPrimera = true;
+        }
+    }
+    coste = costeArteMarcial(arteMarcial.getGrado(),arteMarcial.isBasica(),esPrimera,esTao);
 
     compraSiPuedes(ARTE_MARCIAL, {arteMarcial: arteMarcial},TIPO_HB_COMBATE, 1, coste);
 }

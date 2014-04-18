@@ -2,8 +2,11 @@
  *
  * @param {string} nombre
  * @param {string} descripcion
+ * @param {string} familia
  * @param {string} descripcionVentajas
  * @param {Requisito[]} requisitos
+ * @param {boolean} esBasica
+ * @param {string} grado
  * @param {number} bonoCM
  * @param {Bono[]} bonos
  * @param {Array} dmgBaseElementos
@@ -11,12 +14,30 @@
  * @constructor
  * @class ArteMarcial
  */
-function ArteMarcial(nombre,descripcion,descripcionVentajas,requisitos,bonoCM,bonos, dmgBaseElementos, tipoAtaque) {
+function ArteMarcial(nombre, familia, descripcion,descripcionVentajas,esBasica, grado, requisitos,bonoCM,bonos, dmgBaseElementos, tipoAtaque) {
     /** @type string */
     this.nombre = nombre;
 
     /** @type string */
     this.descripcion = descripcion;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.esBasica = esBasica;
+
+    /**
+     *
+     * @type {string}
+     */
+    this.familia = familia;
+
+    /**
+     *
+     * @type {string}
+     */
+    this.grado = grado;
 
     /** @type string */
     this.descripcionVentajas = descripcionVentajas;
@@ -46,6 +67,14 @@ ArteMarcial.prototype = {
      */
     getNombre : function() {
        return this.nombre;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getFamilia : function() {
+        return this.familia;
     },
 
     /**
@@ -163,6 +192,14 @@ ArteMarcial.prototype = {
         return true;
     },
 
+    /**
+     *
+     * @returns {boolean}
+     */
+    isBasica : function() {
+        return this.esBasica;
+    },
+
     toJSON : function() {
         return this.nombre;
     }
@@ -186,6 +223,23 @@ ArteMarcialComprada.prototype = {
     getNombre : function() {
         return this.arteMarcial.nombre;
     },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isBasica : function() {
+        return this.arteMarcial.isBasica();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getGrado : function() {
+        return this.arteMarcial.getGrado();
+    },
+
 
     /**
      *
