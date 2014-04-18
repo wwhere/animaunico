@@ -1372,33 +1372,35 @@ EfectoTecnicaElegido.prototype = {
             }
         }
 
-        if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_AGUA)) {
-            if (this.getElementosAfines().agua) {
-                coste -= 5;
+        if (typeof personaje_actual != 'undefined') {
+            if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_AGUA)) {
+                if (this.getElementosAfines().agua) {
+                    coste -= 5;
+                }
             }
-        }
-        if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_FUEGO)) {
-            if (this.getElementosAfines().fuego) {
-                coste -= 5;
+            if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_FUEGO)) {
+                if (this.getElementosAfines().fuego) {
+                    coste -= 5;
+                }
             }
-        }
-        if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_AIRE)) {
-            if (this.getElementosAfines().aire) {
-                coste -= 5;
+            if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_AIRE)) {
+                if (this.getElementosAfines().aire) {
+                    coste -= 5;
+                }
             }
-        }
-        if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_LUZ)) {
-            if (this.getElementosAfines().luz) {
-                coste -= 5;
+            if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_LUZ)) {
+                if (this.getElementosAfines().luz) {
+                    coste -= 5;
+                }
             }
-        }
-        if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_OSCURIDAD)) {
-            if (this.getElementosAfines().oscuridad) {
-                coste -= 5;
+            if (personaje_actual.hasFlag(FLAG_EMPATIA_ELEMENTAL_OSCURIDAD)) {
+                if (this.getElementosAfines().oscuridad) {
+                    coste -= 5;
+                }
             }
-        }
 
-        if (coste < 5) coste = 5;
+            if (coste < 5) coste = 5;
+        }
 
         return coste;
     },
