@@ -1,6 +1,8 @@
 var REQUISITO_HABILIDAD = "Requisito de habilidad";
 var REQUISITO_HABILIDAD_KI = "Requisito de Habilidad del Ki";
 var REQUISITO_ARTE_MARCIAL = "Requisito de Arte Marcial";
+var REQUISITO_TURNO = "Requisito de Turno";
+var REQUISITO_INHUMANIDAD = "Requisito de Inhumanidad";
 var REQUISITO_UNO_DE_LOS_SIGUIENTES = "Requisito uno entre varios";
 var REQ_CADENA_UNO_ENTRE = "Uno de los siguientes requisitos";
 
@@ -111,6 +113,12 @@ Requisito.prototype = {
                 break;
             case REQUISITO_ARTE_MARCIAL:
                 cumple = personaje.hasArteMarcial(this.item);
+                break;
+            case REQUISITO_TURNO:
+                cumple = (getTurnoFinalConArma(personaje,this.item) >= this.valor);
+                break;
+            case REQUISITO_INHUMANIDAD:
+                cumple = (personaje.hasFlag(FLAG_INHUMANIDAD));
                 break;
             case REQUISITO_UNO_DE_LOS_SIGUIENTES:
                 var cumpleEsteReq = false;

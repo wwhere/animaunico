@@ -22,6 +22,7 @@ var BONO_CARACTERISTICA = "Característica";
 var BONO_ESPECIAL = "Especial";
 var BONO_CATEGORIA = "Categoría";
 var BONO_NATURAL = "Natural";
+var BONO_MAESTRO = "Maestro"; //TODO solo se aplica el mayor de los que se tengan
 
 var CATEGORIA_BONO_CUALQUIERA = "CATEGORIA_BONO_CUALQUIERA";
 /*********************************/

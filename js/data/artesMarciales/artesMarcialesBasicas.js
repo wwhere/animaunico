@@ -688,31 +688,340 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ATAQUE_CON3]
 ));
 
-/*** POR AQUI****/
-
 artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_GRAPPLING_BASE,
     A_M_GRAPPLING,
+    "",
+    A_M_GRAPPLING_BASE_D_V,
+    true,
+    GRADO_BASE,
+    [
+        new Requisito(REQUISITO_HABILIDAD,HB_PROEZAS_FUERZA,20)
+    ],
+    0,
+    [],
+    [10,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_GRAPPLING_AVANZADO,
     A_M_GRAPPLING,
-    A_M_GRAPPLING_D_V,
-    [new Requisito(REQUISITO_HABILIDAD, HB_PROEZAS_FUERZA, 40)],
-    10,      //CM
+    "",
+    A_M_GRAPPLING_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_GRAPPLING_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_PROEZAS_FUERZA,40),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,130)
+    ],
+    10,
+    [],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_GRAPPLING_SUPREMO,
+    A_M_GRAPPLING,
+    "",
+    A_M_GRAPPLING_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_GRAPPLING_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_PROEZAS_FUERZA,120),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200)
+    ],
+    10,
     [],
     [20,BONO_FUE],
     [ATAQUE_CON3]
 ));
 
-
-
 artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_TAI_CHI_BASE,
     A_M_TAI_CHI,
-    A_M_TAI_CHI,
-    A_M_TAI_CHI_D_V,
-    [new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0)],
-    30,      //CM
+    "",
+    A_M_TAI_CHI_BASE_D_V,
+    true,
+    GRADO_BASE,
     [],
-    [20,BONO_POD_RED,BONO_POD_RED],
+    10,
+    [],
+    [20,BONO_POD],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_TAI_CHI_AVANZADO,
+    A_M_TAI_CHI,
+    "",
+    A_M_TAI_CHI_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_TAI_CHI_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0)
+    ],
+    20,
+    [],
+    [20,BONO_POD,BONO_POD],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_TAI_CHI_SUPREMO,
+    A_M_TAI_CHI,
+    "",
+    A_M_TAI_CHI_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_TAI_CHI_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_ENERGIA_NECESARIA,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,180),
+        new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
+            new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,180),
+            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,180)
+        ],0)
+    ],
+    30,
+    [
+        new Bono(BONO_DAÑO,BONO_DAÑO,BONO_POD,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_TAI_CHI_SUPREMO) //TODO comprobar si se puede pasar el bono tal cual
+    ],
+    [20,BONO_POD,BONO_POD],
     [ATAQUE_CON3]
 ));
 
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_KARDAD_BASE,
+    A_M_KARDAD,
+    "",
+    A_M_KARDAD_BASE_D_V,
+    true,
+    GRADO_BASE,
+    [
+        new Requisito(REQUISITO_HABILIDAD,HB_ATLETISMO,40),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,20)
+    ],
+    0,
+    [],
+    [10,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_KARDAD_AVANZADO,
+    A_M_KARDAD,
+    "",
+    A_M_KARDAD_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KARDAD_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATLETISMO,60),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,40),
+        new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
+            new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
+            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+        ],0)
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD,HB_ESQUIVA,10,"",false,BONO_INNATO,A_M_KARDAD_AVANZADO),
+        new Bono(BONO_HABILIDAD,HB_PARADA,10,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_KARDAD_AVANZADO)
+    ],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_KARDAD_SUPREMO,
+    A_M_KARDAD,
+    "",
+    A_M_KARDAD_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KARDAD_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATLETISMO,120),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,100),
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD,HB_ESQUIVA,10,"",false,BONO_INNATO,A_M_KARDAD_SUPREMO),
+        new Bono(BONO_HABILIDAD,HB_PARADA,10,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_KARDAD_SUPREMO)
+    ],
+    [30,BONO_FUE],
+    [ATAQUE_CON3]
+));
 
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_XING_QUAN_BASE,
+    A_M_XING_QUAN,
+    "",
+    A_M_XING_QUAN_BASE_D_V,
+    true,
+    GRADO_BASE,
+    [
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,20)
+    ],
+    0,
+    [],
+    [10,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_XING_QUAN_AVANZADO,
+    A_M_XING_QUAN,
+    "",
+    A_M_XING_QUAN_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_XING_QUAN_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,50),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,120),
+        new Requisito(REQUISITO_TURNO,ARMA_SIN_ARMAS,100)
+    ],
+    10,
+    [],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_XING_QUAN_SUPREMO,
+    A_M_XING_QUAN,
+    "",
+    A_M_XING_QUAN_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_XING_QUAN_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,100),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200),
+        new Requisito(REQUISITO_TURNO,ARMA_SIN_ARMAS,120)
+    ],
+    10,
+    [],
+    [30,BONO_FUE],
+    [ATAQUE_CON3]
+));
+
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_KUAN_BASE,
+    A_M_KUAN,
+    "",
+    A_M_KUAN_BASE_D_V,
+    true,
+    GRADO_BASE,
+    [
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,40)
+    ],
+    0,
+    [],
+    [10,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_KUAN_AVANZADO,
+    A_M_KUAN,
+    "",
+    A_M_KUAN_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KUAN_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,60),
+        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,120),
+        new Requisito(REQUISITO_TURNO,ARMA_SIN_ARMAS,100)
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD,HB_PARADA,10,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_KUAN_AVANZADO)
+    ],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_KUAN_SUPREMO,
+    A_M_KUAN,
+    "",
+    A_M_KUAN_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KUAN_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,140),
+        new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
+            new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
+            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+        ],0)
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD,HB_PARADA,10,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_KUAN_SUPREMO)
+    ],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_SOO_BAHK_BASE,
+    A_M_SOO_BAHK,
+    "",
+    A_M_SOO_BAHK_BASE_D_V,
+    true,
+    GRADO_BASE,
+    [
+        new Requisito(REQUISITO_HABILIDAD,HB_ADVERTIR,50)
+    ],
+    0,
+    [],
+    [10,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_SOO_BAHK_AVANZADO,
+    A_M_SOO_BAHK,
+    "",
+    A_M_SOO_BAHK_AVANZADO_D_V,
+    true,
+    GRADO_AVANZADO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_SOO_BAHK_BASE,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_ADVERTIR,90),
+        new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
+            new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
+            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+        ],0)
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD,HB_ESQUIVA,10,"",false,BONO_INNATO,A_M_SOO_BAHK_AVANZADO),
+        new Bono(BONO_HABILIDAD,HB_PARADA,10,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_SOO_BAHK_AVANZADO)
+    ],
+    [20,BONO_FUE],
+    [ATAQUE_CON3]
+));
+artesMarcialesBasicas_set.push(new ArteMarcial(
+    A_M_SOO_BAHK_SUPREMO,
+    A_M_SOO_BAHK,
+    "",
+    A_M_SOO_BAHK_SUPREMO_D_V,
+    true,
+    GRADO_SUPREMO,
+    [
+        new Requisito(REQUISITO_ARTE_MARCIAL, A_M_SOO_BAHK_AVANZADO,0),
+        new Requisito(REQUISITO_HABILIDAD,HB_ACROBACIAS,60),
+        new Requisito(REQUISITO_HABILIDAD,HB_ADVERTIR,120),
+        new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
+            new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
+            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+        ],0)
+    ],
+    10,
+    [
+        new Bono(BONO_HABILIDAD,HB_ESQUIVA,10,"",false,BONO_INNATO,A_M_SOO_BAHK_SUPREMO),
+        new Bono(BONO_HABILIDAD,HB_PARADA,10,ARMA_SIN_ARMAS,false,BONO_INNATO,A_M_SOO_BAHK_SUPREMO)
+    ],
+    [30,BONO_FUE],
+    [ATAQUE_CON3]
+));
 
