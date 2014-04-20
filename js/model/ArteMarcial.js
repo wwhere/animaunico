@@ -2,8 +2,11 @@
  *
  * @param {string} nombre
  * @param {string} descripcion
+ * @param {string} familia
  * @param {string} descripcionVentajas
  * @param {Requisito[]} requisitos
+ * @param {boolean} esBasica
+ * @param {string} grado
  * @param {number} bonoCM
  * @param {Bono[]} bonos
  * @param {Array} dmgBaseElementos
@@ -11,12 +14,30 @@
  * @constructor
  * @class ArteMarcial
  */
-function ArteMarcial(nombre,descripcion,descripcionVentajas,requisitos,bonoCM,bonos, dmgBaseElementos, tipoAtaque) {
+function ArteMarcial(nombre, familia, descripcion,descripcionVentajas,esBasica, grado, requisitos,bonoCM,bonos, dmgBaseElementos, tipoAtaque) {
     /** @type string */
     this.nombre = nombre;
 
     /** @type string */
     this.descripcion = descripcion;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.esBasica = esBasica;
+
+    /**
+     *
+     * @type {string}
+     */
+    this.familia = familia;
+
+    /**
+     *
+     * @type {string}
+     */
+    this.grado = grado;
 
     /** @type string */
     this.descripcionVentajas = descripcionVentajas;
@@ -46,6 +67,22 @@ ArteMarcial.prototype = {
      */
     getNombre : function() {
        return this.nombre;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getFamilia : function() {
+        return this.familia;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getGrado : function() {
+        return this.grado;
     },
 
     /**
@@ -119,6 +156,9 @@ ArteMarcial.prototype = {
                     case BONO_POD:
                         dañoBase += personaje.getBonoCaracteristica(POD);
                         break;
+                    case PRE:
+                        dañoBase += personaje.getPresencia();
+                        break;
                     case BONO_FUE_RED:
                         var bonoFue = personaje.getBonoCaracteristica(FUE);
                         if (bonoFue % 10 != 0) {
@@ -138,6 +178,22 @@ ArteMarcial.prototype = {
                     case ROTURA_PLUS_10:
                         break;
                     case TA_ENEMIGA_MENOS_2:
+                        break;
+                    case ROTURA_PLUS_25:
+                        break;
+                    case TA_ENEMIGA_MENOS_6:
+                        break;
+                    case ARTE_MARCIAL:
+                        i++;
+                        var artesBasicas = this.dañobaseElementos[i];
+                        var daño = 0;
+                        for (var j = 0; j < artesBasicas.length; j++) {
+                            var dañoFamilia = getDañoBaseFamiliaArtesMarciales(personaje,artesBasicas[j]);
+                            if (dañoFamilia >= daño) {
+                                daño = dañoFamilia;
+                            }
+                        }
+                        dañoBase += daño;
                         break;
                 }
             } else {
@@ -163,6 +219,14 @@ ArteMarcial.prototype = {
         return true;
     },
 
+    /**
+     *
+     * @returns {boolean}
+     */
+    isBasica : function() {
+        return this.esBasica;
+    },
+
     toJSON : function() {
         return this.nombre;
     }
@@ -185,6 +249,30 @@ ArteMarcialComprada.prototype = {
      */
     getNombre : function() {
         return this.arteMarcial.nombre;
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isBasica : function() {
+        return this.arteMarcial.isBasica();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getGrado : function() {
+        return this.arteMarcial.getGrado();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getFamilia : function() {
+        return this.arteMarcial.getFamilia();
     },
 
     /**

@@ -1804,6 +1804,9 @@ Personaje.prototype = {
 
         if (!yaExiste) {
             this.bonos.push(bono);
+            if (bono.getTipo() == BONO_ARMADURA_NATURAL) {
+                personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono]));
+            }
             if (notifica)
                 this.dispatchAvisoPorBono(bono);
         }
@@ -1823,6 +1826,10 @@ Personaje.prototype = {
                 (bono.getOrigen() == this.bonos[i].getOrigen()) &&
                 (bono.getCategoria() == this.bonos[i].getCategoria()) &&
                 (bono.isPorNivel() == this.bonos[i].isPorNivel())) {
+                if (bono.getTipo() == BONO_ARMADURA_NATURAL) {
+                    personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono]));
+                }
+
                 if (notifica)
                     this.dispatchAvisoPorBono(this.bonos[i]);
             } else {
@@ -2850,7 +2857,15 @@ Personaje.prototype = {
      * @returns {number}
      */
     numArtesMarciales : function()  {
-        return this.artesMarciales.length;
+        var familias = {};
+        var numero = 0;
+        for (var i = 0; i < this.artesMarciales.length;i++) {
+            if (!familias[this.artesMarciales[i].getFamilia()]) {
+                familias[this.artesMarciales[i].getFamilia()] = true;
+                numero++;
+            }
+        }
+        return numero;
     },
 
     /**
@@ -2913,16 +2928,22 @@ Personaje.prototype = {
      * @param {string} nombreArmaAntigua
      */
     comprobarCambiosPDArmaInicial : function(nombreArmaAntigua, nombreNuevaArma)  {
-        if ((nombreNuevaArma == ARMA_SIN_ARMAS) && (nombreArmaAntigua != ARMA_SIN_ARMAS)) {
-            if (this.artesMarciales.length > 0) {
-                this.PD_libres += costeArteMarcial(true);
-                lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
+        if (this.artesMarciales.length > 0) {
+            var ajuste = 0;
+            var esTao = (personaje_actual.getCategoria().getNombre() == CAT_TAO);
+
+            var familiaInicial = this.artesMarciales[0].getFamilia();
+            for (var i = 0; i< this.artesMarciales.length;i++) {
+                if (this.artesMarciales[i].getFamilia() == familiaInicial) {
+                    ajuste += costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),false,esTao)/2;
+                }
             }
-        } else if ((nombreNuevaArma != ARMA_SIN_ARMAS) && (nombreArmaAntigua == ARMA_SIN_ARMAS)) {
-            if (this.artesMarciales.length > 0) {
-                this.PD_libres -= costeArteMarcial(true); 
-                lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
+            if ((nombreNuevaArma == ARMA_SIN_ARMAS) && (nombreArmaAntigua != ARMA_SIN_ARMAS)) {
+                this.PD_libres += ajuste;
+            } else if ((nombreNuevaArma != ARMA_SIN_ARMAS) && (nombreArmaAntigua == ARMA_SIN_ARMAS)) {
+                this.PD_libres -= ajuste;
             }
+            lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
         }
     },
 
@@ -3168,8 +3189,6 @@ Personaje.prototype = {
      * @param {Categoria} nuevaCategoria
      */
     ajustarCambiosPDPorCambiosCategoria : function(nuevaCategoria)  {
-        var ajusteArteMarcial = COSTE_ARTE_MARCIAL - COSTE_TAO_ARTE_MARCIAL;
-        var ajustePrimeraArteMarcial = COSTE_ARTE_MARCIAL/2 - COSTE_TAO_ARTE_MARCIAL/2;
         var i;
         if ((nuevaCategoria.getNombre() == CAT_MAESTRO_ARMAS) && (this.categoria.getNombre() != CAT_MAESTRO_ARMAS)) {
             for (i = 0; i < this.tablasArmas.length; i++) {
@@ -3197,9 +3216,9 @@ Personaje.prototype = {
         } else if ((nuevaCategoria.getNombre() == CAT_TAO) && (this.categoria.getNombre() != CAT_TAO)) {
             for (i = 0; i < this.artesMarciales.length; i++) {
                 if ((i == 0) && (this.armaInicial == ARMA_SIN_ARMAS)) {
-                    this.PD_libres += ajustePrimeraArteMarcial;
+                    this.PD_libres += costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),true,false) - costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),true,true);
                 } else {
-                    this.PD_libres += ajusteArteMarcial;
+                    this.PD_libres += costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),false,false) - costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),false,true);
                 }
             }
             lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
@@ -4313,8 +4332,9 @@ Personaje.prototype = {
                     }
                 }
 
+                var esTao = (personaje_actual.getCategoria().getNombre() == CAT_TAO);
                 for (i = 0; i < this.artesMarciales.length; i++) {
-                    gasto += costeArteMarcial(i==0);
+                    gasto += costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),i==0, esTao);
                 }
                 break;
             case TIPO_HB_SOBRENATURAL:
