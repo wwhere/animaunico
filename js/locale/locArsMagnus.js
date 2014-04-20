@@ -1,4 +1,7 @@
 var GRUPO_ARS_MAGNUS_MENORES = (new L("GRUPO_ARS_MAGNUS_MENORES","Ars Magnus Menores", "Minor Ars Magnus")).getId();
+var GRUPO_ARS_MAGNUS_MAYORES= (new L("GRUPO_ARS_MAGNUS_MAYORES","Ars Magnus Mayores", "Greater Ars Magnus")).getId();
+var GRUPO_ARS_MAGNUS_SELLOS_DEL_DRAGON = (new L("GRUPO_ARS_MAGNUS_SELLOS_DEL_DRAGON","Los Sellos del Dragón", "Dragon Seals")).getId();
+var GRUPO_ARS_MAGNUS_ARMAS_IMPOSIBLES = (new L("GRUPO_ARS_MAGNUS_ARMAS_IMPOSIBLES","Armas Imposibles", "Impossible Weapons")).getId();
 
 var ARS_MAGNUS_BERSERKER = (new L("ARS_MAGNUS_BERSERKER","Berserker", "Berserker")).getId();
 var ARS_MAGNUS_YUUSE_BATOJUTSU = (new L("ARS_MAGNUS_YUUSE_BATOJUTSU","Yuuse Batojutsu", "Yuuse Batojutsu")).getId();
@@ -42,5 +45,15 @@ var ARS_MAGNUS_AQUARIUS = (new L("ARS_MAGNUS_AQUARIUS","Aquarius: Capas y prenda
 var ARS_MAGNUS_PISCIS = (new L("ARS_MAGNUS_PISCIS","Piscis: Yoyó", "Pisces: Yo-yo")).getId();
 var ARS_MAGNUS_OPHIUCOS = (new L("ARS_MAGNUS_OPHIUCOS","Ophiucos: Señor de las Espadas Infinitas", "Ophiucos: Lord of the Infinite Swords")).getId();
 
+var SELLO_DEL_DRAGON_1 = (new L("SELLO_DEL_DRAGON_1","Sello del Dragón 1: Ejad", "Dragon Seal 1: Ejad")).getId();
+var SELLO_DEL_DRAGON_2 = (new L("SELLO_DEL_DRAGON_2","Sello del Dragón 2: Shenayin", "Dragon Seal 2: Shenayin")).getId();
+var SELLO_DEL_DRAGON_3 = (new L("SELLO_DEL_DRAGON_3","Sello del Dragón 3: Shelosh", "Dragon Seal 3: Shelosh")).getId();
+var SELLO_DEL_DRAGON_4 = (new L("SELLO_DEL_DRAGON_4","Sello del Dragón 4: Arvah", "Dragon Seal 4: Arvah")).getId();
+var SELLO_DEL_DRAGON_5 = (new L("SELLO_DEL_DRAGON_5","Sello del Dragón 5: Hamesh", "Dragon Seal 5: Hamesh")).getId();
+var SELLO_DEL_DRAGON_6 = (new L("SELLO_DEL_DRAGON_6","Sello del Dragón 6: Shesh", "Dragon Seal 6: Shesh")).getId();
+var SELLO_DEL_DRAGON_7 = (new L("SELLO_DEL_DRAGON_7","Sello del Dragón 7: Sheva", "Dragon Seal 7: Sheva")).getId();
+var SELLO_DEL_DRAGON_8 = (new L("SELLO_DEL_DRAGON_8","Sello del Dragón 8: Shemone", "Dragon Seal 8: Shemone")).getId();
+var SELLO_DEL_DRAGON_9 = (new L("SELLO_DEL_DRAGON_9","Sello del Dragón 9: Tisha", "Dragon Seal 9: Tisha")).getId();
+var SELLO_DEL_DRAGON_10 = (new L("SELLO_DEL_DRAGON_10","Sello del Dragón 10: Eser", "Dragon Seal 10: Eser")).getId();
 
 
