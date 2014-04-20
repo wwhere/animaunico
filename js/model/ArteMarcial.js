@@ -81,6 +81,14 @@ ArteMarcial.prototype = {
      *
      * @returns {string}
      */
+    getGrado : function() {
+        return this.grado;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
     getDescripcion : function() {
         return this.descripcion;
     },

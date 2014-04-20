@@ -1,4 +1,4 @@
-
+var ARTE_MARCIAL = "ARTE_MARCIAL";
 
 /**
  *

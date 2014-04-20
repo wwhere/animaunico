@@ -109,10 +109,11 @@ Requisito.prototype = {
         switch (this.tipo) {
             case REQUISITO_HABILIDAD:
                 var valor = 0;
+                var arma = new ArmaComprada(getArma(ARMA_SIN_ARMAS));
                 if (this.item == HB_ATAQUE) {
-                    valor = getAtaqueFinalConArma(personaje,ARMA_SIN_ARMAS);
+                    valor = getAtaqueFinalConArma(personaje,arma);
                 } else if (this.item == HB_PARADA) {
-                    valor = getDefensaFinalConArma(personaje,ARMA_SIN_ARMAS);
+                    valor = getDefensaFinalConArma(personaje,arma);
                 } else {
                     valor = personaje.getHabilidadDePersonaje(this.item).valorFinalActual();
                 }

@@ -1,4 +1,4 @@
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_EMP_BASE,
     A_M_EMP,
     "",
@@ -21,7 +21,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_KEMPO,A_M_KUAN,A_M_MALLA_YUDDHA]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_EMP_ARCANO,
     A_M_EMP,
     "",
@@ -50,7 +50,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SELENE_BASE,
     A_M_SELENE,
     "",
@@ -72,7 +72,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_AIKIDO]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SELENE_ARCANO,
     A_M_SELENE,
     "",
@@ -97,7 +97,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SUYANTA_BASE,
     A_M_SUYANTA,
     "",
@@ -116,7 +116,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_TAI_CHI]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SUYANTA_ARCANO,
     A_M_SUYANTA,
     "",
@@ -137,7 +137,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_VELEZ_BASE,
     A_M_VELEZ,
     "",
@@ -159,7 +159,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_TAI_CHI,A_M_KUNG_FU]],
     [ATAQUE_ENE3]
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_VELEZ_ARCANO,
     A_M_VELEZ,
     "",
@@ -184,7 +184,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
 ));
 
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_ASAKUSEN_BASE,
     A_M_ASAKUSEN,
     "",
@@ -210,7 +210,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_KUNG_FU]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_ASAKUSEN_ARCANO,
     A_M_ASAKUSEN,
     "",
@@ -237,7 +237,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_LAMA_TSU_BASE,
     A_M_LAMA_TSU,
     "",
@@ -261,7 +261,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_LAMA]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_LAMA_TSU_ARCANO,
     A_M_LAMA_TSU,
     "",
@@ -287,7 +287,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SERAPHITE_BASE,
     A_M_SERAPHITE,
     "",
@@ -309,7 +309,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_SHOTOKAN,A_M_KEMPO]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SERAPHITE_ARCANO,
     A_M_SERAPHITE,
     "",
@@ -333,7 +333,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_MELKAIAH_BASE,
     A_M_MELKAIAH,
     "",
@@ -359,7 +359,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_GRAPPLING,A_M_PANKRATION]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_MELKAIAH_ARCANO,
     A_M_MELKAIAH,
     "",
@@ -388,7 +388,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_DUMAH_BASE,
     A_M_DUMAH,
     "",
@@ -409,7 +409,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [10,ROTURA_PLUS_10,TA_ENEMIGA_MENOS_2,ARTE_MARCIAL,[A_M_KEMPO,A_M_CAPOEIRA]],
     [ATAQUE_FIL3,ATAQUE_PEN3]
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_DUMAH_ARCANO,
     A_M_DUMAH,
     "",
@@ -433,7 +433,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_MUSHIN_BASE,
     A_M_MUSHIN,
     "",
@@ -458,7 +458,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_XING_QUAN,A_M_KUNG_FU]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_MUSHIN_ARCANO,
     A_M_MUSHIN,
     "",
@@ -487,7 +487,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
 ));
 
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SHEPHON_BASE,
     A_M_SHEPHON,
     "",
@@ -513,7 +513,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_AIKIDO,A_M_KUAN]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_SHEPHON_ARCANO,
     A_M_SHEPHON,
     "",
@@ -540,7 +540,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_HAKYOUKUKEN_BASE,
     A_M_HAKYOUKUKEN,
     "",
@@ -563,7 +563,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [20,ARTE_MARCIAL,[A_M_SHOTOKAN,A_M_MOAI_THAI]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_HAKYOUKUKEN_ARCANO,
     A_M_HAKYOUKUKEN,
     "",
@@ -589,7 +589,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
 ));
 
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_ENUTH_BASE,
     A_M_ENUTH,
     "",
@@ -615,7 +615,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_SAMBO,A_M_SHOTOKAN]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_ENUTH_ARCANO,
     A_M_ENUTH,
     "",
@@ -647,7 +647,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
 ));
 
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_HANJA_BASE,
     A_M_HANJA,
     "",
@@ -671,7 +671,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_SOO_BAHK]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_HANJA_ARCANO,
     A_M_HANJA,
     "",
@@ -695,7 +695,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_GODHAND_BASE,
     A_M_GODHAND,
     "",
@@ -716,7 +716,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_BOXEO,A_M_SHOTOKAN]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_GODHAND_ARCANO,
     A_M_GODHAND,
     "",
@@ -741,7 +741,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     []
 ));
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_REX_FRAME_BASE,
     A_M_REX_FRAME,
     "",
@@ -768,7 +768,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [ARTE_MARCIAL,[A_M_MALLA_YUDDHA,A_M_MOAI_THAI]],
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_REX_FRAME_ARCANO,
     A_M_REX_FRAME,
     "",
@@ -799,7 +799,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
 ));
 
 
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_EXELION_BASE,
     A_M_EXELION,
     "",
@@ -821,7 +821,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [BONO_POD,PRE,PRE], //TODO este daño base es el final, nunca se modifica
     []
 ));
-artesMarcialesBasicas_set.push(new ArteMarcial(
+artesMarcialesAvanzadas_set.push(new ArteMarcial(
     A_M_EXELION_ARCANO,
     A_M_EXELION,
     "",
