@@ -655,7 +655,6 @@ function compraSiPuedes(tipoCompra, parametros, grupoPD, cantidad, coste) {
             } else {
                 puedeComprar.puedeComprar = false;
                 puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_GRUPO) + _l(grupoPD);
-                return;
             }
         } else {
             puedeComprar.puedeComprar = false;
