@@ -551,7 +551,7 @@ addArsMagnus(
                 new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_MANDOBLE,0),
                 new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_HACHA_DOS_MANOS,0),
                 new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_MAZA_PESADA,0)
-            ],0),
+            ],0)
         ],
         20,
         30,
@@ -627,7 +627,7 @@ addArsMagnus(
                 ],0),
                 new Requisito(REQUISITO_TODOS_LOS_SIGUIENTES, [
                     new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_LANZA,0),
-                    new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_ARCABUZ,0),
+                    new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_ARCABUZ,0)
                 ],0),
                 new Requisito(REQUISITO_TODOS_LOS_SIGUIENTES, [
                     new Requisito(REQUISITO_ARMA_MANEJADA,CAT_ARMA_MAZA,0),
@@ -762,7 +762,7 @@ addArsMagnus(
     new ArsMagnus(
         ARS_MAGNUS_AQUARIUS,
         [
-            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_EXTENSION_AURA_ARMA,80),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_EXTENSION_AURA_ARMA,0),
             new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",150),
             new Requisito(REQUISITO_INHUMANIDAD,"",0),
             new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
@@ -772,6 +772,36 @@ addArsMagnus(
 
         ],
         20,
+        20,
+        [FLAG_DOMINUS_EXXET_ENABLED]
+    ),
+    GRUPO_ARS_MAGNUS_ARMAS_IMPOSIBLES
+);
+
+addArsMagnus(
+    new ArsMagnus(
+        ARS_MAGNUS_PISCIS,
+        [
+            new Requisito(REQUISITO_CARACTERISTICA,DES,10),
+            new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",120),
+            new Requisito(REQUISITO_INHUMANIDAD,"",0)
+        ],
+        10,
+        20,
+        [FLAG_DOMINUS_EXXET_ENABLED]
+    ),
+    GRUPO_ARS_MAGNUS_ARMAS_IMPOSIBLES
+);
+
+addArsMagnus(
+    new ArsMagnus(
+        ARS_MAGNUS_OPHIUCOS,
+        [
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_EXTENSION_AURA_ARMA,0),
+            new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",250),
+            new Requisito(REQUISITO_ZEN,"",0)
+        ],
+        10,
         20,
         [FLAG_DOMINUS_EXXET_ENABLED]
     ),
