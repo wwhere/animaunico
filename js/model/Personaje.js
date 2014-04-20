@@ -1804,6 +1804,9 @@ Personaje.prototype = {
 
         if (!yaExiste) {
             this.bonos.push(bono);
+            if (bono.getTipo() == BONO_ARMADURA_NATURAL) {
+                personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono]));
+            }
             if (notifica)
                 this.dispatchAvisoPorBono(bono);
         }
@@ -1823,6 +1826,10 @@ Personaje.prototype = {
                 (bono.getOrigen() == this.bonos[i].getOrigen()) &&
                 (bono.getCategoria() == this.bonos[i].getCategoria()) &&
                 (bono.isPorNivel() == this.bonos[i].isPorNivel())) {
+                if (bono.getTipo() == BONO_ARMADURA_NATURAL) {
+                    personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono]));
+                }
+
                 if (notifica)
                     this.dispatchAvisoPorBono(this.bonos[i]);
             } else {

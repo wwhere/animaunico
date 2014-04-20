@@ -450,6 +450,10 @@ var A_M_DUMAH_BASE = (new L("A_M_DUMAH_BASE","Dumah - Base",
     "Dumah - Base")).getId();
 var A_M_DUMAH_BASE_D_V = (new L("A_M_DUMAH_BASE_D_V","",
     "")).getId();
+var A_M_DUMAH_ARCANO = (new L("A_M_DUMAH_ARCANO","Dumah - Arcano",
+    "Dumah - Arcane")).getId();
+var A_M_DUMAH_ARCANO_D_V = (new L("A_M_DUMAH_ARCANO_D_V","",
+    "")).getId();
 
 var GRADO_BASE = (new L("GRADO_BASE","Grado Base","Base Level")).getId();
 var GRADO_AVANZADO  = (new L("GRADO_AVANZADO","Grado Avanzado","Advanced Level")).getId();

@@ -148,6 +148,9 @@ ArteMarcial.prototype = {
                     case BONO_POD:
                         dañoBase += personaje.getBonoCaracteristica(POD);
                         break;
+                    case PRE:
+                        dañoBase += personaje.getPresencia();
+                        break;
                     case BONO_FUE_RED:
                         var bonoFue = personaje.getBonoCaracteristica(FUE);
                         if (bonoFue % 10 != 0) {
@@ -167,6 +170,10 @@ ArteMarcial.prototype = {
                     case ROTURA_PLUS_10:
                         break;
                     case TA_ENEMIGA_MENOS_2:
+                        break;
+                    case ROTURA_PLUS_25:
+                        break;
+                    case TA_ENEMIGA_MENOS_6:
                         break;
                     case ARTE_MARCIAL:
                         i++;

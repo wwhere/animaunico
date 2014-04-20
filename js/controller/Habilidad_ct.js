@@ -257,7 +257,7 @@ function initHabilidadesSecundariasIntelectuales() {
     addHabilidad(new Habilidad(HB_HERBOLARIA, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_HISTORIA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, LISTA_TEMAS_HISTORIA, 5, 1));
     addHabilidad(new Habilidad(HB_LEY, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, [], 5, 1)); //TODO filtrar si no se usa el libro
-    addHabilidad(new Habilidad(HB_MEDICINA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, [], 5, 1));
+    addHabilidad(new Habilidad(HB_MEDICINA, TIPO_HB_INTELECTUALES, false, INT, true, PEN_ARMADURA_NO, LISTA_ESPECIALIDADES_MEDICAS, 5, 1));
     addHabilidad(new Habilidad(HB_MEMORIZAR, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_NAVEGACION, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_OCULTISMO, TIPO_HB_INTELECTUALES, false, INT, false, PEN_ARMADURA_NO, [], 5, 1));

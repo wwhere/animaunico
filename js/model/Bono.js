@@ -12,6 +12,7 @@ var BONO_CM = "bono al CM";
 var BONO_KI = "bono a una habilidad de ki";
 var BONO_INT_APRENDER_CONJURO = "bono a la INT para aprender conjuros";
 var BONO_MAGIA_INNATA = "bono a la magia innata";
+var BONO_ARMADURA_NATURAL = "bono de armadura natural";
 /***************************/
 
 

@@ -178,7 +178,7 @@ function getDañoBaseFamiliaArtesMarciales(personaje, familiaArtesMarciales) {
     for (var i = 0; i < artesMarciales.length; i++) {
         var dañoArte = 0;
 
-        if (artesMarciales[i].getFamilia() == familiaArtesMarciales) {
+        if ((artesMarciales[i].getFamilia() == familiaArtesMarciales) && ((artesMarciales[i].getGrado() ==GRADO_AVANZADO)||(artesMarciales[i].getGrado() ==GRADO_SUPREMO))) {
             dañoArte = artesMarciales[i].dañoBase(personaje);
 
             if (dañoArte >= dañoBase) {

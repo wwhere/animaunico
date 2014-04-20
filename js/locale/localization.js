@@ -448,6 +448,7 @@ var UI_ESP_CABALLOS =  (new L("Caballos","Caballos","Horses")).getId();
 var UI_ESP_MATEMATICAS =  (new L("Matemáticas","Matemáticas","Mathematics")).getId();
 var UI_ESP_MECANICA =  (new L("Mecánica","Mecánica","Mechanic")).getId();
 var UI_ESP_ASTRONOMIA =  (new L("Astronomía","Astronomía","Astronomy")).getId();
+var UI_ESP_ANATOMIA =  (new L("UI_ESP_ANATOMIA","Anatomía","Anatomy")).getId();
 var UI_ESP_FILOSOFIA =  (new L("Filosofía","Filosofía","Philosophy")).getId();
 var UI_ESP_ABEL =  (new L("Abel","Abel","Abel")).getId();
 var UI_ESP_GUERRAS_CRUZ =  (new L("Guerras de la Cruz","Guerras de la Cruz","Wars of the Cross")).getId();
