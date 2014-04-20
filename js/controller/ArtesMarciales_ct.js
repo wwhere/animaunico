@@ -166,3 +166,26 @@ function compruebaRequisitosArtesMarcialesCompradas(event) {
         }
     }
 }
+
+function getDañoBaseFamiliaArtesMarciales(personaje, familiaArtesMarciales) {
+    /**
+     *
+     * @type {ArteMarcialComprada[]}
+     */
+    var artesMarciales = personaje.getArtesMarciales();
+    var dañoBase = 0;
+
+    for (var i = 0; i < artesMarciales.length; i++) {
+        var dañoArte = 0;
+
+        if (artesMarciales[i].getFamilia() == familiaArtesMarciales) {
+            dañoArte = artesMarciales[i].dañoBase(personaje);
+
+            if (dañoArte >= dañoBase) {
+                dañoBase = dañoArte;
+            }
+        }
+    }
+
+    return dañoBase;
+}

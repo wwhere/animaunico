@@ -168,6 +168,18 @@ ArteMarcial.prototype = {
                         break;
                     case TA_ENEMIGA_MENOS_2:
                         break;
+                    case ARTE_MARCIAL:
+                        i++;
+                        var artesBasicas = this.dañobaseElementos[i];
+                        var daño = 0;
+                        for (var j = 0; j < artesBasicas.length; j++) {
+                            var dañoFamilia = getDañoBaseFamiliaArtesMarciales(personaje,artesBasicas[j]);
+                            if (dañoFamilia >= daño) {
+                                daño = dañoFamilia;
+                            }
+                        }
+                        dañoBase += daño;
+                        break;
                 }
             } else {
                 dañoBase += this.dañobaseElementos[i];
@@ -240,6 +252,13 @@ ArteMarcialComprada.prototype = {
         return this.arteMarcial.getGrado();
     },
 
+    /**
+     *
+     * @returns {string}
+     */
+    getFamilia : function() {
+        return this.arteMarcial.getFamilia();
+    },
 
     /**
      *
