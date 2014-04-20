@@ -1,3 +1,5 @@
+var ARTE_MARCIAL = "ARTE_MARCIAL";
+
 /**
  *
  * @type {ArteMarcial[]}
@@ -38,24 +40,71 @@ function getArteMarcial(nombreArteMarcial) {
 
 /**
  * Devuelve el coste en PD de un arte marcial para el personaje actual.
+ * @param {string} grado
+ * @param {boolean} esBasica
  * @param esPrimera Booleano Indica si es el primer arte marcial que aprende el personaje
+ * @param {boolean} esTao
  * @returns {number}
  */
-function costeArteMarcial(esPrimera) {
+function costeArteMarcial(grado, esBasica, esPrimera, esTao) {
     var coste;
-    if ((esPrimera) && (personaje_actual.getArmaInicial() == ARMA_SIN_ARMAS)) {
-        if (personaje_actual.getCategoria().getNombre() == CAT_TAO) {
-            coste = COSTE_TAO_ARTE_MARCIAL/2;
+
+    if (esTao) {
+        if (esBasica) {
+            switch (grado) {
+                case GRADO_BASE:
+                    coste =  10;
+                    break;
+                case GRADO_SUPREMO:
+                    coste =  20;
+                    break;
+                case GRADO_AVANZADO:
+                default:
+                    coste =  10;
+                    break;
+            }
         } else {
-            coste = COSTE_ARTE_MARCIAL/2;
+            switch (grado) {
+                case GRADO_BASE:
+                    coste =  20;
+                    break;
+                case GRADO_ARCANO:
+                default:
+                    coste =  20;
+                    break;
+            }
         }
     } else {
-        if (personaje_actual.getCategoria().getNombre() == CAT_TAO) {
-            coste = COSTE_TAO_ARTE_MARCIAL;
+        if (esBasica) {
+            switch (grado) {
+                case GRADO_BASE:
+                    coste = 20;
+                    break;
+                case GRADO_SUPREMO:
+                    coste = 50;
+                    break;
+                case GRADO_AVANZADO:
+                default:
+                    coste = 30;
+                    break;
+            }
         } else {
-            coste = COSTE_ARTE_MARCIAL;
+            switch (grado) {
+                case GRADO_BASE:
+                    coste = 50;
+                    break;
+                case GRADO_ARCANO:
+                default:
+                    coste = 50;
+                    break;
+            }
         }
     }
+
+    if ((esPrimera) && (personaje_actual.getArmaInicial() == ARMA_SIN_ARMAS)) {
+        coste = coste/2;
+    }
+
     return coste;
 }
 
@@ -116,4 +165,27 @@ function compruebaRequisitosArtesMarcialesCompradas(event) {
             alert(ERROR_ARTE_MARCIAL_ELIMINADA_REQUISITOS + ": " + arteMarcial.getNombre());
         }
     }
+}
+
+function getDañoBaseFamiliaArtesMarciales(personaje, familiaArtesMarciales) {
+    /**
+     *
+     * @type {ArteMarcialComprada[]}
+     */
+    var artesMarciales = personaje.getArtesMarciales();
+    var dañoBase = 0;
+
+    for (var i = 0; i < artesMarciales.length; i++) {
+        var dañoArte = 0;
+
+        if ((artesMarciales[i].getFamilia() == familiaArtesMarciales) && ((artesMarciales[i].getGrado() ==GRADO_AVANZADO)||(artesMarciales[i].getGrado() ==GRADO_SUPREMO))) {
+            dañoArte = artesMarciales[i].dañoBase(personaje);
+
+            if (dañoArte >= dañoBase) {
+                dañoBase = dañoArte;
+            }
+        }
+    }
+
+    return dañoBase;
 }

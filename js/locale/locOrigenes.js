@@ -21,6 +21,9 @@ var ETNIA_KWA = (new L("ETNIA_KWA", "Kwa",
 var ETNIA_CELSUS = (new L("ETNIA_CELSUS", "Celsus",
     "Celsus")).getId();
 
+var CLASES_SOCIALES_GENERICAS = (new L("CLASES_SOCIALES_GENERICAS","Clases sociales genericas", "Generic social classes")).getId();
+var CLASES_SOCIALES_ORIGEN = (new L("CLASES_SOCIALES_ORIGEN","Clases sociales de tu nación de origen", "Social classes from your nation of origin")).getId();
+
 var CLASE_ALTA_NOBLEZA = (new L("CLASE_ALTA_NOBLEZA","Alta nobleza",
     "High nobility")).getId();
 var CLASE_BAJA = (new L("CLASE_BAJA","Clase baja",

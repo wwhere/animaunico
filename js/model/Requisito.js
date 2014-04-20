@@ -1,6 +1,10 @@
 var REQUISITO_HABILIDAD = "Requisito de habilidad";
 var REQUISITO_HABILIDAD_KI = "Requisito de Habilidad del Ki";
 var REQUISITO_ARTE_MARCIAL = "Requisito de Arte Marcial";
+var REQUISITO_TURNO = "Requisito de Turno";
+var REQUISITO_INHUMANIDAD = "Requisito de Inhumanidad";
+var REQUISITO_ZEN = "Requisito de Zen";
+var REQUISITO_ESPECIALIDAD = "Requisito de Especialización";
 var REQUISITO_UNO_DE_LOS_SIGUIENTES = "Requisito uno entre varios";
 var REQ_CADENA_UNO_ENTRE = "Uno de los siguientes requisitos";
 
@@ -8,7 +12,7 @@ var REQ_CADENA_UNO_ENTRE = "Uno de los siguientes requisitos";
  *
  * @class Requisito
  * @param {string} tipo
- * @param {string|Requisito[]} item
+ * @param {string|Requisito[]|{habilidad: string,especializacion:string}} item
  * @param {number} valor
  * @constructor
  */
@@ -104,13 +108,38 @@ Requisito.prototype = {
 
         switch (this.tipo) {
             case REQUISITO_HABILIDAD:
-                cumple = (personaje.getHabilidadDePersonaje(this.item).valorFinalActual() >= this.valor);
+                var valor = 0;
+                var arma = new ArmaComprada(getArma(ARMA_SIN_ARMAS));
+                if (this.item == HB_ATAQUE) {
+                    valor = getAtaqueFinalConArma(personaje,arma);
+                } else if (this.item == HB_PARADA) {
+                    valor = getDefensaFinalConArma(personaje,arma);
+                } else {
+                    valor = personaje.getHabilidadDePersonaje(this.item).valorFinalActual();
+                }
+                cumple = ( valor >= this.valor);
+                break;
+            case REQUISITO_ESPECIALIDAD:
+                cumple = false;
+                var habilidad = personaje.getHabilidadDePersonaje(this.item.habilidad);
+                if (habilidad.getEspecializacion() == this.item.especializacion) {
+                    cumple = (personaje.getHabilidadDePersonaje(this.item.habilidad).valorFinalActual() >= this.valor);
+                }
                 break;
             case REQUISITO_HABILIDAD_KI:
                 cumple = (personaje.hasHabilidadKi(this.item));
                 break;
             case REQUISITO_ARTE_MARCIAL:
                 cumple = personaje.hasArteMarcial(this.item);
+                break;
+            case REQUISITO_TURNO:
+                cumple = (getTurnoFinalConArma(personaje,this.item) >= this.valor);
+                break;
+            case REQUISITO_INHUMANIDAD:
+                cumple = (personaje.hasFlag(FLAG_INHUMANIDAD));
+                break;
+            case REQUISITO_ZEN:
+                cumple = (personaje.hasFlag(FLAG_ZEN));
                 break;
             case REQUISITO_UNO_DE_LOS_SIGUIENTES:
                 var cumpleEsteReq = false;

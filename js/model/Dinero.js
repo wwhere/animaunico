@@ -48,6 +48,7 @@ Dinero.prototype = {
      */
     addOro : function(valor) {
         this.setOro(this.getOro() + valor);
+        this.reparteTotal();
     },
 
     /**
@@ -72,6 +73,7 @@ Dinero.prototype = {
      */
     addPlata : function(valor) {
         this.setPlata(this.getPlata() + valor);
+        this.reparteTotal();
     },
 
     /**
@@ -96,6 +98,7 @@ Dinero.prototype = {
      */
     addCobre : function(valor) {
         this.setCobre(this.getCobre() + valor);
+        this.reparteTotal();
     },
 
     /**
@@ -119,6 +122,27 @@ Dinero.prototype = {
         this.oro *= multiplicador;
         this.plata *= multiplicador;
         this.cobre *= multiplicador;
+    },
+
+    reparteTotal : function() {
+        var dineroActual = this.totalEnCobre();
+        var mo = 0;
+        var mp = 0;
+        var mc = 0;
+
+        if (dineroActual >= 1000) {
+            mo = Math.floor(dineroActual/1000);
+            dineroActual -= mo * 1000;
+        }
+        if (dineroActual >= 10) {
+            mp = Math.floor(dineroActual/10);
+            dineroActual -= mp*10;
+        }
+        mc = dineroActual;
+
+        this.setOro(mo);
+        this.setPlata(mp);
+        this.setCobre(mc);
     }
 };
 
