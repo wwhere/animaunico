@@ -93,8 +93,130 @@ ArsMagnus.prototype = {
         return this.flagsNecesarios;
     },
 
+    /**
+     *
+     * @param personaje
+     * @returns {boolean}
+     */
+    cumpleRequisitos : function(personaje) {
+        for (var i = 0; i < this.requisitos.length;i++) {
+            var requisito = this.requisitos[i];
+
+            if (!requisito.cumple(personaje)) {
+                return false;
+            }
+        }
+
+        return true;
+    },
+
     toJSON : function() {
         return this.nombre;
     }
 };
 
+/**
+ *
+ * @param {ArsMagnus} arsMagnus
+ * @constructor
+ */
+function ArsMagnusComprado(arsMagnus) {
+    /**
+     *
+     * @type {ArsMagnus}
+     */
+    this.arsMagnus = arsMagnus;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.anulable = true;
+}
+
+ArsMagnusComprado.prototype = {
+    constructor : ArsMagnusComprado,
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.arsMagnus.getNombre();
+    },
+
+    /**
+     *
+     * @param personaje
+     * @returns {boolean}
+     */
+    cumpleRequisitos : function(personaje) {
+    return this.arsMagnus.cumpleRequisitos(personaje);
+    },
+
+    /**
+     * @param {string} categoriaActual
+     * @param {string} categoriaNueva
+     * @returns {number}
+     */
+    ajustePDCambioCategoria : function(categoriaActual, categoriaNueva) {
+        var ajuste = 0;
+        if (this.getNombre() == ARS_MAGNUS_KIAI) {
+            if ((categoriaActual == CAT_TAO) && (categoriaNueva != CAT_TAO)) {
+                ajuste = -1 * (this.arsMagnus.costePD/2);
+            } else if ((categoriaActual != CAT_TAO) && (categoriaNueva == CAT_TAO)) {
+                ajuste = this.arsMagnus.costePD/2;
+            }
+        }
+        return ajuste;
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isAnulable : function() {
+        return this.anulable;
+    },
+
+    /**
+     *
+     * @param {boolean} valor
+     */
+    setAnulable : function(valor) {
+        this.anulable = anulable;
+    },
+
+    /**
+     *
+     * @returns {Requisito[]}
+     */
+    getRequisitos : function() {
+        return this.arsMagnus.getRequisitos();
+    },
+
+    /**
+     *
+     * @param personaje
+     * @returns {number}
+     */
+    getCostePD : function(personaje) {
+        return this.arsMagnus.getCostePD(personaje);
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCosteCM : function() {
+        return this.arsMagnus.getCosteCM();
+    },
+
+    /**
+     *
+     * @returns {string[]}
+     */
+    getFlagsNecesarios : function() {
+        return this.arsMagnus.getFlagsNecesarios();
+    }
+};

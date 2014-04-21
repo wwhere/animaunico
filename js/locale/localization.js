@@ -141,6 +141,7 @@ var UI_TURNO = (new L("Turno","Turno","Initiative")).getId();
 var UI_TABLAS = (new L("Tablas","Tablas","Modules")).getId();
 var UI_ESTADISTICAS_ARMAS = (new L("UI_ESTADISTICAS_ARMAS","Armas","Weapons")).getId();
 var UI_ARTES_MARCIALES = (new L("Artes Marciales","Artes Marciales","Martial Arts")).getId();
+var UI_ARS_MAGNUS = (new L("UI_ARTS_MAGNUS","Ars Magnus","Ars Magnus")).getId();
 var UI_CM = (new L("CM","CM","MK")).getId();
 var UI_ARMA = (new L("UI_ARMA","Arma", "Weapon")).getId();
 var UI_ARMADURA = (new L("Armadura","Armadura","Armor")).getId();
@@ -257,6 +258,7 @@ var UI_BOTON_DESVENTAJAS = (new L("Elegir Desventajas","Elegir Desventajas","Cho
 var UI_BOTON_NATURALES = (new L("Elegir bonos Naturales","Elegir bonos Naturales","Choose Natural Bonuses")).getId();
 var UI_BOTON_ARMA_INICIAL = (new L("Elegir arma inicial","Elegir arma inicial","Choose initial weapon")).getId();
 var UI_BOTON_ARTES_MARCIALES = (new L("Comprar Artes Marciales","Comprar Artes Marciales","Buy Martial Arts")).getId();
+var UI_BOTON_ARS_MAGNUS = (new L("UI_BOTON_ARS_MAGNUS","Comprar Ars Magnus","Buy Ars Magnus")).getId();
 var UI_BOTON_TABLAS_ARMAS = (new L("Comprar Tablas de Armas","Comprar Tablas de Armas","Buy Modules and Tables")).getId();
 var UI_BOTON_GASTAR_CV = (new L("Gastar CVs","Gastar CVs","Spend PPs")).getId();
 var UI_BOTON_GASTAR_CM = (new L("Gastar CM","Gastar CM","Spend MK")).getId();
@@ -301,6 +303,8 @@ var UI_VACIO = (new L("","","")).getId();
 var ERROR_ARTE_MARCIAL_ELIMINADA_ATAQUE_BAJO = (new L("Aviso: Arte marcial eliminada por no tener suficiente ataque/defensa","Aviso: Arte marcial eliminada por no tener suficiente ataque/defensa","Warning: Martial art dropped because of insuficiente attack/defense")).getId();
 var ERROR_ARTE_MARCIAL_ELIMINADA_REQUISITOS = (new L("Aviso: Arte marcial eliminada por no cumplir requisitos","Aviso: Arte marcial eliminada por no cumplir requisitos","Warning: Martial art dropped for not meeting its requisites")).getId();
 var ERR_ARTE_MARCIAL_ERRONEA = (new L("Error: Nombre de arte marcial erróneo","Error: Nombre de arte marcial erróneo","Error: Unknown martial art name")).getId();
+
+var ERROR_ARS_MAGNUS_ELIMINADO_REQUISITOS = (new L("ERROR_ARS_MAGNUS_ELIMINADO_REQUISITOS","Aviso: Ars Magnus eliminado por no cumplir requisitos","Warning: Ars Magnus dropped for not meeting its requisites")).getId();
 
 var ERR_PODER_SIN_DIFICULTAD_MINIMA = (new L("Poder sin dificultad mínima","Poder sin dificultad mínima","Psychic power without minimum difficulty")).getId();
 
@@ -674,6 +678,7 @@ var AVISO_MAX_PD_PROYECCION_PSIQUICA = (new L("Max PDs en Proyección Psíquica 
     "Max DPs in Psychic Projection reached")).getId();
 var AVISO_MAX_PD_GRUPO = (new L("Max PDs alcanzados en ","Max PDs alcanzados en ","Max DPs reached in ")).getId();
 var AVISO_PD_INSUFICIENTES = (new L("PDs insuficientes","PDs insuficientes","Not enough DPs")).getId();
+var AVISO_CM_INSUFICIENTES = (new L("CMs insuficientes","CM insuficiente","Not enough MK")).getId();
 var AVISO_NO_SE_PUEDE_AUMENTAR_MAS = (new L("No se puede aumentar más","No se puede aumentar más","Can't get higher")).getId();
 var AVISO_NO_SE_PUEDE_DISMINUIR_MAS = (new L("No se puede disminuir más","No se puede disminuir más","Can't get lower")).getId();
 
@@ -709,6 +714,7 @@ var EQUIPO_TIPO_VARIOS = (new L("Varios","Varios","Others")).getId();
 var ERR_ARMA_DESCONOCIDA = (new L("Error: Arma desconocida","Error: Arma desconocida","Error: Unknown weapon")).getId();
 var ERR_INDICE_TAM_DESCONOCIDO = (new L("Error: tamaño desconocido","Error: tamaño desconocido","Error: Unknown size")).getId();
 var ERR_EQUIPO_DESCONOCIDO = (new L("Error: Equipo desconocida","Error: Equipo desconocida","Error: Unknown equipment")).getId();
+var ERR_ARS_MAGNUS_DESCONOCIDO = (new L("ERR_ARS_MAGNUS_DESCONOCIDO","Error: Ars Magnus desconocido","Error: Unknown Ars Magnus")).getId();
 
 var CALIDAD_VESTIMENTA_MEDIOCRE = (new L("CALIDAD_VESTIMENTA_MEDIOCRE","mediocre","mediocre")).getId();
 var CALIDAD_VESTIMENTA_BUENA = (new L("CALIDAD_VESTIMENTA_BUENA","buena","good")).getId();

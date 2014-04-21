@@ -1,3 +1,4 @@
+var ARS_MAGNUS = "ARS_MAGNUS";
 /**
  *
  * @type {ArsMagnus[]}
@@ -14,16 +15,24 @@ function addArsMagnus(arsMagnus, grupo) {
     allArsMagnus[arsMagnus.nombre] = arsMagnus;
     switch (grupo) {
         case GRUPO_ARS_MAGNUS_MENORES:
-            arsMagnusMenores[arsMagnus.nombre] = arsMagnus;
+            arsMagnusMenores.push(arsMagnus);
             break;
         case GRUPO_ARS_MAGNUS_MAYORES:
-            arsMagnusMayores[arsMagnus.nombre] = arsMagnus;
+            arsMagnusMayores.push(arsMagnus);
             break;
         case GRUPO_ARS_MAGNUS_SELLOS_DEL_DRAGON:
-            arsMagnusSellosDragon[arsMagnus.nombre] = arsMagnus;
+            arsMagnusSellosDragon.push(arsMagnus);
             break;
         case GRUPO_ARS_MAGNUS_ARMAS_IMPOSIBLES:
-            arsMagnusArmasImposibles[arsMagnus.nombre] = arsMagnus;
+            arsMagnusArmasImposibles.push(arsMagnus);
             break;
     }
 }
+
+function getArsMagnus(nombreArsMagnus) {
+    if (allArsMagnus[nombreArsMagnus])
+        return allArsMagnus[nombreArsMagnus];
+    else
+        throw _l(ERR_ARS_MAGNUS_DESCONOCIDO) + ": " + nombreArsMagnus;
+}
+

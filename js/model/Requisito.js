@@ -179,7 +179,7 @@ Requisito.prototype = {
                 cumple = personaje.hasVentaja(getVentaja(this.item),"");
                 break;
             case REQUISITO_ARS_MAGNUS:
-                cumple = personaje.hasArsMagnus(getVentaja(this.item));
+                cumple = personaje.hasArsMagnus(this.item);
                 break;
             case REQUISITO_ARTE_MARCIAL_GRADO:
                 var artesMarciales = personaje.getArtesMarciales();

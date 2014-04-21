@@ -156,6 +156,31 @@ function vigilaRequisitosArtesMarciales(activar) {
     }
 }
 
+function vigilaRequisitosArsMagnus(activar) {
+    if (activar) {
+        DISPATCHER.on(EVENT_CHARACTER_SECCION_COMBATE_GENERAL, compruebaRequisitosArsMagnusComprados);
+        DISPATCHER.on(EVENT_CHARACTER_SECCION_KI, compruebaRequisitosArsMagnusComprados);
+        DISPATCHER.on(EVENT_CHARACTER_SECCION_SECUNDARIAS, compruebaRequisitosArsMagnusComprados);
+        DISPATCHER.on(EVENT_CHARACTER_SECCION_VENTAJAS, compruebaRequisitosArsMagnusComprados);
+    } else {
+        DISPATCHER.off(EVENT_CHARACTER_SECCION_COMBATE_GENERAL, compruebaRequisitosArsMagnusComprados);
+        DISPATCHER.off(EVENT_CHARACTER_SECCION_KI, compruebaRequisitosArsMagnusComprados);
+        DISPATCHER.off(EVENT_CHARACTER_SECCION_SECUNDARIAS, compruebaRequisitosArsMagnusComprados);
+        DISPATCHER.off(EVENT_CHARACTER_SECCION_VENTAJAS, compruebaRequisitosArsMagnusComprados);
+    }
+}
+
+function compruebaRequisitosArsMagnusComprados(event) {
+    var todosArsMagnus = personaje_actual.getArsMagnus();
+    for (var i = 0; i < todosArsMagnus.length; i++) {
+        var arsMagnus = todosArsMagnus[i];
+        if (!arsMagnus.cumpleRequisitos(personaje_actual)) {
+            anularArsMagnus({data:{arsMagnus:arsMagnus}});
+            alert(ERROR_ARS_MAGNUS_ELIMINADO_REQUISITOS + ": " + arsMagnus.getNombre());
+        }
+    }
+}
+
 function compruebaRequisitosArtesMarcialesCompradas(event) {
     var artesMarciales = personaje_actual.getArtesMarciales();
     for (var i = 0; i < artesMarciales.length; i++) {
