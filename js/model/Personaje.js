@@ -3566,7 +3566,7 @@ Personaje.prototype = {
      */
     addArsMagnus : function(arsMagnus) {
         this.arsMagnus.push(new ArsMagnusComprado(arsMagnus));
-        lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+        lanzarEvento(EVENT_CHARACTER_SECCION_ARS_MAGNUS);
     },
 
     /**
@@ -3574,8 +3574,8 @@ Personaje.prototype = {
      * @param {string} nombreArsMagnus
      */
     removeArsMagnus : function(nombreArsMagnus) {
-        this.arsMagnus = limpiarArrayObjetosPorFuncion(this.arsMagnus,getNombre,nombreArsMagnus);
-        lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+        this.arsMagnus = limpiarArrayObjetosPorFuncion(this.arsMagnus,comparaGetNombre,nombreArsMagnus);
+        lanzarEvento(EVENT_CHARACTER_SECCION_ARS_MAGNUS);
     },
 
     /**
@@ -4404,6 +4404,11 @@ Personaje.prototype = {
                     if ((tablaArmas.getCategoriaTabla() != CATEGORIA_TABLA_MISTICAS) && (tablaArmas.getCategoriaTabla() != CATEGORIA_TABLA_PSIQUICAS)) {
                         gasto += tablaArmas.getCoste(this);
                     }
+                }
+
+                for (i = 0; i < this.arsMagnus.length; i++) {
+                    var arsMagnus = this.arsMagnus[i];
+                    gasto += arsMagnus.getCostePD(this);
                 }
 
                 var esTao = (personaje_actual.getCategoria().getNombre() == CAT_TAO);

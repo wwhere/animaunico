@@ -78,6 +78,7 @@ function activaListenerCambiosPersonaje() {
     DISPATCHER.on(EVENT_CHARACTER_SECCION_ARTES_MARCIALES,{evento: EVENT_CHARACTER_SECCION_ARTES_MARCIALES}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_SECUNDARIAS,{evento: EVENT_CHARACTER_SECCION_SECUNDARIAS}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_EQUIPO,{evento: EVENT_CHARACTER_SECCION_EQUIPO}, recargaSeccionPersonaje);
+    DISPATCHER.on(EVENT_CHARACTER_SECCION_ARS_MAGNUS,{evento:EVENT_CHARACTER_SECCION_ARS_MAGNUS},recargaSeccionPersonaje);
     listenerActivado = true;
 }
 
@@ -145,6 +146,10 @@ function recargaSeccionPersonaje(event) {
         case EVENT_CHARACTER_SECCION_EQUIPO:
             divDestino = DIV_DESTINO_EQUIPO;
             funcionRecarga = muestraEquipamiento;
+            break;
+        case EVENT_CHARACTER_SECCION_ARS_MAGNUS:
+            divDestino = DIV_DESTINO_ARS_MAGNUS;
+            funcionRecarga = muestraArsMagnus;
             break;
         case EVENT_CHARACTER_SECCION_DESCRIPCION:
             divDestino = DIV_DESTINO_DESCRIPCION;
