@@ -769,6 +769,7 @@ var TIPO_HB_SOBRENATURAL = (new L("Habilidades Sobrenaturales","Habilidades Sobr
 var HB_NIVEL_DE_VIA = (new L("HB_NIVEL_DE_VIA","Nivel de vía","Path levels")).getId();
 var HB_ZEON = (new L("Zeon","Zeon","Zeon")).getId();
 var HB_ACT = (new L("ACT","ACT","MA")).getId();
+var HB_REGENERACION_ZEONICA = (new L("HB_REGENERACION_ZEONICA","Regeneración Zeónica","Zeonic Regeneration")).getId();
 var HB_PROYECCION_MAGICA = (new L("Proyección Mágica","Proyección Mágica","Magic Projection")).getId();
 var HB_CONVOCAR = (new L("Convocar","Convocar","Summon")).getId();
 var HB_DOMINAR = (new L("Dominar","Dominar","Control")).getId();

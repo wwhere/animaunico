@@ -760,15 +760,28 @@ function muestraVentaja(ventajaComprada) {
  * @returns {*}
  */
 function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
-    var coste = personaje_actual.getCoste(nombreHabilidad, true);
+    var coste = 0;
+    var valorBase =0;
+    var bonos = [];
+    var botones;
+    if (nombreHabilidad == HB_REGENERACION_ZEONICA) {
+        coste = personaje_actual.getCoste(HB_ACT, true);
+        valorBase = personaje_actual.getHabilidadDePersonaje(HB_ACT).valorBase(coste);
+        bonos = personaje_actual.getBonos(BONO_HABILIDAD, HB_ACT, CATEGORIA_BONO_CUALQUIERA);
+    } else {
+        coste = personaje_actual.getCoste(nombreHabilidad, true);
+        valorBase = personaje_actual.getHabilidadDePersonaje(nombreHabilidad).valorBase(coste);
+        bonos = personaje_actual.getBonos(BONO_HABILIDAD, nombreHabilidad, CATEGORIA_BONO_CUALQUIERA);
+    }
 
+    botones = (mostrarBotones) ? muestraBotonMasMenosHabilidad(nombreHabilidad).addClass(CSS_MUESTRA_INLINE) : "";
     var mostrarBotones = ((coste != 0) || (nombreHabilidad == HB_POTENCIAL_PSIQUICO)) && muestraBotones;
 
     return muestraValorConBonosYCoste(etiqueta,
-        personaje_actual.getHabilidadDePersonaje(nombreHabilidad).valorBase(coste),
-        personaje_actual.getBonos(BONO_HABILIDAD, nombreHabilidad, CATEGORIA_BONO_CUALQUIERA),
+        valorBase,
+        bonos,
         coste,
-        (mostrarBotones) ? muestraBotonMasMenosHabilidad(nombreHabilidad).addClass(CSS_MUESTRA_INLINE) : "",
+        botones,
         true,
         (nombreHabilidad == HB_POTENCIAL_PSIQUICO));
 }
@@ -1185,6 +1198,7 @@ function muestraSobrenatural(estadoGeneracion) {
     divContenido.append(muestraHabilidadPrimaria(HB_NIVEL_DE_VIA,_l(UI_NIVELES_VIA),muestraBotonesNivelVia));
     divContenido.append(muestraHabilidadPrimaria(HB_ZEON,_l(UI_ZEON),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_ACT,_l(UI_ACT),muestraBotones));
+    divContenido.append(muestraHabilidadPrimaria(HB_REGENERACION_ZEONICA,_l(HB_REGENERACION_ZEONICA),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_PROYECCION_MAGICA,_l(UI_PROYECCION_MAGICA),muestraBotones));
     divContenido.append(muestraDesequilibrioOfensivoMagico());
 

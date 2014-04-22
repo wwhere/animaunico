@@ -304,6 +304,8 @@ HabilidadDePersonaje.prototype = {
             return potencial;
         } else if (this.habilidad.getNombre() == HB_ACT) {
             return this.valorInicial * (1 + this.valorPrevio + Math.floor(this.PDinvertidos / coste));
+        } else if (this.habilidad.getNombre() == HB_REGENERACION_ZEONICA) {
+            return this.valorInicial * (1 + this.valorPrevio + Math.floor(this.PDinvertidos / coste));
         }
 
 
