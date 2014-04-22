@@ -480,3 +480,10 @@ var VENT_SANGRE_LATENTE = (new L("VENT_SANGRE_LATENTE","Sangre Latente",
     "Sangre Latente")).getId();
 var VENT_SANGRE_LATENTE_DESC= (new L("VENT_SANGRE_LATENTE_DESC","",
     "")).getId();
+
+var VENT_VERSATIBILIDAD_METAMAGICA= (new L("VENT_VERSATIBILIDAD_METAMAGICA","Versatibilidad Metamágica",
+    "Metamagic Versatibility")).getId();
+var VENT_HECHICERO_NATO= (new L("VENT_HECHICERO_NATO","Hechicero Nato",
+    "Natural Born Sorcerer")).getId();
+
+
