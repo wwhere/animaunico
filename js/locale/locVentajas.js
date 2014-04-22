@@ -480,3 +480,34 @@ var VENT_SANGRE_LATENTE = (new L("VENT_SANGRE_LATENTE","Sangre Latente",
     "Sangre Latente")).getId();
 var VENT_SANGRE_LATENTE_DESC= (new L("VENT_SANGRE_LATENTE_DESC","",
     "")).getId();
+
+var VENT_VERSATIBILIDAD_METAMAGICA= (new L("VENT_VERSATIBILIDAD_METAMAGICA","Versatibilidad Metamágica",
+    "Metamagic Versatibility")).getId();
+var VENT_VERSATIBILIDAD_METAMAGICA_DESC= (new L("VENT_VERSATIBILIDAD_METAMAGICA_DESC","",
+    "")).getId();
+var VENT_HECHICERO_NATO= (new L("VENT_HECHICERO_NATO","Hechicero Nato",
+    "Natural Born Sorcerer")).getId();
+var VENT_HECHICERO_NATO_DESC= (new L("VENT_HECHICERO_NATO_DESC","",
+    "")).getId();
+var VENT_APRENDIZAJE_MAGICO_GRADUAL= (new L("VENT_APRENDIZAJE_MAGICO_GRADUAL","Aprendizaje Mágico Gradual",
+    "Gradual Magic Learning")).getId();
+var VENT_APRENDIZAJE_MAGICO_GRADUAL_DESC= (new L("VENT_APRENDIZAJE_MAGICO_GRADUAL_DESC","",
+    "")).getId();
+var VENT_DON_INCOMPLETO= (new L("VENT_DON_INCOMPLETO","Don Incompleto",
+    "Incomplete Gift")).getId();
+var VENT_DON_INCOMPLETO_DESC= (new L("VENT_DON_INCOMPLETO_DESC","",
+    "")).getId();
+var VENT_ESENCIA_SHEELE= (new L("VENT_ESENCIA_SHEELE","Esencia Sheele",
+    "Sheele Essence")).getId();
+var VENT_ESENCIA_SHEELE_DESC= (new L("VENT_ESENCIA_SHEELE_DESC","",
+    "")).getId();
+var VENT_FAMILIAR= (new L("VENT_FAMILIAR","Familiar",
+    "Familiar")).getId();
+var VENT_FAMILIAR_DESC= (new L("VENT_FAMILIAR_DESC","",
+    "")).getId();
+var VENT_CONVOCADOR_DE_MASAS= (new L("VENT_CONVOCADOR_DE_MASAS","Convocador de Masas",
+    "Mass Summoner")).getId();
+var VENT_CONVOCADOR_DE_MASAS_DESC= (new L("VENT_CONVOCADOR_DE_MASAS_DESC","",
+    "")).getId();
+
+
