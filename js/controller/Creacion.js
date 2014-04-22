@@ -544,6 +544,11 @@ function compraSiPuedesCombate(tipoCompra, parametros, cantidad, coste) {
                 puedeComprar.mensajeFallo = _l(AVISO_MAX_PD_CM);
             }
         }
+    } else if (tipoCompra == ARS_MAGNUS) {
+        if (parametros.costeCM > (personaje_actual.getCMTotal()-personaje_actual.getCMGastado())) {
+            puedeComprar.puedeComprar = false;
+            puedeComprar.mensajeFallo = _l(AVISO_CM_INSUFICIENTES);
+        }
     }
     return puedeComprar;
 }
@@ -698,6 +703,14 @@ function compra(tipoCompra, parametros, coste) {
             personaje_actual.addPDLibres(-1 * coste);
             if (personaje_actual.getArtesMarciales().length == 1) {
                 vigilaRequisitosArtesMarciales(true);
+            }
+            break;
+        case ARS_MAGNUS:
+            personaje_actual.addArsMagnus(parametros.arsMagnus);
+            personaje_actual.addPDLibres(-1 * coste);
+            personaje_actual.addCMGastado(parametros.costeCM);
+            if (personaje_actual.getArsMagnus().length == 1) {
+                vigilaRequisitosArsMagnus(true);
             }
             break;
         case POTENCIAL_PSIQUICO:
@@ -929,6 +942,21 @@ function compraTablaEspecial(parametros) {
  *
  * @param {{}} event
  */
+function anularArsMagnus(event) {
+    var arsMagnus = event.data.arsMagnus;
+
+    personaje_actual.addPDLibres(arsMagnus.getCostePD(personaje_actual));
+
+    personaje_actual.removeArsMagnus(arsMagnus.getNombre());
+    if (personaje_actual.getArtesMarciales().length == 0) {
+        vigilaRequisitosArsMagnus(false);
+    }
+}
+
+/**
+ *
+ * @param {{}} event
+ */
 function anularArteMarcial(event) {
     var arteMarcial = event.data.arteMarcial;
     var esPrimera = event.data.esPrimera;
@@ -966,6 +994,15 @@ function aplicarArteMarcial(parametros) {
     coste = costeArteMarcial(arteMarcial.getGrado(),arteMarcial.isBasica(),esPrimera,esTao);
 
     compraSiPuedes(ARTE_MARCIAL, {arteMarcial: arteMarcial},TIPO_HB_COMBATE, 1, coste);
+}
+
+function aplicarArsMagnus(parametros) {
+    var nombreArsMagnus = parametros.opcion;
+    var arsMagnus = getArsMagnus(nombreArsMagnus);
+    var costePD = arsMagnus.getCostePD(personaje_actual);
+    var costeCM = arsMagnus.getCosteCM();
+
+    compraSiPuedes(ARS_MAGNUS, {arsMagnus: arsMagnus, costeCM: costeCM},TIPO_HB_COMBATE, 1, costePD);
 }
 
 /**

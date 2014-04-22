@@ -1107,6 +1107,30 @@ function parsePoderPsiquico(texto) {
     return getPoder(disciplina,nombrePoderPsiquico);
 }
 
+function parseArrayArsMagnusComprado(v) {
+    var array = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var elemento = new ArsMagnusComprado("");
+        parseArsMagnusComprado(elemento,v[i]);
+        array.push(elemento);
+    }
+
+    return array;
+}
+
+function parseArsMagnusComprado(elemento, texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'arsMagnus':
+                elemento[k] = getArsMagnus(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
+}
+
 /**
  *
  * @param {string} v
@@ -1241,6 +1265,9 @@ function cargarPersonaje(cadena) {
                 break;
             case 'numTecnicas':
                 personaje_actual.numTecnicas = parseNumTecnicas(v);
+                break;
+            case 'arsMagnus':
+                personaje_actual[k] = parseArrayArsMagnusComprado(v);
                 break;
             case 'disciplinasPsiquicas':
                 personaje_actual[k] = parseArrayDisciplinaPsiquicaAccedida(v);
