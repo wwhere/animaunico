@@ -25,7 +25,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 100),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0),
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_AIKIDO_BASE,0)
     ],
@@ -48,7 +48,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_TRUCOS_MANOS, 80),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0),
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_AIKIDO_AVANZADO,0)
     ],
@@ -94,7 +94,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 120),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0)
     ],
     10,      //CM
@@ -117,7 +117,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 200),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,      //CM
@@ -156,7 +156,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 110),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,110),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,110)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,110)
         ],0)
     ],
     10,      //CM
@@ -176,7 +176,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_PROEZAS_FUERZA, 120),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,      //CM
@@ -215,7 +215,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 120),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0)
     ],
     10,
@@ -274,7 +274,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 120),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0)
     ],
     10,
@@ -297,7 +297,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_ATAQUE, 200),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,
@@ -443,7 +443,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD, HB_TRUCOS_MANOS, 40),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0)
     ],
     10,
@@ -463,7 +463,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_MALLA_YUDDHA_AVANZADO,0),
         new Requisito(REQUISITO_HABILIDAD, HB_TRUCOS_MANOS, 100),
-        new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+        new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
     ],
     10,
     [
@@ -496,7 +496,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     GRADO_AVANZADO,
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_SAMBO_BASE,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,130)
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,130)
     ],
     10,
     [
@@ -514,10 +514,10 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     GRADO_SUPREMO,
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_SAMBO_AVANZADO,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200),
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,200),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,
@@ -550,7 +550,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     GRADO_AVANZADO,
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KEMPO_BASE,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,120)
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,120)
     ],
     10,
     [],
@@ -566,7 +566,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     GRADO_SUPREMO,
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KEMPO_AVANZADO,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200)
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,200)
     ],
     10,
     [
@@ -598,10 +598,10 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     GRADO_AVANZADO,
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_TAE_KWON_DO_BASE,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,130),
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,130),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,100),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,100)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,100)
         ],0)
     ],
     10,
@@ -618,7 +618,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     GRADO_SUPREMO,
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_TAE_KWON_DO_AVANZADO,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200)
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,200)
     ],
     10,
     [],
@@ -656,7 +656,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD,HB_ESTILO,40),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,130),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,130)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,130)
         ],0)
     ],
     10,
@@ -676,7 +676,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD,HB_ESTILO,80),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,
@@ -713,7 +713,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_GRAPPLING_BASE,0),
         new Requisito(REQUISITO_HABILIDAD,HB_PROEZAS_FUERZA,40),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,130)
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,130)
     ],
     10,
     [],
@@ -730,7 +730,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_GRAPPLING_AVANZADO,0),
         new Requisito(REQUISITO_HABILIDAD,HB_PROEZAS_FUERZA,120),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200)
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,200)
     ],
     10,
     [],
@@ -777,10 +777,10 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_TAI_CHI_AVANZADO,0),
         new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_ENERGIA_NECESARIA,0),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,180),
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,180),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,180),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,180)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,180)
         ],0)
     ],
     30,
@@ -820,7 +820,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,40),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0)
     ],
     10,
@@ -877,7 +877,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_XING_QUAN_BASE,0),
         new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,50),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,120),
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,120),
         new Requisito(REQUISITO_TURNO,ARMA_SIN_ARMAS,100)
     ],
     10,
@@ -895,7 +895,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_XING_QUAN_AVANZADO,0),
         new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,100),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,200),
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,200),
         new Requisito(REQUISITO_TURNO,ARMA_SIN_ARMAS,120)
     ],
     10,
@@ -929,7 +929,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
     [
         new Requisito(REQUISITO_ARTE_MARCIAL, A_M_KUAN_BASE,0),
         new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,60),
-        new Requisito(REQUISITO_HABILIDAD,HB_ATAQUE,120),
+        new Requisito(REQUISITO_HABILIDAD_ATAQUE,ARMA_SIN_ARMAS,120),
         new Requisito(REQUISITO_TURNO,ARMA_SIN_ARMAS,100)
     ],
     10,
@@ -951,7 +951,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD,HB_TRUCOS_MANOS,140),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,
@@ -989,7 +989,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD,HB_ADVERTIR,90),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,120),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,120)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,120)
         ],0)
     ],
     10,
@@ -1013,7 +1013,7 @@ artesMarcialesBasicas_set.push(new ArteMarcial(
         new Requisito(REQUISITO_HABILIDAD,HB_ADVERTIR,120),
         new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
             new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,200),
-            new Requisito(REQUISITO_HABILIDAD,HB_PARADA,200)
+            new Requisito(REQUISITO_HABILIDAD_PARADA,ARMA_SIN_ARMAS,200)
         ],0)
     ],
     10,

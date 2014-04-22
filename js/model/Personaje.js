@@ -341,6 +341,12 @@ function Personaje(nivelInicial) {
      */
     this.limite = [];
 
+    /**
+     *
+     * @type {ArsMagnusComprado[]}
+     */
+    this.arsMagnus = [];
+
     //endregion Ajustes Habilidades Primarias: Combate
 
     //region Ajustes Habilidades Primarias: Magia
@@ -1177,6 +1183,7 @@ Personaje.prototype = {
         }
 
         this.ajustarCambiosPDPorCambiosCategoria(categoria);
+        this.ajusteCostePDArsMagnusCambioCategoria(categoria.getNombre());
 
         for (i = this.nivelGeneracionTerminada+1; i <= this.nivel; i++) {
             this.categoriasPorNiveles[i] = categoria;
@@ -2394,6 +2401,8 @@ Personaje.prototype = {
                 this.artesMarciales[i].setAnulable(false);
             }
 
+            this.ajusteArsMagnusSubidaDeNivel();
+
             this.nivelGeneracionTerminada = this.nivel;
             this.nivel += numNiveles;
 
@@ -3493,6 +3502,7 @@ Personaje.prototype = {
         return this.armaInicial;
     },
 
+//region Limites
     /**
      *
      * @returns {Limite[]}
@@ -3537,6 +3547,70 @@ Personaje.prototype = {
         }
         return false;
     },
+
+//endregion Limites
+
+//region Ars Magnus
+
+    /**
+     *
+     * @returns {ArsMagnusComprado[]}
+     */
+    getArsMagnus : function() {
+        return this.arsMagnus;
+    },
+
+    /**
+     *
+     * @param {ArsMagnus} arsMagnus
+     */
+    addArsMagnus : function(arsMagnus) {
+        this.arsMagnus.push(new ArsMagnusComprado(arsMagnus));
+        lanzarEvento(EVENT_CHARACTER_SECCION_ARS_MAGNUS);
+    },
+
+    /**
+     *
+     * @param {string} nombreArsMagnus
+     */
+    removeArsMagnus : function(nombreArsMagnus) {
+        this.arsMagnus = limpiarArrayObjetosPorFuncion(this.arsMagnus,comparaGetNombre,nombreArsMagnus);
+        lanzarEvento(EVENT_CHARACTER_SECCION_ARS_MAGNUS);
+    },
+
+    /**
+     *
+     * @param {string} nombreArsMagnus
+     */
+    hasArsMagnus : function(nombreArsMagnus) {
+        for (var i = 0; i < this.arsMagnus.length; i++) {
+            if (this.arsMagnus[i].getNombre() == nombreArsMagnus) {
+                return true;
+            }
+        }
+        return false;
+    },
+
+    /**
+     *
+     * @param {string} nombreNuevaCategoria
+     */
+    ajusteCostePDArsMagnusCambioCategoria : function(nombreNuevaCategoria) {
+        for (var i = 0; i < this.arsMagnus.length; i++) {
+            this.PD_libres += this.arsMagnus[i].ajustePDCambioCategoria(this.categoria.getNombre(),nombreNuevaCategoria);
+        }
+    },
+
+    /**
+     *
+     */
+    ajusteArsMagnusSubidaDeNivel : function() {
+        for (var i = 0; i < this.arsMagnus.length; i++) {
+            this.arsMagnus[i].anulable = false;
+        }
+    },
+//endregion Ars Magnus
+
 //endregion Habilidades Primarias: Combate
 
 //region Habilidades Primarias: Magia
@@ -4330,6 +4404,11 @@ Personaje.prototype = {
                     if ((tablaArmas.getCategoriaTabla() != CATEGORIA_TABLA_MISTICAS) && (tablaArmas.getCategoriaTabla() != CATEGORIA_TABLA_PSIQUICAS)) {
                         gasto += tablaArmas.getCoste(this);
                     }
+                }
+
+                for (i = 0; i < this.arsMagnus.length; i++) {
+                    var arsMagnus = this.arsMagnus[i];
+                    gasto += arsMagnus.getCostePD(this);
                 }
 
                 var esTao = (personaje_actual.getCategoria().getNombre() == CAT_TAO);

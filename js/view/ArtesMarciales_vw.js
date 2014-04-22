@@ -16,7 +16,7 @@ function muestraArtesMarciales(estadoGeneracion) {
 
     if (muestraBotones) {
         var divBotonNuevo = getDiv("");
-        divBotonNuevo.append(muestraBotonPequeño(UI_BOTON_ARTES_MARCIALES,{},prepararDialogoArtesMarciales,BOTON_ARTES_MARCIALES));
+        divBotonNuevo.append(muestraBotonPequeño(_l(UI_BOTON_ARTES_MARCIALES),{},prepararDialogoArtesMarciales,BOTON_ARTES_MARCIALES));
         divContenido.append(divBotonNuevo);
     } else if (artesMarciales.length == 0) {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));

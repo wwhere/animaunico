@@ -32,6 +32,7 @@ module.exports = function(grunt) {
                     "js/locale/locVentajas.js",
                     "js/locale/locInvocaciones.js",
                     "js/locale/locOrigenes.js",
+                    "js/locale/locArsMagnus.js",
 
                     "js/libros.js",
                     "js/mainAnimaUnico.js",
@@ -141,6 +142,10 @@ module.exports = function(grunt) {
                     "js/data/artesMarciales/artesMarcialesBasicas.js",
                     "js/data/artesMarciales/artesMarcialesAvanzadas.js",
 
+                    "js/model/ArsMagnus.js",
+                    "js/controller/ArsMagnus_ct.js",
+                    "js/data/ArsMagnus/ArsMagnus.js",
+
                     "js/model/Elan.js",
                     "js/controller/Elan_ct.js",
                     "js/data/elan/BerylAzrael.js",
@@ -212,6 +217,7 @@ module.exports = function(grunt) {
                     "js/view/Raza_vw.js",
                     "js/view/Elan_vw.js",
                     "js/view/Habilidades_vw.js",
+                    "js/view/ArsMagnus_vw.js",
                     "js/logCambios.js",
                     "js/controller/Creacion.js",
 

@@ -6,6 +6,7 @@ var DIV_DESTINO_VENTAJAS = "#divVentajas";
 var DIV_DESTINO_DESVENTAJAS = "#divDesventajas";
 var DIV_DESTINO_COMBATE = "#divCombate";
 var DIV_DESTINO_ARTES_MARCIALES = "#divArtesMarciales";
+var DIV_DESTINO_ARS_MAGNUS= "#divArsMagnus";
 var DIV_DESTINO_KI = "#divKi";
 var DIV_DESTINO_SOBRENATURAL = "#divSobrenatural";
 var DIV_DESTINO_PSIQUICA = "#divPsiquica";
@@ -45,6 +46,7 @@ function muestraPersonaje() {
     $(DIV_DESTINO_SECUNDARIAS).empty().append(muestraSecundarias(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_COMBATE).empty().append(muestraCombate(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_ARTES_MARCIALES).empty().append(muestraArtesMarciales(personaje_actual.GENERACION_INICIADA));
+    $(DIV_DESTINO_ARS_MAGNUS).empty().append(muestraArsMagnus(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_KI).empty().append(muestraKi(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_SOBRENATURAL).empty().append(muestraSobrenatural(personaje_actual.GENERACION_INICIADA));
     $(DIV_DESTINO_PSIQUICA).empty().append(muestraPsiquica(personaje_actual.GENERACION_INICIADA));
@@ -76,6 +78,7 @@ function activaListenerCambiosPersonaje() {
     DISPATCHER.on(EVENT_CHARACTER_SECCION_ARTES_MARCIALES,{evento: EVENT_CHARACTER_SECCION_ARTES_MARCIALES}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_SECUNDARIAS,{evento: EVENT_CHARACTER_SECCION_SECUNDARIAS}, recargaSeccionPersonaje);
     DISPATCHER.on(EVENT_CHARACTER_SECCION_EQUIPO,{evento: EVENT_CHARACTER_SECCION_EQUIPO}, recargaSeccionPersonaje);
+    DISPATCHER.on(EVENT_CHARACTER_SECCION_ARS_MAGNUS,{evento:EVENT_CHARACTER_SECCION_ARS_MAGNUS},recargaSeccionPersonaje);
     listenerActivado = true;
 }
 
@@ -143,6 +146,10 @@ function recargaSeccionPersonaje(event) {
         case EVENT_CHARACTER_SECCION_EQUIPO:
             divDestino = DIV_DESTINO_EQUIPO;
             funcionRecarga = muestraEquipamiento;
+            break;
+        case EVENT_CHARACTER_SECCION_ARS_MAGNUS:
+            divDestino = DIV_DESTINO_ARS_MAGNUS;
+            funcionRecarga = muestraArsMagnus;
             break;
         case EVENT_CHARACTER_SECCION_DESCRIPCION:
             divDestino = DIV_DESTINO_DESCRIPCION;
