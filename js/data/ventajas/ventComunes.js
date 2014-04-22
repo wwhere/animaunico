@@ -81,3 +81,10 @@ addVentaja(new Ventaja( VENT_PERCEPCION_DEL_KI, "", VENT_PERCEPCION_DEL_KI_DESC,
 addVentaja(new Ventaja( VENT_LIMITE_DUAL, "", VENT_LIMITE_DUAL_DESC, NO_REPETIBLE, [1], [], true, [], [limiteDual], GRUPO_KI,[FLAG_DOMINUS_EXXET_ENABLED]));
 addVentaja(new Ventaja( VENT_INUTILIDAD_GESTUAL, "", VENT_INUTILIDAD_GESTUAL_DESC, NO_REPETIBLE, [1], [], true, [], [], GRUPO_KI,[FLAG_DOMINUS_EXXET_ENABLED]));
 addVentaja(new Ventaja( VENT_SELLOS_MAGISTRALES, "", VENT_SELLOS_MAGISTRALES_DESC, NO_REPETIBLE, [1], [], true, [], [], GRUPO_KI,[FLAG_DOMINUS_EXXET_ENABLED]));
+
+ventajaTemp = new Ventaja(VENT_DON_INCOMPLETO, "", VENT_DON_INCOMPLETO_DESC, NO_REPETIBLE, [1], [], true, [], [donIncompleto], GRUPO_DON,[FLAG_ARCANA_EXXET_ENABLED] );
+ventajaTemp.isBasica = true;
+addVentaja(ventajaTemp);
+addVentaja(new Ventaja( VENT_ESENCIA_SHEELE, "", VENT_ESENCIA_SHEELE_DESC, NO_REPETIBLE, [1], [], true, [], [esenciaSheele], GRUPO_OTRAS,[FLAG_ARCANA_EXXET_ENABLED]));
+addVentaja(new Ventaja( VENT_FAMILIAR, "", VENT_FAMILIAR_DESC, NO_REPETIBLE, [2,3], [], true, [], [], GRUPO_OTRAS,[FLAG_ARCANA_EXXET_ENABLED])); //TODO familiar
+addVentaja(new Ventaja( VENT_CONVOCADOR_DE_MASAS, "", VENT_CONVOCADOR_DE_MASAS_DESC, NO_REPETIBLE, [1,2,3], [], true, [], [], GRUPO_OTRAS,[FLAG_ARCANA_EXXET_ENABLED]));
