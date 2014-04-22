@@ -174,6 +174,31 @@ function elegirDesequilibrioOfensivoMagico() {
 
 }
 
+function muestraEspecializacionInvocacion() {
+    var divRow = getDiv("row");
+
+    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_ESPECIALIZADO_EN_INVOCACION));
+
+    var valor  = _l(UI_NO);
+    if (personaje_actual.especializadoInvocacion) {
+        valor = _l(UI_SI);
+    }
+    var divValorBase = getDiv("two columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(valor);
+
+    var divBoton = getDiv("push_one one column").append(muestraBotonPequeño(_l(UI_CAMBIAR_ESPECIALIZACION),{},function() {
+        personaje_actual.setEspecializadoEnInvocacion(!personaje_actual.especializadoInvocacion);
+    },""));
+
+    divRow.append(divEtiqueta).append(divValorBase);
+
+    if ((personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_INICIADA) ||(personaje_actual.GENERACION_INICIADA == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
+        divRow.append(divBoton);
+    }
+
+    return divRow;
+
+}
+
 function muestraElementalismo() {
     var divRow = getDiv("row");
 

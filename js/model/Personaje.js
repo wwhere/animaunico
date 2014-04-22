@@ -170,6 +170,12 @@ function Personaje(nivelInicial) {
     this.elementalismo = ELEMENTALISMO_NINGUNO;
 
     /**
+     *
+     * @type {boolean}
+     */
+    this.especializadoInvocacion = false;
+
+    /**
      * @type {Invocacion[]}
      */
     this.invocaciones = [];
@@ -1677,6 +1683,10 @@ Personaje.prototype = {
         lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
 
+    setEspecializadoEnInvocacion : function(valor) {
+        this.especializadoInvocacion = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
     /**
      *
      * @returns {Invocacion[]}

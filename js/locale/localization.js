@@ -100,6 +100,8 @@ function localizaHTML() {
 
 //endregion codigo
 
+var UI_NO  = (new L("UI_NO","No","No")).getId();
+var UI_SI  = (new L("UI_SI","Sí","Yes")).getId();
 var UI_NOMBRE = (new L("Nombre","Nombre","Name")).getId();
 var UI_SEXO = (new L("Sexo","Sexo","Gender")).getId();
 var UI_RAZA = (new L("Raza","Raza","Race")).getId();
@@ -608,6 +610,8 @@ var UI_MC = (new L("dinero mc", "mc", "cp")).getId();
 
 
 var UI_ESPECIFICAR = (new L("Especificar","Especificar","Specify")).getId();
+var UI_CAMBIAR_ESPECIALIZACION = (new L("UI_CAMBIAR_ESPECIALIZACION","Cambiar especialización sí/no","Change specialization yes/no")).getId();
+
 var UI_PREGUNTA_PUNTOS_METODO_5 = (new L("¿Cuántos puntos quieres repartir?","¿Cuántos puntos quieres repartir?","How many points?")).getId();
 var DIAG_METODO_CREACION_TITULO = (new L("Seleccionar método de creación","Seleccionar método de creación","Select creation method")).getId();
 var DIAG_ELEGIR_RAZA_TITULO = (new L("Seleccionar raza","Seleccionar raza","Select race")).getId();
@@ -1033,6 +1037,8 @@ var ELEMENTALISMO_AGUA = (new L("ELEMENTALISMO_AGUA","Agua","Water")).getId();
 var ELEMENTALISMO_FUEGO = (new L("ELEMENTALISMO_FUEGO","Fuego","Fire")).getId();
 var ELEMENTALISMO_LUZ = (new L("ELEMENTALISMO_LUZ","Luz","Light")).getId();
 var ELEMENTALISMO_OSCURIDAD = (new L("ELEMENTALISMO_OSCURIDAD","Oscuridad","Darkness")).getId();
+
+var UI_ESPECIALIZADO_EN_INVOCACION= (new L("UI_ESPECIALIZADO_EN_INVOCACION","Especializado en Invocación","Specialized in Invocations")).getId();
 
 var INVOCACIONES_ARCANOS = (new L("INVOCACIONES_ARCANOS","Arcanos","Arcana")).getId();
 
