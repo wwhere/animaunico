@@ -801,6 +801,30 @@ function don(coste, opcion,aplicar) {
  * @param {string} opcion
  * @param {boolean} aplicar
  */
+function donIncompleto(coste, opcion,aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_DON);
+    } else {
+        personaje_actual.removeFlag(FLAG_DON);
+    }
+    lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA)
+}
+
+
+function esenciaSheele(coste, opcion,aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_ESENCIA_SHEELE);
+    } else {
+        personaje_actual.removeFlag(FLAG_ESENCIA_SHEELE);
+    }
+}
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
 function verLoSobrenatural(coste, opcion,aplicar) {
     if (aplicar) {
         personaje_actual.setFlag(FLAG_DESARROLLAR_VALORACION_MAGICA);
@@ -1605,6 +1629,14 @@ function magiaOpuesta(coste, opcion, aplicar) {
     }
 }
 
+function versatibilidadMetamagica(coste, opcion, aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_VERSATIBILIDAD_METAMAGICA);
+    } else {
+        personaje_actual.removeFlag(FLAG_VERSATIBILIDAD_METAMAGICA);
+    }
+}
+
 
 
 function sinBonificadorNatural(coste, opcion, aplicar) {
@@ -1635,6 +1667,18 @@ function kiImperceptible(coste, opcion,aplicar) {
         personaje_actual.removeBono(bono,true);
     }
 }
+
+function aprendizajeMagicoGradual(coste, opcion,aplicar) {
+    var bono = new Bono(BONO_HABILIDAD,HB_NIVEL_DE_VIA,5,"",true,BONO_ESPECIAL,VENT_APRENDIZAJE_MAGICO_GRADUAL);
+    if (aplicar) {
+        personaje_actual.addBono(bono,false,true);
+    } else {
+        personaje_actual.removeBono(bono,true);
+    }
+}
+
+
+
 
 function poderInnato(coste, opcion, aplicar) {
     if (aplicar) {
