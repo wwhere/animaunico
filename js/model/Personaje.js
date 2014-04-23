@@ -3708,6 +3708,7 @@ Personaje.prototype = {
         }
 
         this[HB_ACT].setValorInicial(valorBase);
+        this[HB_REGENERACION_ZEONICA].setValorInicial(valorBase);
         if (notificar)
             lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
@@ -4430,6 +4431,7 @@ Personaje.prototype = {
                 gasto = this[HB_ZEON].getPDinvertidos() +
                     this[HB_NIVEL_DE_VIA].getPDinvertidos() +
                     this[HB_ACT].getPDinvertidos() +
+                    this[HB_REGENERACION_ZEONICA].getPDinvertidos() +
                     this[HB_PROYECCION_MAGICA].getPDinvertidos() +
                     this[HB_CONVOCAR].getPDinvertidos() +
                     this[HB_DOMINAR].getPDinvertidos() +

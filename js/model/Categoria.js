@@ -267,6 +267,9 @@ Categoria.prototype =  {
             case HB_ACT :
                 return this.costeACT;
                 break;
+            case HB_REGENERACION_ZEONICA :
+                return this.costeACT / 2;
+                break;
             case HB_PROYECCION_MAGICA :
                 return this.proyeccionMagica;
                 break;

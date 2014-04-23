@@ -760,22 +760,14 @@ function muestraVentaja(ventajaComprada) {
  * @returns {*}
  */
 function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
-    var coste = 0;
-    var valorBase =0;
-    var bonos = [];
-    var botones;
+    var coste = personaje_actual.getCoste(nombreHabilidad, true);
+    var valorBase = personaje_actual.getHabilidadDePersonaje(nombreHabilidad).valorBase(coste);
+    var bonos = personaje_actual.getBonos(BONO_HABILIDAD, nombreHabilidad, CATEGORIA_BONO_CUALQUIERA);
     if (nombreHabilidad == HB_REGENERACION_ZEONICA) {
-        coste = personaje_actual.getCoste(HB_ACT, true);
-        valorBase = personaje_actual.getHabilidadDePersonaje(HB_ACT).valorBase(coste);
-        bonos = personaje_actual.getBonos(BONO_HABILIDAD, HB_ACT, CATEGORIA_BONO_CUALQUIERA);
-    } else {
-        coste = personaje_actual.getCoste(nombreHabilidad, true);
-        valorBase = personaje_actual.getHabilidadDePersonaje(nombreHabilidad).valorBase(coste);
-        bonos = personaje_actual.getBonos(BONO_HABILIDAD, nombreHabilidad, CATEGORIA_BONO_CUALQUIERA);
+        bonos.push(new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,personaje_actual[HB_ACT].valorFinalActual(),"",false,BONO_ESPECIAL,HB_ACT));
     }
-
-    botones = (mostrarBotones) ? muestraBotonMasMenosHabilidad(nombreHabilidad).addClass(CSS_MUESTRA_INLINE) : "";
     var mostrarBotones = ((coste != 0) || (nombreHabilidad == HB_POTENCIAL_PSIQUICO)) && muestraBotones;
+    var botones = (mostrarBotones) ? muestraBotonMasMenosHabilidad(nombreHabilidad).addClass(CSS_MUESTRA_INLINE) : "";
 
     return muestraValorConBonosYCoste(etiqueta,
         valorBase,

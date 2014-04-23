@@ -610,7 +610,7 @@ var UI_MC = (new L("dinero mc", "mc", "cp")).getId();
 
 
 var UI_ESPECIFICAR = (new L("Especificar","Especificar","Specify")).getId();
-var UI_CAMBIAR_ESPECIALIZACION = (new L("UI_CAMBIAR_ESPECIALIZACION","Cambiar especialización sí/no","Change specialization yes/no")).getId();
+var UI_CAMBIAR_ESPECIALIZACION = (new L("UI_CAMBIAR_ESPECIALIZACION","Sí/no","Yes/no")).getId();
 
 var UI_PREGUNTA_PUNTOS_METODO_5 = (new L("¿Cuántos puntos quieres repartir?","¿Cuántos puntos quieres repartir?","How many points?")).getId();
 var DIAG_METODO_CREACION_TITULO = (new L("Seleccionar método de creación","Seleccionar método de creación","Select creation method")).getId();
