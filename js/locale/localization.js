@@ -836,10 +836,13 @@ var HB_PROEZAS_FUERZA = (new L("Proezas de fuerza","Proezas de fuerza","Feats of
 var HB_RESISTENCIA_DOLOR = (new L("Resistencia al dolor","Resistencia al dolor","Withstand Pain")).getId();
 
 var TIPO_HB_CREATIVAS = (new L("Creativas","Creativas","Creative")).getId();
+var HB_ALQUIMIA = (new L("Alquimia","Alquimia","Alchemy")).getId();
+var HB_ANIMISMO = (new L("Animismo","Animismo","Animism")).getId();
 var HB_ARTE = (new L("Arte","Arte","Art")).getId();
 var HB_BAILE = (new L("Baile","Baile","Dance")).getId();
 var HB_FORJA = (new L("Forja","Forja","Forging")).getId();
 var HB_MUSICA = (new L("Música","Música","Music")).getId();
+var HB_RUNAS = (new L("Runas","Runas","Runes")).getId();
 var HB_TRUCOS_MANOS = (new L("Trucos de manos","Trucos de manos","Sleight of Hand")).getId();
 
 var PEN_ARMADURA_NO = (new L("Sin penalizador por armadura","Sin penalizador por armadura","Without Armor Penalty")).getId();
