@@ -415,3 +415,26 @@ var DEV_ALMA_INNATURAL = (new L("DEV_ALMA_INNATURAL","Alma Innatural (Devah)",
     "Alma Innatural (Devah)")).getId();
 var DEV_ALMA_INNATURAL_DESC = (new L("DEV_ALMA_INNATURAL_DESC","Debe elegir Don o Acceso a poderes psíquicos",
     "Must buy Gift or Psychic Access")).getId();
+
+var RAZA_NEPH_DEVAH = (new L("RAZA_NEPH_DEVAH","Devah Nephilim",
+    "Devah Nephilim")).getId();
+var DEV_NEPH_MENTE_COMPLEJA = (new L("DEV_NEPH_MENTE_COMPLEJA","Mente Compleja (Devah Nephilim)",
+    "Mente Compleja (Devah Nephilim)")).getId();
+var DEV_NEPH_MENTE_COMPLEJA_DESC = (new L("DEV_NEPH_MENTE_COMPLEJA_DESC","",
+    "")).getId();
+var DEV_NEPH_EL_OJO_DEL_ALMA = (new L("DEV_NEPH_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah Nephilim)",
+    "El Ojo del Alma (Devah Nephilim)")).getId();
+var DEV_NEPH_EL_OJO_DEL_ALMA_DESC = (new L("DEV_NEPH_EL_OJO_DEL_ALMA_DESC","",
+    "")).getId();
+var DEV_NEPH_LAZOS_EXISTENCIALES = (new L("DEV_NEPH_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah Nephilim)",
+    "Lazos Existenciales (Devah Nephilim)")).getId();
+var DEV_NEPH_LAZOS_EXISTENCIALES_DESC = (new L("DEV_NEPH_LAZOS_EXISTENCIALES_DESC","+10 Convocar, Desconvocar",
+    "+10 Summon, Banish")).getId();
+var DEV_NEPH_FRAGILIDAD_FISICA = (new L("DEV_NEPH_FRAGILIDAD_FISICA","Fragilidad Física (Devah Nephilim)",
+    "Fragilidad Física (Devah Nephilim)")).getId();
+var DEV_NEPH_FRAGILIDAD_FISICA_DESC = (new L("DEV_NEPH_FRAGILIDAD_FISICA_DESC","-10 RF y RE",
+    "-10 PR and DR")).getId();
+var DEV_NEPH_ALMA_INMORTAL = (new L("DEV_NEPH_ALMA_INMORTAL","Alma Innatural (Devah Nephilim)",
+    "Alma Innatural (Devah Nephilim)")).getId();
+var DEV_NEPH_ALMA_INMORTAL_DESC = (new L("DEV_NEPH_ALMA_INMORTAL_DESC","",
+    "")).getId();
