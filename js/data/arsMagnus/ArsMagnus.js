@@ -532,6 +532,7 @@ addArsMagnus(
                 new Requisito(REQUISITO_HABILIDAD_PARADA,"",150),
                 new Requisito(REQUISITO_HABILIDAD,HB_ESQUIVA,150)
             ],0),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_INHUMANIDAD,"",0)
         ],
         40,
@@ -546,6 +547,7 @@ addArsMagnus(
         ARS_MAGNUS_TAURUS,
         [
             new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",120),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_INHUMANIDAD,"",0),
             new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
                 new Requisito(REQUISITO_ARMA_MANEJADA,ARMA_MANDOBLE,0),
@@ -565,6 +567,7 @@ addArsMagnus(
         ARS_MAGNUS_GEMINI,
         [
             new Requisito(REQUISITO_CARACTERISTICA,DES,11),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_INHUMANIDAD,"",0)
         ],
         50,
@@ -611,6 +614,7 @@ addArsMagnus(
     new ArsMagnus(
         ARS_MAGNUS_LEO,
         [
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_INHUMANIDAD,"",0),
             new Requisito(REQUISITO_UNO_DE_LOS_SIGUIENTES,[
                 new Requisito(REQUISITO_TODOS_LOS_SIGUIENTES, [
@@ -732,6 +736,7 @@ addArsMagnus(
         [
             new Requisito(REQUISITO_ARS_MAGNUS,ARS_MAGNUS_SAGITTARIUS,0),
             new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",200),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_INHUMANIDAD,"",0),
             new Requisito(REQUISITO_CARACTERISTICA,DES,11)
         ],
@@ -749,6 +754,7 @@ addArsMagnus(
             new Requisito(REQUISITO_HABILIDAD,HB_MEDICINA,80),
             new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",100),
             new Requisito(REQUISITO_INHUMANIDAD,"",0),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_CARACTERISTICA,DES,9)
         ],
         20,
@@ -784,6 +790,7 @@ addArsMagnus(
         [
             new Requisito(REQUISITO_CARACTERISTICA,DES,10),
             new Requisito(REQUISITO_HABILIDAD_ATAQUE,"",120),
+            new Requisito(REQUISITO_HABILIDAD_KI,HAB_KI_USO_DEL_KI,0),
             new Requisito(REQUISITO_INHUMANIDAD,"",0)
         ],
         10,
