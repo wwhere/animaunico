@@ -88,3 +88,5 @@ addVentaja(ventajaTemp);
 addVentaja(new Ventaja( VENT_ESENCIA_SHEELE, "", VENT_ESENCIA_SHEELE_DESC, NO_REPETIBLE, [1], [], true, [], [esenciaSheele], GRUPO_OTRAS,[FLAG_ARCANA_EXXET_ENABLED]));
 addVentaja(new Ventaja( VENT_FAMILIAR, "", VENT_FAMILIAR_DESC, NO_REPETIBLE, [2,3], [], true, [], [], GRUPO_OTRAS,[FLAG_ARCANA_EXXET_ENABLED])); //TODO familiar
 addVentaja(new Ventaja( VENT_CONVOCADOR_DE_MASAS, "", VENT_CONVOCADOR_DE_MASAS_DESC, NO_REPETIBLE, [1,2,3], [], true, [], [], GRUPO_OTRAS,[FLAG_ARCANA_EXXET_ENABLED]));
+
+addVentaja(new Ventaja( VENT_AFINIDAD_DE_USO, "", VENT_AFINIDAD_DE_USO_DESC, NO_REPETIBLE, [1], [], true, [], [], GRUPO_OTRAS,[FLAG_PROMETHEUM_EXXET_ENABLED]));
