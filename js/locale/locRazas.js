@@ -380,3 +380,38 @@ var SYLV_NEPH_NECESIDADES_DESC = (new L("SYLV_NEPH_NECESIDADES_DESC","Sus necesi
     "Sus necesidades se reducen a la mitad de las de una persona normal. Eso no significa que no tengan hambre por comer de una manera escasa, sino que, en la práctica, no requieren tantos alimentos para sobrevivir.")).getId();
 var SYLV_NEPH_ALMA_DESC = (new L("SYLV_NEPH_ALMA_DESC","Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
     "Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
+
+var RAZA_DEVAH = (new L("RAZA_DEVAH","Devah",
+    "Devah")).getId();
+var DEV_MENTE_Y_ALMA_SUPERIOR = (new L("DEV_MENTE_Y_ALMA_SUPERIOR","Mente y Alma Superior (Devah)",
+    "Mente y Alma Superior (Devah)")).getId();
+var DEV_MENTE_Y_ALMA_SUPERIOR_DESC = (new L("DEV_MENTE_Y_ALMA_SUPERIOR_DESC","+1 INT, POD, VOL",
+    "+1 INT, POW, WP")).getId();
+var DEV_TAMAÑO_INNATURAL = (new L("DEV_TAMAÑO_INNATURAL","Tamaño Innatural (Devah)",
+    "Tamaño Innatural (Devah)")).getId();
+var DEV_TAMAÑO_INNATURAL_DESC = (new L("DEV_TAMAÑO_INNATURAL_DESC","+2 Tamaño",
+    "+2 Size")).getId();
+var DEV_COMUNICACION_SOBRENATURAL = (new L("DEV_COMUNICACION_SOBRENATURAL","Comunicación Sobrenatural (Devah)",
+    "Comunicación Sobrenatural (Devah)")).getId();
+var DEV_COMUNICACION_SOBRENATURAL_DESC = (new L("DEV_COMUNICACION_SOBRENATURAL_DESC","",
+    "")).getId();
+var DEV_MENTE_COMPLEJA = (new L("DEV_MENTE_COMPLEJA","Mente Compleja (Devah)",
+    "Mente Compleja (Devah)")).getId();
+var DEV_MENTE_COMPLEJA_DESC = (new L("DEV_MENTE_COMPLEJA_DESC","",
+    "")).getId();
+var DEV_EL_OJO_DEL_ALMA = (new L("DEV_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah)",
+    "El Ojo del Alma (Devah)")).getId();
+var DEV_EL_OJO_DEL_ALMA_DESC = (new L("DEV_EL_OJO_DEL_ALMA_DESC","",
+    "")).getId();
+var DEV_LAZOS_EXISTENCIALES = (new L("DEV_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah)",
+    "Lazos Existenciales (Devah)")).getId();
+var DEV_LAZOS_EXISTENCIALES_DESC = (new L("DEV_LAZOS_EXISTENCIALES_DESC","+10 Convocar, Controlar, Atar, Desconvocar",
+    "+10 Summon, Control, Bind, Banish")).getId();
+var DEV_FRAGILIDAD_FISICA = (new L("DEV_FRAGILIDAD_FISICA","Fragilidad Física (Devah)",
+    "Fragilidad Física (Devah)")).getId();
+var DEV_FRAGILIDAD_FISICA_DESC = (new L("DEV_FRAGILIDAD_FISICA_DESC","-1 FUE, -2 CON, -10 RF y RE",
+    "-1 STR, -2 CON, -10 PR and DR")).getId();
+var DEV_ALMA_INNATURAL = (new L("DEV_ALMA_INNATURAL","Alma Innatural (Devah)",
+    "Alma Innatural (Devah)")).getId();
+var DEV_ALMA_INNATURAL_DESC = (new L("DEV_ALMA_INNATURAL_DESC","Debe elegir Don o Acceso a poderes psíquicos",
+    "Must buy Gift or Psychic Access")).getId();

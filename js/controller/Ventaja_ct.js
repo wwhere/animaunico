@@ -1922,3 +1922,50 @@ function sangreLatente(coste, opcion, aplicar) {
     }
 }
 
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
+function menteYAlmaSuperiorDevah(coste, opcion, aplicar) {
+    aumentaCaracteristica(0,0,aplicar,INT,1);
+    aumentaCaracteristica(0,0,aplicar,POD,1);
+    aumentaCaracteristica(0,0,aplicar,VOL,1);
+}
+
+function fragilidadFisicaDevah(coste, opcion, aplicar) {
+    aumentaCaracteristica(0,0,aplicar,FUE,-1);
+    aumentaCaracteristica(0,0,aplicar,CON,-1);
+    aumentaResistencia(0,0,aplicar,RE,-10, RAZA_DEVAH);
+    aumentaResistencia(0,0,aplicar,RF,-10, RAZA_DEVAH);
+}
+
+function lazosExistencialesDevah(coste, opcion, aplicar) {
+    var bonoConvocar = new Bono(BONO_HABILIDAD,HB_CONVOCAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    var bonoAtar = new Bono(BONO_HABILIDAD,HB_ATAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    var bonoControlar = new Bono(BONO_HABILIDAD,HB_DOMINAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    var bonoDesvonvocar = new Bono(BONO_HABILIDAD,HB_DESCONVOCAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    if (aplicar) {
+        personaje_actual.addBono(bonoConvocar,false,false);
+        personaje_actual.addBono(bonoAtar,false,false);
+        personaje_actual.addBono(bonoControlar,false,false);
+        personaje_actual.addBono(bonoDesvonvocar,false,true);
+    } else {
+        personaje_actual.removeBono(bonoConvocar,false);
+        personaje_actual.removeBono(bonoAtar,false);
+        personaje_actual.removeBono(bonoControlar,false);
+        personaje_actual.removeBono(bonoDesvonvocar,true);
+    }
+}
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
+function almaInnaturalDevah(coste, opcion, aplicar) {
+   //TODO debe desarrollar don o acceso psíquico
+}
