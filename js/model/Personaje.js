@@ -1090,9 +1090,16 @@ Personaje.prototype = {
      */
     setRaza : function(raza) {
         var i;
+        var vent  = getVentaja(VENT_SENTIDOS_AGUDOS);
+        var conSentidos = false;
 
         /*Elimina todas las ventajas de origen racial*/
         this.eliminarElementosPCPorCampo("origen",ORIGEN_RAZA);
+
+        if (personaje_actual.hasVentaja(vent,"")) {
+            sentidosAgudos(1, "",false);
+            conSentidos = true;
+        }
 
         this.raza = raza;
 
@@ -1102,6 +1109,10 @@ Personaje.prototype = {
 
         for (i = 0; i < raza.desventajas.length; i++) {
             this.addVentaja(raza.desventajas[i],0,"",ORIGEN_RAZA,false,new RepartoCostes(),false);
+        }
+
+        if (conSentidos) {
+            sentidosAgudos(1, "",true);
         }
 
         this.ordenarElementosPC();

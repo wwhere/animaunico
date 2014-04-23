@@ -500,3 +500,26 @@ var VETALA_NEPH_ALMA_INMORTAL = (new L("VETALA_NEPH_ALMA_INMORTAL","Alma Inmorta
     "Alma Inmortal (Vetala Nephilim)")).getId();
 var VETALA_NEPH_ALMA_INMORTAL_DESC = (new L("VETALA_NEPH_ALMA_INMORTAL_DESC","",
     "")).getId();
+
+var RAZA_TUAN_DALYR = (new L("RAZA_TUAN_DALYR","Tuan Dalyr",
+    "Tuan Dalyr")).getId();
+var TUAN_DALYR_ARMAS_NATURALES = (new L("TUAN_DALYR_ARMAS_NATURALES","Armas Naturales (Tuan Dalyr)",
+    "Armas Naturales (Tuan Dalyr)")).getId();
+var TUAN_DALYR_ARMAS_NATURALES_DESC = (new L("TUAN_DALYR_ARMAS_NATURALES_DESC","",
+    "")).getId();
+var TUAN_DALYR_TRANSFORMACION = (new L("TUAN_DALYR_TRANSFORMACION","Transformación (Tuan Dalyr)",
+    "Transformación (Tuan Dalyr)")).getId();
+var TUAN_DALYR_TRANSFORMACION_DESC = (new L("TUAN_DALYR_TRANSFORMACION_DESC","",
+    "")).getId();
+var TUAN_DALYR_SENTIDO_DE_ANIMAL = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL","Sentido de Animal (Tuan Dalyr)",
+    "Sentido de Animal (Tuan Dalyr)")).getId();
+var TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC","+1 PER, Sentidos Agudos da +40",
+    "+1 PER, Acute Senses gives +40")).getId();
+var TUAN_DALYR_HIJOS_DE_LA_LUNA = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA","Hijos de la Luna (Tuan Dalyr)",
+    "Hijos de la Luna (Tuan Dalyr)")).getId();
+var TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC","",
+    "")).getId();
+var TUAN_DALYR_RASGOS_ANIMALES = (new L("TUAN_DALYR_RASGOS_ANIMALES","Rasgos Animales (Tuan Dalyr)",
+    "Rasgos Animales (Tuan Dalyr)")).getId();
+var TUAN_DALYR_RASGOS_ANIMALES_DESC = (new L("TUAN_DALYR_RASGOS_ANIMALES_DESC","",
+    "")).getId();
