@@ -380,3 +380,146 @@ var SYLV_NEPH_NECESIDADES_DESC = (new L("SYLV_NEPH_NECESIDADES_DESC","Sus necesi
     "Sus necesidades se reducen a la mitad de las de una persona normal. Eso no significa que no tengan hambre por comer de una manera escasa, sino que, en la práctica, no requieren tantos alimentos para sobrevivir.")).getId();
 var SYLV_NEPH_ALMA_DESC = (new L("SYLV_NEPH_ALMA_DESC","Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
     "Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
+
+var RAZA_DEVAH = (new L("RAZA_DEVAH","Devah",
+    "Devah")).getId();
+var DEV_MENTE_Y_ALMA_SUPERIOR = (new L("DEV_MENTE_Y_ALMA_SUPERIOR","Mente y Alma Superior (Devah)",
+    "Mente y Alma Superior (Devah)")).getId();
+var DEV_MENTE_Y_ALMA_SUPERIOR_DESC = (new L("DEV_MENTE_Y_ALMA_SUPERIOR_DESC","+1 INT, POD, VOL",
+    "+1 INT, POW, WP")).getId();
+var DEV_TAMAÑO_INNATURAL = (new L("DEV_TAMAÑO_INNATURAL","Tamaño Innatural (Devah)",
+    "Tamaño Innatural (Devah)")).getId();
+var DEV_TAMAÑO_INNATURAL_DESC = (new L("DEV_TAMAÑO_INNATURAL_DESC","+2 Tamaño",
+    "+2 Size")).getId();
+var DEV_COMUNICACION_SOBRENATURAL = (new L("DEV_COMUNICACION_SOBRENATURAL","Comunicación Sobrenatural (Devah)",
+    "Comunicación Sobrenatural (Devah)")).getId();
+var DEV_COMUNICACION_SOBRENATURAL_DESC = (new L("DEV_COMUNICACION_SOBRENATURAL_DESC","",
+    "")).getId();
+var DEV_MENTE_COMPLEJA = (new L("DEV_MENTE_COMPLEJA","Mente Compleja (Devah)",
+    "Mente Compleja (Devah)")).getId();
+var DEV_MENTE_COMPLEJA_DESC = (new L("DEV_MENTE_COMPLEJA_DESC","",
+    "")).getId();
+var DEV_EL_OJO_DEL_ALMA = (new L("DEV_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah)",
+    "El Ojo del Alma (Devah)")).getId();
+var DEV_EL_OJO_DEL_ALMA_DESC = (new L("DEV_EL_OJO_DEL_ALMA_DESC","",
+    "")).getId();
+var DEV_LAZOS_EXISTENCIALES = (new L("DEV_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah)",
+    "Lazos Existenciales (Devah)")).getId();
+var DEV_LAZOS_EXISTENCIALES_DESC = (new L("DEV_LAZOS_EXISTENCIALES_DESC","+10 Convocar, Controlar, Atar, Desconvocar",
+    "+10 Summon, Control, Bind, Banish")).getId();
+var DEV_FRAGILIDAD_FISICA = (new L("DEV_FRAGILIDAD_FISICA","Fragilidad Física (Devah)",
+    "Fragilidad Física (Devah)")).getId();
+var DEV_FRAGILIDAD_FISICA_DESC = (new L("DEV_FRAGILIDAD_FISICA_DESC","-1 FUE, -2 CON, -10 RF y RE",
+    "-1 STR, -2 CON, -10 PR and DR")).getId();
+var DEV_ALMA_INNATURAL = (new L("DEV_ALMA_INNATURAL","Alma Innatural (Devah)",
+    "Alma Innatural (Devah)")).getId();
+var DEV_ALMA_INNATURAL_DESC = (new L("DEV_ALMA_INNATURAL_DESC","Debe elegir Don o Acceso a poderes psíquicos",
+    "Must buy Gift or Psychic Access")).getId();
+
+var RAZA_NEPH_DEVAH = (new L("RAZA_NEPH_DEVAH","Devah Nephilim",
+    "Devah Nephilim")).getId();
+var DEV_NEPH_MENTE_COMPLEJA = (new L("DEV_NEPH_MENTE_COMPLEJA","Mente Compleja (Devah Nephilim)",
+    "Mente Compleja (Devah Nephilim)")).getId();
+var DEV_NEPH_MENTE_COMPLEJA_DESC = (new L("DEV_NEPH_MENTE_COMPLEJA_DESC","",
+    "")).getId();
+var DEV_NEPH_EL_OJO_DEL_ALMA = (new L("DEV_NEPH_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah Nephilim)",
+    "El Ojo del Alma (Devah Nephilim)")).getId();
+var DEV_NEPH_EL_OJO_DEL_ALMA_DESC = (new L("DEV_NEPH_EL_OJO_DEL_ALMA_DESC","",
+    "")).getId();
+var DEV_NEPH_LAZOS_EXISTENCIALES = (new L("DEV_NEPH_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah Nephilim)",
+    "Lazos Existenciales (Devah Nephilim)")).getId();
+var DEV_NEPH_LAZOS_EXISTENCIALES_DESC = (new L("DEV_NEPH_LAZOS_EXISTENCIALES_DESC","+10 Convocar, Desconvocar",
+    "+10 Summon, Banish")).getId();
+var DEV_NEPH_FRAGILIDAD_FISICA = (new L("DEV_NEPH_FRAGILIDAD_FISICA","Fragilidad Física (Devah Nephilim)",
+    "Fragilidad Física (Devah Nephilim)")).getId();
+var DEV_NEPH_FRAGILIDAD_FISICA_DESC = (new L("DEV_NEPH_FRAGILIDAD_FISICA_DESC","-10 RF y RE",
+    "-10 PR and DR")).getId();
+var DEV_NEPH_ALMA_INMORTAL = (new L("DEV_NEPH_ALMA_INMORTAL","Alma Innatural (Devah Nephilim)",
+    "Alma Innatural (Devah Nephilim)")).getId();
+var DEV_NEPH_ALMA_INMORTAL_DESC = (new L("DEV_NEPH_ALMA_INMORTAL_DESC","",
+    "")).getId();
+
+var RAZA_VETALA = (new L("RAZA_VETALA","Vetala",
+    "Vetala")).getId();
+var VETALA_HIJOS_DE_LA_NOCHE = (new L("VETALA_HIJOS_DE_LA_NOCHE","Hijos de la Noche (Vetala)",
+    "Hijos de la Noche (Vetala)")).getId();
+var VETALA_HIJOS_DE_LA_NOCHE_DESC = (new L("VETALA_HIJOS_DE_LA_NOCHE_DESC","",
+    "")).getId();
+var VETALA_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala)",
+    "Aguante al Daño Crítico (Vetala)")).getId();
+var VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC","",
+    "")).getId();
+var VETALA_ULTRASONIDOS = (new L("VETALA_ULTRASONIDOS","Ultrasonidos (Vetala)",
+    "Ultrasonidos (Vetala)")).getId();
+var VETALA_ULTRASONIDOS_DESC = (new L("VETALA_ULTRASONIDOS_DESC","",
+    "")).getId();
+var VETALA_EXTASIS_SANGUINEO = (new L("VETALA_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala)",
+    "Éxtasis Sanguíneo (Vetala)")).getId();
+var VETALA_EXTASIS_SANGUINEO_DESC = (new L("VETALA_EXTASIS_SANGUINEO_DESC","",
+    "")).getId();
+var VETALA_CURACION_RAPIDA = (new L("VETALA_CURACION_RAPIDA","Curación Rápida (Vetala)",
+    "Curación Rápida (Vetala)")).getId();
+var VETALA_CURACION_RAPIDA_DESC = (new L("VETALA_CURACION_RAPIDA_DESC","",
+    "")).getId();
+var VETALA_VULNERABLE_A_LA_LUZ = (new L("VETALA_VULNERABLE_A_LA_LUZ","Vulnerable a la Luz (Vetala)",
+    "Vulnerable a la Luz (Vetala)")).getId();
+var VETALA_VULNERABLE_A_LA_LUZ_DESC = (new L("VETALA_VULNERABLE_A_LA_LUZ_DESC","",
+    "")).getId();
+var VETALA_SU_VISION_DEL_MUNDO = (new L("VETALA_SU_VISION_DEL_MUNDO","Su Visión del Mundo (Vetala)",
+    "Su Visión del Mundo (Vetala)")).getId();
+var VETALA_SU_VISION_DEL_MUNDO_DESC = (new L("VETALA_SU_VISION_DEL_MUNDO_DESC","",
+    "")).getId();
+
+var RAZA_NEPH_VETALA = (new L("RAZA_NEPH_VETALA","Vetala Nephilim",
+    "Vetala Nephilim")).getId();
+var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala Nephilim)",
+    "Aguante al Daño Crítico (Vetala Nephilim)")).getId();
+var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC","",
+    "")).getId();
+var VETALA_NEPH_EXTASIS_SANGUINEO = (new L("VETALA_NEPH_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala Nephilim)",
+    "Éxtasis Sanguíneo (Vetala Nephilim)")).getId();
+var VETALA_NEPH_EXTASIS_SANGUINEO_DESC = (new L("VETALA_NEPH_EXTASIS_SANGUINEO_DESC","",
+    "")).getId();
+var VETALA_NEPH_CURACION_RAPIDA = (new L("VETALA_NEPH_CURACION_RAPIDA","Curación Rápida (Vetala Nephilim)",
+    "Curación Rápida (Vetala Nephilim)")).getId();
+var VETALA_NEPH_CURACION_RAPIDA_DESC = (new L("VETALA_NEPH_CURACION_RAPIDA_DESC","",
+    "")).getId();
+var VETALA_NEPH_PIEL_FOTOSENSIBLE = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE","Piel Fotosensible (Vetala Nephilim)",
+    "Piel Fotosensible (Vetala Nephilim)")).getId();
+var VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC","",
+    "")).getId();
+var VETALA_NEPH_OBSESION_POR_LA_SANGRE = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE","Obsesión por la Sangre (Vetala Nephilim)",
+    "Obsesión por la Sangre (Vetala Nephilim)")).getId();
+var VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC","",
+    "")).getId();
+var VETALA_NEPH_SALUD_ENFERMIZA = (new L("VETALA_NEPH_SALUD_ENFERMIZA","Salud Enfermiza (Vetala Nephilim)",
+    "Salud Enfermiza (Vetala Nephilim)")).getId();
+var VETALA_NEPH_SALUD_ENFERMIZA_DESC = (new L("VETALA_NEPH_SALUD_ENFERMIZA_DESC","",
+    "")).getId();
+var VETALA_NEPH_ALMA_INMORTAL = (new L("VETALA_NEPH_ALMA_INMORTAL","Alma Inmortal (Vetala Nephilim)",
+    "Alma Inmortal (Vetala Nephilim)")).getId();
+var VETALA_NEPH_ALMA_INMORTAL_DESC = (new L("VETALA_NEPH_ALMA_INMORTAL_DESC","",
+    "")).getId();
+
+var RAZA_TUAN_DALYR = (new L("RAZA_TUAN_DALYR","Tuan Dalyr",
+    "Tuan Dalyr")).getId();
+var TUAN_DALYR_ARMAS_NATURALES = (new L("TUAN_DALYR_ARMAS_NATURALES","Armas Naturales (Tuan Dalyr)",
+    "Armas Naturales (Tuan Dalyr)")).getId();
+var TUAN_DALYR_ARMAS_NATURALES_DESC = (new L("TUAN_DALYR_ARMAS_NATURALES_DESC","",
+    "")).getId();
+var TUAN_DALYR_TRANSFORMACION = (new L("TUAN_DALYR_TRANSFORMACION","Transformación (Tuan Dalyr)",
+    "Transformación (Tuan Dalyr)")).getId();
+var TUAN_DALYR_TRANSFORMACION_DESC = (new L("TUAN_DALYR_TRANSFORMACION_DESC","",
+    "")).getId();
+var TUAN_DALYR_SENTIDO_DE_ANIMAL = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL","Sentido de Animal (Tuan Dalyr)",
+    "Sentido de Animal (Tuan Dalyr)")).getId();
+var TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC","+1 PER, Sentidos Agudos da +40",
+    "+1 PER, Acute Senses gives +40")).getId();
+var TUAN_DALYR_HIJOS_DE_LA_LUNA = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA","Hijos de la Luna (Tuan Dalyr)",
+    "Hijos de la Luna (Tuan Dalyr)")).getId();
+var TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC","",
+    "")).getId();
+var TUAN_DALYR_RASGOS_ANIMALES = (new L("TUAN_DALYR_RASGOS_ANIMALES","Rasgos Animales (Tuan Dalyr)",
+    "Rasgos Animales (Tuan Dalyr)")).getId();
+var TUAN_DALYR_RASGOS_ANIMALES_DESC = (new L("TUAN_DALYR_RASGOS_ANIMALES_DESC","",
+    "")).getId();

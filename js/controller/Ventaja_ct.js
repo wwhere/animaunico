@@ -244,6 +244,17 @@ function armasJayan(coste, opcion, aplicar) {
  * @param {string} opcion
  * @param {boolean} aplicar
  */
+function armasNaturalesTuanDalyr(coste, opcion, aplicar) {
+    //TODO otorgar armas naturales segun pag 171 LQCCN
+}
+
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
 function debilidadJayan(coste, opcion, aplicar) {
     aumentaResistencia(0,0,aplicar,RM,-20,RAZA_JAYAN);
     aumentaCaracteristica(0,0,aplicar,POD,-1);
@@ -763,8 +774,12 @@ function aptoEnUnaMateria(coste, opcion,aplicar) {
  * @param {boolean} aplicar
  */
 function sentidosAgudos(coste, opcion,aplicar) {
-    var bonoA = new Bono(BONO_HABILIDAD,HB_ADVERTIR,50,"",false,BONO_ESPECIAL,VENT_SENTIDOS_AGUDOS);
-    var bonoB = new Bono(BONO_HABILIDAD,HB_BUSCAR,50,"",false,BONO_ESPECIAL,VENT_SENTIDOS_AGUDOS);
+    var valorBono = 50;
+    if (personaje_actual.hasFlag(FLAG_SENTIDO_DE_ANIMAL)) {
+        valorBono = 80;
+    }
+    var bonoA = new Bono(BONO_HABILIDAD,HB_ADVERTIR,valorBono,"",false,BONO_ESPECIAL,VENT_SENTIDOS_AGUDOS);
+    var bonoB = new Bono(BONO_HABILIDAD,HB_BUSCAR,valorBono,"",false,BONO_ESPECIAL,VENT_SENTIDOS_AGUDOS);
 
     desactivarNotificaciones();
     if (aplicar) {
@@ -1922,3 +1937,77 @@ function sangreLatente(coste, opcion, aplicar) {
     }
 }
 
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
+function menteYAlmaSuperiorDevah(coste, opcion, aplicar) {
+    aumentaCaracteristica(0,0,aplicar,INT,1);
+    aumentaCaracteristica(0,0,aplicar,POD,1);
+    aumentaCaracteristica(0,0,aplicar,VOL,1);
+}
+
+function fragilidadFisicaDevah(coste, opcion, aplicar) {
+    aumentaCaracteristica(0,0,aplicar,FUE,-1);
+    aumentaCaracteristica(0,0,aplicar,CON,-1);
+    aumentaResistencia(0,0,aplicar,RE,-10, RAZA_DEVAH);
+    aumentaResistencia(0,0,aplicar,RF,-10, RAZA_DEVAH);
+}
+
+function fragilidadFisicaDevahNephilim(coste, opcion, aplicar) {
+    aumentaResistencia(0,0,aplicar,RE,-10, RAZA_NEPH_DEVAH);
+    aumentaResistencia(0,0,aplicar,RF,-10, RAZA_NEPH_DEVAH);
+}
+
+function lazosExistencialesDevah(coste, opcion, aplicar) {
+    var bonoConvocar = new Bono(BONO_HABILIDAD,HB_CONVOCAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    var bonoAtar = new Bono(BONO_HABILIDAD,HB_ATAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    var bonoControlar = new Bono(BONO_HABILIDAD,HB_DOMINAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    var bonoDesvonvocar = new Bono(BONO_HABILIDAD,HB_DESCONVOCAR,10,"",false,BONO_ESPECIAL,RAZA_DEVAH);
+    if (aplicar) {
+        personaje_actual.addBono(bonoConvocar,false,false);
+        personaje_actual.addBono(bonoAtar,false,false);
+        personaje_actual.addBono(bonoControlar,false,false);
+        personaje_actual.addBono(bonoDesvonvocar,false,true);
+    } else {
+        personaje_actual.removeBono(bonoConvocar,false);
+        personaje_actual.removeBono(bonoAtar,false);
+        personaje_actual.removeBono(bonoControlar,false);
+        personaje_actual.removeBono(bonoDesvonvocar,true);
+    }
+}
+
+function lazosExistencialesDevahNephilim(coste, opcion, aplicar) {
+    var bonoConvocar = new Bono(BONO_HABILIDAD,HB_CONVOCAR,10,"",false,BONO_ESPECIAL,RAZA_NEPH_DEVAH);
+    var bonoDesvonvocar = new Bono(BONO_HABILIDAD,HB_DESCONVOCAR,10,"",false,BONO_ESPECIAL,RAZA_NEPH_DEVAH);
+    if (aplicar) {
+        personaje_actual.addBono(bonoConvocar,false,false);
+        personaje_actual.addBono(bonoDesvonvocar,false,true);
+    } else {
+        personaje_actual.removeBono(bonoConvocar,false);
+        personaje_actual.removeBono(bonoDesvonvocar,true);
+    }
+}
+
+
+/**
+ *
+ * @param {number} coste
+ * @param {string} opcion
+ * @param {boolean} aplicar
+ */
+function almaInnaturalDevah(coste, opcion, aplicar) {
+   //TODO debe desarrollar don o acceso psíquico
+}
+
+function sentidoDeAnimalTuanDalyr(coste, opcion, aplicar) {
+    aumentaCaracteristica(0,0,aplicar,PER,1);
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_SENTIDO_DE_ANIMAL);
+    } else {
+        personaje_actual.removeFlag(FLAG_SENTIDO_DE_ANIMAL);
+    }
+}
