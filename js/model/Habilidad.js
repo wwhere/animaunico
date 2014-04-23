@@ -10,6 +10,7 @@
  * @param {string[]} especializaciones
  * @param {number} puntosAComprar
  * @constructor
+ * @param {number} puntosPorCoste
  */
 function Habilidad(nombre, tipo, esPrincipal, caracteristica, isConocimiento, penalizadorArmadura, especializaciones, puntosAComprar, puntosPorCoste) {
     /** @type string */
@@ -190,7 +191,7 @@ HabilidadDePersonaje.prototype = {
     },
 
     /**
-     * @returns {strin
+     * @returns {string}
      */
     getTipo : function() {
         return this.habilidad.getTipo();
@@ -304,6 +305,8 @@ HabilidadDePersonaje.prototype = {
             return potencial;
         } else if (this.habilidad.getNombre() == HB_ACT) {
             return this.valorInicial * (1 + this.valorPrevio + Math.floor(this.PDinvertidos / coste));
+        } else if (this.habilidad.getNombre() == HB_REGENERACION_ZEONICA) {
+            return this.valorInicial * (this.valorPrevio + Math.floor(this.PDinvertidos / coste));
         }
 
 
@@ -380,6 +383,10 @@ HabilidadDePersonaje.prototype = {
             if (sumaInnatos > 50) {
                 valorFinal -= (sumaInnatos-50);
             }
+        }
+
+        if (this.getNombre == HB_REGENERACION_ZEONICA) {
+            valorFinal += personaje_actual[HB_ACT].valorFinalActual();
         }
 
         if (sumaNaturalesYCarac > 100) {

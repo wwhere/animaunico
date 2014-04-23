@@ -185,6 +185,7 @@ function initHabilidadesMagia() {
     addHabilidad(new Habilidad(HB_NIVEL_DE_VIA, TIPO_HB_SOBRENATURAL, true, "", false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_ZEON, TIPO_HB_SOBRENATURAL, true, POD, false, PEN_ARMADURA_NO, [], 5, 5));
     addHabilidad(new Habilidad(HB_ACT, TIPO_HB_SOBRENATURAL, true, POD, false, PEN_ARMADURA_NO, [], 1, 1));
+    addHabilidad(new Habilidad(HB_REGENERACION_ZEONICA, TIPO_HB_SOBRENATURAL, true, "", false, PEN_ARMADURA_NO, [], 1, 1));
     addHabilidad(new Habilidad(HB_PROYECCION_MAGICA, TIPO_HB_SOBRENATURAL, true, DES, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_CONVOCAR, TIPO_HB_SOBRENATURAL, true, POD, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_DOMINAR, TIPO_HB_SOBRENATURAL, true, VOL, false, PEN_ARMADURA_NO, [], 5, 1));

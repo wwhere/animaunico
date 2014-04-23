@@ -610,7 +610,7 @@ var UI_MC = (new L("dinero mc", "mc", "cp")).getId();
 
 
 var UI_ESPECIFICAR = (new L("Especificar","Especificar","Specify")).getId();
-var UI_CAMBIAR_ESPECIALIZACION = (new L("UI_CAMBIAR_ESPECIALIZACION","Cambiar especialización sí/no","Change specialization yes/no")).getId();
+var UI_CAMBIAR_ESPECIALIZACION = (new L("UI_CAMBIAR_ESPECIALIZACION","Sí/no","Yes/no")).getId();
 
 var UI_PREGUNTA_PUNTOS_METODO_5 = (new L("¿Cuántos puntos quieres repartir?","¿Cuántos puntos quieres repartir?","How many points?")).getId();
 var DIAG_METODO_CREACION_TITULO = (new L("Seleccionar método de creación","Seleccionar método de creación","Select creation method")).getId();
@@ -769,6 +769,7 @@ var TIPO_HB_SOBRENATURAL = (new L("Habilidades Sobrenaturales","Habilidades Sobr
 var HB_NIVEL_DE_VIA = (new L("HB_NIVEL_DE_VIA","Nivel de vía","Path levels")).getId();
 var HB_ZEON = (new L("Zeon","Zeon","Zeon")).getId();
 var HB_ACT = (new L("ACT","ACT","MA")).getId();
+var HB_REGENERACION_ZEONICA = (new L("HB_REGENERACION_ZEONICA","Regeneración Zeónica","Zeonic Regeneration")).getId();
 var HB_PROYECCION_MAGICA = (new L("Proyección Mágica","Proyección Mágica","Magic Projection")).getId();
 var HB_CONVOCAR = (new L("Convocar","Convocar","Summon")).getId();
 var HB_DOMINAR = (new L("Dominar","Dominar","Control")).getId();
