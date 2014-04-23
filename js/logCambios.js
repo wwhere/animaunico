@@ -1,8 +1,4 @@
-/**
- * Created by Guille on 5/12/13.
- */
-
-var CURRENT_VERSION = 55;
+var CURRENT_VERSION = 56;
 
 function mostrarLogCambios() {
     $("#logCambios").dialog({
