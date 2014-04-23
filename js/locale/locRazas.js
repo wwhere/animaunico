@@ -438,3 +438,65 @@ var DEV_NEPH_ALMA_INMORTAL = (new L("DEV_NEPH_ALMA_INMORTAL","Alma Innatural (De
     "Alma Innatural (Devah Nephilim)")).getId();
 var DEV_NEPH_ALMA_INMORTAL_DESC = (new L("DEV_NEPH_ALMA_INMORTAL_DESC","",
     "")).getId();
+
+var RAZA_VETALA = (new L("RAZA_VETALA","Vetala",
+    "Vetala")).getId();
+var VETALA_HIJOS_DE_LA_NOCHE = (new L("VETALA_HIJOS_DE_LA_NOCHE","Hijos de la Noche (Vetala)",
+    "Hijos de la Noche (Vetala)")).getId();
+var VETALA_HIJOS_DE_LA_NOCHE_DESC = (new L("VETALA_HIJOS_DE_LA_NOCHE_DESC","",
+    "")).getId();
+var VETALA_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala)",
+    "Aguante al Daño Crítico (Vetala)")).getId();
+var VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC","",
+    "")).getId();
+var VETALA_ULTRASONIDOS = (new L("VETALA_ULTRASONIDOS","Ultrasonidos (Vetala)",
+    "Ultrasonidos (Vetala)")).getId();
+var VETALA_ULTRASONIDOS_DESC = (new L("VETALA_ULTRASONIDOS_DESC","",
+    "")).getId();
+var VETALA_EXTASIS_SANGUINEO = (new L("VETALA_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala)",
+    "Éxtasis Sanguíneo (Vetala)")).getId();
+var VETALA_EXTASIS_SANGUINEO_DESC = (new L("VETALA_EXTASIS_SANGUINEO_DESC","",
+    "")).getId();
+var VETALA_CURACION_RAPIDA = (new L("VETALA_CURACION_RAPIDA","Curación Rápida (Vetala)",
+    "Curación Rápida (Vetala)")).getId();
+var VETALA_CURACION_RAPIDA_DESC = (new L("VETALA_CURACION_RAPIDA_DESC","",
+    "")).getId();
+var VETALA_VULNERABLE_A_LA_LUZ = (new L("VETALA_VULNERABLE_A_LA_LUZ","Vulnerable a la Luz (Vetala)",
+    "Vulnerable a la Luz (Vetala)")).getId();
+var VETALA_VULNERABLE_A_LA_LUZ_DESC = (new L("VETALA_VULNERABLE_A_LA_LUZ_DESC","",
+    "")).getId();
+var VETALA_SU_VISION_DEL_MUNDO = (new L("VETALA_SU_VISION_DEL_MUNDO","Su Visión del Mundo (Vetala)",
+    "Su Visión del Mundo (Vetala)")).getId();
+var VETALA_SU_VISION_DEL_MUNDO_DESC = (new L("VETALA_SU_VISION_DEL_MUNDO_DESC","",
+    "")).getId();
+
+var RAZA_NEPH_VETALA = (new L("RAZA_NEPH_VETALA","Vetala Nephilim",
+    "Vetala Nephilim")).getId();
+var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala Nephilim)",
+    "Aguante al Daño Crítico (Vetala Nephilim)")).getId();
+var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC","",
+    "")).getId();
+var VETALA_NEPH_EXTASIS_SANGUINEO = (new L("VETALA_NEPH_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala Nephilim)",
+    "Éxtasis Sanguíneo (Vetala Nephilim)")).getId();
+var VETALA_NEPH_EXTASIS_SANGUINEO_DESC = (new L("VETALA_NEPH_EXTASIS_SANGUINEO_DESC","",
+    "")).getId();
+var VETALA_NEPH_CURACION_RAPIDA = (new L("VETALA_NEPH_CURACION_RAPIDA","Curación Rápida (Vetala Nephilim)",
+    "Curación Rápida (Vetala Nephilim)")).getId();
+var VETALA_NEPH_CURACION_RAPIDA_DESC = (new L("VETALA_NEPH_CURACION_RAPIDA_DESC","",
+    "")).getId();
+var VETALA_NEPH_PIEL_FOTOSENSIBLE = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE","Piel Fotosensible (Vetala Nephilim)",
+    "Piel Fotosensible (Vetala Nephilim)")).getId();
+var VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC","",
+    "")).getId();
+var VETALA_NEPH_OBSESION_POR_LA_SANGRE = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE","Obsesión por la Sangre (Vetala Nephilim)",
+    "Obsesión por la Sangre (Vetala Nephilim)")).getId();
+var VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC","",
+    "")).getId();
+var VETALA_NEPH_SALUD_ENFERMIZA = (new L("VETALA_NEPH_SALUD_ENFERMIZA","Salud Enfermiza (Vetala Nephilim)",
+    "Salud Enfermiza (Vetala Nephilim)")).getId();
+var VETALA_NEPH_SALUD_ENFERMIZA_DESC = (new L("VETALA_NEPH_SALUD_ENFERMIZA_DESC","",
+    "")).getId();
+var VETALA_NEPH_ALMA_INMORTAL = (new L("VETALA_NEPH_ALMA_INMORTAL","Alma Inmortal (Vetala Nephilim)",
+    "Alma Inmortal (Vetala Nephilim)")).getId();
+var VETALA_NEPH_ALMA_INMORTAL_DESC = (new L("VETALA_NEPH_ALMA_INMORTAL_DESC","",
+    "")).getId();
