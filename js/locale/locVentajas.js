@@ -505,9 +505,13 @@ var VENT_FAMILIAR= (new L("VENT_FAMILIAR","Familiar",
     "Familiar")).getId();
 var VENT_FAMILIAR_DESC= (new L("VENT_FAMILIAR_DESC","",
     "")).getId();
-var VENT_CONVOCADOR_DE_MASAS= (new L("VENT_CONVOCADOR_DE_MASAS","Convocador de Masas",
+var VENT_CONVOCADOR_DE_MASAS = (new L("VENT_CONVOCADOR_DE_MASAS","Convocador de Masas",
     "Mass Summoner")).getId();
 var VENT_CONVOCADOR_DE_MASAS_DESC= (new L("VENT_CONVOCADOR_DE_MASAS_DESC","",
     "")).getId();
+/******/
 
-
+var VENT_AFINIDAD_DE_USO = (new L("VENT_AFINIDAD_DE_USO","Afinidad de Uso",
+    "Use Affinity")).getId();
+var VENT_AFINIDAD_DE_USO_DESC = (new L("VENT_AFINIDAD_DE_USO_DESC","",
+    "")).getId();
