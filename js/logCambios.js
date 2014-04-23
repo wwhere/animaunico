@@ -1,4 +1,4 @@
-var CURRENT_VERSION = 56;
+var CURRENT_VERSION = 57;
 
 function mostrarLogCambios() {
     $("#logCambios").dialog({
