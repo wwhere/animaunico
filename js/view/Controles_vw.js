@@ -468,7 +468,7 @@ function muestraBotonAnular(callback, parametros) {
  * @param {object} parametros
  */
 function dialogoSeleccionMultiple(gruposOpciones, parametros, callback) {
-    var dialogo = $("<div></div>");
+    var dialogo = getDiv();
 
     dialogo.dialog({
         modal: true,

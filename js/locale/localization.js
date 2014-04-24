@@ -1065,9 +1065,13 @@ var UI_NACION = (new L("UI_NACION","Nación de origen","Nation of origin")).getI
 var UI_ETNIA = (new L("UI_ETNIA","Etnia","Ethnicity")).getId();
 
 var UI_AUMENTAR_CM_DISMINUIR_KI = (new L("UI_AUMENTAR_CM_DISMINUIR_KI","+10 CM, -1 Ki","+10 MK, -1 Ki")).getId();
+var UI_AUMENTAR_KI_DISMINUIR_CM = (new L("UI_AUMENTAR_KI_DISMINUIR_CM","-5 CM, +2 Ki","-5 MK, +2 Ki")).getId();
 var UI_TECNICA_DEBE_TENER_3 = (new L("UI_TECNICA_DEBE_TENER_3","La técnica debe basarse al menos en 3 Características","The technique needs to be based in at least 3 attributes")).getId();
 var UI_MAX_5_AUMENTOS_CM = (new L("UI_MAX_5_AUMENTOS_CM","El ki sólo puede reducirse 5 puntos de este modo.","Ki value can only be reduced by 5 in this way.")).getId();
+var UI_MAX_4_AUMENTOS_KI = (new L("UI_MAX_4_AUMENTOS_KI","El CM sólo puede reducirse 20 puntos de este modo.","KM value can only be reduced by 20 in this way.")).getId();
 
 var UI_ANULAR = (new L("UI_ANULAR","Anular","Cancel")).getId();
 
 var UI_MAX_CM = (new L("UI_MAX_CM","Max CM alcanzado","Max MK reached")).getId();
+var UI_APLICAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_APLICAR_MENOS_UNO_A_DOS_CARAC","Aumenta dos puntos de ki entre las siguientes (Selecciona dos)","Add two points of ki among the following (select two)")).getId();
+var UI_CANCELAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_CANCELAR_MENOS_UNO_A_DOS_CARAC","Cancela el aumento de dos puntos de ki entre las siguientes (Selecciona dos)","Cancel the two points added of ki among the following (select two)")).getId();

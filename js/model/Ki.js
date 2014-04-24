@@ -1268,6 +1268,17 @@ TecnicaKi.prototype = {
         }
     },
 
+    addAumentoKi : function(caracteristica1,caracteristica2) {
+        if (this.getTotalAumentosKi() < 4) {
+            this.kiAumentados[caracteristica1]++;
+            this.kiAumentados[caracteristica2]++;
+            this.ajusteCM -= 5;
+            lanzarEvento(EVENT_TECNICA_CREACION);
+        } else {
+            alert(_l(UI_MAX_4_AUMENTOS_KI));
+        }
+    },
+
     removeAumentoCM : function(caracteristica) {
         if (this.kiReducidos[caracteristica] > 0) {
             this.kiReducidos[caracteristica]--;
@@ -1276,24 +1287,39 @@ TecnicaKi.prototype = {
         }
     },
 
+
+    removeAumentoKi : function(caracteristica1,caracteristica2) {
+        if ((this.kiAumentados[caracteristica1] > 0) && (this.kiAumentados[caracteristica2] > 0)) {
+            this.kiAumentados[caracteristica1]--;
+            this.kiAumentados[caracteristica2]--;
+            this.ajusteCM += 5;
+            lanzarEvento(EVENT_TECNICA_CREACION);
+        }
+    },
+
     getTotalAumentosCM : function() {
-        var total = 0;
+        return this.kiReducidos[AGI] +
+            this.kiReducidos[DES] +
+            this.kiReducidos[CON] +
+            this.kiReducidos[FUE] +
+            this.kiReducidos[POD] +
+            this.kiReducidos[VOL];
+    },
 
-        if (this.kiReducidos[AGI] != 0) total++;
-        if (this.kiReducidos[DES] != 0) total++;
-        if (this.kiReducidos[CON] != 0) total++;
-        if (this.kiReducidos[FUE] != 0) total++;
-        if (this.kiReducidos[POD] != 0) total++;
-        if (this.kiReducidos[VOL] != 0) total++;
-
-        return total;
+    getTotalAumentosKi : function() {
+        return (this.kiAumentados[AGI] +
+            this.kiAumentados[DES] +
+            this.kiAumentados[CON] +
+            this.kiAumentados[FUE] +
+            this.kiAumentados[POD] +
+            this.kiAumentados[VOL])/2;
     },
 
     getCosteKi : function() {
         if (!this.costeKi) {
             var costeKi = new CosteKi(this.kiAumentados[AGI],this.kiAumentados[CON],this.kiAumentados[DES],this.kiAumentados[FUE],this.kiAumentados[POD],this.kiAumentados[VOL],AGI);
             if (this.efectoPrimario) {
-                costeKi = this.efectoPrimario.getCosteKiTotal();
+                costeKi = this.efectoPrimario.getCosteKiTotal().sumaCosteKi(costeKi);
             }
             for (var i = 0; i < this.efectosSecundarios.length; i++) {
                 costeKi = this.efectosSecundarios[i].getCosteKiTotal().sumaCosteKi(costeKi);

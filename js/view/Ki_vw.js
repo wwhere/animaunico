@@ -253,8 +253,11 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         divFila.append(divResumenTecnica);
 
         /*** poder aumentar/disminuir CM y ki */
+        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_KI_DISMINUIR_CM),{tecnicaKi: tecnicaKi},dialogoAumentarKi,""));
+        if (tecnicaKi.getTotalAumentosKi() > 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " +5 " + _l(UI_CM),{tecnicaKi: tecnicaKi},dialogoAnularAumentoKi,""));
+        
         var costeKi = tecnicaKi.getCosteKi();
-
         if (costeKi.numCaracteristicasBase() >= 3) {
             divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_CM_DISMINUIR_KI),{tecnicaKi: tecnicaKi},dialogoAumentarCM,""));
 
@@ -324,6 +327,42 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
     addActualizador(EVENT_TECNICA_CREACION,actualizarDialogoCrearTecnica);
 }
 
+function dialogoAnularAumentoKi(event) {
+    var opciones = [];
+    if (event.data.tecnicaKi.kiAumentados[AGI] > 0) 
+        opciones.push(AGI);
+    if (event.data.tecnicaKi.kiAumentados[DES] > 0)
+        opciones.push(DES);
+    if (event.data.tecnicaKi.kiAumentados[CON] > 0)
+        opciones.push(CON);
+    if (event.data.tecnicaKi.kiAumentados[FUE] > 0)
+        opciones.push(FUE);
+    if (event.data.tecnicaKi.kiAumentados[POD] > 0)
+        opciones.push(POD);
+    if (event.data.tecnicaKi.kiAumentados[VOL] > 0)
+        opciones.push(VOL);
+    if (event.data.tecnicaKi.kiAumentados[AGI] > 1)
+        opciones.push(AGI);
+    if (event.data.tecnicaKi.kiAumentados[DES] > 1)
+        opciones.push(DES);
+    if (event.data.tecnicaKi.kiAumentados[CON] > 1)
+        opciones.push(CON);
+    if (event.data.tecnicaKi.kiAumentados[FUE] > 1)
+        opciones.push(FUE);
+    if (event.data.tecnicaKi.kiAumentados[POD] > 1)
+        opciones.push(POD);
+    if (event.data.tecnicaKi.kiAumentados[VOL] > 1)
+        opciones.push(VOL);
+    var gruposOpciones = [
+        new GrupoOpciones(_l(UI_CANCELAR_MENOS_UNO_A_DOS_CARAC),opciones,2)
+    ];
+    dialogoSeleccionMultiple(gruposOpciones,{tecnicaKi: event.data.tecnicaKi},anularAumentoKi);
+}
+
+function anularAumentoKi(parametros) {
+    parametros.tecnicaKi.removeAumentoKi(parametros.gruposOpciones[0].opcionesElegidas[0],parametros.gruposOpciones[0].opcionesElegidas[1]);
+}
+
 function anularAumentoCM(event) {
     event.data.tecnicaKi.removeAumentoCM(event.data.caracteristica);
 }
@@ -332,6 +371,46 @@ function comprobacionesRutinariasTecnica(tecnica) {
     if ((tecnica.getCosteKi().numCaracteristicasBase() < 3) && (tecnica.getTotalAumentosCM() > 0)) {
         tecnica.quitarAumentosCM();
     }
+}
+
+function dialogoAumentarKi(event) {
+    var opciones = [];
+    var coste = event.data.tecnicaKi.getCosteKi();
+    if (coste.getCoste(AGI) > 0) {
+        opciones.push(AGI);
+        opciones.push(AGI);
+    }
+    if (coste.getCoste(DES) > 0) {
+        opciones.push(DES);
+        opciones.push(DES);
+    }
+    if (coste.getCoste(CON) > 0) {
+        opciones.push(CON);
+        opciones.push(CON);
+    }
+    if (coste.getCoste(POD) > 0) {
+        opciones.push(POD);
+        opciones.push(POD);
+    }
+    if (coste.getCoste(VOL) > 0) {
+        opciones.push(VOL);
+        opciones.push(VOL);
+    }
+    if (coste.getCoste(FUE) > 0) {
+        opciones.push(FUE);
+        opciones.push(FUE);
+    }
+    var gruposOpciones = [
+        new GrupoOpciones(_l(UI_APLICAR_MENOS_UNO_A_DOS_CARAC),opciones,2)
+    ];
+    dialogoSeleccionMultiple(gruposOpciones,{tecnicaKi: event.data.tecnicaKi},aumentarKiDisminuirCM);
+}
+
+function aumentarKiDisminuirCM(parametros) {
+    var tecnicaKi = parametros.tecnicaKi;
+    var caracteristicas = parametros.gruposOpciones[0].opcionesElegidas;
+
+    tecnicaKi.addAumentoKi(caracteristicas[0],caracteristicas[1]);
 }
 
 function dialogoAumentarCM(event) {
