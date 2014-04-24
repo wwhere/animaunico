@@ -558,3 +558,11 @@ var KI_EFECTO_HABILIDAD_ESQUIVA_COMPLETA = (new L("KI_EFECTO_HABILIDAD_ESQUIVA_C
     "Habilidad de esquiva completa")).getId();
 var KI_EFECTO_DEFENSA_PREDETERMINADA = (new L("KI_EFECTO_DEFENSA_PREDETERMINADA","Defensa predeterminada",
     "Defensa predeterminada")).getId();
+
+var KI_EFECTO_VENTAJA_AUMENTO_DAÑO_DAÑO_LIMITE = (new L("KI_EFECTO_VENTAJA_AUMENTO_DAÑO_DAÑO_LIMITE","Daño límite",
+    "Daño límite")).getId();
+var KI_EFECTO_NIVEL_DAÑO_LIMITE = (new L("KI_EFECTO_NIVEL_DAÑO_LIMITE","Daño límite",
+    "Daño límite")).getId();
+var KI_EFECTO_AUMENTO_DAÑO_REAL = (new L("KI_EFECTO_AUMENTO_DAÑO_REAL","Aumento de daño real",
+    "Aumento de daño real")).getId();
+
