@@ -539,3 +539,18 @@ var LIMITE_TERMINUS = (new L("LIMITE_TERMINUS","Terminus: Límite de Fin",
     "Terminus: The Final Limit")).getId();
 
 
+var KI_EFECTO_HABILIDAD_ATAQUE_COMPLETA = (new L("KI_EFECTO_HABILIDAD_ATAQUE_COMPLETA","Habilidad de ataque completa",
+    "Habilidad de ataque completa")).getId();
+var KI_EFECTO_ATAQUE_PREDETERMINADO = (new L("KI_EFECTO_ATAQUE_PREDETERMINADO","Ataque predeterminado",
+    "Ataque predeterminado")).getId();
+var KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR = (new L("KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR","Maniobras de combate y apuntar",
+    "Maniobras de combate y apuntar")).getId();
+var KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR_REALES = (new L("KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR_REALES","Maniobras de combate y apuntar reales",
+    "Maniobras de combate y apuntar reales")).getId();
+var KI_EFECTO_ATAQUE_INDIRECTO = (new L("KI_EFECTO_ATAQUE_INDIRECTO","Ataque indirecto",
+    "Ataque indirecto")).getId();
+var KI_EFECTO_CAMUFLAR_ATAQUE = (new L("KI_EFECTO_CAMUFLAR_ATAQUE","Camuflar ataque",
+    "Camuflar ataque")).getId();
+
+var KI_EFECTO_HABILIDAD_PARADA_COMPLETA = (new L("KI_EFECTO_HABILIDAD_PARADA_COMPLETA","Habilidad de parada completa",
+    "Habilidad de parada completa")).getId();

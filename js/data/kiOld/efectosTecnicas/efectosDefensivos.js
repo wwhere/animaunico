@@ -4,17 +4,17 @@ addEfectoTecnica(new EfectoTecnica(
     "",
     EFECTO_DEFENSIVO,
     [
-        new NivelEfectoTecnica("+10",2,4,5,1,2,4,1),
-        new NivelEfectoTecnica("+25",3,5,5,1,2,4,1),
-        new NivelEfectoTecnica("+40",4,6,10,2,4,7,1),
-        new NivelEfectoTecnica("+50",5,8,15,3,6,11,1),
-        new NivelEfectoTecnica("+75",9,12,20,4,8,14,1),
-        new NivelEfectoTecnica("+90",12,15,25,5,10,18,1),
-        new NivelEfectoTecnica("+100",14,18,30,8,16,28,1),
-        new NivelEfectoTecnica("+125",18,22,35,10,20,35,2),
-        new NivelEfectoTecnica("+150",22,26,40,12,24,42,2),
-        new NivelEfectoTecnica("+175",26,32,45,14,28,-1,3),
-        new NivelEfectoTecnica("+200",30,36,50,16,32,-1,3)
+        new NivelEfectoTecnica("+10",2,4,5,1,1),
+        new NivelEfectoTecnica("+25",3,5,5,1,1),
+        new NivelEfectoTecnica("+40",4,6,10,2,1),
+        new NivelEfectoTecnica("+50",5,8,15,3,1),
+        new NivelEfectoTecnica("+75",8,11,20,4,1),
+        new NivelEfectoTecnica("+90",12,15,25,5,1),
+        new NivelEfectoTecnica("+100",14,18,30,8,1),
+        new NivelEfectoTecnica("+125",18,22,35,10, 2),
+        new NivelEfectoTecnica("+150",22,26,40,12, 2),
+        new NivelEfectoTecnica("+175",26,32,45,14, 3),
+        new NivelEfectoTecnica("+200",30,36,50,16, 3)
     ],
     DES,
     new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_AGUA,ELEMENTO_TIERRA]),
@@ -25,30 +25,6 @@ addEfectoTecnica(new EfectoTecnica(
         new CaracSecunTecnica(FUE, 2)
     ]
 ));
-
-addEfectoTecnica(new EfectoTecnica(
-    KI_EFECTO_HABILIDAD_PARADA_COMPLETA,
-    "",
-    EFECTO_DEFENSIVO,
-    [
-        new NivelEfectoTecnica("+10",4,6,10,2,4,7,1),
-        new NivelEfectoTecnica("+25",6,9,15,4,8,14,1),
-        new NivelEfectoTecnica("+40",9,12,20,6,12,21,1),
-        new NivelEfectoTecnica("+50",12,15,35,9,18,32,2),
-        new NivelEfectoTecnica("+75",18,22,50,12,24,42,2),
-        new NivelEfectoTecnica("+90",26,32,65,15,30,-1,3),
-        new NivelEfectoTecnica("+100",30,36,75,18,36,-1,3)
-    ],
-    DES,
-    new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_AGUA,ELEMENTO_TIERRA]),
-    [
-        new CaracSecunTecnica(AGI, 2),
-        new CaracSecunTecnica(POD, 2),
-        new CaracSecunTecnica(VOL, 3),
-        new CaracSecunTecnica(FUE, 2)
-    ]
-));
-
 addEfectoTecnica(new EfectoTecnica(
     KI_EFECTO_HABILIDAD_PARADA_LIMITADA,
     "",
