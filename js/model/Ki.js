@@ -692,6 +692,36 @@ function TecnicaKi(nivel) {
      */
     this.costeMantenimiento = false;
 
+    /**
+     *
+     * @type {number}
+     */
+    this.ajusteCM = 0;
+
+    /**
+     *
+     * @type {{AGI: number, DES: number, FUE: number, CON: number, VOL: number, POD: number}}
+     */
+    this.kiReducidos = {}
+    this.kiReducidos[AGI]=0;
+    this.kiReducidos[DES]=0;
+    this.kiReducidos[FUE]=0;
+    this.kiReducidos[CON]=0;
+    this.kiReducidos[VOL]=0;
+    this.kiReducidos[POD]=0;
+
+    /**
+     *
+     * @type {{AGI: number, DES: number, FUE: number, CON: number, VOL: number, POD: number}}
+     */
+    this.kiAumentados = {};
+    this.kiAumentados[AGI]=0;
+    this.kiAumentados[DES]=0;
+    this.kiAumentados[FUE]=0;
+    this.kiAumentados[CON]=0;
+    this.kiAumentados[VOL]=0;
+    this.kiAumentados[POD]=0;
+
 }
 
 TecnicaKi.prototype = {
@@ -863,6 +893,8 @@ TecnicaKi.prototype = {
         if (coste < minCosteTrasDesventajas) {
             coste = minCosteTrasDesventajas;
         }
+
+        coste += this.ajusteCM;
 
         if (coste < this.minCM) {
             coste = this.minCM;
@@ -1200,15 +1232,92 @@ TecnicaKi.prototype = {
         lanzarEvento(EVENT_TECNICA_CREACION);
     },
 
+    quitarAumentosCM : function() {
+        this.ajusteCM -= 10 * this.kiReducidos[AGI];
+        this.ajusteCM -= 10 * this.kiReducidos[DES];
+        this.ajusteCM -= 10 * this.kiReducidos[CON];
+        this.ajusteCM -= 10 * this.kiReducidos[FUE];
+        this.ajusteCM -= 10 * this.kiReducidos[POD];
+        this.ajusteCM -= 10 * this.kiReducidos[VOL];
+
+        this.kiReducidos[AGI] = 0;
+        this.kiReducidos[DES] = 0;
+        this.kiReducidos[CON] = 0;
+        this.kiReducidos[FUE] = 0;
+        this.kiReducidos[POD] = 0;
+        this.kiReducidos[VOL] = 0;
+
+        lanzarEvento(EVENT_TECNICA_CREACION);
+    },
+
+    addAumentoCM : function(caracteristica) {
+        if (this.getCosteKi().numCaracteristicasBase() >= 3) {
+            if (this.getTotalAumentosCM() < 5) {
+                if (this.getCosteCM() + 10 <= this.getMaxCM()) {
+                    this.kiReducidos[caracteristica]++;
+                    this.ajusteCM += 10;
+                    lanzarEvento(EVENT_TECNICA_CREACION);
+                } else {
+                    alert(_l(UI_MAX_CM));
+                }
+            } else {
+                alert(_l(UI_MAX_5_AUMENTOS_CM));
+            }
+        } else {
+            alert(_l(UI_TECNICA_DEBE_TENER_3));
+        }
+    },
+
+    removeAumentoCM : function(caracteristica) {
+        if (this.kiReducidos[caracteristica] > 0) {
+            this.kiReducidos[caracteristica]--;
+            this.ajusteCM -= 10;
+            lanzarEvento(EVENT_TECNICA_CREACION);
+        }
+    },
+
+    getTotalAumentosCM : function() {
+        var total = 0;
+
+        if (this.kiReducidos[AGI] != 0) total++;
+        if (this.kiReducidos[DES] != 0) total++;
+        if (this.kiReducidos[CON] != 0) total++;
+        if (this.kiReducidos[FUE] != 0) total++;
+        if (this.kiReducidos[POD] != 0) total++;
+        if (this.kiReducidos[VOL] != 0) total++;
+
+        return total;
+    },
+
     getCosteKi : function() {
         if (!this.costeKi) {
-            var costeKi = new CosteKi(0,0,0,0,0,0,AGI);
+            var costeKi = new CosteKi(this.kiAumentados[AGI],this.kiAumentados[CON],this.kiAumentados[DES],this.kiAumentados[FUE],this.kiAumentados[POD],this.kiAumentados[VOL],AGI);
             if (this.efectoPrimario) {
                 costeKi = this.efectoPrimario.getCosteKiTotal();
             }
             for (var i = 0; i < this.efectosSecundarios.length; i++) {
                 costeKi = this.efectosSecundarios[i].getCosteKiTotal().sumaCosteKi(costeKi);
             }
+
+            costeKi.setCoste(AGI,
+                ((costeKi.getCoste(AGI)-this.kiReducidos[AGI])>=(Math.ceil(costeKi.getCoste(AGI)/2)))? costeKi.getCoste(AGI)-this.kiReducidos[AGI] : Math.ceil(costeKi.getCoste(AGI)/2)
+            );
+            costeKi.setCoste(CON,
+                ((costeKi.getCoste(CON)-this.kiReducidos[CON])>=(Math.ceil(costeKi.getCoste(CON)/2)))? costeKi.getCoste(CON)-this.kiReducidos[CON] : Math.ceil(costeKi.getCoste(CON)/2)
+            );
+            costeKi.setCoste(DES,
+                ((costeKi.getCoste(DES)-this.kiReducidos[DES])>=(Math.ceil(costeKi.getCoste(DES)/2)))? costeKi.getCoste(DES)-this.kiReducidos[DES] : Math.ceil(costeKi.getCoste(DES)/2)
+            );
+            costeKi.setCoste(FUE,
+                ((costeKi.getCoste(FUE)-this.kiReducidos[FUE])>=(Math.ceil(costeKi.getCoste(FUE)/2)))? costeKi.getCoste(FUE)-this.kiReducidos[FUE] : Math.ceil(costeKi.getCoste(FUE)/2)
+            );
+            costeKi.setCoste(POD,
+                ((costeKi.getCoste(POD)-this.kiReducidos[POD])>=(Math.ceil(costeKi.getCoste(POD)/2)))? costeKi.getCoste(POD)-this.kiReducidos[POD] : Math.ceil(costeKi.getCoste(POD)/2)
+            );
+            costeKi.setCoste(VOL,
+                ((costeKi.getCoste(VOL)-this.kiReducidos[VOL])>=(Math.ceil(costeKi.getCoste(VOL)/2)))? costeKi.getCoste(VOL)-this.kiReducidos[VOL] : Math.ceil(costeKi.getCoste(VOL)/2)
+            );
+
             return costeKi;
         } else {
             return this.costeKi;
@@ -1564,7 +1673,7 @@ EfectoTecnicaElegido.prototype = {
      * @returns {CosteKi}
      */
     getCosteKiTotal : function() {
-        var coste = this.costeKi;
+        var coste = this.costeKi.clona();
         if (this.isMantenido()) {
             coste = coste.sumaCosteKi(this.costeMantenimiento);
         }
@@ -1617,9 +1726,9 @@ VentajaTecnicaElegida.prototype = {
      * @returns {string}
      */
     getNombre : function() {
-        var nombre = this.ventajaTecnica.getNombre();
+        var nombre = _l(this.ventajaTecnica.getNombre());
         if (this.ventajaTecnica.getNivelesVentaja().length > 1) {
-            nombre += " (" + this.nivelElegido.getNombre() + ")";
+            nombre += " (" + _l(this.nivelElegido.getNombre()) + ")";
         }
         return nombre;
     },
@@ -1963,7 +2072,7 @@ function CosteKi(agi, con, des, fue, pod, vol, caracBase) {
 
     this.caracbase = caracBase || AGI;
 
-    this.mod[this.caracBase] = 0;
+    this.mod[this.caracbase] = 0;
 }
 
 CosteKi.prototype = {
@@ -2049,6 +2158,30 @@ CosteKi.prototype = {
 
     addCoste : function(caracteristica, valor) {
         this.setCoste(caracteristica,this.getCoste(caracteristica)+valor);
+    },
+
+    numCaracteristicasBase : function() {
+        var total = 0;
+
+        if (this.coste[AGI] != 0) total++;
+        if (this.coste[DES] != 0) total++;
+        if (this.coste[CON] != 0) total++;
+        if (this.coste[FUE] != 0) total++;
+        if (this.coste[POD] != 0) total++;
+        if (this.coste[VOL] != 0) total++;
+
+        return total;
+    },
+
+    clona : function() {
+        var coste = new CosteKi(this.coste[AGI],this.coste[CON],this.coste[DES],this.coste[FUE],this.coste[POD],this.coste[VOL],this.caracbase);
+        coste.mod[AGI] = this.mod[AGI];
+        coste.mod[CON] = this.mod[CON];
+        coste.mod[DES] = this.mod[DES];
+        coste.mod[POD] = this.mod[POD];
+        coste.mod[VOL] = this.mod[VOL];
+        coste.mod[FUE] = this.mod[FUE];
+        return coste;
     }
 
 };

@@ -538,3 +538,4 @@ var LIMITE_CRUOR = (new L("LIMITE_CRUOR","Cruor: Límite de la Sangre",
 var LIMITE_TERMINUS = (new L("LIMITE_TERMINUS","Terminus: Límite de Fin",
     "Terminus: The Final Limit")).getId();
 
+

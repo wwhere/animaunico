@@ -1063,3 +1063,11 @@ var UI_VIENE_DE = (new L("UI_VIENE_DE","Viene de","Comes from")).getId();
 var UI_HABLA = (new L("UI_HABLA","Habla","Can speak")).getId();
 var UI_NACION = (new L("UI_NACION","Nación de origen","Nation of origin")).getId();
 var UI_ETNIA = (new L("UI_ETNIA","Etnia","Ethnicity")).getId();
+
+var UI_AUMENTAR_CM_DISMINUIR_KI = (new L("UI_AUMENTAR_CM_DISMINUIR_KI","+10 CM, -1 Ki","+10 MK, -1 Ki")).getId();
+var UI_TECNICA_DEBE_TENER_3 = (new L("UI_TECNICA_DEBE_TENER_3","La técnica debe basarse al menos en 3 Características","The technique needs to be based in at least 3 attributes")).getId();
+var UI_MAX_5_AUMENTOS_CM = (new L("UI_MAX_5_AUMENTOS_CM","El ki sólo puede reducirse 5 puntos de este modo.","Ki value can only be reduced by 5 in this way.")).getId();
+
+var UI_ANULAR = (new L("UI_ANULAR","Anular","Cancel")).getId();
+
+var UI_MAX_CM = (new L("UI_MAX_CM","Max CM alcanzado","Max MK reached")).getId();
