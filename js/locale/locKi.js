@@ -554,3 +554,7 @@ var KI_EFECTO_CAMUFLAR_ATAQUE = (new L("KI_EFECTO_CAMUFLAR_ATAQUE","Camuflar ata
 
 var KI_EFECTO_HABILIDAD_PARADA_COMPLETA = (new L("KI_EFECTO_HABILIDAD_PARADA_COMPLETA","Habilidad de parada completa",
     "Habilidad de parada completa")).getId();
+var KI_EFECTO_HABILIDAD_ESQUIVA_COMPLETA = (new L("KI_EFECTO_HABILIDAD_ESQUIVA_COMPLETA","Habilidad de esquiva completa",
+    "Habilidad de esquiva completa")).getId();
+var KI_EFECTO_DEFENSA_PREDETERMINADA = (new L("KI_EFECTO_DEFENSA_PREDETERMINADA","Defensa predeterminada",
+    "Defensa predeterminada")).getId();
