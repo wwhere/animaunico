@@ -572,9 +572,22 @@ var KI_EFECTO_SUSTITUCION_DE_DAÑO = (new L("KI_EFECTO_SUSTITUCION_DE_DAÑO","Su
     "Sustitución de daño")).getId();
 var KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL = (new L("KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL","Sustitución de daño real",
     "Sustitución de daño real")).getId();
+
 var KI_EFECTO_TECNICA_ATAQUE_ADICIONAL_COMBO = (new L("KI_EFECTO_TECNICA_ATAQUE_ADICIONAL_COMBO","Desventaja: Combo",
     "Desventaja: Combo")).getId();
 var KI_EFECTO_TECNICA_DESVENTAJA_COMBO_2_ATAQUES = (new L("KI_EFECTO_TECNICA_DESVENTAJA_COMBO_2_ATAQUES","Hasta 2 ataques adicionales",
     "Hasta 2 ataques adicionales")).getId();
 var KI_EFECTO_TECNICA_DESVENTAJA_COMBO_3_ATAQUES = (new L("KI_EFECTO_TECNICA_DESVENTAJA_COMBO_3_ATAQUES","3 o más ataques adicionales",
     "3 o más ataques adicionales")).getId();
+
+var KI_EFECTO_RECUPERAR_ACCION = (new L("KI_EFECTO_RECUPERAR_ACCION","Recuperar acción",
+    "Recuperar acción")).getId();
+var KI_EFECTO_NIVEL_RECUPERAR_ACCION = (new L("KI_EFECTO_NIVEL_RECUPERAR_ACCION","Recuperar acción",
+    "Recuperar acción")).getId();
+var KI_EFECTO_PREVISION= (new L("KI_EFECTO_PREVISION","Previsión",
+    "Previsión")).getId();
+var KI_EFECTO_NIVEL_A_MITAD = (new L("KI_EFECTO_NIVEL_A_MITAD","A mitad",
+    "A mitad")).getId();
+var KI_EFECTO_NIVEL_COMPLETO = (new L("KI_EFECTO_NIVEL_COMPLETO","Completo",
+    "Completo")).getId();
+
