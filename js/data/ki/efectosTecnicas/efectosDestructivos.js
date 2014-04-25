@@ -72,9 +72,9 @@ addEfectoTecnica(new EfectoTecnica(
     "",
     EFECTO_DESTRUCTIVO,
     [
-        new NivelEfectoTecnica("x2",10,15,25,4,1),
-        new NivelEfectoTecnica("x3",15,20,40,8, 2),
-        new NivelEfectoTecnica("x4",20,30,80,12, 3)
+        new NivelEfectoTecnica("x2",10,15,25,4,8,14,1),
+        new NivelEfectoTecnica("x3",15,20,40,8,16,28,2),
+        new NivelEfectoTecnica("x4",20,30,80,12,24,-1,3)
     ],
     FUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
@@ -86,3 +86,66 @@ addEfectoTecnica(new EfectoTecnica(
     ]
 ));
 
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_MULTIPLICADOR_DAÑO_REAL,
+    "",
+    EFECTO_DESTRUCTIVO,
+    [
+        new NivelEfectoTecnica("x2",20,30,40,8,16,28,1),
+        new NivelEfectoTecnica("x3",30,36,70,16,32,56,2),
+        new NivelEfectoTecnica("x4",40,48,100,22,44,-1,3)
+    ],
+    FUE,
+    [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
+    [
+        new CaracSecunTecnica(DES, 3),
+        new CaracSecunTecnica(POD, 1),
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(CON, 2)
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_SUSTITUCION_DE_DAÑO,
+    "",
+    EFECTO_DESTRUCTIVO,
+    [
+        new NivelEfectoTecnica("50",1,2,5,1,2,4,1),
+        new NivelEfectoTecnica("100",3,5,10,2,4,7,1),
+        new NivelEfectoTecnica("120",5,8,15,3,6,11,1),
+        new NivelEfectoTecnica("150",7,10,20,5,10,18,2),
+        new NivelEfectoTecnica("180",9,12,25,7,14,25,2),
+        new NivelEfectoTecnica("200",12,15,30,9,18,-1,3),
+        new NivelEfectoTecnica("250",15,19,35,12,24,-1,3)
+    ],
+    FUE,
+    [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
+    [
+        new CaracSecunTecnica(DES, 3),
+        new CaracSecunTecnica(POD, 2),
+        new CaracSecunTecnica(VOL, 2),
+        new CaracSecunTecnica(CON, 1)
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL,
+    "",
+    EFECTO_DESTRUCTIVO,
+    [
+        new NivelEfectoTecnica("50",3,5,10,2,4,7,1),
+        new NivelEfectoTecnica("100",5,8,15,3,6,11,1),
+        new NivelEfectoTecnica("120",8,11,20,6,12,21,1),
+        new NivelEfectoTecnica("150",12,15,30,8,16,28,2),
+        new NivelEfectoTecnica("180",15,19,40,10,20,35,2),
+        new NivelEfectoTecnica("200",18,22,50,12,24,-1,3)
+    ],
+    FUE,
+    [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
+    [
+        new CaracSecunTecnica(DES, 3),
+        new CaracSecunTecnica(POD, 2),
+        new CaracSecunTecnica(VOL, 2),
+        new CaracSecunTecnica(CON, 1)
+    ]
+));

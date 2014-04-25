@@ -565,4 +565,10 @@ var KI_EFECTO_NIVEL_DAÑO_LIMITE = (new L("KI_EFECTO_NIVEL_DAÑO_LIMITE","Daño 
     "Daño límite")).getId();
 var KI_EFECTO_AUMENTO_DAÑO_REAL = (new L("KI_EFECTO_AUMENTO_DAÑO_REAL","Aumento de daño real",
     "Aumento de daño real")).getId();
+var KI_EFECTO_MULTIPLICADOR_DAÑO_REAL = (new L("KI_EFECTO_MULTIPLICADOR_DAÑO_REAL","Multiplicador al daño real",
+    "Multiplicador al daño real")).getId();
 
+var KI_EFECTO_SUSTITUCION_DE_DAÑO = (new L("KI_EFECTO_SUSTITUCION_DE_DAÑO","Sustitución de daño",
+    "Sustitución de daño")).getId();
+var KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL = (new L("KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL","Sustitución de daño real",
+    "Sustitución de daño real")).getId();
