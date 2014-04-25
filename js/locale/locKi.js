@@ -591,3 +591,20 @@ var KI_EFECTO_NIVEL_A_MITAD = (new L("KI_EFECTO_NIVEL_A_MITAD","A mitad",
 var KI_EFECTO_NIVEL_COMPLETO = (new L("KI_EFECTO_NIVEL_COMPLETO","Completo",
     "Completo")).getId();
 
+
+var KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_PROYECCION = (new L("KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_PROYECCION","Proyección",
+    "Proyección")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_PROYECCION = (new L("KI_EFECTO_NIVEL_VENTAJA_PROYECCION","Proyección",
+    "Proyección")).getId();
+var KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_ESTELA_DESTRUCCION = (new L("KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_ESTELA_DESTRUCCION","Estela de destrucción",
+    "Estela de destrucción")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_ESTELA_DESTRUCCION = (new L("KI_EFECTO_NIVEL_VENTAJA_ESTELA_DESTRUCCION","Estela de destrucción",
+    "Estela de destrucción")).getId();
+var KI_EFECTO_ATAQUE_DISTANCIA_REAL = (new L("KI_EFECTO_ATAQUE_DISTANCIA_REAL","Ataque a distancia real",
+    "Ataque a distancia real")).getId();
+var KI_EFECTO_ATAQUE_AREA_REAL = (new L("KI_EFECTO_ATAQUE_AREA_REAL","Ataque con área real",
+    "Ataque con área real")).getId();
+var KI_EFECTO_VENTAJA_ATAQUE_AREA_REAL_ELECCION_BLANCO = (new L("KI_EFECTO_VENTAJA_ATAQUE_AREA_REAL_ELECCION_BLANCO","Elección de blanco",
+    "Elección de blanco")).getId();
+var KI_EFECTO_PARADA_AREA = (new L("KI_EFECTO_PARADA_AREA","Parada en área",
+    "Parada en área")).getId();

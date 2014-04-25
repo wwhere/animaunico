@@ -90,6 +90,7 @@ module.exports = function(grunt) {
                     "js/data/ki/efectosTecnicas/efectosDestructivos.js",
                     "js/data/ki/efectosTecnicas/efectosEsotericos.js",
                     "js/data/ki/efectosTecnicas/efectosEspeciales.js",
+                    "js/data/ki/efectosTecnicas/efectosEspaciales.js",
                     "js/data/ki/efectosTecnicas/efectosOfensivos.js",
                     "js/data/ki/efectosTecnicas/efectosReaccion.js",
                     "js/data/ki/tecnicas/celeritas.js",

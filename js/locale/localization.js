@@ -876,6 +876,7 @@ var EFECTO_ACCION = (new L("Efecto de acción","Efecto de acción","Action effec
 var EFECTO_REACCION = (new L("Efecto de reacción","Efecto de reacción","Reaction effect")).getId();
 var EFECTO_ESOTERICO = (new L("Efecto esotérico","Efecto esotérico","Esoteric effect")).getId();
 var EFECTO_ESPECIAL = (new L("Efecto especial","Efecto especial","Special effect")).getId();
+var EFECTO_ESPACIAL = (new L("Efecto espacial","Efecto espacial","Spacial effect")).getId();
 
 var COSTE_VENTAJAS_AUMENTA_DOS = (new L("Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Each additional election adds two to the extra ki cost of this advantage")).getId();
 
