@@ -34,7 +34,11 @@ function getArteMarcial(nombreArteMarcial) {
     if (allArtesMarciales[nombreArteMarcial]) {
         return allArtesMarciales[nombreArteMarcial];
     } else {
-        throw ERR_ARTE_MARCIAL_ERRONEA + ": " + nombreArteMarcial;
+        if (allArtesMarciales[nombreArteMarcial+"_BASE"]) {
+            return allArtesMarciales[nombreArteMarcial+"_BASE"];
+        } else {
+            throw ERR_ARTE_MARCIAL_ERRONEA + ": " + nombreArteMarcial;
+        }
     }
 }
 
