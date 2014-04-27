@@ -190,6 +190,8 @@ var KI_EFECTO_MANIOBRAS_COMBATE = (new L("KI_EFECTO_MANIOBRAS_COMBATE","Maniobra
     "Combat Maneuvers and Aiming")).getId();
 var KI_EFECTO_AUMENTAR_ARMADURA = (new L("KI_EFECTO_AUMENTAR_ARMADURA","Aumentar armadura",
     "Armor Increase")).getId();
+var KI_EFECTO_ARMADURA = (new L("KI_EFECTO_ARMADURA","Armadura",
+    "Armor")).getId();
 var KI_EFECTO_DESTRUIR_ARMADURA = (new L("KI_EFECTO_DESTRUIR_ARMADURA","Destruir armadura",
     "Armor Destruction")).getId();
 var KI_EFECTO_NIVEL_TA_1 = (new L("KI_EFECTO_NIVEL_TA_1","-1 TA",
@@ -208,6 +210,8 @@ var KI_EFECTO_NIVEL_TA_7 = (new L("KI_EFECTO_NIVEL_TA_7","-7 TA",
     "-7 AT")).getId();
 var KI_EFECTO_NIVEL_TA_8 = (new L("KI_EFECTO_NIVEL_TA_8","-8 TA",
     "-8 AT")).getId();
+var KI_EFECTO_NIVEL_SIN_ARMADURA = (new L("KI_EFECTO_NIVEL_SIN_ARMADURA","Sin armadura",
+    "Without armor")).getId();
 var KI_EFECTO_AUMENTAR_ROTURA = (new L("KI_EFECTO_AUMENTAR_ROTURA","Aumentar rotura",
     "Breakage Augmentation")).getId();
 var KI_EFECTO_AUMENTAR_ENTEREZA = (new L("KI_EFECTO_AUMENTAR_ENTEREZA","Aumentar entereza",
@@ -608,3 +612,16 @@ var KI_EFECTO_VENTAJA_ATAQUE_AREA_REAL_ELECCION_BLANCO = (new L("KI_EFECTO_VENTA
     "Elección de blanco")).getId();
 var KI_EFECTO_PARADA_AREA = (new L("KI_EFECTO_PARADA_AREA","Parada en área",
     "Parada en área")).getId();
+
+var KI_EFECTO_VENTAJA_ARMADURA_INMODIFICABLE = (new L("KI_EFECTO_VENTAJA_ARMADURA_INMODIFICABLE","Inmodificable",
+    "Inmodificable")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_INMODIFICABLE = (new L("KI_EFECTO_NIVEL_VENTAJA_INMODIFICABLE","Inmodificable",
+    "Inmodificable")).getId();
+var KI_EFECTO_VENTAJA_ARMADURA_ARMADURA_FISICA = (new L("KI_EFECTO_VENTAJA_ARMADURA_ARMADURA_FISICA","Armadura física",
+    "Armadura física")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_ARMADURA_FISICA= (new L("KI_EFECTO_NIVEL_VENTAJA_ARMADURA_FISICA","Armadura física",
+    "Armadura física")).getId();
+var KI_EFECTO_VENTAJA_ARMADURA_LENTITUD = (new L("KI_EFECTO_VENTAJA_ARMADURA_LENTITUD","Lentitud",
+    "Lentitud")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_LENTITUD= (new L("KI_EFECTO_NIVEL_VENTAJA_LENTITUD","Lentitud",
+    "Lentitud")).getId();
