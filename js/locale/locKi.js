@@ -710,3 +710,12 @@ var KI_EFECTO_NIVEL_VER_LO_SOBRENATURAL= (new L("KI_EFECTO_NIVEL_VER_LO_SOBRENAT
     "Ver lo sobrenatural")).getId();
 var KI_EFECTO_NIVEL_VER_REALMENTE= (new L("KI_EFECTO_NIVEL_VER_REALMENTE","Ver realmente",
     "Ver realmente")).getId();
+
+var KI_EFECTO_VENTAJA_ARMAS_FISICAS_ARMAS_ADICIONALES= (new L("KI_EFECTO_VENTAJA_ARMAS_FISICAS_ARMAS_ADICIONALES","Armas adicionales",
+    "Armas adicionales")).getId();
+var KI_EFECTO_NIVEL_1_ARMA_ADICIONAL= (new L("KI_EFECTO_NIVEL_1_ARMA_ADICIONAL","1 arma adicional",
+    "1 arma adicional")).getId();
+var KI_EFECTO_NIVEL_2_A_3_ARMAS_ADICIONALES= (new L("KI_EFECTO_NIVEL_2_A_3_ARMAS_ADICIONALES","De 2 a 3 armas adicionales",
+    "De 2 a 3 armas adicionales")).getId();
+var KI_EFECTO_NIVEL_4_A_10_ARMAS_ADICIONALES= (new L("KI_EFECTO_NIVEL_4_A_10_ARMAS_ADICIONALES","De 4 a 10 armas adicionales",
+    "De 4 a 10 armas adicionales")).getId();
