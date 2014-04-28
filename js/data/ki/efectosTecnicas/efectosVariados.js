@@ -420,112 +420,443 @@ addEfectoTecnica(new EfectoTecnica(
                 new NivelVentajaTecnica(KI_EFECTO_NIVEL_DOLOR_EXTREMO,6,15,0,0,0,1)
             ]
         ),
-/********TODO*/
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR,
+            KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_VIDA,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PENALIZADOR_ACCION,2,5,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_DRENAJE_DE_VIDA,8,15,0,0,0,2)
             ]
         ),
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RF,
+            KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_KI,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_RF,2, 10,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_DRENAJE_DE_KI,8,20,0,0,0,1)
             ]
         ),
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_AGI,
+            KI_EFECTO_VENTAJA_ESTADOS_FASCINACION,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_FASCINACION,6,10,0,0,0,1)
             ]
         ),
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_CON,
+            KI_EFECTO_VENTAJA_ESTADOS_ILUSION,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ILUSION,7,10,0,0,0,1)
             ]
         ),
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_DES,
+            KI_EFECTO_VENTAJA_ESTADOS_ILUSION_FANTASMAL,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ILUSION_FANTASMAL,11,20,0,0,0,1)
             ]
         ),
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_FUE,
+            KI_EFECTO_VENTAJA_ESTADOS_ILUSION_MAYOR,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
-            ]
-        ),
-        new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_INT,
-            "",
-            [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
-            ]
-        ),
-        new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_PER,
-            "",
-            [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
-            ]
-        ),
-        new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_POD,
-            "",
-            [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
-            ]
-        ),
-        new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_VOL,
-            "",
-            [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_CARACTERISTICAS,2,10,0,1)
-            ]
-        ),
-        new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_PARCIAL,
-            "",
-            [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PARALIZACION_PARCIAL,6,10,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ILUSION_MAYOR,9,15,0,0,0,1)
             ]
         ),
         new VentajaTecnica(
             KI_EFECTO_VENTAJA_ESTADOS_INCONSCIENCIA,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_INCONSCIENCIA,8,15,0,1)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_INCONSCIENCIA,12,35,0,0,0,2)
             ]
         ),
         new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_TOTAL,
+            KI_EFECTO_VENTAJA_ESTADOS_MIEDO,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PARALIZACION_TOTAL,8,20,0,2)
-            ]
-        ),
-        new VentajaTecnica(
-            KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_VIDA,
-            "",
-            [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_DRENAJE_DE_VIDA,8,15,0,2)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_MIEDO,3,10,0,0,0,1)
             ]
         ),
         new VentajaTecnica(
             KI_EFECTO_VENTAJA_ESTADOS_MUERTE,
             "",
             [
-                new NivelVentajaTecnica(KI_EFECTO_NIVEL_MUERTE,12,50,0,3)
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_MUERTE,20,50,0,0,-1,3)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_PARCIAL,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PARALIZACION_PARCIAL,6,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_PARALISIS_TOTAL,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PARALIZACION_TOTAL,12,20,0,0,0,2)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MAYOR,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MAYOR,1,5,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MENOR,1,5,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCCION_DE_CARACTERISTICAS,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_DE_CARACTERISTICAS,4,5,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_AGI,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_AGI,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_CON,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_CON,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_DES,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_DES,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_FUE,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_FUE,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_INT,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_INT,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_PER,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_PER,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_POD,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_POD,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_VOL,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCIR_VOL,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RF,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_RF,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RP,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_REDUCCION_RP,2,10,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_TERROR,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_TERROR,6,15,0,0,0,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_CONDICION_PREDETERMINADA,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_BESO,1,10,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CONTACTO_FISICO,2,5,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CONTACTO_VISUAL_MUTUO,8,15,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CONTACTO_VISUAL_UN_BLANCO,12,30,0,0,0,2),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CONTACTO_VISUAL_VARIOS_BLANCOS,16,40,0,0,-1,3),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_POR_EL_AIRE,20,50,0,0,-1,3),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_POR_SONIDO_UN_BLANCO,13,35,0,0,0,2),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_POR_SONIDO_VARIOS_BLANCOS,18,45,0,0,-1,3),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_POR_SUPERFICIE,12,30,0,0,0,2),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_POR_TODA_SUPERFICIE,18,45,0,0,-1,3)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_ESTADOS_DISTANCIA_DEL_EFECTO,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_1_M,1,5,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_5_M,3,5,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_10_M,5,10,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_25_M,8,10,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_50_M,12,15,0,0,0,2),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_100_M,15,20,0,0,0,2),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_150_M,20,25,0,0,-1,3),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_500_M,25,30,0,0,-1,3)
             ]
         )
+
     ],
     [COSTE_VENTAJAS_AUMENTA_DOS]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_IMPACTO,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica("4",1,2,5,1,2,4,1),
+        new NivelEfectoTecnica("6",2,4,5,2,4,7,1),
+        new NivelEfectoTecnica("8",3,5,10,3,6,11,1),
+        new NivelEfectoTecnica("10",4,6,10,4,8,14,1),
+        new NivelEfectoTecnica("12",5,8,15,5,10,18,1),
+        new NivelEfectoTecnica("14",6,9,20,6,12,21,2),
+        new NivelEfectoTecnica("16",8,11,25,7,14,25,2),
+        new NivelEfectoTecnica("18",10,13,30,8,16,-1,3),
+        new NivelEfectoTecnica("20",12,15,35,10,20,-1,3)
+    ],
+    FUE,
+    new ElementosAfines([ELEMENTO_TIERRA,ELEMENTO_FUEGO]),
+    [
+        new CaracSecunTecnica(DES, 3),
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(CON, 2),
+        new CaracSecunTecnica(POD, 1)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_IMPACTO_ATRAER,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ATRAER,1,5,1,2,4,1)
+            ]
+        )
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_INTERRUPCION,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO,1,2,5,1,2,4,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO_MAS_20,2,4,10,2,4,7,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO_MAS_40,4,6,15,3,6,11,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO_MAS_60,6,9,20,4,8,14,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO_MAS_80,8,11,25,6,12,21,2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO_MAS_100,12,15,30,8,16,28,2),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_DAÑO_MAS_120,12,20,35,10,20,-1,3)
+    ],
+    VOL,
+    new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_AIRE,ELEMENTO_LUZ]),
+    [
+        new CaracSecunTecnica(DES, 3),
+        new CaracSecunTecnica(FUE, 2),
+        new CaracSecunTecnica(CON, 3),
+        new CaracSecunTecnica(POD, 1)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_INTERRUPCION_TIPO_DE_INTERRUPCION,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_KI,2,5,1,2,4,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_MAGIA,2,5,1,2,4,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_HABILIDADES_PSIQUICAS,2,5,1,2,4,1)
+            ]
+        )
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_INTANGIBILIDAD,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_INTANGIBILIDAD,3,5,10,2,4,7,1)
+    ],
+    POD,
+    new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_OSCURIDAD,ELEMENTO_AGUA]),
+    [
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(CON, 3),
+        new CaracSecunTecnica(FUE, 3),
+        new CaracSecunTecnica(DES, 3)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_INTANGIBILIDAD_AFECTAR_A_OTROS,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PRESENCIA_SIMPLE,1,5,1,2,4,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PRESENCIA_EXTENDIDA,3,10,2,4,7,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_INTANGIBILIDAD_FUSION,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_FUSION,2,10,2,4,7,1)
+            ]
+        )
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_MARCA,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_MARCA_MENOR,4,6,10,2,4,7,1),
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_MARCA_MAYOR,10,13,25,4,8,14,2)
+    ],
+    POD,
+    new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_OSCURIDAD,ELEMENTO_AIRE]),
+    [
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(CON, 2),
+        new CaracSecunTecnica(FUE, 3),
+        new CaracSecunTecnica(DES, 3)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_MARCA_PERMANENCIA,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_PROLONGADA,4,10,0,0,0,1),
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ETERNA,10,30,2,4,7,1)
+            ]
+        )
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_POTENCIAR_CRITICO,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica("+10",2,4,5,1,2,4,1),
+        new NivelEfectoTecnica("+25",3,5,5,2,4,7,1),
+        new NivelEfectoTecnica("+40",4,6,10,3,6,11,1),
+        new NivelEfectoTecnica("+50",5,8,15,4,8,14,1),
+        new NivelEfectoTecnica("+75",8,11,20,6,12,21,1),
+        new NivelEfectoTecnica("+90",12,15,25,8,16,28,1),
+        new NivelEfectoTecnica("+100",14,18,30,10,20,35,1),
+        new NivelEfectoTecnica("+125",18,22,35,12,24,42,2),
+        new NivelEfectoTecnica("+150",22,26,40,14,28,49,2),
+        new NivelEfectoTecnica("+175",26,32,45,16,32,-1,3),
+        new NivelEfectoTecnica("+200",30,36,50,18,36,-1,3)
+    ],
+    POD,
+    new ElementosAfines([ELEMENTO_FUEGO,ELEMENTO_TIERRA]),
+    [
+        new CaracSecunTecnica(FUE, 1),
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(DES, 2),
+        new CaracSecunTecnica(CON, 2)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_CRITICO_AUTOMATICO,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CRITICO_AUTOMATICO,8,30,4,8,14,1)
+            ]
+        )
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_POTENCIAR_CRITICO_REAL,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica("+10",3,5,10,2,4,7,1),
+        new NivelEfectoTecnica("+25",5,8,20,4,8,14,1),
+        new NivelEfectoTecnica("+40",7,9,25,6,12,21,1),
+        new NivelEfectoTecnica("+50",9,12,35,8,16,28,2),
+        new NivelEfectoTecnica("+75",12,15,50,10,20,35,2),
+        new NivelEfectoTecnica("+90",16,20,60,12,24,-1,3),
+        new NivelEfectoTecnica("+100",18,22,65,14,28,-1,3)
+    ],
+    POD,
+    new ElementosAfines([ELEMENTO_FUEGO,ELEMENTO_TIERRA]),
+    [
+        new CaracSecunTecnica(FUE, 1),
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(DES, 2),
+        new CaracSecunTecnica(CON, 2)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_CRITICO_AUTOMATICO,8,30,4,8,14,1)
+            ]
+        )
+    ]
+));
+
+addEfectoTecnica(new EfectoTecnica(
+    KI_EFECTO_REFLECTAR_ATAQUE,
+    "",
+    EFECTO_VARIADO,
+    [
+        new NivelEfectoTecnica(KI_EFECTO_NIVEL_REFLECTAR,12,15,30,8,16,28,2)
+    ],
+    POD,
+    new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_OSCURIDAD,ELEMENTO_AGUA]),
+    [
+        new CaracSecunTecnica(VOL, 1),
+        new CaracSecunTecnica(FUE, 2),
+        new CaracSecunTecnica(AGI, 3),
+        new CaracSecunTecnica(DES, 3)
+    ],
+    [
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_REFLECTAR_ATAQUE_ELECCION_BLANCO,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_ELECCION_BLANCO,2,10,2,4,7,1)
+            ]
+        ),
+        new VentajaTecnica(
+            KI_EFECTO_VENTAJA_REFLECTAR_ATAQUE_HAB_ESOTERICAS,
+            "",
+            [
+                new NivelVentajaTecnica(KI_EFECTO_NIVEL_HABILIDADES_ESOTERICAS,4,20,1,2,4,1)
+            ]
+        )
+    ]
 ));

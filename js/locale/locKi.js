@@ -768,5 +768,147 @@ var KI_EFECTO_NIVEL_DOLOR = (new L("KI_EFECTO_NIVEL_DOLOR","Dolor",
     "Dolor")).getId();
 var KI_EFECTO_VENTAJA_ESTADOS_DOLOR_EXTREMO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOLOR_EXTREMO","Dolor extremo",
     "Dolor extremo")).getId();
-var KI_EFECTO_NIVEL_DOLOR_EXTREMO = (new L("KI_EFECTO_NIVEL_DOLOR_EXTREMO","Dolor",
+var KI_EFECTO_NIVEL_DOLOR_EXTREMO = (new L("KI_EFECTO_NIVEL_DOLOR_EXTREMO","Dolor extremo",
     "Dolor extremo")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_FASCINACION = (new L("KI_EFECTO_VENTAJA_ESTADOS_FASCINACION","Fascinación",
+    "Fascinación")).getId();
+var KI_EFECTO_NIVEL_FASCINACION = (new L("KI_EFECTO_NIVEL_FASCINACION","Fascinación",
+    "Fascinación")).getId();
+
+
+var KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_KI = (new L("KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_KI","Drenaje de ki",
+    "Drenaje de ki")).getId();
+var KI_EFECTO_NIVEL_DRENAJE_DE_KI = (new L("KI_EFECTO_NIVEL_DRENAJE_DE_KI","Drenaje de ki",
+    "Drenaje de ki")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_ILUSION = (new L("KI_EFECTO_VENTAJA_ESTADOS_ILUSION","Ilusión",
+    "Ilusión")).getId();
+var KI_EFECTO_NIVEL_ILUSION = (new L("KI_EFECTO_NIVEL_ILUSION","Ilusión",
+    "Ilusión")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_ILUSION_FANTASMAL = (new L("KI_EFECTO_VENTAJA_ESTADOS_ILUSION_FANTASMAL","Ilusión fantasmal",
+    "Ilusión fantasmal")).getId();
+var KI_EFECTO_NIVEL_ILUSION_FANTASMAL = (new L("KI_EFECTO_NIVEL_ILUSION_FANTASMAL","Ilusión fantasmal",
+    "Ilusión fantasmal")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_ILUSION_MAYOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_ILUSION_MAYOR","Ilusión mayor",
+    "Ilusión mayor")).getId();
+var KI_EFECTO_NIVEL_ILUSION_MAYOR = (new L("KI_EFECTO_NIVEL_ILUSION_MAYOR","Ilusión mayor",
+    "Ilusión mayor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_MIEDO = (new L("KI_EFECTO_VENTAJA_ESTADOS_MIEDO","Miedo",
+    "Miedo")).getId();
+var KI_EFECTO_NIVEL_MIEDO = (new L("KI_EFECTO_NIVEL_MIEDO","Miedo",
+    "Miedo")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MAYOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MAYOR","Penalizador a la acción mayor",
+    "Penalizador a la acción mayor")).getId();
+var KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MAYOR = (new L("KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MAYOR","Penalizador a la acción mayor",
+    "Penalizador a la acción mayor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR","Penalizador a la acción menor",
+    "Penalizador a la acción menor")).getId();
+var KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MENOR = (new L("KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MENOR","Penalizador a la acción menor",
+    "Penalizador a la acción menor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_REDUCCION_DE_CARACTERISTICAS = (new L("KI_EFECTO_VENTAJA_ESTADOS_REDUCCION_DE_CARACTERISTICAS","Reducción de Características",
+    "Reducción de Características")).getId();
+var KI_EFECTO_NIVEL_REDUCCION_DE_CARACTERISTICAS = (new L("KI_EFECTO_NIVEL_REDUCCION_DE_CARACTERISTICAS","Reducción de Características",
+    "Reducción de Características")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_AGI = (new L("KI_EFECTO_NIVEL_REDUCIR_AGI","Reducción de una Característica (Agilidad)",
+    "Reducción de una Característica (Agilidad)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_DES = (new L("KI_EFECTO_NIVEL_REDUCIR_DES","Reducción de una Característica (Destreza)",
+    "Reducción de una Característica (Destreza)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_CON = (new L("KI_EFECTO_NIVEL_REDUCIR_CON","Reducción de una Característica (Constitución)",
+    "Reducción de una Característica (Constitución)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_FUE = (new L("KI_EFECTO_NIVEL_REDUCIR_FUE","Reducción de una Característica (Fuerza)",
+    "Reducción de una Característica (Fuerza)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_INT = (new L("KI_EFECTO_NIVEL_REDUCIR_INT","Reducción de una Característica (Inteligencia)",
+    "Reducción de una Característica (Inteligencia)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_POD = (new L("KI_EFECTO_NIVEL_REDUCIR_POD","Reducción de una Característica (Poder)",
+    "Reducción de una Característica (Poder)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_VOL = (new L("KI_EFECTO_NIVEL_REDUCIR_VOL","Reducción de una Característica (Voluntad)",
+    "Reducción de una Característica (Voluntad)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_PER = (new L("KI_EFECTO_NIVEL_REDUCIR_PER","Reducción de una Característica (Percepción)",
+    "Reducción de una Característica (Percepción)")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RP = (new L("KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RP","Estado añadido: Reducción de RP",
+    "Estado añadido: Reducción de RP")).getId();
+var KI_EFECTO_NIVEL_REDUCCION_RP = (new L("KI_EFECTO_NIVEL_REDUCCION_RP","Reducción de RP",
+    "Reducción de RP")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_TERROR = (new L("KI_EFECTO_VENTAJA_ESTADOS_TERROR","Terror",
+    "Terror")).getId();
+var KI_EFECTO_NIVEL_TERROR = (new L("KI_EFECTO_NIVEL_TERROR","Terror",
+    "Terror")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_CONDICION_PREDETERMINADA = (new L("KI_EFECTO_VENTAJA_ESTADOS_CONDICION_PREDETERMINADA","Condición predeterminada",
+    "Condición predeterminada")).getId();
+var KI_EFECTO_NIVEL_BESO = (new L("KI_EFECTO_NIVEL_BESO","Beso",
+    "Beso")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_FISICO = (new L("KI_EFECTO_NIVEL_CONTACTO_FISICO","Contacto físico",
+    "Contacto físico")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_VISUAL_MUTUO = (new L("KI_EFECTO_NIVEL_CONTACTO_VISUAL_MUTUO","Contacto visual mutuo",
+    "Contacto visual mutuo")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_VISUAL_UN_BLANCO = (new L("KI_EFECTO_NIVEL_CONTACTO_VISUAL_UN_BLANCO","Contacto visual (un blanco)",
+    "Contacto visual (un blanco)")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_VISUAL_VARIOS_BLANCOS = (new L("KI_EFECTO_NIVEL_CONTACTO_VISUAL_VARIOS_BLANCOS","Contacto visual (varios blancos)",
+    "Contacto visual (varios blancos)")).getId();
+var KI_EFECTO_NIVEL_POR_EL_AIRE = (new L("KI_EFECTO_NIVEL_POR_EL_AIRE","Por el aire",
+    "Por el aire")).getId();
+var KI_EFECTO_NIVEL_POR_SONIDO_UN_BLANCO = (new L("KI_EFECTO_NIVEL_POR_SONIDO_UN_BLANCO","Por sonido (un blanco)",
+    "Por sonido (un blanco)")).getId();
+var KI_EFECTO_NIVEL_POR_SONIDO_VARIOS_BLANCOS = (new L("KI_EFECTO_NIVEL_POR_SONIDO_VARIOS_BLANCOS","Por sonido (varios blancos)",
+    "Por sonido (varios blancos)")).getId();
+var KI_EFECTO_NIVEL_POR_SUPERFICIE = (new L("KI_EFECTO_NIVEL_POR_SUPERFICIE","Por superficie",
+    "Por superficie")).getId();
+var KI_EFECTO_NIVEL_POR_TODA_SUPERFICIE = (new L("KI_EFECTO_NIVEL_POR_TODA_SUPERFICIE","Por toda superficie",
+    "Por toda superficie")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DISTANCIA_DEL_EFECTO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DISTANCIA_DEL_EFECTO","Distancia del efecto",
+    "Distancia del efecto")).getId();
+var KI_EFECTO_NIVEL_150_M = (new L("KI_EFECTO_NIVEL_150_M","150 metros",
+    "150 metros")).getId();
+var KI_EFECTO_IMPACTO = (new L("KI_EFECTO_IMPACTO","Impacto",
+    "Impacto")).getId();
+var KI_EFECTO_VENTAJA_IMPACTO_ATRAER = (new L("KI_EFECTO_VENTAJA_IMPACTO_ATRAER","Atraer",
+    "Atraer")).getId();
+var KI_EFECTO_NIVEL_ATRAER = (new L("KI_EFECTO_NIVEL_ATRAER","Atraer",
+    "Atraer")).getId();
+var KI_EFECTO_INTERRUPCION = (new L("KI_EFECTO_INTERRUPCION","Interrupción",
+    "Interrupción")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_20 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_20","Daño +20",
+    "Daño +20")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_40 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_40","Daño +40",
+    "Daño +40")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_60 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_60","Daño +60",
+    "Daño +60")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_80 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_80","Daño +80",
+    "Daño +80")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_100 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_100","Daño +100",
+    "Daño +100")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_120 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_120","Daño +120",
+    "Daño +120")).getId();
+var KI_EFECTO_VENTAJA_INTERRUPCION_TIPO_DE_INTERRUPCION = (new L("KI_EFECTO_VENTAJA_INTERRUPCION_TIPO_DE_INTERRUPCION","Tipo de interrupción",
+    "Tipo de interrupción")).getId();
+var KI_EFECTO_NIVEL_KI = (new L("KI_EFECTO_NIVEL_KI","Ki",
+    "Ki")).getId();
+var KI_EFECTO_NIVEL_MAGIA = (new L("KI_EFECTO_NIVEL_MAGIA","Magia",
+    "Magia")).getId();
+var KI_EFECTO_NIVEL_HABILIDADES_PSIQUICAS = (new L("KI_EFECTO_NIVEL_HABILIDADES_PSIQUICAS","Habilidades psíquicas",
+    "Habilidades psíquicas")).getId();
+var KI_EFECTO_VENTAJA_INTANGIBILIDAD_AFECTAR_A_OTROS = (new L("KI_EFECTO_VENTAJA_INTANGIBILIDAD_AFECTAR_A_OTROS","Afectar a otros",
+    "Afectar a otros")).getId();
+var KI_EFECTO_NIVEL_PRESENCIA_SIMPLE = (new L("KI_EFECTO_NIVEL_PRESENCIA_SIMPLE","Presencia simple",
+    "Presencia simple")).getId();
+var KI_EFECTO_NIVEL_PRESENCIA_EXTENDIDA = (new L("KI_EFECTO_NIVEL_PRESENCIA_EXTENDIDA","Presencia extendida",
+    "Presencia extendida")).getId();
+var KI_EFECTO_VENTAJA_INTANGIBILIDAD_FUSION = (new L("KI_EFECTO_VENTAJA_INTANGIBILIDAD_FUSION","Fusión",
+    "Fusión")).getId();
+var KI_EFECTO_NIVEL_FUSION = (new L("KI_EFECTO_NIVEL_FUSION","Fusión",
+    "Fusión")).getId();
+var KI_EFECTO_MARCA = (new L("KI_EFECTO_MARCA","Marca",
+    "Marca")).getId();
+var KI_EFECTO_NIVEL_MARCA_MAYOR = (new L("KI_EFECTO_NIVEL_MARCA_MAYOR","Marca mayor",
+    "Marca mayor")).getId();
+var KI_EFECTO_NIVEL_MARCA_MENOR = (new L("KI_EFECTO_NIVEL_MARCA_MENOR","Marca menor",
+    "Marca menor")).getId();
+var KI_EFECTO_VENTAJA_MARCA_PERMANENCIA = (new L("KI_EFECTO_VENTAJA_MARCA_PERMANENCIA","Permanencia",
+    "Permanencia")).getId();
+var KI_EFECTO_NIVEL_PROLONGADA = (new L("KI_EFECTO_NIVEL_PROLONGADA","Prolongada",
+    "Prolongada")).getId();
+var KI_EFECTO_NIVEL_ETERNA = (new L("KI_EFECTO_NIVEL_ETERNA","Eterna",
+    "Eterna")).getId();
+var KI_EFECTO_POTENCIAR_CRITICO_REAL = (new L("KI_EFECTO_POTENCIAR_CRITICO_REAL","Potenciar crítico real",
+    "Potenciar crítico real")).getId();
+var KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO = (new L("KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO","Crítico automático",
+    "Crítico automático")).getId();
