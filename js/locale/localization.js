@@ -1078,3 +1078,5 @@ var UI_ANULAR = (new L("UI_ANULAR","Anular","Cancel")).getId();
 var UI_MAX_CM = (new L("UI_MAX_CM","Max CM alcanzado","Max MK reached")).getId();
 var UI_APLICAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_APLICAR_MENOS_UNO_A_DOS_CARAC","Aumenta dos puntos de ki entre las siguientes (Selecciona dos)","Add two points of ki among the following (select two)")).getId();
 var UI_CANCELAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_CANCELAR_MENOS_UNO_A_DOS_CARAC","Cancela el aumento de dos puntos de ki entre las siguientes (Selecciona dos)","Cancel the two points added of ki among the following (select two)")).getId();
+
+var ELEGIR_HABILIDAD = "ELEGIR_HABILIDAD";

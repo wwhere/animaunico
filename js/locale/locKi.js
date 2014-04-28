@@ -625,3 +625,88 @@ var KI_EFECTO_VENTAJA_ARMADURA_LENTITUD = (new L("KI_EFECTO_VENTAJA_ARMADURA_LEN
     "Lentitud")).getId();
 var KI_EFECTO_NIVEL_VENTAJA_LENTITUD= (new L("KI_EFECTO_NIVEL_VENTAJA_LENTITUD","Lentitud",
     "Lentitud")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_MOVIMIENTO= (new L("KI_EFECTO_INCREMENTO_DE_MOVIMIENTO","Incremento de movimiento",
+    "Incremento de movimiento")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_FRIALDAD = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_FRIALDAD","Incremento de habilidad (Frialdad)",
+    "Incremento de habilidad (Frialdad)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_PROEZAS_DE_FUERZA = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_PROEZAS_DE_FUERZA","Incremento de habilidad (Proezas de Fuerza)",
+    "Incremento de habilidad (Proezas de Fuerza)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_RESISTENCIA_AL_DOLOR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_RESISTENCIA_AL_DOLOR","Incremento de habilidad (Resistir el Dolor)",
+    "Incremento de habilidad (Resistir el Dolor)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_ACROBACIAS = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_ACROBACIAS","Incremento de habilidad (Acrobacias)",
+    "Incremento de habilidad (Acrobacias)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_ATLETISMO = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_ATLETISMO","Incremento de habilidad (Atletismo)",
+    "Incremento de habilidad (Atletismo)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_MONTAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_MONTAR","Incremento de habilidad (Montar)",
+    "Incremento de habilidad (Montar)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_NADAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_NADAR","Incremento de habilidad (Nadar)",
+    "Incremento de habilidad (Nadar)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_SALTAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_SALTAR","Incremento de habilidad (Saltar)",
+    "Incremento de habilidad (Saltar)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_TREPAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_TREPAR","Incremento de habilidad (Trepar)",
+    "Incremento de habilidad (Trepar)")).getId();
+
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_AGILIDAD = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_AGILIDAD","Capacidad incrementada (Agilidad)",
+    "Capacidad incrementada (Agilidad)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_DESTREZA = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_DESTREZA","Capacidad incrementada (Destreza)",
+    "Capacidad incrementada (Destreza)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_CONSTITUCION = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_CONSTITUCION","Capacidad incrementada (Constitución)",
+    "Capacidad incrementada (Constitución)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_FUERZA = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_FUERZA","Capacidad incrementada (Fuerza)",
+    "Capacidad incrementada (Fuerza)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_INTELIGENCIA = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_INTELIGENCIA","Capacidad incrementada (Inteligencia)",
+    "Capacidad incrementada (Inteligencia)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_PODER = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_PODER","Capacidad incrementada (Poder)",
+    "Capacidad incrementada (Poder)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_VOLUNTAD = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_VOLUNTAD","Capacidad incrementada (Voluntad)",
+    "Capacidad incrementada (Voluntad)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_PERCEPCION = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_PERCEPCION","Capacidad incrementada (Percepción",
+    "Capacidad incrementada (Percepción")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_RESISTENCIA_FISICA = (new L("KI_EFECTO_INCREMENTO_DE_RESISTENCIA_FISICA","Incremento de Resistencia Física",
+    "Incremento de Resistencia Física")).getId();
+var KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RE = (new L("KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RE","RE",
+    "DR")).getId();
+var KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RV = (new L("KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RV","RV",
+    "PR")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_RE = (new L("KI_EFECTO_NIVEL_VENTAJA_RE","RE",
+    "DR")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_RV = (new L("KI_EFECTO_NIVEL_VENTAJA_RV","RV",
+    "PR")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_RESISTENCIA_MAGICA = (new L("KI_EFECTO_INCREMENTO_DE_RESISTENCIA_MAGICA","Incremento de Resistencia Mágica",
+    "Incremento de Resistencia Mágica")).getId();
+var KI_EFECTO_INCREMENTO_DE_RESISTENCIA_PSIQUICA = (new L("KI_EFECTO_INCREMENTO_DE_RESISTENCIA_PSIQUICA","Incremento de Resistencia Psíquica",
+    "Incremento de Resistencia Psíquica")).getId();
+
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_NOCTURNA = (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_NOCTURNA","Habilidad perceptiva (Visión Nocturna)",
+    "Habilidad perceptiva (Visión Nocturna)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_RADIAL = (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_RADIAL","Habilidad perceptiva (Visión Radial)",
+    "Habilidad perceptiva (Visión Radial)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_ESPIRITUAL= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_ESPIRITUAL","Habilidad perceptiva (Visión Espiritual)",
+    "Habilidad perceptiva (Visión Espiritual)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MAGIA= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MAGIA","Habilidad perceptiva (Visión de magia)",
+    "Habilidad perceptiva (Visión de magia)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MATRICES= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MATRICES","Habilidad perceptiva (Visión de matrices)",
+    "Habilidad perceptiva (Visión de matrices)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_LO_SOBRENATURAL= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_LO_SOBRENATURAL","Habilidad perceptiva (Ver lo sobrenatural)",
+    "Habilidad perceptiva (Ver lo sobrenatural)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_REALMENTE= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_REALMENTE","Habilidad perceptiva (Ver realmente)",
+    "Habilidad perceptiva (Ver realmente)")).getId();
+
+var KI_EFECTO_NIVEL_VISION_NOCTURNA = (new L("KI_EFECTO_NIVEL_VISION_NOCTURNA","Visión Nocturna",
+    "Visión Nocturna")).getId();
+var KI_EFECTO_NIVEL_VISION_RADIAL = (new L("KI_EFECTO_NIVEL_VISION_RADIAL","Visión Radial",
+    "Visión Radial")).getId();
+var KI_EFECTO_NIVEL_VISION_ESPIRITUAL= (new L("KI_EFECTO_NIVEL_VISION_ESPIRITUAL","Visión Espiritual",
+    "Visión Espiritual")).getId();
+var KI_EFECTO_NIVEL_VISION_DE_MAGIA= (new L("KI_EFECTO_NIVEL_VISION_DE_MAGIA","Visión de magia",
+    "Visión de magia")).getId();
+var KI_EFECTO_NIVEL_VISION_DE_MATRICES= (new L("KI_EFECTO_NIVEL_VISION_DE_MATRICES","Visión de matrices",
+    "Visión de matrices")).getId();
+var KI_EFECTO_NIVEL_VER_LO_SOBRENATURAL= (new L("KI_EFECTO_NIVEL_VER_LO_SOBRENATURAL","Ver lo sobrenatural",
+    "Ver lo sobrenatural")).getId();
+var KI_EFECTO_NIVEL_VER_REALMENTE= (new L("KI_EFECTO_NIVEL_VER_REALMENTE","Ver realmente",
+    "Ver realmente")).getId();
