@@ -719,3 +719,54 @@ var KI_EFECTO_NIVEL_2_A_3_ARMAS_ADICIONALES= (new L("KI_EFECTO_NIVEL_2_A_3_ARMAS
     "De 2 a 3 armas adicionales")).getId();
 var KI_EFECTO_NIVEL_4_A_10_ARMAS_ADICIONALES= (new L("KI_EFECTO_NIVEL_4_A_10_ARMAS_ADICIONALES","De 4 a 10 armas adicionales",
     "De 4 a 10 armas adicionales")).getId();
+var KI_EFECTO_ABSORCION_DE_KI = (new L("KI_EFECTO_ABSORCION_DE_KI","Absorción de Ki",
+    "Absorción de Ki")).getId();
+var KI_EFECTO_NIVEL_HASTA_5 = (new L("KI_EFECTO_NIVEL_HASTA_5","Hasta 5",
+    "Hasta 5")).getId();
+var KI_EFECTO_NIVEL_HASTA_10 = (new L("KI_EFECTO_NIVEL_HASTA_10","Hasta 10",
+    "Hasta 10")).getId();
+var KI_EFECTO_NIVEL_HASTA_15 = (new L("KI_EFECTO_NIVEL_HASTA_15","Hasta 15",
+    "Hasta 15")).getId();
+var KI_EFECTO_NIVEL_HASTA_20 = (new L("KI_EFECTO_NIVEL_HASTA_20","Hasta 20",
+    "Hasta 20")).getId();
+var KI_EFECTO_NIVEL_HASTA_25 = (new L("KI_EFECTO_NIVEL_HASTA_25","Hasta 25",
+    "Hasta 25")).getId();
+var KI_EFECTO_NIVEL_SIN_LIMITE = (new L("KI_EFECTO_NIVEL_SIN_LIMITE","Sin límite",
+    "Sin límite")).getId();
+var KI_EFECTO_VENTAJA_APRESAMIENTO_PRESA_EXISTENCIAL = (new L("KI_EFECTO_VENTAJA_APRESAMIENTO_PRESA_EXISTENCIAL","Presa existencial",
+    "Presa existencial")).getId();
+var KI_EFECTO_NIVEL_PRESA_EXISTENCIAL = (new L("KI_EFECTO_NIVEL_PRESA_EXISTENCIAL","Presa existencial",
+    "Presa existencial")).getId();
+
+var KI_EFECTO_CHOQUE_FISICO = (new L("KI_EFECTO_CHOQUE_FISICO","Choque físico",
+    "Choque físico")).getId();
+var KI_EFECTO_NIVEL_CHOQUE = (new L("KI_EFECTO_NIVEL_CHOQUE","Choque",
+    "Choque")).getId();
+var KI_EFECTO_VENTAJA_ACUMULACION_REGENERACION = (new L("KI_EFECTO_VENTAJA_ACUMULACION_REGENERACION","Regeneración",
+    "Regeneración")).getId();
+var KI_EFECTO_VENTAJA_ESPEJISMO_MODIFICACION_ASPECTO = (new L("KI_EFECTO_VENTAJA_ESPEJISMO_MODIFICACION_ASPECTO","Modificación de aspecto",
+    "Modificación de aspecto")).getId();
+var KI_EFECTO_NIVEL_MODIFICACION_ASPECTO = (new L("KI_EFECTO_NIVEL_MODIFICACION_ASPECTO","Modificación de aspecto",
+    "Modificación de aspecto")).getId();
+var KI_EFECTO_VENTAJA_ESPEJISMO_ILUSIONES_FANTASMALES = (new L("KI_EFECTO_VENTAJA_ESPEJISMO_ILUSIONES_FANTASMALES","Ilusiones fantasmales",
+    "Ilusiones fantasmales")).getId();
+var KI_EFECTO_NIVEL_RP_140 = (new L("KI_EFECTO_NIVEL_RP_140","RP 140",
+    "RP 140")).getId();
+var KI_EFECTO_NIVEL_RP_180 = (new L("KI_EFECTO_NIVEL_RP_180","RP 180",
+    "RP 180")).getId();
+var KI_EFECTO_NIVEL_RP_240 = (new L("KI_EFECTO_NIVEL_RP_240","RP 240",
+    "RP 240")).getId();
+var KI_EFECTO_VENTAJA_ESCUDO_ENERGIA_REGENERACION = (new L("KI_EFECTO_VENTAJA_ESCUDO_ENERGIA_REGENERACION","Regeneración",
+    "Regeneración")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DOBLE_DAÑO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOBLE_DAÑO","Doble daño",
+    "Doble daño")).getId();
+var KI_EFECTO_NIVEL_DOBLE_DAÑO = (new L("KI_EFECTO_NIVEL_DOBLE_DAÑO","Doble daño",
+    "Doble daño")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DOLOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOLOR","Dolor",
+    "Dolor")).getId();
+var KI_EFECTO_NIVEL_DOLOR = (new L("KI_EFECTO_NIVEL_DOLOR","Dolor",
+    "Dolor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DOLOR_EXTREMO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOLOR_EXTREMO","Dolor extremo",
+    "Dolor extremo")).getId();
+var KI_EFECTO_NIVEL_DOLOR_EXTREMO = (new L("KI_EFECTO_NIVEL_DOLOR_EXTREMO","Dolor",
+    "Dolor extremo")).getId();

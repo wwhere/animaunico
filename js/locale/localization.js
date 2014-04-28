@@ -879,6 +879,7 @@ var EFECTO_ESPECIAL = (new L("Efecto especial","Efecto especial","Special effect
 var EFECTO_ESPACIAL = (new L("Efecto espacial","Efecto espacial","Spacial effect")).getId();
 var EFECTO_ENTEREZA = (new L("Efecto de entereza","Efecto de entereza","Fortitude effect")).getId();
 var EFECTO_INCREMENTO = (new L("Efecto de incremento","Efecto de incremento","Increase effect")).getId();
+var EFECTO_VARIADO = (new L("Efecto variado","Efecto variado","Various effect")).getId();
 
 var COSTE_VENTAJAS_AUMENTA_DOS = (new L("Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Each additional election adds two to the extra ki cost of this advantage")).getId();
 
