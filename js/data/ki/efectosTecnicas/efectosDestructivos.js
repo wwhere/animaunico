@@ -16,6 +16,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+200",20,24,50,12,24,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
     [
         new CaracSecunTecnica(DES, 3),
@@ -58,6 +59,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+100",14,18,50,10,20,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
     [
         new CaracSecunTecnica(DES, 3),
@@ -77,6 +79,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("x4",20,30,80,12,24,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
     [
         new CaracSecunTecnica(DES, 3),
@@ -96,6 +99,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("x4",40,48,100,22,44,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
     [
         new CaracSecunTecnica(DES, 3),
@@ -119,6 +123,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("250",15,19,35,12,24,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
     [
         new CaracSecunTecnica(DES, 3),
@@ -141,6 +146,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("200",18,22,50,12,24,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     [ELEMENTO_FUEGO,ELEMENTO_TIERRA],
     [
         new CaracSecunTecnica(DES, 3),

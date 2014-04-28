@@ -13,6 +13,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+200",14,18,40,7,14,-1,3)
     ],
     AGI,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE]),
     [
         new CaracSecunTecnica(DES, 1),
@@ -30,6 +31,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_RECUPERAR_ACCION,6,9,25,2,4,7,1)
     ],
     VOL,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -48,6 +50,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_COMPLETO,6,9,25,3,6,11,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_FUEGO,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(VOL, 1),

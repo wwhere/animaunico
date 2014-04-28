@@ -10,6 +10,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+5",30,36,60,15,30,-1,3)
     ],
     DES,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -58,6 +59,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+10",26,32,60,12,24,-1,3)
     ],
     DES,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -90,6 +92,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_ILIMITADAS,8,11,35,12,24,-1,3)
     ],
     AGI,
+    CLASE_DEFENSA,
     new ElementosAfines([ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(DES, 1),
@@ -122,6 +125,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+10",8,11,35,12,24,-1,3)
     ],
     DES,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE]),
     [
         new CaracSecunTecnica(AGI, 1),

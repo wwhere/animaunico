@@ -16,6 +16,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_KM,22,26,50,14,28,-1,3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(VOL, 1),
@@ -56,6 +57,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_1_KM,20,24,70,12,24,-1,3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(VOL, 1),
@@ -81,6 +83,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_5_KM,16,20,60,10,20,-1,3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_OSCURIDAD,ELEMENTO_LUZ,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(VOL, 1),
@@ -112,6 +115,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_M,16,20,65,8,16,-1,3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_OSCURIDAD,ELEMENTO_LUZ,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(VOL, 1),
@@ -145,6 +149,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_1_KM,10,13,35,8,16,-1,3)
     ],
     POD,
+    CLASE_DEFENSA,
     new ElementosAfines([ELEMENTO_LUZ,ELEMENTO_AGUA,ELEMENTO_TIERRA]),
     [
         new CaracSecunTecnica(VOL, 3),
@@ -172,6 +177,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_100_KM,22,26,50,12,24,-1,3)
     ],
     AGI,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_LUZ,ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(FUE, 2),

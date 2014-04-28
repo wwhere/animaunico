@@ -11,6 +11,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+5",8,11,25,5,10,-1,3)
     ],
     AGI,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_FUEGO,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -33,6 +34,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -55,6 +57,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -77,6 +80,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -99,6 +103,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -121,6 +126,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -143,6 +149,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -165,6 +172,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -187,6 +195,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -209,6 +218,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+150",15,19,25,6,12,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -233,6 +243,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     AGI,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -255,6 +266,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(POD, 1),
@@ -276,6 +288,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     DES,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -298,6 +311,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     FUE,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -320,6 +334,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -341,6 +356,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     VOL,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -362,6 +378,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     INT,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -384,6 +401,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+8",14,18,30,8,16,-1,3)
     ],
     PER,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(CON, 1),
@@ -408,6 +426,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+100",18,22,40,8,16,-1,3)
     ],
     CON,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(FUE, 2),
@@ -448,6 +467,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+100",18,22,40,8,16,-1,3)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_FUEGO,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(CON, 2),
@@ -472,6 +492,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+100",18,22,40,8,16,-1,3)
     ],
     VOL,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(CON, 2),
@@ -489,6 +510,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VISION_NOCTURNA,2,4,5,1,2,4,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),
@@ -506,6 +528,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VISION_RADIAL,4,6,10,2,4,7,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),
@@ -523,6 +546,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VISION_ESPIRITUAL,3,5,5,1,2,4,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),
@@ -540,6 +564,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VISION_DE_MAGIA,3,5,5,1,2,4,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),
@@ -557,6 +582,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VISION_DE_MATRICES,3,5,5,1,2,4,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),
@@ -574,6 +600,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VER_LO_SOBRENATURAL,5,8,15,2,4,7,1)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),
@@ -591,6 +618,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_VER_REALMENTE,8,11,25,2,4,7,2)
     ],
     POD,
+    CLASE_VARIABLE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(AGI, 4),

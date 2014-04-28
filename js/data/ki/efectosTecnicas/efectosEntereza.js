@@ -13,6 +13,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+40",18,22,40,8,16,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_TIERRA,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(VOL, 1),
@@ -35,6 +36,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+40",7,10,25,4,8,-1,3)
     ],
     CON,
+    CLASE_DEFENSA,
     new ElementosAfines([ELEMENTO_TIERRA,ELEMENTO_FUEGO,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(VOL, 1),
@@ -60,6 +62,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica(KI_EFECTO_NIVEL_SIN_ARMADURA,12,15,40,6,12,-1,3)
     ],
     FUE,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_OSCURIDAD,ELEMENTO_FUEGO]),
     [
         new CaracSecunTecnica(POD, 1),
@@ -84,6 +87,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("8",14,18,40,5,10,-1,3)
     ],
     CON,
+    CLASE_DEFENSA,
     new ElementosAfines([ELEMENTO_TIERRA,ELEMENTO_AGUA,ELEMENTO_LUZ]),
     [
         new CaracSecunTecnica(POD, 1),

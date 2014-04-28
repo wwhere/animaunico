@@ -16,6 +16,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+200", 30, 36, 50, 18, 36, -1, 3)
     ],
     DES,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE, ELEMENTO_FUEGO, ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -39,6 +40,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+100", 28, 32, 70, 20, 40, -1, 3)
     ],
     DES,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE, ELEMENTO_FUEGO, ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -63,6 +65,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("440", 26, 32, 45, 12, 24, -1, 3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_LUZ, ELEMENTO_TIERRA, ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -90,6 +93,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("+200", 26, 32, 45, 18, 36, -1, 3)
     ],
     DES,
+    CLASE_CONTRAATAQUE,
     new ElementosAfines([ELEMENTO_AIRE, ELEMENTO_AGUA, ELEMENTO_TIERRA]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -112,6 +116,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("-120",8,11,20,3,6,-1,3)
     ],
     DES,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE]),
     [
         new CaracSecunTecnica(AGI, 1),
@@ -131,6 +136,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("-50",6,9,20,4,8,14,2)
     ],
     DES,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE]),
     [
         new CaracSecunTecnica(AGI, 1),
@@ -150,6 +156,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("3",9,12,30,6,12,-1,3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE,ELEMENTO_AGUA,ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(AGI, 2),
@@ -174,6 +181,7 @@ addEfectoTecnica(new EfectoTecnica(
         new NivelEfectoTecnica("440", 10, 13, 25, 6, 12, -1, 3)
     ],
     POD,
+    CLASE_ATAQUE,
     new ElementosAfines([ELEMENTO_AIRE, ELEMENTO_AGUA, ELEMENTO_OSCURIDAD]),
     [
         new CaracSecunTecnica(AGI, 2),

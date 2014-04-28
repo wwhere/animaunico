@@ -912,3 +912,12 @@ var KI_EFECTO_POTENCIAR_CRITICO_REAL = (new L("KI_EFECTO_POTENCIAR_CRITICO_REAL"
     "Potenciar crítico real")).getId();
 var KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO = (new L("KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO","Crítico automático",
     "Crítico automático")).getId();
+
+var CLASE_ATAQUE  = (new L("CLASE_ATAQUE","Ataque",
+    "Ataque")).getId();
+var CLASE_CONTRAATAQUE = (new L("CLASE_CONTRAATAQUE","Contraataque",
+    "Contraataque")).getId();
+var CLASE_DEFENSA = (new L("CLASE_DEFENSA","Defensa",
+    "Defensa")).getId();
+var CLASE_VARIABLE = (new L("CLASE_VARIABLE","Variable",
+    "Variable")).getId();
