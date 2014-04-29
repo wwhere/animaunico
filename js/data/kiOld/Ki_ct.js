@@ -1058,34 +1058,3 @@ function noPuedeComprarLimite(parametros) {
     return !puede;
 }
 
-
-function costeCombinableCM(nivel) {
-    return nivel*10;
-}
-
-function costeCombinableKi(nivel) {
-    return nivel*3;
-}
-
-function costeSostenida(nivel, sostenida) {
-    switch (sostenida) {
-        case TECNICA_SOSTENIDA_MENOR:
-            if (nivel == 2) {
-                return 40;
-            } else if (nivel == 3) {
-                return 60;
-            }
-            return 0;
-            break;
-        case TECNICA_SOSTENIDA_MAYOR:
-            if (nivel == 2) {
-                return 60;
-            } else if (nivel == 3) {
-                return 90;
-            }
-            return 0;
-            break;
-        default:
-            return 0;
-    }
-}

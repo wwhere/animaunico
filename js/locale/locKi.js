@@ -1065,3 +1065,12 @@ var KI_TECN_DESV_USOS_LIMITADOS_3 = (new L("KI_TECN_DESV_USOS_LIMITADOS_3","Usos
     "Usos limitados (3 usos)")).getId();
 var KI_TECN_DESV_USOS_LIMITADOS_1 = (new L("KI_TECN_DESV_USOS_LIMITADOS_1","Usos limitados (1 uso)",
     "Usos limitados (1 uso)")).getId();
+var ERR_NIVEL_EFECTO_DESCONOCIDO = (new L("Error: nivel de efecto desconocido","Error: nivel de efecto desconocido",
+    "Error: nivel de efecto desconocido")).getId();
+
+var TECNICA_SOSTENIDA_MENOR = (new L("TECNICA_SOSTENIDA_MENOR","Sostenida (menor)",
+    "Sostenida (menor)")).getId();
+var TECNICA_SOSTENIDA_MAYOR = (new L("TECNICA_SOSTENIDA_MAYOR","Sostenida (mayor)",
+    "Sostenida (mayor)")).getId();
+var TECNICA_COMBINABLE = (new L("TECNICA_COMBINABLE","Combinable",
+    "Combinable")).getId();

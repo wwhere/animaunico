@@ -8,11 +8,10 @@
  * @param {CaracSecunTecnica[]} caracSecundarias
  * @constructor
  * @param {string} tipoEfecto
- * @param {string} claseEfecto
  * @param {VentajaTecnica[]} [ventajasOpcionales]
  * @param {string[]} [especial]
  */
-function EfectoTecnica(nombre, descripcion, tipoEfecto, nivelesEfecto, caracPrimaria, claseEfecto, elementosAfines, caracSecundarias, ventajasOpcionales, especial) {
+function EfectoTecnica(nombre, descripcion, tipoEfecto, nivelesEfecto, caracPrimaria, elementosAfines, caracSecundarias, ventajasOpcionales, especial) {
     /**
      *
      * @type {string}
@@ -51,12 +50,6 @@ function EfectoTecnica(nombre, descripcion, tipoEfecto, nivelesEfecto, caracPrim
      * @type {string}
      */
     this.tipoEfecto = tipoEfecto;
-
-    /**
-     *
-     * @type {string}
-     */
-    this.claseEfecto = claseEfecto;
 
     /**
      *
@@ -147,14 +140,6 @@ EfectoTecnica.prototype = {
 
     /**
      *
-     * @returns {string}
-     */
-    getClaseEfecto : function() {
-        return this.claseEfecto;
-    },
-
-    /**
-     *
      * @returns {CaracSecunTecnica[]}
      */
     getCaracSecundarias :function() {
@@ -203,12 +188,10 @@ EfectoTecnica.prototype = {
  * @param {number} costeSecundario
  * @param {number} costeCM
  * @param {number} costeMantenimiento
- * @param {number} sostenimientoMenor
- * @param {number} sostenimientoMayor
  * @param {number} nivelMinimo
  * @constructor
  */
-function NivelEfectoTecnica(nombre, costePrimario, costeSecundario, costeCM, costeMantenimiento, sostenimientoMenor, sostenimientoMayor, nivelMinimo) {
+function NivelEfectoTecnica(nombre, costePrimario, costeSecundario, costeCM, costeMantenimiento, nivelMinimo) {
     /**
      *
      * @type {string}
@@ -238,18 +221,6 @@ function NivelEfectoTecnica(nombre, costePrimario, costeSecundario, costeCM, cos
      * @type {number}
      */
     this.costeMantenimiento = costeMantenimiento;
-
-    /**
-     *
-     * @type {number}
-     */
-    this.sostenimientoMayor = sostenimientoMayor;
-
-    /**
-     *
-     * @type {number}
-     */
-    this.sostenimientoMenor = sostenimientoMenor;
 
     /**
      *
@@ -313,22 +284,6 @@ NivelEfectoTecnica.prototype = {
      */
     getCosteMantenimiento : function() {
         return this.costeMantenimiento;
-    },
-
-    /**
-     *
-     * @returns {number}
-     */
-    getSostenimientoMenor : function() {
-        return this.sostenimientoMenor;
-    },
-
-    /**
-     *
-     * @returns {number}
-     */
-    getSostenimientoMayor : function() {
-        return this.sostenimientoMayor;
     },
 
     /**
@@ -439,12 +394,10 @@ VentajaTecnica.prototype = {
  * @param {number} costeKi
  * @param {number} costeCM
  * @param {number} costeMantenimiento
- * @param {number} sostenimientoMenor
- * @param {number} sostenimientoMayor
  * @param {number} nivel
  * @constructor
  */
-function NivelVentajaTecnica(nombre, costeKi, costeCM, costeMantenimiento, sostenimientoMenor, sostenimientoMayor, nivel) {
+function NivelVentajaTecnica(nombre, costeKi, costeCM, costeMantenimiento, nivel) {
     /**
      *
      * @type {string}
@@ -468,18 +421,6 @@ function NivelVentajaTecnica(nombre, costeKi, costeCM, costeMantenimiento, soste
      * @type {number}
      */
     this.costeMantenimiento = costeMantenimiento;
-
-    /**
-     *
-     * @type {number}
-     */
-    this.sostenimientoMenor = sostenimientoMenor;
-
-    /**
-     *
-     * @type {number}
-     */
-    this.sostenimientoMayor = sostenimientoMayor;
 
     /**
      *
@@ -539,22 +480,6 @@ NivelVentajaTecnica.prototype = {
      *
      * @returns {number}
      */
-    getSostenimientoMenor : function() {
-        return this.sostenimientoMenor;
-    },
-
-    /**
-     *
-     * @returns {number}
-     */
-    getSostenimientoMayor : function() {
-        return this.sostenimientoMayor;
-    },
-
-    /**
-     *
-     * @returns {number}
-     */
     getNivel : function() {
         return this.nivel;
     },
@@ -570,12 +495,11 @@ NivelVentajaTecnica.prototype = {
  * @param {string} descripcion
  * @param {Array} efecto
  * @param {string[]} incompatibles
- * @param {string[]} clasesPermitidas
  * @param {number} costeCM
  * @param {number} nivelMinimo
  * @constructor
  */
-function DesventajaTecnica(nombre, descripcion, efecto, incompatibles, clasesPermitidas, costeCM, nivelMinimo) {
+function DesventajaTecnica(nombre, descripcion, efecto, incompatibles, costeCM, nivelMinimo) {
     /**
      *
      * @type {string}
@@ -599,12 +523,6 @@ function DesventajaTecnica(nombre, descripcion, efecto, incompatibles, clasesPer
      * @type {string[]}
      */
     this.incompatibles = incompatibles;
-
-    /**
-     *
-     * @type {string[]}
-     */
-    this.clasesPermitidas = clasesPermitidas;
 
     /**
      *
@@ -652,28 +570,6 @@ DesventajaTecnica.prototype = {
      */
     getIncompatibles : function() {
         return this.incompatibles;
-    },
-
-    /**
-     *
-     * @returns {string[]}
-     */
-    getClasesPermitidas : function() {
-        return this.clasesPermitidas;
-    },
-
-    /**
-     *
-     * @param {string} clase
-     * @returns {boolean}
-     */
-    permiteClase : function(clase) {
-        for (var i = 0; i < this.clasesPermitidas.length; i++) {
-            if (this.clasesPermitidas[i] == clase) {
-                return true;
-            }
-        }
-        return false;
     },
 
     /**
@@ -803,7 +699,7 @@ function TecnicaKi(nivel) {
      *
      * @type {{AGI: number, DES: number, FUE: number, CON: number, VOL: number, POD: number}}
      */
-    this.kiReducidos = {};
+    this.kiReducidos = {}
     this.kiReducidos[AGI]=0;
     this.kiReducidos[DES]=0;
     this.kiReducidos[FUE]=0;
@@ -823,29 +719,6 @@ function TecnicaKi(nivel) {
     this.kiAumentados[VOL]=0;
     this.kiAumentados[POD]=0;
 
-    /**
-     *
-     * @type {boolean|string}
-     */
-    this.sostenida = false;
-
-    /**
-     *
-     * @type {boolean}
-     */
-    this.combinable = false;
-
-    /**
-     *
-     * @type {CosteKi}
-     */
-    this.costeCombinable = new CosteKi(0,0,0,0,0,0,AGI);
-
-    /**
-     *
-     * @type {number}
-     */
-    this.costeCombinableARepartir = 0;
 }
 
 TecnicaKi.prototype = {
@@ -866,12 +739,6 @@ TecnicaKi.prototype = {
         cadena += _l(UI_COSTE_KI) + ": " + this.getCosteKi().toString() + "; ";
         if (this.isMantenida()) {
             cadena += _l(UI_COSTE_MANTENIMIENTO) + ": " + this.getCosteMantenimiento().toString() + "; ";
-        }
-        if (this.isSostenida()) {
-            cadena += _l(this.sostenida) + "; ";
-        }
-        if (this.isCombinable()) {
-            cadena += _l(TECNICA_COMBINABLE) + "; ";
         }
 
         cadena += _l(UI_EFECTOS_DE_LA_TECNICA) + ": ";
@@ -899,22 +766,6 @@ TecnicaKi.prototype = {
     setNombre : function(valor) {
         this.nombre = valor;
         lanzarEvento(EVENT_TECNICA_CREACION);
-    },
-
-    /**
-     *
-     * @returns {boolean}
-     */
-    isSostenida : function() {
-        return this.sostenida;
-    },
-
-    /**
-     *
-     * @returns {boolean}
-     */
-    isCombinable : function() {
-        return this.combinable;
     },
 
     /**
@@ -970,18 +821,6 @@ TecnicaKi.prototype = {
 
     /**
      *
-     * @param {boolean} valor
-     */
-    setCombinable : function(valor) {
-        if (this.getCosteCM()+costeCombinableCM(this.nivel) <= this.maxCM) {
-            this.combinable = valor;
-            this.costeCombinableARepartir = costeCombinableKi(this.nivel);
-            lanzarEvento(EVENT_TECNICA_CREACION);
-        }
-    },
-
-    /**
-     *
      * @returns {number}
      */
     getNivel : function() {
@@ -1001,12 +840,8 @@ TecnicaKi.prototype = {
                 notificacionesYaDesactivadas = false;
             }
             this.maxCM = maxCMTecnica(this.nivel);
-            this.minCM = minCMTecnica(this.nivel); //TODO chequear CM
-            this.maxDesventajas = maxDesventajasTecnica(this.nivel); //TODO chequear num Desventajas
-            if (this.combinable) {
-                this.costeCombinableARepartir = costeCombinableKi(this.nivel);
-                this.costeCombinable = new CosteKi(0,0,0,0,0,0,AGI);
-            }
+            this.minCM = minCMTecnica(this.nivel);
+            this.maxDesventajas = maxDesventajasTecnica(this.nivel);
             if (!notificacionesYaDesactivadas) {
                 activarNotificaciones();
             }
@@ -1046,14 +881,6 @@ TecnicaKi.prototype = {
 
         if (this.isMantenida()) {
             coste += this.nivel * 10;
-        }
-
-        if (this.isCombinable()) {
-            coste += costeCombinableCM(this.nivel);
-        }
-
-        if (this.isSostenida()) {
-            coste += costeSostenida(this.nivel, this.sostenida);
         }
 
         var minCosteTrasDesventajas = Math.floor(coste/2);
@@ -1128,7 +955,7 @@ TecnicaKi.prototype = {
                 difCoste -= efectoExistente.getCosteCM();
             }
         }
-//todo
+
         var puedePorCoste = this.puedeAñadirEfectoDeCoste(difCoste);
 
         return (
