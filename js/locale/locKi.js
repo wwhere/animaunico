@@ -921,3 +921,147 @@ var CLASE_DEFENSA = (new L("CLASE_DEFENSA","Defensa",
     "Defensa")).getId();
 var CLASE_VARIABLE = (new L("CLASE_VARIABLE","Variable",
     "Variable")).getId();
+
+var KI_TECN_DESV_AGOTAMIENTO_2 = (new L("KI_TECN_DESV_AGOTAMIENTO_2","Agotamiento (-2)",
+    "Agotamiento (-2)")).getId();
+var KI_TECN_DESV_AGOTAMIENTO_4 = (new L("KI_TECN_DESV_AGOTAMIENTO_4","Agotamiento (-4)",
+    "Agotamiento (-4)")).getId();
+var KI_TECN_DESV_AGOTAMIENTO_6 = (new L("KI_TECN_DESV_AGOTAMIENTO_6","Agotamiento (-6)",
+    "Agotamiento (-6)")).getId();
+var KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_PARADA = (new L("KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_PARADA","Ataque especializado (contra parada)",
+    "Ataque especializado (contra parada)")).getId();
+var KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ESQUIVA = (new L("KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ESQUIVA","Ataque especializado (contra esquiva)",
+    "Ataque especializado (contra esquiva)")).getId();
+var KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ACUMULACION = (new L("KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ACUMULACION","Ataque especializado (contra acumulación)",
+    "Ataque especializado (contra acumulación)")).getId();
+var KI_TECN_DESV_ATADA_A_UN_ARMA_GENERICA = (new L("KI_TECN_DESV_ATADA_A_UN_ARMA_GENERICA","Atada a un arma genérica",
+    "Atada a un arma genérica")).getId();
+var KI_TECN_DESV_ATADA_A_UN_ARMA_UNICA = (new L("KI_TECN_DESV_ATADA_A_UN_ARMA_UNICA","Atada a un arma única",
+    "Atada a un arma única")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_MITAD_PV = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_MITAD_PV","Circunstancia límite (Mitad de PV)",
+    "Circunstancia límite (Mitad de PV)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_PV_NEGATIVOS = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_PV_NEGATIVOS","Circunstancia límite (PV negativos)",
+    "Circunstancia límite (PV negativos)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_CUARTO_PV = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_CUARTO_PV","Circunstancia límite (Una cuarta parte de PV)",
+    "Circunstancia límite (Una cuarta parte de PV)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_RECIBIR_DAÑO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_RECIBIR_DAÑO","Circunstancia límite (Recibir daño)",
+    "Circunstancia límite (Recibir daño)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_DERRIBADO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_DERRIBADO","Circunstancia de combate (derribado)",
+    "Circunstancia de combate (derribado)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_APRESADO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_APRESADO","Circunstancia de combate (apresado)",
+    "Circunstancia de combate (apresado)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_ESPALDAS = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_ESPALDAS","Circunstancia de combate (de espaldas)",
+    "Circunstancia de combate (de espaldas)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_SORPRENDIDO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_SORPRENDIDO","Circunstancia de combate (sorprendido)",
+    "Circunstancia de combate (sorprendido)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_CEGADO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_CEGADO","Circunstancia de combate (cegado)",
+    "Circunstancia de combate (cegado)")).getId();
+var KI_TECN_DESV_COMPLEJA = (new L("KI_TECN_DESV_COMPLEJA","Compleja",
+    "Compleja")).getId();
+var KI_TECN_DESV_CONDICIONES_DESENVAINAR = (new L("KI_TECN_DESV_CONDICIONES_DESENVAINAR","Condiciones (Desenvainar)",
+    "Condiciones (Desenvainar)")).getId();
+var KI_TECN_DESV_CONDICIONES_EN_VUELO = (new L("KI_TECN_DESV_CONDICIONES_EN_VUELO","Condiciones (En vuelo)",
+    "Condiciones (En vuelo)")).getId();
+var KI_TECN_DESV_CONDICIONES_MONTADO = (new L("KI_TECN_DESV_CONDICIONES_MONTADO","Condiciones (Montado)",
+    "Condiciones (Montado)")).getId();
+var KI_TECN_DESV_CONDICIONES_EN_CARGA = (new L("KI_TECN_DESV_CONDICIONES_EN_CARGA","Condiciones (En carga)",
+    "Condiciones (En carga)")).getId();
+var KI_TECN_DESV_CONDICIONES_DIURNO = (new L("KI_TECN_DESV_CONDICIONES_DIURNO","Condiciones (Diurno)",
+    "Condiciones (Diurno)")).getId();
+var KI_TECN_DESV_CONDICIONES_NOCTURNO = (new L("KI_TECN_DESV_CONDICIONES_NOCTURNO","Condiciones (Nocturno)",
+    "Condiciones (Nocturno)")).getId();
+var KI_TECN_DESV_CONDICIONES_TERRENO_DETERMINADO = (new L("KI_TECN_DESV_CONDICIONES_TERRENO_DETERMINADO","Condiciones (Terreno determinado)",
+    "Condiciones (Terreno determinado)")).getId();
+var KI_TECN_DESV_CONDICIONES_MOMENTO_CONCRETO = (new L("KI_TECN_DESV_CONDICIONES_MOMENTO_CONCRETO","Condiciones (Momento concreto)",
+    "Condiciones (Condiciones (Momento concreto)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_ATAQUES_FISICOS = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_ATAQUES_FISICOS","Defensa especializada (Sólo contra ataques físicos)",
+    "Defensa especializada (Sólo contra ataques físicos)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PROYECTILES = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PROYECTILES","Defensa especializada (Sólo contra proyectiles)",
+    "Defensa especializada (Sólo contra proyectiles)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_TECNICAS_KI = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_TECNICAS_KI","Defensa especializada (Sólo contra Técnicas del Ki)",
+    "Defensa especializada (Sólo contra Técnicas del Ki)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_CONJUROS = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_CONJUROS","Defensa especializada (Sólo contra conjuros)",
+    "Defensa especializada (Sólo contra conjuros)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PODERES_PSIQUICOS = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PODERES_PSIQUICOS","Defensa especializada (Sólo contra poderes psíquicos)",
+    "Defensa especializada (Sólo contra poderes psíquicos)")).getId();
+var KI_TECN_DESV_EXTERMINADOR_SERES_HUMANOIDES = (new L("KI_TECN_DESV_EXTERMINADOR_SERES_HUMANOIDES","Exterminador (contra seres humanoides)",
+    "Exterminador (contra seres humanoides)")).getId();
+var KI_TECN_DESV_EXTERMINADOR_CLASE_DETERMINADA = (new L("KI_TECN_DESV_EXTERMINADOR_CLASE_DETERMINADA","Exterminador (contra una clase determinada de ser)",
+    "Exterminador (contra una clase determinada de ser)")).getId();
+var KI_TECN_DESV_EXTERMINADOR_SER_DETERMINADO = (new L("KI_TECN_DESV_EXTERMINADOR_SER_DETERMINADO","Exterminador (contra ser determinado)",
+    "Exterminador (contra ser determinado)")).getId();
+var KI_TECN_DESV_EXCESO_DE_ENERGIA = (new L("KI_TECN_DESV_EXCESO_DE_ENERGIA","Exceso de energía",
+    "Exceso de energía")).getId();
+var KI_TECN_DESV_PERDIDA_DEL_ARMA = (new L("KI_TECN_DESV_PERDIDA_DEL_ARMA","Pérdida del arma",
+    "Pérdida del arma")).getId();
+var KI_TECN_DESV_PENALIZADOR_50 = (new L("KI_TECN_DESV_PENALIZADOR_50","Penalizador a toda Acción (-50)",
+    "Penalizador a toda Acción (-50)")).getId();
+var KI_TECN_DESV_PENALIZADOR_75 = (new L("KI_TECN_DESV_PENALIZADOR_75","Penalizador a toda Acción (-75)",
+    "Penalizador a toda Acción (-75)")).getId();
+var KI_TECN_DESV_PENALIZADOR_100 = (new L("KI_TECN_DESV_PENALIZADOR_100","Penalizador a toda Acción (-100)",
+    "Penalizador a toda Acción (-100)")).getId();
+var KI_TECN_DESV_PENALIZADOR_125 = (new L("KI_TECN_DESV_PENALIZADOR_125","Penalizador a toda Acción (-125)",
+    "Penalizador a toda Acción (-125)")).getId();
+var KI_TECN_DESV_PENALIZADOR_150 = (new L("KI_TECN_DESV_PENALIZADOR_150","Penalizador a toda Acción (-150)",
+    "Penalizador a toda Acción (-150)")).getId();
+var KI_TECN_DESV_PREPARACION_PREVIA_MINUTO = (new L("KI_TECN_DESV_PREPARACION_PREVIA_MINUTO","Preparación previa (1 minuto)",
+    "Preparación previa (1 minuto)")).getId();
+var KI_TECN_DESV_PREPARACION_PREVIA_HORA = (new L("KI_TECN_DESV_PREPARACION_PREVIA_HORA","Preparación previa (1 hora)",
+    "Preparación previa (1 hora)")).getId();
+var KI_TECN_DESV_PREPARACION_PREVIA_DIA = (new L("KI_TECN_DESV_PREPARACION_PREVIA_DIA","Preparación previa (1 día)",
+    "Preparación previa (1 día)")).getId();
+var KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_SIMPLE = (new L("KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_SIMPLE","Requerimientos elementales (Intesidad simple)",
+    "Requerimientos elementales (Intesidad simple)")).getId();
+var KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_MAYOR = (new L("KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_MAYOR","Requerimientos elementales (Intesidad mayor)",
+    "Requerimientos elementales (Intesidad mayor)")).getId();
+var UI_REQUISITO_ELEMENTAL = (new L("Requisito Elemental","Requisito Elemental","Requisito Elemental")).getId();
+var KI_TECN_DESV_SACRIFICIO_25 = (new L("KI_TECN_DESV_SACRIFICIO_25","Sacrificio (-25 PV)",
+    "Sacrificio (-25 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_50 = (new L("KI_TECN_DESV_SACRIFICIO_50","Sacrificio (-50 PV)",
+    "Sacrificio (-50 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_75 = (new L("KI_TECN_DESV_SACRIFICIO_75","Sacrificio (-75 PV)",
+    "Sacrificio (-75 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_100 = (new L("KI_TECN_DESV_SACRIFICIO_100","Sacrificio (-100 PV)",
+    "Sacrificio (-100 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_COMPLETO = (new L("KI_TECN_DESV_SACRIFICIO_COMPLETO","Sacrificio (Completo)",
+    "Sacrificio (Completo)")).getId();
+var KI_TECN_DESV_SACRIFICIO_AGI = (new L("KI_TECN_DESV_SACRIFICIO_AGI","Sacrificio de Características (Agilidad)",
+    "Sacrificio de Características (Agilidad)")).getId();
+var KI_TECN_DESV_SACRIFICIO_CON = (new L("KI_TECN_DESV_SACRIFICIO_CON","Sacrificio de Características (Constitución)",
+    "Sacrificio de Características (Constitución)")).getId();
+var KI_TECN_DESV_SACRIFICIO_DES = (new L("KI_TECN_DESV_SACRIFICIO_DES","Sacrificio de Características (Destreza)",
+    "Sacrificio de Características (Destreza)")).getId();
+var KI_TECN_DESV_SACRIFICIO_FUE = (new L("KI_TECN_DESV_SACRIFICIO_FUE","Sacrificio de Características (Fuerza)",
+    "Sacrificio de Características (Fuerza)")).getId();
+var KI_TECN_DESV_SACRIFICIO_INT = (new L("KI_TECN_DESV_SACRIFICIO_INT","Sacrificio de Características (Inteligencia)",
+    "Sacrificio de Características (Inteligencia)")).getId();
+var KI_TECN_DESV_SACRIFICIO_PER = (new L("KI_TECN_DESV_SACRIFICIO_PER","Sacrificio de Características (Percepción)",
+    "Sacrificio de Características (Percepción)")).getId();
+var KI_TECN_DESV_SACRIFICIO_POD = (new L("KI_TECN_DESV_SACRIFICIO_POD","Sacrificio de Características (Poder)",
+    "Sacrificio de Características (Poder)")).getId();
+var KI_TECN_DESV_SACRIFICIO_VOL = (new L("KI_TECN_DESV_SACRIFICIO_VOL","Sacrificio de Características (Voluntad)",
+    "Sacrificio de Características (Voluntad)")).getId();
+var KI_TECN_DESV_SIN_DEFENSA = (new L("KI_TECN_DESV_SIN_DEFENSA","Sin defensa",
+    "Sin defensa")).getId();
+var KI_TECN_DESV_SOBRECARGA_5 = (new L("KI_TECN_DESV_SOBRECARGA_5","Sobrecarga (espera de 5 asaltos)",
+    "Sobrecarga (espera de 5 asaltos)")).getId();
+var KI_TECN_DESV_SOBRECARGA_20 = (new L("KI_TECN_DESV_SOBRECARGA_20","Sobrecarga (espera de 20 asaltos)",
+    "Sobrecarga (espera de 20 asaltos)")).getId();
+var KI_TECN_DESV_TECNICA_FINAL = (new L("KI_TECN_DESV_TECNICA_FINAL","Técnica final",
+    "Técnica final")).getId();
+var KI_TECN_DESV_TECNICA_MANTENIDA_1 = (new L("KI_TECN_DESV_TECNICA_MANTENIDA_1","Técnica mantenida (nivel 1)",
+    "Técnica mantenida (nivel 1)")).getId();
+var KI_TECN_DESV_TECNICA_MANTENIDA_2 = (new L("KI_TECN_DESV_TECNICA_MANTENIDA_2","Técnica mantenida (nivel 2)",
+    "Técnica mantenida (nivel 2)")).getId();
+var KI_TECN_DESV_TECNICA_MANTENIDA_3 = (new L("KI_TECN_DESV_TECNICA_MANTENIDA_3","Técnica mantenida (nivel 3)",
+    "Técnica mantenida (nivel 3)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_20 = (new L("KI_TECN_DESV_USOS_LIMITADOS_20","Usos limitados (20 usos)",
+    "Usos limitados (20 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_10 = (new L("KI_TECN_DESV_USOS_LIMITADOS_10","Usos limitados (10 usos)",
+    "Usos limitados (10 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_5 = (new L("KI_TECN_DESV_USOS_LIMITADOS_5","Usos limitados (5 usos)",
+    "Usos limitados (5 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_3 = (new L("KI_TECN_DESV_USOS_LIMITADOS_3","Usos limitados (3 usos)",
+    "Usos limitados (3 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_1 = (new L("KI_TECN_DESV_USOS_LIMITADOS_1","Usos limitados (1 uso)",
+    "Usos limitados (1 uso)")).getId();

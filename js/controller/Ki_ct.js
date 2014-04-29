@@ -732,6 +732,18 @@ function elegirAtaduraElemental(numAtaduras, tecnicaKi, desventajaTecnicaElegida
     dialogoSeleccionMultiple(gruposOpciones,parametros,ataduraElementalElegida);
 }
 
+function elegirRequisitoElemental(tecnicaKi, desventajaTecnicaElegida) {
+
+    var gruposOpciones = [
+        new GrupoOpciones(_l(UI_REQUISITO_ELEMENTAL),[ELEMENTO_FUEGO,ELEMENTO_ELECTRICIDAD,ELEMENTO_FRIO,ELEMENTO_AGUA,ELEMENTO_TIERRA,ELEMENTO_AIRE,ELEMENTO_LUZ,ELEMENTO_OSCURIDAD],1)
+    ];
+    parametros = {
+        tecnicaKi:tecnicaKi,
+        desventajaTecnicaElegida: desventajaTecnicaElegida
+    };
+    dialogoSeleccionMultiple(gruposOpciones,parametros,requisitoElementalElegido);
+}
+
 /**
  *
  * @param {{tecnicaKi:TecnicaKi,desventajaTecnicaElegida:DesventajaTecnicaElegida,grupoOpciones:GrupoOpciones[]}}  parametros
@@ -750,6 +762,16 @@ function ataduraElementalElegida(parametros) {
     tecnicaKi.addDesventaja(desventajaTecnicaElegida);
 }
 
+
+function requisitoElementalElegido(parametros) {
+    var tecnicaKi = parametros.tecnicaKi;
+    var desventajaTecnicaElegida = parametros.desventajaTecnicaElegida;
+    var grupoOpciones = parametros.gruposOpciones[0];
+
+    desventajaTecnicaElegida.setDescripcion(grupoOpciones.opcionesElegidas[0]);
+
+    tecnicaKi.addDesventaja(desventajaTecnicaElegida);
+}
 /**
  *
  * @param {number} minCM
@@ -770,6 +792,13 @@ function introducirCosteCMYDescripcion(minCM, maxCM, tecnicaKi, desventajaTecnic
         desventajaTecnicaElegida: desventajaTecnicaElegida
     };
     muestraDialogoElegirOpciones(arrayOpciones,parametros,{principal:costeCMIntroducido,isDisabled:alwaysEnabled},true);
+}
+
+function introducirDetalles(tecnicaKi, desventajaTecnicaElegida) {
+
+
+    desventajaTecnicaElegida.setDescripcion(prompt(_l(UI_ESPECIFICA),""));
+    tecnicaKi.addDesventaja(desventajaTecnicaElegida);
 }
 
 /**
