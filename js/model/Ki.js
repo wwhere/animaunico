@@ -1118,7 +1118,7 @@ TecnicaKi.prototype = {
         if (this.efectoPrimario) {
             costeActual = this.efectoPrimario.getCosteCM();
         }
-
+//todo
         var difCoste = efectoTecnica.getCosteCM() - costeActual;
 
         if (this.efectoPrimario) {
@@ -1128,7 +1128,7 @@ TecnicaKi.prototype = {
                 difCoste -= efectoExistente.getCosteCM();
             }
         }
-//todo
+
         var puedePorCoste = this.puedeAñadirEfectoDeCoste(difCoste);
 
         return (
