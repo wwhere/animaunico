@@ -90,7 +90,7 @@ function getDesventajaTecnicaKi(nombreEfecto) {
     if (allDesventajasTecnicas[nombreEfecto] != undefined) {
         return allDesventajasTecnicas[nombreEfecto];
     }
-    throw ERR_DESVENTAJA_KI_DESCONOCIDA_KI_DESCONOCIDA + ": " + nombreEfecto;
+    throw ERR_DESVENTAJA_KI_DESCONOCIDA + ": " + nombreEfecto;
 }
 
 /**
