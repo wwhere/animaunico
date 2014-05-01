@@ -54,6 +54,7 @@ var allEfectosTecnicas = {};
 var desventajasTecnicas = [];
 var allDesventajasTecnicas = {};
 
+
 /**
  *
  * @param {string} nombreHabilidadKi
@@ -64,7 +65,7 @@ function getHabilidadKi(nombreHabilidadKi) {
     if (allHabilidadesKi[nombreHabilidadKi] != undefined) {
         return allHabilidadesKi[nombreHabilidadKi];
     }
-    throw ERR_HABILIDAD_KI_DESCONOCIDA + ": " + nombreHabilidadKi;
+    throw _l(ERR_HABILIDAD_KI_DESCONOCIDA) + ": " + nombreHabilidadKi;
 }
 
 /**
@@ -77,7 +78,7 @@ function getEfectoTecnicaKi(nombreEfecto) {
     if (allEfectosTecnicas[nombreEfecto] != undefined) {
         return allEfectosTecnicas[nombreEfecto];
     }
-    throw ERR_EFECTO_KI_DESCONOCIDA + ": " + nombreEfecto;
+    throw _l(ERR_EFECTO_KI_DESCONOCIDA) + ": " + nombreEfecto;
 }
 
 /**
@@ -90,7 +91,7 @@ function getDesventajaTecnicaKi(nombreEfecto) {
     if (allDesventajasTecnicas[nombreEfecto] != undefined) {
         return allDesventajasTecnicas[nombreEfecto];
     }
-    throw ERR_DESVENTAJA_KI_DESCONOCIDA + ": " + nombreEfecto;
+    throw _l(ERR_DESVENTAJA_KI_DESCONOCIDA) + ": " + nombreEfecto;
 }
 
 /**
@@ -105,7 +106,7 @@ function getTecnicaKi(nombreTecnicaKi) {
             return tecnicasMuestra_set[i];
         }
     }
-    throw ERR_TECNICA_KI_DESCONOCIDA + ": " + nombreTecnicaKi;
+    throw _l(ERR_TECNICA_KI_DESCONOCIDA) + ": " + nombreTecnicaKi;
 }
 
 /**
@@ -189,9 +190,9 @@ function efectoKiArmaduraEnergia(aplicar) {
  * @param {boolean} aplicar
  */
 function efectoExtrusionAura(aplicar) {
-    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA)
-    var bonoEntereza = new Bono(BONO_ENTEREZA,BONO_ENTEREZA,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA)
-    var bonoRotura = new Bono(BONO_ROTURA,BONO_ROTURA,5,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA)
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA);
+    var bonoEntereza = new Bono(BONO_ENTEREZA,BONO_ENTEREZA,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA);
+    var bonoRotura = new Bono(BONO_ROTURA,BONO_ROTURA,5,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA);
     if (aplicar) {
         personaje_actual.addBono(bonoDaño,false,false);
         personaje_actual.addBono(bonoEntereza,false,false);
@@ -378,6 +379,8 @@ function costeTecnicaMantenida(nivel) {
 }
 
 
+
+
 /**
  *
  * @param {{opcion:string}} parametros
@@ -489,7 +492,7 @@ function crearTecnicaKi() {
  */
 function elegirManualNombreTecnica(event) {
     var tecnicaKi = event.data.tecnicaKi;
-    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},{principal:asignarNombreTecnica,isDisabled:alwaysEnabled});
+    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},asignarNombreTecnica);
 }
 
 /**
@@ -532,7 +535,7 @@ function asignarNivelTecnica(parametros) {
  */
 function elegirManualDescripcionTecnica(event) {
     var tecnicaKi = event.data.tecnicaKi;
-    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},{principal:asignarDescripcionTecnica,isDisabled:alwaysEnabled});
+    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},asignarDescripcionTecnica);
 }
 
 /**
@@ -859,6 +862,12 @@ function puedeComprarseEfecto(tecnicaKi, efecto, esPrincipal) {
         puede = false;
     }
 
+    if (esPrincipal) {
+        puede = puede && tecnicaKi.puedeFijarComoPrimario(efecto);
+    } else {
+        puede = puede && tecnicaKi.puedeAñadirSecundario(efecto);
+    }
+
     return puede;
 }
 
@@ -941,7 +950,7 @@ function efectoKiAtaqueElementalOscuridad(aplicar) {
  * @param {boolean} aplicar
  */
 function efectoKiDañoIncrementado(aplicar) {
-    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_DAÑO_INCREMENTADO)
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_DAÑO_INCREMENTADO);
     if (aplicar) {
         personaje_actual.addBono(bonoDaño,false,false);
     } else {
@@ -954,7 +963,7 @@ function efectoKiDañoIncrementado(aplicar) {
  * @param {boolean} aplicar
  */
 function efectoKiVelocidadIncrementada(aplicar) {
-    var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,10,"",false,BONO_ESPECIAL,HAB_KI_VELOCIDAD_INCREMENTADA)
+    var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,10,"",false,BONO_ESPECIAL,HAB_KI_VELOCIDAD_INCREMENTADA);
     if (aplicar) {
         personaje_actual.addBono(bonoTurno,false,false);
     } else {

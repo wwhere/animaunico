@@ -856,6 +856,8 @@ function muestraKi(estadoGeneracion) {
     var muestraBotonesCM = muestraBotones && FLAG_DOMINUS_EXXET_ENABLED;
     divContenido.append(muestraHabilidadPrimaria(HB_CM,_l(UI_CM),muestraBotones));
 
+    divContenido.append(muestraCMLibres());
+
     divContenido.append(muestraHabilidadPrimaria(HB_KI_AGI,_l(UI_KI_AGI),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_KI_CON,_l(UI_KI_CON),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_KI_DES,_l(UI_KI_DES),muestraBotones));
@@ -910,7 +912,7 @@ function muestraLimite(muestraBotones) {
     }
 
     if (muestraBotones) {
-        var boton = botonComprarNuevo(_l(UI_COMPRAR_HABILIDAD_KI),"",comprarLimite,{});
+        var boton = botonComprarNuevo(_l(UI_COMPRAR_LIMITE),"",comprarLimite,{});
         div.append(boton);
         if (!puedeComprar) {
             disableButton(boton);
@@ -954,7 +956,7 @@ function muestraHabilidadesKi(muestraBotones) {
     div.append(muestraSubtitulo(UI_HABILIDADES_KI, false));
 
     if (muestraBotones) {
-        div.append(botonComprarNuevo(_l(UI_COMPRAR_HABILIDAD_KI),BOTON_CM,dialogoCM,{}));
+        div.append(botonComprarNuevo(_l(UI_COMPRAR_HABILIDAD_KI),BOTON_CM,comprarHabilidadKi,{}));
     }
 
     var habKi = personaje_actual.getHabilidadesKi();
@@ -1007,9 +1009,8 @@ function muestraTecnicasKi(muestraBotones) {
     div.append(muestraSubtitulo(UI_TECNICAS_KI, false));
 
     if (muestraBotones) {
-        var divBotonNuevo = $("<div></div>");
-        divBotonNuevo.append(muestraBotonPequeño(_l(UI_COMPRAR_TECNICA_DE_KI),{},dialogoCM,BOTON_CM));
-        div.append(divBotonNuevo);
+        div.append(muestraBotonCompraTecnicaKi());
+        div.append(muestraBotonNuevaTecnicaKi());
     } else if (tecnicasKi.length == 0) {
         div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
@@ -1339,6 +1340,14 @@ function muestraPsiquica(estadoGeneracion) {
     divContenido.append(muestraTablas([CATEGORIA_TABLA_PSIQUICAS],muestraBotones));
 
     div.append(divContenido);
+    return div;
+}
+
+function muestraCMLibres() {
+    var div = getDiv("row");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append(_l(UI_CM) + " " + _l(UI_LIBRE));
+    var divValor = getDiv("one column").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append((personaje_actual.getCMTotal() - personaje_actual.getCMGastado()));
+    div.append(divEtiqueta).append(divValor);
     return div;
 }
 

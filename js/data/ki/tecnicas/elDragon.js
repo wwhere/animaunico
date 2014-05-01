@@ -25,7 +25,7 @@ dragon.setNombre(KI_TECNICA_EL_COLMILLO);
 dragon.setArbolTecnicas(KI_ARBOL_EL_DRAGON);
 dragon.costeKi = new CosteKi(6,8,5,3,0,0);
 dragon.fijaComoPrimario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_DESTRUIR_ARMADURA],allEfectosTecnicas[KI_EFECTO_DESTRUIR_ARMADURA].getNivelesEfecto()[5]));
-dragon.addEfectoSecundario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_MANIOBRAS_COMBATE],allEfectosTecnicas[KI_EFECTO_MANIOBRAS_COMBATE].getNivelesEfecto()[2]));
+dragon.addEfectoSecundario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR],allEfectosTecnicas[KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR].getNivelesEfecto()[2]));
 dragon.addEfectoSecundario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_HABILIDAD_ATAQUE],allEfectosTecnicas[KI_EFECTO_HABILIDAD_ATAQUE].getNivelesEfecto()[3]));
 
 tecnicasMuestra_set.push(dragon);
@@ -37,7 +37,7 @@ dragon.setArbolTecnicas(KI_ARBOL_EL_DRAGON);
 dragon.costeKi = new CosteKi(6,8,6,2,0,0);
 dragon.fijaComoPrimario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_HABILIDAD_ATAQUE],allEfectosTecnicas[KI_EFECTO_HABILIDAD_ATAQUE].getNivelesEfecto()[2]));
 dragon.addEfectoSecundario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_ATAQUE_AREA],allEfectosTecnicas[KI_EFECTO_ATAQUE_AREA].getNivelesEfecto()[3]));
-dragon.addEfectoSecundario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_PROYECCION],allEfectosTecnicas[KI_EFECTO_PROYECCION].getNivelesEfecto()[6]));
+dragon.addEfectoSecundario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_IMPACTO],allEfectosTecnicas[KI_EFECTO_IMPACTO].getNivelesEfecto()[6]));
 
 tecnicasMuestra_set.push(dragon);
 

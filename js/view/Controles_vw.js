@@ -59,7 +59,6 @@ function muestraControles() {
     $("#"+BOTON_ELAN).off("click",dialogoElan);
     $("#"+BOTON_MAGIA).off("click",dialogoMagia);
     $("#"+BOTON_CV).off("click",dialogoCV);
-    $("#"+BOTON_CM).off("click",dialogoCM);
     $("#"+BOTON_TABLAS_ARMAS).off("click",dialogoTablasArmas);
     $("#"+BOTON_ARMA_INICIAL).off("click",dialogoElegirArmaTodas);
     $("#"+BOTON_BONOS_NATURALES).off("click",dialogoBonosNaturales);
@@ -79,7 +78,6 @@ function muestraControles() {
     $("#"+BOTON_ELAN).on("click",dialogoElan);
     $("#"+BOTON_MAGIA).on("click",dialogoMagia);
     $("#"+BOTON_CV).on("click",dialogoCV);
-    $("#"+BOTON_CM).on("click",dialogoCM);
     $("#"+BOTON_TABLAS_ARMAS).on("click",dialogoTablasArmas);
     $("#"+BOTON_ARMA_INICIAL).on("click",dialogoElegirArmaTodas);
     $("#"+BOTON_BONOS_NATURALES).on("click",dialogoBonosNaturales);

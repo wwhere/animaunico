@@ -1081,3 +1081,5 @@ var UI_APLICAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_APLICAR_MENOS_UNO_A_DOS_CARAC"
 var UI_CANCELAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_CANCELAR_MENOS_UNO_A_DOS_CARAC","Cancela el aumento de dos puntos de ki entre las siguientes (Selecciona dos)","Cancel the two points added of ki among the following (select two)")).getId();
 
 var ELEGIR_HABILIDAD = "ELEGIR_HABILIDAD";
+var UI_SOSTENIDA = (new L("Técnica sostenida","Técnica sostenida","Sustained Technique")).getId();
+var UI_COMBINABLE = (new L("Técnica combinable","Técnica combinable","Técnica combinable")).getId();

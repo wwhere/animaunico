@@ -1045,7 +1045,7 @@ TecnicaKi.prototype = {
         }
 
         if (this.isMantenida()) {
-            coste += this.nivel * 10;
+            coste += costeTecnicaMantenida(this.nivel);
         }
 
         if (this.isCombinable()) {
@@ -1118,7 +1118,7 @@ TecnicaKi.prototype = {
         if (this.efectoPrimario) {
             costeActual = this.efectoPrimario.getCosteCM();
         }
-//todo
+
         var difCoste = efectoTecnica.getCosteCM() - costeActual;
 
         if (this.efectoPrimario) {
@@ -1256,6 +1256,8 @@ TecnicaKi.prototype = {
 
         var porIncompatibles = true;
 
+        var porClaseTecnica = false;
+
         /**
          *
          * @type {*}
@@ -1268,8 +1270,25 @@ TecnicaKi.prototype = {
                 break;
             }
         }
+        var clasesPermitidas = desventajaTecnica.desventajaTecnica.getClasesPermitidas();
+        bucleClases:
+        for (i = 0; i < clasesPermitidas.length; i++) {
+            var clasePermitida = clasesPermitidas[i];
+            if (this.efectoPrimario) {
+                if (this.efectoPrimario.getClaseEfecto() == clasePermitida) {
+                    porClaseTecnica = true;
+                    break;
+                }
+            }
+            for (var j = 0; j < this.efectosSecundarios.length; j++) {
+                if (this.efectosSecundarios[j].getClaseEfecto() == clasePermitida) {
+                    porClaseTecnica = true;
+                    break bucleClases;
+                }
+            }
+        }
 
-        return porNumero && porIncompatibles;
+        return porNumero && porIncompatibles && porClaseTecnica;
     },
 
     /**
@@ -1379,6 +1398,8 @@ TecnicaKi.prototype = {
 
         var numDesventajas = this.desventajas.length;
 
+        //TODO muchas más comprobaciones
+
         return (
             (costeCM >= this.minCM) &&
                 (costeCM <= this.maxCM) &&
@@ -1398,7 +1419,14 @@ TecnicaKi.prototype = {
     },
 
     setEfectoMantenido : function(efecto, valor) {
+        //TODO comprobar si hay sostenidos. Si los hay, no hacerlo
         efecto.setMantenido(valor);
+        lanzarEvento(EVENT_TECNICA_CREACION);
+    },
+
+    setEfectoSostenido : function(efecto, valor) {
+        //TODO comprobar si hay mantenidos. Si los hay, no hacerlo
+        efecto.setSostenido(valor);
         lanzarEvento(EVENT_TECNICA_CREACION);
     },
 
@@ -1495,6 +1523,10 @@ TecnicaKi.prototype = {
                 costeKi = this.efectosSecundarios[i].getCosteKiTotal().sumaCosteKi(costeKi);
             }
 
+            if (this.isCombinable()) {
+                costeKi = this.costeCombinable.sumaCosteKi(costeKi);
+            }
+
             costeKi.setCoste(AGI,
                 ((costeKi.getCoste(AGI)-this.kiReducidos[AGI])>=(Math.ceil(costeKi.getCoste(AGI)/2)))? costeKi.getCoste(AGI)-this.kiReducidos[AGI] : Math.ceil(costeKi.getCoste(AGI)/2)
             );
@@ -1537,6 +1569,14 @@ TecnicaKi.prototype = {
         } else {
             return this.costeMantenimiento;
         }
+    },
+
+    /**
+     *
+     * @returns {CosteKi}
+     */
+    getCosteCombinable : function() {
+        return this.costeCombinable;
     }
 };
 
@@ -1579,30 +1619,35 @@ function EfectoTecnicaElegido(efectoTecnica, nivelEfectoTecnica) {
 
     /**
      *
+     * @type {boolean|string}
+     */
+    this.sostenido = false;
+
+    /**
+     *
      * @type {CosteKi}
      */
     if (efectoTecnica) {
         this.costeKi = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
         this.costeKi.setCoste(efectoTecnica.getCaracPrimaria(),nivelEfectoTecnica.getCosteSecundario());
 
+        /**
+         *
+         * @type {CosteKi}
+         */
+        this.costeMantenimiento = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
+        this.costeMantenimiento.setCoste(efectoTecnica.getCaracPrimaria(), nivelEfectoTecnica.getCosteMantenimiento());
 
-    /**
-     *
-     * @type {CosteKi}
-     */
-    this.costeMantenimiento = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
-    this.costeMantenimiento.setCoste(efectoTecnica.getCaracPrimaria(), nivelEfectoTecnica.getCosteMantenimiento());
+        /**
+         *
+         * @type {CaracSecunTecnica[]}
+         */
+        var caracSec = this.efectoTecnica.getCaracSecundarias();
 
-    /**
-     *
-     * @type {CaracSecunTecnica[]}
-     */
-    var caracSec = this.efectoTecnica.getCaracSecundarias();
-
-    for (var i = 0; i < caracSec.length; i++) {
-        this.costeKi.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
-        this.costeMantenimiento.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
-    }
+        for (var i = 0; i < caracSec.length; i++) {
+            this.costeKi.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
+            this.costeMantenimiento.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
+        }
 
     }
 
@@ -1617,6 +1662,14 @@ EfectoTecnicaElegido.prototype = {
      */
     getNombre : function() {
         return this.efectoTecnica.getNombre();
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getClaseEfecto : function() {
+        return this.efectoTecnica.getClaseEfecto();
     },
 
     /**
@@ -1774,9 +1827,9 @@ EfectoTecnicaElegido.prototype = {
         var i;
         this.costeKi = new CosteKi(0,0,0,0,0,0,this.efectoTecnica.getCaracPrimaria());
         if (this.primario) {
-            this.costeKi.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelEfectoTecnica.getCostePrimario());
+            this.costeKi.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelElegido.getCostePrimario());
         } else {
-            this.costeKi.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelEfectoTecnica.getCosteSecundario());
+            this.costeKi.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelElegido.getCosteSecundario());
         }
 
         for ( i = 0; i < this.ventajasOpcionalesElegidas.length; i++) {
@@ -1795,7 +1848,7 @@ EfectoTecnicaElegido.prototype = {
     initCosteMantenimiento : function() {
         var i;
         this.costeMantenimiento = new CosteKi(0,0,0,0,0,0,this.efectoTecnica.getCaracPrimaria());
-        this.costeMantenimiento.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelEfectoTecnica.getCosteMantenimiento());
+        this.costeMantenimiento.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelElegido.getCosteMantenimiento());
 
         for ( i = 0; i < this.ventajasOpcionalesElegidas.length; i++) {
             this.costeMantenimiento.addCoste(this.efectoTecnica.getCaracPrimaria(),this.ventajasOpcionalesElegidas[i].getCosteMantenimiento());
@@ -1803,6 +1856,34 @@ EfectoTecnicaElegido.prototype = {
 
         for ( i = 0; i < caracSec.length; i++) {
             this.costeMantenimiento.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
+        }
+    },
+
+
+    /**
+     *
+     */
+    initCosteSostenimiento : function(tipoSostenido) {
+        var i;
+
+        this.costeMantenimiento = new CosteKi(0,0,0,0,0,0,this.efectoTecnica.getCaracPrimaria());
+
+        if (tipoSostenido == TECNICA_SOSTENIDA_MAYOR)
+            this.costeMantenimiento.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelElegido.getSostenimientoMayor());
+        else
+            this.costeMantenimiento.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelElegido.getSostenimientoMenor());
+
+        this.costeMantenimiento.setCoste(this.efectoTecnica.getCaracPrimaria(),this.nivelElegido.getCosteMantenimiento());
+
+        for ( i = 0; i < this.ventajasOpcionalesElegidas.length; i++) {
+            if (tipoSostenido == TECNICA_SOSTENIDA_MAYOR)
+                this.costeMantenimiento.addCoste(this.efectoTecnica.getCaracPrimaria(),this.ventajasOpcionalesElegidas[i].getSostenimientoMayor());
+            else
+                this.costeMantenimiento.addCoste(this.efectoTecnica.getCaracPrimaria(),this.ventajasOpcionalesElegidas[i].getSostenimientoMenor());
+        }
+
+        for ( i = 0; i < this.efectoTecnica.caracSecundarias.length; i++) {
+            this.costeMantenimiento.mod[this.efectoTecnica.caracSecundarias[i].caracteristica] = this.efectoTecnica.caracSecundarias[i].modificador;
         }
     },
 
@@ -1853,7 +1934,38 @@ EfectoTecnicaElegido.prototype = {
      * @param {boolean} valor
      */
     setMantenido : function(valor) {
+        if (valor) {
+            this.sostenido = false;
+        }
         this.mantenido = valor;
+    },
+
+    /**
+     *
+     * @param {number} nivelTecnica
+     * @returns {boolean}
+     */
+    isSostenible : function(nivelTecnica) {
+        return (nivelTecnica >= this.getNivelMinimo+1);
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isSostenido : function() {
+        return this.sostenido;
+    },
+
+    /**
+     *
+      * @param valor
+     */
+    setSostenimiento : function(valor) {
+        if (valor) {
+            this.mantenido = false;
+        }
+        this.sostenido = valor;
     },
 
     /**
@@ -1870,7 +1982,7 @@ EfectoTecnicaElegido.prototype = {
      */
     getCosteKiTotal : function() {
         var coste = this.costeKi.clona();
-        if (this.isMantenido()) {
+        if (this.isMantenido() ||this.isSostenido()) {
             coste = coste.sumaCosteKi(this.costeMantenimiento);
         }
         return coste;
@@ -1959,6 +2071,22 @@ VentajaTecnicaElegida.prototype = {
      */
     getCosteMantenimiento : function() {
         return this.nivelElegido.getCosteMantenimiento();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getSostenimientoMenor : function() {
+        return this.nivelElegido.getSostenimientoMenor();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getSostenimientoMayor : function() {
+        return this.nivelElegido.getSostenimientoMayor();
     },
 
     /**
