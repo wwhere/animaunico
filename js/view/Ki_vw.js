@@ -88,40 +88,23 @@ function añadirEfecto(parametros) {
 
 
 
-function elegirDesventaja(parametros) {
-    var divCategoriaDesventaja = $("<h3></h3>");
-    divCategoriaDesventaja.append(_l(UI_DESVENTAJAS));
-    divEfectos.append(divCategoriaDesventaja);
-    var divListaDesventajas = $("<div></div>");
-    for (j = 0; j < desventajasTecnicas.length; j++) {
-        var divFilaDesventajas = $("<div></div>").addClass("row");
+function elegirDesventaja(event) {
 
-        var divDesventajaNombre = $("<div></div>").addClass("nine columns");
 
-        divDesventajaNombre.append(_l(desventajasTecnicas[j].getNombre()));
-
-        var divDesventajaCompra = $("<div></div>").addClass("three columns");
-
-        var botonAñadeDesventaja = boton("small primary pretty btn",_l("+"),!puedeAñadirseDesventajaATecnica(tecnicaKi,desventajasTecnicas[i]));
-
-        divDesventajaCompra.append(botonAñadeDesventaja);
-        botonAñadeDesventaja.on("click",{tecnicaKi:tecnicaKi, desventaja:desventajasTecnicas[j]},añadeDesventajaTecnica);
-
-        divFilaDesventajas.append(divDesventajaNombre).append(divDesventajaCompra);
-
-        divListaDesventajas.append(divFilaDesventajas);
+    var arrayOpciones = [];
+    for (var i = 0; i < desventajasTecnicas.length; i++) {
+        arrayOpciones.push(new OpcionMostrable(_l(desventajasTecnicas[i].getNombre()),desventajasTecnicas[i].getNombre(),"",desventajasTecnicas[i].getCosteCM() + " " + _l(UI_CM)));
     }
-    divEfectos.append(divListaDesventajas);
-
-    divListaEfectos.append(divEfectos);
-
-    //endregion menu de efectos
-
-    divEfectos.accordion({
-        heightStyle: "content"
-    });
+    muestraDialogoElegirOpciones(arrayOpciones,{tecnicaKi:event.data.tecnicaKi},{principal:añadirDesventaja,isDisabled:noPuedeComprarDesventaja},true);
+}
 
 
+function noPuedeComprarDesventaja(parametros) {
+    return !puedeAñadirseDesventajaATecnica(parametros.tecnicaKi,getDesventajaTecnicaKi(parametros.opcion));
+}
+
+function añadirDesventaja(parametros) {
+    añadeDesventajaTecnica(parametros.tecnicaKi,getDesventajaTecnicaKi(parametros.opcion));
 }
 
 function muestraEfectosTecnica(tecnicaKi) {
@@ -161,7 +144,8 @@ function muestraEfectosTecnica(tecnicaKi) {
 }
 
 function muestraDesventajasTecnica(tecnicaKi) {
-    var divDesventajas = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + "(" + _l(UI_MAX) + " " + tecnicaKi.getMaxDesventajas() + "):");
+    var divDesventajas = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + "(" + _l(UI_MAX) + " " + tecnicaKi.getMaxDesventajas() + "):").
+            append(muestraBotonPequeño("+",{tecnicaKi:tecnicaKi},elegirDesventaja,""));
 
     var filaEncabezadosDesv = getDiv("row");
     var encabezadoNombreDesv = getDiv("four columns").addClass(CSS_COLOR_GRIS).append(_l(UI_DESVENTAJA));

@@ -601,11 +601,9 @@ function añadeEfectoSecundarioTecnica(tecnicaKi, efectoTecnica) {
 
 /**
  *
- * @param {{data:{tecnicaKi:TecnicaKi,desventaja:DesventajaTecnica}}} event
  */
-function añadeDesventajaTecnica(event) {
-    var tecnicaKi = event.data.tecnicaKi;
-    var desventajaTecnicaElegida = new DesventajaTecnicaElegida(event.data.desventaja);
+function añadeDesventajaTecnica(tecnicaKi, desventaja) {
+    var desventajaTecnicaElegida = new DesventajaTecnicaElegida(desventaja);
     var efectoDesventaja = desventajaTecnicaElegida.getEfecto();
 
     if (efectoDesventaja.length == 0) {
