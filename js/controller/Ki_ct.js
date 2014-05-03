@@ -492,7 +492,7 @@ function crearTecnicaKi() {
  */
 function elegirManualNombreTecnica(event) {
     var tecnicaKi = event.data.tecnicaKi;
-    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},asignarNombreTecnica);
+    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},{principal:asignarNombreTecnica,isDisabled:alwaysEnabled});
 }
 
 /**
@@ -535,7 +535,7 @@ function asignarNivelTecnica(parametros) {
  */
 function elegirManualDescripcionTecnica(event) {
     var tecnicaKi = event.data.tecnicaKi;
-    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},asignarDescripcionTecnica);
+    muestraDialogoElegirOpcion(LISTA_INTRODUCCION_USUARIO,{tecnicaKi:tecnicaKi},{principal:asignarDescripcionTecnica,isDisabled:alwaysEnabled});
 }
 
 /**
@@ -549,11 +549,8 @@ function asignarDescripcionTecnica(parametros) {
 
 /**
  *
- * @param {{data:{tecnicaKi:TecnicaKi,efecto:EfectoTecnica}}} event
  */
-function añadeEfectoPrimarioTecnica(event) {
-    var tecnicaKi = event.data.tecnicaKi;
-    var efectoTecnica = event.data.efecto;
+function añadeEfectoPrimarioTecnica(tecnicaKi, efectoTecnica) {
 
     var arrayOpciones = [];
     var nivelesEfecto = efectoTecnica.getNivelesEfecto();
@@ -592,10 +589,7 @@ function noPuedeElegirEfectoPrimario(parametros) {
  *
  * @param {{data:{tecnicaKi:TecnicaKi,efecto:EfectoTecnica}}} event
  */
-function añadeEfectoSecundarioTecnica(event) {
-    var tecnicaKi = event.data.tecnicaKi;
-    var efectoTecnica = event.data.efecto;
-
+function añadeEfectoSecundarioTecnica(tecnicaKi, efectoTecnica) {
     var arrayOpciones = [];
     var nivelesEfecto = efectoTecnica.getNivelesEfecto();
     for (var i = 0; i < nivelesEfecto.length; i++) {
@@ -860,12 +854,6 @@ function puedeComprarseEfecto(tecnicaKi, efecto, esPrincipal) {
 
     if (!tecnicaKi.puedeAñadirEfectoDeElementos(efecto.getElementosAfines())) {
         puede = false;
-    }
-
-    if (esPrincipal) {
-        puede = puede && tecnicaKi.puedeFijarComoPrimario(efecto);
-    } else {
-        puede = puede && tecnicaKi.puedeAñadirSecundario(efecto);
     }
 
     return puede;

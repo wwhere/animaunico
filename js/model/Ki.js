@@ -93,6 +93,30 @@ EfectoTecnica.prototype = {
 
     /**
      *
+     * @param {number} tipo
+     * @returns {string}
+     */
+    muestraNiveles : function(tipo) {
+        var cadena = "";
+
+        for (var i = 0; i < this.nivelesEfecto.length; i++) {
+            var costeKi;
+            if (tipo == 1)
+                costeKi = this.nivelesEfecto[i].getCostePrimario();
+            else
+                costeKi = this.nivelesEfecto[i].getCosteSecundario();
+
+            cadena += _l(this.nivelesEfecto[i].getNombre()) +
+                "; " + _l(UI_CM) + " " + this.nivelesEfecto[i].getCosteCM() +
+                "; " + _l(UI_KI) + " " + costeKi.toString() +
+                "<br>";
+        }
+
+        return cadena;
+    },
+
+    /**
+     *
      * @returns {string}
      */
     getDescripcion : function() {
@@ -1677,7 +1701,10 @@ EfectoTecnicaElegido.prototype = {
      * @returns {string} Localizado
      */
     getNombreCompleto : function() {
-        return _l(this.efectoTecnica.getNombre()) + " " + _l(this.nivelElegido.getNombre());
+        var nivel = "";
+        if (this.efectoTecnica.nivelesEfecto.length > 1)
+            nivel = " " + _l(this.nivelElegido.getNombre());
+        return _l(this.efectoTecnica.getNombre()) + nivel;
     },
 
     /**

@@ -1083,3 +1083,4 @@ var UI_CANCELAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_CANCELAR_MENOS_UNO_A_DOS_CARA
 var ELEGIR_HABILIDAD = "ELEGIR_HABILIDAD";
 var UI_SOSTENIDA = (new L("Técnica sostenida","Técnica sostenida","Sustained Technique")).getId();
 var UI_COMBINABLE = (new L("Técnica combinable","Técnica combinable","Técnica combinable")).getId();
+var UI_GUARDAR_TECNICA = (new L("UI_GUARDAR_TECNICA","Guardar técnica", "Save Technique")).getId();

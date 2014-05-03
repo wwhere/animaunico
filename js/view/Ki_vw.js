@@ -22,48 +22,73 @@ function muestraBotonNuevaTecnicaKi() {
     return divBotonNuevaTecnicaKi;
 }
 
-function elegirEfecto(tecnicaKi) {
-    var divFila = getDiv("row");
-    var divListaEfectos = getDiv("four columns").addClass(CSS_TEXTO_SMALL);
 
-    divFila.append(divListaEfectos);
 
-    var divEfectos = getDiv();
+function muestraDatosBasicosTecnica(tecnicaKi) {
+    var div = getDiv("");
 
-    //region menu de efectos
-    for(var i = 0; i < TIPOS_EFECTOS_TECNICAS.length; i++) {
-        var divCategoriaEfecto = $("<h3></h3>");
-        divCategoriaEfecto.append(_l(TIPOS_EFECTOS_TECNICAS[i]));
-        divEfectos.append(divCategoriaEfecto);
-        var divEfectosCategoria = $("<div></div>");
-        for (j = 0; j < efectosTecnicas.length; j++) {
-            if (efectosTecnicas[j].getTipoEfecto() == TIPOS_EFECTOS_TECNICAS[i]) {
-                var divFilaEfectos = $("<div></div>").addClass("row");
+    var divNombre = getDiv("").append(muestraPersonal(_l(UI_NOMBRE), tecnicaKi.getNombre(), true, elegirManualNombreTecnica, {tecnicaKi:tecnicaKi}));
+    var divDescripcion = getDiv("").append(muestraPersonal(_l(UI_DESCRIPCION), tecnicaKi.getDescripcion(), true, elegirManualDescripcionTecnica, {tecnicaKi:tecnicaKi}));
+    var divNivel  = getDiv("").append(muestraPersonal(_l(UI_NIVEL), tecnicaKi.getNivel(), true, elegirNivelTecnica, {tecnicaKi:tecnicaKi}));
 
-                var divEfectoNombre = $("<div></div>").addClass("seven columns");
 
-                divEfectoNombre.append(_l(efectosTecnicas[j].getNombre()));
+    var divCoste = getDiv(CSS_CAMPO_PERSONALES).
+        append(getDiv(CSS_ETIQUETA).append(_l(UI_CM) + ": ")).
+        append(getDiv(CSS_VALOR_PERSONALES).append(tecnicaKi.getCosteCM())).
+        append(getDiv(CSS_MUESTRA_INLINE).append(" ")).
+        append(getDiv(CSS_ETIQUETA).append(_l(UI_CM) + " " + _l(UI_MINIMO) + ": ")).
+        append(getDiv(CSS_VALOR_PERSONALES).append(tecnicaKi.getMinCM())).
+        append(getDiv(CSS_MUESTRA_INLINE).append(" ")).
+        append(getDiv(CSS_ETIQUETA).append(_l(UI_CM) + " " + _l(UI_MAXIMO) + ": ")).
+        append(getDiv(CSS_VALOR_PERSONALES).append(tecnicaKi.getMaxCM())).
+        append(getDiv(CSS_MUESTRA_INLINE).append(" "));
 
-                var divEfectoCompraPrim = $("<div></div>").addClass("two columns");
-
-                var botonAñadePrimaria = boton("small primary pretty btn",_l("1ª"),false);
-                divEfectoCompraPrim.append(botonAñadePrimaria);
-                botonAñadePrimaria.on("click",{tecnicaKi:tecnicaKi, efecto:efectosTecnicas[j]},añadeEfectoPrimarioTecnica);
-
-                var divEfectoCompraSec = $("<div></div>").addClass("push_one two columns");
-
-                var botonAñadeSecundaria = boton("small secondary pretty btn",_l("2ª"),false);
-                divEfectoCompraSec.append(botonAñadeSecundaria);
-                botonAñadeSecundaria.on("click",{tecnicaKi:tecnicaKi, efecto:efectosTecnicas[j]},añadeEfectoSecundarioTecnica);
-
-                divFilaEfectos.append(divEfectoNombre).append(divEfectoCompraPrim).append(divEfectoCompraSec);
-
-                divEfectosCategoria.append(divFilaEfectos);
-            }
-        }
-        divEfectos.append(divEfectosCategoria);
+    var divCosteKi = getDiv("").append(muestraPersonal(_l(UI_COSTE_KI), tecnicaKi.getCosteKi().toString(), false));
+    var divIsMantenida = getDiv("");
+    if (tecnicaKi.isMantenida()) {
+        divIsMantenida.append(muestraPersonal(_l(UI_MANTENIDA) + ". " + _l(UI_COSTE_MANTENIMIENTO), tecnicaKi.getCosteMantenimiento().toString(), false));
+    } else if (tecnicaKi.isSostenida()) {
+        divIsMantenida.append(muestraPersonal(_l(UI_SOSTENIDA) + ": ", _l(tecnicaKi.sostenida), false));
     }
+    var divIsCombinable = getDiv("");
+    if (tecnicaKi.isCombinable()) {
+        divIsCombinable.append(muestraPersonal(_l(UI_COMBINABLE), "", false));
+    }
+    return div.append(divNombre).append(divDescripcion).append(divNivel).append(divCoste).append(divCosteKi).append(divIsMantenida).append(divIsCombinable);
+}
 
+function elegirEfecto(event) {
+
+    var arrayOpciones = [];
+    var categorias = [];
+    for(var i = 0; i < TIPOS_EFECTOS_TECNICAS.length; i++) {
+        categorias.push(new OpcionMostrable(_l(TIPOS_EFECTOS_TECNICAS[i]),TIPOS_EFECTOS_TECNICAS[i],TIPOS_EFECTOS_TECNICAS[i]));
+    }
+    for (i = 0; i < efectosTecnicas.length; i++) {
+        arrayOpciones.push(new OpcionMostrable(_l(efectosTecnicas[i].getNombre()),efectosTecnicas[i].getNombre(),efectosTecnicas[i].getTipoEfecto(),efectosTecnicas[i].muestraNiveles(event.data.tipo)));
+    }
+    muestraDialogoElegirOpciones(arrayOpciones,{tecnicaKi:event.data.tecnicaKi,tipo:event.data.tipo},{principal:añadirEfecto,isDisabled:noPuedeComprarEfecto},true,categorias);
+}
+
+function noPuedeComprarEfecto(parametros) {
+    return !puedeComprarseEfecto(parametros.tecnicaKi,getEfectoTecnicaKi(parametros.opcion),(parametros.tipo==1));
+}
+
+function añadirEfecto(parametros) {
+    switch (parametros.tipo) {
+        case 1:
+            añadeEfectoPrimarioTecnica(parametros.tecnicaKi,getEfectoTecnicaKi(parametros.opcion));
+            break;
+        case 2:
+        default:
+            añadeEfectoSecundarioTecnica(parametros.tecnicaKi,getEfectoTecnicaKi(parametros.opcion));
+            break;
+    }
+}
+
+
+
+function elegirDesventaja(parametros) {
     var divCategoriaDesventaja = $("<h3></h3>");
     divCategoriaDesventaja.append(_l(UI_DESVENTAJAS));
     divEfectos.append(divCategoriaDesventaja);
@@ -99,24 +124,93 @@ function elegirEfecto(tecnicaKi) {
 
 }
 
-function muestraDatosBasicosTecnica(tecnicaKi) {
-    var div = getDiv("");
-    var divNombre = getDiv("").append(muestraPersonal(_l(UI_NOMBRE), tecnicaKi.getNombre(), true, elegirManualNombreTecnica, {tecnicaKi:tecnicaKi}));
-    var divNivel  = getDiv("").append(muestraPersonal(_l(UI_NIVEL), tecnicaKi.getNivel(), true, elegirNivelTecnica, {tecnicaKi:tecnicaKi}));
-    var divCoste = getDiv("").append(_l(UI_CM) + ": " + tecnicaKi.getCosteCM() + " / " + _l(UI_CM) + " " + _l(UI_MINIMO) + ": " + tecnicaKi.getMinCM() + " / " + _l(UI_CM) + " " + _l(UI_MAXIMO) + ": " + tecnicaKi.getMaxCM());
-    var divDescripcion = getDiv("").append(muestraPersonal(_l(UI_DESCRIPCION), tecnicaKi.getDescripcion(), true, elegirManualDescripcionTecnica, {tecnicaKi:tecnicaKi}));
-    var divCosteKi = getDiv("").append(muestraPersonal(_l(UI_COSTE_KI), tecnicaKi.getCosteKi().toString(), false));
-    var divIsMantenida = getDiv("");
-    if (tecnicaKi.isMantenida()) {
-        divIsMantenida.append(muestraPersonal(_l(UI_MANTENIDA) + ". " + _l(UI_COSTE_MANTENIMIENTO), tecnicaKi.getCosteMantenimiento().toString(), false));
-    } else if (tecnicaKi.isSostenida()) {
-        divIsMantenida.append(muestraPersonal(_l(UI_SOSTENIDA) + ": ", _l(tecnicaKi.sostenida), false));
+function muestraEfectosTecnica(tecnicaKi) {
+    var divEfectosDeLaTecnica = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).
+        append(_l(UI_EFECTOS_DE_LA_TECNICA)  + ":").
+            append(muestraBotonPequeño("+1º",{tecnicaKi:tecnicaKi,tipo:1},elegirEfecto,"")).
+            append(muestraBotonPequeño("+2º",{tecnicaKi:tecnicaKi,tipo:2},elegirEfecto,""))
+        ;
+    var filaEncabezados = getDiv("row");
+    var encabezadoNombre = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTO));
+    var encabezadoCM = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_CM));
+    var encabezadoKi = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_KI));
+    var encabezadoMantenimiento = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_MANTENIMIENTO));
+    var encabezadoBotonesVentajas = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_VENTAJAS));
+    var encabezadoBoton = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_BORRAR));
+    filaEncabezados.append(encabezadoNombre).append(encabezadoCM).append(encabezadoKi).append(encabezadoMantenimiento).append(encabezadoBotonesVentajas).append(encabezadoBoton);
+    divEfectosDeLaTecnica.append(filaEncabezados);
+
+    var ventajasOpcionalesElegidas;
+    var efectoPrimario =tecnicaKi.getEfectoPrimario();
+    if (efectoPrimario) {
+        divEfectosDeLaTecnica.append(muestraEfectoTecnica(efectoPrimario,tecnicaKi, false));
+        ventajasOpcionalesElegidas = efectoPrimario.getVentajasOpcionalesElegidas();
+        for (i = 0;i<ventajasOpcionalesElegidas.length;i++) {
+            divEfectosDeLaTecnica.append(muestraVentajaOpcionalEfectoTecnica(ventajasOpcionalesElegidas[i],efectoPrimario,tecnicaKi,true));
+        }
     }
-    var divIsCombinable = getDiv("");
-    if (tecnicaKi.isCombinable()) {
-        divIsCombinable.append(muestraPersonal(_l(UI_COMBINABLE), "", false));
+    var efectosSecundarios = tecnicaKi.getEfectosSecundarios();
+    for (i = 0; i < efectosSecundarios.length;i++) {
+        divEfectosDeLaTecnica.append(muestraEfectoTecnica(efectosSecundarios[i],tecnicaKi, true));
+        ventajasOpcionalesElegidas = efectosSecundarios[i].getVentajasOpcionalesElegidas();
+        for (j = 0;j<ventajasOpcionalesElegidas.length;j++) {
+            divEfectosDeLaTecnica.append(muestraVentajaOpcionalEfectoTecnica(ventajasOpcionalesElegidas[j],efectosSecundarios[i],tecnicaKi,true));
+        }
     }
-    return div.append(divNombre).append(divNivel).append(divCoste).append(divDescripcion).append(divCosteKi).append(divIsMantenida).append(divIsCombinable);
+    return divEfectosDeLaTecnica;
+}
+
+function muestraDesventajasTecnica(tecnicaKi) {
+    var divDesventajas = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + "(" + _l(UI_MAX) + " " + tecnicaKi.getMaxDesventajas() + "):");
+
+    var filaEncabezadosDesv = getDiv("row");
+    var encabezadoNombreDesv = getDiv("four columns").addClass(CSS_COLOR_GRIS).append(_l(UI_DESVENTAJA));
+    var encabezadoCMDesv = getDiv("seven columns").addClass(CSS_COLOR_GRIS).append(_l(UI_CM));
+    var encabezadoBotonDesv = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_BORRAR));
+    filaEncabezadosDesv.append(encabezadoNombreDesv).append(encabezadoCMDesv).append(encabezadoBotonDesv);
+    divDesventajas.append(filaEncabezadosDesv);
+
+    var desventajas = tecnicaKi.getDesventajas();
+    for (i = 0; i < desventajas.length;i++) {
+        divDesventajas.append(muestraDesventajaTecnica(desventajas[i],tecnicaKi,true));
+    }
+    return divDesventajas;
+}
+
+function muestraBotonesAumentoKi(tecnicaKi) {
+    var divFila = getDiv("row");
+    /*** poder aumentar/disminuir CM y ki */
+    var costeKi = tecnicaKi.getCosteKi();
+    if (costeKi.numCaracteristicasBase() >= 1) {
+        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_KI_DISMINUIR_CM),{tecnicaKi: tecnicaKi},dialogoAumentarKi,"").addClass("one column"));
+    }
+    if (tecnicaKi.getTotalAumentosKi() > 0)
+        divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " +5 " + _l(UI_CM),{tecnicaKi: tecnicaKi},dialogoAnularAumentoKi,"").addClass("one column"));
+
+    return divFila;
+}
+
+function muestraBotonesAumentoCM(tecnicaKi) {
+    var divFila = getDiv("row");
+    var costeKi = tecnicaKi.getCosteKi();
+    if (costeKi.numCaracteristicasBase() >= 3) {
+        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_CM_DISMINUIR_KI),{tecnicaKi: tecnicaKi},dialogoAumentarCM,"").addClass("one column"));
+
+        if (tecnicaKi.kiReducidos[AGI] != 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(AGI),{tecnicaKi: tecnicaKi, caracteristica: AGI},anularAumentoCM,"").addClass("one column"));
+        if (tecnicaKi.kiReducidos[DES] != 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(DES),{tecnicaKi: tecnicaKi, caracteristica: DES},anularAumentoCM,"").addClass("one column"));
+        if (tecnicaKi.kiReducidos[CON] != 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(CON),{tecnicaKi: tecnicaKi, caracteristica: CON},anularAumentoCM,"").addClass("one column"));
+        if (tecnicaKi.kiReducidos[FUE] != 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(FUE),{tecnicaKi: tecnicaKi, caracteristica: FUE},anularAumentoCM,"").addClass("one column"));
+        if (tecnicaKi.kiReducidos[POD] != 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(POD),{tecnicaKi: tecnicaKi, caracteristica: POD},anularAumentoCM,"").addClass("one column"));
+        if (tecnicaKi.kiReducidos[VOL] != 0)
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(VOL),{tecnicaKi: tecnicaKi, caracteristica: VOL},anularAumentoCM,"").addClass("one column"));
+
+    }
+    return divFila;
 }
 
 /**
@@ -130,6 +224,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
     var dialogInicializado = false;
 
     var actualizarDialogoCrearTecnica = function() {
+        //TODO esto no debería ir aquí
         desactivarNotificaciones();
         comprobacionesRutinariasTecnica(tecnicaKi);
         activarNotificaciones();
@@ -137,89 +232,21 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         dialogo.empty();
 
         var divFila = getDiv("row");
-
-        dialogo.append(divFila);
-
         var divResumenTecnica = getDiv("twelve columns");
 
         divResumenTecnica.append(muestraDatosBasicosTecnica(tecnicaKi));
-
-
-        var divEfectosDeLaTecnica = $("<div></div>").append(_l(UI_EFECTOS_DE_LA_TECNICA)  + ":").addClass(CSS_TEXTO_SMALL);
-
-        var filaEncabezados = $("<div></div>").addClass("row");
-        var encabezadoNombre = $("<div></div>").addClass("three columns").append(_l(UI_EFECTO));
-        var encabezadoCM = $("<div></div>").addClass("one columns").append(_l(UI_CM));
-        var encabezadoKi = $("<div></div>").addClass("three columns").append(_l(UI_KI));
-        var encabezadoMantenimiento = $("<div></div>").addClass("three columns").append(_l(UI_MANTENIMIENTO));
-        var encabezadoBotonesVentajas = $("<div></div>").addClass("one columns").append(_l(UI_VENTAJAS));
-        var encabezadoBoton = $("<div></div>").addClass("one columns").append(_l(UI_BORRAR));
-
-        filaEncabezados.append(encabezadoNombre).append(encabezadoCM).append(encabezadoKi).append(encabezadoMantenimiento).append(encabezadoBotonesVentajas).append(encabezadoBoton);
-
-        divEfectosDeLaTecnica.append(filaEncabezados);
-
-        var ventajasOpcionalesElegidas;
-        var efectoPrimario =tecnicaKi.getEfectoPrimario();
-        if (efectoPrimario) {
-            divEfectosDeLaTecnica.append(muestraEfectoTecnica(efectoPrimario,tecnicaKi, false));
-            ventajasOpcionalesElegidas = efectoPrimario.getVentajasOpcionalesElegidas();
-            for (i = 0;i<ventajasOpcionalesElegidas.length;i++) {
-                divEfectosDeLaTecnica.append(muestraVentajaOpcionalEfectoTecnica(ventajasOpcionalesElegidas[i],efectoPrimario,tecnicaKi,true));
-            }
-        }
-        var efectosSecundarios = tecnicaKi.getEfectosSecundarios();
-        for (i = 0; i < efectosSecundarios.length;i++) {
-            divEfectosDeLaTecnica.append(muestraEfectoTecnica(efectosSecundarios[i],tecnicaKi, true));
-            ventajasOpcionalesElegidas = efectosSecundarios[i].getVentajasOpcionalesElegidas();
-            for (j = 0;j<ventajasOpcionalesElegidas.length;j++) {
-                divEfectosDeLaTecnica.append(muestraVentajaOpcionalEfectoTecnica(ventajasOpcionalesElegidas[j],efectosSecundarios[i],tecnicaKi,true));
-            }
-        }
-
-        var filaEncabezadosDesv = $("<div></div>").addClass("row");
-        var encabezadoNombreDesv = $("<div></div>").addClass("four columns").append(_l(UI_DESVENTAJA));
-        var encabezadoCMDesv = $("<div></div>").addClass("seven columns").append(_l(UI_CM));
-        var encabezadoBotonDesv = $("<div></div>").addClass("one columns").append(_l(UI_BORRAR));
-
-        filaEncabezadosDesv.append(encabezadoNombreDesv).append(encabezadoCMDesv).append(encabezadoBotonDesv);
-
-        var divDesventajas = $("<div></div>").append(_l(UI_DESVENTAJAS_DE_LA_TECNICA) + "(" + _l(UI_MAX) + " " + tecnicaKi.getMaxDesventajas() + "):").addClass(CSS_TEXTO_SMALL);
-
-        divDesventajas.append(filaEncabezadosDesv);
-
-        var desventajas = tecnicaKi.getDesventajas();
-        for (i = 0; i < desventajas.length;i++) {
-            divDesventajas.append(muestraDesventajaTecnica(desventajas[i],tecnicaKi,true));
-        }
-
-        divResumenTecnica.append(divEfectosDeLaTecnica).append(divDesventajas);
+        divResumenTecnica.append(muestraEfectosTecnica(tecnicaKi));
+        divResumenTecnica.append(muestraDesventajasTecnica(tecnicaKi));
 
         divFila.append(divResumenTecnica);
+        dialogo.append(divFila);
 
-        /*** poder aumentar/disminuir CM y ki */
-        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_KI_DISMINUIR_CM),{tecnicaKi: tecnicaKi},dialogoAumentarKi,""));
-        if (tecnicaKi.getTotalAumentosKi() > 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " +5 " + _l(UI_CM),{tecnicaKi: tecnicaKi},dialogoAnularAumentoKi,""));
-        
-        var costeKi = tecnicaKi.getCosteKi();
-        if (costeKi.numCaracteristicasBase() >= 3) {
-            divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_CM_DISMINUIR_KI),{tecnicaKi: tecnicaKi},dialogoAumentarCM,""));
+        var divFilaControles = getDiv("row");
 
-            if (tecnicaKi.kiReducidos[AGI] != 0)
-                divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(AGI),{tecnicaKi: tecnicaKi, caracteristica: AGI},anularAumentoCM,""));
-            if (tecnicaKi.kiReducidos[DES] != 0)
-                divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(DES),{tecnicaKi: tecnicaKi, caracteristica: DES},anularAumentoCM,""));
-            if (tecnicaKi.kiReducidos[CON] != 0)
-                divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(CON),{tecnicaKi: tecnicaKi, caracteristica: CON},anularAumentoCM,""));
-            if (tecnicaKi.kiReducidos[FUE] != 0)
-                divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(FUE),{tecnicaKi: tecnicaKi, caracteristica: FUE},anularAumentoCM,""));
-            if (tecnicaKi.kiReducidos[POD] != 0)
-                divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(POD),{tecnicaKi: tecnicaKi, caracteristica: POD},anularAumentoCM,""));
-            if (tecnicaKi.kiReducidos[VOL] != 0)
-                divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(VOL),{tecnicaKi: tecnicaKi, caracteristica: VOL},anularAumentoCM,""));
+        divFilaControles.append(muestraBotonesAumentoKi(tecnicaKi));
+        divFilaControles.append(muestraBotonesAumentoCM(tecnicaKi));
 
-        }
+        dialogo.append(divFilaControles);
 
         if (dialogInicializado) {
             dialogo.dialog("option", "buttons", [{
@@ -252,6 +279,13 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
             removeActualizador(EVENT_TECNICA_CREACION,actualizarDialogoCrearTecnica);
         },
         buttons: [
+            {
+                text: _l(UI_GUARDAR_TECNICA),
+                disabled: true,
+                click: function() {
+                    //TODO guardar en servidor
+                }
+            },
             {
                 text: _l(UI_CREAR),
                 disabled: !(tecnicaKi.isCorrecta() && personaje_actual.puedeComprarTecnicaKi(tecnicaKi)),

@@ -227,7 +227,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
  * Muestra un diálogo modal en el que se da a elegir entre varias opciones. Al elegir una se pasa a una función concreta con ciertos parámetros.
  * @param {string} opciones las opciones (en forma de strings) a elegir. Se identifican con las constantes LISTA_etc
  * @param {{}} parametros estructura con los parametros que se pasaran tal cual a la función callback.
- * @param {function} callback función a llamar al elegir una opción.
+ * @param {{principal: function, isDisabled: function}} callbacks función a llamar al elegir una opción.
  */
 function muestraDialogoElegirOpcion(opciones, parametros, callback) {
     var i;
