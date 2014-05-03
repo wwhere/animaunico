@@ -114,10 +114,10 @@ function muestraEfectosTecnica(tecnicaKi) {
             append(muestraBotonPequeño("+2º",{tecnicaKi:tecnicaKi,tipo:2},elegirEfecto,""))
         ;
     var filaEncabezados = getDiv("row");
-    var encabezadoNombre = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTO));
+    var encabezadoNombre = getDiv("two columns").addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTO));
     var encabezadoCM = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_CM));
     var encabezadoKi = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_KI));
-    var encabezadoMantenimiento = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_MANTENIMIENTO));
+    var encabezadoMantenimiento = getDiv("four columns").addClass(CSS_COLOR_GRIS).append(_l(UI_MANTENIMIENTO));
     var encabezadoBotonesVentajas = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_VENTAJAS));
     var encabezadoBoton = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_BORRAR));
     filaEncabezados.append(encabezadoNombre).append(encabezadoCM).append(encabezadoKi).append(encabezadoMantenimiento).append(encabezadoBotonesVentajas).append(encabezadoBoton);
@@ -141,6 +141,84 @@ function muestraEfectosTecnica(tecnicaKi) {
         }
     }
     return divEfectosDeLaTecnica;
+}
+
+/**
+ *
+ * @param {EfectoTecnicaElegido} efectoTecnicaElegido
+ * @param {boolean} anulable
+ * @param {TecnicaKi} tecnicaKi
+ */
+function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
+    var div = getDiv("row");
+
+    var divNombre = getDiv("two columns").addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(efectoTecnicaElegido.getNombreCompleto());
+    var divCoste = getDiv("one columns").append(efectoTecnicaElegido.getCosteCM());
+    var divCosteKi = getDiv("three columns").addClass(CSS_MUESTRA_INLINE).
+        append(efectoTecnicaElegido.getCosteKi().toString()).
+        append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteKi()},muestraDialogoRecolocacionCosteKi,""));
+
+    var divMantenimiento = getDiv("four columns");
+    var subrow = $("<div></div>").addClass("row");
+    var subCol1 = $("<div></div>").addClass("six columns");
+    var subCol2 = $("<div></div>").addClass("six columns");
+    var contentMantenimiento = $("<div></div>").addClass(CSS_FILA_EFECTO_TECNICA);
+    var divCosteMantenimiento = $("<div></div>").addClass(CSS_MUESTRA_INLINE);
+    if (efectoTecnicaElegido.isMantenible()) {
+        var isMantenida = efectoTecnicaElegido.isMantenido();
+        contentMantenimiento.attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
+        var divBotonMantenimientoOn = $("<input>")
+            .attr("type","radio")
+            .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn")
+            .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
+        var labelBotonOn = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn").append(_l(UI_ON));
+
+        var divBotonMantenimientoOff = $("<input>")
+            .attr("type","radio")
+            .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff")
+            .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
+        var labelBotonOff = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff").append(_l(UI_OFF));
+
+        if (isMantenida) {
+            divBotonMantenimientoOn.attr("checked","checked");
+        } else {
+            divBotonMantenimientoOff.attr("checked","checked");
+        }
+
+        contentMantenimiento.append(divBotonMantenimientoOn).append(labelBotonOn).append(divBotonMantenimientoOff).append(labelBotonOff);
+        contentMantenimiento.buttonset();
+
+        if (efectoTecnicaElegido.isMantenido()) {
+            divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
+            divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
+        }
+
+        divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:true},cambiaMantenimiento);
+        divBotonMantenimientoOff.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:false},cambiaMantenimiento);
+    }
+    subCol1.append(divCosteMantenimiento);
+    subCol2.append(contentMantenimiento);
+    subrow.append(subCol1).append(subCol2);
+    divMantenimiento.append(subrow);
+
+
+    var divBotonesVentajas = $("<div></div>").addClass("one columns");
+    if (efectoTecnicaElegido.getVentajasOpcionales().length > 0) {
+        var divBotonAddVentajaTecnica = boton("small primary pretty btn",_l("+"));
+
+        divBotonAddVentajaTecnica.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido},addVentajaOpcionalEfectoTecnica);
+
+        divBotonesVentajas.append(divBotonAddVentajaTecnica);
+    }
+
+    var divBoton = $("<div></div>").addClass("one columns");
+    if (anulable) {
+        divBoton.append(muestraBotonAnular(quitaEfectoSecundario,{tecnicaKi:tecnicaKi,efecto:efectoTecnicaElegido}));
+    }
+
+    div.append(divNombre).append(divCoste).append(divCosteKi).append(divMantenimiento).append(divBotonesVentajas).append(divBoton);
+
+    return div;
 }
 
 function muestraDesventajasTecnica(tecnicaKi) {
@@ -392,93 +470,7 @@ function aumentarCMDisminuirKi(parametros) {
     tecnicaKi.addAumentoCM(caracteristica);
 }
 
-/**
- *
- * @param {EfectoTecnicaElegido} efectoTecnicaElegido
- * @param {boolean} anulable
- * @param {TecnicaKi} tecnicaKi
- */
-function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
-    var div = $("<div></div>").addClass("row");
 
-    var divNombre = $("<div></div>").addClass("three columns");
-    var contentNombre = $("<div></div>");
-    contentNombre.addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(efectoTecnicaElegido.getNombreCompleto());
-    divNombre.append(contentNombre);
-
-    var divCoste = $("<div></div>").addClass("one columns");
-    var contentCoste = $("<div></div>");
-    contentCoste.append(efectoTecnicaElegido.getCosteCM());
-    divCoste.append(contentCoste);
-
-    var divCosteKi = $("<div></div>").addClass("three columns");
-    var contentCosteKi = getDiv(CSS_MUESTRA_INLINE);
-    contentCosteKi.append(efectoTecnicaElegido.getCosteKi().toString());
-    divCosteKi.append(contentCosteKi);
-    divCosteKi.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteKi()},muestraDialogoRecolocacionCosteKi,""));
-
-    var divMantenimiento = $("<div></div>").addClass("three columns");
-    var subrow = $("<div></div>").addClass("row");
-    var subCol1 = $("<div></div>").addClass("six columns");
-    var subCol2 = $("<div></div>").addClass("six columns");
-    var contentMantenimiento = $("<div></div>").addClass(CSS_FILA_EFECTO_TECNICA);
-    var divCosteMantenimiento = $("<div></div>").addClass(CSS_MUESTRA_INLINE);
-    if (efectoTecnicaElegido.isMantenible()) {
-        var isMantenida = efectoTecnicaElegido.isMantenido();
-        contentMantenimiento.attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var divBotonMantenimientoOn = $("<input>")
-            .attr("type","radio")
-            .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn")
-            .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var labelBotonOn = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn").append(_l(UI_ON));
-
-        var divBotonMantenimientoOff = $("<input>")
-            .attr("type","radio")
-            .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff")
-            .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var labelBotonOff = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff").append(_l(UI_OFF));
-
-        if (isMantenida) {
-            divBotonMantenimientoOn.attr("checked","checked");
-        } else {
-            divBotonMantenimientoOff.attr("checked","checked");
-        }
-
-        contentMantenimiento.append(divBotonMantenimientoOn).append(labelBotonOn).append(divBotonMantenimientoOff).append(labelBotonOff);
-        contentMantenimiento.buttonset();
-
-        if (efectoTecnicaElegido.isMantenido()) {
-            divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
-            divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
-        }
-
-        divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:true},cambiaMantenimiento);
-        divBotonMantenimientoOff.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:false},cambiaMantenimiento);
-    }
-    subCol1.append(divCosteMantenimiento);
-    subCol2.append(contentMantenimiento);
-    subrow.append(subCol1).append(subCol2);
-    divMantenimiento.append(subrow);
-
-
-    var divBotonesVentajas = $("<div></div>").addClass("one columns");
-    if (efectoTecnicaElegido.getVentajasOpcionales().length > 0) {
-        var divBotonAddVentajaTecnica = boton("small primary pretty btn",_l("+"));
-
-        divBotonAddVentajaTecnica.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido},addVentajaOpcionalEfectoTecnica);
-
-        divBotonesVentajas.append(divBotonAddVentajaTecnica);
-    }
-
-    var divBoton = $("<div></div>").addClass("one columns");
-    if (anulable) {
-        divBoton.append(muestraBotonAnular(quitaEfectoSecundario,{tecnicaKi:tecnicaKi,efecto:efectoTecnicaElegido}));
-    }
-
-    div.append(divNombre).append(divCoste).append(divCosteKi).append(divMantenimiento).append(divBotonesVentajas).append(divBoton);
-
-    return div;
-}
 
 /**
  *
@@ -619,9 +611,9 @@ function noPuedePonerseVentajaEfectoTecnica(parametros) {
  * @param {TecnicaKi} tecnicaKi
  */
 function muestraDesventajaTecnica(desventajaElegida, tecnicaKi, anulable) {
-    var div = $("<div></div>").addClass("row");
+    var div = getDiv("row");
 
-    var divNombre = $("<div></div>").addClass("four columns");
+    var divNombre = getDiv("four columns");
     divNombre.addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(_l(desventajaElegida.getNombre()));
 
     var divCoste = $("<div></div>").addClass("seven columns");

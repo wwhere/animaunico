@@ -2176,9 +2176,9 @@ DesventajaTecnicaElegida.prototype = {
      * @returns {string}
      */
     getNombre : function() {
-        var nombre = this.desventajaTecnica.getNombre();
+        var nombre = _l(this.desventajaTecnica.getNombre());
         if (this.hasDescripcionPropia) {
-            nombre += " (" + this.descripcion + ")";
+            nombre += " (" + _l(this.descripcion) + ")";
         }
         if (this.isAtaduraElemental()) {
             nombre += " [" + this.getAtaduraElemental().toString() + "]";
