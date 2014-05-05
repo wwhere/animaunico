@@ -1,3 +1,7 @@
+var EFECTO_MANTENIDO = "EFECTO_MANTENIDO";
+var EFECTO_SOSTENIDO_MENOR = "EFECTO_SOSTENIDO_MENOR";
+var EFECTO_SOSTENIDO_MAYOR = "EFECTO_SOSTENIDO_MAYOR";
+
 /**
  *
  * @returns {jQuery}
@@ -117,10 +121,9 @@ function muestraEfectosTecnica(tecnicaKi) {
     var encabezadoNombre = getDiv("two columns").addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTO));
     var encabezadoCM = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_CM));
     var encabezadoKi = getDiv("three columns").addClass(CSS_COLOR_GRIS).append(_l(UI_KI));
-    var encabezadoMantenimiento = getDiv("four columns").addClass(CSS_COLOR_GRIS).append(_l(UI_MANTENIMIENTO));
-    var encabezadoBotonesVentajas = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_VENTAJAS));
+    var encabezadoMantenimiento = getDiv("five columns").addClass(CSS_COLOR_GRIS).append(_l(UI_MANTENIMIENTO));
     var encabezadoBoton = getDiv("one columns").addClass(CSS_COLOR_GRIS).append(_l(UI_BORRAR));
-    filaEncabezados.append(encabezadoNombre).append(encabezadoCM).append(encabezadoKi).append(encabezadoMantenimiento).append(encabezadoBotonesVentajas).append(encabezadoBoton);
+    filaEncabezados.append(encabezadoNombre).append(encabezadoCM).append(encabezadoKi).append(encabezadoMantenimiento).append(encabezadoBoton);
     divEfectosDeLaTecnica.append(filaEncabezados);
 
     var ventajasOpcionalesElegidas;
@@ -153,70 +156,95 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
     var div = getDiv("row");
 
     var divNombre = getDiv("two columns").addClass(CSS_ETIQUETA_EFECTO_TECNICA).append(efectoTecnicaElegido.getNombreCompleto());
+    if (efectoTecnicaElegido.getVentajasOpcionales().length > 0) {
+        var divBotonAddVentajaTecnica = boton("small primary pretty btn",_l("+"));
+
+        divBotonAddVentajaTecnica.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido},addVentajaOpcionalEfectoTecnica);
+
+        divNombre.append(divBotonAddVentajaTecnica);
+    }
     var divCoste = getDiv("one columns").append(efectoTecnicaElegido.getCosteCM());
     var divCosteKi = getDiv("three columns").addClass(CSS_MUESTRA_INLINE).
         append(efectoTecnicaElegido.getCosteKi().toString()).
         append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteKi()},muestraDialogoRecolocacionCosteKi,""));
 
-    var divMantenimiento = getDiv("four columns");
-    var subrow = $("<div></div>").addClass("row");
-    var subCol1 = $("<div></div>").addClass("six columns");
-    var subCol2 = $("<div></div>").addClass("six columns");
-    var contentMantenimiento = $("<div></div>").addClass(CSS_FILA_EFECTO_TECNICA);
-    var divCosteMantenimiento = $("<div></div>").addClass(CSS_MUESTRA_INLINE);
+    var divMantenimiento = getDiv("five columns");
+    var subrow = getDiv("row");
+    var subCol1 = getDiv("six columns");
+    var subCol2 = getDiv("six columns");
+    var contentMantenimiento = getDiv(CSS_FILA_EFECTO_TECNICA);
+    var divCosteMantenimiento = getDiv(CSS_MUESTRA_INLINE);
     if (efectoTecnicaElegido.isMantenible()) {
         var isMantenida = efectoTecnicaElegido.isMantenido();
-        contentMantenimiento.attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
+        var textoId = efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant";
+        contentMantenimiento.attr("id",textoId);
+
         var divBotonMantenimientoOn = $("<input>")
             .attr("type","radio")
-            .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn")
-            .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var labelBotonOn = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOn").append(_l(UI_ON));
+            .attr("id",textoId+"_on")
+            .attr("name",textoId);
+        var labelBotonOn = $("<label></label>").attr("for",textoId+"_on").append(_l(UI_MANT));
+
+        var divBotonSostenimientoMenor = $("<input>")
+            .attr("type","radio")
+            .attr("id",textoId+"_sosmenor")
+            .attr("name",textoId);
+        var labelBotonSosMenor = $("<label></label>").attr("for",textoId+"_sosmenor").append(_l(UI_SOS_MENOR));
+
+        var divBotonSostenimientoMayor = $("<input>")
+            .attr("type","radio")
+            .attr("id",textoId+"_sosmayor")
+            .attr("name",textoId);
+        var labelBotonSosMayor = $("<label></label>").attr("for",textoId+"_sosmayor").append(_l(UI_SOS_MAYOR));
 
         var divBotonMantenimientoOff = $("<input>")
             .attr("type","radio")
-            .attr("id",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff")
-            .attr("name",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant");
-        var labelBotonOff = $("<label></label>").attr("for",efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mantOff").append(_l(UI_OFF));
+            .attr("id",textoId+"_off")
+            .attr("name",textoId);
+        var labelBotonOff = $("<label></label>").attr("for",textoId+"_off").append(_l(UI_NO));
 
         if (isMantenida) {
             divBotonMantenimientoOn.attr("checked","checked");
+        } else if (efectoTecnicaElegido.sostenido == TECNICA_SOSTENIDA_MENOR) {
+            divBotonSostenimientoMenor.attr("checked","checked");
+        } else if (efectoTecnicaElegido.sostenido == TECNICA_SOSTENIDA_MAYOR) {
+            divBotonSostenimientoMayor.attr("checked","checked");
         } else {
             divBotonMantenimientoOff.attr("checked","checked");
         }
 
-        contentMantenimiento.append(divBotonMantenimientoOn).append(labelBotonOn).append(divBotonMantenimientoOff).append(labelBotonOff);
+        contentMantenimiento.
+            append(divBotonMantenimientoOff).append(labelBotonOff).
+            append(divBotonMantenimientoOn).append(labelBotonOn).
+            append(divBotonSostenimientoMenor).append(labelBotonSosMenor).
+            append(divBotonSostenimientoMayor).append(labelBotonSosMayor);
         contentMantenimiento.buttonset();
 
         if (efectoTecnicaElegido.isMantenido()) {
             divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
             divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
+        } else if (efectoTecnicaElegido.isSostenido()) {
+            divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
+            divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
         }
 
-        divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:true},cambiaMantenimiento);
+
+        divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_MANTENIDO},cambiaMantenimiento);
         divBotonMantenimientoOff.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:false},cambiaMantenimiento);
+        divBotonSostenimientoMenor.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_SOSTENIDO_MENOR},cambiaMantenimiento);
+        divBotonSostenimientoMayor.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_SOSTENIDO_MAYOR},cambiaMantenimiento);
     }
     subCol1.append(divCosteMantenimiento);
     subCol2.append(contentMantenimiento);
     subrow.append(subCol1).append(subCol2);
     divMantenimiento.append(subrow);
 
-
-    var divBotonesVentajas = $("<div></div>").addClass("one columns");
-    if (efectoTecnicaElegido.getVentajasOpcionales().length > 0) {
-        var divBotonAddVentajaTecnica = boton("small primary pretty btn",_l("+"));
-
-        divBotonAddVentajaTecnica.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido},addVentajaOpcionalEfectoTecnica);
-
-        divBotonesVentajas.append(divBotonAddVentajaTecnica);
-    }
-
-    var divBoton = $("<div></div>").addClass("one columns");
+    var divBoton = getDiv("one columns");
     if (anulable) {
         divBoton.append(muestraBotonAnular(quitaEfectoSecundario,{tecnicaKi:tecnicaKi,efecto:efectoTecnicaElegido}));
     }
 
-    div.append(divNombre).append(divCoste).append(divCosteKi).append(divMantenimiento).append(divBotonesVentajas).append(divBoton);
+    div.append(divNombre).append(divCoste).append(divCosteKi).append(divMantenimiento).append(divBoton);
 
     return div;
 }

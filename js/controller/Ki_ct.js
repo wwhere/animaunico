@@ -668,17 +668,23 @@ function quitaDesventajaTecnica(event) {
 
 /**
  *
- * @param {{data:{tecnicaKi:TecnicaKi,efectoTecnica:EfectoTecnicaElegido,activado:boolean}}} event
+ * @param {{data:{tecnicaKi:TecnicaKi,efectoTecnica:EfectoTecnicaElegido,activado:boolean|string}}} event
  */
 function cambiaMantenimiento(event) {
     var tecnicaKi = event.data.tecnicaKi;
     var efecto = event.data.efectoTecnica;
     var activado = event.data.activado;
 
-    if ((activado) && (!efecto.isMantenido())) {
+    if ((activado == EFECTO_MANTENIDO)) {
         tecnicaKi.setEfectoMantenido(efecto,true);
+    } else if ((activado == EFECTO_SOSTENIDO_MENOR)) {
+        tecnicaKi.setEfectoSostenido(efecto,TECNICA_SOSTENIDA_MENOR);
+    } else if ((activado == EFECTO_SOSTENIDO_MAYOR)) {
+        tecnicaKi.setEfectoSostenido(efecto,TECNICA_SOSTENIDA_MAYOR);
     } else if ((!activado) && (efecto.isMantenido())) {
         tecnicaKi.setEfectoMantenido(efecto,false);
+    } else if ((!activado) && (efecto.isSostenido())) {
+        tecnicaKi.setEfectoSostenido(efecto,false);
     }
 }
 

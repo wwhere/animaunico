@@ -1084,3 +1084,8 @@ var ELEGIR_HABILIDAD = "ELEGIR_HABILIDAD";
 var UI_SOSTENIDA = (new L("Técnica sostenida","Técnica sostenida","Sustained Technique")).getId();
 var UI_COMBINABLE = (new L("Técnica combinable","Técnica combinable","Técnica combinable")).getId();
 var UI_GUARDAR_TECNICA = (new L("UI_GUARDAR_TECNICA","Guardar técnica", "Save Technique")).getId();
+
+var UI_MANT = (new L("UI_MANT","M", "M")).getId();
+var UI_SOS_MENOR = (new L("UI_SOS_MENOR","S-", "S-")).getId();
+var UI_SOS_MAYOR = (new L("UI_SOS_MAYOR","S+", "S+")).getId();
+
