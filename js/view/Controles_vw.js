@@ -575,6 +575,22 @@ function muestraBotonPequeño(label, parametros, callback, id) {
 
 /**
  *
+ * @param {string} label Ya localizada
+ * @param parametros
+ * @param callback
+ * @param id
+ * @returns {*}
+ */
+function muestraBotonMediano(label, parametros, callback, id) {
+    var divBoton = boton("medium primary btn pretty",label);
+
+    divBoton.attr("id",id);
+    divBoton.on("click",parametros,callback);
+    return divBoton;
+}
+
+/**
+ *
  * @param {string} clase
  * @param {string} labelId Ya localizado
  * @param {boolean} [disabled]

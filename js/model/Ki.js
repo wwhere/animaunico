@@ -349,10 +349,13 @@ NivelEfectoTecnica.prototype = {
 
     /**
      *
-     * @returns {number}
+     * @returns {number|boolean}
      */
     getSostenimientoMayor : function() {
-        return this.sostenimientoMayor;
+        if (this.sostenimientoMayor != -1)
+            return this.sostenimientoMayor;
+        else
+            return false;
     },
 
     /**
@@ -864,6 +867,12 @@ function TecnicaKi(nivel) {
      * @type {CosteKi}
      */
     this.costeCombinable = new CosteKi(0,0,0,0,0,0,AGI);
+    this.costeCombinable.mod[AGI] = 0;
+    this.costeCombinable.mod[DES] = 0;
+    this.costeCombinable.mod[FUE] = 0;
+    this.costeCombinable.mod[CON] = 0;
+    this.costeCombinable.mod[POD] = 0;
+    this.costeCombinable.mod[PER] = 0;
 
     /**
      *
@@ -927,10 +936,19 @@ TecnicaKi.prototype = {
 
     /**
      *
-     * @returns {boolean}
+     * @returns {boolean|string}
      */
     isSostenida : function() {
-        return this.sostenida;
+        var sostenida = false;
+        if (this.efectoPrimario) {
+            sostenida = this.efectoPrimario.isSostenido();
+        }
+        for (var i = 0; i < this.efectosSecundarios.length; i++) {
+            if (this.efectosSecundarios[i].isSostenido()) {
+                sostenida = this.efectosSecundarios[i].isSostenido();
+            }
+        }
+        return sostenida;
     },
 
     /**
@@ -1000,8 +1018,17 @@ TecnicaKi.prototype = {
         if (this.getCosteCM()+costeCombinableCM(this.nivel) <= this.maxCM) {
             this.combinable = valor;
             this.costeCombinableARepartir = costeCombinableKi(this.nivel);
+            this.costeCombinable = new CosteKi(this.costeCombinableARepartir,0,0,0,0,0,AGI);
             lanzarEvento(EVENT_TECNICA_CREACION);
         }
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCosteCombinableARepartir : function() {
+        return this.costeCombinableARepartir;
     },
 
     /**
@@ -1450,7 +1477,7 @@ TecnicaKi.prototype = {
 
     setEfectoSostenido : function(efecto, valor) {
         //TODO comprobar si hay mantenidos. Si los hay, no hacerlo
-        efecto.setSostenido(valor);
+        efecto.setSostenimiento(valor);
         lanzarEvento(EVENT_TECNICA_CREACION);
     },
 
@@ -1664,6 +1691,23 @@ function EfectoTecnicaElegido(efectoTecnica, nivelEfectoTecnica) {
 
         /**
          *
+         * @type {CosteKi}
+         */
+        this.costeSostenimientoMenor = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
+        this.costeSostenimientoMenor.setCoste(efectoTecnica.getCaracPrimaria(), nivelEfectoTecnica.getSostenimientoMenor());
+
+        /**
+         *
+         * @type {CosteKi}
+         */
+        this.costeSostenimientoMayor = new CosteKi(0,0,0,0,0,0,efectoTecnica.getCaracPrimaria());
+        if (nivelEfectoTecnica.getSostenimientoMayor()) {
+            this.costeSostenimientoMayor.setCoste(efectoTecnica.getCaracPrimaria(), nivelEfectoTecnica.getSostenimientoMayor());
+        }
+
+
+        /**
+         *
          * @type {CaracSecunTecnica[]}
          */
         var caracSec = this.efectoTecnica.getCaracSecundarias();
@@ -1671,6 +1715,8 @@ function EfectoTecnicaElegido(efectoTecnica, nivelEfectoTecnica) {
         for (var i = 0; i < caracSec.length; i++) {
             this.costeKi.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
             this.costeMantenimiento.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
+            this.costeSostenimientoMenor.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
+            this.costeSostenimientoMayor.mod[caracSec[i].caracteristica] = caracSec[i].modificador;
         }
 
     }
@@ -1737,6 +1783,19 @@ EfectoTecnicaElegido.prototype = {
      */
     getCosteMantenimiento : function() {
         return this.costeMantenimiento;
+    },
+
+    /**
+     *
+     * @param {string} valor
+     * @returns {CosteKi}
+     */
+    getCosteSostenimiento : function(valor) {
+        if (valor == TECNICA_SOSTENIDA_MENOR) {
+            return this.costeSostenimientoMenor;
+        } else {
+            return this.costeSostenimientoMayor;
+        }
     },
 
     /**
@@ -1973,12 +2032,12 @@ EfectoTecnicaElegido.prototype = {
      * @returns {boolean}
      */
     isSostenible : function(nivelTecnica) {
-        return (nivelTecnica >= this.getNivelMinimo+1);
+        return (nivelTecnica >= this.getNivelMinimo()+1);
     },
 
     /**
      *
-     * @returns {boolean}
+     * @returns {boolean |string}
      */
     isSostenido : function() {
         return this.sostenido;
@@ -2009,9 +2068,14 @@ EfectoTecnicaElegido.prototype = {
      */
     getCosteKiTotal : function() {
         var coste = this.costeKi.clona();
-        if (this.isMantenido() ||this.isSostenido()) {
+        if (this.isMantenido()) {
             coste = coste.sumaCosteKi(this.costeMantenimiento);
+        } else if (this.isSostenido() == TECNICA_SOSTENIDA_MENOR) {
+            coste = coste.sumaCosteKi(this.costeSostenimientoMenor);
+        } else if (this.isSostenido() == TECNICA_SOSTENIDA_MAYOR) {
+            coste = coste.sumaCosteKi(this.costeSostenimientoMayor);
         }
+
         return coste;
     }
 

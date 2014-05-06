@@ -1,7 +1,3 @@
-var EFECTO_MANTENIDO = "EFECTO_MANTENIDO";
-var EFECTO_SOSTENIDO_MENOR = "EFECTO_SOSTENIDO_MENOR";
-var EFECTO_SOSTENIDO_MAYOR = "EFECTO_SOSTENIDO_MAYOR";
-
 /**
  *
  * @returns {jQuery}
@@ -26,8 +22,10 @@ function muestraBotonNuevaTecnicaKi() {
     return divBotonNuevaTecnicaKi;
 }
 
-
-
+/**
+ *
+ * @returns {jQuery}
+ */
 function muestraDatosBasicosTecnica(tecnicaKi) {
     var div = getDiv("");
 
@@ -52,7 +50,7 @@ function muestraDatosBasicosTecnica(tecnicaKi) {
     if (tecnicaKi.isMantenida()) {
         divIsMantenida.append(muestraPersonal(_l(UI_MANTENIDA) + ". " + _l(UI_COSTE_MANTENIMIENTO), tecnicaKi.getCosteMantenimiento().toString(), false));
     } else if (tecnicaKi.isSostenida()) {
-        divIsMantenida.append(muestraPersonal(_l(UI_SOSTENIDA) + ": ", _l(tecnicaKi.sostenida), false));
+        divIsMantenida.append(muestraPersonal(_l(UI_SOSTENIDA) + ": ", _l(tecnicaKi.isSostenida()), false));
     }
     var divIsCombinable = getDiv("");
     if (tecnicaKi.isCombinable()) {
@@ -90,8 +88,6 @@ function añadirEfecto(parametros) {
     }
 }
 
-
-
 function elegirDesventaja(event) {
 
 
@@ -101,7 +97,6 @@ function elegirDesventaja(event) {
     }
     muestraDialogoElegirOpciones(arrayOpciones,{tecnicaKi:event.data.tecnicaKi},{principal:añadirDesventaja,isDisabled:noPuedeComprarDesventaja},true);
 }
-
 
 function noPuedeComprarDesventaja(parametros) {
     return !puedeAñadirseDesventajaATecnica(parametros.tecnicaKi,getDesventajaTecnicaKi(parametros.opcion));
@@ -163,81 +158,14 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
 
         divNombre.append(divBotonAddVentajaTecnica);
     }
+
     var divCoste = getDiv("one columns").append(efectoTecnicaElegido.getCosteCM());
+
     var divCosteKi = getDiv("three columns").addClass(CSS_MUESTRA_INLINE).
         append(efectoTecnicaElegido.getCosteKi().toString()).
         append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteKi()},muestraDialogoRecolocacionCosteKi,""));
 
-    var divMantenimiento = getDiv("five columns");
-    var subrow = getDiv("row");
-    var subCol1 = getDiv("six columns");
-    var subCol2 = getDiv("six columns");
-    var contentMantenimiento = getDiv(CSS_FILA_EFECTO_TECNICA);
-    var divCosteMantenimiento = getDiv(CSS_MUESTRA_INLINE);
-    if (efectoTecnicaElegido.isMantenible()) {
-        var isMantenida = efectoTecnicaElegido.isMantenido();
-        var textoId = efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant";
-        contentMantenimiento.attr("id",textoId);
-
-        var divBotonMantenimientoOn = $("<input>")
-            .attr("type","radio")
-            .attr("id",textoId+"_on")
-            .attr("name",textoId);
-        var labelBotonOn = $("<label></label>").attr("for",textoId+"_on").append(_l(UI_MANT));
-
-        var divBotonSostenimientoMenor = $("<input>")
-            .attr("type","radio")
-            .attr("id",textoId+"_sosmenor")
-            .attr("name",textoId);
-        var labelBotonSosMenor = $("<label></label>").attr("for",textoId+"_sosmenor").append(_l(UI_SOS_MENOR));
-
-        var divBotonSostenimientoMayor = $("<input>")
-            .attr("type","radio")
-            .attr("id",textoId+"_sosmayor")
-            .attr("name",textoId);
-        var labelBotonSosMayor = $("<label></label>").attr("for",textoId+"_sosmayor").append(_l(UI_SOS_MAYOR));
-
-        var divBotonMantenimientoOff = $("<input>")
-            .attr("type","radio")
-            .attr("id",textoId+"_off")
-            .attr("name",textoId);
-        var labelBotonOff = $("<label></label>").attr("for",textoId+"_off").append(_l(UI_NO));
-
-        if (isMantenida) {
-            divBotonMantenimientoOn.attr("checked","checked");
-        } else if (efectoTecnicaElegido.sostenido == TECNICA_SOSTENIDA_MENOR) {
-            divBotonSostenimientoMenor.attr("checked","checked");
-        } else if (efectoTecnicaElegido.sostenido == TECNICA_SOSTENIDA_MAYOR) {
-            divBotonSostenimientoMayor.attr("checked","checked");
-        } else {
-            divBotonMantenimientoOff.attr("checked","checked");
-        }
-
-        contentMantenimiento.
-            append(divBotonMantenimientoOff).append(labelBotonOff).
-            append(divBotonMantenimientoOn).append(labelBotonOn).
-            append(divBotonSostenimientoMenor).append(labelBotonSosMenor).
-            append(divBotonSostenimientoMayor).append(labelBotonSosMayor);
-        contentMantenimiento.buttonset();
-
-        if (efectoTecnicaElegido.isMantenido()) {
-            divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
-            divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
-        } else if (efectoTecnicaElegido.isSostenido()) {
-            divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
-            divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
-        }
-
-
-        divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_MANTENIDO},cambiaMantenimiento);
-        divBotonMantenimientoOff.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:false},cambiaMantenimiento);
-        divBotonSostenimientoMenor.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_SOSTENIDO_MENOR},cambiaMantenimiento);
-        divBotonSostenimientoMayor.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_SOSTENIDO_MAYOR},cambiaMantenimiento);
-    }
-    subCol1.append(divCosteMantenimiento);
-    subCol2.append(contentMantenimiento);
-    subrow.append(subCol1).append(subCol2);
-    divMantenimiento.append(subrow);
+    var divMantenimiento = getDiv("five columns").append(muestraMantenimiento(tecnicaKi,efectoTecnicaElegido));
 
     var divBoton = getDiv("one columns");
     if (anulable) {
@@ -247,6 +175,88 @@ function muestraEfectoTecnica(efectoTecnicaElegido, tecnicaKi, anulable) {
     div.append(divNombre).append(divCoste).append(divCosteKi).append(divMantenimiento).append(divBoton);
 
     return div;
+}
+
+function muestraMantenimiento(tecnicaKi,efectoTecnicaElegido) {
+    var subrow = getDiv("row");
+    var subCol1 = getDiv("six columns");
+    var subCol2 = getDiv("six columns");
+    var contentMantenimiento = getDiv(CSS_FILA_EFECTO_TECNICA);
+    var divCosteMantenimiento = getDiv(CSS_MUESTRA_INLINE);
+
+    var textoId = efectoTecnicaElegido.getNombre().replace(/\s+/g, '')+"_mant";
+
+    contentMantenimiento.attr("id",textoId);
+
+    var divBotonMantenimientoOn = $("<input>")
+        .attr("type","radio")
+        .attr("id",textoId+"_on")
+        .attr("name",textoId);
+    var labelBotonOn = $("<label></label>").attr("for",textoId+"_on").append(_l(UI_MANT));
+
+    var divBotonSostenimientoMenor = $("<input>")
+        .attr("type","radio")
+        .attr("id",textoId+"_sosmenor")
+        .attr("name",textoId);
+    var labelBotonSosMenor = $("<label></label>").attr("for",textoId+"_sosmenor").append(_l(UI_SOS_MENOR));
+
+    var divBotonSostenimientoMayor = $("<input>")
+        .attr("type","radio")
+        .attr("id",textoId+"_sosmayor")
+        .attr("name",textoId);
+    var labelBotonSosMayor = $("<label></label>").attr("for",textoId+"_sosmayor").append(_l(UI_SOS_MAYOR));
+
+    var divBotonMantenimientoOff = $("<input>")
+        .attr("type","radio")
+        .attr("id",textoId+"_off")
+        .attr("name",textoId);
+    var labelBotonOff = $("<label></label>").attr("for",textoId+"_off").append(_l(UI_NO));
+
+    if (efectoTecnicaElegido.isMantenido()) {
+        divBotonMantenimientoOn.attr("checked","checked");
+    } else if (efectoTecnicaElegido.sostenido == TECNICA_SOSTENIDA_MENOR) {
+        divBotonSostenimientoMenor.attr("checked","checked");
+    } else if (efectoTecnicaElegido.sostenido == TECNICA_SOSTENIDA_MAYOR) {
+        divBotonSostenimientoMayor.attr("checked","checked");
+    } else {
+        divBotonMantenimientoOff.attr("checked","checked");
+    }
+
+    contentMantenimiento.append(divBotonMantenimientoOff).append(labelBotonOff);
+
+    if (!(tecnicaKi.isSostenida() || !efectoTecnicaElegido.isMantenible())) {
+        contentMantenimiento.append(divBotonMantenimientoOn).append(labelBotonOn);
+    }
+
+    if (!(tecnicaKi.isMantenida() || !efectoTecnicaElegido.isSostenible(tecnicaKi.getNivel()))) {
+        if (tecnicaKi.isSostenida() == TECNICA_SOSTENIDA_MENOR) {
+            contentMantenimiento.append(divBotonSostenimientoMenor).append(labelBotonSosMenor);
+        } else if (tecnicaKi.isSostenida() == TECNICA_SOSTENIDA_MAYOR) {
+            contentMantenimiento.append(divBotonSostenimientoMayor).append(labelBotonSosMayor);
+        } else {
+            contentMantenimiento.append(divBotonSostenimientoMenor).append(labelBotonSosMenor).append(divBotonSostenimientoMayor).append(labelBotonSosMayor);
+        }
+    }
+
+    contentMantenimiento.buttonset();
+
+    if (efectoTecnicaElegido.isMantenido()) {
+        divCosteMantenimiento.append(efectoTecnicaElegido.getCosteMantenimiento().toString());
+        divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteMantenimiento()},muestraDialogoRecolocacionCosteKi,""));
+    } else if (efectoTecnicaElegido.isSostenido()) {
+        divCosteMantenimiento.append(efectoTecnicaElegido.getCosteSostenimiento(efectoTecnicaElegido.isSostenido()).toString());
+        divCosteMantenimiento.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:efectoTecnicaElegido.getCosteSostenimiento(efectoTecnicaElegido.isSostenido())},muestraDialogoRecolocacionCosteKi,""));
+    }
+
+
+    divBotonMantenimientoOn.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_MANTENIDO},cambiaMantenimiento);
+    divBotonMantenimientoOff.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:false},cambiaMantenimiento);
+    divBotonSostenimientoMenor.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_SOSTENIDO_MENOR},cambiaMantenimiento);
+    divBotonSostenimientoMayor.on("click",{tecnicaKi:tecnicaKi,efectoTecnica:efectoTecnicaElegido,activado:EFECTO_SOSTENIDO_MAYOR},cambiaMantenimiento);
+
+    return subrow.
+        append(subCol1.append(divCosteMantenimiento)).
+        append(subCol2.append(contentMantenimiento));
 }
 
 function muestraDesventajasTecnica(tecnicaKi) {
@@ -272,35 +282,97 @@ function muestraBotonesAumentoKi(tecnicaKi) {
     /*** poder aumentar/disminuir CM y ki */
     var costeKi = tecnicaKi.getCosteKi();
     if (costeKi.numCaracteristicasBase() >= 1) {
-        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_KI_DISMINUIR_CM),{tecnicaKi: tecnicaKi},dialogoAumentarKi,"").addClass("one column"));
+        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_KI_DISMINUIR_CM),{tecnicaKi: tecnicaKi},dialogoAumentarKi,"").addClass("two columns"));
     }
     if (tecnicaKi.getTotalAumentosKi() > 0)
-        divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " +5 " + _l(UI_CM),{tecnicaKi: tecnicaKi},dialogoAnularAumentoKi,"").addClass("one column"));
+        divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " +5 " + _l(UI_CM),{tecnicaKi: tecnicaKi},dialogoAnularAumentoKi,"").addClass("two columns"));
 
     return divFila;
+}
+
+function muestraBotonesCombinable(tecnicaKi) {
+    var divFila = getDiv("row");
+
+    if (tecnicaKi.isCombinable()) {
+        divFila.append(muestraBotonPequeño(_l(UI_QUITAR_COMBINABLE),{tecnicaKi: tecnicaKi},quitarCombinable,"").addClass("two columns"));
+        divFila.append(tecnicaKi.getCosteCombinable().toString());
+        divFila.append(muestraBotonPequeño(_l(UI_ELEGIR),{costeKi:tecnicaKi.getCosteCombinable()},muestraDialogoRecolocacionCosteKi,""));
+    } else {
+        divFila.append(muestraBotonPequeño(_l(UI_HACER_COMBINABLE),{tecnicaKi: tecnicaKi},hacerCombinable,"").addClass("two columns"));
+    }
+
+    return divFila;
+}
+
+function quitarCombinable(event) {
+    event.data.tecnicaKi.setCombinable(false);
+}
+
+function hacerCombinable(event) {
+    event.data.tecnicaKi.setCombinable(true);
 }
 
 function muestraBotonesAumentoCM(tecnicaKi) {
     var divFila = getDiv("row");
     var costeKi = tecnicaKi.getCosteKi();
     if (costeKi.numCaracteristicasBase() >= 3) {
-        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_CM_DISMINUIR_KI),{tecnicaKi: tecnicaKi},dialogoAumentarCM,"").addClass("one column"));
+        divFila.append(muestraBotonPequeño(_l(UI_AUMENTAR_CM_DISMINUIR_KI),{tecnicaKi: tecnicaKi},dialogoAumentarCM,"").addClass("two columns"));
 
         if (tecnicaKi.kiReducidos[AGI] != 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(AGI),{tecnicaKi: tecnicaKi, caracteristica: AGI},anularAumentoCM,"").addClass("one column"));
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(AGI),{tecnicaKi: tecnicaKi, caracteristica: AGI},anularAumentoCM,"").addClass("two columns"));
         if (tecnicaKi.kiReducidos[DES] != 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(DES),{tecnicaKi: tecnicaKi, caracteristica: DES},anularAumentoCM,"").addClass("one column"));
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(DES),{tecnicaKi: tecnicaKi, caracteristica: DES},anularAumentoCM,"").addClass("two columns"));
         if (tecnicaKi.kiReducidos[CON] != 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(CON),{tecnicaKi: tecnicaKi, caracteristica: CON},anularAumentoCM,"").addClass("one column"));
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(CON),{tecnicaKi: tecnicaKi, caracteristica: CON},anularAumentoCM,"").addClass("two columns"));
         if (tecnicaKi.kiReducidos[FUE] != 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(FUE),{tecnicaKi: tecnicaKi, caracteristica: FUE},anularAumentoCM,"").addClass("one column"));
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(FUE),{tecnicaKi: tecnicaKi, caracteristica: FUE},anularAumentoCM,"").addClass("two columns"));
         if (tecnicaKi.kiReducidos[POD] != 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(POD),{tecnicaKi: tecnicaKi, caracteristica: POD},anularAumentoCM,"").addClass("one column"));
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(POD),{tecnicaKi: tecnicaKi, caracteristica: POD},anularAumentoCM,"").addClass("two columns"));
         if (tecnicaKi.kiReducidos[VOL] != 0)
-            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(VOL),{tecnicaKi: tecnicaKi, caracteristica: VOL},anularAumentoCM,"").addClass("one column"));
+            divFila.append(muestraBotonPequeño(_l(UI_ANULAR) + " -1 " + _l(UI_KI) + " " + _l(VOL),{tecnicaKi: tecnicaKi, caracteristica: VOL},anularAumentoCM,"").addClass("two columns"));
 
     }
     return divFila;
+}
+
+function dialogoAnularAumentoKi(event) {
+    var opciones = [];
+    if (event.data.tecnicaKi.kiAumentados[AGI] > 0)
+        opciones.push(AGI);
+    if (event.data.tecnicaKi.kiAumentados[DES] > 0)
+        opciones.push(DES);
+    if (event.data.tecnicaKi.kiAumentados[CON] > 0)
+        opciones.push(CON);
+    if (event.data.tecnicaKi.kiAumentados[FUE] > 0)
+        opciones.push(FUE);
+    if (event.data.tecnicaKi.kiAumentados[POD] > 0)
+        opciones.push(POD);
+    if (event.data.tecnicaKi.kiAumentados[VOL] > 0)
+        opciones.push(VOL);
+    if (event.data.tecnicaKi.kiAumentados[AGI] > 1)
+        opciones.push(AGI);
+    if (event.data.tecnicaKi.kiAumentados[DES] > 1)
+        opciones.push(DES);
+    if (event.data.tecnicaKi.kiAumentados[CON] > 1)
+        opciones.push(CON);
+    if (event.data.tecnicaKi.kiAumentados[FUE] > 1)
+        opciones.push(FUE);
+    if (event.data.tecnicaKi.kiAumentados[POD] > 1)
+        opciones.push(POD);
+    if (event.data.tecnicaKi.kiAumentados[VOL] > 1)
+        opciones.push(VOL);
+    var gruposOpciones = [
+        new GrupoOpciones(_l(UI_CANCELAR_MENOS_UNO_A_DOS_CARAC),opciones,2)
+    ];
+    dialogoSeleccionMultiple(gruposOpciones,{tecnicaKi: event.data.tecnicaKi},anularAumentoKi);
+}
+
+function anularAumentoKi(parametros) {
+    parametros.tecnicaKi.removeAumentoKi(parametros.gruposOpciones[0].opcionesElegidas[0],parametros.gruposOpciones[0].opcionesElegidas[1]);
+}
+
+function anularAumentoCM(event) {
+    event.data.tecnicaKi.removeAumentoCM(event.data.caracteristica);
 }
 
 /**
@@ -314,7 +386,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
     var dialogInicializado = false;
 
     var actualizarDialogoCrearTecnica = function() {
-        //TODO esto no debería ir aquí
+        //FIXME esto no debería ir aquí
         desactivarNotificaciones();
         comprobacionesRutinariasTecnica(tecnicaKi);
         activarNotificaciones();
@@ -330,6 +402,12 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
 
         divFila.append(divResumenTecnica);
         dialogo.append(divFila);
+
+        var divFilaCombinable = getDiv("row");
+
+        divFilaCombinable.append(muestraBotonesCombinable(tecnicaKi));
+
+        dialogo.append(divFilaCombinable);
 
         var divFilaControles = getDiv("row");
 
@@ -390,46 +468,6 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
     dialogInicializado = true;
 
     addActualizador(EVENT_TECNICA_CREACION,actualizarDialogoCrearTecnica);
-}
-
-function dialogoAnularAumentoKi(event) {
-    var opciones = [];
-    if (event.data.tecnicaKi.kiAumentados[AGI] > 0) 
-        opciones.push(AGI);
-    if (event.data.tecnicaKi.kiAumentados[DES] > 0)
-        opciones.push(DES);
-    if (event.data.tecnicaKi.kiAumentados[CON] > 0)
-        opciones.push(CON);
-    if (event.data.tecnicaKi.kiAumentados[FUE] > 0)
-        opciones.push(FUE);
-    if (event.data.tecnicaKi.kiAumentados[POD] > 0)
-        opciones.push(POD);
-    if (event.data.tecnicaKi.kiAumentados[VOL] > 0)
-        opciones.push(VOL);
-    if (event.data.tecnicaKi.kiAumentados[AGI] > 1)
-        opciones.push(AGI);
-    if (event.data.tecnicaKi.kiAumentados[DES] > 1)
-        opciones.push(DES);
-    if (event.data.tecnicaKi.kiAumentados[CON] > 1)
-        opciones.push(CON);
-    if (event.data.tecnicaKi.kiAumentados[FUE] > 1)
-        opciones.push(FUE);
-    if (event.data.tecnicaKi.kiAumentados[POD] > 1)
-        opciones.push(POD);
-    if (event.data.tecnicaKi.kiAumentados[VOL] > 1)
-        opciones.push(VOL);
-    var gruposOpciones = [
-        new GrupoOpciones(_l(UI_CANCELAR_MENOS_UNO_A_DOS_CARAC),opciones,2)
-    ];
-    dialogoSeleccionMultiple(gruposOpciones,{tecnicaKi: event.data.tecnicaKi},anularAumentoKi);
-}
-
-function anularAumentoKi(parametros) {
-    parametros.tecnicaKi.removeAumentoKi(parametros.gruposOpciones[0].opcionesElegidas[0],parametros.gruposOpciones[0].opcionesElegidas[1]);
-}
-
-function anularAumentoCM(event) {
-    event.data.tecnicaKi.removeAumentoCM(event.data.caracteristica);
 }
 
 function comprobacionesRutinariasTecnica(tecnica) {
@@ -497,7 +535,6 @@ function aumentarCMDisminuirKi(parametros) {
 
     tecnicaKi.addAumentoCM(caracteristica);
 }
-
 
 
 /**

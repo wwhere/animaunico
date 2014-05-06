@@ -1089,3 +1089,5 @@ var UI_MANT = (new L("UI_MANT","M", "M")).getId();
 var UI_SOS_MENOR = (new L("UI_SOS_MENOR","S-", "S-")).getId();
 var UI_SOS_MAYOR = (new L("UI_SOS_MAYOR","S+", "S+")).getId();
 
+var UI_QUITAR_COMBINABLE =  (new L("UI_QUITAR_COMBINABLE","Quitar combinable", "Drop combinable")).getId();
+var UI_HACER_COMBINABLE =  (new L("UI_HACER_COMBINABLE","Hacer combinable", "Make combinable")).getId();
