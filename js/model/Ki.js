@@ -2736,6 +2736,22 @@ TecnicaKiComprada.prototype = {
 
     /**
      *
+     * @returns {boolean}
+     */
+    isSostenida : function() {
+        return this.tecnicaKi.isSostenida();
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isCombinable : function() {
+        return this.tecnicaKi.isCombinable();
+    },
+
+    /**
+     *
      * @returns {number}
      */
     getNivel : function() {
