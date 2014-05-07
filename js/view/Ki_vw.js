@@ -699,7 +699,7 @@ function muestraDesventajaTecnica(desventajaElegida, tecnicaKi, anulable) {
  * @param {CosteKi} costeKi
  */
 function dialogoRecolocacionCosteKi(costeKi) {
-    var dialogo = $("<div></div>");
+    var dialogo = getDiv("");
 
     var actualizaDialogoColocacionKi = function() {
         dialogo.empty();

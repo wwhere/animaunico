@@ -1019,6 +1019,11 @@ TecnicaKi.prototype = {
             this.combinable = valor;
             this.costeCombinableARepartir = costeCombinableKi(this.nivel);
             this.costeCombinable = new CosteKi(this.costeCombinableARepartir,0,0,0,0,0,AGI);
+            this.costeCombinable.mod[DES] = 0;
+            this.costeCombinable.mod[CON] = 0;
+            this.costeCombinable.mod[FUE] = 0;
+            this.costeCombinable.mod[POD] = 0;
+            this.costeCombinable.mod[VOL] = 0;
             lanzarEvento(EVENT_TECNICA_CREACION);
         }
     },
