@@ -419,7 +419,7 @@ function muestraDialogoCrearTecnicaKi(tecnicaKi) {
         if (dialogInicializado) {
             dialogo.dialog("option", "buttons", [{
                 text: _l(UI_CREAR),
-                disabled: !(tecnicaKi.isCorrecta() && personaje_actual.puedeComprarTecnicaKi(tecnicaKi)),
+                disabled: !(tecnicaKi.isCorrecta() && personaje_actual.puedeComprarTecnicaKi(tecnicaKi)), //TODO indicar por qué no se puede crear
                 click: function() {
                     dialogo.dialog( "close" );
                     personaje_actual.addTecnicaKi(tecnicaKi);
