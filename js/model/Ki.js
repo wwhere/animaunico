@@ -1809,15 +1809,18 @@ EfectoTecnicaElegido.prototype = {
      */
     getCosteCM : function() {
         var coste = this.nivelElegido.getCosteCM();
-
+        var numEstados = 0;
         for (var i =0; i < this.ventajasOpcionalesElegidas.length;i++) {
             coste += this.ventajasOpcionalesElegidas[i].getCosteCM();
+            if ((this.ventajasOpcionalesElegidas[i].getNombreBase() != KI_EFECTO_VENTAJA_ESTADOS_DISTANCIA_DEL_EFECTO) && (this.ventajasOpcionalesElegidas[i].getNombreBase() != KI_EFECTO_VENTAJA_ESTADOS_CONDICION_PREDETERMINADA)) {
+                numEstados++;
+            }
         }
 
         var especial = this.efectoTecnica.getEspecial();
         for (i = 0; i < especial.length;i++) {
             if ((especial[i] == COSTE_VENTAJAS_AUMENTA_DOS) && (this.ventajasOpcionalesElegidas.length > 0)) {
-                coste += 2 * (this.ventajasOpcionalesElegidas.length-1);
+                coste += 2 * (numEstados-1);
             }
         }
 
@@ -2135,6 +2138,14 @@ VentajaTecnicaElegida.prototype = {
             nombre += " (" + _l(this.nivelElegido.getNombre()) + ")";
         }
         return nombre;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombreBase : function() {
+        return this.ventajaTecnica.getNombre();
     },
 
     /**
