@@ -1,10 +1,5 @@
-
 var EVENT_TECNICA_CREACION = "EVENT_TECNICA_CREACION";
 var EVENT_COSTE_KI_CAMBIO = "EVENT_COSTE_KI_CAMBIO";
-var EFECTO_MANTENIDO = "EFECTO_MANTENIDO";
-var EFECTO_SOSTENIDO_MENOR = "EFECTO_SOSTENIDO_MENOR";
-var EFECTO_SOSTENIDO_MAYOR = "EFECTO_SOSTENIDO_MAYOR";
-
 
 /**
  *
@@ -59,7 +54,6 @@ var allEfectosTecnicas = {};
 var desventajasTecnicas = [];
 var allDesventajasTecnicas = {};
 
-
 /**
  *
  * @param {string} nombreHabilidadKi
@@ -70,7 +64,7 @@ function getHabilidadKi(nombreHabilidadKi) {
     if (allHabilidadesKi[nombreHabilidadKi] != undefined) {
         return allHabilidadesKi[nombreHabilidadKi];
     }
-    throw _l(ERR_HABILIDAD_KI_DESCONOCIDA) + ": " + nombreHabilidadKi;
+    throw ERR_HABILIDAD_KI_DESCONOCIDA + ": " + nombreHabilidadKi;
 }
 
 /**
@@ -83,7 +77,7 @@ function getEfectoTecnicaKi(nombreEfecto) {
     if (allEfectosTecnicas[nombreEfecto] != undefined) {
         return allEfectosTecnicas[nombreEfecto];
     }
-    throw _l(ERR_EFECTO_KI_DESCONOCIDA) + ": " + nombreEfecto;
+    throw ERR_EFECTO_KI_DESCONOCIDA + ": " + nombreEfecto;
 }
 
 /**
@@ -96,7 +90,7 @@ function getDesventajaTecnicaKi(nombreEfecto) {
     if (allDesventajasTecnicas[nombreEfecto] != undefined) {
         return allDesventajasTecnicas[nombreEfecto];
     }
-    throw _l(ERR_DESVENTAJA_KI_DESCONOCIDA) + ": " + nombreEfecto;
+    throw ERR_DESVENTAJA_KI_DESCONOCIDA_KI_DESCONOCIDA + ": " + nombreEfecto;
 }
 
 /**
@@ -111,7 +105,7 @@ function getTecnicaKi(nombreTecnicaKi) {
             return tecnicasMuestra_set[i];
         }
     }
-    throw _l(ERR_TECNICA_KI_DESCONOCIDA) + ": " + nombreTecnicaKi;
+    throw ERR_TECNICA_KI_DESCONOCIDA + ": " + nombreTecnicaKi;
 }
 
 /**
@@ -195,9 +189,9 @@ function efectoKiArmaduraEnergia(aplicar) {
  * @param {boolean} aplicar
  */
 function efectoExtrusionAura(aplicar) {
-    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA);
-    var bonoEntereza = new Bono(BONO_ENTEREZA,BONO_ENTEREZA,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA);
-    var bonoRotura = new Bono(BONO_ROTURA,BONO_ROTURA,5,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA);
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA)
+    var bonoEntereza = new Bono(BONO_ENTEREZA,BONO_ENTEREZA,10,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA)
+    var bonoRotura = new Bono(BONO_ROTURA,BONO_ROTURA,5,"",false,BONO_ESPECIAL,HAB_KI_EXTENSION_AURA_ARMA)
     if (aplicar) {
         personaje_actual.addBono(bonoDaño,false,false);
         personaje_actual.addBono(bonoEntereza,false,false);
@@ -384,8 +378,6 @@ function costeTecnicaMantenida(nivel) {
 }
 
 
-
-
 /**
  *
  * @param {{opcion:string}} parametros
@@ -554,8 +546,11 @@ function asignarDescripcionTecnica(parametros) {
 
 /**
  *
+ * @param {{data:{tecnicaKi:TecnicaKi,efecto:EfectoTecnica}}} event
  */
-function añadeEfectoPrimarioTecnica(tecnicaKi, efectoTecnica) {
+function añadeEfectoPrimarioTecnica(event) {
+    var tecnicaKi = event.data.tecnicaKi;
+    var efectoTecnica = event.data.efecto;
 
     var arrayOpciones = [];
     var nivelesEfecto = efectoTecnica.getNivelesEfecto();
@@ -594,7 +589,10 @@ function noPuedeElegirEfectoPrimario(parametros) {
  *
  * @param {{data:{tecnicaKi:TecnicaKi,efecto:EfectoTecnica}}} event
  */
-function añadeEfectoSecundarioTecnica(tecnicaKi, efectoTecnica) {
+function añadeEfectoSecundarioTecnica(event) {
+    var tecnicaKi = event.data.tecnicaKi;
+    var efectoTecnica = event.data.efecto;
+
     var arrayOpciones = [];
     var nivelesEfecto = efectoTecnica.getNivelesEfecto();
     for (var i = 0; i < nivelesEfecto.length; i++) {
@@ -606,9 +604,11 @@ function añadeEfectoSecundarioTecnica(tecnicaKi, efectoTecnica) {
 
 /**
  *
+ * @param {{data:{tecnicaKi:TecnicaKi,desventaja:DesventajaTecnica}}} event
  */
-function añadeDesventajaTecnica(tecnicaKi, desventaja) {
-    var desventajaTecnicaElegida = new DesventajaTecnicaElegida(desventaja);
+function añadeDesventajaTecnica(event) {
+    var tecnicaKi = event.data.tecnicaKi;
+    var desventajaTecnicaElegida = new DesventajaTecnicaElegida(event.data.desventaja);
     var efectoDesventaja = desventajaTecnicaElegida.getEfecto();
 
     if (efectoDesventaja.length == 0) {
@@ -673,23 +673,17 @@ function quitaDesventajaTecnica(event) {
 
 /**
  *
- * @param {{data:{tecnicaKi:TecnicaKi,efectoTecnica:EfectoTecnicaElegido,activado:boolean|string}}} event
+ * @param {{data:{tecnicaKi:TecnicaKi,efectoTecnica:EfectoTecnicaElegido,activado:boolean}}} event
  */
 function cambiaMantenimiento(event) {
     var tecnicaKi = event.data.tecnicaKi;
     var efecto = event.data.efectoTecnica;
     var activado = event.data.activado;
 
-    if ((activado == EFECTO_MANTENIDO)) {
+    if ((activado) && (!efecto.isMantenido())) {
         tecnicaKi.setEfectoMantenido(efecto,true);
-    } else if ((activado == EFECTO_SOSTENIDO_MENOR)) {
-        tecnicaKi.setEfectoSostenido(efecto,TECNICA_SOSTENIDA_MENOR);
-    } else if ((activado == EFECTO_SOSTENIDO_MAYOR)) {
-        tecnicaKi.setEfectoSostenido(efecto,TECNICA_SOSTENIDA_MAYOR);
     } else if ((!activado) && (efecto.isMantenido())) {
         tecnicaKi.setEfectoMantenido(efecto,false);
-    } else if ((!activado) && (efecto.isSostenido())) {
-        tecnicaKi.setEfectoSostenido(efecto,false);
     }
 }
 
@@ -947,7 +941,7 @@ function efectoKiAtaqueElementalOscuridad(aplicar) {
  * @param {boolean} aplicar
  */
 function efectoKiDañoIncrementado(aplicar) {
-    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_DAÑO_INCREMENTADO);
+    var bonoDaño = new Bono(BONO_DAÑO,BONO_DAÑO,10,"",false,BONO_ESPECIAL,HAB_KI_DAÑO_INCREMENTADO)
     if (aplicar) {
         personaje_actual.addBono(bonoDaño,false,false);
     } else {
@@ -960,7 +954,7 @@ function efectoKiDañoIncrementado(aplicar) {
  * @param {boolean} aplicar
  */
 function efectoKiVelocidadIncrementada(aplicar) {
-    var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,10,"",false,BONO_ESPECIAL,HAB_KI_VELOCIDAD_INCREMENTADA);
+    var bonoTurno = new Bono(BONO_TURNO,BONO_TURNO,10,"",false,BONO_ESPECIAL,HAB_KI_VELOCIDAD_INCREMENTADA)
     if (aplicar) {
         personaje_actual.addBono(bonoTurno,false,false);
     } else {
@@ -1064,34 +1058,3 @@ function noPuedeComprarLimite(parametros) {
     return !puede;
 }
 
-
-function costeCombinableCM(nivel) {
-    return nivel*10;
-}
-
-function costeCombinableKi(nivel) {
-    return nivel*3;
-}
-
-function costeSostenida(nivel, sostenida) {
-    switch (sostenida) {
-        case TECNICA_SOSTENIDA_MENOR:
-            if (nivel == 2) {
-                return 40;
-            } else if (nivel == 3) {
-                return 60;
-            }
-            return 0;
-            break;
-        case TECNICA_SOSTENIDA_MAYOR:
-            if (nivel == 2) {
-                return 60;
-            } else if (nivel == 3) {
-                return 90;
-            }
-            return 0;
-            break;
-        default:
-            return 0;
-    }
-}

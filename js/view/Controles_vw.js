@@ -59,7 +59,6 @@ function muestraControles() {
     $("#"+BOTON_ELAN).off("click",dialogoElan);
     $("#"+BOTON_MAGIA).off("click",dialogoMagia);
     $("#"+BOTON_CV).off("click",dialogoCV);
-    $("#"+BOTON_CM).off("click",dialogoCM);
     $("#"+BOTON_TABLAS_ARMAS).off("click",dialogoTablasArmas);
     $("#"+BOTON_ARMA_INICIAL).off("click",dialogoElegirArmaTodas);
     $("#"+BOTON_BONOS_NATURALES).off("click",dialogoBonosNaturales);
@@ -79,7 +78,6 @@ function muestraControles() {
     $("#"+BOTON_ELAN).on("click",dialogoElan);
     $("#"+BOTON_MAGIA).on("click",dialogoMagia);
     $("#"+BOTON_CV).on("click",dialogoCV);
-    $("#"+BOTON_CM).on("click",dialogoCM);
     $("#"+BOTON_TABLAS_ARMAS).on("click",dialogoTablasArmas);
     $("#"+BOTON_ARMA_INICIAL).on("click",dialogoElegirArmaTodas);
     $("#"+BOTON_BONOS_NATURALES).on("click",dialogoBonosNaturales);
@@ -229,7 +227,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
  * Muestra un diálogo modal en el que se da a elegir entre varias opciones. Al elegir una se pasa a una función concreta con ciertos parámetros.
  * @param {string} opciones las opciones (en forma de strings) a elegir. Se identifican con las constantes LISTA_etc
  * @param {{}} parametros estructura con los parametros que se pasaran tal cual a la función callback.
- * @param {function} callback función a llamar al elegir una opción.
+ * @param {{principal: function, isDisabled: function}} callbacks función a llamar al elegir una opción.
  */
 function muestraDialogoElegirOpcion(opciones, parametros, callback) {
     var i;
@@ -468,7 +466,7 @@ function muestraBotonAnular(callback, parametros) {
  * @param {object} parametros
  */
 function dialogoSeleccionMultiple(gruposOpciones, parametros, callback) {
-    var dialogo = $("<div></div>");
+    var dialogo = getDiv();
 
     dialogo.dialog({
         modal: true,
@@ -569,6 +567,22 @@ function GrupoOpciones(etiqueta, opciones, numAElegir) {
  */
 function muestraBotonPequeño(label, parametros, callback, id) {
     var divBoton = boton("small primary btn pretty",label);
+
+    divBoton.attr("id",id);
+    divBoton.on("click",parametros,callback);
+    return divBoton;
+}
+
+/**
+ *
+ * @param {string} label Ya localizada
+ * @param parametros
+ * @param callback
+ * @param id
+ * @returns {*}
+ */
+function muestraBotonMediano(label, parametros, callback, id) {
+    var divBoton = boton("medium primary btn pretty",label);
 
     divBoton.attr("id",id);
     divBoton.on("click",parametros,callback);

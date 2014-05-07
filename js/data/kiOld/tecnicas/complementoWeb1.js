@@ -63,8 +63,8 @@ sirius.fijaComoPrimario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_HA
 var efectoEstado = new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_ESTADOS],allEfectosTecnicas[KI_EFECTO_ESTADOS].getNivelesEfecto()[3]);
 efectoEstado.addVentajaOpcional(
     new VentajaTecnicaElegida(
-        allEfectosTecnicas[KI_EFECTO_ESTADOS].getVentajaOpcionalPorNombre(KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR),
-        allEfectosTecnicas[KI_EFECTO_ESTADOS].getVentajaOpcionalPorNombre(KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR).getNivelPorNombre(KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MENOR)));
+        allEfectosTecnicas[KI_EFECTO_ESTADOS].getVentajaOpcionalPorNombre(KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR),
+        allEfectosTecnicas[KI_EFECTO_ESTADOS].getVentajaOpcionalPorNombre(KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR).getNivelPorNombre(KI_EFECTO_NIVEL_PENALIZADOR_ACCION)));
 sirius.addEfectoSecundario(efectoEstado);
 sirius.addDesventaja(new DesventajaTecnicaElegida(allDesventajasTecnicas[KI_TECN_DESV_DAÑO_REDUCIDO_NINGUNO]));
 
@@ -137,7 +137,7 @@ basis.setNombre(KI_TECNICA_TAJO_CARMESI);
 basis.setArbolTecnicas(KI_ARBOL_BASIS);
 basis.costeKi = new CosteKi(0,4,4,4,0,0);
 basis.fijaComoPrimario(new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_HABILIDAD_PARADA],allEfectosTecnicas[KI_EFECTO_HABILIDAD_PARADA].getNivelesEfecto()[2]));
-efectoEstado = new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_ARMADURA],allEfectosTecnicas[KI_EFECTO_ARMADURA].getNivelesEfecto()[3]);
+efectoEstado = new EfectoTecnicaElegido(allEfectosTecnicas[KI_EFECTO_AUMENTAR_ARMADURA],allEfectosTecnicas[KI_EFECTO_AUMENTAR_ARMADURA].getNivelesEfecto()[3]);
 basis.addEfectoSecundario(efectoEstado);
 
 tecnicasMuestra_set.push(basis);
