@@ -1026,6 +1026,8 @@ function muestraTecnicasKi(muestraBotones) {
         var divCM = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("two columns").append(_l(UI_CM) + " " + tecn.getCosteCM());
         var divKi= getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("ten columns").append(_l(UI_COSTE_KI) + " " + tecn.getCosteKi().toString());
         var divMantenimiento = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("twelve columns").append(_l(UI_COSTE_MANTENIMIENTO) + " " + tecn.getCosteMantenimiento().toString());
+        var divSostenimiento = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("twelve columns").append(_l(tecn.isSostenida()));
+        var divCombinable = getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COSTE).addClass(CSS_MUESTRA_BLOCK).addClass("twelve columns").append(_l(TECNICA_COMBINABLE));
 
         divTecnica.
             append(
@@ -1037,6 +1039,12 @@ function muestraTecnicasKi(muestraBotones) {
 
         if (tecn.isMantenida()) {
             divTecnica.append(getDiv("row").append(divMantenimiento));
+        }
+        if (tecn.isSostenida()) {
+            divTecnica.append(getDiv("row").append(divSostenimiento));
+        }
+        if (tecn.isCombinable()) {
+            divTecnica.append(getDiv("row").append(divCombinable));
         }
 
         divTecnica.append(getDiv(CSS_TEXTO_SMALLER).addClass(CSS_COLOR_GRIS).append(_l(UI_EFECTOS_DE_LA_TECNICA) + ": "));

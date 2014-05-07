@@ -641,7 +641,7 @@ addEfectoTecnica(new EfectoTecnica(
         )
 
     ],
-    [COSTE_VENTAJAS_AUMENTA_DOS] //TODO no debe sumar ni la distancia ni la condicion
+    [COSTE_VENTAJAS_AUMENTA_DOS]
 ));
 
 addEfectoTecnica(new EfectoTecnica(
