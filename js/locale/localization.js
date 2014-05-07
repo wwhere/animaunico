@@ -876,6 +876,10 @@ var EFECTO_ACCION = (new L("Efecto de acción","Efecto de acción","Action effec
 var EFECTO_REACCION = (new L("Efecto de reacción","Efecto de reacción","Reaction effect")).getId();
 var EFECTO_ESOTERICO = (new L("Efecto esotérico","Efecto esotérico","Esoteric effect")).getId();
 var EFECTO_ESPECIAL = (new L("Efecto especial","Efecto especial","Special effect")).getId();
+var EFECTO_ESPACIAL = (new L("Efecto espacial","Efecto espacial","Spacial effect")).getId();
+var EFECTO_ENTEREZA = (new L("Efecto de entereza","Efecto de entereza","Fortitude effect")).getId();
+var EFECTO_INCREMENTO = (new L("Efecto de incremento","Efecto de incremento","Increase effect")).getId();
+var EFECTO_VARIADO = (new L("Efecto variado","Efecto variado","Various effect")).getId();
 
 var COSTE_VENTAJAS_AUMENTA_DOS = (new L("Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Cada elección adicional aumenta dos puntos el coste añadido de Ki de la ventaja","Each additional election adds two to the extra ki cost of this advantage")).getId();
 
@@ -1063,3 +1067,27 @@ var UI_VIENE_DE = (new L("UI_VIENE_DE","Viene de","Comes from")).getId();
 var UI_HABLA = (new L("UI_HABLA","Habla","Can speak")).getId();
 var UI_NACION = (new L("UI_NACION","Nación de origen","Nation of origin")).getId();
 var UI_ETNIA = (new L("UI_ETNIA","Etnia","Ethnicity")).getId();
+
+var UI_AUMENTAR_CM_DISMINUIR_KI = (new L("UI_AUMENTAR_CM_DISMINUIR_KI","+10 CM, -1 Ki","+10 MK, -1 Ki")).getId();
+var UI_AUMENTAR_KI_DISMINUIR_CM = (new L("UI_AUMENTAR_KI_DISMINUIR_CM","-5 CM, +2 Ki","-5 MK, +2 Ki")).getId();
+var UI_TECNICA_DEBE_TENER_3 = (new L("UI_TECNICA_DEBE_TENER_3","La técnica debe basarse al menos en 3 Características","The technique needs to be based in at least 3 attributes")).getId();
+var UI_MAX_5_AUMENTOS_CM = (new L("UI_MAX_5_AUMENTOS_CM","El ki sólo puede reducirse 5 puntos de este modo.","Ki value can only be reduced by 5 in this way.")).getId();
+var UI_MAX_4_AUMENTOS_KI = (new L("UI_MAX_4_AUMENTOS_KI","El CM sólo puede reducirse 20 puntos de este modo.","KM value can only be reduced by 20 in this way.")).getId();
+
+var UI_ANULAR = (new L("UI_ANULAR","Anular","Cancel")).getId();
+
+var UI_MAX_CM = (new L("UI_MAX_CM","Max CM alcanzado","Max MK reached")).getId();
+var UI_APLICAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_APLICAR_MENOS_UNO_A_DOS_CARAC","Aumenta dos puntos de ki entre las siguientes (Selecciona dos)","Add two points of ki among the following (select two)")).getId();
+var UI_CANCELAR_MENOS_UNO_A_DOS_CARAC = (new L("UI_CANCELAR_MENOS_UNO_A_DOS_CARAC","Cancela el aumento de dos puntos de ki entre las siguientes (Selecciona dos)","Cancel the two points added of ki among the following (select two)")).getId();
+
+var ELEGIR_HABILIDAD = "ELEGIR_HABILIDAD";
+var UI_SOSTENIDA = (new L("Técnica sostenida","Técnica sostenida","Sustained Technique")).getId();
+var UI_COMBINABLE = (new L("Técnica combinable","Técnica combinable","Técnica combinable")).getId();
+var UI_GUARDAR_TECNICA = (new L("UI_GUARDAR_TECNICA","Guardar técnica", "Save Technique")).getId();
+
+var UI_MANT = (new L("UI_MANT","M", "M")).getId();
+var UI_SOS_MENOR = (new L("UI_SOS_MENOR","S-", "S-")).getId();
+var UI_SOS_MAYOR = (new L("UI_SOS_MAYOR","S+", "S+")).getId();
+
+var UI_QUITAR_COMBINABLE =  (new L("UI_QUITAR_COMBINABLE","Quitar combinable", "Drop combinable")).getId();
+var UI_HACER_COMBINABLE =  (new L("UI_HACER_COMBINABLE","Hacer combinable", "Make combinable")).getId();

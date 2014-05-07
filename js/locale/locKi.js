@@ -190,6 +190,8 @@ var KI_EFECTO_MANIOBRAS_COMBATE = (new L("KI_EFECTO_MANIOBRAS_COMBATE","Maniobra
     "Combat Maneuvers and Aiming")).getId();
 var KI_EFECTO_AUMENTAR_ARMADURA = (new L("KI_EFECTO_AUMENTAR_ARMADURA","Aumentar armadura",
     "Armor Increase")).getId();
+var KI_EFECTO_ARMADURA = (new L("KI_EFECTO_ARMADURA","Armadura",
+    "Armor")).getId();
 var KI_EFECTO_DESTRUIR_ARMADURA = (new L("KI_EFECTO_DESTRUIR_ARMADURA","Destruir armadura",
     "Armor Destruction")).getId();
 var KI_EFECTO_NIVEL_TA_1 = (new L("KI_EFECTO_NIVEL_TA_1","-1 TA",
@@ -208,6 +210,8 @@ var KI_EFECTO_NIVEL_TA_7 = (new L("KI_EFECTO_NIVEL_TA_7","-7 TA",
     "-7 AT")).getId();
 var KI_EFECTO_NIVEL_TA_8 = (new L("KI_EFECTO_NIVEL_TA_8","-8 TA",
     "-8 AT")).getId();
+var KI_EFECTO_NIVEL_SIN_ARMADURA = (new L("KI_EFECTO_NIVEL_SIN_ARMADURA","Sin armadura",
+    "Without armor")).getId();
 var KI_EFECTO_AUMENTAR_ROTURA = (new L("KI_EFECTO_AUMENTAR_ROTURA","Aumentar rotura",
     "Breakage Augmentation")).getId();
 var KI_EFECTO_AUMENTAR_ENTEREZA = (new L("KI_EFECTO_AUMENTAR_ENTEREZA","Aumentar entereza",
@@ -538,3 +542,535 @@ var LIMITE_CRUOR = (new L("LIMITE_CRUOR","Cruor: Límite de la Sangre",
 var LIMITE_TERMINUS = (new L("LIMITE_TERMINUS","Terminus: Límite de Fin",
     "Terminus: The Final Limit")).getId();
 
+
+var KI_EFECTO_HABILIDAD_ATAQUE_COMPLETA = (new L("KI_EFECTO_HABILIDAD_ATAQUE_COMPLETA","Habilidad de ataque completa",
+    "Habilidad de ataque completa")).getId();
+var KI_EFECTO_ATAQUE_PREDETERMINADO = (new L("KI_EFECTO_ATAQUE_PREDETERMINADO","Ataque predeterminado",
+    "Ataque predeterminado")).getId();
+var KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR = (new L("KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR","Maniobras de combate y apuntar",
+    "Maniobras de combate y apuntar")).getId();
+var KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR_REALES = (new L("KI_EFECTO_MANIOBRAS_DE_COMBATE_Y_APUNTAR_REALES","Maniobras de combate y apuntar reales",
+    "Maniobras de combate y apuntar reales")).getId();
+var KI_EFECTO_ATAQUE_INDIRECTO = (new L("KI_EFECTO_ATAQUE_INDIRECTO","Ataque indirecto",
+    "Ataque indirecto")).getId();
+var KI_EFECTO_CAMUFLAR_ATAQUE = (new L("KI_EFECTO_CAMUFLAR_ATAQUE","Camuflar ataque",
+    "Camuflar ataque")).getId();
+
+var KI_EFECTO_HABILIDAD_PARADA_COMPLETA = (new L("KI_EFECTO_HABILIDAD_PARADA_COMPLETA","Habilidad de parada completa",
+    "Habilidad de parada completa")).getId();
+var KI_EFECTO_HABILIDAD_ESQUIVA_COMPLETA = (new L("KI_EFECTO_HABILIDAD_ESQUIVA_COMPLETA","Habilidad de esquiva completa",
+    "Habilidad de esquiva completa")).getId();
+var KI_EFECTO_DEFENSA_PREDETERMINADA = (new L("KI_EFECTO_DEFENSA_PREDETERMINADA","Defensa predeterminada",
+    "Defensa predeterminada")).getId();
+
+var KI_EFECTO_VENTAJA_AUMENTO_DAÑO_DAÑO_LIMITE = (new L("KI_EFECTO_VENTAJA_AUMENTO_DAÑO_DAÑO_LIMITE","Daño límite",
+    "Daño límite")).getId();
+var KI_EFECTO_NIVEL_DAÑO_LIMITE = (new L("KI_EFECTO_NIVEL_DAÑO_LIMITE","Daño límite",
+    "Daño límite")).getId();
+var KI_EFECTO_AUMENTO_DAÑO_REAL = (new L("KI_EFECTO_AUMENTO_DAÑO_REAL","Aumento de daño real",
+    "Aumento de daño real")).getId();
+var KI_EFECTO_MULTIPLICADOR_DAÑO_REAL = (new L("KI_EFECTO_MULTIPLICADOR_DAÑO_REAL","Multiplicador al daño real",
+    "Multiplicador al daño real")).getId();
+
+var KI_EFECTO_SUSTITUCION_DE_DAÑO = (new L("KI_EFECTO_SUSTITUCION_DE_DAÑO","Sustitución de daño",
+    "Sustitución de daño")).getId();
+var KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL = (new L("KI_EFECTO_SUSTITUCION_DE_DAÑO_REAL","Sustitución de daño real",
+    "Sustitución de daño real")).getId();
+
+var KI_EFECTO_TECNICA_ATAQUE_ADICIONAL_COMBO = (new L("KI_EFECTO_TECNICA_ATAQUE_ADICIONAL_COMBO","Desventaja: Combo",
+    "Desventaja: Combo")).getId();
+var KI_EFECTO_TECNICA_DESVENTAJA_COMBO_2_ATAQUES = (new L("KI_EFECTO_TECNICA_DESVENTAJA_COMBO_2_ATAQUES","Hasta 2 ataques adicionales",
+    "Hasta 2 ataques adicionales")).getId();
+var KI_EFECTO_TECNICA_DESVENTAJA_COMBO_3_ATAQUES = (new L("KI_EFECTO_TECNICA_DESVENTAJA_COMBO_3_ATAQUES","3 o más ataques adicionales",
+    "3 o más ataques adicionales")).getId();
+
+var KI_EFECTO_RECUPERAR_ACCION = (new L("KI_EFECTO_RECUPERAR_ACCION","Recuperar acción",
+    "Recuperar acción")).getId();
+var KI_EFECTO_NIVEL_RECUPERAR_ACCION = (new L("KI_EFECTO_NIVEL_RECUPERAR_ACCION","Recuperar acción",
+    "Recuperar acción")).getId();
+var KI_EFECTO_PREVISION= (new L("KI_EFECTO_PREVISION","Previsión",
+    "Previsión")).getId();
+var KI_EFECTO_NIVEL_A_MITAD = (new L("KI_EFECTO_NIVEL_A_MITAD","A mitad",
+    "A mitad")).getId();
+var KI_EFECTO_NIVEL_COMPLETO = (new L("KI_EFECTO_NIVEL_COMPLETO","Completo",
+    "Completo")).getId();
+
+
+var KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_PROYECCION = (new L("KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_PROYECCION","Proyección",
+    "Proyección")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_PROYECCION = (new L("KI_EFECTO_NIVEL_VENTAJA_PROYECCION","Proyección",
+    "Proyección")).getId();
+var KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_ESTELA_DESTRUCCION = (new L("KI_EFECTO_VENTAJA_ATAQUE_DISTANCIA_ESTELA_DESTRUCCION","Estela de destrucción",
+    "Estela de destrucción")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_ESTELA_DESTRUCCION = (new L("KI_EFECTO_NIVEL_VENTAJA_ESTELA_DESTRUCCION","Estela de destrucción",
+    "Estela de destrucción")).getId();
+var KI_EFECTO_ATAQUE_DISTANCIA_REAL = (new L("KI_EFECTO_ATAQUE_DISTANCIA_REAL","Ataque a distancia real",
+    "Ataque a distancia real")).getId();
+var KI_EFECTO_ATAQUE_AREA_REAL = (new L("KI_EFECTO_ATAQUE_AREA_REAL","Ataque con área real",
+    "Ataque con área real")).getId();
+var KI_EFECTO_VENTAJA_ATAQUE_AREA_REAL_ELECCION_BLANCO = (new L("KI_EFECTO_VENTAJA_ATAQUE_AREA_REAL_ELECCION_BLANCO","Elección de blanco",
+    "Elección de blanco")).getId();
+var KI_EFECTO_PARADA_AREA = (new L("KI_EFECTO_PARADA_AREA","Parada en área",
+    "Parada en área")).getId();
+
+var KI_EFECTO_VENTAJA_ARMADURA_INMODIFICABLE = (new L("KI_EFECTO_VENTAJA_ARMADURA_INMODIFICABLE","Inmodificable",
+    "Inmodificable")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_INMODIFICABLE = (new L("KI_EFECTO_NIVEL_VENTAJA_INMODIFICABLE","Inmodificable",
+    "Inmodificable")).getId();
+var KI_EFECTO_VENTAJA_ARMADURA_ARMADURA_FISICA = (new L("KI_EFECTO_VENTAJA_ARMADURA_ARMADURA_FISICA","Armadura física",
+    "Armadura física")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_ARMADURA_FISICA= (new L("KI_EFECTO_NIVEL_VENTAJA_ARMADURA_FISICA","Armadura física",
+    "Armadura física")).getId();
+var KI_EFECTO_VENTAJA_ARMADURA_LENTITUD = (new L("KI_EFECTO_VENTAJA_ARMADURA_LENTITUD","Lentitud",
+    "Lentitud")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_LENTITUD= (new L("KI_EFECTO_NIVEL_VENTAJA_LENTITUD","Lentitud",
+    "Lentitud")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_MOVIMIENTO= (new L("KI_EFECTO_INCREMENTO_DE_MOVIMIENTO","Incremento de movimiento",
+    "Incremento de movimiento")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_FRIALDAD = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_FRIALDAD","Incremento de habilidad (Frialdad)",
+    "Incremento de habilidad (Frialdad)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_PROEZAS_DE_FUERZA = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_PROEZAS_DE_FUERZA","Incremento de habilidad (Proezas de Fuerza)",
+    "Incremento de habilidad (Proezas de Fuerza)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_RESISTENCIA_AL_DOLOR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_RESISTENCIA_AL_DOLOR","Incremento de habilidad (Resistir el Dolor)",
+    "Incremento de habilidad (Resistir el Dolor)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_ACROBACIAS = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_ACROBACIAS","Incremento de habilidad (Acrobacias)",
+    "Incremento de habilidad (Acrobacias)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_ATLETISMO = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_ATLETISMO","Incremento de habilidad (Atletismo)",
+    "Incremento de habilidad (Atletismo)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_MONTAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_MONTAR","Incremento de habilidad (Montar)",
+    "Incremento de habilidad (Montar)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_NADAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_NADAR","Incremento de habilidad (Nadar)",
+    "Incremento de habilidad (Nadar)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_SALTAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_SALTAR","Incremento de habilidad (Saltar)",
+    "Incremento de habilidad (Saltar)")).getId();
+var KI_EFECTO_INCREMENTO_DE_HABILIDAD_TREPAR = (new L("KI_EFECTO_INCREMENTO_DE_HABILIDAD_TREPAR","Incremento de habilidad (Trepar)",
+    "Incremento de habilidad (Trepar)")).getId();
+
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_AGILIDAD = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_AGILIDAD","Capacidad incrementada (Agilidad)",
+    "Capacidad incrementada (Agilidad)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_DESTREZA = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_DESTREZA","Capacidad incrementada (Destreza)",
+    "Capacidad incrementada (Destreza)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_CONSTITUCION = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_CONSTITUCION","Capacidad incrementada (Constitución)",
+    "Capacidad incrementada (Constitución)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_FUERZA = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_FUERZA","Capacidad incrementada (Fuerza)",
+    "Capacidad incrementada (Fuerza)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_INTELIGENCIA = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_INTELIGENCIA","Capacidad incrementada (Inteligencia)",
+    "Capacidad incrementada (Inteligencia)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_PODER = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_PODER","Capacidad incrementada (Poder)",
+    "Capacidad incrementada (Poder)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_VOLUNTAD = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_VOLUNTAD","Capacidad incrementada (Voluntad)",
+    "Capacidad incrementada (Voluntad)")).getId();
+var KI_EFECTO_CAPACIDAD_INCREMENTADA_PERCEPCION = (new L("KI_EFECTO_CAPACIDAD_INCREMENTADA_PERCEPCION","Capacidad incrementada (Percepción",
+    "Capacidad incrementada (Percepción")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_RESISTENCIA_FISICA = (new L("KI_EFECTO_INCREMENTO_DE_RESISTENCIA_FISICA","Incremento de Resistencia Física",
+    "Incremento de Resistencia Física")).getId();
+var KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RE = (new L("KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RE","RE",
+    "DR")).getId();
+var KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RV = (new L("KI_EFECTO_VENTAJA_INCREMENTO_DE_RF_RV","RV",
+    "PR")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_RE = (new L("KI_EFECTO_NIVEL_VENTAJA_RE","RE",
+    "DR")).getId();
+var KI_EFECTO_NIVEL_VENTAJA_RV = (new L("KI_EFECTO_NIVEL_VENTAJA_RV","RV",
+    "PR")).getId();
+
+var KI_EFECTO_INCREMENTO_DE_RESISTENCIA_MAGICA = (new L("KI_EFECTO_INCREMENTO_DE_RESISTENCIA_MAGICA","Incremento de Resistencia Mágica",
+    "Incremento de Resistencia Mágica")).getId();
+var KI_EFECTO_INCREMENTO_DE_RESISTENCIA_PSIQUICA = (new L("KI_EFECTO_INCREMENTO_DE_RESISTENCIA_PSIQUICA","Incremento de Resistencia Psíquica",
+    "Incremento de Resistencia Psíquica")).getId();
+
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_NOCTURNA = (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_NOCTURNA","Habilidad perceptiva (Visión Nocturna)",
+    "Habilidad perceptiva (Visión Nocturna)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_RADIAL = (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_RADIAL","Habilidad perceptiva (Visión Radial)",
+    "Habilidad perceptiva (Visión Radial)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_ESPIRITUAL= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_ESPIRITUAL","Habilidad perceptiva (Visión Espiritual)",
+    "Habilidad perceptiva (Visión Espiritual)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MAGIA= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MAGIA","Habilidad perceptiva (Visión de magia)",
+    "Habilidad perceptiva (Visión de magia)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MATRICES= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VISION_DE_MATRICES","Habilidad perceptiva (Visión de matrices)",
+    "Habilidad perceptiva (Visión de matrices)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_LO_SOBRENATURAL= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_LO_SOBRENATURAL","Habilidad perceptiva (Ver lo sobrenatural)",
+    "Habilidad perceptiva (Ver lo sobrenatural)")).getId();
+var KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_REALMENTE= (new L("KI_EFECTO_HABILIDAD_PERCEPTIVA_VER_REALMENTE","Habilidad perceptiva (Ver realmente)",
+    "Habilidad perceptiva (Ver realmente)")).getId();
+
+var KI_EFECTO_NIVEL_VISION_NOCTURNA = (new L("KI_EFECTO_NIVEL_VISION_NOCTURNA","Visión Nocturna",
+    "Visión Nocturna")).getId();
+var KI_EFECTO_NIVEL_VISION_RADIAL = (new L("KI_EFECTO_NIVEL_VISION_RADIAL","Visión Radial",
+    "Visión Radial")).getId();
+var KI_EFECTO_NIVEL_VISION_ESPIRITUAL= (new L("KI_EFECTO_NIVEL_VISION_ESPIRITUAL","Visión Espiritual",
+    "Visión Espiritual")).getId();
+var KI_EFECTO_NIVEL_VISION_DE_MAGIA= (new L("KI_EFECTO_NIVEL_VISION_DE_MAGIA","Visión de magia",
+    "Visión de magia")).getId();
+var KI_EFECTO_NIVEL_VISION_DE_MATRICES= (new L("KI_EFECTO_NIVEL_VISION_DE_MATRICES","Visión de matrices",
+    "Visión de matrices")).getId();
+var KI_EFECTO_NIVEL_VER_LO_SOBRENATURAL= (new L("KI_EFECTO_NIVEL_VER_LO_SOBRENATURAL","Ver lo sobrenatural",
+    "Ver lo sobrenatural")).getId();
+var KI_EFECTO_NIVEL_VER_REALMENTE= (new L("KI_EFECTO_NIVEL_VER_REALMENTE","Ver realmente",
+    "Ver realmente")).getId();
+
+var KI_EFECTO_VENTAJA_ARMAS_FISICAS_ARMAS_ADICIONALES= (new L("KI_EFECTO_VENTAJA_ARMAS_FISICAS_ARMAS_ADICIONALES","Armas adicionales",
+    "Armas adicionales")).getId();
+var KI_EFECTO_NIVEL_1_ARMA_ADICIONAL= (new L("KI_EFECTO_NIVEL_1_ARMA_ADICIONAL","1 arma adicional",
+    "1 arma adicional")).getId();
+var KI_EFECTO_NIVEL_2_A_3_ARMAS_ADICIONALES= (new L("KI_EFECTO_NIVEL_2_A_3_ARMAS_ADICIONALES","De 2 a 3 armas adicionales",
+    "De 2 a 3 armas adicionales")).getId();
+var KI_EFECTO_NIVEL_4_A_10_ARMAS_ADICIONALES= (new L("KI_EFECTO_NIVEL_4_A_10_ARMAS_ADICIONALES","De 4 a 10 armas adicionales",
+    "De 4 a 10 armas adicionales")).getId();
+var KI_EFECTO_ABSORCION_DE_KI = (new L("KI_EFECTO_ABSORCION_DE_KI","Absorción de Ki",
+    "Absorción de Ki")).getId();
+var KI_EFECTO_NIVEL_HASTA_5 = (new L("KI_EFECTO_NIVEL_HASTA_5","Hasta 5",
+    "Hasta 5")).getId();
+var KI_EFECTO_NIVEL_HASTA_10 = (new L("KI_EFECTO_NIVEL_HASTA_10","Hasta 10",
+    "Hasta 10")).getId();
+var KI_EFECTO_NIVEL_HASTA_15 = (new L("KI_EFECTO_NIVEL_HASTA_15","Hasta 15",
+    "Hasta 15")).getId();
+var KI_EFECTO_NIVEL_HASTA_20 = (new L("KI_EFECTO_NIVEL_HASTA_20","Hasta 20",
+    "Hasta 20")).getId();
+var KI_EFECTO_NIVEL_HASTA_25 = (new L("KI_EFECTO_NIVEL_HASTA_25","Hasta 25",
+    "Hasta 25")).getId();
+var KI_EFECTO_NIVEL_SIN_LIMITE = (new L("KI_EFECTO_NIVEL_SIN_LIMITE","Sin límite",
+    "Sin límite")).getId();
+var KI_EFECTO_VENTAJA_APRESAMIENTO_PRESA_EXISTENCIAL = (new L("KI_EFECTO_VENTAJA_APRESAMIENTO_PRESA_EXISTENCIAL","Presa existencial",
+    "Presa existencial")).getId();
+var KI_EFECTO_NIVEL_PRESA_EXISTENCIAL = (new L("KI_EFECTO_NIVEL_PRESA_EXISTENCIAL","Presa existencial",
+    "Presa existencial")).getId();
+
+var KI_EFECTO_CHOQUE_FISICO = (new L("KI_EFECTO_CHOQUE_FISICO","Choque físico",
+    "Choque físico")).getId();
+var KI_EFECTO_NIVEL_CHOQUE = (new L("KI_EFECTO_NIVEL_CHOQUE","Choque",
+    "Choque")).getId();
+var KI_EFECTO_VENTAJA_ACUMULACION_REGENERACION = (new L("KI_EFECTO_VENTAJA_ACUMULACION_REGENERACION","Regeneración",
+    "Regeneración")).getId();
+var KI_EFECTO_VENTAJA_ESPEJISMO_MODIFICACION_ASPECTO = (new L("KI_EFECTO_VENTAJA_ESPEJISMO_MODIFICACION_ASPECTO","Modificación de aspecto",
+    "Modificación de aspecto")).getId();
+var KI_EFECTO_NIVEL_MODIFICACION_ASPECTO = (new L("KI_EFECTO_NIVEL_MODIFICACION_ASPECTO","Modificación de aspecto",
+    "Modificación de aspecto")).getId();
+var KI_EFECTO_VENTAJA_ESPEJISMO_ILUSIONES_FANTASMALES = (new L("KI_EFECTO_VENTAJA_ESPEJISMO_ILUSIONES_FANTASMALES","Ilusiones fantasmales",
+    "Ilusiones fantasmales")).getId();
+var KI_EFECTO_NIVEL_RP_140 = (new L("KI_EFECTO_NIVEL_RP_140","RP 140",
+    "RP 140")).getId();
+var KI_EFECTO_NIVEL_RP_180 = (new L("KI_EFECTO_NIVEL_RP_180","RP 180",
+    "RP 180")).getId();
+var KI_EFECTO_NIVEL_RP_240 = (new L("KI_EFECTO_NIVEL_RP_240","RP 240",
+    "RP 240")).getId();
+var KI_EFECTO_VENTAJA_ESCUDO_ENERGIA_REGENERACION = (new L("KI_EFECTO_VENTAJA_ESCUDO_ENERGIA_REGENERACION","Regeneración",
+    "Regeneración")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DOBLE_DAÑO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOBLE_DAÑO","Doble daño",
+    "Doble daño")).getId();
+var KI_EFECTO_NIVEL_DOBLE_DAÑO = (new L("KI_EFECTO_NIVEL_DOBLE_DAÑO","Doble daño",
+    "Doble daño")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DOLOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOLOR","Dolor",
+    "Dolor")).getId();
+var KI_EFECTO_NIVEL_DOLOR = (new L("KI_EFECTO_NIVEL_DOLOR","Dolor",
+    "Dolor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DOLOR_EXTREMO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DOLOR_EXTREMO","Dolor extremo",
+    "Dolor extremo")).getId();
+var KI_EFECTO_NIVEL_DOLOR_EXTREMO = (new L("KI_EFECTO_NIVEL_DOLOR_EXTREMO","Dolor extremo",
+    "Dolor extremo")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_FASCINACION = (new L("KI_EFECTO_VENTAJA_ESTADOS_FASCINACION","Fascinación",
+    "Fascinación")).getId();
+var KI_EFECTO_NIVEL_FASCINACION = (new L("KI_EFECTO_NIVEL_FASCINACION","Fascinación",
+    "Fascinación")).getId();
+
+
+var KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_KI = (new L("KI_EFECTO_VENTAJA_ESTADOS_DRENAJE_KI","Drenaje de ki",
+    "Drenaje de ki")).getId();
+var KI_EFECTO_NIVEL_DRENAJE_DE_KI = (new L("KI_EFECTO_NIVEL_DRENAJE_DE_KI","Drenaje de ki",
+    "Drenaje de ki")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_ILUSION = (new L("KI_EFECTO_VENTAJA_ESTADOS_ILUSION","Ilusión",
+    "Ilusión")).getId();
+var KI_EFECTO_NIVEL_ILUSION = (new L("KI_EFECTO_NIVEL_ILUSION","Ilusión",
+    "Ilusión")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_ILUSION_FANTASMAL = (new L("KI_EFECTO_VENTAJA_ESTADOS_ILUSION_FANTASMAL","Ilusión fantasmal",
+    "Ilusión fantasmal")).getId();
+var KI_EFECTO_NIVEL_ILUSION_FANTASMAL = (new L("KI_EFECTO_NIVEL_ILUSION_FANTASMAL","Ilusión fantasmal",
+    "Ilusión fantasmal")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_ILUSION_MAYOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_ILUSION_MAYOR","Ilusión mayor",
+    "Ilusión mayor")).getId();
+var KI_EFECTO_NIVEL_ILUSION_MAYOR = (new L("KI_EFECTO_NIVEL_ILUSION_MAYOR","Ilusión mayor",
+    "Ilusión mayor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_MIEDO = (new L("KI_EFECTO_VENTAJA_ESTADOS_MIEDO","Miedo",
+    "Miedo")).getId();
+var KI_EFECTO_NIVEL_MIEDO = (new L("KI_EFECTO_NIVEL_MIEDO","Miedo",
+    "Miedo")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MAYOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MAYOR","Penalizador a la acción mayor",
+    "Penalizador a la acción mayor")).getId();
+var KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MAYOR = (new L("KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MAYOR","Penalizador a la acción mayor",
+    "Penalizador a la acción mayor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR = (new L("KI_EFECTO_VENTAJA_ESTADOS_PENALIZADOR_ACCION_MENOR","Penalizador a la acción menor",
+    "Penalizador a la acción menor")).getId();
+var KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MENOR = (new L("KI_EFECTO_NIVEL_PENALIZADOR_ACCION_MENOR","Penalizador a la acción menor",
+    "Penalizador a la acción menor")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_REDUCCION_DE_CARACTERISTICAS = (new L("KI_EFECTO_VENTAJA_ESTADOS_REDUCCION_DE_CARACTERISTICAS","Reducción de Características",
+    "Reducción de Características")).getId();
+var KI_EFECTO_NIVEL_REDUCCION_DE_CARACTERISTICAS = (new L("KI_EFECTO_NIVEL_REDUCCION_DE_CARACTERISTICAS","Reducción de Características",
+    "Reducción de Características")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_AGI = (new L("KI_EFECTO_NIVEL_REDUCIR_AGI","Reducción de una Característica (Agilidad)",
+    "Reducción de una Característica (Agilidad)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_DES = (new L("KI_EFECTO_NIVEL_REDUCIR_DES","Reducción de una Característica (Destreza)",
+    "Reducción de una Característica (Destreza)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_CON = (new L("KI_EFECTO_NIVEL_REDUCIR_CON","Reducción de una Característica (Constitución)",
+    "Reducción de una Característica (Constitución)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_FUE = (new L("KI_EFECTO_NIVEL_REDUCIR_FUE","Reducción de una Característica (Fuerza)",
+    "Reducción de una Característica (Fuerza)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_INT = (new L("KI_EFECTO_NIVEL_REDUCIR_INT","Reducción de una Característica (Inteligencia)",
+    "Reducción de una Característica (Inteligencia)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_POD = (new L("KI_EFECTO_NIVEL_REDUCIR_POD","Reducción de una Característica (Poder)",
+    "Reducción de una Característica (Poder)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_VOL = (new L("KI_EFECTO_NIVEL_REDUCIR_VOL","Reducción de una Característica (Voluntad)",
+    "Reducción de una Característica (Voluntad)")).getId();
+var KI_EFECTO_NIVEL_REDUCIR_PER = (new L("KI_EFECTO_NIVEL_REDUCIR_PER","Reducción de una Característica (Percepción)",
+    "Reducción de una Característica (Percepción)")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RP = (new L("KI_EFECTO_VENTAJA_ESTADOS_REDUCIR_RP","Estado añadido: Reducción de RP",
+    "Estado añadido: Reducción de RP")).getId();
+var KI_EFECTO_NIVEL_REDUCCION_RP = (new L("KI_EFECTO_NIVEL_REDUCCION_RP","Reducción de RP",
+    "Reducción de RP")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_TERROR = (new L("KI_EFECTO_VENTAJA_ESTADOS_TERROR","Terror",
+    "Terror")).getId();
+var KI_EFECTO_NIVEL_TERROR = (new L("KI_EFECTO_NIVEL_TERROR","Terror",
+    "Terror")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_CONDICION_PREDETERMINADA = (new L("KI_EFECTO_VENTAJA_ESTADOS_CONDICION_PREDETERMINADA","Condición predeterminada",
+    "Condición predeterminada")).getId();
+var KI_EFECTO_NIVEL_BESO = (new L("KI_EFECTO_NIVEL_BESO","Beso",
+    "Beso")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_FISICO = (new L("KI_EFECTO_NIVEL_CONTACTO_FISICO","Contacto físico",
+    "Contacto físico")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_VISUAL_MUTUO = (new L("KI_EFECTO_NIVEL_CONTACTO_VISUAL_MUTUO","Contacto visual mutuo",
+    "Contacto visual mutuo")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_VISUAL_UN_BLANCO = (new L("KI_EFECTO_NIVEL_CONTACTO_VISUAL_UN_BLANCO","Contacto visual (un blanco)",
+    "Contacto visual (un blanco)")).getId();
+var KI_EFECTO_NIVEL_CONTACTO_VISUAL_VARIOS_BLANCOS = (new L("KI_EFECTO_NIVEL_CONTACTO_VISUAL_VARIOS_BLANCOS","Contacto visual (varios blancos)",
+    "Contacto visual (varios blancos)")).getId();
+var KI_EFECTO_NIVEL_POR_EL_AIRE = (new L("KI_EFECTO_NIVEL_POR_EL_AIRE","Por el aire",
+    "Por el aire")).getId();
+var KI_EFECTO_NIVEL_POR_SONIDO_UN_BLANCO = (new L("KI_EFECTO_NIVEL_POR_SONIDO_UN_BLANCO","Por sonido (un blanco)",
+    "Por sonido (un blanco)")).getId();
+var KI_EFECTO_NIVEL_POR_SONIDO_VARIOS_BLANCOS = (new L("KI_EFECTO_NIVEL_POR_SONIDO_VARIOS_BLANCOS","Por sonido (varios blancos)",
+    "Por sonido (varios blancos)")).getId();
+var KI_EFECTO_NIVEL_POR_SUPERFICIE = (new L("KI_EFECTO_NIVEL_POR_SUPERFICIE","Por superficie",
+    "Por superficie")).getId();
+var KI_EFECTO_NIVEL_POR_TODA_SUPERFICIE = (new L("KI_EFECTO_NIVEL_POR_TODA_SUPERFICIE","Por toda superficie",
+    "Por toda superficie")).getId();
+var KI_EFECTO_VENTAJA_ESTADOS_DISTANCIA_DEL_EFECTO = (new L("KI_EFECTO_VENTAJA_ESTADOS_DISTANCIA_DEL_EFECTO","Distancia del efecto",
+    "Distancia del efecto")).getId();
+var KI_EFECTO_NIVEL_150_M = (new L("KI_EFECTO_NIVEL_150_M","150 metros",
+    "150 metros")).getId();
+var KI_EFECTO_IMPACTO = (new L("KI_EFECTO_IMPACTO","Impacto",
+    "Impacto")).getId();
+var KI_EFECTO_VENTAJA_IMPACTO_ATRAER = (new L("KI_EFECTO_VENTAJA_IMPACTO_ATRAER","Atraer",
+    "Atraer")).getId();
+var KI_EFECTO_NIVEL_ATRAER = (new L("KI_EFECTO_NIVEL_ATRAER","Atraer",
+    "Atraer")).getId();
+var KI_EFECTO_INTERRUPCION = (new L("KI_EFECTO_INTERRUPCION","Interrupción",
+    "Interrupción")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_20 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_20","Daño +20",
+    "Daño +20")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_40 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_40","Daño +40",
+    "Daño +40")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_60 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_60","Daño +60",
+    "Daño +60")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_80 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_80","Daño +80",
+    "Daño +80")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_100 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_100","Daño +100",
+    "Daño +100")).getId();
+var KI_EFECTO_NIVEL_DAÑO_MAS_120 = (new L("KI_EFECTO_NIVEL_DAÑO_MAS_120","Daño +120",
+    "Daño +120")).getId();
+var KI_EFECTO_VENTAJA_INTERRUPCION_TIPO_DE_INTERRUPCION = (new L("KI_EFECTO_VENTAJA_INTERRUPCION_TIPO_DE_INTERRUPCION","Tipo de interrupción",
+    "Tipo de interrupción")).getId();
+var KI_EFECTO_NIVEL_KI = (new L("KI_EFECTO_NIVEL_KI","Ki",
+    "Ki")).getId();
+var KI_EFECTO_NIVEL_MAGIA = (new L("KI_EFECTO_NIVEL_MAGIA","Magia",
+    "Magia")).getId();
+var KI_EFECTO_NIVEL_HABILIDADES_PSIQUICAS = (new L("KI_EFECTO_NIVEL_HABILIDADES_PSIQUICAS","Habilidades psíquicas",
+    "Habilidades psíquicas")).getId();
+var KI_EFECTO_VENTAJA_INTANGIBILIDAD_AFECTAR_A_OTROS = (new L("KI_EFECTO_VENTAJA_INTANGIBILIDAD_AFECTAR_A_OTROS","Afectar a otros",
+    "Afectar a otros")).getId();
+var KI_EFECTO_NIVEL_PRESENCIA_SIMPLE = (new L("KI_EFECTO_NIVEL_PRESENCIA_SIMPLE","Presencia simple",
+    "Presencia simple")).getId();
+var KI_EFECTO_NIVEL_PRESENCIA_EXTENDIDA = (new L("KI_EFECTO_NIVEL_PRESENCIA_EXTENDIDA","Presencia extendida",
+    "Presencia extendida")).getId();
+var KI_EFECTO_VENTAJA_INTANGIBILIDAD_FUSION = (new L("KI_EFECTO_VENTAJA_INTANGIBILIDAD_FUSION","Fusión",
+    "Fusión")).getId();
+var KI_EFECTO_NIVEL_FUSION = (new L("KI_EFECTO_NIVEL_FUSION","Fusión",
+    "Fusión")).getId();
+var KI_EFECTO_MARCA = (new L("KI_EFECTO_MARCA","Marca",
+    "Marca")).getId();
+var KI_EFECTO_NIVEL_MARCA_MAYOR = (new L("KI_EFECTO_NIVEL_MARCA_MAYOR","Marca mayor",
+    "Marca mayor")).getId();
+var KI_EFECTO_NIVEL_MARCA_MENOR = (new L("KI_EFECTO_NIVEL_MARCA_MENOR","Marca menor",
+    "Marca menor")).getId();
+var KI_EFECTO_VENTAJA_MARCA_PERMANENCIA = (new L("KI_EFECTO_VENTAJA_MARCA_PERMANENCIA","Permanencia",
+    "Permanencia")).getId();
+var KI_EFECTO_NIVEL_PROLONGADA = (new L("KI_EFECTO_NIVEL_PROLONGADA","Prolongada",
+    "Prolongada")).getId();
+var KI_EFECTO_NIVEL_ETERNA = (new L("KI_EFECTO_NIVEL_ETERNA","Eterna",
+    "Eterna")).getId();
+var KI_EFECTO_POTENCIAR_CRITICO_REAL = (new L("KI_EFECTO_POTENCIAR_CRITICO_REAL","Potenciar crítico real",
+    "Potenciar crítico real")).getId();
+var KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO = (new L("KI_EFECTO_VENTAJA_POTENCIAR_CRITICO_REAL_CRITICO_AUTOMATICO","Crítico automático",
+    "Crítico automático")).getId();
+
+var CLASE_ATAQUE  = (new L("CLASE_ATAQUE","Ataque",
+    "Ataque")).getId();
+var CLASE_CONTRAATAQUE = (new L("CLASE_CONTRAATAQUE","Contraataque",
+    "Contraataque")).getId();
+var CLASE_DEFENSA = (new L("CLASE_DEFENSA","Defensa",
+    "Defensa")).getId();
+var CLASE_VARIABLE = (new L("CLASE_VARIABLE","Variable",
+    "Variable")).getId();
+
+var KI_TECN_DESV_AGOTAMIENTO_2 = (new L("KI_TECN_DESV_AGOTAMIENTO_2","Agotamiento (-2)",
+    "Agotamiento (-2)")).getId();
+var KI_TECN_DESV_AGOTAMIENTO_4 = (new L("KI_TECN_DESV_AGOTAMIENTO_4","Agotamiento (-4)",
+    "Agotamiento (-4)")).getId();
+var KI_TECN_DESV_AGOTAMIENTO_6 = (new L("KI_TECN_DESV_AGOTAMIENTO_6","Agotamiento (-6)",
+    "Agotamiento (-6)")).getId();
+var KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_PARADA = (new L("KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_PARADA","Ataque especializado (contra parada)",
+    "Ataque especializado (contra parada)")).getId();
+var KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ESQUIVA = (new L("KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ESQUIVA","Ataque especializado (contra esquiva)",
+    "Ataque especializado (contra esquiva)")).getId();
+var KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ACUMULACION = (new L("KI_TECN_DESV_ATAQUE_ESPECIALIZADO_CONTRA_ACUMULACION","Ataque especializado (contra acumulación)",
+    "Ataque especializado (contra acumulación)")).getId();
+var KI_TECN_DESV_ATADA_A_UN_ARMA_GENERICA = (new L("KI_TECN_DESV_ATADA_A_UN_ARMA_GENERICA","Atada a un arma genérica",
+    "Atada a un arma genérica")).getId();
+var KI_TECN_DESV_ATADA_A_UN_ARMA_UNICA = (new L("KI_TECN_DESV_ATADA_A_UN_ARMA_UNICA","Atada a un arma única",
+    "Atada a un arma única")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_MITAD_PV = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_MITAD_PV","Circunstancia límite (Mitad de PV)",
+    "Circunstancia límite (Mitad de PV)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_PV_NEGATIVOS = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_PV_NEGATIVOS","Circunstancia límite (PV negativos)",
+    "Circunstancia límite (PV negativos)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_CUARTO_PV = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_CUARTO_PV","Circunstancia límite (Una cuarta parte de PV)",
+    "Circunstancia límite (Una cuarta parte de PV)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_RECIBIR_DAÑO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_LIMITE_RECIBIR_DAÑO","Circunstancia límite (Recibir daño)",
+    "Circunstancia límite (Recibir daño)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_DERRIBADO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_DERRIBADO","Circunstancia de combate (derribado)",
+    "Circunstancia de combate (derribado)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_APRESADO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_APRESADO","Circunstancia de combate (apresado)",
+    "Circunstancia de combate (apresado)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_ESPALDAS = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_ESPALDAS","Circunstancia de combate (de espaldas)",
+    "Circunstancia de combate (de espaldas)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_SORPRENDIDO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_SORPRENDIDO","Circunstancia de combate (sorprendido)",
+    "Circunstancia de combate (sorprendido)")).getId();
+var KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_CEGADO = (new L("KI_TECN_DESV_CIRCUNSTANCIA_DE_COMBATE_CEGADO","Circunstancia de combate (cegado)",
+    "Circunstancia de combate (cegado)")).getId();
+var KI_TECN_DESV_COMPLEJA = (new L("KI_TECN_DESV_COMPLEJA","Compleja",
+    "Compleja")).getId();
+var KI_TECN_DESV_CONDICIONES_DESENVAINAR = (new L("KI_TECN_DESV_CONDICIONES_DESENVAINAR","Condiciones (Desenvainar)",
+    "Condiciones (Desenvainar)")).getId();
+var KI_TECN_DESV_CONDICIONES_EN_VUELO = (new L("KI_TECN_DESV_CONDICIONES_EN_VUELO","Condiciones (En vuelo)",
+    "Condiciones (En vuelo)")).getId();
+var KI_TECN_DESV_CONDICIONES_MONTADO = (new L("KI_TECN_DESV_CONDICIONES_MONTADO","Condiciones (Montado)",
+    "Condiciones (Montado)")).getId();
+var KI_TECN_DESV_CONDICIONES_EN_CARGA = (new L("KI_TECN_DESV_CONDICIONES_EN_CARGA","Condiciones (En carga)",
+    "Condiciones (En carga)")).getId();
+var KI_TECN_DESV_CONDICIONES_DIURNO = (new L("KI_TECN_DESV_CONDICIONES_DIURNO","Condiciones (Diurno)",
+    "Condiciones (Diurno)")).getId();
+var KI_TECN_DESV_CONDICIONES_NOCTURNO = (new L("KI_TECN_DESV_CONDICIONES_NOCTURNO","Condiciones (Nocturno)",
+    "Condiciones (Nocturno)")).getId();
+var KI_TECN_DESV_CONDICIONES_TERRENO_DETERMINADO = (new L("KI_TECN_DESV_CONDICIONES_TERRENO_DETERMINADO","Condiciones (Terreno determinado)",
+    "Condiciones (Terreno determinado)")).getId();
+var KI_TECN_DESV_CONDICIONES_MOMENTO_CONCRETO = (new L("KI_TECN_DESV_CONDICIONES_MOMENTO_CONCRETO","Condiciones (Momento concreto)",
+    "Condiciones (Condiciones (Momento concreto)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_ATAQUES_FISICOS = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_ATAQUES_FISICOS","Defensa especializada (Sólo contra ataques físicos)",
+    "Defensa especializada (Sólo contra ataques físicos)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PROYECTILES = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PROYECTILES","Defensa especializada (Sólo contra proyectiles)",
+    "Defensa especializada (Sólo contra proyectiles)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_TECNICAS_KI = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_TECNICAS_KI","Defensa especializada (Sólo contra Técnicas del Ki)",
+    "Defensa especializada (Sólo contra Técnicas del Ki)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_CONJUROS = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_CONJUROS","Defensa especializada (Sólo contra conjuros)",
+    "Defensa especializada (Sólo contra conjuros)")).getId();
+var KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PODERES_PSIQUICOS = (new L("KI_TECN_DESV_DEFENSA_ESPECIALIZADA_PODERES_PSIQUICOS","Defensa especializada (Sólo contra poderes psíquicos)",
+    "Defensa especializada (Sólo contra poderes psíquicos)")).getId();
+var KI_TECN_DESV_EXTERMINADOR_SERES_HUMANOIDES = (new L("KI_TECN_DESV_EXTERMINADOR_SERES_HUMANOIDES","Exterminador (contra seres humanoides)",
+    "Exterminador (contra seres humanoides)")).getId();
+var KI_TECN_DESV_EXTERMINADOR_CLASE_DETERMINADA = (new L("KI_TECN_DESV_EXTERMINADOR_CLASE_DETERMINADA","Exterminador (contra una clase determinada de ser)",
+    "Exterminador (contra una clase determinada de ser)")).getId();
+var KI_TECN_DESV_EXTERMINADOR_SER_DETERMINADO = (new L("KI_TECN_DESV_EXTERMINADOR_SER_DETERMINADO","Exterminador (contra ser determinado)",
+    "Exterminador (contra ser determinado)")).getId();
+var KI_TECN_DESV_EXCESO_DE_ENERGIA = (new L("KI_TECN_DESV_EXCESO_DE_ENERGIA","Exceso de energía",
+    "Exceso de energía")).getId();
+var KI_TECN_DESV_PERDIDA_DEL_ARMA = (new L("KI_TECN_DESV_PERDIDA_DEL_ARMA","Pérdida del arma",
+    "Pérdida del arma")).getId();
+var KI_TECN_DESV_PENALIZADOR_50 = (new L("KI_TECN_DESV_PENALIZADOR_50","Penalizador a toda Acción (-50)",
+    "Penalizador a toda Acción (-50)")).getId();
+var KI_TECN_DESV_PENALIZADOR_75 = (new L("KI_TECN_DESV_PENALIZADOR_75","Penalizador a toda Acción (-75)",
+    "Penalizador a toda Acción (-75)")).getId();
+var KI_TECN_DESV_PENALIZADOR_100 = (new L("KI_TECN_DESV_PENALIZADOR_100","Penalizador a toda Acción (-100)",
+    "Penalizador a toda Acción (-100)")).getId();
+var KI_TECN_DESV_PENALIZADOR_125 = (new L("KI_TECN_DESV_PENALIZADOR_125","Penalizador a toda Acción (-125)",
+    "Penalizador a toda Acción (-125)")).getId();
+var KI_TECN_DESV_PENALIZADOR_150 = (new L("KI_TECN_DESV_PENALIZADOR_150","Penalizador a toda Acción (-150)",
+    "Penalizador a toda Acción (-150)")).getId();
+var KI_TECN_DESV_PREPARACION_PREVIA_MINUTO = (new L("KI_TECN_DESV_PREPARACION_PREVIA_MINUTO","Preparación previa (1 minuto)",
+    "Preparación previa (1 minuto)")).getId();
+var KI_TECN_DESV_PREPARACION_PREVIA_HORA = (new L("KI_TECN_DESV_PREPARACION_PREVIA_HORA","Preparación previa (1 hora)",
+    "Preparación previa (1 hora)")).getId();
+var KI_TECN_DESV_PREPARACION_PREVIA_DIA = (new L("KI_TECN_DESV_PREPARACION_PREVIA_DIA","Preparación previa (1 día)",
+    "Preparación previa (1 día)")).getId();
+var KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_SIMPLE = (new L("KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_SIMPLE","Requerimientos elementales (Intesidad simple)",
+    "Requerimientos elementales (Intesidad simple)")).getId();
+var KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_MAYOR = (new L("KI_TECN_DESV_REQUERIMIENTOS_ELEMENTALES_MAYOR","Requerimientos elementales (Intesidad mayor)",
+    "Requerimientos elementales (Intesidad mayor)")).getId();
+var UI_REQUISITO_ELEMENTAL = (new L("Requisito Elemental","Requisito Elemental","Requisito Elemental")).getId();
+var KI_TECN_DESV_SACRIFICIO_25 = (new L("KI_TECN_DESV_SACRIFICIO_25","Sacrificio (-25 PV)",
+    "Sacrificio (-25 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_50 = (new L("KI_TECN_DESV_SACRIFICIO_50","Sacrificio (-50 PV)",
+    "Sacrificio (-50 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_75 = (new L("KI_TECN_DESV_SACRIFICIO_75","Sacrificio (-75 PV)",
+    "Sacrificio (-75 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_100 = (new L("KI_TECN_DESV_SACRIFICIO_100","Sacrificio (-100 PV)",
+    "Sacrificio (-100 PV)")).getId();
+var KI_TECN_DESV_SACRIFICIO_COMPLETO = (new L("KI_TECN_DESV_SACRIFICIO_COMPLETO","Sacrificio (Completo)",
+    "Sacrificio (Completo)")).getId();
+var KI_TECN_DESV_SACRIFICIO_AGI = (new L("KI_TECN_DESV_SACRIFICIO_AGI","Sacrificio de Características (Agilidad)",
+    "Sacrificio de Características (Agilidad)")).getId();
+var KI_TECN_DESV_SACRIFICIO_CON = (new L("KI_TECN_DESV_SACRIFICIO_CON","Sacrificio de Características (Constitución)",
+    "Sacrificio de Características (Constitución)")).getId();
+var KI_TECN_DESV_SACRIFICIO_DES = (new L("KI_TECN_DESV_SACRIFICIO_DES","Sacrificio de Características (Destreza)",
+    "Sacrificio de Características (Destreza)")).getId();
+var KI_TECN_DESV_SACRIFICIO_FUE = (new L("KI_TECN_DESV_SACRIFICIO_FUE","Sacrificio de Características (Fuerza)",
+    "Sacrificio de Características (Fuerza)")).getId();
+var KI_TECN_DESV_SACRIFICIO_INT = (new L("KI_TECN_DESV_SACRIFICIO_INT","Sacrificio de Características (Inteligencia)",
+    "Sacrificio de Características (Inteligencia)")).getId();
+var KI_TECN_DESV_SACRIFICIO_PER = (new L("KI_TECN_DESV_SACRIFICIO_PER","Sacrificio de Características (Percepción)",
+    "Sacrificio de Características (Percepción)")).getId();
+var KI_TECN_DESV_SACRIFICIO_POD = (new L("KI_TECN_DESV_SACRIFICIO_POD","Sacrificio de Características (Poder)",
+    "Sacrificio de Características (Poder)")).getId();
+var KI_TECN_DESV_SACRIFICIO_VOL = (new L("KI_TECN_DESV_SACRIFICIO_VOL","Sacrificio de Características (Voluntad)",
+    "Sacrificio de Características (Voluntad)")).getId();
+var KI_TECN_DESV_SIN_DEFENSA = (new L("KI_TECN_DESV_SIN_DEFENSA","Sin defensa",
+    "Sin defensa")).getId();
+var KI_TECN_DESV_SOBRECARGA_5 = (new L("KI_TECN_DESV_SOBRECARGA_5","Sobrecarga (espera de 5 asaltos)",
+    "Sobrecarga (espera de 5 asaltos)")).getId();
+var KI_TECN_DESV_SOBRECARGA_20 = (new L("KI_TECN_DESV_SOBRECARGA_20","Sobrecarga (espera de 20 asaltos)",
+    "Sobrecarga (espera de 20 asaltos)")).getId();
+var KI_TECN_DESV_TECNICA_FINAL = (new L("KI_TECN_DESV_TECNICA_FINAL","Técnica final",
+    "Técnica final")).getId();
+var KI_TECN_DESV_TECNICA_MANTENIDA_1 = (new L("KI_TECN_DESV_TECNICA_MANTENIDA_1","Técnica mantenida (nivel 1)",
+    "Técnica mantenida (nivel 1)")).getId();
+var KI_TECN_DESV_TECNICA_MANTENIDA_2 = (new L("KI_TECN_DESV_TECNICA_MANTENIDA_2","Técnica mantenida (nivel 2)",
+    "Técnica mantenida (nivel 2)")).getId();
+var KI_TECN_DESV_TECNICA_MANTENIDA_3 = (new L("KI_TECN_DESV_TECNICA_MANTENIDA_3","Técnica mantenida (nivel 3)",
+    "Técnica mantenida (nivel 3)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_20 = (new L("KI_TECN_DESV_USOS_LIMITADOS_20","Usos limitados (20 usos)",
+    "Usos limitados (20 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_10 = (new L("KI_TECN_DESV_USOS_LIMITADOS_10","Usos limitados (10 usos)",
+    "Usos limitados (10 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_5 = (new L("KI_TECN_DESV_USOS_LIMITADOS_5","Usos limitados (5 usos)",
+    "Usos limitados (5 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_3 = (new L("KI_TECN_DESV_USOS_LIMITADOS_3","Usos limitados (3 usos)",
+    "Usos limitados (3 usos)")).getId();
+var KI_TECN_DESV_USOS_LIMITADOS_1 = (new L("KI_TECN_DESV_USOS_LIMITADOS_1","Usos limitados (1 uso)",
+    "Usos limitados (1 uso)")).getId();
+var ERR_NIVEL_EFECTO_DESCONOCIDO = (new L("Error: nivel de efecto desconocido","Error: nivel de efecto desconocido",
+    "Error: nivel de efecto desconocido")).getId();
+
+var TECNICA_SOSTENIDA_MENOR = (new L("TECNICA_SOSTENIDA_MENOR","Sostenida (menor)",
+    "Sostenida (menor)")).getId();
+var TECNICA_SOSTENIDA_MAYOR = (new L("TECNICA_SOSTENIDA_MAYOR","Sostenida (mayor)",
+    "Sostenida (mayor)")).getId();
+var TECNICA_COMBINABLE = (new L("TECNICA_COMBINABLE","Combinable",
+    "Combinable")).getId();
