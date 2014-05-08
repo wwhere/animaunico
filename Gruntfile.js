@@ -67,6 +67,9 @@ module.exports = function(grunt) {
                     "js/model/Invocacion.js",
                     "js/data/magia/invocaciones.js",
 
+                    "js/model/EsferaMetamagica.js",
+                    "js/data/magia/esferasMetamagicas.js",
+
                     "js/model/DisciplinaPsiquica.js",
                     "js/controller/Psiquica_ct.js",
                     "js/data/psiquica/PoderesMatriciales.js",
