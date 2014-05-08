@@ -75,7 +75,7 @@ armas_set.push(new Arma(ARMA_SAETA_PESADA, new Dinero(0, 1, 0), 0.2, DISP_B, [CA
 armas_set.push(new Arma(ARMA_SAI, new Dinero(1, 0, 0), 0.4, DISP_B, [CAT_ARMA_ARMA_CORTA], 15, 35, 12, 0, 4, 4, 25, ATAQUE_PEN3, ATAQUE_FIL3, [REGLA_ARMA_PRECISA, REGLA_ARMA_TRABA_EL_ARMA], BONO_FUE));
 armas_set.push(new Arma(ARMA_SHUKO, new Dinero(3, 0, 0), 0.3, DISP_B, [CAT_ARMA_ARMA_CORTA], 10, 20, 9, -2, 4, 4, 25, ATAQUE_PEN3, "", [REGLA_SHUKO], BONO_FUE));
 armas_set.push(new Arma(ARMA_SHURIKEN, new Dinero(0, 50, 0), 0.1, DISP_B, [CAT_ARMA_ARMA_CORTA], 20, 25, 10, 1, 4, 4, 20, ATAQUE_FIL3, ATAQUE_PEN3, [REGLA_ARMA_LANZABLE], BONO_FUE));
-armas_set.push(new Arma(ARMA_SIN_ARMAS, new Dinero(0, 0, 0), 0, DISP_TOTAL, [CAT_ARMA_SIN_ARMAS], 20, 10, 0, -2, 0, 0, 0, ATAQUE_CON3, "", [REGLA_ARMA_PRECISA], BONO_NO));
+armas_set.push(new Arma(ARMA_SIN_ARMAS, new Dinero(0, 0, 0), 0, DISP_TOTAL, [CAT_ARMA_SIN_ARMAS], 20, 10, 0, -2, 0, 0, 0, ATAQUE_CON3, "", [REGLA_ARMA_PRECISA], BONO_NO,true));
 armas_set.push(new Arma(ARMA_TANTO, new Dinero(20, 0, 0), 0.5, DISP_B, [CAT_ARMA_ARMA_CORTA], 20, 40, 9, 1, 3, 3, 40, ATAQUE_FIL3, "", [REGLA_ARMA_PRECISA], BONO_FUE));
 armas_set.push(new Arma(ARMA_TONFA, new Dinero(1, 0, 0), 0.3, DISP_B, [CAT_ARMA_ARMA_CORTA], 20, 30, 13, 0, 4, 4, 25, ATAQUE_CON3, "", [REGLA_ARMA_PRECISA], BONO_FUE));
 armas_set.push(new Arma(ARMA_TRIDENTE, new Dinero(3, 0, 0), 2, DISP_TOTAL, [CAT_ARMA_ASTA], -10, 40, 12, 3, 6, 7, 15, ATAQUE_PEN3, "", [REGLA_ARMA_LANZABLE, REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));

@@ -4090,10 +4090,11 @@ Personaje.prototype = {
     /**
      *
      * @param {Equipo} item
+     * @param {boolean} gratis
      * @param {number} [modificador]
      * @param {string} [calidad]
      */
-    compra : function(item, modificador, calidad) {
+    compra : function (item, gratis, modificador, calidad) {
         if (!modificador) modificador = 0;
         if (!calidad) calidad = "";
         var itemComprado;
@@ -4106,25 +4107,26 @@ Personaje.prototype = {
         } else {
             itemComprado = new EquipoComprado(item,modificador,calidad);
         }
-        var dineroActual = this.dinero.totalEnCobre() - itemComprado.getCosteDinero().totalEnCobre();
-        var mo = 0;
-        var mp = 0;
-        var mc = 0;
+        if (!gratis) {
+            var dineroActual = this.dinero.totalEnCobre() - itemComprado.getCosteDinero().totalEnCobre();
+            var mo = 0;
+            var mp = 0;
+            var mc = 0;
 
-        if (dineroActual >= 1000) {
-            mo = Math.floor(dineroActual/1000);
-            dineroActual -= mo * 1000;
+            if (dineroActual >= 1000) {
+                mo = Math.floor(dineroActual/1000);
+                dineroActual -= mo * 1000;
+            }
+            if (dineroActual >= 10) {
+                mp = Math.floor(dineroActual/10);
+                dineroActual -= mp*10;
+            }
+            mc = dineroActual;
+
+            this.dinero.setOro(mo);
+            this.dinero.setPlata(mp);
+            this.dinero.setCobre(mc);
         }
-        if (dineroActual >= 10) {
-            mp = Math.floor(dineroActual/10);
-            dineroActual -= mp*10;
-        }
-        mc = dineroActual;
-
-        this.dinero.setOro(mo);
-        this.dinero.setPlata(mp);
-        this.dinero.setCobre(mc);
-
         if (esArma(item)) {
             this.armas.push(itemComprado);
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);

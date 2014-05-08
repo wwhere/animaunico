@@ -1553,6 +1553,9 @@ function muestraEquipamiento() {
 
     divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false));
 
+    divContenido.append(muestraBotonPequeño(_l(UI_BOTON_COMPRAR_EQUIPO),{},muestraVentanaCompraEquipo,""));
+    divContenido.append(muestraBotonPequeño(_l(UI_BOTON_AÑADIR_EQUIPO),{},muestraVentanaAñadirEquipo,""));
+
     /**
      *
      * @type {EquipoComprado[]}
