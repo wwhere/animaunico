@@ -488,3 +488,26 @@ function añadeInvocacion(parametros) {
 function eliminarInvocacion(event) {
     personaje_actual.removeInvocacion(event.data.invocacion.getNombre());
 }
+
+function regeneracionZeonicaAvanzada() {
+    //TODO añadir bono de +10 a REGENERACION ZEONICA
+}
+
+function conjuroEspecialista30() {
+    //TODO elegir conjuro, hasta nivel 30
+}
+function conjuroEspecialista50() {
+    //TODO elegir conjuro, hasta nivel 50
+}
+function conjuroEspecialista60() {
+//TODO elegir conjuro, hasta nivel 60
+}
+function conjuroEspecialista70() {
+//TODO elegir conjuro, hasta nivel 70
+}
+function conjuroEspecialista80() {
+//TODO elegir conjuro, hasta nivel 80
+}
+function accesoAltaMagia() {
+//TODO poder acceder a Alta Magia
+}
