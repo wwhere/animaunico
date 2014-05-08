@@ -23,7 +23,10 @@ Dinero.prototype = {
     constructor : Dinero,
 
     toString: function() {
-        return this.oro + _l(UI_MO) +", " + this.plata + _l(UI_MP) +", " + this.cobre + _l(UI_MC);
+        if ((this.oro == INCALCULABLE) || (this.plata == INCALCULABLE) || (this.cobre == INCALCULABLE))
+            return _l(UI_INCALCULABLE);
+        else
+            return this.oro + _l(UI_MO) +", " + this.plata + _l(UI_MP) +", " + this.cobre + _l(UI_MC);
     },
 
     /**
@@ -140,9 +143,9 @@ Dinero.prototype = {
         }
         mc = dineroActual;
 
-        this.setOro(mo);
-        this.setPlata(mp);
-        this.setCobre(mc);
+        this.oro = (mo<0)?0:mo;
+        this.plata = (mp<0)?0:mp;
+        this.cobre = (mc<0)?0:mc;
     }
 };
 

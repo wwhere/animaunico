@@ -42,9 +42,10 @@ var CAT_ARMA_LANZAMIENTO = "Arma Arrojadiza";
  * @param {number} entereza
  * @param {number} presencia
  * @param {number} bonoHabilidad
+ * @param {boolean} [noComprable]
  * @constructor
  */
-function Equipo(nombre, costeDinero, peso, disponibilidad, entereza, presencia, bonoHabilidad) {
+function Equipo(nombre, costeDinero, peso, disponibilidad, entereza, presencia, bonoHabilidad, noComprable) {
     /**
      *
      * @type {string}
@@ -82,6 +83,10 @@ function Equipo(nombre, costeDinero, peso, disponibilidad, entereza, presencia, 
      */
     this.bonoHabilidad = bonoHabilidad;
 
+    if (noComprable)
+        this.noComprable = true;
+    else
+        this.noComprable = false;
 }
 
 Equipo.prototype = {
@@ -93,6 +98,14 @@ Equipo.prototype = {
      */
     getNombre : function() {
         return this.nombre;
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isNoComprable : function() {
+        return this.noComprable;
     },
 
     /**
@@ -196,10 +209,13 @@ Equipo.prototype = {
  * @param {string} criticoSecundario
  * @param {string[]} especial
  * @param {string} bonoDmg
+ * @param {boolean} [noComprable]
  * @constructor
  */
-function Arma(nombre, costeDinero, peso, disponibilidad, categorias, velocidad, dmgBase, entereza, rotura, fueReq, fueReq2manos, presencia, criticoPrimario, criticoSecundario, especial, bonoDmg) {
-    Arma.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0);
+function Arma(nombre, costeDinero, peso, disponibilidad, categorias, velocidad, dmgBase, entereza, rotura, fueReq, fueReq2manos, presencia, criticoPrimario, criticoSecundario, especial, bonoDmg, noComprable) {
+    if (!noComprable)
+        noComprable = false;
+    Arma.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0,noComprable);
 
     /** @type string[] */
     this.categorias = categorias;
@@ -413,7 +429,6 @@ Arma.prototype.toJSON = function() {
  * @param {number} peso
  * @param {string} disponibilidad
  * @param {number} requisitoArmadura
- * @param {number} penalizadorArmadura
  * @param {number} penalizadorNatural
  * @param {number} restriccionMovimiento
  * @param {number} entereza
@@ -421,10 +436,13 @@ Arma.prototype.toJSON = function() {
  * @param {string} localizacion
  * @param {string} clase
  * @param {number[]} tas
+ * @param {boolean} [noComprable]
  * @constructor
  */
-function Armadura(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorNatural,restriccionMovimiento,entereza,presencia,localizacion,clase,tas) {
-    Armadura.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0);
+function Armadura(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorNatural,restriccionMovimiento,entereza,presencia,localizacion,clase,tas,noComprable) {
+    if (!noComprable)
+        noComprable = false;
+    Armadura.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0,noComprable);
 
     /** @type number */
     this.requisitoArmadura = requisitoArmadura;
@@ -522,8 +540,10 @@ Armadura.prototype.toJSON = function() {
 
 
 
-function Yelmo(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorPercepcion,entereza,presencia,localizacion,clase,tas) {
-    Yelmo.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0);
+function Yelmo(nombre,costeDinero,peso,disponibilidad,requisitoArmadura,penalizadorPercepcion,entereza,presencia,localizacion,clase,tas, noComprable) {
+    if (!noComprable)
+        noComprable = false;
+    Yelmo.parent.constructor.call(this,nombre,costeDinero,peso,disponibilidad,entereza,presencia,0,noComprable);
 
     /** @type number */
     this.requisitoArmadura = requisitoArmadura;

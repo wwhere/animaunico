@@ -1091,3 +1091,11 @@ var UI_SOS_MAYOR = (new L("UI_SOS_MAYOR","S+", "S+")).getId();
 
 var UI_QUITAR_COMBINABLE =  (new L("UI_QUITAR_COMBINABLE","Quitar combinable", "Drop combinable")).getId();
 var UI_HACER_COMBINABLE =  (new L("UI_HACER_COMBINABLE","Hacer combinable", "Make combinable")).getId();
+
+var UI_CAMBIA_ORO = (new L("UI_CAMBIA_ORO","+/- mo","+/- gp")).getId();
+var UI_CAMBIA_PLATA = (new L("UI_CAMBIA_PLATA","+/- mp","+/- sp")).getId();
+var UI_CAMBIA_COBRE = (new L("UI_CAMBIA_COBRE","+/- mc","+/- cp")).getId();
+var UI_INTRODUZCA_CANTIDAD_DINERO = (new L("UI_INTRODUZCA_CANTIDAD_DINERO", "Introduce la cantidad de dinero a añadir o quitar", "Input the amount of money of add or remove")).getId();
+var UI_BOTON_AÑADIR_EQUIPO = (new L("UI_BOTON_AÑADIR_EQUIPO","Añadir equipo","Add Equipment")).getId();
+var DIAG_AÑADIR_EQUIPO = (new L("DIAG_AÑADIR_EQUIPO","Añadir equipo","Add Equipment")).getId();
+var UI_INCALCULABLE = (new L("UI_INCALCULABLE","Incalculable","Invaluable")).getId();
