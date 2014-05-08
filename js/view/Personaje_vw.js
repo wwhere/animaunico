@@ -1515,6 +1515,23 @@ function muestraSecundarias(estadoGeneracion) {
 
 }
 
+function cambiarDinero(event) {
+    var cantidad = parseInt(prompt(_l(UI_INTRODUZCA_CANTIDAD_DINERO) + " (" + _l(event.data.tipoMoneda) + ")"));
+    if(!isNaN(cantidad)) {
+        switch (event.data.tipoMoneda) {
+            case UI_MO:
+                personaje_actual.addDinero(cantidad,0,0);
+                break;
+            case UI_MP:
+                personaje_actual.addDinero(0,cantidad,0);
+                break;
+            case UI_MC:
+            default:
+                personaje_actual.addDinero(0,0,cantidad);
+                break;
+        }
+    }
+}
 
 function muestraEquipamiento() {
     var div = recuadroBase();
@@ -1525,10 +1542,14 @@ function muestraEquipamiento() {
     divContenido.append(muestraSubtitulo(UI_DINERO, false));
 
     var divDinero = getDiv("row");
-    var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DINERO) + ": ");
-    var divValorDinero = getDiv("six columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
+    var divEtiqueta = getDiv("two columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DINERO) + ": ");
+    var divValorDinero = getDiv("four columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).append(personaje_actual.getDinero().toString());
 
-    divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero));
+    var divBotonCambiarOro = getDiv("two columns").append(muestraBotonPequeño(_l(UI_CAMBIA_ORO),{tipoMoneda: UI_MO},cambiarDinero,""));
+    var divBotonCambiarPlata = getDiv("two columns").append(muestraBotonPequeño(_l(UI_CAMBIA_PLATA),{tipoMoneda: UI_MP},cambiarDinero,""));
+    var divBotonCambiarCobre = getDiv("two columns").append(muestraBotonPequeño(_l(UI_CAMBIA_COBRE),{tipoMoneda: UI_MC},cambiarDinero,""));
+
+    divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero).append(divBotonCambiarOro).append(divBotonCambiarPlata).append(divBotonCambiarCobre));
 
     divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false));
 

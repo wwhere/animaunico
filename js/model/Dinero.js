@@ -140,9 +140,9 @@ Dinero.prototype = {
         }
         mc = dineroActual;
 
-        this.setOro(mo);
-        this.setPlata(mp);
-        this.setCobre(mc);
+        this.oro = mo;
+        this.plata = mp;
+        this.cobre = mc;
     }
 };
 
