@@ -140,9 +140,9 @@ Dinero.prototype = {
         }
         mc = dineroActual;
 
-        this.oro = mo;
-        this.plata = mp;
-        this.cobre = mc;
+        this.oro = (mo<0)?0:mo;
+        this.plata = (mp<0)?0:mp;
+        this.cobre = (mc<0)?0:mc;
     }
 };
 
