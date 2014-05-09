@@ -141,7 +141,7 @@ EsferaMetamagicaComprada.prototype = {
         var acceso = [];
 
         for (var i = 0; i < this.arcanaSephirah.length; i++) {
-            acceso.push(arcanaSephirah[this.arcanaSephirah[i]].getConexiones());
+            acceso = acceso.concat(arcanaSephirah[this.arcanaSephirah[i]].getConexiones());
         }
 
         acceso.sort();

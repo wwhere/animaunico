@@ -532,6 +532,9 @@ function sinEfecto(aplicar) {
  * @returns {boolean}
  */
 function puedeComprarArcanaSephirah(arcanaSephirah,personaje) {
+    if (personaje.hasEsferaMetamagica(arcanaSephirah.getNombre())) {
+        return false;
+    }
     if (personaje.getNivelMagiaDisponible() < arcanaSephirah.getCoste()) {
         return false;
     }
@@ -543,7 +546,7 @@ function puedeComprarArcanaSephirah(arcanaSephirah,personaje) {
     var esferas = personaje.getEsferasMetamagicas();
     var accesoPermitido = [];
     for (var i = 0; i < esferas.length; i++) {
-        accesoPermitido.push(esferas[i].getAccesoPermitido());
+        accesoPermitido = accesoPermitido.concat(esferas[i].getAccesoPermitido());
     }
     for (i = 0; i < accesoPermitido.length; i++) {
         if (arcanaSephirah.getPosicion() == accesoPermitido[i])
