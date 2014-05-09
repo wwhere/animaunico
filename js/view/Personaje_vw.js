@@ -1187,7 +1187,7 @@ function muestraManejoArmas() {
 
 function muestraSobrenatural(estadoGeneracion) {
     var div = recuadroBase();
-
+    grafo();
     updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
