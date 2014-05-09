@@ -152,13 +152,83 @@ function grafo() {
         "blue": "#2176C7",
         "green": "#259286",
         "yellowgreen": "#738A05"
-    }
+    };
 
-    var nodes = [
-    ]
+    var nodes = [];
 
-    var links = [
-    ]
+    var links = [];
+
+    var posiciones = []; //TODO http://thinkingonthinking.com/Getting-Started-With-D3/
+    posiciones[0] = {x: ,y: };
+    posiciones[1] = {x: ,y: };
+    posiciones[2] = {x: ,y: };
+    posiciones[3] = {x: ,y: };
+    posiciones[4] = {x: ,y: };
+    posiciones[5] = {x: ,y: };
+    posiciones[6] = {x: ,y: };
+    posiciones[7] = {x: ,y: };
+    posiciones[8] = {x: ,y: };
+    posiciones[9] = {x: ,y: };
+    posiciones[10] = {x: ,y: };
+    posiciones[11] = {x: ,y: };
+    posiciones[12] = {x: ,y: };
+    posiciones[13] = {x: ,y: };
+    posiciones[14] = {x: ,y: };
+    posiciones[15] = {x: ,y: };
+    posiciones[16] = {x: ,y: };
+    posiciones[17] = {x: ,y: };
+    posiciones[18] = {x: ,y: };
+    posiciones[19] = {x: ,y: };
+    posiciones[20] = {x: ,y: };
+    posiciones[21] = {x: ,y: };
+    posiciones[22] = {x: ,y: };
+    posiciones[23] = {x: ,y: };
+    posiciones[24] = {x: ,y: };
+    posiciones[25] = {x: ,y: };
+    posiciones[26] = {x: ,y: };
+    posiciones[27] = {x: ,y: };
+    posiciones[28] = {x: ,y: };
+    posiciones[29] = {x: ,y: };
+    posiciones[30] = {x: ,y: };
+    posiciones[31] = {x: ,y: };
+    posiciones[32] = {x: ,y: };
+    posiciones[33] = {x: ,y: };
+    posiciones[34] = {x: ,y: };
+    posiciones[35] = {x: ,y: };
+    posiciones[36] = {x: ,y: };
+    posiciones[37] = {x: ,y: };
+    posiciones[38] = {x: ,y: };
+    posiciones[39] = {x: ,y: };
+    posiciones[40] = {x: ,y: };
+    posiciones[41] = {x: ,y: };
+    posiciones[42] = {x: ,y: };
+    posiciones[43] = {x: ,y: };
+    posiciones[44] = {x: ,y: };
+    posiciones[45] = {x: ,y: };
+    posiciones[46] = {x: ,y: };
+    posiciones[47] = {x: ,y: };
+    posiciones[48] = {x: ,y: };
+    posiciones[49] = {x: ,y: };
+    posiciones[50] = {x: ,y: };
+    posiciones[51] = {x: ,y: };
+    posiciones[52] = {x: ,y: };
+    posiciones[53] = {x: ,y: };
+    posiciones[54] = {x: ,y: };
+    posiciones[55] = {x: ,y: };
+    posiciones[56] = {x: ,y: };
+    posiciones[57] = {x: ,y: };
+    posiciones[58] = {x: ,y: };
+    posiciones[59] = {x: ,y: };
+    posiciones[60] = {x: ,y: };
+    posiciones[61] = {x: ,y: };
+    posiciones[62] = {x: ,y: };
+    posiciones[63] = {x: ,y: };
+    posiciones[64] = {x: ,y: };
+    posiciones[65] = {x: ,y: };
+    posiciones[66] = {x: ,y: };
+    posiciones[67] = {x: ,y: };
+
+
 
     for (var i = 0; i < arcanaSephirah.length; i++) {
         var arca = arcanaSephirah[i];
@@ -190,7 +260,7 @@ function grafo() {
         .attr("class", "stage")
         .attr("width", w)
         .attr("height", h);
-
+/*
     var force = d3.layout.force()
         .nodes(nodes)
         .links([])
@@ -314,5 +384,5 @@ function grafo() {
             .attr("y2", function(d)   { return d.target.y; })
     });
 
-    force.start();
+    force.start();*/
 }
