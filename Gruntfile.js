@@ -14,6 +14,7 @@ module.exports = function(grunt) {
                     "js/pluginsOld.js",
                     "js/vendor/jquery-ui-1.10.3.custom.min.js",
                     "js/libs/gumby.min.js",
+                    "js/libs/d3.min.js",
                     "js/plugins.js",
                     "js/main.js",
 
