@@ -2,7 +2,7 @@
  *
  * @param {string} nombre
  * @param {string} rama
- * @param {function} efecto
+ * @param {function} [efecto]
  * @constructor
  */
 function EsferaMetamagica(nombre, rama, efecto) {
@@ -18,11 +18,18 @@ function EsferaMetamagica(nombre, rama, efecto) {
      */
     this.rama = rama;
 
-    /**
-     *
-     * @type {function}
-     */
-    this.efecto = efecto;
+    if (efecto)
+        /**
+         *
+         * @type {function}
+         */
+        this.efecto = efecto;
+    else
+        /**
+         *
+         * @type {function}
+         */
+        this.efecto = sinEfecto;
 }
 
 EsferaMetamagica.prototype = {
@@ -60,9 +67,10 @@ EsferaMetamagica.prototype = {
 /**
  *
  * @param {EsferaMetamagica} esferaMetamagica
+ * @param {number} posicion
  * @constructor
  */
-function EsferaMetamagicaComprada(esferaMetamagica) {
+function EsferaMetamagicaComprada(esferaMetamagica, posicion) {
     /**
      *
      * @type {EsferaMetamagica}
@@ -74,25 +82,75 @@ function EsferaMetamagicaComprada(esferaMetamagica) {
      * @type {number}
      */
     this.numero = 1;
+
+    /**
+     *
+     * @type {number[]}
+     */
+    this.arcanaSephirah = [];
+    this.arcanaSephirah.push(posicion);
+
+
 }
 
 EsferaMetamagicaComprada.prototype = {
     constructor : EsferaMetamagicaComprada,
 
+    /**
+     *
+     * @returns {string}
+     */
     getNombre : function() {
         return this.esferaMetamagica.getNombre();
     },
 
+    /**
+     *
+     * @returns {string}
+     */
     getRama : function() {
         return this.esferaMetamagica.getRama();
     },
 
+    /**
+     *
+     * @returns {Function}
+     */
     getEfecto : function() {
         return this.esferaMetamagica.getEfecto();
     },
 
-    addEsfera : function() {
+    addEsfera : function(posicion) {
         this.numero++;
+        this.arcanaSephirah.push(posicion);
+    },
+
+    /**
+     *
+     * @returns {number[]}
+     */
+    getArcanaSephirah : function() {
+        return this.arcanaSephirah;
+    },
+
+    /**
+     *
+     * @returns {number[]}
+     */
+    getAccesoPermitido : function() {
+        var acceso = [];
+
+        for (var i = 0; i < this.arcanaSephirah.length; i++) {
+            acceso.push(arcanaSephirah[this.arcanaSephirah[i]].getConexiones());
+        }
+
+        acceso.sort();
+        var accesoUnico = [];
+
+        $.each(acceso, function(i, el){
+            if($.inArray(el, accesoUnico) === -1) accesoUnico.push(el);
+        });
+        return acceso;
     }
 };
 
@@ -103,13 +161,20 @@ EsferaMetamagicaComprada.prototype = {
  * @param {number} nivelMinimo
  * @param {number[]} conexiones
  * @constructor
+ * @param {number} posicion
  */
-function ArcanaSephirah(esfera, coste, nivelMinimo, conexiones) {
+function ArcanaSephirah(posicion, esfera, coste, nivelMinimo, conexiones) {
     /**
      *
      * @type {EsferaMetamagica}
      */
     this.esferaMetamagica = esfera;
+
+    /**
+     *
+     * @type {number}
+     */
+    this.posicion = posicion;
 
     /**
      *
@@ -143,10 +208,26 @@ ArcanaSephirah.prototype = {
 
     /**
      *
+     * @returns {number}
+     */
+    getPosicion : function() {
+        return this.posicion;
+    },
+
+    /**
+     *
      * @returns {string}
      */
     getNombre : function() {
         return this.esferaMetamagica.getNombre();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCoste : function() {
+        return this.coste;
     },
 
     /**
@@ -176,5 +257,13 @@ ArcanaSephirah.prototype = {
                 return true;
         }
         return false;
+    },
+
+    /**
+     *
+     * @returns {number[]}
+     */
+    getConexiones : function() {
+        return this.conexiones;
     }
 };

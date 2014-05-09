@@ -165,6 +165,12 @@ function Personaje(nivelInicial) {
 
     /**
      *
+     * @type {EsferaMetamagicaComprada[]}
+     */
+    this.esferasMetamagicas = [];
+
+    /**
+     *
      * @type {string}
      */
     this.elementalismo = ELEMENTALISMO_NINGUNO;
@@ -1429,12 +1435,20 @@ Personaje.prototype = {
     },
 
     /**
+     *
+     * @returns {number}
+     */
+    getNivelMagiaDisponible : function() {
+        return this.nivelMagiaMaximo() - this.getNivelMagiaGastado();
+    },
+
+    /**
      * returns {number}
      */
     getNivelMaximoViaMagia : function() {
-        if (this.gnosis > 40) {
+        if (this.hasFlag(FLAG_MAGIA_DIVINA)) {
             return 100;
-        } else if (this.gnosis >= 25) {
+        } else if (this.hasFlag(FLAG_ALTA_MAGIA)) {
             return 90;
         } else {
             return 80;
@@ -1761,6 +1775,47 @@ Personaje.prototype = {
         lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
 
+
+
+    /**
+     *
+     * @returns {EsferaMetamagicaComprada[]}
+     */
+    getEsferasMetamagicas : function() {
+        return this.esferasMetamagicas;
+    },
+
+    /**
+     *
+     * @param {string} nombre
+     * @returns {boolean|number}
+     */
+    hasEsferaMetamagica : function(nombre) {
+        for (var i = 0; i < this.esferasMetamagicas.length; i++) {
+            if (this.esferasMetamagicas[i].getNombre() == nombre)
+                return i;
+        }
+        return false;
+    },
+
+    /**
+     *
+     * @param {ArcanaSephirah} arcanaSephirah
+     */
+    addEsferaMetamagica : function(arcanaSephirah) {
+        var indice = this.hasEsferaMetamagica(arcanaSephirah.getNombre());
+        if (indice) {
+            this.esferasMetamagicas[indice].addEsfera(arcanaSephirah.getPosicion());
+        } else {
+            this.esferasMetamagicas.push(new EsferaMetamagicaComprada(arcanaSephirah.getEsfera(),arcanaSephirah.getPosicion()));
+        }
+        arcanaSephirah.getEsfera().efecto(true);
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
+    removeEsferaMetamagica : function() {
+        //TODO
+    },
 
 //endregion Magia
 

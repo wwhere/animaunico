@@ -489,8 +489,13 @@ function eliminarInvocacion(event) {
     personaje_actual.removeInvocacion(event.data.invocacion.getNombre());
 }
 
-function regeneracionZeonicaAvanzada() {
-    //TODO añadir bono de +10 a REGENERACION ZEONICA
+function regeneracionZeonicaAvanzada(aplicar) {
+    var bono = new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,10,"",false,BONO_ESPECIAL,ESFERA_REGENERACION_ZEONICA_AVANZADA);
+    if (aplicar) {
+        personaje_actual.addBono(bono,false,true);
+    } else {
+        personaje_actual.removeBono(bono,true);
+    }
 }
 
 function conjuroEspecialista30() {
@@ -508,6 +513,47 @@ function conjuroEspecialista70() {
 function conjuroEspecialista80() {
 //TODO elegir conjuro, hasta nivel 80
 }
-function accesoAltaMagia() {
-//TODO poder acceder a Alta Magia
+function accesoAltaMagia(aplicar) {
+    if (aplicar) {
+        personaje_actual.setFlag(FLAG_ALTA_MAGIA);
+    } else {
+        personaje_actual.removeFlag(FLAG_ALTA_MAGIA);
+    }
+}
+
+function sinEfecto(aplicar) {
+
+}
+
+/**
+ *
+ * @param {ArcanaSephirah} arcanaSephirah
+ * @param {Personaje} personaje
+ * @returns {boolean}
+ */
+function puedeComprarArcanaSephirah(arcanaSephirah,personaje) {
+    if (personaje.getNivelMagiaDisponible() < arcanaSephirah.getCoste()) {
+        return false;
+    }
+
+    if (personaje.getNivel() < arcanaSephirah.getNivelMinimo()) {
+        return false;
+    }
+
+    var esferas = personaje.getEsferasMetamagicas();
+    var accesoPermitido = [];
+    for (var i = 0; i < esferas.length; i++) {
+        accesoPermitido.push(esferas[i].getAccesoPermitido());
+    }
+    for (i = 0; i < accesoPermitido.length; i++) {
+        if (arcanaSephirah.getPosicion() == accesoPermitido[i])
+            return true;
+    }
+
+    if ((esferas.length == 0) || ( (esferas.length == 1) && (personaje.hasFlag(FLAG_VERSATIBILIDAD_METAMAGICA)))) {
+        if (arcanaSephirah.getNivelMinimo() == 0)
+            return true;
+    }
+
+    return false;
 }
