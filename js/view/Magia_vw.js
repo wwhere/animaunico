@@ -241,7 +241,7 @@ function eligeElementalismo() {
 function muestraInvocaciones(muestraBotones) {
     var div = getDiv("");
     var i;
-    var divInvocaciones = getDiv("row");
+    var divInvocaciones = getDiv("");
 
     var invocaciones = personaje_actual.getInvocaciones();
 
@@ -253,7 +253,7 @@ function muestraInvocaciones(muestraBotones) {
 
     for (i=0; i < invocaciones.length;i++) {
         var invocacion = invocaciones[i];
-        var divInvocacion = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("six columns");
+        var divInvocacion = getDiv(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA);
         divInvocacion.append(invocacion.toString()).append(muestraBotonAnular(eliminarInvocacion,{invocacion: invocacion}));
         divInvocaciones.append(divInvocacion);
     }

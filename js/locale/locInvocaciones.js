@@ -43,3 +43,38 @@ var INVOCACION_LA_LUNA_INVERT = (new L("INVOCACION_LA_LUNA_INVERT","La Luna Inve
 var INVOCACION_EL_SOL_INVERT = (new L("INVOCACION_EL_SOL_INVERT","El Sol Invertido","The Sun Reversed")).getId();
 var INVOCACION_EL_JUICIO_INVERT = (new L("INVOCACION_EL_JUICIO_INVERT","El Juicio Invertido","Judgement Reversed")).getId();
 var INVOCACION_EL_MUNDO_INVERT = (new L("INVOCACION_EL_MUNDO_INVERT","El Mundo Invertido","The World Reversed")).getId();
+
+
+var INVOCACION_HERMOD = (new L("INVOCACION_HERMOD","Hermod, El Mensajero de los Dioses","Hermod, El Mensajero de los Dioses")).getId();
+var INVOCACION_ENAMON = (new L("INVOCACION_ENAMON","Enamon","Enamon")).getId();
+var INVOCACION_NAAGA = (new L("INVOCACION_NAAGA","Naaga, Madre de los Venenos","Naaga, Madre de los Venenos")).getId();
+var INVOCACION_HUGINN_MUNINN = (new L("INVOCACION_HUGINN_MUNINN","Huginn y Muninn, Ojos de Cuervo","Huginn y Muninn, Ojos de Cuervo")).getId();
+var INVOCACION_IDEA = (new L("INVOCACION_IDEA","Idea, 'Musa' de la Locura","Idea, 'Musa' de la Locura")).getId();
+var INVOCACION_GALGALIEL = (new L("INVOCACION_GALGALIEL","Galgaliel, Ángel de los Dones","Galgaliel, Ángel de los Dones")).getId();
+var INVOCACION_LIX_TETRAX = (new L("INVOCACION_LIX_TETRAX","Lix Tetrax","Lix Tetrax")).getId();
+var INVOCACION_GARUDA = (new L("INVOCACION_GARUDA","Garuda, Alas de Fuego","Garuda, Alas de Fuego")).getId();
+var INVOCACION_RAKSASHA = (new L("INVOCACION_RAKSASHA","Raksasha","Raksasha")).getId();
+
+var INVOCACION_IDUN = (new L("INVOCACION_IDUN","Idún, Señora de la juventud eterna","Idún, Señora de la juventud eterna")).getId();
+var INVOCACION_ETHELTHRYTH = (new L("INVOCACION_ETHELTHRYTH","Ethelthryth, Señora de los Nombres","Ethelthryth, Señora de los Nombres")).getId();
+var INVOCACION_EIR = (new L("INVOCACION_EIR","Eir, La Primera Valkyria","Eir, La Primera Valkyria")).getId();
+var INVOCACION_VELES = (new L("INVOCACION_VELES","Veles, El Poder de la Magia","Veles, El Poder de la Magia")).getId();
+var INVOCACION_THANATHOS = (new L("INVOCACION_THANATHOS","Thanathos","Thanathos")).getId();
+var INVOCACION_CARONTE = (new L("INVOCACION_CARONTE","Caronte, Titiritero de Almas","Caronte, Titiritero de Almas")).getId();
+var INVOCACION_PANDORA = (new L("INVOCACION_PANDORA","Pandora, El castigo divino","Pandora, El castigo divino")).getId();
+var INVOCACION_KAGUTSUCHI = (new L("INVOCACION_KAGUTSUCHI","Kagutsuchi, Señor del Fuego","Kagutsuchi, Señor del Fuego")).getId();
+
+var INVOCACION_FORSETI = (new L("INVOCACION_FORSETI","Forseti, Señor del Equilibrio","Forseti, Señor del Equilibrio")).getId();
+var INVOCACION_DRUAGA = (new L("INVOCACION_DRUAGA","Druaga","Druaga")).getId();
+var INVOCACION_VENDEDOR = (new L("INVOCACION_VENDEDOR","El Vendedor","El Vendedor")).getId();
+var INVOCACION_TAWIL = (new L("INVOCACION_TAWIL","Tawil At-U’mr, Señor de las Puertas","Tawil At-U’mr, Señor de las Puertas")).getId();
+
+var INVOCACION_BEHEMOTH = (new L("INVOCACION_BEHEMOTH","Behemoth, Señor de la Tierra","Behemoth, Señor de la Tierra")).getId();
+var INVOCACION_LEVIATHAN = (new L("INVOCACION_LEVIATHAN","Leviathan, Señor de los Oceanos","Leviathan, Señor de los Oceanos")).getId();
+var INVOCACION_ZIZ = (new L("INVOCACION_ZIZ","Ziz, Señor de los Cielos","Ziz, Señor de los Cielos")).getId();
+
+var INVOCACION_SEIRYU = (new L("INVOCACION_SEIRYU","Seiryu, El Dragón Celeste, Guardián del Este","Seiryu, El Dragón Celeste, Guardián del Este")).getId();
+var INVOCACION_GENBU = (new L("INVOCACION_GENBU","Genbu, La Tortuga Negra, Guardian del Norte","Genbu, La Tortuga Negra, Guardian del Norte")).getId();
+var INVOCACION_SUZAKU = (new L("INVOCACION_SUZAKU","Suzaku, El Fenix, Guardián del Sur","Suzaku, El Fenix, Guardián del Sur")).getId();
+var INVOCACION_BYAKKO = (new L("INVOCACION_BYAKKO","Byakko, El Tigre Blanco, Guardián del Oeste","Byakko, El Tigre Blanco, Guardián del Oeste")).getId();
+var INVOCACION_KIRIN = (new L("INVOCACION_KIRIN","Kirin, El Centro","Kirin, El Centro")).getId();
