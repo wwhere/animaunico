@@ -75,7 +75,10 @@ Invocacion.prototype = {
      * @returns {string}
      */
     toString : function() {
-        return _l(this.nombre) + " (" + romanize(this.grado) + ")";
+        if (this.grado >= 0)
+            return _l(this.nombre) + " (" + romanize(this.grado) + ")";
+        else
+            return _l(this.nombre);
     },
 
     /**

@@ -1103,3 +1103,9 @@ var UI_INCALCULABLE = (new L("UI_INCALCULABLE","Incalculable","Invaluable")).get
 var UI_ESFERAS_METAMAGICAS = (new L("UI_ESFERAS_METAMAGICAS", "Esferas metamágicas", "Esferas metamágicas")).getId();
 var UI_ELEGIR_ARCANA_SEPHIRAH = (new L("UI_ELEGIR_ARCANA_SEPHIRAH", "Elegir Arcana Sephirah", "Elegir Arcana Sephirah")).getId();
 var DIAG_ARCANA_SEPHIRAH = (new L("DIAG_ARCANA_SEPHIRAH", "Arcana Sephirah", "Arcana Sephirah")).getId();
+
+var INVOCACIONES_PODERES_MENORES = (new L("INVOCACIONES_PODERES_MENORES","Poderes Menores","Poderes Menores")).getId();
+var INVOCACIONES_PODERES_INTERMEDIOS = (new L("INVOCACIONES_PODERES_INTERMEDIOS","Poderes Intermedios","Poderes Intermedios")).getId();
+var INVOCACIONES_GRANDES_POTENCIAS = (new L("INVOCACIONES_GRANDES_POTENCIAS","Grandes Potencias","Grandes Potencias")).getId();
+var INVOCACIONES_TRINIDAD_DE_LAS_BESTIAS = (new L("INVOCACIONES_TRINIDAD_DE_LAS_BESTIAS","La Trinidad de las Bestias","La Trinidad de las Bestias")).getId();
+var INVOCACIONES_BESTIAS_CARDINALES = (new L("INVOCACIONES_BESTIAS_CARDINALES","Las Bestias Cardinales","Las Bestias Cardinales")).getId();

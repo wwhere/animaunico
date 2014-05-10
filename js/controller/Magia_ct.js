@@ -19,10 +19,54 @@ var invocaciones_arcanos_set = [];
 
 /**
  *
+ * @type {Invocacion[]}
+ */
+var invocaciones_poderes_menores_set = [];
+
+/**
+ *
+ * @type {Invocacion[]}
+ */
+var invocaciones_poderes_intermedios_set = [];
+
+/**
+ *
+ * @type {Invocacion[]}
+ */
+var invocaciones_grandes_potencias_set = [];
+
+/**
+ *
+ * @type {Invocacion[]}
+ */
+var invocaciones_trinidad_de_las_bestias_set = [];
+
+/**
+ *
+ * @type {Invocacion[]}
+ */
+var invocaciones_bestias_cardinales_set = [];
+
+/**
+ *
  * @type {Invocacion[][]}
  */
-var invocaciones_set = [invocaciones_arcanos_set];
-var invocaciones_nombres_grupos = [INVOCACIONES_ARCANOS];
+var invocaciones_set = [
+    invocaciones_arcanos_set,
+    invocaciones_poderes_menores_set,
+    invocaciones_poderes_intermedios_set,
+    invocaciones_grandes_potencias_set,
+    invocaciones_trinidad_de_las_bestias_set,
+    invocaciones_bestias_cardinales_set
+];
+var invocaciones_nombres_grupos = [
+    INVOCACIONES_ARCANOS,
+    INVOCACIONES_PODERES_MENORES,
+    INVOCACIONES_PODERES_INTERMEDIOS,
+    INVOCACIONES_GRANDES_POTENCIAS,
+    INVOCACIONES_TRINIDAD_DE_LAS_BESTIAS,
+    INVOCACIONES_BESTIAS_CARDINALES
+];
 
 var todasInvocaciones = {};
 
