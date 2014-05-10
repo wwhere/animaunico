@@ -1324,19 +1324,24 @@ function muestraConjurosSueltos(muestraBotones) {
 function muestraEsferasMetamagicas(muestraBotones) {
     var div = getDiv("");
     var i;
-    var divEsferas = getDiv("row");
+    var divEsferas = getDiv(CSS_MUESTRA_BLOCK);
 
     var esferas = personaje_actual.getEsferasMetamagicas();
 
-    div.append(muestraBotonElegirArcanaSephirah(muestraBotones));
+    if (muestraBotones) {
+        div.append(muestraBotonElegirArcanaSephirah());
+    } else if (esferas.length == 0) {
+        div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
 
     for (i=0; i < esferas.length;i++) {
         var esfera = esferas[i];
-        var divEsfera = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("four columns");
-        divEsfera.append(_l(esfera.getNombre()));
+        var divEsfera = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_BLOCK);
+        var divNombre = getDiv(CSS_ETIQUETA).append(_l(esfera.getNombre()));
         if (esfera.numero > 1) {
-            divEsfera.append(" x" + esfera.numero);
+            divNombre.append(" x" + esfera.numero);
         }
+        divEsfera.append(divNombre);
         var arcanas = esfera.getArcanaSephirah();
         var costes = " [";
         for (var j = 0; j < arcanas.length;j++) {
@@ -1346,7 +1351,8 @@ function muestraEsferasMetamagicas(muestraBotones) {
                 costes += " / ";
         }
         costes += "]";
-        divEsfera.append(costes);
+        var divCoste = getDiv(CSS_COSTE).append(costes);
+        divEsfera.append(divCoste);
         divEsferas.append(divEsfera);
     }
 

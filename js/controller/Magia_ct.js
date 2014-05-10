@@ -490,11 +490,21 @@ function eliminarInvocacion(event) {
 }
 
 function regeneracionZeonicaAvanzada(aplicar) {
-    var bono = new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,10,"",false,BONO_ESPECIAL,ESFERA_REGENERACION_ZEONICA_AVANZADA);
-    if (aplicar) {
-        personaje_actual.addBono(bono,false,true);
-    } else {
-        personaje_actual.removeBono(bono,true);
+    var bono;
+    var esfera = personaje_actual.getEsferaMetamagica(ESFERA_REGENERACION_ZEONICA_AVANZADA);
+    if (esfera) {
+        if (aplicar) {
+            bono = new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,10*esfera.numero,"",false,BONO_ESPECIAL,ESFERA_REGENERACION_ZEONICA_AVANZADA);
+            personaje_actual.addBono(bono,true,true);
+        } else {
+            if (esfera.numero > 1) {
+                bono = new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,10*(esfera.numero-1),"",false,BONO_ESPECIAL,ESFERA_REGENERACION_ZEONICA_AVANZADA);
+                personaje_actual.addBono(bono,true,true);
+            } else {
+                bono = new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,10,"",false,BONO_ESPECIAL,ESFERA_REGENERACION_ZEONICA_AVANZADA);
+                personaje_actual.removeBono(bono,true);
+            }
+        }
     }
 }
 
@@ -532,7 +542,7 @@ function sinEfecto(aplicar) {
  * @returns {boolean}
  */
 function puedeComprarArcanaSephirah(arcanaSephirah,personaje) {
-    if (personaje.hasEsferaMetamagica(arcanaSephirah.getNombre())) {
+    if (personaje.hasArcanaSephirah(arcanaSephirah)) {
         return false;
     }
     if (personaje.getNivelMagiaDisponible() < arcanaSephirah.getCoste()) {

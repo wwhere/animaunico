@@ -157,10 +157,10 @@ function muestraBotonElegirConjuroSuelto() {
     return botonDiv;
 }
 
-function muestraBotonElegirArcanaSephirah(muestraBotones) {
+function muestraBotonElegirArcanaSephirah() {
     var botonDiv = boton("small primary pretty btn",_l(UI_ELEGIR_ARCANA_SEPHIRAH));
 
-    botonDiv.on("click",{muestraBotones:muestraBotones},elegirArcanaSephirah);
+    botonDiv.on("click",{},elegirArcanaSephirah);
 
     return botonDiv;
 }
@@ -380,10 +380,14 @@ function muestraArcanaSephirah(destino) {
     for (var i = 0; i < arcanaSephirah.length; i++) {
         var arca = arcanaSephirah[i];
         var nombre = _l(arca.getNombre());
-        var puede = false;
-        if (puedeComprarArcanaSephirah(arca,personaje_actual))
-            puede = true;
-
+        var puede = puedeComprarArcanaSephirah(arca,personaje_actual);
+        var tiene = personaje_actual.hasArcanaSephirah(arca);
+        var anulable = false;
+        if (tiene) {
+            if (personaje_actual.getEsferaMetamagica(arca.getNombre()).isAnulable(arca.posicion)) {
+                anulable = true;
+            }
+        }
         var x = posiciones[i].x;
         if (x < 450) {
             x = 450-((450-x) * 0.8);
@@ -395,6 +399,8 @@ function muestraArcanaSephirah(destino) {
             {
                 name: _l(arca.getNombre()),
                 puede: puede,
+                tiene: tiene,
+                anulable: anulable,
                 arcana: arca,
                 rama: arca.getEsfera().getRama(),
                 x: x,
@@ -437,65 +443,81 @@ function muestraArcanaSephirah(destino) {
 
         //MOUSEOVER
         .on("mouseover", function(d,i) {
-            if (d.puede) {
-                //CIRCLE
-                d3.select(this).selectAll("circle")
-                    .transition()
-                    .duration(250)
-                    .style("cursor", "none")
-                    .attr("r", circleWidth+3)
-                    .attr("fill",palette.orange);
+            //CIRCLE
+            d3.select(this).selectAll("circle")
+                .transition()
+                .duration(250)
+                .style("cursor", "none")
+                .attr("r", circleWidth+3)
+                .attr("fill",palette.orange);
 
-                d3.selectAll("text")
-                    .transition()
-                    .duration(1)
-                    .attr("font-size","0em");
-                //TEXT
-                d3.select(this).select("text")
-                    .transition()
-                    .style("cursor", "none")
-                    .duration(250)
-                    .style("cursor", "none")
-                    .attr("font-size","1.5em")
-            } else {
-                //CIRCLE
-                d3.select(this).selectAll("circle")
-                    .style("cursor", "none")
+            d3.selectAll("text")
+                .transition()
+                .duration(1)
+                .attr("font-size","0em");
+            //TEXT
+            d3.select(this).select("text")
+                .transition()
+                .text(function(d, i) {
+                    var cadena =d.name + " (" + d.arcana.getCoste();
+                    if (d.arcana.getNivelMinimo() > 0) {
+                        cadena += "/" + d.arcana.getNivelMinimo();
+                    }
+                    cadena += ")";
+                    return cadena;
+                })
+                .style("cursor", "none")
+                .duration(250)
+                .style("cursor", "none")
+                .attr("font-size","1.5em")
 
-                //TEXT
-                d3.select(this).select("text")
-                    .style("cursor", "none")
-            }
+
         })
 
         //MOUSEOUT
         .on("mouseout", function(d,i) {
-            if (d.puede) {
-                //CIRCLE
-                d3.select(this).selectAll("circle")
-                    .transition()
-                    .duration(250)
-                    .attr("r", circleWidth)
-                    .attr("fill",palette.blue);
+            //CIRCLE
+            d3.select(this).selectAll("circle")
+                .transition()
+                .duration(250)
+                .attr("r", circleWidth)
+                .attr("fill",function(d, i) {
+                    if (d.tiene) {
+                        if (d.anulable) {
+                            return palette.blue;
+                        } else {
+                            return palette.black;
+                        }
+                    } else if (d.puede) {
+                        return  palette.green;
+                    }
+                    else {
+                        return palette.red;
+                    }
+                });
 
-                d3.selectAll("text")
-                    .transition()
-                    .duration(1)
-                    .attr("font-size","0.6em");
+            d3.selectAll("text")
+                .transition()
+                .duration(1)
+                .attr("font-size","0.6em");
 
-                //TEXT
-                d3.select(this).select("text")
-                    .transition()
-                    .duration(250)
-                    .attr("font-size","0.6em")
-                    .attr("x", function(d, i) { return d.x; } )
-                    .attr("y", function(d, i) { return d.y - 10 } )
-            }
+            //TEXT
+            d3.select(this).select("text")
+                .transition()
+                .duration(250)
+                .text(function(d, i) { return d.name; })
+                .attr("font-size","0.6em")
+                .attr("x", function(d, i) { return d.x; } )
+                .attr("y", function(d, i) { return d.y - 10 } )
+
+
         })
 
         .on("click", function(d,i) {
             if (d.puede) {
                 personaje_actual.addEsferaMetamagica(d.arcana);
+            } else if (d.anulable) {
+                personaje_actual.removeEsferaMetamagica(d.arcana);
             }
         });
 
@@ -506,11 +528,17 @@ function muestraArcanaSephirah(destino) {
         .attr("cy", function(d) { return d.y; })
         .attr("r", circleWidth)
         .attr("fill", function(d, i) {
-            if (d.puede) {
-                return  palette.blue;
+            if (d.tiene) {
+                if (d.anulable) {
+                    return palette.blue;
+                } else {
+                    return palette.black;
+                }
+            } else if (d.puede) {
+                return  palette.green;
             }
             else {
-                return palette.black
+                return palette.red;
             }
         } );
 
@@ -541,10 +569,10 @@ function muestraArcanaSephirah(destino) {
 }
 
 function elegirArcanaSephirah(event) {
-    muestraDialogoArcanaSephirah(event.data.muestraBotones);
+    muestraDialogoArcanaSephirah();
 }
 
-function muestraDialogoArcanaSephirah(muestraBotones) {
+function muestraDialogoArcanaSephirah() {
     var dialogo = getDiv("");
 
     dialogo.append(getDiv("").attr("id","muestraArcanaSephirah"));

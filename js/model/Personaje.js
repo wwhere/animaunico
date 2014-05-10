@@ -1800,21 +1800,75 @@ Personaje.prototype = {
 
     /**
      *
+     * @param {string} nombre
+     * @returns {EsferaMetamagicaComprada|boolean}
+     */
+    getEsferaMetamagica : function(nombre) {
+        for (var i = 0; i < this.esferasMetamagicas.length; i++) {
+            if (this.esferasMetamagicas[i].getNombre() == nombre)
+                return this.esferasMetamagicas[i];
+        }
+        return false;
+    },
+
+    /**
+     *
+     * @param {ArcanaSephirah} arcanaSephirah
+     * @returns {boolean}
+     */
+    hasArcanaSephirah : function(arcanaSephirah) {
+        var indice = this.hasEsferaMetamagica(arcanaSephirah.getNombre());
+        if (!(indice===false)) {
+            /**
+             *
+             * @type {EsferaMetamagicaComprada}
+             */
+            var esfera = this.esferasMetamagicas[indice];
+            /**
+             *
+             * @type {number[]}
+             */
+            var arcanas = esfera.getArcanaSephirah();
+            for (var i = 0; i < arcanas.length; i++) {
+                if (arcanas[i] == arcanaSephirah.getPosicion())
+                    return true;
+            }
+        }
+        return false;
+    },
+
+    /**
+     *
      * @param {ArcanaSephirah} arcanaSephirah
      */
     addEsferaMetamagica : function(arcanaSephirah) {
         var indice = this.hasEsferaMetamagica(arcanaSephirah.getNombre());
-        if (indice) {
+        if (!(indice === false)) {
             this.esferasMetamagicas[indice].addEsfera(arcanaSephirah.getPosicion());
         } else {
             this.esferasMetamagicas.push(new EsferaMetamagicaComprada(arcanaSephirah.getEsfera(),arcanaSephirah.getPosicion()));
         }
+        this.addNivelMagiaGastado(arcanaSephirah.getCoste());
         arcanaSephirah.getEsfera().efecto(true);
         lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
     },
 
-    removeEsferaMetamagica : function() {
-        //TODO
+    /**
+     *
+     * @param {ArcanaSephirah} arcanaSephirah
+     */
+    removeEsferaMetamagica : function(arcanaSephirah) {
+        var esfera = this.getEsferaMetamagica(arcanaSephirah.getNombre());
+        if (esfera) {
+            arcanaSephirah.getEsfera().efecto(false);
+            this.addNivelMagiaGastado(-1 * arcanaSephirah.getCoste());
+            if (esfera.numero > 1) {
+                esfera.removeEsfera(arcanaSephirah.getPosicion());
+            } else {
+                this.esferasMetamagicas = limpiarArrayObjetosPorFuncion(this.esferasMetamagicas,comparaGetNombre,arcanaSephirah.getNombre());
+            }
+            lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+        }
     },
 
 //endregion Magia
@@ -2441,6 +2495,10 @@ Personaje.prototype = {
                 this.viasMagia[i].setNivelMinimo(this.viasMagia[i].getNivel());
                 this.viasMagia[i].setAnulable(false);
             }
+            for (i=0; i<this.esferasMetamagicas.length;i++) {
+                this.esferasMetamagicas[i].hacerNoAnulables();
+            }
+
             this.nivelMagiaGastadoPrevio = this.nivelMagiaGastado;
 
             for (i = 0; i < this.limite.length; i++) {

@@ -90,6 +90,8 @@ function EsferaMetamagicaComprada(esferaMetamagica, posicion) {
     this.arcanaSephirah = [];
     this.arcanaSephirah.push(posicion);
 
+    this.anulables = [];
+    this.anulables.push(posicion);
 
 }
 
@@ -120,9 +122,45 @@ EsferaMetamagicaComprada.prototype = {
         return this.esferaMetamagica.getEfecto();
     },
 
+    hacerNoAnulables : function() {
+        this.anulables = [];
+    },
+
     addEsfera : function(posicion) {
         this.numero++;
         this.arcanaSephirah.push(posicion);
+        this.anulables.push(posicion);
+    },
+
+    removeEsfera : function(posicion) {
+        this.numero--;
+        var limpio = [];
+        var anulables = [];
+        for (var i = 0; i < this.arcanaSephirah.length; i++) {
+            if (this.arcanaSephirah[i] != posicion) {
+                limpio.push(this.arcanaSephirah[i]);
+            }
+        }
+        this.arcanaSephirah = limpio;
+        for (i = 0; i < this.anulables.length; i++) {
+            if (this.anulables[i] != posicion) {
+                anulables.push(this.anulables[i]);
+            }
+        }
+        this.anulables = anulables;
+    },
+
+    /**
+     *
+     * @param posicion
+     * @returns {boolean}
+     */
+    isAnulable : function(posicion) {
+        for (var i = 0; i < this.anulables.length;i++) {
+            if (this.anulables[i] == posicion)
+                return true;
+        }
+        return false;
     },
 
     /**
