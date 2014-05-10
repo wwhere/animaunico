@@ -14,6 +14,7 @@ module.exports = function(grunt) {
                     "js/pluginsOld.js",
                     "js/vendor/jquery-ui-1.10.3.custom.min.js",
                     "js/libs/gumby.min.js",
+                    "js/libs/d3.min.js",
                     "js/plugins.js",
                     "js/main.js",
 
@@ -66,6 +67,9 @@ module.exports = function(grunt) {
 
                     "js/model/Invocacion.js",
                     "js/data/magia/invocaciones.js",
+
+                    "js/model/EsferaMetamagica.js",
+                    "js/data/magia/esferasMetamagicas.js",
 
                     "js/model/DisciplinaPsiquica.js",
                     "js/controller/Psiquica_ct.js",

@@ -1187,7 +1187,6 @@ function muestraManejoArmas() {
 
 function muestraSobrenatural(estadoGeneracion) {
     var div = recuadroBase();
-
     updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
@@ -1210,6 +1209,9 @@ function muestraSobrenatural(estadoGeneracion) {
 
     divContenido.append(muestraSubtitulo(UI_CONJUROS, false));
     divContenido.append(muestraConjurosSueltos(muestraBotones));
+
+    divContenido.append(muestraSubtitulo(UI_ESFERAS_METAMAGICAS, false));
+    divContenido.append(muestraEsferasMetamagicas(muestraBotones));
 
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_MISTICAS],muestraBotones));
@@ -1312,6 +1314,49 @@ function muestraConjurosSueltos(muestraBotones) {
     }
 
     div.append(divConjuros);
+    return div;
+}
+
+/**
+ *
+ * @returns {jQuery}
+ */
+function muestraEsferasMetamagicas(muestraBotones) {
+    var div = getDiv("");
+    var i;
+    var divEsferas = getDiv(CSS_MUESTRA_BLOCK);
+
+    var esferas = personaje_actual.getEsferasMetamagicas();
+
+    if (muestraBotones) {
+        div.append(muestraBotonElegirArcanaSephirah());
+    } else if (esferas.length == 0) {
+        div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+
+    for (i=0; i < esferas.length;i++) {
+        var esfera = esferas[i];
+        var divEsfera = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_MUESTRA_BLOCK);
+        var divNombre = getDiv(CSS_ETIQUETA).append(_l(esfera.getNombre()));
+        if (esfera.numero > 1) {
+            divNombre.append(" x" + esfera.numero);
+        }
+        divEsfera.append(divNombre);
+        var arcanas = esfera.getArcanaSephirah();
+        var costes = " [";
+        for (var j = 0; j < arcanas.length;j++) {
+            costes += arcanaSephirah[arcanas[j]].getCoste() + " " + _l(UDS_NIVELES_VIA);
+
+            if (j < arcanas.length-1)
+                costes += " / ";
+        }
+        costes += "]";
+        var divCoste = getDiv(CSS_COSTE).append(costes);
+        divEsfera.append(divCoste);
+        divEsferas.append(divEsfera);
+    }
+
+    div.append(divEsferas);
     return div;
 }
 

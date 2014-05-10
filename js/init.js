@@ -58,6 +58,7 @@ animaUnico.inicializar = function() {
 };
 
 function inicializar() {
+    console.log("COPIA LOCAL");
     initHabilidades();
 
     initVentajas();
@@ -114,8 +115,10 @@ function inicializar() {
         }
         ALTO_DIALOGO =  $(window).height() * 0.8;
     }
+
 }
 
 function mostrarPersonajeActual() {
     muestraPersonaje(personaje_actual);
 }
+
