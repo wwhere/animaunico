@@ -138,6 +138,17 @@ ViaMagia.prototype = {
     }
 };
 
+function SubViaMagia(nombre, viasCerradas) {
+    /** @type string */
+    this.nombre = nombre;
+
+    /** @type string[] */
+    this.viasCerradas = viasCerradas;
+
+    /** @type Conjuro[] */
+    this.conjuros = [];
+}
+
 /**
  *
  * @class Conjuro

@@ -1021,3 +1021,40 @@ var CONJURO_TIERRA_UNO_CON_LA_TIERRA = (new L("CONJURO_TIERRA_UNO_CON_LA_TIERRA"
     "One with the Earth")).getId();
 var CONJURO_TIERRA_CONTROL_ATOMICO = (new L("CONJURO_TIERRA_CONTROL_ATOMICO","Control Atómico",
     "Atomic Control")).getId();
+
+
+var SUBVIA_CAOS = (new L("SUBVIA_CAOS","Caos","Caos")).getId();
+var CONJURO_CAOS_SENTIR_EL_CAOS = (new L("CONJURO_CAOS_SENTIR_EL_CAOS","Sentir el Caos","Sentir el Caos")).getId();
+var CONJURO_CAOS_AURA_DE_CAOS = (new L("CONJURO_CAOS_AURA_DE_CAOS","Aura de Caos","Aura de Caos")).getId();
+var CONJURO_CAOS_ALTERACION_DE_LA_PROBABILIDAD = (new L("CONJURO_CAOS_ALTERACION_DE_LA_PROBABILIDAD","Alteración de la Probabilidad","Alteración de la Probabilidad")).getId();
+var CONJURO_CAOS_ALTERAR_LA_SUERTE = (new L("CONJURO_CAOS_ALTERAR_LA_SUERTE","Alterar la Suerte","Alterar la Suerte")).getId();
+var CONJURO_CAOS_CAMINOS_DEL_CAOS = (new L("CONJURO_CAOS_CAMINOS_DEL_CAOS","Caminos del Caos","Caminos del Caos")).getId();
+var CONJURO_CAOS_ABERRACION_CAOTICA = (new L("CONJURO_CAOS_ABERRACION_CAOTICA","Aberración Caótica","Aberración Caótica")).getId();
+var CONJURO_CAOS_MANIPULACION_DEL_CAOS = (new L("CONJURO_CAOS_MANIPULACION_DEL_CAOS","Manipulación del Caos","Manipulación del Caos")).getId();
+var CONJURO_CAOS_MUTACION_CAOTICA = (new L("CONJURO_CAOS_MUTACION_CAOTICA","Mutación Caótica","Mutación Caótica")).getId();
+var CONJURO_CAOS_CONTROL_DEL_CAOS = (new L("CONJURO_CAOS_CONTROL_DEL_CAOS","Control del Caos","Control del Caos")).getId();
+var CONJURO_CAOS_CAOS_PRIMARIO = (new L("CONJURO_CAOS_CAOS_PRIMARIO","Caos Primario","Caos Primario")).getId();
+
+var SUBVIA_GUERRA = (new L("SUBVIA_GUERRA","Guerra","Guerra")).getId();
+var CONJURO_GUERRA_MORAL = (new L("CONJURO_GUERRA_MORAL","Moral","Moral")).getId();
+var CONJURO_GUERRA_IRA_ANCESTRAL = (new L("CONJURO_GUERRA_IRA_ANCESTRAL","Ira Ancestral","Ira Ancestral")).getId();
+var CONJURO_GUERRA_VELOCIDAD_EN_LA_BATALLA = (new L("CONJURO_GUERRA_VELOCIDAD_EN_LA_BATALLA","Velocidad en la Batalla","Velocidad en la Batalla")).getId();
+var CONJURO_GUERRA_DESTRUCCION_DESENCADENADA = (new L("CONJURO_GUERRA_DESTRUCCION_DESENCADENADA","Destrucción Desencadenada","Destrucción Desencadenada")).getId();
+var CONJURO_GUERRA_PROTECCION_FINAL = (new L("CONJURO_GUERRA_PROTECCION_FINAL","Protección Final","Protección Final")).getId();
+var CONJURO_GUERRA_MARCHA_IMPLACABLE = (new L("CONJURO_GUERRA_MARCHA_IMPLACABLE","Marcha Implacable","Marcha Implacable")).getId();
+var CONJURO_GUERRA_CAMPEON = (new L("CONJURO_GUERRA_CAMPEON","Campeón","Campeón")).getId();
+var CONJURO_GUERRA_ORDENES_PRECISAS = (new L("CONJURO_GUERRA_ORDENES_PRECISAS","Órdenes Precisas","Órdenes Precisas")).getId();
+var CONJURO_GUERRA_MAESTRO_DE_LA_GUERRA = (new L("CONJURO_GUERRA_MAESTRO_DE_LA_GUERRA","Maestro de la Guerra","Maestro de la Guerra")).getId();
+var CONJURO_GUERRA_HASTA_MAS_ALLA_DEL_FIN = (new L("CONJURO_GUERRA_HASTA_MAS_ALLA_DEL_FIN","Hasta más Allá del Fin","Hasta más Allá del Fin")).getId();
+
+var SUBVIA_LITERAE = (new L("SUBVIA_LITERAE","Literae","Literae")).getId();
+var CONJURO_LITERAE_PLUMA_DE_LA_REALIDAD = (new L("CONJURO_LITERAE_PLUMA_DE_LA_REALIDAD","Pluma de la Realidad","Pluma de la Realidad")).getId();
+var CONJURO_LITERAE_MISIVA = (new L("CONJURO_LITERAE_MISIVA","Misiva","Misiva")).getId();
+var CONJURO_LITERAE_DIARIO_DE_VIAJE = (new L("CONJURO_LITERAE_DIARIO_DE_VIAJE","Diario de Viaje","Diario de Viaje")).getId();
+var CONJURO_LITERAE_ORDEN_ESCRITA = (new L("CONJURO_LITERAE_ORDEN_ESCRITA","Orden Escrita","Orden Escrita")).getId();
+var CONJURO_LITERAE_ESCUDO_DE_PALABRAS = (new L("CONJURO_LITERAE_ESCUDO_DE_PALABRAS","Escudo de Palabras","Escudo de Palabras")).getId();
+var CONJURO_LITERAE_TEATRO_DE_LA_VIDA = (new L("CONJURO_LITERAE_TEATRO_DE_LA_VIDA","Teatro de la Vida","Teatro de la Vida")).getId();
+var CONJURO_LITERAE_COMPENDIO = (new L("CONJURO_LITERAE_COMPENDIO","Compendio","Compendio")).getId();
+var CONJURO_LITERAE_DRAMATURGO = (new L("CONJURO_LITERAE_DRAMATURGO","Dramaturgo","Dramaturgo")).getId();
+var CONJURO_LITERAE_SECUNDARIO = (new L("CONJURO_LITERAE_SECUNDARIO","Secundario","Secundario")).getId();
+var CONJURO_LITERAE_TRAGEDIA = (new L("CONJURO_LITERAE_TRAGEDIA","Tragedia","Tragedia")).getId();

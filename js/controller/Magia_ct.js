@@ -10,6 +10,7 @@ var vias_set = [];
  */
 var VIAS_MAGICAS = [VIA_LUZ,VIA_OSCURIDAD,VIA_CREACION,VIA_DESTRUCCION,VIA_FUEGO,VIA_AGUA,VIA_TIERRA,VIA_AIRE,VIA_ESENCIA,VIA_ILUSION,VIA_NIGROMANCIA];
 
+var subvias_set = [];
 
 /**
  *
@@ -285,7 +286,7 @@ function accesoNuevaVia() {
  *
  * @param {{opcion:string}} parametros
  */
-function aplicarAccesoVia(parametros) {
+function aplicarAccesoVia(parametros) { //TODO elegir subvia
     var nombreVia = parametros.opcion;
 
     personaje_actual.addNivelVia(nombreVia, 2, false);
