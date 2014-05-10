@@ -1099,3 +1099,7 @@ var UI_INTRODUZCA_CANTIDAD_DINERO = (new L("UI_INTRODUZCA_CANTIDAD_DINERO", "Int
 var UI_BOTON_AÑADIR_EQUIPO = (new L("UI_BOTON_AÑADIR_EQUIPO","Añadir equipo","Add Equipment")).getId();
 var DIAG_AÑADIR_EQUIPO = (new L("DIAG_AÑADIR_EQUIPO","Añadir equipo","Add Equipment")).getId();
 var UI_INCALCULABLE = (new L("UI_INCALCULABLE","Incalculable","Invaluable")).getId();
+
+var UI_ESFERAS_METAMAGICAS = (new L("UI_ESFERAS_METAMAGICAS", "Esferas metamágicas", "Esferas metamágicas")).getId();
+var UI_ELEGIR_ARCANA_SEPHIRAH = (new L("UI_ELEGIR_ARCANA_SEPHIRAH", "Elegir Arcana Sephirah", "Elegir Arcana Sephirah")).getId();
+var DIAG_ARCANA_SEPHIRAH = (new L("DIAG_ARCANA_SEPHIRAH", "Arcana Sephirah", "Arcana Sephirah")).getId();

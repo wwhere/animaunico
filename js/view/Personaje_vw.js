@@ -1187,7 +1187,6 @@ function muestraManejoArmas() {
 
 function muestraSobrenatural(estadoGeneracion) {
     var div = recuadroBase();
-    grafo();
     updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
@@ -1210,6 +1209,9 @@ function muestraSobrenatural(estadoGeneracion) {
 
     divContenido.append(muestraSubtitulo(UI_CONJUROS, false));
     divContenido.append(muestraConjurosSueltos(muestraBotones));
+
+    divContenido.append(muestraSubtitulo(UI_ESFERAS_METAMAGICAS, false));
+    divContenido.append(muestraEsferasMetamagicas(muestraBotones));
 
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_MISTICAS],muestraBotones));
@@ -1312,6 +1314,43 @@ function muestraConjurosSueltos(muestraBotones) {
     }
 
     div.append(divConjuros);
+    return div;
+}
+
+/**
+ *
+ * @returns {jQuery}
+ */
+function muestraEsferasMetamagicas(muestraBotones) {
+    var div = getDiv("");
+    var i;
+    var divEsferas = getDiv("row");
+
+    var esferas = personaje_actual.getEsferasMetamagicas();
+
+    div.append(muestraBotonElegirArcanaSephirah(muestraBotones));
+
+    for (i=0; i < esferas.length;i++) {
+        var esfera = esferas[i];
+        var divEsfera = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("four columns");
+        divEsfera.append(_l(esfera.getNombre()));
+        if (esfera.numero > 1) {
+            divEsfera.append(" x" + esfera.numero);
+        }
+        var arcanas = esfera.getArcanaSephirah();
+        var costes = " [";
+        for (var j = 0; j < arcanas.length;j++) {
+            costes += arcanaSephirah[arcanas[j]].getCoste() + " " + _l(UDS_NIVELES_VIA);
+
+            if (j < arcanas.length-1)
+                costes += " / ";
+        }
+        costes += "]";
+        divEsfera.append(costes);
+        divEsferas.append(divEsfera);
+    }
+
+    div.append(divEsferas);
     return div;
 }
 

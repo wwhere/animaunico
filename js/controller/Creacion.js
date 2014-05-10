@@ -42,7 +42,6 @@ function iniciarGeneracion() {
     activarNotificaciones();
     mostrarPersonajeActual();
     mostrarDialogoTipoGeneracion();
-    grafo();
 }
 
 /**
