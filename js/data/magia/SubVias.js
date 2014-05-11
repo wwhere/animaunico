@@ -42,3 +42,63 @@ subviaLiterae.addConjuro(new Conjuro( CONJURO_LITERAE_SECUNDARIO, 84));
 subviaLiterae.addConjuro(new Conjuro( CONJURO_LITERAE_TRAGEDIA, 94));
 
 subvias_set.push(subviaLiterae);
+
+var subviaMuerte = new SubViaMagia(SUBVIA_MUERTE,[VIA_CREACION,VIA_LUZ,VIA_ESENCIA,VIA_TIERRA,VIA_AGUA,VIA_AIRE,VIA_ILUSION]);
+
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_AUTOPSIA, 4));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_RESISTENCIA_A_LA_MUERTE, 14));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_EXTERMINIO_MENOR, 24));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_GOLPE_DE_GRACIA, 34));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_PONER_EN_REPOSO, 44));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_SENTIR_LA_MUERTE, 54));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_MEMENTO_MORI, 64));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_MALDICION_MORTAL, 74));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_DETENER_LA_MUERTE, 84));
+subviaMuerte.addConjuro(new Conjuro( CONJURO_MUERTE_LA_MUERTE, 94));
+
+subvias_set.push(subviaMuerte);
+
+var subviaMusical = new SubViaMagia(SUBVIA_MUSICAL,[VIA_DESTRUCCION,VIA_FUEGO,VIA_TIERRA,VIA_NIGROMANCIA]);
+
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_TEMPO, 4));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_CANTABILE, 14));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_PLAGIO, 24));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_MEZZO_FORTE, 34));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_ADAGIO, 44));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_ALLEGRO, 54));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_PRESSTISIMO, 64));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_FORTISIMO, 74));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_MARZIALE, 84));
+subviaMusical.addConjuro(new Conjuro( CONJURO_MUSICAL_ANIMA, 94));
+
+subvias_set.push(subviaMusical);
+
+var subviaNobleza = new SubViaMagia(SUBVIA_NOBLEZA,[VIA_CREACION,VIA_DESTRUCCION,VIA_ESENCIA,VIA_FUEGO,VIA_NIGROMANCIA]);
+
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_ROSTRO, 4));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_PERFUME, 14));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_MUSA, 24));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_GUARDARROPA, 34));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_CONVERSACION_AGRADABLE, 44));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_GRANDEZA, 54));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_CONQUISTAR_CORAZONES, 64));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_PRESENCIA_ABSOLUTA, 74));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_PERFECCION, 84));
+subviaNobleza.addConjuro(new Conjuro( CONJURO_NOBLEZA_EL_REY_DEL_MUNDO, 94));
+
+subvias_set.push(subviaNobleza);
+
+var subviaPaz = new SubViaMagia(SUBVIA_PAZ,[VIA_DESTRUCCION,VIA_OSCURIDAD,VIA_FUEGO,VIA_NIGROMANCIA,VIA_ILUSION]);
+
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_ESCUDO_SALVADOR, 4));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_EQUILIBRIO_INTERIOR, 14));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_DEFENSOR, 24));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_DETECTAR_ARMONIA, 34));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_REMANSO_DE_PAZ, 44));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_SIGNO_DE_PAZ, 54));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_DEFENSA_ABSOLUTA, 64));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_ALAS_DE_SALVACION, 74));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_PAZ_ABSOLUTA, 84));
+subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_PAX_IN_TERRAX, 94));
+
+subvias_set.push(subviaPaz);
