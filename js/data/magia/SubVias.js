@@ -102,3 +102,108 @@ subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_PAZ_ABSOLUTA, 84));
 subviaPaz.addConjuro(new Conjuro( CONJURO_PAZ_PAX_IN_TERRAX, 94));
 
 subvias_set.push(subviaPaz);
+
+var subviaPecado = new SubViaMagia(SUBVIA_PECADO,[VIA_LUZ,VIA_ESENCIA,VIA_ILUSION,VIA_TIERRA,VIA_AGUA]);
+
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_SENTIR_PECADO, 4));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_IMBUIR_PECADO, 14));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_GULA, 24));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_LUJURIA, 34));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_AVARICIA, 44));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_PEREZA, 54));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_SOBERBIA, 64));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_IRA, 74));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_ENVIDIA, 84));
+subviaPecado.addConjuro(new Conjuro( CONJURO_PECADO_LA_SEMILLA_DEL_MAL, 94));
+
+subvias_set.push(subviaPecado);
+
+var subviaConocimiento = new SubViaMagia(SUBVIA_CONOCIMIENTO,[VIA_DESTRUCCION,VIA_TIERRA,VIA_FUEGO,VIA_ILUSION]);
+
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_CATEGORIZAR, 4));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_CONOCIMIENTO, 14));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_SABER_DEBILIDAD, 24));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_SABER_LA_VERDAD, 34));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_CONOCIMIENTO_MAGICO, 44));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_CONOCIMIENTO_DE_COMBATE, 54));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_APRENDIZAJE, 64));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_CONSEJERO, 74));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_OTORGAR_CONOCIMIENTO, 84));
+subviaConocimiento.addConjuro(new Conjuro( CONJURO_CONOCIMIENTO_VIDA, 94));
+
+subvias_set.push(subviaConocimiento);
+
+var subviaSangre = new SubViaMagia(SUBVIA_SANGRE,[VIA_LUZ,VIA_FUEGO,VIA_ILUSION,VIA_AIRE,VIA_TIERRA]);
+
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_RALENTIZAR_PULSO, 4));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_COAGULAR, 14));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_SANGRE_FRIA, 24));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_CREACION_DE_SANGRE, 34));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_TRANSFUSION, 44));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_DESANGRAR, 54));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_VAMPIRISMO, 64));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_LAGRIMAS_DE_SANGRE, 74));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_CORRIENTE_SANGUINEA, 84));
+subviaSangre.addConjuro(new Conjuro( CONJURO_SANGRE_UN_MUNDO_DE_SANGRE, 94));
+
+subvias_set.push(subviaSangre);
+
+var subviaSueños = new SubViaMagia(SUBVIA_SUEÑOS,[VIA_LUZ,VIA_FUEGO,VIA_ILUSION,VIA_AIRE,VIA_TIERRA]);
+
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_SENTIR_LOS_SUEÑOS, 4));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_SUEÑO_IMPERTURBABLE, 14));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_ESPIAR_LOS_SUEÑOS, 24));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_ALTERAR_LOS_SUEÑOS, 34));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_CAMINANTE_NOCTAMBULO, 44));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_SUEÑO_ETERNO, 54));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_RASGAR_LA_MEMBRANA, 64));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_DESTERRAR_A_LA_VIGILIA, 74));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_ENTRE_SUEÑOS_Y_REALIDAD, 84));
+subviaSueños.addConjuro(new Conjuro( CONJURO_SUEÑOS_HACER_LOS_SUEÑOS_REALIDAD, 94));
+
+subvias_set.push(subviaSueños);
+
+var subviaTiempo = new SubViaMagia(SUBVIA_TIEMPO,[VIA_LUZ,VIA_FUEGO,VIA_ILUSION,VIA_AIRE,VIA_TIERRA]);
+
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_CONOCIMIENTO_TEMPORAL, 4));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_ACELERACION_TEMPORAL, 14));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_LENTITUD_TEMPORAL, 24));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_ESTANCAR_EL_TIEMPO, 34));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_DETENER_EL_TIEMPO, 44));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_RETROEVOLUCIONAR, 54));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_DESHACER_EL_TIEMPO, 64));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_SALTO_TEMPORAL, 74));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_BUCLE_TEMPORAL, 84));
+subviaTiempo.addConjuro(new Conjuro( CONJURO_TIEMPO_SOLAPAR_EL_TIEMPO, 94));
+
+subvias_set.push(subviaTiempo);
+
+var subviaUmbral = new SubViaMagia(SUBVIA_UMBRAL,[VIA_LUZ,VIA_ESENCIA,VIA_AGUA,VIA_CREACION,VIA_DESTRUCCION]);
+
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_OJOS_DEL_OTRO_LADO, 4));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_SOMBRA_DEL_MIEDO, 14));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_SUSURROS_DEL_OTRO_LADO, 24));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_SENDA_DE_LA_LOCURA, 34));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_ACECHAR_EN_LOS_SUEÑOS, 44));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_AGUDIZAR, 54));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_TERROR, 64));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_SEÑOR_DE_LOS_LOCOS, 74));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_ENCARNACION_DEL_MIEDO, 84));
+subviaUmbral.addConjuro(new Conjuro( CONJURO_UMBRAL_EL_MIEDO_HECHO_CARNE, 94));
+
+subvias_set.push(subviaUmbral);
+
+var subviaVacio = new SubViaMagia(SUBVIA_VACIO,[VIA_LUZ,VIA_CREACION,VIA_TIERRA,VIA_FUEGO,VIA_ILUSION,VIA_ESENCIA]);
+
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_SOMBRA_DE_VACIO, 4));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_ONDA_VACUA, 14));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_ESCUDO_DE_VACIO, 24));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_VERTICE_DE_REALIDAD, 34));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_NEGRA_HOJA_DE_PERDICION, 44));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_AURA_DE_VACIO, 54));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_PUNTOS_NEGROS, 64));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_PROTECCION_CONTRA_EL_VACIO, 74));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_IMPLOSION, 84));
+subviaVacio.addConjuro(new Conjuro( CONJURO_VACIO_PUERTA_A_NINGUNA_PARTE, 94));
+
+subvias_set.push(subviaVacio);

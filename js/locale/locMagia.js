@@ -1106,3 +1106,92 @@ var CONJURO_PAZ_DEFENSA_ABSOLUTA = (new L("CONJURO_PAZ_DEFENSA_ABSOLUTA","Defens
 var CONJURO_PAZ_ALAS_DE_SALVACION = (new L("CONJURO_PAZ_ALAS_DE_SALVACION","Alas de Salvación","Alas de Salvación")).getId();
 var CONJURO_PAZ_PAZ_ABSOLUTA = (new L("CONJURO_PAZ_PAZ_ABSOLUTA","Pax Absoluta","Pax Absoluta")).getId();
 var CONJURO_PAZ_PAX_IN_TERRAX = (new L("CONJURO_PAZ_PAX_IN_TERRAX","Pax in Terrax","Pax in Terrax")).getId();
+
+var SUBVIA_PECADO = (new L("SUBVIA_PECADO","Pecado","Pecado")).getId();
+var CONJURO_PECADO_SENTIR_PECADO = (new L("CONJURO_PECADO_SENTIR_PECADO","Sentir Pecado","Sentir Pecado")).getId();
+var CONJURO_PECADO_IMBUIR_PECADO = (new L("CONJURO_PECADO_IMBUIR_PECADO","Imbuir Pecado","Imbuir Pecado")).getId();
+var CONJURO_PECADO_GULA = (new L("CONJURO_PECADO_GULA","Gula","Gula")).getId();
+var CONJURO_PECADO_LUJURIA = (new L("CONJURO_PECADO_LUJURIA","Lujuria","Lujuria")).getId();
+var CONJURO_PECADO_AVARICIA = (new L("CONJURO_PECADO_AVARICIA","Avaricia","Avaricia")).getId();
+var CONJURO_PECADO_PEREZA = (new L("CONJURO_PECADO_PEREZA","Pereza","Pereza")).getId();
+var CONJURO_PECADO_SOBERBIA = (new L("CONJURO_PECADO_SOBERBIA","Soberbia","Soberbia")).getId();
+var CONJURO_PECADO_IRA = (new L("CONJURO_PECADO_IRA","Ira","Ira")).getId();
+var CONJURO_PECADO_ENVIDIA = (new L("CONJURO_PECADO_ENVIDIA","Envidia","Envidia")).getId();
+var CONJURO_PECADO_LA_SEMILLA_DEL_MAL = (new L("CONJURO_PECADO_LA_SEMILLA_DEL_MAL","La Semilla del Mal","La Semilla del Mal")).getId();
+
+var SUBVIA_CONOCIMIENTO = (new L("SUBVIA_CONOCIMIENTO","Conocimiento","Conocimiento")).getId();
+var CONJURO_CONOCIMIENTO_CATEGORIZAR = (new L("CONJURO_CONOCIMIENTO_CATEGORIZAR","Categorizar","Categorizar")).getId();
+var CONJURO_CONOCIMIENTO_CONOCIMIENTO = (new L("CONJURO_CONOCIMIENTO_CONOCIMIENTO","Conocimiento","Conocimiento")).getId();
+var CONJURO_CONOCIMIENTO_SABER_DEBILIDAD = (new L("CONJURO_CONOCIMIENTO_SABER_DEBILIDAD","Saber Debilidad","Saber Debilidad")).getId();
+var CONJURO_CONOCIMIENTO_SABER_LA_VERDAD = (new L("CONJURO_CONOCIMIENTO_SABER_LA_VERDAD","Saber la Verdad","Saber la Verdad")).getId();
+var CONJURO_CONOCIMIENTO_CONOCIMIENTO_MAGICO = (new L("CONJURO_CONOCIMIENTO_CONOCIMIENTO_MAGICO","Conocimiento Mágico","Conocimiento Mágico")).getId();
+var CONJURO_CONOCIMIENTO_CONOCIMIENTO_DE_COMBATE = (new L("CONJURO_CONOCIMIENTO_CONOCIMIENTO_DE_COMBATE","Conocimiento de Combate","Conocimiento de Combate")).getId();
+var CONJURO_CONOCIMIENTO_APRENDIZAJE = (new L("CONJURO_CONOCIMIENTO_APRENDIZAJE","Aprendizaje","Aprendizaje")).getId();
+var CONJURO_CONOCIMIENTO_CONSEJERO = (new L("CONJURO_CONOCIMIENTO_CONSEJERO","Consejero","Consejero")).getId();
+var CONJURO_CONOCIMIENTO_OTORGAR_CONOCIMIENTO = (new L("CONJURO_CONOCIMIENTO_OTORGAR_CONOCIMIENTO","Otorgar Conocimiento","Otorgar Conocimiento")).getId();
+var CONJURO_CONOCIMIENTO_VIDA = (new L("CONJURO_CONOCIMIENTO_VIDA","Vida","Vida")).getId();
+
+var SUBVIA_SANGRE = (new L("SUBVIA_SANGRE","Sangre","Sangre")).getId();
+var CONJURO_SANGRE_RALENTIZAR_PULSO = (new L("CONJURO_SANGRE_RALENTIZAR_PULSO","Ralentizar Pulso","Ralentizar Pulso")).getId();
+var CONJURO_SANGRE_COAGULAR = (new L("CONJURO_SANGRE_COAGULAR","Coagular","Coagular")).getId();
+var CONJURO_SANGRE_SANGRE_FRIA = (new L("CONJURO_SANGRE_SANGRE_FRIA","Sangre Fría","Sangre Fría")).getId();
+var CONJURO_SANGRE_CREACION_DE_SANGRE = (new L("CONJURO_SANGRE_CREACION_DE_SANGRE","Creación de Sangre","Creación de Sangre")).getId();
+var CONJURO_SANGRE_TRANSFUSION = (new L("CONJURO_SANGRE_TRANSFUSION","Transfusión","Transfusión")).getId();
+var CONJURO_SANGRE_DESANGRAR = (new L("CONJURO_SANGRE_DESANGRAR","Desangrar","Desangrar")).getId();
+var CONJURO_SANGRE_VAMPIRISMO = (new L("CONJURO_SANGRE_VAMPIRISMO","Vampirismo","Vampirismo")).getId();
+var CONJURO_SANGRE_LAGRIMAS_DE_SANGRE = (new L("CONJURO_SANGRE_LAGRIMAS_DE_SANGRE","Lágrimas de Sangre","Lágrimas de Sangre")).getId();
+var CONJURO_SANGRE_CORRIENTE_SANGUINEA = (new L("CONJURO_SANGRE_CORRIENTE_SANGUINEA","Corriente Sanguínea","Corriente Sanguínea")).getId();
+var CONJURO_SANGRE_UN_MUNDO_DE_SANGRE = (new L("CONJURO_SANGRE_UN_MUNDO_DE_SANGRE","Un Mundo de Sangre","Un Mundo de Sangre")).getId();
+
+var SUBVIA_SUEÑOS = (new L("SUBVIA_SUEÑOS","Sueños","Sueños")).getId();
+var CONJURO_SUEÑOS_SENTIR_LOS_SUEÑOS = (new L("CONJURO_SUEÑOS_SENTIR_LOS_SUEÑOS","Sentir los Sueños","Sentir los Sueños")).getId();
+var CONJURO_SUEÑOS_SUEÑO_IMPERTURBABLE = (new L("CONJURO_SUEÑOS_SUEÑO_IMPERTURBABLE","Sueño Imperturbable","Sueño Imperturbable")).getId();
+var CONJURO_SUEÑOS_ESPIAR_LOS_SUEÑOS = (new L("CONJURO_SUEÑOS_ESPIAR_LOS_SUEÑOS","Espiar los Sueños","Espiar los Sueños")).getId();
+var CONJURO_SUEÑOS_ALTERAR_LOS_SUEÑOS = (new L("CONJURO_SUEÑOS_ALTERAR_LOS_SUEÑOS","Alterar los Sueños","Alterar los Sueños")).getId();
+var CONJURO_SUEÑOS_CAMINANTE_NOCTAMBULO = (new L("CONJURO_SUEÑOS_CAMINANTE_NOCTAMBULO","Caminante Noctámbulo","Caminante Noctámbulo")).getId();
+var CONJURO_SUEÑOS_SUEÑO_ETERNO = (new L("CONJURO_SUEÑOS_SUEÑO_ETERNO","Sueño Eterno","Sueño Eterno")).getId();
+var CONJURO_SUEÑOS_RASGAR_LA_MEMBRANA = (new L("CONJURO_SUEÑOS_RASGAR_LA_MEMBRANA","Rasgar la Membrana","Rasgar la Membrana")).getId();
+var CONJURO_SUEÑOS_DESTERRAR_A_LA_VIGILIA = (new L("CONJURO_SUEÑOS_DESTERRAR_A_LA_VIGILIA","Desterrar a la Vigilia","Desterrar a la Vigilia")).getId();
+var CONJURO_SUEÑOS_ENTRE_SUEÑOS_Y_REALIDAD = (new L("CONJURO_SUEÑOS_ENTRE_SUEÑOS_Y_REALIDAD","Entre Sueños y Realidad","Entre Sueños y Realidad")).getId();
+var CONJURO_SUEÑOS_HACER_LOS_SUEÑOS_REALIDAD = (new L("CONJURO_SUEÑOS_HACER_LOS_SUEÑOS_REALIDAD","Hacer los Sueños Realidad","Hacer los Sueños Realidad")).getId();
+
+var SUBVIA_TIEMPO = (new L("SUBVIA_TIEMPO","Tiempo","Tiempo")).getId();
+var CONJURO_TIEMPO_CONOCIMIENTO_TEMPORAL = (new L("CONJURO_TIEMPO_CONOCIMIENTO_TEMPORAL","Conocimiento Temporal","Conocimiento Temporal")).getId();
+var CONJURO_TIEMPO_ACELERACION_TEMPORAL = (new L("CONJURO_TIEMPO_ACELERACION_TEMPORAL","Aceleración Temporal","Aceleración Temporal")).getId();
+var CONJURO_TIEMPO_LENTITUD_TEMPORAL = (new L("CONJURO_TIEMPO_LENTITUD_TEMPORAL","Lentitud Temporal","Lentitud Temporal")).getId();
+var CONJURO_TIEMPO_ESTANCAR_EL_TIEMPO = (new L("CONJURO_TIEMPO_ESTANCAR_EL_TIEMPO","Estancar el Tiempo","Estancar el Tiempo")).getId();
+var CONJURO_TIEMPO_DETENER_EL_TIEMPO = (new L("CONJURO_TIEMPO_DETENER_EL_TIEMPO","Detener el Tiempo","Detener el Tiempo")).getId();
+var CONJURO_TIEMPO_RETROEVOLUCIONAR = (new L("CONJURO_TIEMPO_RETROEVOLUCIONAR","Retroevolucionar","Retroevolucionar")).getId();
+var CONJURO_TIEMPO_DESHACER_EL_TIEMPO = (new L("CONJURO_TIEMPO_DESHACER_EL_TIEMPO","Deshacer el Tiempo","Deshacer el Tiempo")).getId();
+var CONJURO_TIEMPO_SALTO_TEMPORAL = (new L("CONJURO_TIEMPO_SALTO_TEMPORAL","Salto Temporal","Salto Temporal")).getId();
+var CONJURO_TIEMPO_BUCLE_TEMPORAL = (new L("CONJURO_TIEMPO_BUCLE_TEMPORAL","Bucle Temporal","Bucle Temporal")).getId();
+var CONJURO_TIEMPO_SOLAPAR_EL_TIEMPO = (new L("CONJURO_TIEMPO_SOLAPAR_EL_TIEMPO","Solapar el Tiempo","Solapar el Tiempo")).getId();
+
+var SUBVIA_UMBRAL = (new L("SUBVIA_UMBRAL","Umbral","Umbral")).getId();
+var CONJURO_UMBRAL_OJOS_DEL_OTRO_LADO = (new L("CONJURO_UMBRAL_OJOS_DEL_OTRO_LADO","Los Ojos del Otro Lado","Los Ojos del Otro Lado")).getId();
+var CONJURO_UMBRAL_SOMBRA_DEL_MIEDO = (new L("CONJURO_UMBRAL_SOMBRA_DEL_MIEDO","Sombra del Miedo","Sombra del Miedo")).getId();
+var CONJURO_UMBRAL_SUSURROS_DEL_OTRO_LADO = (new L("CONJURO_UMBRAL_SUSURROS_DEL_OTRO_LADO","Susurros del Otro Lado","Susurros del Otro Lado")).getId();
+var CONJURO_UMBRAL_SENDA_DE_LA_LOCURA = (new L("CONJURO_UMBRAL_SENDA_DE_LA_LOCURA","Senda de la Locura","Senda de la Locura")).getId();
+var CONJURO_UMBRAL_ACECHAR_EN_LOS_SUEÑOS = (new L("CONJURO_UMBRAL_ACECHAR_EN_LOS_SUEÑOS","Acechar en los Sueños","Acechar en los Sueños")).getId();
+var CONJURO_UMBRAL_AGUDIZAR = (new L("CONJURO_UMBRAL_AGUDIZAR","Agudizar","Agudizar")).getId();
+var CONJURO_UMBRAL_TERROR = (new L("CONJURO_UMBRAL_TERROR","Terror","Terror")).getId();
+var CONJURO_UMBRAL_SEÑOR_DE_LOS_LOCOS = (new L("CONJURO_UMBRAL_SEÑOR_DE_LOS_LOCOS","Señor de los Locos","Señor de los Locos")).getId();
+var CONJURO_UMBRAL_ENCARNACION_DEL_MIEDO = (new L("CONJURO_UMBRAL_ENCARNACION_DEL_MIEDO","Encarnación del Miedo","Encarnación del Miedo")).getId();
+var CONJURO_UMBRAL_EL_MIEDO_HECHO_CARNE = (new L("CONJURO_UMBRAL_EL_MIEDO_HECHO_CARNE","El Miedo Hecho Carne","El Miedo Hecho Carne")).getId();
+
+var SUBVIA_VACIO= (new L("SUBVIA_VACIO","Vacío","Vacío")).getId();
+var CONJURO_VACIO_SOMBRA_DE_VACIO = (new L("CONJURO_VACIO_SOMBRA_DE_VACIO","Sombra de Vacío","Sombra de Vacío")).getId();
+var CONJURO_VACIO_ONDA_VACUA = (new L("CONJURO_VACIO_ONDA_VACUA","Onda Vacua","Onda Vacua")).getId();
+var CONJURO_VACIO_ESCUDO_DE_VACIO = (new L("CONJURO_VACIO_ESCUDO_DE_VACIO","Escudo de Vacío","Escudo de Vacío")).getId();
+var CONJURO_VACIO_VERTICE_DE_REALIDAD = (new L("CONJURO_VACIO_VERTICE_DE_REALIDAD","Senda de la Locura","Senda de la Locura")).getId();
+var CONJURO_VACIO_NEGRA_HOJA_DE_PERDICION = (new L("CONJURO_VACIO_NEGRA_HOJA_DE_PERDICION","Negra Hoja de Perdición","Negra Hoja de Perdición")).getId();
+var CONJURO_VACIO_AURA_DE_VACIO = (new L("CONJURO_VACIO_AURA_DE_VACIO","Aura de Vacío","Aura de Vacío")).getId();
+var CONJURO_VACIO_PUNTOS_NEGROS = (new L("CONJURO_VACIO_PUNTOS_NEGROS","Puntos de Terror","Puntos de Terror")).getId();
+var CONJURO_VACIO_PROTECCION_CONTRA_EL_VACIO = (new L("CONJURO_VACIO_PROTECCION_CONTRA_EL_VACIO","Protección contra el Vacío","Protección contra el Vacío")).getId();
+var CONJURO_VACIO_IMPLOSION = (new L("CONJURO_VACIO_IMPLOSION","Implosión","Implosión")).getId();
+var CONJURO_VACIO_PUERTA_A_NINGUNA_PARTE = (new L("CONJURO_VACIO_PUERTA_A_NINGUNA_PARTE","Puerta a Ninguna Parte","Puerta a Ninguna Parte")).getId();
+
+
+
+
+
