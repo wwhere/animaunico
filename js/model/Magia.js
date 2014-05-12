@@ -332,8 +332,9 @@ Conjuro.prototype = {
  * @param {ViaMagia} via
  * @param {number} nivel
  * @constructor
+ * @param {SubViaMagia} [subvia]
  */
-function NivelEnVia(via,nivel) {
+function NivelEnVia(via,nivel, subvia) {
     /** @type ViaMagia */
     this.via = via;
 
@@ -348,6 +349,11 @@ function NivelEnVia(via,nivel) {
 
     /** @type boolean */
     this.anulable = true;
+
+    if (subvia)
+        this.subvia = subvia;
+    else
+        this.subvia = false;
 }
 
 NivelEnVia.prototype = {

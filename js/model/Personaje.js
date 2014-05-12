@@ -1536,8 +1536,10 @@ Personaje.prototype = {
      *
      * @param {string} nombreVia
      * @param {number} nivel
+     * @param {boolean} esNivelMinimo
+     * @param {SubViaMagia} [subvia]
      */
-    addNivelVia : function (nombreVia, nivel, esNivelMinimo) {
+    addNivelVia : function (nombreVia, nivel, esNivelMinimo, subvia) {
         if (this.hasVia(nombreVia)) {
             this.viasMagia[nombreVia].addNivel(nivel, esNivelMinimo);
             if (this.viasMagia[nombreVia].getNivel() == 0) {
@@ -1545,7 +1547,11 @@ Personaje.prototype = {
             }
         } else {
             var via = getVia(nombreVia);
-            var nivelEnVia = new NivelEnVia(via,nivel);
+            var nivelEnVia;
+            if (subvia)
+                nivelEnVia = new NivelEnVia(via,nivel);
+            else
+                nivelEnVia = new NivelEnVia(via,nivel,subvia);
             if (esNivelMinimo) {
                 nivelEnVia.setNivelMinimo(nivel);
             }
