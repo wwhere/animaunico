@@ -1549,9 +1549,9 @@ Personaje.prototype = {
             var via = getVia(nombreVia);
             var nivelEnVia;
             if (subvia)
-                nivelEnVia = new NivelEnVia(via,nivel);
-            else
                 nivelEnVia = new NivelEnVia(via,nivel,subvia);
+            else
+                nivelEnVia = new NivelEnVia(via,nivel);
             if (esNivelMinimo) {
                 nivelEnVia.setNivelMinimo(nivel);
             }

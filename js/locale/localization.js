@@ -1109,3 +1109,5 @@ var INVOCACIONES_PODERES_INTERMEDIOS = (new L("INVOCACIONES_PODERES_INTERMEDIOS"
 var INVOCACIONES_GRANDES_POTENCIAS = (new L("INVOCACIONES_GRANDES_POTENCIAS","Grandes Potencias","Grandes Potencias")).getId();
 var INVOCACIONES_TRINIDAD_DE_LAS_BESTIAS = (new L("INVOCACIONES_TRINIDAD_DE_LAS_BESTIAS","La Trinidad de las Bestias","La Trinidad de las Bestias")).getId();
 var INVOCACIONES_BESTIAS_CARDINALES = (new L("INVOCACIONES_BESTIAS_CARDINALES","Las Bestias Cardinales","Las Bestias Cardinales")).getId();
+
+var ERR_SUBVIA_DESCONOCIDA = (new L("ERR_SUBVIA_DESCONOCIDA","Error: Subvía desconocida","Error: Unknown subpath")).getId();

@@ -57,7 +57,6 @@ var BOTONES_BARRA_CONTROLES = [
 function muestraControles() {
 
     $("#"+BOTON_ELAN).off("click",dialogoElan);
-    $("#"+BOTON_MAGIA).off("click",dialogoMagia);
     $("#"+BOTON_CV).off("click",dialogoCV);
     $("#"+BOTON_TABLAS_ARMAS).off("click",dialogoTablasArmas);
     $("#"+BOTON_ARMA_INICIAL).off("click",dialogoElegirArmaTodas);
@@ -76,7 +75,6 @@ function muestraControles() {
     $("#BOTON_IDIOMA_ESPAÑOL").on("click",cambiaIdiomaEspañol);
     $("#BOTON_IDIOMA_INGLES").on("click",cambiaIdiomaIngles);
     $("#"+BOTON_ELAN).on("click",dialogoElan);
-    $("#"+BOTON_MAGIA).on("click",dialogoMagia);
     $("#"+BOTON_CV).on("click",dialogoCV);
     $("#"+BOTON_TABLAS_ARMAS).on("click",dialogoTablasArmas);
     $("#"+BOTON_ARMA_INICIAL).on("click",dialogoElegirArmaTodas);
@@ -167,17 +165,14 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
     var liBonosNaturales;
     var liArmaInicial;
     var liTablaArmas;
-    var liCM;
     if (((activar==1)||(activar==3))) {
         liBonosNaturales = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_BONOS_NATURALES).append(_l(UI_BOTON_NATURALES)));
         liArmaInicial = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ARMA_INICIAL).append(_l(UI_BOTON_ARMA_INICIAL)));
         liTablaArmas = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_TABLAS_ARMAS).append(_l(UI_BOTON_TABLAS_ARMAS)));
-        liCM = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CM).append(_l(UI_BOTON_GASTAR_CM)));
     } else {
         liBonosNaturales = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_NATURALES));
         liArmaInicial = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_ARMA_INICIAL));
         liTablaArmas = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_TABLAS_ARMAS));
-        liCM = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_CM));
     }
 
     var liArtesMarciales;
@@ -188,13 +183,9 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
         liArtesMarciales = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_ARTES_MARCIALES).append(_l(UI_BOTON_ARTES_MARCIALES)));
     }
 
-    var liMagia, liCV, liElan, liFinCreacion;
+    var liCV, liElan, liFinCreacion;
 
-    if (!((activar==0) || (personaje_actual.nivelMagiaMaximo() == 0))) {
-        liMagia = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_MAGIA).append(_l(UI_BOTON_GASTAR_NIVELES_VIA)));
-    } else {
-        liMagia = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GASTAR_NIVELES_VIA));
-    }
+
 
     if (!((activar==0) || (personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() == 0)) ) {
         liCV = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CV).append(_l(UI_BOTON_GASTAR_CV)));
@@ -216,7 +207,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
         liFinCreacion = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_FINALIZAR_CREACION));
     }
 
-    menuCreacion.append(liBonosNaturales).append(liArmaInicial).append(liTablaArmas).append(liArtesMarciales).append(liCM).append(liMagia).append(liCV).append(liElan).append("<hr>").append(liEquipo).append("<hr>").append(liFinCreacion);
+    menuCreacion.append(liBonosNaturales).append(liArmaInicial).append(liTablaArmas).append(liArtesMarciales).append(liCV).append(liElan).append("<hr>").append(liEquipo).append("<hr>").append(liFinCreacion);
 
     muestraControles();
 }

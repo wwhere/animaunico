@@ -1187,15 +1187,18 @@ function muestraManejoArmas() {
 
 function muestraSobrenatural(estadoGeneracion) {
     var div = recuadroBase();
-    updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
+    updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT)); //FIXME no debería ir aquí
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
+
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
     div.append(muestraSubtitulo(UI_SOBRENATURALES, true));
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
     var muestraBotonesNivelVia = muestraBotones && FLAG_ARCANA_EXXET_ENABLED;
     divContenido.append(muestraHabilidadPrimaria(HB_NIVEL_DE_VIA,_l(UI_NIVELES_VIA),muestraBotonesNivelVia));
+    divContenido.append(muestraNivelesViaLibres());
+
     divContenido.append(muestraHabilidadPrimaria(HB_ZEON,_l(UI_ZEON),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_ACT,_l(UI_ACT),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_REGENERACION_ZEONICA,_l(HB_REGENERACION_ZEONICA),muestraBotones));
@@ -1247,36 +1250,62 @@ function muestraMagiaInnata() {
  * @returns {jQuery}
  */
 function muestraViasMagia(muestraBotones) {
-    var div = $("<div></div>");
+    var div = getDiv("");
     var i,j;
-    var divVias = $("<div></div>");
+    var divVias = getDiv("");
 
     var viasMagia = personaje_actual.getViasMagia();
 
     if (muestraBotones) {
-        var divBotonNuevo = getDiv("");
-        divBotonNuevo.append(muestraBotonPequeño(_l(UI_AUMENTAR_NIVELES_EN_VIAS),{},dialogoMagia,BOTON_MAGIA));
-        div.append(divBotonNuevo);
+        var botonViaDisabled = false;
+        if ((personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado() < 2) ||
+            (!personaje_actual.hasFlag(FLAG_DON)) ||
+            (personaje_actual.getViasMagia().length == VIAS_MAGICAS.length)) {
+            botonViaDisabled = true;
+        }
+        var divBotonNuevaVia = boton("small primary pretty btn",_l(UI_ACCESO_NUEVA_VIA),botonViaDisabled);
+        div.append(divBotonNuevaVia);
+        divBotonNuevaVia.on("click", accesoNuevaVia);
     } else if (viasMagia.length == 0) {
         div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
     for (i=0; i < viasMagia.length;i++) {
+        var nivelEnVia = viasMagia[i];
+        var via = nivelEnVia.getVia();
+        var coste = nivelEnVia.getNivel() * personaje_actual.getCosteVia(nivelEnVia.getVia().getNombre());
+        var subvia = nivelEnVia.hasSubVia();
+
         var divVia = getDiv(CSS_TEXTO_SMALL);
-        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(_l(viasMagia[i].getVia().getNombre()));
-        var divNivel = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(" ("+_l(UI_NV)+ viasMagia[i].getNivel() + ")");
-        divVia.append(divNombre).append(divNivel);
-        divVias.append(divVia);
-        var divListaConjuros = getDiv("row");
-        for (j=2; j <= viasMagia[i].getNivel(); j += 2) {
-            var conjuro = viasMagia[i].getConjuro(j);
+        var divNombre = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(_l(nivelEnVia.getVia().getNombre()));
+        if (subvia) {
+            divNombre.append(" [" + _l(subvia.getNombre()) + "]");
+        }
+        var divNivel = getDiv(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(" ("+_l(UI_NV)+ nivelEnVia.getNivel() + ")");
+        var divCoste = getDiv(CSS_COSTE).addClass(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_INLINE).append(" (" + coste + " " + _l(UI_NIVELES_VIA_GASTADOS) + ")");
+
+        divVias.append(divVia.
+            append(divNombre).
+            append(divNivel).
+            append(divCoste).
+            append(muestraBotonMasMenosNivelVia(nivelEnVia)).
+            append(muestraBotonAnular(eliminarAccesoViaMagia,{via: via, coste: coste}))
+        );
+
+        var divListaConjuros = getDiv("two_up tiles");
+        for (j=2; j <= nivelEnVia.getNivel(); j += 2) {
+            var conjuro = nivelEnVia.getConjuro(j);
             if(!conjuro) {
-                var botonDefinir = muestraBotonElegirConjuroLibreAcceso(viasMagia[i].getVia(),j).addClass(CSS_TEXTO_CENTRO).addClass("four columns");
-                divListaConjuros.append(botonDefinir);
+                var botonDefinir = muestraBotonElegirConjuroLibreAcceso(nivelEnVia.getVia(),j);
+                divListaConjuros.append($("<li></li>").append(botonDefinir));
             } else {
-                var divConjuro = getDiv(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_CENTRO).addClass("four columns");
+                var divConjuro = $("<li></li>").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES);
                 divConjuro.append(_l(conjuro.getNombre()) + " (" +conjuro.getNivel()+")" );
                 addToolTip(divConjuro,_l(UI_NIVEL) + ": "+conjuro.getNivel());
+                if (nivelEnVia.isNivelLibreAcceso(j)) {
+                    var botonCambiar = muestraBotonElegirConjuroLibreAcceso(nivelEnVia.getVia(),j);
+                    divConjuro.append(botonCambiar);
+                }
                 divListaConjuros.append(divConjuro);
             }
         }
@@ -1400,6 +1429,14 @@ function muestraCMLibres() {
     var div = getDiv("row");
     var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append(_l(UI_CM) + " " + _l(UI_LIBRE));
     var divValor = getDiv("one column").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append((personaje_actual.getCMTotal() - personaje_actual.getCMGastado()));
+    div.append(divEtiqueta).append(divValor);
+    return div;
+}
+
+function muestraNivelesViaLibres() {
+    var div = getDiv("row");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append(_l(UI_NIVELES_LIBRES_A_REPARTIR));
+    var divValor = getDiv("one column").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append((personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado()));
     div.append(divEtiqueta).append(divValor);
     return div;
 }
