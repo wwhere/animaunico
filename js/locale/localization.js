@@ -1021,8 +1021,8 @@ var UI_PERSIS_METODO_COPIA_DESC = (new L("UI_PERSIS_METODO_COPIA_DESC",
     "If the others don't work, you can copy the following text (full! don't leave a comma) to some local file text and save it manually. Yo don't need to name it .animaUnico for the application to load it later. If you want help, click the button for an easier copy job")).getId();
 var UI_PERSIS_METODO_COPIA_TEXTO = (new L("Copia","Copia","Copy")).getId();
 var UI_PERSIS_METODO_COPIA_GUIA = (new L("UI_PERSIS_METODO_COPIA_GUIA",
-    "Ahora copia al portapapeles pulsando Control+C (o Cmd+C) y luego pégalo donde quieras con Control+v (o Cmd+v)",
-    "Now copy to the clipboard pressing Control+C (or Cmd+C) and then paste it where you want with Control+v (or Cmd+v)")).getId()
+    "Ahora selecciona todo con Ctrl+A, copia al portapapeles pulsando Control+C (o Cmd+C) y luego pégalo donde quieras con Control+v (o Cmd+v)",
+    "Now select all with Ctrl+A, copy to the clipboard pressing Control+C (or Cmd+C) and then paste it where you want with Control+v (or Cmd+v)")).getId()
 
 var UI_PERSIS_METODO_COPIA_CARGA_DESC = (new L("UI_PERSIS_METODO_COPIA_CARGA_DESC",
     "Si lo anterior no te funciona, puedes copiar el texto que te descargaste y pegarlo en el siguiente cuadro de texto. Luego dale al botón cargar.",

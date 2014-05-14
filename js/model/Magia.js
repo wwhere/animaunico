@@ -205,6 +205,10 @@ SubViaMagia.prototype = {
     addConjuro : function(conjuro) {
         this.conjuros.push(conjuro);
         this["nivel"+conjuro.getNivel()] = conjuro;
+    },
+
+    toJSON : function() {
+        return this.nombre;
     }
 };
 

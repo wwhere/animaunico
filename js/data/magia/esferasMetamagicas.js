@@ -1,9 +1,4 @@
-var esferasMetamagicas = {};
-/**
- *
- * @type {ArcanaSephirah[]}
- */
-var arcanaSephirah = [];
+
 
 var ESFERA_INCREMENTO_DESTRUCTIVO = (new L("ESFERA_INCREMENTO_DESTRUCTIVO","Incremento Destructivo","Incremento Destructivo")).getId();
 var ESFERA_ESCUDOS_POTENCIADOS = (new L("ESFERA_ESCUDOS_POTENCIADOS","Escudos Potenciados","Escudos Potenciados")).getId();

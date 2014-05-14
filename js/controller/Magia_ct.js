@@ -12,6 +12,13 @@ var VIAS_MAGICAS = [VIA_LUZ,VIA_OSCURIDAD,VIA_CREACION,VIA_DESTRUCCION,VIA_FUEGO
 
 var subvias_set = [];
 
+var esferasMetamagicas = {};
+/**
+ *
+ * @type {ArcanaSephirah[]}
+ */
+var arcanaSephirah = [];
+
 /**
  *
  * @type {Invocacion[]}
@@ -666,4 +673,13 @@ function puedeComprarArcanaSephirah(arcanaSephirah,personaje) {
     }
 
     return false;
+}
+
+/**
+ *
+ * @param nombre
+ * @returns {EsferaMetamagica}
+ */
+function getEsferaMetamagica(nombre) {
+    return esferasMetamagicas[nombre];
 }
