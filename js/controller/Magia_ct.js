@@ -10,6 +10,14 @@ var vias_set = [];
  */
 var VIAS_MAGICAS = [VIA_LUZ,VIA_OSCURIDAD,VIA_CREACION,VIA_DESTRUCCION,VIA_FUEGO,VIA_AGUA,VIA_TIERRA,VIA_AIRE,VIA_ESENCIA,VIA_ILUSION,VIA_NIGROMANCIA];
 
+var subvias_set = [];
+
+var esferasMetamagicas = {};
+/**
+ *
+ * @type {ArcanaSephirah[]}
+ */
+var arcanaSephirah = [];
 
 /**
  *
@@ -278,7 +286,26 @@ function accesoNuevaVia() {
         arrayViasMagia.push(new OpcionMostrable(_l(nombreVia),nombreVia,""));
     }
 
-    muestraDialogoElegirOpciones(arrayViasMagia, {}, {principal: aplicarAccesoVia, isDisabled: accesoViaDisabled}, true);
+    muestraDialogoElegirOpciones(arrayViasMagia, {}, {principal: elegirSubVia, isDisabled: accesoViaDisabled}, true);
+}
+
+function elegirSubVia(parametros) {
+    var nombreVia = parametros.opcion;
+
+    var arraySubvias = [];
+    var i;
+
+    for (i=0;i<subvias_set.length;i++) {
+        /**
+         *
+         * @type {SubViaMagia}
+         */
+        var subVia = subvias_set[i];
+        arraySubvias.push(new OpcionMostrable(_l(subVia.getNombre()),subVia.getNombre(),""));
+    }
+    arraySubvias.push(new OpcionMostrable(_l(UI_NO),"",""));
+
+    muestraDialogoElegirOpciones(arraySubvias, {nombreVia: nombreVia}, {principal: aplicarAccesoVia, isDisabled: accesoSubViaDisabled}, true);
 }
 
 /**
@@ -286,9 +313,13 @@ function accesoNuevaVia() {
  * @param {{opcion:string}} parametros
  */
 function aplicarAccesoVia(parametros) {
-    var nombreVia = parametros.opcion;
-
-    personaje_actual.addNivelVia(nombreVia, 2, false);
+    var nombreVia = parametros.nombreVia;
+    var nombreSubVia = parametros.opcion;
+    if (nombreSubVia != "") {
+        personaje_actual.addNivelVia(nombreVia, 2, false,getSubVia(nombreSubVia));
+    } else {
+        personaje_actual.addNivelVia(nombreVia, 2, false);
+    }
     personaje_actual.addNivelMagiaGastado(2 * personaje_actual.getCosteVia(nombreVia));
 }
 
@@ -305,6 +336,35 @@ function accesoViaDisabled(parametros) {
     }
 
     return personaje_actual.nivelMagiaMaximo() - personaje_actual.getNivelMagiaGastado() < 2 * personaje_actual.getCosteVia(nombreVia);
+}
+
+function getSubVia(nombre) {
+    for (var i = 0; i < subvias_set.length;i++) {
+        if (subvias_set[i].getNombre() == nombre)
+            return subvias_set[i];
+    }
+    throw ERR_SUBVIA_DESCONOCIDA + ": " + nombre;
+}
+
+/**
+ *
+ * @param {{opcion:string,nombreVia:string}} parametros
+ * @returns {boolean}
+ */
+function accesoSubViaDisabled(parametros) {
+    var nombreVia = parametros.nombreVia;
+    var nombreSubVia = parametros.opcion;
+
+    if (nombreSubVia != "") {
+        /**
+         *
+         * @type {SubViaMagia}
+         */
+        var subVia = getSubVia(nombreSubVia);
+
+        return subVia.hasViaCerrada(nombreVia);
+    }
+    return false;
 }
 
 /**
@@ -613,4 +673,13 @@ function puedeComprarArcanaSephirah(arcanaSephirah,personaje) {
     }
 
     return false;
+}
+
+/**
+ *
+ * @param nombre
+ * @returns {EsferaMetamagica}
+ */
+function getEsferaMetamagica(nombre) {
+    return esferasMetamagicas[nombre];
 }

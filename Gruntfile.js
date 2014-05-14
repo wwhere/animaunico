@@ -64,6 +64,7 @@ module.exports = function(grunt) {
                     "js/data/magia/ViaNigromancia.js",
                     "js/data/magia/ViaOscuridad.js",
                     "js/data/magia/ViaTierra.js",
+                    "js/data/magia/SubVias.js",
 
                     "js/model/Invocacion.js",
                     "js/data/magia/invocaciones.js",

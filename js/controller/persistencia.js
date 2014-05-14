@@ -94,7 +94,26 @@ function muestraDialogoGuardarPersonaje() {
 }
 
 function copiaAlPortapapeles(event) {
-    window.prompt(_l(UI_PERSIS_METODO_COPIA_GUIA), event.data.texto);
+    //window.prompt(_l(UI_PERSIS_METODO_COPIA_GUIA), event.data.texto);
+    var dialogo = getDiv("");
+    dialogo.append(getDiv(CSS_MUESTRA_BLOCK).append(_l(UI_PERSIS_METODO_COPIA_GUIA)));
+    dialogo.append($("<textarea></textarea>").attr("style","width: 100%;height: 10em;").append(event.data.texto));
+    dialogo.dialog({
+        modal: true,
+        autoOpen: true,
+        draggable: true,
+        resizable: true,
+        ////show: "puff",
+        title: _l(UI_BOTON_GUARDAR),
+        position: "center",
+        closeOnEscape: true,
+        width: ANCHO_DIALOGO,
+        height: ALTO_DIALOGO,
+        maxHeight: ALTO_DIALOGO,
+        close: function(event, ui) {dialogo.empty();}
+    });
+
+
 }
 
 function descarga() {
@@ -351,6 +370,9 @@ function parseNivelEnVia(nivelEnVia,texto) {
                     nivelEnVia.conjurosLibres = [];
                 }
                 nivelEnVia.conjurosLibres.push(nivelEnVia[k]);
+                break;
+            case 'subvia':
+                nivelEnVia[k] = getSubVia(v);
                 break;
             default:
                 nivelEnVia[k] = v;
@@ -889,6 +911,7 @@ function parseTecnicaKi(elemento,texto) {
                 break;
             case 'costeKi':
             case 'costeMantenimiento':
+            case 'costeCombinable':
                 if (v == false) {
                     elemento[k] = false;
                 } else {
@@ -933,6 +956,8 @@ function parseEfectoTecnicaElegido(elemento, texto) {
                 break;
             case 'costeKi':
             case 'costeMantenimiento':
+            case 'costeSostenimientoMenor':
+            case 'costeSostenimientoMayor':
                 elemento[k] = new CosteKi(0,0,0,0,0,0,AGI);
                 parseStandard(elemento[k],v);
                 break;
@@ -1058,6 +1083,35 @@ function parseArrayInvocaciones(v) {
     }
 
     return array;
+}
+
+/**
+ *
+ * @param {string} v
+ * @returns {Invocacion[]}
+ */
+function parseArrayEsferasMetamagicasCompradas(v) {
+    var array = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var elemento = new EsferaMetamagicaComprada("",0);
+        parseEsferaMetamagicaComprada(elemento,v[i]);
+        array.push(elemento);
+    }
+
+    return array;
+}
+
+function parseEsferaMetamagicaComprada(elemento, texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'esferaMetamagica':
+                elemento[k] = getEsferaMetamagica(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
 }
 
 /**
@@ -1274,6 +1328,9 @@ function cargarPersonaje(cadena) {
                 break;
             case 'invocaciones':
                 personaje_actual[k] = parseArrayInvocaciones(v);
+                break;
+            case 'esferasMetamagicas':
+                personaje_actual[k] = parseArrayEsferasMetamagicasCompradas(v);
                 break;
             case 'poderesPsiquicosDominados':
                 personaje_actual[k] = parseArrayPoderPsiquicoDominado(v);

@@ -290,7 +290,18 @@ HabilidadDePersonaje.prototype = {
      * @param {string} valor
      */
     setValorInicial : function(valor) {
-        this.valorInicial = valor;
+        if ((this.getNombre() == HB_ACT) ||(this.getNombre() == HB_REGENERACION_ZEONICA)) {
+            var valorPrevio = this.valorInicial;
+            this.valorInicial = valor;
+            if (valorPrevio != 0)
+                this.valorPrevio = (this.valorPrevio/valorPrevio) * valor;
+        } else {
+            this.valorInicial = valor;
+        }
+    },
+
+    getValorPDActuales : function(coste) {
+        return Math.floor(this.PDinvertidos / coste);
     },
 
     /**
@@ -304,9 +315,9 @@ HabilidadDePersonaje.prototype = {
             potencial += personaje_actual.getHabilidadDePersonaje(HB_POTENCIAL_PSIQUICO).bono;
             return potencial;
         } else if (this.habilidad.getNombre() == HB_ACT) {
-            return this.valorInicial * (1 + this.valorPrevio + Math.floor(this.PDinvertidos / coste));
+            return this.valorInicial * (1 + this.valorPrevio + this.getValorPDActuales(coste));
         } else if (this.habilidad.getNombre() == HB_REGENERACION_ZEONICA) {
-            return this.valorInicial * (this.valorPrevio + Math.floor(this.PDinvertidos / coste));
+            return this.valorInicial * (this.valorPrevio + this.getValorPDActuales(coste));
         }
 
 
@@ -325,7 +336,7 @@ HabilidadDePersonaje.prototype = {
                 return this.valorInicial;
             }
         } else {
-            return this.valorInicial + this.valorPrevio + ( Math.floor(this.PDinvertidos / coste) * this.getHabilidad().getPuntosPorCoste());
+            return this.valorInicial + this.valorPrevio + ( this.getValorPDActuales(coste) * this.getHabilidad().getPuntosPorCoste());
         }
     },
 
@@ -400,6 +411,9 @@ HabilidadDePersonaje.prototype = {
         this.valorPrevio = this.valorBase(personaje_actual.getCoste(this.habilidad.getNombre(), this.habilidad.isPrincipal()));
         if (this.valorPrevio == -30) {
             this.valorPrevio = 0;
+        }
+        if ((this.getNombre() == HB_ACT) || (this.getNombre() == HB_REGENERACION_ZEONICA)) {
+            this.valorPrevio = this.getValorPDActuales(personaje_actual.getCoste(this.habilidad.getNombre(), this.habilidad.isPrincipal()));
         }
         this.PDinvertidosPrevios += this.PDinvertidos;
         this.PDinvertidos = 0;

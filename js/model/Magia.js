@@ -138,6 +138,80 @@ ViaMagia.prototype = {
     }
 };
 
+function SubViaMagia(nombre, viasCerradas) {
+    /** @type string */
+    this.nombre = nombre;
+
+    /** @type string[] */
+    this.viasCerradas = viasCerradas;
+
+    /** @type Conjuro[] */
+    this.conjuros = [];
+}
+
+SubViaMagia.prototype = {
+    constructor: SubViaMagia,
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.nombre;
+    },
+
+    /**
+     *
+     * @returns {string[]}
+     */
+    getViasCerradas : function() {
+        return this.viasCerradas;
+    },
+
+    /**
+     *
+     * @param via
+     * @returns {boolean}
+     */
+    hasViaCerrada : function(via) {
+        for (var i = 0; i < this.viasCerradas.length;i++) {
+            if (this.viasCerradas[i] == via)
+                return true;
+        }
+        return false;
+    },
+
+    /**
+     *
+     * @returns {Conjuro[]}
+     */
+    getConjuros : function() {
+        return this.conjuros;
+    },
+
+    /**
+     *
+     * @param nivel
+     * @returns {Conjuro}
+     */
+    getConjuro : function(nivel) {
+        return this["nivel"+nivel];
+    },
+
+    /**
+     *
+     * @param conjuro
+     */
+    addConjuro : function(conjuro) {
+        this.conjuros.push(conjuro);
+        this["nivel"+conjuro.getNivel()] = conjuro;
+    },
+
+    toJSON : function() {
+        return this.nombre;
+    }
+};
+
 /**
  *
  * @class Conjuro
@@ -321,8 +395,9 @@ Conjuro.prototype = {
  * @param {ViaMagia} via
  * @param {number} nivel
  * @constructor
+ * @param {SubViaMagia} [subvia]
  */
-function NivelEnVia(via,nivel) {
+function NivelEnVia(via,nivel, subvia) {
     /** @type ViaMagia */
     this.via = via;
 
@@ -337,6 +412,19 @@ function NivelEnVia(via,nivel) {
 
     /** @type boolean */
     this.anulable = true;
+
+    if (subvia)
+        /**
+         *
+         * @type {SubViaMagia}
+         */
+        this.subvia = subvia;
+    else
+        /**
+         *
+         * @type {boolean}
+         */
+        this.subvia = false;
 }
 
 NivelEnVia.prototype = {
@@ -352,6 +440,28 @@ NivelEnVia.prototype = {
      */
     getVia : function() {
         return this.via;
+    },
+
+    /**
+     *
+     * @returns {SubViaMagia|boolean}
+     */
+    hasSubVia : function() {
+        return this.subvia;
+    },
+
+    /**
+     *
+     * @param {number} nivel
+     * @returns {boolean}
+     */
+    isNivelLibreAcceso : function(nivel) {
+        if (this.subvia) {
+            if (this.subvia.getConjuro(nivel)) {
+                return false;
+            }
+        }
+        return this.via.isNivelLibreAcceso(nivel);
     },
 
     /**
@@ -417,7 +527,14 @@ NivelEnVia.prototype = {
     getConjuro : function(nivel) {
         var conjuro;
         if (this.via.isNivelLibreAcceso(nivel)) {
-            conjuro = this.getConjuroLibre(nivel);
+            if (this.hasSubVia()) {
+                conjuro = this.subvia.getConjuro(nivel);
+                if (!conjuro) {
+                    conjuro = this.getConjuroLibre(nivel);
+                }
+            } else {
+                conjuro = this.getConjuroLibre(nivel);
+            }
         } else {
             conjuro = this.via.getConjuro(nivel);
         }
