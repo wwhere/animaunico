@@ -409,7 +409,7 @@ HabilidadDePersonaje.prototype = {
 
     subirNivel : function() {
         this.valorPrevio = this.valorBase(personaje_actual.getCoste(this.habilidad.getNombre(), this.habilidad.isPrincipal()));
-        if (this.valorPrevio == -30) {
+        if ((this.valorPrevio == VALOR_INICIAL_SIN_RANGOS) || (this.valorPrevio == HABILIDAD_NO_USABLE)) {
             this.valorPrevio = 0;
         }
         if ((this.getNombre() == HB_ACT) || (this.getNombre() == HB_REGENERACION_ZEONICA)) {
