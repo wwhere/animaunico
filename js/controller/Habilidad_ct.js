@@ -53,7 +53,7 @@ var habilidades_vigor_set = [HB_FRIALDAD,HB_PROEZAS_FUERZA,HB_RESISTENCIA_DOLOR]
  *
  * @type {string[]}
  */
-var habilidades_creativas_set = [HB_ALQUIMIA,HB_ANIMISMO,HB_ARTE,HB_BAILE,HB_FORJA,HB_MUSICA,HB_RUNAS,HB_TRUCOS_MANOS];
+var habilidades_creativas_set = [HB_ALQUIMIA,HB_ANIMISMO,HB_ARTE,HB_BAILE,HB_CALIGRAFIA_RITUAL,HB_FORJA,HB_MUSICA,HB_RUNAS,HB_TRUCOS_MANOS];
 
 /**
  *
@@ -284,6 +284,7 @@ function initHabilidadesSecundariasCreativas() {
     addHabilidad(new Habilidad(HB_ANIMISMO, TIPO_HB_CREATIVAS, false, POD, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_ARTE, TIPO_HB_CREATIVAS, false, POD, false, PEN_ARMADURA_NO, [LISTA_ARTES], 5, 1));
     addHabilidad(new Habilidad(HB_BAILE, TIPO_HB_CREATIVAS, false, AGI, true, PEN_ARMADURA_SI, [LISTA_BAILES], 5, 1));
+    addHabilidad(new Habilidad(HB_CALIGRAFIA_RITUAL, TIPO_HB_CREATIVAS, false, DES, false, PEN_ARMADURA_NO, [], 5, 1));
     addHabilidad(new Habilidad(HB_FORJA, TIPO_HB_CREATIVAS, false, DES, true, PEN_ARMADURA_NO, [LISTA_FORJA], 5, 1));
     addHabilidad(new Habilidad(HB_MUSICA, TIPO_HB_CREATIVAS, false, POD, true, PEN_ARMADURA_NO, [LISTA_INSTRUMENTOS_MUSICALES], 5, 1));
     addHabilidad(new Habilidad(HB_RUNAS, TIPO_HB_CREATIVAS, false, DES, true, PEN_ARMADURA_NO, [], 5, 1));

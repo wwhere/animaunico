@@ -840,6 +840,7 @@ var HB_ALQUIMIA = (new L("Alquimia","Alquimia","Alchemy")).getId();
 var HB_ANIMISMO = (new L("Animismo","Animismo","Animism")).getId();
 var HB_ARTE = (new L("Arte","Arte","Art")).getId();
 var HB_BAILE = (new L("Baile","Baile","Dance")).getId();
+var HB_CALIGRAFIA_RITUAL = (new L("Caligrafía Ritual","Caligrafía Ritual","Ritual Caligraphy")).getId();
 var HB_FORJA = (new L("Forja","Forja","Forging")).getId();
 var HB_MUSICA = (new L("Música","Música","Music")).getId();
 var HB_RUNAS = (new L("Runas","Runas","Runes")).getId();
@@ -1111,3 +1112,5 @@ var INVOCACIONES_TRINIDAD_DE_LAS_BESTIAS = (new L("INVOCACIONES_TRINIDAD_DE_LAS_
 var INVOCACIONES_BESTIAS_CARDINALES = (new L("INVOCACIONES_BESTIAS_CARDINALES","Las Bestias Cardinales","Las Bestias Cardinales")).getId();
 
 var ERR_SUBVIA_DESCONOCIDA = (new L("ERR_SUBVIA_DESCONOCIDA","Error: Subvía desconocida","Error: Unknown subpath")).getId();
+
+var UI_TEOREMA_MAGICO =  (new L("UI_TEOREMA_MAGICO","Teorema Mágico","Magic Theorem")).getId();

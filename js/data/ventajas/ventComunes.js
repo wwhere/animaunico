@@ -4,9 +4,11 @@ addVentaja(ventajaTemp);
 ventajaTemp = new Ventaja(VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA, "", VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA_DESC, NO_REPETIBLE, [2], [ new ElementoProhibido(VENTAJA,VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA) ], true, [], [accesoPsiquicoCompleto], GRUPO_PSIQUICAS );
 ventajaTemp.isBasica = true;
 addVentaja(ventajaTemp);
+
 ventajaTemp = new Ventaja(VENT_DON, "", VENT_DON_DESC, NO_REPETIBLE, [2], [], true, [], [don], GRUPO_DON );
 ventajaTemp.isBasica = true;
 addVentaja(ventajaTemp);
+
 ventajaTemp = new Ventaja(VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES, "", VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES_DESC, REPETIBLE_OPCIONES, [1,2,3], [], true, [LISTA_PODER_PSIQUICO], [], GRUPO_PSIQUICAS );
 ventajaTemp.isBasica = true;
 addVentaja(ventajaTemp);
