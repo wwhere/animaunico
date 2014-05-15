@@ -804,6 +804,7 @@ function don(coste, opcion,aplicar) {
     verLoSobrenatural(coste,opcion,aplicar);
     if (aplicar) {
         personaje_actual.setFlag(FLAG_DON);
+        seleccionarTeoremaMagico();
     } else {
         personaje_actual.removeFlag(FLAG_DON);
     }
@@ -819,6 +820,7 @@ function don(coste, opcion,aplicar) {
 function donIncompleto(coste, opcion,aplicar) {
     if (aplicar) {
         personaje_actual.setFlag(FLAG_DON);
+        seleccionarTeoremaMagico();
     } else {
         personaje_actual.removeFlag(FLAG_DON);
     }

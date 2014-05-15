@@ -335,6 +335,10 @@ function accesoViaDisabled(parametros) {
         return true;
     }
 
+    if ((nombreVia == VIA_NIGROMANCIA) && (personaje_actual.teoremaMagico == TEOREMA_MAGIA_SHAMANICA)) {
+        return true;
+    }
+
     return personaje_actual.nivelMagiaMaximo() - personaje_actual.getNivelMagiaGastado() < 2 * personaje_actual.getCosteVia(nombreVia);
 }
 

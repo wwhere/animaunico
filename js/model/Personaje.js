@@ -185,6 +185,18 @@ function Personaje(nivelInicial) {
      * @type {Invocacion[]}
      */
     this.invocaciones = [];
+
+    /**
+     *
+     * @type {string}
+     */
+    this.teoremaMagico = TEOREMA_MAGIA_GENERAL;
+
+    /**
+     *
+     * @type {string}
+     */
+    this.especialidadMagiaNatural = MAGIA_NATURAL_ESP_NINGUNA;
     //endregion Magia
 
     //region Bonos y Costes Reducidos
@@ -1877,6 +1889,30 @@ Personaje.prototype = {
         }
     },
 
+    /**
+     *
+     * @param {string} teorema
+     * @param {string} [especializacionMagiaNatural]
+     */
+    setTeoremaMagico : function(teorema, especializacionMagiaNatural) {
+        this.teoremaMagico = teorema;
+        if (teorema == TEOREMA_MAGIA_MAGIA_NATURAL) {
+            this.especialidadMagiaNatural = especializacionMagiaNatural;
+        }
+        lanzarEvento(EVENT_CHARACTER_SECCION_MAGIA);
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getTeoremaMagicoToString : function() {
+        if (this.teoremaMagico == TEOREMA_MAGIA_MAGIA_NATURAL) {
+            return _l(this.teoremaMagico) + " (" + _l(this.especialidadMagiaNatural) + ")";
+        } else {
+            return _l(this.teoremaMagico);
+        }
+    },
 //endregion Magia
 
 //region Bonos y Costes Reducidos

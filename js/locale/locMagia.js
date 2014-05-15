@@ -1191,6 +1191,23 @@ var CONJURO_VACIO_PROTECCION_CONTRA_EL_VACIO = (new L("CONJURO_VACIO_PROTECCION_
 var CONJURO_VACIO_IMPLOSION = (new L("CONJURO_VACIO_IMPLOSION","Implosión","Implosión")).getId();
 var CONJURO_VACIO_PUERTA_A_NINGUNA_PARTE = (new L("CONJURO_VACIO_PUERTA_A_NINGUNA_PARTE","Puerta a Ninguna Parte","Puerta a Ninguna Parte")).getId();
 
+var TEOREMA_MAGIA_GENERAL = (new L("TEOREMA_MAGIA_GENERAL","Estándar","Standard")).getId();
+var TEOREMA_MAGIA_ONMYODO = (new L("TEOREMA_MAGIA_ONMYODO","Onmyodo","Onmyodo")).getId();
+var TEOREMA_MAGIA_VODOUN = (new L("TEOREMA_MAGIA_VODOUN","Vodoun","Vodoun")).getId();
+var TEOREMA_MAGIA_SHAMANICA = (new L("TEOREMA_MAGIA_SHAMANICA","Shamanica","Shamanic")).getId();
+var TEOREMA_MAGIA_MAGIA_NATURAL = (new L("TEOREMA_MAGIA_MAGIA_NATURAL","Magia Natural","Natural Magic")).getId();
+
+var MAGIA_NATURAL_ESP_NINGUNA = (new L("MAGIA_NATURAL_ESP_NINGUNA","No","No")).getId();
+var MAGIA_NATURAL_ESP_CREADOR = (new L("MAGIA_NATURAL_ESP_CREADOR","Creador","Creator")).getId();
+var MAGIA_NATURAL_ESP_DESTRUCTOR = (new L("MAGIA_NATURAL_ESP_DESTRUCTOR","Destructor","Destructor")).getId();
+var MAGIA_NATURAL_ESP_TRANSMUTADOR = (new L("MAGIA_NATURAL_ESP_TRANSMUTADOR","Transmutador","Transmuter")).getId();
+var MAGIA_NATURAL_ESP_CONTROLADOR = (new L("MAGIA_NATURAL_ESP_CONTROLADOR","Controlador","Controller")).getId();
+var MAGIA_NATURAL_ESP_ANIMISTA = (new L("MAGIA_NATURAL_ESP_ANIMISTA","Animista","Animist")).getId();
+var MAGIA_NATURAL_ESP_SANADOR = (new L("MAGIA_NATURAL_ESP_SANADOR","Sanador","Healer")).getId();
+var MAGIA_NATURAL_ESP_ELEMENTALISTA = (new L("MAGIA_NATURAL_ESP_ELEMENTALISTA","Elementalista","Elementalist")).getId();
+var MAGIA_NATURAL_ESP_ILUSIONISTA = (new L("MAGIA_NATURAL_ESP_ILUSIONISTA","Ilusionista","Illusionist")).getId();
+
+
 
 
 

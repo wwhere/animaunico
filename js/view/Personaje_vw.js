@@ -1199,6 +1199,8 @@ function muestraSobrenatural(estadoGeneracion) {
     divContenido.append(muestraHabilidadPrimaria(HB_NIVEL_DE_VIA,_l(UI_NIVELES_VIA),muestraBotonesNivelVia));
     divContenido.append(muestraNivelesViaLibres());
 
+    divContenido.append(muestraTeoremaMagico());
+
     divContenido.append(muestraHabilidadPrimaria(HB_ZEON,_l(UI_ZEON),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_ACT,_l(UI_ACT),muestraBotones));
     divContenido.append(muestraHabilidadPrimaria(HB_REGENERACION_ZEONICA,_l(HB_REGENERACION_ZEONICA),muestraBotones));
@@ -1260,7 +1262,8 @@ function muestraViasMagia(muestraBotones) {
         var botonViaDisabled = false;
         if ((personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado() < 2) ||
             (!personaje_actual.hasFlag(FLAG_DON)) ||
-            (personaje_actual.getViasMagia().length == VIAS_MAGICAS.length)) {
+            (personaje_actual.getViasMagia().length == VIAS_MAGICAS.length) ||
+            (personaje_actual.teoremaMagico == TEOREMA_MAGIA_MAGIA_NATURAL)) {
             botonViaDisabled = true;
         }
         var divBotonNuevaVia = boton("small primary pretty btn",_l(UI_ACCESO_NUEVA_VIA),botonViaDisabled);
@@ -1328,7 +1331,15 @@ function muestraConjurosSueltos(muestraBotones) {
 
     var conjuros = personaje_actual.getConjurosSueltos();
 
-    if (muestraBotones) {
+
+    var botonDisabled = !muestraBotones;
+    if ((personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado() < 2) ||
+        (!personaje_actual.hasFlag(FLAG_DON)) ||
+        (personaje_actual.teoremaMagico == TEOREMA_MAGIA_MAGIA_NATURAL)) {
+        botonDisabled = true;
+    }
+
+    if (!botonDisabled) {
         div.append(muestraBotonElegirConjuroSuelto());
     } else if (conjuros.length == 0) {
         div.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
@@ -1437,6 +1448,14 @@ function muestraNivelesViaLibres() {
     var div = getDiv("row");
     var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append(_l(UI_NIVELES_LIBRES_A_REPARTIR));
     var divValor = getDiv("one column").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append((personaje_actual.nivelMagiaMaximo()-personaje_actual.getNivelMagiaGastado()));
+    div.append(divEtiqueta).append(divValor);
+    return div;
+}
+
+function muestraTeoremaMagico() {
+    var div = getDiv("row");
+    var divEtiqueta = getDiv("four columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_ETIQUETA).append(_l(UI_TEOREMA_MAGICO));
+    var divValor = getDiv("seven columns").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append(personaje_actual.getTeoremaMagicoToString());
     div.append(divEtiqueta).append(divValor);
     return div;
 }

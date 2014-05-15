@@ -492,3 +492,41 @@ function muestraDialogoArcanaSephirah() {
 
     addActualizador(EVENT_CHARACTER_SECCION_MAGIA,actualizarDialogoArcanaSephirah);
 }
+
+function seleccionarTeoremaMagico() {
+    var arrayOpciones = [];
+
+    arrayOpciones.push(new OpcionMostrable(_l(TEOREMA_MAGIA_GENERAL),TEOREMA_MAGIA_GENERAL,""));
+    arrayOpciones.push(new OpcionMostrable(_l(TEOREMA_MAGIA_ONMYODO),TEOREMA_MAGIA_ONMYODO,""));
+    arrayOpciones.push(new OpcionMostrable(_l(TEOREMA_MAGIA_VODOUN),TEOREMA_MAGIA_VODOUN,""));
+    arrayOpciones.push(new OpcionMostrable(_l(TEOREMA_MAGIA_SHAMANICA),TEOREMA_MAGIA_SHAMANICA,""));
+    arrayOpciones.push(new OpcionMostrable(_l(TEOREMA_MAGIA_MAGIA_NATURAL),TEOREMA_MAGIA_MAGIA_NATURAL,""));
+
+    muestraDialogoElegirOpciones(arrayOpciones, {}, {principal: elegidoTeoremaMagico, isDisabled: alwaysEnabled}, true);
+}
+
+function elegidoTeoremaMagico(parametros) {
+    var teorema = parametros.opcion;
+
+    if (teorema == TEOREMA_MAGIA_MAGIA_NATURAL) {
+        var arrayOpciones = [];
+
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_NINGUNA),MAGIA_NATURAL_ESP_NINGUNA,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_CREADOR),MAGIA_NATURAL_ESP_CREADOR,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_DESTRUCTOR),MAGIA_NATURAL_ESP_DESTRUCTOR,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_TRANSMUTADOR),MAGIA_NATURAL_ESP_TRANSMUTADOR,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_CONTROLADOR),MAGIA_NATURAL_ESP_CONTROLADOR,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_ANIMISTA),MAGIA_NATURAL_ESP_ANIMISTA,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_SANADOR),MAGIA_NATURAL_ESP_SANADOR,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_ELEMENTALISTA),MAGIA_NATURAL_ESP_ELEMENTALISTA,""));
+        arrayOpciones.push(new OpcionMostrable(_l(MAGIA_NATURAL_ESP_ILUSIONISTA),MAGIA_NATURAL_ESP_ILUSIONISTA,""));
+
+        muestraDialogoElegirOpciones(arrayOpciones, {teorema:teorema}, {principal: elegidaEspecializacionMagiaNatural, isDisabled: alwaysEnabled}, true);
+    } else {
+        personaje_actual.setTeoremaMagico(teorema);
+    }
+}
+
+function elegidaEspecializacionMagiaNatural(parametros) {
+    personaje_actual.setTeoremaMagico(parametros.teorema,parametros.opcion);
+}
