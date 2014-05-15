@@ -83,6 +83,7 @@ module.exports = function(grunt) {
                     "js/data/psiquica/Telemetria.js",
                     "js/data/psiquica/Telepatia.js",
                     "js/data/psiquica/Telequinesis.js",
+                    "js/data/psiquica/patronesMentales.js",
 
                     "js/model/HabilidadKi.js",
                     "js/model/Ki.js",

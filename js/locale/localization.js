@@ -1114,3 +1114,7 @@ var INVOCACIONES_BESTIAS_CARDINALES = (new L("INVOCACIONES_BESTIAS_CARDINALES","
 var ERR_SUBVIA_DESCONOCIDA = (new L("ERR_SUBVIA_DESCONOCIDA","Error: Subvía desconocida","Error: Unknown subpath")).getId();
 
 var UI_TEOREMA_MAGICO =  (new L("UI_TEOREMA_MAGICO","Teorema Mágico","Magic Theorem")).getId();
+var UI_PATRONES_MENTALES = (new L("UI_PATRONES_MENTALES","Patrones Mentales","Mental Patterns")).getId();
+var UI_BOTON_COMPRAR_PATRON = (new L("UI_BOTON_COMPRAR_PATRON","Comprar Patrón Mental","Buy Mental Pattern")).getId();
+var UI_CANCELADO = (new L("UI_CANCELADO","Cancelado","Cancelled")).getId();
+var UI_CANCELAR = (new L("UI_CANCELAR","Cancelar","Cancel")).getId();

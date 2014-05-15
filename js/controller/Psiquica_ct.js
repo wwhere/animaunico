@@ -1,8 +1,16 @@
+var PATRON_MENTAL = "PATRON_MENTAL";
+var PATRON_MENTAL_CANCELADO = "PATRON_MENTAL_CANCELADO";
 /**
  *
  * @type {DisciplinaPsiquica[]}
  */
 var disciplinasPsiquicas_set = [];
+
+/**
+ *
+ * @type {PatronMental[]}
+ */
+var patronesMentales_set = [];
 
 /**
  *
@@ -286,4 +294,25 @@ function getPotencialPsiquicoPorVoluntad(voluntad)  {
     } else {
         return 100 + ((voluntad-14)*20);
     }
+}
+
+function patronMentalLocura(aplicar) {
+    //TODO salud mental a 0
+}
+
+function patronMentalPsicopatia(aplicar) {
+    var bono = new Bono(BONO_HABILIDAD,HB_FRIALDAD,40,"",false,BONO_ESPECIAL,PATRON_MENTAL_PSICOPATIA);
+    if (aplicar) {
+        personaje_actual.addBono(bono,false,true);
+    } else {
+        personaje_actual.removeBono(bono,true);
+    }
+}
+
+function getPatronMental(nombre) {
+    for (var i = 0; i < patronesMentales_set.length;i++) {
+        if (patronesMentales_set[i].getNombre() == nombre)
+            return patronesMentales_set[i];
+    }
+    throw _l(ERR_PATRON_MENTAL_DESCONOCIDO) + ": " + nombre;
 }

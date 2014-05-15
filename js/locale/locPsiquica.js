@@ -542,3 +542,14 @@ var PSI_PODER_CONTROL_TERRENO = (new L("PSI_PODER_CONTROL_TERRENO","Control del 
     "Ground Control")).getId();
 var PSI_PODER_RESTRUCTURACION_ATOMICA = (new L("PSI_PODER_RESTRUCTURACION_ATOMICA","Reestructuración atómica",
     "Atomic Restructuring")).getId();
+
+
+var PATRON_MENTAL_INTROVERSION = (new L("PATRON_MENTAL_INTROVERSION","Introversión","Introversion")).getId();
+var PATRON_MENTAL_EXTROVERSION = (new L("PATRON_MENTAL_EXTROVERSION","Extroversión","Extroversion")).getId();
+var PATRON_MENTAL_LOCURA = (new L("PATRON_MENTAL_LOCURA","Locura","Madness")).getId();
+var PATRON_MENTAL_PSICOPATIA  = (new L("PATRON_MENTAL_PSICOPATIA","Psicopatía","Psychopathy")).getId();
+var PATRON_MENTAL_COMPASION = (new L("PATRON_MENTAL_COMPASION","Compasión","Sympathy")).getId();
+var PATRON_MENTAL_COBARDIA= (new L("PATRON_MENTAL_COBARDIA","Cobardía","Cowardice")).getId();
+var PATRON_MENTAL_VALENTIA= (new L("PATRON_MENTAL_VALENTIA","Valentía","Bravery")).getId();
+
+var ERR_PATRON_MENTAL_DESCONOCIDO = (new L("ERR_PATRON_MENTAL_DESCONOCIDO", "Error: Patrón mental desconocido", "Error: Mental Pattern Unknown")).getId();
