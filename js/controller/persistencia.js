@@ -1202,6 +1202,30 @@ function parseArrayPoderPsiquicoDominado(v) {
     return array;
 }
 
+function parseArrayPatronesMentalesComprados(v) {
+    var array = [];
+
+    for (var i = 0; i < v.length;i++) {
+        var elemento = new PatronMentalComprado("",0);
+        parsePatronMentalComprado(elemento,v[i]);
+        array.push(elemento);
+    }
+
+    return array;
+}
+
+function parsePatronMentalComprado(elemento, texto) {
+    parseObject(texto,function(k,v) {
+        switch (k) {
+            case 'patronMental':
+                elemento[k] = getPatronMental(v);
+                break;
+            default:
+                elemento[k] = v;
+        }
+    });
+}
+
 function parsePoderPsiquicoDominado(elemento, texto) {
     parseObject(texto,function(k,v) {
         switch (k) {
@@ -1334,6 +1358,9 @@ function cargarPersonaje(cadena) {
                 break;
             case 'poderesPsiquicosDominados':
                 personaje_actual[k] = parseArrayPoderPsiquicoDominado(v);
+                break;
+            case 'patronesMentales':
+                personaje_actual[k] = parseArrayPatronesMentalesComprados(v);
                 break;
             case 'dinero':
                 personaje_actual[k] = parseDinero(v);

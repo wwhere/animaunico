@@ -403,6 +403,12 @@ function Personaje(nivelInicial) {
     /** @type number */
     this.innatosPsiquicos = 0;
 
+    /**
+     *
+     * @type {PatronMentalComprado[]}
+     */
+    this.patronesMentales = [];
+
     /** @type number */
     this.innatosPsiquicosPrevios = 0;
     //endregion Ajustes Habilidades Primarias: Psíquica
@@ -2547,6 +2553,11 @@ Personaje.prototype = {
                 this.limite[i].anulable = false;
             }
 
+            for (i = 0; i < this.patronesMentales.length; i++) {
+                this.patronesMentales[i].setAnulable(false);
+            }
+
+
             this.desequilibrioOfensivoMagicoCambioMaximo += 10;
 
             for (i=0; i < this.allHabilidades.length; i++)  {
@@ -4158,6 +4169,41 @@ Personaje.prototype = {
         }
     },
 
+    /**
+     *
+     * @param {PatronMental} patronMental
+     */
+    addPatronMental : function(patronMental) {
+        var coste = (this.patronesMentales.length == 0)?patronMental.getCoste1():patronMental.getCoste2();
+        var patron = new PatronMentalComprado(patronMental,coste);
+        this.patronesMentales.push(patron);
+        patronMental.efecto(true);
+        lanzarEvento(EVENT_CHARACTER_SECCION_PSIQUICA);
+    },
+
+    removePatronMental : function(nombrePatronMental) {
+        var patronesLimpios = [];
+        for (var i = 0; i < this.patronesMentales.length; i++) {
+            if (this.patronesMentales[i].getNombre() == nombrePatronMental) {
+                this.patronesMentales[i].efecto(false);
+            } else {
+                patronesLimpios.push(this.patronesMentales[i]);
+            }
+        }
+        this.patronesMentales = patronesLimpios;
+        lanzarEvento(EVENT_CHARACTER_SECCION_PSIQUICA);
+    },
+
+    cancelaPatronMental : function(nombrePatronMental) {
+        for (var i = 0; i < this.patronesMentales.length; i++) {
+            if (this.patronesMentales[i].getNombre() == nombrePatronMental) {
+                this.patronesMentales[i].efecto(false);
+                this.patronesMentales[i].setCancelado(true);
+                break;
+            }
+        }
+    },
+
 //endregion Habilidades Primarias: Psíquica
 
 //region Habilidades Secundarias
@@ -4616,6 +4662,9 @@ Personaje.prototype = {
             case TIPO_HB_PSIQUICA:
                 gasto = this[HB_CV].getPDinvertidos() +
                     this[HB_PROYECCION_PSIQUICA].getPDinvertidos();
+                for (i = 0; i < this.patronesMentales.length; i++) {
+                    gasto += this.patronesMentales[i].getCoste();
+                }
                 for (i = 0; i < this.tablasArmas.length; i++) {
                     tablaArmas = this.tablasArmas[i];
                     if (tablaArmas.getCategoriaTabla() == CATEGORIA_TABLA_PSIQUICAS) {

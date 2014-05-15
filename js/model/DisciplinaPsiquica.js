@@ -311,3 +311,222 @@ PoderPsiquicoDominado.prototype = {
     }
 };
 //endregion PoderPsiquicoDominado
+
+
+/**
+ *
+ * @param {string} nombre
+ * @param {number} coste1
+ * @param {number} coste2
+ * @param {number} costeCancelacion
+ * @param {string[]} patronProhibido
+ * @param {function} efecto
+ * @constructor
+ */
+function PatronMental(nombre, coste1, coste2, costeCancelacion, patronProhibido, efecto) {
+    /** @type string */
+    this.nombre = nombre;
+
+    /** @type number */
+    this.coste1 = coste1;
+
+    /** @type number */
+    this.coste2 = coste2;
+
+    /** @type number */
+    this.costeCancelacion = costeCancelacion;
+
+    /** @type string[] */
+    this.patronProhibido = patronProhibido;
+
+    this.efecto = efecto;
+
+}
+
+PatronMental.prototype = {
+
+    constructor : PatronMental,
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.nombre;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCoste1 : function() {
+        return this.coste1;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCoste2 : function() {
+        return this.coste2;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCosteCancelacion : function() {
+        return this.costeCancelacion;
+    },
+
+    /**
+     *
+     * @param {string} patron
+     * @returns {boolean}
+     */
+    isPatronProhibido : function(patron) {
+        for (var i = 0; i < this.patronProhibido.length;i++) {
+            if (this.patronProhibido[i] == patron)
+                return true;
+        }
+        return false;
+    },
+
+    toJSON : function() {
+        return this.nombre;
+    }
+};
+
+/**
+ *
+ * @param {PatronMental} patronMental
+ * @param {number} coste
+ * @constructor
+ */
+function PatronMentalComprado(patronMental, coste) {
+    /**
+     *
+     * @type {PatronMental}
+     */
+    this.patronMental = patronMental;
+
+    /**
+     *
+     * @type {number}
+     */
+    this.coste = coste;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.anulable = true;
+
+    /**
+     *
+     * @type {boolean}
+     */
+    this.cancelado = false;
+
+    if (patronMental.nombre == PATRON_MENTAL_LOCURA) {
+        this.prohibidos = {};
+    }
+}
+
+
+PatronMentalComprado.prototype = {
+
+    constructor : PatronMentalComprado,
+
+    /**
+     *
+     * @returns {string}
+     */
+    getNombre : function() {
+        return this.patronMental.getNombre();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCoste : function() {
+        if (this.cancelado)
+            return this.coste + this.getCosteCancelacion();
+        else
+            return this.coste;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCoste1 : function() {
+        return this.patronMental.getCoste1();
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCoste2 : function() {
+        return this.patronMental.getCoste2()
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    getCosteCancelacion : function() {
+        return this.patronMental.getCosteCancelacion();
+    },
+
+    /**
+     *
+     * @param {string} patron
+     * @returns {boolean}
+     */
+    isPatronProhibido : function(patron) {
+        if (this.getNombre() == PATRON_MENTAL_LOCURA) {
+            if (!this.prohibidos[patron]) {
+                this.prohibidos[patron] = d10();
+            }
+            return (this.prohibidos[patron] <= 5);
+        } else {
+            return this.patronMental.isPatronProhibido(patron);
+        }
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isAnulable : function() {
+        return this.anulable;
+    },
+
+    /**
+     *
+     * @param {boolean} valor
+     */
+    setAnulable : function(valor) {
+        this.anulable = valor;
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isCancelado : function() {
+        return this.cancelado;
+    },
+
+    /**
+     *
+     * @param {boolean} valor
+     */
+    setCancelado : function(valor) {
+        this.cancelado  = valor;
+    }
+
+};

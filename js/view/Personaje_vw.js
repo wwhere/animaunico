@@ -1429,6 +1429,9 @@ function muestraPsiquica(estadoGeneracion) {
 
     divContenido.append(muestraDisciplinasYPoderes(muestraBotones));
 
+    divContenido.append(muestraSubtitulo(UI_PATRONES_MENTALES, false));
+    divContenido.append(muestraPatronesMentales(muestraBotones));
+
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_PSIQUICAS],muestraBotones));
 
@@ -1466,6 +1469,77 @@ function muestraCVLibres() {
     var divValor = getDiv("one column").addClass(CSS_TEXTO_SMALL).addClass(CSS_VALOR_PERSONALES).append((personaje_actual.getHabilidadDePersonaje(HB_CV).valorFinalActual() - personaje_actual.cv_gastados));
     div.append(divEtiqueta).append(divValor);
     return div;
+}
+function muestraPatronesMentales(muestraBotones) {
+    var div = getDiv("");
+    var i;
+    var divPatrones = getDiv(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_BLOCK);
+
+    if (muestraBotones) {
+        var divBotonNuevoPatron = getDiv("");
+        divBotonNuevoPatron.append(muestraBotonPequeño(_l(UI_BOTON_COMPRAR_PATRON),{},elegirPatronMental,""));
+        divPatrones.append(divBotonNuevoPatron);
+    } else if (personaje_actual.patronesMentales.length == 0) {
+        divPatrones.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
+    }
+
+    for (i=0; i < personaje_actual.patronesMentales.length;i++) {
+        var divPatron = getDiv(CSS_TEXTO_SMALL);
+        var divNombrePatron = getDiv(CSS_ETIQUETA).addClass(CSS_MUESTRA_INLINE).append(_l(personaje_actual.patronesMentales[i].getNombre()));
+        if (personaje_actual.patronesMentales[i].isCancelado()) {
+            divNombrePatron.append(" (" + _l(UI_CANCELADO) + ")");
+        }
+        var divCostePatron = getDiv(CSS_COSTE).addClass(CSS_MUESTRA_INLINE).append(_l(personaje_actual.patronesMentales[i].getCoste()));
+
+        var divBotones = getDiv(CSS_MUESTRA_INLINE);
+        if (personaje_actual.patronesMentales[i].isAnulable()) {
+            divBotones.append(muestraBotonPequeño("X",{patron:personaje_actual.patronesMentales[i]},anularPatronMental,""));
+        }
+        if (!personaje_actual.patronesMentales[i].isCancelado()) {
+            divBotones.append(muestraBotonPequeño(_l(UI_CANCELAR),{patron:personaje_actual.patronesMentales[i]},cancelarPatronMental,""));
+        }
+        divPatrones.append(divPatron.append(divNombrePatron).append(divCostePatron).append(divBotones));
+    }
+
+    div.append(divPatrones);
+
+    return div;
+}
+
+function elegirPatronMental() {
+    var arrayOpciones = [];
+
+    for (var i = 0; i < patronesMentales_set.length; i++) {
+        arrayOpciones.push(new OpcionMostrable(_l(patronesMentales_set[i].getNombre()),patronesMentales_set[i].getNombre(),""));
+    }
+
+    muestraDialogoElegirOpciones(arrayOpciones,{},{principal:patronMentalElegido,isDisabled:patronDisabled},true);
+}
+
+function patronDisabled(parametros) {
+    for (var i = 0; i < personaje_actual.patronesMentales.length;i++) {
+        if ((personaje_actual.patronesMentales[i].isPatronProhibido(parametros.opcion)) ||
+            (personaje_actual.patronesMentales[i].getNombre() == parametros.opcion)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function patronMentalElegido(parametros) {
+    var patron = getPatronMental(parametros.opcion);
+
+    var coste = (personaje_actual.patronesMentales.length==0)?patron.getCoste1():patron.getCoste2();
+
+    compraSiPuedes(PATRON_MENTAL, {patronMental: patron},TIPO_HB_PSIQUICA, 1, coste);
+}
+
+function anularPatronMental(event) {
+    personaje_actual.removePatronMental(event.data.patron.getNombre());
+}
+
+function cancelarPatronMental(event) {
+    compraSiPuedes(PATRON_MENTAL, {patronMental: event.data.patron},TIPO_HB_PSIQUICA, 1, event.data.patron.getCosteCancelacion());
 }
 
 function muestraDisciplinasYPoderes(muestraBotones) {

@@ -713,6 +713,14 @@ function compra(tipoCompra, parametros, coste) {
                 vigilaRequisitosArsMagnus(true);
             }
             break;
+        case PATRON_MENTAL:
+            personaje_actual.addPatronMental(parametros.patronMental);
+            personaje_actual.addPDLibres(-1 * coste);
+            break;
+        case PATRON_MENTAL_CANCELADO:
+            personaje_actual.cancelaPatronMental(parametros.patronMental.getNombre());
+            personaje_actual.addPDLibres(-1 * coste);
+            break;
         case POTENCIAL_PSIQUICO:
             var potencialPsiquico = personaje_actual.getHabilidadDePersonaje(parametros.habilidad.getNombre());
             potencialPsiquico.CVsGastados += coste;
