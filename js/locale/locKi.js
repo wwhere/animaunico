@@ -1074,3 +1074,14 @@ var TECNICA_SOSTENIDA_MAYOR = (new L("TECNICA_SOSTENIDA_MAYOR","Sostenida (mayor
     "Sostenida (mayor)")).getId();
 var TECNICA_COMBINABLE = (new L("TECNICA_COMBINABLE","Combinable",
     "Combinable")).getId();
+
+var HAB_SELLO_KI_AIRE_MENOR = (new L("HAB_SELLO_KI_AIRE_MENOR","Sello de Aire Menor", "Sello de Aire Menor")).getId();
+var HAB_SELLO_KI_AIRE_MAYOR = (new L("HAB_SELLO_KI_AIRE_MAYOR","Sello de Aire Mayor", "Sello de Aire Mayor")).getId();
+var HAB_SELLO_KI_AGUA_MENOR = (new L("HAB_SELLO_KI_AGUA_MENOR","Sello de Agua Menor", "Sello de Agua Menor")).getId();
+var HAB_SELLO_KI_AGUA_MAYOR = (new L("HAB_SELLO_KI_AGUA_MAYOR","Sello de Agua Mayor", "Sello de Agua Mayor")).getId();
+var HAB_SELLO_KI_FUEGO_MENOR = (new L("HAB_SELLO_KI_FUEGO_MENOR","Sello de Fuego Menor", "Sello de Fuego Menor")).getId();
+var HAB_SELLO_KI_FUEGO_MAYOR = (new L("HAB_SELLO_KI_FUEGO_MAYOR","Sello de Fuego Mayor", "Sello de Fuego Mayor")).getId();
+var HAB_SELLO_KI_METAL_MENOR = (new L("HAB_SELLO_KI_METAL_MENOR","Sello de Metal Menor", "Sello de Metal Menor")).getId();
+var HAB_SELLO_KI_METAL_MAYOR = (new L("HAB_SELLO_KI_METAL_MAYOR","Sello de Metal Mayor", "Sello de Metal Mayor")).getId();
+var HAB_SELLO_KI_MADERA_MENOR = (new L("HAB_SELLO_KI_MADERA_MENOR","Sello de Madera Menor", "Sello de Madera Menor")).getId();
+var HAB_SELLO_KI_MADERA_MAYOR = (new L("HAB_SELLO_KI_MADERA_MAYOR","Sello de Madera Mayor", "Sello de Madera Mayor")).getId();
