@@ -83,6 +83,12 @@ module.exports = function(grunt) {
                     "js/data/psiquica/Telemetria.js",
                     "js/data/psiquica/Telepatia.js",
                     "js/data/psiquica/Telequinesis.js",
+                    "js/data/psiquica/Causalidad.js",
+                    "js/data/psiquica/Electromagnetismo.js",
+                    "js/data/psiquica/Teletransporte.js",
+                    "js/data/psiquica/Luz.js",
+                    "js/data/psiquica/Hipersensibilidad.js",
+
                     "js/data/psiquica/patronesMentales.js",
 
                     "js/model/HabilidadKi.js",
