@@ -14,18 +14,30 @@ var FATIGA_24 = (new L("FATIGA_24","Fatiga 24",
     "Fatigue 24")).getId();
 var RADIO_10_M = (new L("RADIO_10_M","10 metros de radio",
     "30-foot Radius")).getId();
+var RADIO_25_M = (new L("RADIO_25_M","25 metros de radio",
+    "80-foot Radius")).getId();
 var RADIO_50_M = (new L("RADIO_50_M","50 metros de radio",
     "150-foot Radius")).getId();
 var RADIO_100_M = (new L("RADIO_100_M","100 metros de radio",
     "300-foot Radius")).getId();
+var RADIO_150_M = (new L("RADIO_150_M","150 metros de radio",
+    "450-foot Radius")).getId();
 var RADIO_250_M = (new L("RADIO_250_M","250 metros de radio",
     "800-foot Radius")).getId();
 var RADIO_500_M = (new L("RADIO_500_M","500 metros de radio",
     "1500-foot Radius")).getId();
 var RADIO_1_KM = (new L("RADIO_1_KM","1 kilómetro de radio",
     "3000-foot Radius")).getId();
+var RADIO_2_KM = (new L("RADIO_2_KM","2 kilómetro de radio",
+    "6000-foot Radius")).getId();
+var RADIO_5_KM = (new L("RADIO_5_KM","5 kilómetro de radio",
+    "15000-foot Radius")).getId();
 var RADIO_10_KM = (new L("RADIO_10_KM","10 kilómetros de radio",
     "5-mile Radius")).getId();
+var RADIO_15_KM = (new L("RADIO_15_KM","15 kilómetros de radio",
+    "7-mile Radius")).getId();
+var RADIO_20_KM = (new L("RADIO_20_KM","20 kilómetros de radio",
+    "10-mile Radius")).getId();
 var RADIO_100_KM = (new L("RADIO_100_KM","100 kilómetros de radio",
     "60-mile Radius")).getId();
 var PSI_PODER_CONGELAR = (new L("PSI_PODER_CONGELAR","Congelar",
@@ -54,6 +66,8 @@ var INTENSIDAD_1 = (new L("INTENSIDAD_1","1 intensidad",
     "1 Intensity")).getId();
 var INTENSIDAD_3 = (new L("INTENSIDAD_3","3 intensidades",
     "3 Intensities")).getId();
+var INTENSIDAD_4 = (new L("INTENSIDAD_4","4 intensidades",
+    "4 Intensities")).getId();
 var INTENSIDAD_5 = (new L("INTENSIDAD_5","5 intensidades",
     "5 Intensities")).getId();
 var INTENSIDAD_7 = (new L("INTENSIDAD_7","7 intensidades",
@@ -150,6 +164,8 @@ var PV_6000 = (new L("PV_6000","6.000 PV",
     "6000 LP")).getId();
 var PSI_PODER_CRISTALIZAR = (new L("PSI_PODER_CRISTALIZAR","Cristalizar",
     "Crystallize")).getId();
+var FATIGA_10 = (new L("FATIGA_10","Fatiga 10",
+    "Fatigue 10")).getId();
 var FATIGA_12 = (new L("FATIGA_12","Fatiga 12",
     "Fatigue 12")).getId();
 var PSI_PODER_UN_INSTANTE_ETERNO = (new L("PSI_PODER_UN_INSTANTE_ETERNO","Un instante eterno",
@@ -206,12 +222,25 @@ var METRO_CUBICO_20 = (new L("METRO_CubicO_20","20 metros cúbicos",
     "200 Cubic Feet")).getId();
 var DAÑO_50 = (new L("DAÑO_50","Daño 50",
     "Damage 50")).getId();
+var DAÑO_60 = (new L("DAÑO_60","Daño 60",
+    "Damage 60")).getId();
+var DAÑO_80 = (new L("DAÑO_80","Daño 80",
+    "Damage 80")).getId();
+
 var DAÑO_70 = (new L("DAÑO_70","Daño 70",
     "Damage 70")).getId();
 var DAÑO_100 = (new L("DAÑO_100","Daño 100",
     "Damage 100")).getId();
 var DAÑO_120 = (new L("DAÑO_120","Daño 120",
     "Damage 120")).getId();
+var DAÑO_140 = (new L("DAÑO_140","Daño 140",
+    "Damage 140")).getId();
+var DAÑO_160 = (new L("DAÑO_160","Daño 160",
+    "Damage 160")).getId();
+var DAÑO_180 = (new L("DAÑO_180","Daño 180",
+    "Damage 180")).getId();
+var DAÑO_200 = (new L("DAÑO_200","Daño 200",
+    "Damage 200")).getId();
 var PSI_DESCARGA_ENERGIA_EFEC_8 = (new L("PSI_DESCARGA_ENERGIA_EFEC_8","Daño 140 / Afecta a seres inmateriales",
     "Damage 140 / It Affects Immaterial Beings")).getId();
 var PSI_DESCARGA_ENERGIA_EFEC_9 = (new L("PSI_DESCARGA_ENERGIA_EFEC_9","Daño 180 / Afecta a seres inmateriales",
@@ -553,3 +582,100 @@ var PATRON_MENTAL_COBARDIA= (new L("PATRON_MENTAL_COBARDIA","Cobardía","Cowardi
 var PATRON_MENTAL_VALENTIA= (new L("PATRON_MENTAL_VALENTIA","Valentía","Bravery")).getId();
 
 var ERR_PATRON_MENTAL_DESCONOCIDO = (new L("ERR_PATRON_MENTAL_DESCONOCIDO", "Error: Patrón mental desconocido", "Error: Mental Pattern Unknown")).getId();
+
+var DISCIPLINA_CAUSALIDAD = (new L("DISCIPLINA_CAUSALIDAD","Causalidad",
+    "Causalidad")).getId();
+var DISCIPLINA_DESCRIPCION_CAUSALIDAD = (new L("DISCIPLINA_DESCRIPCION_CAUSALIDAD","Caos y orden",
+    "Caos y orden")).getId();
+var PSI_PODER_CREAR_CAOS = (new L("PSI_PODER_CREAR_CAOS","Crear Caos",
+    "Crear Caos")).getId();
+var PSI_PODER_ELIMINAR_LEY_DE_LA_CAUSALIDAD = (new L("PSI_PODER_ELIMINAR_LEY_DE_LA_CAUSALIDAD","Eliminar la Ley de la Causalidad",
+    "Eliminar la Ley de la Causalidad")).getId();
+var PSI_PODER_ALTERAR_EL_CLIMA = (new L("PSI_PODER_ALTERAR_EL_CLIMA","Alterar el Clima",
+    "Alterar el Clima")).getId();
+var PSI_PODER_CREAR_ORDEN = (new L("PSI_PODER_CREAR_ORDEN","Crear Orden",
+    "Crear Orden")).getId();
+var PSI_PODER_CONTROLAR_LA_CAUSALIDAD = (new L("PSI_PODER_CONTROLAR_LA_CAUSALIDAD","Controlar la Causalidad",
+    "Controlar la Causalidad")).getId();
+
+
+var RESULTADO_3 = (new L("RESULTADO_3","3 para chequeos / 30 para habilidades",
+    "3 para chequeos / 30 para habilidades")).getId();
+var RESULTADO_4 = (new L("RESULTADO_4","4 para chequeos / 40 para habilidades",
+    "4 para chequeos / 40 para habilidades")).getId();
+var RESULTADO_5 = (new L("RESULTADO_5","5 para chequeos / 50 para habilidades",
+    "5 para chequeos / 50 para habilidades")).getId();
+var RESULTADO_6 = (new L("RESULTADO_6","6 para chequeos / 60 para habilidades",
+    "6 para chequeos / 60 para habilidades")).getId();
+var RESULTADO_8 = (new L("RESULTADO_8","8 para chequeos / 80 para habilidades",
+    "8 para chequeos / 80 para habilidades")).getId();
+
+var DISCIPLINA_ELECTROMAGNETISMO = (new L("DISCIPLINA_ELECTROMAGNETISMO","Electromagnetismo",
+    "Electromagnetismo")).getId();
+var DISCIPLINA_DESCRIPCION_ELECTROMAGNETISMO = (new L("DISCIPLINA_DESCRIPCION_ELECTROMAGNETISMO","Electricidad y magnetismo",
+    "Electricidad y magnetismo")).getId();
+var PSI_PODER_PERCIBIR_ELECTRICIDAD = (new L("PSI_PODER_PERCIBIR_ELECTRICIDAD","Percibir Electricidad",
+    "Percibir Electricidad")).getId();
+var PSI_PODER_CREAR_ELECTRICIDAD = (new L("PSI_PODER_CREAR_ELECTRICIDAD","Crear Electricidad",
+    "Crear Electricidad")).getId();
+var PSI_PODER_CONTROLAR_ELECTRICIDAD = (new L("PSI_PODER_CONTROLAR_ELECTRICIDAD","Controlar Electricidad",
+    "Controlar Electricidad")).getId();
+var PSI_PODER_MANIPULACION_MAGNETICA= (new L("PSI_PODER_MANIPULACION_MAGNETICA","Manipulación Magnética",
+    "Manipulación Magnética")).getId();
+var PSI_PODER_ESCUDO_MAGNETICO = (new L("PSI_PODER_ESCUDO_MAGNETICO","Escudo Magnético",
+    "Escudo Magnético")).getId();
+var PSI_PODER_LEER_IMPULSOS_MAGNETICOS = (new L("PSI_PODER_LEER_IMPULSOS_MAGNETICOS","Leer Impulsos Magnéticos",
+    "Leer Impulsos Magnéticos")).getId();
+var PSI_PODER_ARCO_ELECTRICO = (new L("PSI_PODER_ARCO_ELECTRICO","Arco Eléctrico",
+    "Arco Eléctrico")).getId();
+var PSI_PODER_ATAQUE_DE_ACELERACION_MAGNETICA = (new L("PSI_PODER_ATAQUE_DE_ACELERACION_MAGNETICA","Ataque de Aceleración Magnética",
+    "Ataque de Aceleración Magnética")).getId();
+var PSI_PODER_CONTROLAR_IMPULSOS_ELECTRICOS = (new L("PSI_PODER_CONTROLAR_IMPULSOS_ELECTRICOS","Controlar Impulsos Eléctricos",
+    "Controlar Impulsos Eléctricos")).getId();
+
+var DISCIPLINA_TELETRANSPORTE = (new L("DISCIPLINA_TELETRANSPORTE","Teletransporte",
+    "Teletransporte")).getId();
+var DISCIPLINA_DESCRIPCION_TELETRANSPORTE = (new L("DISCIPLINA_DESCRIPCION_TELETRANSPORTE","Espacio",
+    "Espacio")).getId();
+var PSI_PODER_RECOLOCAR_OBJETO= (new L("PSI_PODER_RECOLOCAR_OBJETO","Recolocar Objeto",
+    "Recolocar Objeto")).getId();
+var PSI_PODER_AUTORRECOLOCACION= (new L("PSI_PODER_AUTORRECOLOCACION","Autorrecolocación",
+    "Autorrecolocación")).getId();
+var PSI_PODER_TRANSPORTE_DEFENSIVO= (new L("PSI_PODER_TRANSPORTE_DEFENSIVO","Transporte Defensivo",
+    "Transporte Defensivo")).getId();
+var PSI_PODER_AUTORRECOLOCACION_MAYOR= (new L("PSI_PODER_AUTORRECOLOCACION_MAYOR","Autorrecolocación Mayor",
+    "Autorrecolocación Mayor")).getId();
+var PSI_PODER_ALEPH= (new L("PSI_PODER_ALEPH","Aleph",
+    "Aleph")).getId();
+var PSI_PODER_RECOLOCAR_OBJETO_MAYOR= (new L("PSI_PODER_RECOLOCAR_OBJETO_MAYOR","Recolocar Objeto Mayor",
+    "Recolocar Objeto Mayor")).getId();
+var PSI_PODER_TELETRANSPORTE= (new L("PSI_PODER_TELETRANSPORTE","Teletransporte",
+    "Teletransporte")).getId();
+
+var DISCIPLINA_LUZ= (new L("DISCIPLINA_LUZ","Luz",
+    "Luz")).getId();
+var DISCIPLINA_DESCRIPCION_LUZ = (new L("DISCIPLINA_DESCRIPCION_LUZ","Luz",
+    "Luz")).getId();
+var PSI_PODER_MANIPULAR_LA_LUZ= (new L("PSI_PODER_MANIPULAR_LA_LUZ","Manipular la Luz",
+    "Manipular la Luz")).getId();
+var PSI_PODER_CREAR_LUZ= (new L("PSI_PODER_CREAR_LUZ","Crear Luz",
+    "Crear Luz")).getId();
+var PSI_PODER_FLASH_DE_LUZ= (new L("PSI_PODER_FLASH_DE_LUZ","Flash de Luz",
+    "Flash de Luz")).getId();
+var PSI_PODER_PANTALLA_DE_LUZ= (new L("PSI_PODER_PANTALLA_DE_LUZ","Pantalla de Luz",
+    "Pantalla de Luz")).getId();
+var PSI_PODER_HOLOGRAMA= (new L("PSI_PODER_HOLOGRAMA","Holograma",
+    "Holograma")).getId();
+var PSI_PODER_LASER= (new L("PSI_PODER_LASER","Láser",
+    "Láser")).getId();
+
+var DISCIPLINA_HIPERSENSIBILIDAD= (new L("DISCIPLINA_HIPERSENSIBILIDAD","Hipersensibilidad",
+    "Hipersensibilidad")).getId();
+var DISCIPLINA_DESCRIPCION_HIPERSENSIBILIDAD = (new L("DISCIPLINA_DESCRIPCION_HIPERSENSIBILIDAD","Aumento de los sentidos",
+    "Aumento de los sentidos")).getId();
+var PSI_PODER_FILTRAR_SENTIDOS= (new L("PSI_PODER_FILTRAR_SENTIDOS","Filtrar Sentidos",
+    "Filtrar Sentidos")).getId();
+var PSI_PODER_DESPLAZAR_SENTIDOS= (new L("PSI_PODER_DESPLAZAR_SENTIDOS","Desplazar Sentidos",
+    "Desplazar Sentidos")).getId();
+var PSI_PODER_SENTIDOS_SUPERIORES= (new L("PSI_PODER_SENTIDOS_SUPERIORES","Sentidos Superiores",
+    "Sentidos Superiores")).getId();
