@@ -82,6 +82,16 @@ addHabilidadKi(new HabilidadKi(HAB_NEMESIS_INDETECCION, "", 10, [HAB_NEMESIS_USO
 addHabilidadKi(new HabilidadKi(HAB_NEMESIS_INHUMANIDAD, "", 20, [HAB_NEMESIS_USO_DEL_NEMESIS], efectoInhumanidad, false, [FLAG_DOMINUS_EXXET_ENABLED]));
 addHabilidadKi(new HabilidadKi(HAB_NEMESIS_ZEN, "", 40, [HAB_NEMESIS_INHUMANIDAD], efectoZen, false, [FLAG_DOMINUS_EXXET_ENABLED]));
 
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_AIRE_MENOR, "", 30, [], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_AIRE_MAYOR, "", 60, [HAB_SELLO_KI_AIRE_MENOR], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_AGUA_MENOR, "", 30, [], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_AGUA_MAYOR, "", 60, [HAB_SELLO_KI_AGUA_MENOR], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_FUEGO_MENOR, "", 30, [], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_FUEGO_MAYOR, "", 60, [HAB_SELLO_KI_FUEGO_MENOR], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_METAL_MENOR, "", 30, [], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_METAL_MAYOR, "", 60, [HAB_SELLO_KI_METAL_MENOR], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_MADERA_MENOR, "", 30, [], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
+addHabilidadKi(new HabilidadKi(HAB_SELLO_KI_MADERA_MAYOR, "", 60, [HAB_SELLO_KI_MADERA_MENOR], sinEfecto, false, [FLAG_DOMINUS_EXXET_ENABLED]));
 
 
 
