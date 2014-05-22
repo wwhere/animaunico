@@ -136,4 +136,9 @@ if (FLAG_DOMINUS_EXXET_ENABLED) {
     armas_set.push(new Arma(ARMA_SANG_KAUW,new Dinero(10,0,0),2.5,DISP_B,[CAT_ARMA_ASTA],-10, 50, 10, 2, 6, 6, 25, ATAQUE_FIL3,ATAQUE_PEN3,[REGLA_SANG_KAUW],BONO_FUE));
     armas_set.push(new Arma(ARMA_WAKIZASI,new Dinero(20,0,0),0.5,DISP_B,[CAT_ARMA_ESPADA],0, 45, 11, 3, 4, 4, 40, ATAQUE_FIL3,"",[],BONO_FUE));
 
+    armas_set.push(new Arma(ARMA_ARCO_DE_BALAS,new Dinero(5,0,0),0.8,DISP_B,[CAT_ARMA_PROYECTILES],-10, 0, 6, -3, 4, 4, 15, "","",[REGLA_ARMA_DOS_MANOS,REGLA_ARCO_DE_BALAS],BONO_FUE));
+    armas_set.push(new Arma(ARMA_PIEDRA,new Dinero(0,0,0),0.1,DISP_TOTAL,[CAT_ARMA_MUNICION],0, 20, 5, 0, 0, 0, 5, ATAQUE_CON3,"",[],BONO_FUE));
+    armas_set.push(new Arma(ARMA_DAIKYU,new Dinero(80,0,0),2,DISP_B,[CAT_ARMA_PROYECTILES],-30, 0, 8, -2, 7, 7, 20, "","",[REGLA_ARMA_DOS_MANOS],BONO_FUE));
+    armas_set.push(new Arma(ARMA_UCHINE,new Dinero(1,0,0),0.6,DISP_B,[CAT_ARMA_ASTA],10, 25, 10, -3, 4, 4, 20, ATAQUE_PEN3,"",[REGLA_ARMA_LANZABLE],BONO_FUE));
+    armas_set.push(new Arma(ARMA_KUNAI,new Dinero(0,20,0),0.4,DISP_TOTAL,[CAT_ARMA_ARMA_CORTA],20, 25, 10, 2, 4, 4, 15, ATAQUE_PEN3,"",[REGLA_ARMA_LANZABLE],BONO_FUE));
 }

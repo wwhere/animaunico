@@ -696,3 +696,12 @@ var ARMA_SANG_KAUW = (new L("ARMA_SANG_KAUW","Sang kauw","Sang kauw")).getId();
 var REGLA_SANG_KAUW = (new L("REGLA_SANG_KAUW","Sang kauw","Sang kauw")).getId();
 var ARMA_WAKIZASI= (new L("ARMA_WAKIZASI","Wakizasi","Wakizasi")).getId();
 
+var ARMA_ARCO_DE_BALAS= (new L("ARMA_ARCO_DE_BALAS","Arco de balas","Arco de balas")).getId();
+var REGLA_ARCO_DE_BALAS= (new L("REGLA_ARCO_DE_BALAS","Arco de balas","Arco de balas")).getId();
+var ARMA_PIEDRA= (new L("ARMA_PIEDRA","Piedra","Piedra")).getId();
+var ARMA_DAIKYU= (new L("ARMA_DAIKYU","Daikyu","Daikyu")).getId();
+var ARMA_UCHINE= (new L("ARMA_UCHINE","Uchi-ne","Uchi-ne")).getId();
+var ARMA_KUNAI= (new L("ARMA_KUNAI","Kunai","Kunai")).getId();
+
+
+
