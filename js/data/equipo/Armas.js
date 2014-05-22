@@ -58,7 +58,7 @@ armas_set.push(new Arma(ARMA_LATIGO, new Dinero(5, 0, 0), 1, DISP_TOTAL, [CAT_AR
 armas_set.push(new Arma(ARMA_LAZO, new Dinero(0, 20, 0), 0.3, DISP_TOTAL, [CAT_ARMA_CUERDA], 10, 5, 9, -3, 4, 4, 20, ATAQUE_CON3, "", [REGLA_ARMA_COMPLEJA, REGLA_ARMA_PRESA], BONO_FUE));
 armas_set.push(new Arma(ARMA_MANDOBLE, new Dinero(50, 0, 0), 2.5, DISP_B, [CAT_ARMA_MANDOBLE], -60, 90, 18, 6, 8, 10, 30, ATAQUE_FIL3, ATAQUE_CON3, [REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));
 armas_set.push(new Arma(ARMA_MANGUAL, new Dinero(15, 0, 0), 1, DISP_TOTAL, [CAT_ARMA_MAZA, CAT_ARMA_MANDOBLE], -50, 80, 14, 6, 8, 10, 20, ATAQUE_CON3, "", [REGLA_ARMA_COMPLEJA], BONO_FUE));
-armas_set.push(new Arma(ARMA_MARTILLO_GUERRA, new Dinero(4,0,0),1.2,DISP_TOTAL,[CAT_ARMA_MAZA],-5,50,15,4,6,6,15,ATAQUE_CON3,[]));
+armas_set.push(new Arma(ARMA_MARTILLO_GUERRA, new Dinero(4,0,0),1.2,DISP_TOTAL,[CAT_ARMA_MAZA],-5,50,15,4,6,6,15,ATAQUE_CON3,"",[],BONO_FUE));
 armas_set.push(new Arma(ARMA_MAYAL, new Dinero(12, 0, 0), 1.2, DISP_TOTAL, [CAT_ARMA_MAZA, CAT_ARMA_CUERDA], 0, 40, 13, 4, 6, 6, 15, ATAQUE_CON3, "", [REGLA_ARMA_COMPLEJA], BONO_FUE));
 armas_set.push(new Arma(ARMA_MAZA, new Dinero(2, 0, 0), 1.8, DISP_TOTAL, [CAT_ARMA_MAZA], 0, 40, 14, 4, 6, 6, 15, ATAQUE_CON3, "", [], BONO_FUE));
 armas_set.push(new Arma(ARMA_MAZA_PESADA, new Dinero(15, 0, 0), 2.5, DISP_TOTAL, [CAT_ARMA_MAZA, CAT_ARMA_MANDOBLE], -15, 60, 16, 5, 6, 10, 15, ATAQUE_CON3, "", [REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));
@@ -83,3 +83,38 @@ armas_set.push(new Arma(ARMA_TURCUS, new Dinero(5, 0, 0), 0.8, DISP_B, [CAT_ARMA
 armas_set.push(new Arma(ARMA_VARA, new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], 10, 30, 11, 0, 4, 4, 30, ATAQUE_CON3, "", [REGLA_ARMA_DOS_MANOS], BONO_FUE));
 armas_set.push(new Arma(ARMA_VIROTE_LIGERO, new Dinero(0, 10, 0), 2, DISP_TOTAL, [CAT_ARMA_MUNICION], 0, 120, 16, 8, 0, 0, 15, ATAQUE_PEN3, "", [MUNICION_BALISTA_LIGERA], BONO_FUE));
 armas_set.push(new Arma(ARMA_VIROTE_PESADO, new Dinero(0, 50, 0), 5, DISP_B, [CAT_ARMA_MUNICION], 0, 150, 18, 12, 0, 0, 15, ATAQUE_PEN3, "", [MUNICION_BALISTA_PESADA], BONO_FUE));
+
+if (FLAG_DOMINUS_EXXET_ENABLED) {
+    armas_set.push(new Arma(ARMA_ATLATL,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_PROYECTILES], -5, 0, 8, -4, 5, 5, 10, "", "", [REGLA_ATLATL], BONO_FUE));
+    armas_set.push(new Arma(ARMA_BASTON_DE_COMBATE,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], 15, 25, 10, -1, 5, 5, 15, ATAQUE_CON3, "", [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_BEC_DE_CORBIN,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA,CAT_ARMA_MAZA], -10, 50, 12, 2, 6, 6, 20, ATAQUE_PEN3, ATAQUE_CON3, [REGLA_ARMA_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_BERDICHE,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], -15, 50, 12, 4, 6, 6, 20, ATAQUE_FIL3, ATAQUE_CON3, [REGLA_ARMA_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_BRACAMARTE,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ESPADA], -10, 60, 15, 4, 7, 7, 20, ATAQUE_FIL3, "", [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_BRANDISTOCK,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], 0, 40, 9, 3, 6, 6, 25, ATAQUE_PEN3, ATAQUE_CON3, [REGLA_ARMA_DOS_MANOS,REGLA_BRANDISTOCK], BONO_FUE));
+    armas_set.push(new Arma(ARMA_CHUI,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_MAZA], 5, 40, 13, 3, 6, 6, 15, ATAQUE_CON3, "", [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_CINQUEDEA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 0, 35, 12, 0, 4, 4, 20, ATAQUE_PEN3, ATAQUE_FIL3, [REGLA_ARMA_PRECISA], BONO_FUE));
+    armas_set.push(new Arma(ARMA_CLAYMORE,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_MANDOBLE], -20, 65, 16, 5, 7, 7, 25, ATAQUE_FIL3, ATAQUE_CON3, [REGLA_ARMA_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_DIRK,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 15, 35, 10, -2, 5, 5, 25, ATAQUE_PEN3, "", [REGLA_ARMA_PRECISA], BONO_FUE));
+    armas_set.push(new Arma(ARMA_ESCRAMASAJON,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 0, 45, 14, 4, 5, 5, 20, ATAQUE_FIL3, ATAQUE_PEN3, [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_FALCATA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ESPADA,CAT_ARMA_HACHA], -10, 60, 12, 5, 7, 7, 20, ATAQUE_FIL3, "", [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_GLAVIUS,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], 0, 40, 12, 1, 6, 7, 20, ATAQUE_PEN3, ATAQUE_FIL3, [REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_GOEDENDAG,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], 5, 35, 10, 2, 4, 6, 20, ATAQUE_PEN3, ATAQUE_CON3, [REGLA_ARMA_UNA_O_DOS_MANOS,REGLA_GOEDENDAG], BONO_FUE));
+    armas_set.push(new Arma(ARMA_GOSSE_MESSER,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_MANDOBLE], -30, 75, 12, 3, 6, 9, 20, ATAQUE_FIL3, "", [REGLA_ARMA_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_GUANDAO,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], -20, 65, 13, 3, 7, 11, 20, ATAQUE_FIL3, ATAQUE_PEN3, [REGLA_ARMA_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_HU_DIE_DAO,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 15, 30, 10, -2, 5, 5, 20, ATAQUE_FIL3, ATAQUE_CON3, [REGLA_ARMA_PRECISA,REGLA_HU_DIE_DAO], BONO_FUE));
+    armas_set.push(new Arma(ARMA_KATZBALGER,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 10, 45, 13, 2, 5, 5, 20, ATAQUE_FIL3, "", [REGLA_KATZBALGER], BONO_FUE));
+    armas_set.push(new Arma(ARMA_KERAMBIT,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 20, 25, 10, -2, 4, 4, 15, ATAQUE_FIL3, "", [REGLA_ARMA_PRECISA,REGLA_KERAMBIT], BONO_FUE));
+    armas_set.push(new Arma(ARMA_KONCERZ,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ESPADA], -30, 60, 9, 2, 8, 8, 20, ATAQUE_PEN3, "", [REGLA_KONCERZ], BONO_FUE));
+    armas_set.push(new Arma(ARMA_KUKRI,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 10, 35, 12, 3, 6, 6, 20, ATAQUE_FIL3, "", [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_LIU_XING_CHUI,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_CUERDA], 15, 30, 8, 1, 5, 5, 15, ATAQUE_CON3, "", [REGLA_ARMA_DOS_MANOS,REGLA_ARMA_PRESA,REGLA_ARMA_COMPLEJA], BONO_FUE));
+    armas_set.push(new Arma(ARMA_LUJIAODAO,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 20, 25, 12, 5, 5, 5, 15, ATAQUE_FIL3, "", [REGLA_ARMA_TRABA_EL_ARMA], BONO_FUE));
+    armas_set.push(new Arma(ARMA_MAZA_BARRA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_MAZA], 0, 50, 14, 4, 6, 7, 20, ATAQUE_CON3, "", [REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_MONTANTE,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_MANDOBLE], -50, 80, 18, 5, 8, 11, 25, ATAQUE_PEN3, ATAQUE_FIL3, [REGLA_ARMA_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_PATA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ARMA_CORTA], 15, 40, 13, 2, 6, 6, 20, ATAQUE_FIL3, ATAQUE_PEN3, [REGLA_ARMA_PRECISA], BONO_FUE));
+    armas_set.push(new Arma(ARMA_PICA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], -30, 60, 12, 4, 6, 6, 15, ATAQUE_PEN3, "", [REGLA_ARMA_DOS_MANOS,REGLA_PICA], BONO_FUE));
+    armas_set.push(new Arma(ARMA_PUDAO,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA], -5, 40, 12, 2, 6, 7, 20, ATAQUE_FIL3, ATAQUE_CON3, [REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));
+    armas_set.push(new Arma(ARMA_SHANG_GOU,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ESPADA], 5, 40, 12, 1, 5, 5, 20, ATAQUE_FIL3, "", [REGLA_ARMA_COMPLEJA,REGLA_ARMA_TRABA_EL_ARMA,REGLA_SHANG_GOU], BONO_FUE));
+    armas_set.push(new Arma(ARMA_SPATHA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ESPADA], 5, 45, 14, 3, 6, 6, 20, ATAQUE_PEN3, ATAQUE_FIL3, [], BONO_FUE));
+    armas_set.push(new Arma(ARMA_URUMI,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_CUERDA], 15, 25, 7, -3, 4, 4, 15, ATAQUE_FIL3, "", [REGLA_ARMA_COMPLEJA,REGLA_URUMI], BONO_FUE));
+    armas_set.push(new Arma(ARMA_VALASKA,new Dinero(0, 40, 0), 1, DISP_TOTAL, [CAT_ARMA_ASTA,CAT_ARMA_HACHA], 0, 40, 11, 2, 5, 8, 20, ATAQUE_FIL3, ATAQUE_CON3, [REGLA_ARMA_UNA_O_DOS_MANOS], BONO_FUE));
+}
