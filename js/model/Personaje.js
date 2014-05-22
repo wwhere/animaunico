@@ -3417,6 +3417,13 @@ Personaje.prototype = {
                     this.PD_libres += costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),false,false) - costeArteMarcial(this.artesMarciales[i].getGrado(),this.artesMarciales[i].isBasica(),false,true);
                 }
             }
+            for (i = 0; i < this.tablasArmas.length; i++) {
+                if (this.tablasArmas[i].getCategoriaTabla() == CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES)  {
+                    this.PD_libres += this.tablasArmas[i].tablaArmas.getCoste() / 2;
+                    lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
+                }
+            }
+
             lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
         } else if ((nuevaCategoria.getNombre() != CAT_TAO) && (this.categoria.getNombre() == CAT_TAO)) {
             for (i = 0; i < this.artesMarciales.length; i++) {
@@ -3437,6 +3444,18 @@ Personaje.prototype = {
                         lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
                     }
                 }
+                for (i = 0; i < this.tablasArmas.length; i++) {
+                    if (this.tablasArmas[i].getCategoriaTabla() == CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES) {
+                        if (this.PD_libres - this.tablasArmas[i].tablaArmas.getCoste() / 2 < 0) {
+                            alert("Eliminada tabla de armas " + this.tablasArmas[i].getNombre() + " por PDs insuficientes");
+                            this.removeTablaArmas(this.tablasArmas[i].getNombre(),this.tablasArmas[i].getOpcion());
+                        } else {
+                            this.PD_libres -= this.tablasArmas[i].tablaArmas.getCoste() / 2;
+                            lanzarEvento(EVENT_CHARACTER_SECCION_DESARROLLO);
+                        }
+                    }
+                }
+
             }
         }
     },

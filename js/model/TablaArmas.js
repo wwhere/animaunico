@@ -8,9 +8,11 @@
  * @param {string} tipoTabla
  * @param {string[]} opciones
  * @param {string} categoria
+ * @param {Requisito[]} [requisitos]
  * @constructor
+ * @param {string[]} flagsNecesarios
  */
-function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, categoria, flagsNecesarios) {
+function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, categoria, flagsNecesarios, requisitos) {
     flagsNecesarios = flagsNecesarios || [];
     /**
      *
@@ -59,6 +61,19 @@ function TablaArmas(nombre, descripcion, efectos, coste, tipoTabla, opciones, ca
      * @type {string[]}
      */
     this.flagsNecesarios = flagsNecesarios;
+
+    if (requisitos)
+        /**
+         *
+         * @type {Requisito[]}
+         */
+        this.requisitos = requisitos;
+    else
+        /**
+         *
+         * @type {Requisito[]}
+         */
+        this.requisitos = [];
 }
 
 TablaArmas.prototype = {
@@ -122,6 +137,20 @@ TablaArmas.prototype = {
      */
     getOpciones : function() {
         return this.opciones;
+    },
+
+    /**
+     *
+     * @param personaje
+     * @returns {boolean}
+     */
+    cumpleRequisitos : function(personaje) {
+        for (var i = 0; i < this.requisitos.length; i++) {
+            if (!this.requisitos[i].cumple(personaje))
+                return false;
+        }
+
+        return true;
     },
 
     /**
@@ -204,6 +233,11 @@ TablaArmasComprada.prototype = {
             if ((this.getCategoriaTabla() == CATEGORIA_TABLA_ARMAS_ESTILOS) ||
                 (this.getCategoriaTabla() == CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS) ||
                 (this.getCategoriaTabla() == CATEGORIA_TABLA_ARMAS_GENERALES)) {
+                coste /= 2;
+            }
+        }
+        if (personaje.getCategoria().getNombre() == CAT_TAO) {
+            if (this.getCategoriaTabla() == CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES) {
                 coste /= 2;
             }
         }

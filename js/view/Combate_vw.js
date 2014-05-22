@@ -38,7 +38,7 @@ function tablaArmasDisabled(parametros) {
     if (tabla.getTipoTabla() == TABLA_ESPECIAL) {
         return false;
     }
-    return personaje_actual.hasTablaArmas(nombreTabla);
+    return personaje_actual.hasTablaArmas(nombreTabla) || !tabla.cumpleRequisitos(personaje_actual);
 }
 
 

@@ -833,7 +833,7 @@ function muestraCombate(estadoGeneracion) {
     divContenido.append(divTurno);
 
     divContenido.append(muestraSubtitulo(UI_TABLAS, false));
-    divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES],muestraBotones));
+    divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES,CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES],muestraBotones));
 
     divContenido.append(muestraSubtitulo(UI_ESTADISTICAS_ARMAS, false));
     divContenido.append(muestraArmas());
