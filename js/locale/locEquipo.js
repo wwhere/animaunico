@@ -704,4 +704,13 @@ var ARMA_UCHINE= (new L("ARMA_UCHINE","Uchi-ne","Uchi-ne")).getId();
 var ARMA_KUNAI= (new L("ARMA_KUNAI","Kunai","Kunai")).getId();
 
 
+var ARMADURA_PERPUNTE= (new L("ARMADURA_PERPUNTE","Perpunte","Perpunte")).getId();
+var ARMADURA_LAMINAR= (new L("ARMADURA_LAMINAR","Laminar","Laminar")).getId();
+var ARMADURA_BRIGANTINA= (new L("ARMADURA_BRIGANTINA","Brigantina","Brigantina")).getId();
+var ARMADURA_KOZANDO= (new L("ARMADURA_KOZANDO","Kozan-do","Kozan-do")).getId();
+var ARMADURA_KEIKO= (new L("ARMADURA_KEIKO","Keiko","Keiko")).getId();
+var ARMADURA_OYOROI= (new L("ARMADURA_OYOROI","O-Yoroi","O-Yoroi")).getId();
+var ARMADURA_LORICA_SEGMENTATA= (new L("ARMADURA_LORICA_SEGMENTATA","Lorica segmentata","Lorica segmentata")).getId();
+var ARMADURA_TANKO= (new L("ARMADURA_TANKO","Tanko","Tanko")).getId();
+
 
