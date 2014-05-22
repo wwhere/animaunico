@@ -951,6 +951,7 @@ var CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS = (new L("Tablas de armas arquetípicas"
 var CATEGORIA_TABLA_ARMAS_ESTILOS = (new L("Tablas de estilos","Tablas de estilos","Combat styles")).getId();
 var CATEGORIA_TABLA_MISTICAS = (new L("Tablas Místicas","Tablas Místicas","Mystic modules")).getId();
 var CATEGORIA_TABLA_PSIQUICAS = (new L("Tablas Psíquicas","Tablas Psíquicas","Psychic modules")).getId();
+var CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES = (new L("CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES","Tablas de armas en artes marciales","Martial arts weapons modules")).getId();
 
 var ERR_VENTAJA_ERRONEA = (new L("Error: Nombre de ventaja erróneo","Error: Nombre de ventaja erróneo","Error: wrong advantage name")).getId();
 

@@ -177,3 +177,33 @@ var TABLA_TABLA_DE_SUJECION = (new L("TABLA_TABLA_DE_SUJECION","Tabla de Sujeci�
 var TABLA_TABLA_DE_SUJECION_DESC = (new L("TABLA_TABLA_DE_SUJECION_DESC","Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.",
     "Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.")).getId();
 
+var TABLA_AIKIDO= (new L("TABLA_AIKIDO","Armas de Aikido","Aikido weapons")).getId();
+var TABLA_KUNG_FU= (new L("TABLA_KUNG_FU","Armas de Kung Fu","Kung Fu weapons")).getId();
+var TABLA_SHOTOKAN= (new L("TABLA_SHOTOKAN","Armas de Shotokan","Shotokan weapons")).getId();
+var TABLA_MOAI_THAI= (new L("TABLA_MOAI_THAI","Armas de Moai Thai","Moai Thai weapons")).getId();
+var TABLA_CAPOEIRA= (new L("TABLA_CAPOEIRA","Armas de Capoeira","Capoeira weapons")).getId();
+var TABLA_KEMPO= (new L("TABLA_KEMPO","Armas de Kempo","Kempo weapons")).getId();
+var TABLA_GRAPPLING= (new L("TABLA_GRAPPLING","Armas de Grappling","Grappling weapons")).getId();
+var TABLA_SAMBO= (new L("TABLA_SAMBO","Armas de Sambo","Sambo weapons")).getId();
+var TABLA_TAE_KWON_DO= (new L("TABLA_TAE_KWON_DO","Armas de Tae Kwon Do","Tae Kwon Do weapons")).getId();
+var TABLA_TAI_CHI= (new L("TABLA_TAI_CHI","Armas de Tai Chi","Tai Chi weapons")).getId();
+var TABLA_PANKRATION= (new L("TABLA_PANKRATION","Armas de Pankration","Pankration weapons")).getId();
+var TABLA_KARDAD= (new L("TABLA_KARDAD","Armas de Kardad","Kardad weapons")).getId();
+var TABLA_MALLA_YUDDHA= (new L("TABLA_MALLA_YUDDHA","Armas de Malla-yuddha","Malla-yuddha weapons")).getId();
+var TABLA_LAMA= (new L("TABLA_LAMA","Armas de Lama","Lama weapons")).getId();
+var TABLA_KUAN= (new L("TABLA_KUAN","Armas de Kuan","Kuan weapons")).getId();
+var TABLA_SOO_BAHK= (new L("TABLA_SOO_BAHK","Armas de Soo Bahk","Soo Bahk weapons")).getId();
+var TABLA_BOXEO= (new L("TABLA_BOXEO","Armas de Boxeo","Boxing weapons")).getId();
+var TABLA_XING_QUAN= (new L("TABLA_XING_QUAN","Armas de Xing Quan","Xing Quan weapons")).getId();
+var TABLA_SELENE= (new L("TABLA_SELENE","Armas de Selene","Selene weapons")).getId();
+var TABLA_MELKAIAH= (new L("TABLA_MELKAIAH","Armas de Melkaiah","Melkaiah weapons")).getId();
+var TABLA_EMP= (new L("TABLA_EMP","Armas de Emp","Emp weapons")).getId();
+var TABLA_SERAPHITE= (new L("TABLA_SERAPHITE","Armas de Seraphite","Seraphite weapons")).getId();
+var TABLA_SHEPHON= (new L("TABLA_SHEPHON","Armas de Shephon","Shephon weapons")).getId();
+var TABLA_ENUTH= (new L("TABLA_ENUTH","Armas de Enuth","Enuth weapons")).getId();
+var TABLA_HAKYOUKUKEN= (new L("TABLA_HAKYOUKUKEN","Armas de Hahyoukuken","Hahyoukuken weapons")).getId();
+var TABLA_SUNYATA= (new L("TABLA_SUNYATA","Armas de Suyanta","Suyanta weapons")).getId();
+var TABLA_HANJA= (new L("TABLA_HANJA","Armas de Hanja","Hanja weapons")).getId();
+var TABLA_MUSHIN= (new L("TABLA_MUSHIN","Armas de Mushin","Mushin weapons")).getId();
+var TABLA_REX_FRAME= (new L("TABLA_REX_FRAME","Armas de Rex Frame","Rex Frame weapons")).getId();
+

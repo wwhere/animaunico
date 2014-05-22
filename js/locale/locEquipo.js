@@ -626,3 +626,91 @@ var MUNICION_BALLESTA_LIGERA = (new L("MUNICION_BALLESTA_LIGERA","Munición: Bal
 var MUNICION_BALLESTA_PESADA = (new L("MUNICION_BALLESTA_PESADA","Munición: Ballesta pesada","Ammunition: Heavy Crossbow")).getId();
 var MUNICION_BALISTA_LIGERA = (new L("MUNICION_BALISTA_LIGERA","Munición: Balista ligera","Ammunition: Light Ballista")).getId();
 var MUNICION_BALISTA_PESADA = (new L("MUNICION_BALISTA_PESADA","Munición: Balista pesada","Ammunition: Heavy Ballista")).getId();
+
+/**armas de dominus exxet */
+var ARMA_ATLATL = (new L("ARMA_ATLATL","Atlatl","Atlatl")).getId();
+var ARMA_BASTON_DE_COMBATE = (new L("ARMA_BASTON_DE_COMBATE","Bastón de combate","Bastón de combate")).getId();
+var ARMA_BEC_DE_CORBIN = (new L("ARMA_BEC_DE_CORBIN","Bec de corbin","Bec de corbin")).getId();
+var ARMA_BERDICHE = (new L("ARMA_BERDICHE","Berdiche","Berdiche")).getId();
+var ARMA_BRACAMARTE = (new L("ARMA_BRACAMARTE","Bracamarte","Bracamarte")).getId();
+var ARMA_BRANDISTOCK = (new L("ARMA_BRANDISTOCK","Brandistock","Brandistock")).getId();
+var ARMA_CHUI = (new L("ARMA_CHUI","Chui","Chui")).getId();
+var ARMA_CINQUEDEA = (new L("ARMA_CINQUEDEA","Cinquedea","Cinquedea")).getId();
+var ARMA_CLAYMORE = (new L("ARMA_CLAYMORE","Claymore","Claymore")).getId();
+var ARMA_DIRK = (new L("ARMA_DIRK","Dirk","Dirk")).getId();
+var ARMA_ESCRAMASAJON = (new L("ARMA_ESCRAMASAJON","Escramasajón","Escramasajón")).getId();
+var ARMA_FALCATA = (new L("ARMA_FALCATA","Falcata","Falcata")).getId();
+var ARMA_GLAVIUS = (new L("ARMA_GLAVIUS","Glavius","Glavius")).getId();
+var ARMA_GOEDENDAG = (new L("ARMA_GOEDENDAG","Goedendag","Goedendag")).getId();
+var ARMA_GOSSE_MESSER = (new L("ARMA_GOSSE_MESSER","Gosse messer","Gosse messer")).getId();
+var ARMA_GUANDAO = (new L("ARMA_GUANDAO","Guandao","Guandao")).getId();
+var ARMA_HU_DIE_DAO = (new L("ARMA_HU_DIE_DAO","Hu die dao","Hu die dao")).getId();
+var ARMA_KATZBALGER = (new L("ARMA_KATZBALGER","Katzbalger","Katzbalger")).getId();
+var ARMA_KERAMBIT = (new L("ARMA_KERAMBIT","Kerambit","Kerambit")).getId();
+var ARMA_KONCERZ = (new L("ARMA_KONCERZ","Koncerz","Koncerz")).getId();
+var ARMA_KUKRI = (new L("ARMA_KUKRI","Kukri","Kukri")).getId();
+var ARMA_LIU_XING_CHUI = (new L("ARMA_LIU_XING_CHUI","Liu xing chui","Liu xing chui")).getId();
+var ARMA_LUJIAODAO = (new L("ARMA_LUJIAODAO","Lujiaodao","Lujiaodao")).getId();
+var ARMA_MAZA_BARRA = (new L("ARMA_MAZA_BARRA","Maza barra","Maza barra")).getId();
+var ARMA_MONTANTE = (new L("ARMA_MONTANTE","Montante","Montante")).getId();
+var ARMA_PATA = (new L("ARMA_PATA","Pata","Pata")).getId();
+var ARMA_PICA = (new L("ARMA_PICA","Pica","Pica")).getId();
+var ARMA_PUDAO = (new L("ARMA_PUDAO","Pudao","Pudao")).getId();
+var ARMA_SHANG_GOU = (new L("ARMA_SHANG_GOU","Shang gou","Shang gou")).getId();
+var ARMA_SPATHA = (new L("ARMA_SPATHA","Spatha","Spatha")).getId();
+var ARMA_URUMI = (new L("ARMA_URUMI","Urumi","Urumi")).getId();
+var ARMA_VALASKA = (new L("ARMA_VALASKA","Valaska","Valaska")).getId();
+
+var REGLA_ATLATL = (new L("REGLA_ATLATL","Atlatl","Atlatl")).getId();
+var REGLA_BRANDISTOCK = (new L("REGLA_BRANDISTOCK","Brandistock","Brandistock")).getId();
+var REGLA_GOEDENDAG = (new L("REGLA_GOEDENDAG","Goedendag","Goedendag")).getId();
+var REGLA_HU_DIE_DAO = (new L("REGLA_HU_DIE_DAO","Hu die dao","Hu die dao")).getId();
+var REGLA_KATZBALGER = (new L("REGLA_KATZBALGER","Katzbalger","Katzbalger")).getId();
+var REGLA_KERAMBIT = (new L("REGLA_KERAMBIT","Kerambit","Kerambit")).getId();
+var REGLA_KONCERZ = (new L("REGLA_KONCERZ","Koncerz","Koncerz")).getId();
+var REGLA_PICA = (new L("REGLA_PICA","Pica","Pica")).getId();
+var REGLA_SHANG_GOU = (new L("REGLA_SHANG_GOU","Shang gou","Shang gou")).getId();
+var REGLA_URUMI = (new L("REGLA_URUMI","Urumi","Urumi")).getId();
+
+var ARMA_BOKUTO = (new L("ARMA_BOKUTO","Boku-to","Boku-to")).getId();
+var REGLA_BOKUTO = (new L("REGLA_BOKUTO","Boku-to","Boku-to")).getId();
+var ARMA_JUTTE= (new L("ARMA_JUTTE","Jutte","Jutte")).getId();
+var ARMA_KAMA= (new L("ARMA_KAMA","Kama","Kama")).getId();
+var ARMA_KAU_SIN_KE= (new L("ARMA_KAU_SIN_KE","Kau sin ke","Kau sin ke")).getId();
+var ARMA_KISERU = (new L("ARMA_KISERU","Kiseru","Kiseru")).getId();
+var ARMA_KRIS = (new L("ARMA_KRIS","Kris","Kris")).getId();
+var ARMA_KUMADE = (new L("ARMA_KUMADE","Kumade","Kumade")).getId();
+var REGLA_KUMADE = (new L("REGLA_KUMADE","Kumade","Kumade")).getId();
+var ARMA_KYOKETSUSHOGUI = (new L("ARMA_KYOKETSUSHOGUI","Kyoketsu-shogui","Kyoketsu-shogui")).getId();
+var REGLA_KYOKETSUSHOGUI = (new L("REGLA_KYOKETSUSHOGUI","Kyoketsu-shogui","Kyoketsu-shogui")).getId();
+var ARMA_LAJATANG = (new L("ARMA_LAJATANG","Lajatang","Lajatang")).getId();
+var REGLA_LAJATANG = (new L("REGLA_LAJATANG","Lajatang","Lajatang")).getId();
+var ARMA_NAGIMAKI= (new L("ARMA_NAGIMAKI","Nagimaki","Nagimaki")).getId();
+var ARMA_NAGINATA = (new L("ARMA_NAGINATA","Naginata","Naginata")).getId();
+var ARMA_NINJATO= (new L("ARMA_NINJATO","Ninja-to","Ninja-to")).getId();
+var ARMA_RAM_DAO = (new L("ARMA_RAM_DAO","Ram dao","Ram dao")).getId();
+var ARMA_SODE_GARAMI= (new L("ARMA_SODE_GARAMI","Sode garami","Sode garami")).getId();
+var REGLA_SODE_GARAMI= (new L("REGLA_SODE_GARAMI","Sode garami","Sode garami")).getId();
+var ARMA_TETSUBO = (new L("ARMA_TETSUBO","Tetsubo","Tetsubo")).getId();
+var ARMA_SANG_KAUW = (new L("ARMA_SANG_KAUW","Sang kauw","Sang kauw")).getId();
+var REGLA_SANG_KAUW = (new L("REGLA_SANG_KAUW","Sang kauw","Sang kauw")).getId();
+var ARMA_WAKIZASI= (new L("ARMA_WAKIZASI","Wakizasi","Wakizasi")).getId();
+
+var ARMA_ARCO_DE_BALAS= (new L("ARMA_ARCO_DE_BALAS","Arco de balas","Arco de balas")).getId();
+var REGLA_ARCO_DE_BALAS= (new L("REGLA_ARCO_DE_BALAS","Arco de balas","Arco de balas")).getId();
+var ARMA_PIEDRA= (new L("ARMA_PIEDRA","Piedra","Piedra")).getId();
+var ARMA_DAIKYU= (new L("ARMA_DAIKYU","Daikyu","Daikyu")).getId();
+var ARMA_UCHINE= (new L("ARMA_UCHINE","Uchi-ne","Uchi-ne")).getId();
+var ARMA_KUNAI= (new L("ARMA_KUNAI","Kunai","Kunai")).getId();
+
+
+var ARMADURA_PERPUNTE= (new L("ARMADURA_PERPUNTE","Perpunte","Perpunte")).getId();
+var ARMADURA_LAMINAR= (new L("ARMADURA_LAMINAR","Laminar","Laminar")).getId();
+var ARMADURA_BRIGANTINA= (new L("ARMADURA_BRIGANTINA","Brigantina","Brigantina")).getId();
+var ARMADURA_KOZANDO= (new L("ARMADURA_KOZANDO","Kozan-do","Kozan-do")).getId();
+var ARMADURA_KEIKO= (new L("ARMADURA_KEIKO","Keiko","Keiko")).getId();
+var ARMADURA_OYOROI= (new L("ARMADURA_OYOROI","O-Yoroi","O-Yoroi")).getId();
+var ARMADURA_LORICA_SEGMENTATA= (new L("ARMADURA_LORICA_SEGMENTATA","Lorica segmentata","Lorica segmentata")).getId();
+var ARMADURA_TANKO= (new L("ARMADURA_TANKO","Tanko","Tanko")).getId();
+
+

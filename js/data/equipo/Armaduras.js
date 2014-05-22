@@ -249,6 +249,129 @@ armaduras_set.push(new Armadura(
     [7,7,7,4,0,4,2]
 ));
 
+if (FLAG_DOMINUS_EXXET_ENABLED) {
+    armaduras_set.push(new Armadura(
+        ARMADURA_PERPUNTE,
+        new Dinero(5,0,0),
+        3,
+        DISP_TOTAL,
+        10,       //Llevar armadura
+        -10,     //penalizador natural
+        0,      //restriccion movimiento
+        11,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_CAMISOLA,
+        ARMADURA_CLASE_BLANDA,
+        [2,1,2,0,2,2,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_LAMINAR,
+        new Dinero(15,0,0),
+        6,
+        DISP_TOTAL,
+        20,       //Llevar armadura
+        -10,     //penalizador natural
+        0,      //restriccion movimiento
+        12,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_CAMISOLA,
+        ARMADURA_CLASE_BLANDA,
+        [3,1,1,0,2,2,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_BRIGANTINA,
+        new Dinero(30,0,0),
+        10,
+        DISP_TOTAL,
+        25,       //Llevar armadura
+        -10,     //penalizador natural
+        0,      //restriccion movimiento
+        12,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_CAMISOLA,
+        ARMADURA_CLASE_BLANDA,
+        [3,2,3,1,0,1,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_KOZANDO,
+        new Dinero(150,0,0),
+        18,
+        DISP_B,
+        25,       //Llevar armadura
+        -10,     //penalizador natural
+        0,      //restriccion movimiento
+        13,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_CAMISOLA,
+        ARMADURA_CLASE_BLANDA,
+        [3,1,1,2,0,1,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_KEIKO,
+        new Dinero(100,0,0),
+        10,
+        DISP_B,
+        30,       //Llevar armadura
+        -10,     //penalizador natural
+        0,      //restriccion movimiento
+        14,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_COMPLETA,
+        ARMADURA_CLASE_DURA,
+        [3,2,2,2,0,1,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_OYOROI,
+        new Dinero(400,0,0),
+        20,
+        DISP_B,
+        30,       //Llevar armadura
+        -10,     //penalizador natural
+        1,      //restriccion movimiento
+        15,     //entereza
+        30,     //presencia
+        ARMADURA_LOC_COMPLETA,
+        ARMADURA_CLASE_DURA,
+        [3,2,3,2,2,2,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_LORICA_SEGMENTATA,
+        new Dinero(18,0,0),
+        12,
+        DISP_TOTAL,
+        30,       //Llevar armadura
+        -15,     //penalizador natural
+        0,      //restriccion movimiento
+        13,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_CAMISOLA,
+        ARMADURA_CLASE_DURA,
+        [4,3,3,2,0,2,0]
+    ));
+
+    armaduras_set.push(new Armadura(
+        ARMADURA_TANKO,
+        new Dinero(500,0,0),
+        25,
+        DISP_B,
+        35,       //Llevar armadura
+        -15,     //penalizador natural
+        1,      //restriccion movimiento
+        14,     //entereza
+        25,     //presencia
+        ARMADURA_LOC_CAMISOLA,
+        ARMADURA_CLASE_DURA,
+        [4,2,3,1,0,1,0]
+    ));
+
+}
+
 bardas_set.push(new Equipo(
     BARDA_LIGERA,
     new Dinero(20, 0, 0),
