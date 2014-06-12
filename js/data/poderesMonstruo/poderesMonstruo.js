@@ -1,3 +1,34 @@
+/*
+
+PoderMonstruo(
+    "Nombre",
+    [
+        //categorias
+        {
+            nombre: "Opciones",
+            tipo: "Obligatoria",
+            efecto: [],
+            conNiveles: true,
+            [
+                //niveles
+                {
+                    nombre:,
+                    tipo:
+                    efecto: []
+                },
+                .
+                .
+                .
+            ]
+        },
+        .
+        .
+        .
+    ]
+)
+
+ */
+
 poder = new PoderMonstruo(
     "Armas naturales", //nombre
     [
@@ -189,3 +220,45 @@ poder = new PoderMonstruo(
         }
     ]
 );
+
+poder = new PoderMonstruo(
+    "Ataque especial",
+    [
+    ]
+);
+
+Distancia
+Hasta una distancia de 25 metros 10 5
+Hasta una distancia de 50 metros 20 10
+Hasta una distancia de 100 metros 30 15
+Hasta una distancia de 250 metros 40 20
+Hasta una distancia de 500 metros 50 25
+Hasta una distancia de un kilómetro 60 30
+Hasta una distancia de 10 kilómetros 70 35
+Hasta cualquier distancia visible 80 40
+Daño
+Daño base 40 10 5
+Daño base 50 15 10
+Daño base 60 20 10
+Daño base 80 25 10
+Daño base 100 30 15
+Daño base 120 50 20
+Daño base 150 60 20
+Daño base 200 80 25
+Daño base 250 100 30
+Área
+Un metro de radio 10 10
+3 metros de radio 20 10
+5 metros de radio 30 15
+10 metros de radio 40 20
+25 metros de radio 50 25
+50 metros de radio 60 30
+100 metros de radio 80 35
+Un ataque adicional 5 10
+Sin límite 60 20
+Penalizadores
+Requiere un turno de preparatoria -10 5
+Requiere 2 turnos de preparatoria -20 5
+Requiere 3 turnos de preparatoria -30 5
+Requiere 5 turnos de preparatoria -40 5
+Requiere 10 turnos de preparatoria -50 5
