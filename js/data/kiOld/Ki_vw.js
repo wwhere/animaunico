@@ -51,7 +51,7 @@ function dialogoCM() {
  */
 function muestraCM() {
     var div = getDiv("");
-    div.append(muestraSubtitulo(UI_CONOCIMIENTO_MARCIAL, false));
+    div.append(muestraSubtitulo(UI_CONOCIMIENTO_MARCIAL, false, false, []));
     var divCM = getDiv(CSS_ETIQUETA_EFECTO_TECNICA);
     divCM.append(muestraHabilidadPrimaria(HB_CM,_l(UI_CM),FLAG_DOMINUS_EXXET_ENABLED));
     divCM.append(getDiv(CSS_ETIQUETA_EFECTO_TECNICA).append(_l(UI_CM) + " " + _l(UI_LIBRE) + ": " + (personaje_actual.getCMTotal() - personaje_actual.getCMGastado())));

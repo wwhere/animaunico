@@ -6,6 +6,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Anima: UNICO - Generador de Personajes</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +25,7 @@
     <script src="js/vendor/jquery-2.0.3.min.js"></script>
     <!--<![endif]-->
 
-    <script src="js/anima-unico.min.js"></script>
+    <script src="js/anima-unico.min.72.js"></script>
 
 </head>
 <body onload="animaUnico.inicializar()" class="ui-widget">
@@ -59,9 +62,7 @@
                         <li><a href="#" id="BOTON_BONOS_NATURALES" class="localizable" loc="Elegir bonos Naturales">UI_BOTON_NATURALES></a></li>
                         <li><a href="#" id="BOTON_ARMA_INICIAL" class="localizable" loc="Elegir arma inicial">UI_BOTON_ARMA_INICIAL</a></li>
                         <li><a href="#" id="BOTON_TABLAS_ARMAS" class="localizable" loc="Comprar Tablas de Armas">UI_BOTON_TABLAS_ARMAS</a></li>
-                        <li><a href="#" id="BOTON_MAGIA" class="localizable" loc="Gastar niveles de vía">UI_BOTON_GASTAR_NIVELES_VIA</a></li>
                         <li><a href="#" id="BOTON_CV" class="localizable" loc="Gastar CVs">UI_BOTON_GASTAR_CV</a></li>
-                        <li><a href="#" id="BOTON_CM" class="localizable" loc="Gastar CM">UI_BOTON_GASTAR_CM</a></li>
                         <li><a href="#" id="BOTON_ELAN" class="localizable" loc="Gastar elan">UI_BOTON_GASTAR_ELAN</a></li>
                         <hr>
                         <li><a href="#" id="BOTON_FINALIZAR_CREACION" class="localizable" loc="Finalizar Creación">UI_BOTON_FINALIZAR_CREACION</a></li>
@@ -94,6 +95,11 @@
 </div>
 
 <div style="position:fixed !important;position:absolute;top:70px;right:0;bottom:0;left:0;overflow-y: scroll;">
+    <div class="row">
+        <div class="twelve columns">
+            <div id="contenidoResaltado"></div>
+        </div>
+    </div>
     <div class="row">
 
         <div class="six columns">
@@ -277,107 +283,37 @@
 </div>
 
 <div id="logCambios" style="display:none">
-    <h5>23 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Arcana Exxet: Ahora se puede comprar Regeneración Zeónica por separado.</li>
-        <li>Prometheum Exxet: Añadida la ventaja Afinidad de Uso y las habilidades secundarias Runas, Alquimia y Animismo.</li>
-        <li>Dominus Exxet: Corregidos, según complemento web 3, los requisitos de algunas Armas Imposibles.</li>
-        <li>Los Que Caminaron Con Nosotros: Añadidas las razas y nephilim.</li>
-        <hr>
-        <li>Arcana Exxet: Now you can buy Zeonic Regeneration by itself.</li>
-        <li>Prometheum Exxet: Added the advantage Use Affinity, and the secondary abilities Runes, Alchemy and Animism.</li>
-        <li>Dominus Exxet: Corrected, as per Web Supplement 3, the requisites of some Impossible Weapons.</li>
-        <li>Those Who Walked Among Us: Added races and nephilim.</li>
-    </ul>
-    <h5>22 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Dominus Exxet: Ars Magnus añadidas.</li>
-        <li>Arcana Exxet: Añadidas las ventajas de este libro.</li>
-        <li>Arcana Exxet: Ahora se puede indicar que se ha especializado en invocar.</li>
-        <hr>
-        <li>Dominus Exxet: Ars Magnus added.</li>
-        <li>Arcana Exxet: Added the advantages from this book.</li>
-        <li>Arcana Exxet: Now you can specify you are specialized in invocations.</li>
-    </ul>
-    <h5>20 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Dominus Exxet: Artes marciales de Dominus Exxet añadidas.</li>
-        <hr>
-        <li>Dominus Exxet: Martial Arts added.</li>
-    </ul>
-    <h5>17 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Dominus Exxet: Legados de sangre añadidos (a falta de algunos de sus efectos).</li>
-        <hr>
-        <li>Dominus Exxet: Blood legacies added (missing some of their effects).</li>
-    </ul>
-    <h5>16 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Gaïa 1: Terminado con los orígenes, clases sociales y raices culturales. Ahora se puede aplicar la ventaja, se ajustan los fondos iniciales, se puede cambiar el origen, etnia y la clase social (espero) correctamente.</li>
-        <hr>
-        <li>Gaïa 1: finished with origins, social classes and cultural roots. Now you can use the advantage and get the bonuses, initial funds are adjusted correctly, you can choose origin, ethnicity and social class.</li>
-    </ul>
-    <h5>13 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Gaïa 1: Introducidos en parte los orígenes de personaje. Ahora, al crear un nuevo personaje, Anima: UNICO le asigna al azar sexo, nación de origen, etnia, nombre, clase social, descripción, ciudad de origen e idiomas conocidos (en trasfondo).</li>
-        <li>Idioma: Añadidos botones para cambiar a inglés y español.</li>
-    <hr>
-        <li>Gaïa 1: Partially added Gaia origins. Now, when you create a new character, Anima: UNICO assigns randomly sex, nation of origin, ethnicity, name, social class, description, city of origin and languagues known (in background).</li>
-        <li>Languague: Added buttons to change between english and spanish.</li>
-    </ul>
-    <h5>6 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Complemento Web 1: Añadidas las técnicas de este suplemento.</li>
-        <li>Dominus Exxet: Añadidos los Límites de este libro.</li>
-        <li>Dominus Exxet: Añadidas las tablas de estilo de este libro.</li>
-        <li>Dominus Exxet: Añadidas las habilidades del Némesis de este libro.</li>
-        <li>Dominus Exxet: Añadidas las habilidades del ki de este libro.</li>
-        <li>Dominus Exxet: Añadidas las ventajas de este libro.</li>
-        <li>Dominus Exxet: Ahora puedes mejorar tu CM con tus PDs.</li>
-        <li>Arcana Exxet: Ahora puedes mejorar tu Nivel de Vía con tus PDs.</li>
-        <hr>
-        <li>Web Supplement 1: Added the techniques from this supplement.</li>
-        <li>Dominus Exxet: Added the limits from this book.</li>
-        <li>Dominus Exxet: Added the style modules from this book.</li>
-        <li>Dominus Exxet: Added the Nemesis abilities from this book.</li>
-        <li>Dominus Exxet: Added the ki abilities from this book.</li>
-        <li>Dominus Exxet: Added the advantages from this book.</li>
-        <li>Dominus Exxet: Now you can raise your KM with your DPs.</li>
-        <li>Arcana Exxet: Now you can raise your Path Level with your DPs.</li>
-    </ul>
-    <h5>5 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Pantalla: Introducidas las tablas de estilo de la pantalla.</li>
-        <li>Gaïa 1: Introducidas las ventajas de trasfondo, Sangre Antigua y las habilidades secundarias del libro Gaïa 1.</li>
-        <li>Armaduras: Cambiado como se registran internamente. Ahora se aplican sus penalizadores donde corresponde.</li>
-        <hr>
-        <li>Screen: Added the modules from the screen.</li>
-        <li>Gaïa 1: Added the background advantages, the Ancient Blood advantage and the secondary abilities from the book Gaïa 1.</li>
-        <li>Armors: Changed their internal representation. Their penalties are applied where needed.</li>
-    </ul>
-    <h5>3 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Técnicas del ki: Arreglos variados. Ahora se muestran bien en la hoja y se guardan y cargan correctamente.</li>
-        <li>Equipo: Arreglos variados con el guardado y cargado y con el equipado y desequipado de armaduras.</li>
-        <li>Invocaciones: Ya puedes indicar las invocaciones a las que puede acceder tu personaje.</li>
-        <hr>
-        <li>Ki Techniques: Several fixes. Now they are shown in the sheet and are correctly saved and loaded.</li>
-        <li>Equipment: Several fixes related to save/load equipment and to equip/unequip armor.</li>
-        <li>Invocations: You can select the invocations known to your character.</li>
-    </ul>
-    <h5>2 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Ahora puedes elegir tu elementalismo en las habilidades de convocatoria.</li>
-        <li>Hotfix: Las tablas de armas psíquicas y mágicas ya no se cuentan en los PDs de combate.</li>
-        <hr>
-        <li>You can now choose elementalism in the summoning abilities.</li>
-        <li>Hotfix: magic and psychic modules are no longer added to combat DPs.</li>
-    </ul>
-    <h5>1 de Abril de 2014</h5>
-    <ul class="textoSmall listaCambios">
-        <li>Arreglado el reparto de puntos de características de los métodos 0, 4 y 5.</li>
-        <hr>
-        <li>Fixed the point distribution between atributes of methods 0, 4 and 5</li>
-    </ul>
+    <div style="text-align: center;">
+        <a href="https://www.kickstarter.com/projects/1353316830/anima-gate-of-memories-extended-campaign" target="_blank"><img src="img/animaGateOfMemoriesKS.jpg"/></a><hr>
+        ¡Ánimo! Aún queda tiempo para participar en el nuevo Kickstarter de Anima: Gate of Memories. ¡Ahora con más Addons!<hr>
+        Hurry! You can still enter the kickstarter for the videogame Anima: Gate of Memories. Catch the new AddOns!
+    </div>
+    <div class="pretty label danger subtituloSeccion">16 de Junio de 2013</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Interfaz:</div><div class="valorPersonales"> Alterada la ventana de log de cambios para que no tape la pantalla.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Interface:</div><div class="valorPersonales"> Changed the chenge log window to avoid it covering all screen.</div></i>
+    </div>
+    <div class="pretty label danger subtituloSeccion">22 de Mayo de 2014</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Dominus Exxet</div><div class="valorPersonales"> Añadidas las nuevas armas.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Dominus Exxet</div><div class="valorPersonales"> Added new weapons.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Dominus Exxet</div><div class="valorPersonales"> Añadidas las nuevas armaduras.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Dominus Exxet</div><div class="valorPersonales"> Added new armors.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Dominus Exxet</div><div class="valorPersonales"> Añadidas las tablas de armas asociadas a artes marciales.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Dominus Exxet</div><div class="valorPersonales"> Added weapon modules related to martial arts.</div>
+    </div>
+
 </div>
 </html>

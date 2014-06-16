@@ -10,7 +10,7 @@ function muestraArtesMarciales(estadoGeneracion) {
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
-    div.append(muestraSubtitulo(UI_ARTES_MARCIALES, true));
+    div.append(muestraSubtitulo(UI_ARTES_MARCIALES, true, false, []));
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 

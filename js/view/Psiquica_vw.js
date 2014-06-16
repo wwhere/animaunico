@@ -12,7 +12,7 @@ function dialogoCV() {
         /**
          * CVs, potencial psíquico e innatos
          */
-        dialogo.append(muestraSubtitulo(UI_CVS_POTENCIAL, false));
+        dialogo.append(muestraSubtitulo(UI_CVS_POTENCIAL, false, false, []));
 
         var divHabilidades = getDiv();
 
@@ -36,7 +36,7 @@ function dialogoCV() {
         /**
          * Disciplinas y poderes
          */
-        dialogo.append(muestraSubtitulo(UI_DISCIPLINAS_DOMINADAS, false));
+        dialogo.append(muestraSubtitulo(UI_DISCIPLINAS_DOMINADAS, false, false, []));
 
         var botonAfinidadDisciplinaDisabled = false;
 

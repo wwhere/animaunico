@@ -169,8 +169,11 @@ function recuadroBase() {
  * @param {string} etiquetaId No localizado
  * @param esTitulo
  * @returns {*}
+ * @param {boolean} conBotones
+ * @param {{texto:string,delegado:function}[]} [textosFunciones]
  */
-function muestraSubtitulo(etiquetaId, esTitulo) {
+function muestraSubtitulo(etiquetaId, esTitulo, conBotones, textosFunciones) {
+    textosFunciones = textosFunciones || [];
     var divTitulo = getDiv("pretty");
     if (esTitulo) {
         divTitulo.addClass(CSS_TITULO_SECCION);
@@ -180,6 +183,12 @@ function muestraSubtitulo(etiquetaId, esTitulo) {
         divTitulo.addClass("pretty label danger");
     }
     divTitulo.append(_l(etiquetaId));
+    if (conBotones) {
+        for (var i = 0; i < textosFunciones.length; i++) {
+            var boton = muestraBotonOvalado(textosFunciones[i].texto,{},textosFunciones[i].delegado,"");
+            divTitulo.append(boton);
+        }
+    }
     return divTitulo;
 }
 
@@ -194,7 +203,7 @@ function muestraPersonales(estadoGeneracion) {
     var div = recuadroBase();
     var modificarPersonales = (estadoGeneracion == ESTADO_GENERACION_INICIADA);
 
-    div.append(muestraSubtitulo(UI_PERSONALES, true));
+    div.append(muestraSubtitulo(UI_PERSONALES, true, false, []));
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
     divContenido.append(muestraPersonal(_l(UI_NOMBRE), personaje_actual.getNombre(), modificarPersonales, elegirManualNombre));
@@ -220,7 +229,7 @@ function muestraCapacidades(estadoGeneracion) {
 
     var modificarApariencia = (estadoGeneracion == ESTADO_GENERACION_INICIADA);
     var modificarPV = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
-    div.append(muestraSubtitulo(UI_CAPACIDADES_FISICAS, true));
+    div.append(muestraSubtitulo(UI_CAPACIDADES_FISICAS, true, false, []));
 
     divContenido.append(muestraValorPV(modificarPV));
 
@@ -237,7 +246,7 @@ function muestraCapacidades(estadoGeneracion) {
 
 function muestraDesarrollo(estadoGeneracion) {
     var div = recuadroBase();
-    div.append(muestraSubtitulo(UI_DESARROLLO, true));
+    div.append(muestraSubtitulo(UI_DESARROLLO, true, false, []));
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
     var modificarPX = (estadoGeneracion == ESTADO_GENERACION_PERSONAJE_HECHO);
@@ -433,7 +442,7 @@ function muestraValorRegeneracion() {
 /******** caracteristicas *************/
 function muestraCaracteristicas(estadoGeneracion) {
     var div = recuadroBase();
-    div.append(muestraSubtitulo(UI_CARACTERISTICAS, true));
+    div.append(muestraSubtitulo(UI_CARACTERISTICAS, true, false, []));
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
     updateNivelMagiaPorInteligencia(personaje_actual.getCaracteristica(INT));
@@ -511,7 +520,7 @@ function muestraResistencias(estadoGeneracion) {
     var div = recuadroBase();
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
-    div.append(muestraSubtitulo(UI_RESISTENCIAS, true));
+    div.append(muestraSubtitulo(UI_RESISTENCIAS, true, false, []));
 
     var multiplicador;
 
@@ -611,7 +620,7 @@ function muestraElan(estadoGeneracion) {
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
-    div.append(muestraSubtitulo(UI_ELAN, true));
+    div.append(muestraSubtitulo(UI_ELAN, true, false, []));
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
     if (personaje_actual.elan.length == 0) {
@@ -685,7 +694,7 @@ function muestraDesventajas(estadoGeneracion) {
 function listaElementosPCComprados(titulo,arrayElementos,callback,puedeComprarNuevo,callbackBotonNuevo, etiquetaBotonNuevo) {
     var div = getDiv("");
 
-    var divTitulo = muestraSubtitulo(titulo, true);
+    var divTitulo = muestraSubtitulo(titulo, true, false, []);
     div.append(divTitulo);
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
@@ -804,20 +813,20 @@ function muestraCombate(estadoGeneracion) {
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
     var div = recuadroBase();
-    div.append(muestraSubtitulo(UI_COMBATE, true));
+    div.append(muestraSubtitulo(UI_COMBATE, true, false, []));
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
     divContenido.append(muestraCombateHabilidadesGenerales(muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_ARMAS_MANEJADAS, false));
+    divContenido.append(muestraSubtitulo(UI_ARMAS_MANEJADAS, false, false, []));
     divContenido.append(muestraManejoArmas());
 
-    divContenido.append(muestraSubtitulo(UI_ARMADURA, false));
+    divContenido.append(muestraSubtitulo(UI_ARMADURA, false, false, []));
     divContenido.append(muestraArmadura());
 
-    divContenido.append(muestraSubtitulo(UI_TURNO, false));
+    divContenido.append(muestraSubtitulo(UI_TURNO, false, false, []));
 
     var divTurno = getDiv(CSS_CAMPO_PERSONALES);
     var divEtiqueta = getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL);
@@ -832,10 +841,10 @@ function muestraCombate(estadoGeneracion) {
 
     divContenido.append(divTurno);
 
-    divContenido.append(muestraSubtitulo(UI_TABLAS, false));
+    divContenido.append(muestraSubtitulo(UI_TABLAS, false, false, []));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_ARMAS_ARQUETÍPICAS,CATEGORIA_TABLA_ARMAS_ESTILOS,CATEGORIA_TABLA_ARMAS_GENERALES,CATEGORIA_TABLA_ARMAS_ARTES_MARCIALES],muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_ESTADISTICAS_ARMAS, false));
+    divContenido.append(muestraSubtitulo(UI_ESTADISTICAS_ARMAS, false, false, []));
     divContenido.append(muestraArmas());
 
     div.append(divContenido);
@@ -847,7 +856,7 @@ function muestraKi(estadoGeneracion) {
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
-    div.append(muestraSubtitulo(UI_DOMINIOS_KI, true));
+    div.append(muestraSubtitulo(UI_DOMINIOS_KI, true, false, []));
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
@@ -903,7 +912,7 @@ function muestraCMPersonaje(muestraBotones) {
 function muestraLimite(muestraBotones) {
     var div = getDiv("");
     var puedeComprar = true;
-    div.append(muestraSubtitulo(UI_LIMITE, false));
+    div.append(muestraSubtitulo(UI_LIMITE, false, false, []));
 
     if ((personaje_actual.getLimite().length == 1) && (!personaje_actual.hasFlag(FLAG_LIMITE_DUAL))) {
         puedeComprar = false;
@@ -953,7 +962,7 @@ function muestraLimite(muestraBotones) {
 function muestraHabilidadesKi(muestraBotones) {
     var div = getDiv("");
 
-    div.append(muestraSubtitulo(UI_HABILIDADES_KI, false));
+    div.append(muestraSubtitulo(UI_HABILIDADES_KI, false, false, []));
 
     if (muestraBotones) {
         div.append(botonComprarNuevo(_l(UI_COMPRAR_HABILIDAD_KI),BOTON_CM,comprarHabilidadKi,{}));
@@ -1006,7 +1015,7 @@ function muestraTecnicasKi(muestraBotones) {
      */
     var tecnicasKi = personaje_actual.getTecnicasKi();
 
-    div.append(muestraSubtitulo(UI_TECNICAS_KI, false));
+    div.append(muestraSubtitulo(UI_TECNICAS_KI, false, false, []));
 
     if (muestraBotones) {
         div.append(muestraBotonCompraTecnicaKi());
@@ -1192,7 +1201,7 @@ function muestraSobrenatural(estadoGeneracion) {
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
 
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
-    div.append(muestraSubtitulo(UI_SOBRENATURALES, true));
+    div.append(muestraSubtitulo(UI_SOBRENATURALES, true, false, []));
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
     var muestraBotonesNivelVia = muestraBotones && FLAG_ARCANA_EXXET_ENABLED;
@@ -1209,19 +1218,19 @@ function muestraSobrenatural(estadoGeneracion) {
 
     divContenido.append(muestraMagiaInnata());
 
-    divContenido.append(muestraSubtitulo(UI_VIAS, false));
+    divContenido.append(muestraSubtitulo(UI_VIAS, false, false, []));
     divContenido.append(muestraViasMagia(muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_CONJUROS, false));
+    divContenido.append(muestraSubtitulo(UI_CONJUROS, false, false, []));
     divContenido.append(muestraConjurosSueltos(muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_ESFERAS_METAMAGICAS, false));
+    divContenido.append(muestraSubtitulo(UI_ESFERAS_METAMAGICAS, false, false, []));
     divContenido.append(muestraEsferasMetamagicas(muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_TABLAS, false));
+    divContenido.append(muestraSubtitulo(UI_TABLAS, false, false, []));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_MISTICAS],muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_CONVOCATORIA, false));
+    divContenido.append(muestraSubtitulo(UI_CONVOCATORIA, false, false, []));
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
     divContenido.append(muestraHabilidadPrimaria(HB_CONVOCAR,_l(UI_CONVOCAR),muestraBotones));
@@ -1232,7 +1241,7 @@ function muestraSobrenatural(estadoGeneracion) {
     divContenido.append(muestraElementalismo());
     divContenido.append(muestraEspecializacionInvocacion());
 
-    divContenido.append(muestraSubtitulo(UI_INVOCACIONES, false));
+    divContenido.append(muestraSubtitulo(UI_INVOCACIONES, false, false, []));
     divContenido.append(muestraInvocaciones(muestraBotones));
 
     div.append(divContenido);
@@ -1409,7 +1418,7 @@ function muestraPsiquica(estadoGeneracion) {
 
     var muestraBotones = ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL));
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
-    div.append(muestraSubtitulo(UI_PSIQUICA, true));
+    div.append(muestraSubtitulo(UI_PSIQUICA, true, false, []));
 
     divContenido.append(muestraCabecerasBaseBonosFinal());
 
@@ -1429,10 +1438,10 @@ function muestraPsiquica(estadoGeneracion) {
 
     divContenido.append(muestraDisciplinasYPoderes(muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_PATRONES_MENTALES, false));
+    divContenido.append(muestraSubtitulo(UI_PATRONES_MENTALES, false, false, []));
     divContenido.append(muestraPatronesMentales(muestraBotones));
 
-    divContenido.append(muestraSubtitulo(UI_TABLAS, false));
+    divContenido.append(muestraSubtitulo(UI_TABLAS, false, false, []));
     divContenido.append(muestraTablas([CATEGORIA_TABLA_PSIQUICAS],muestraBotones));
 
     div.append(divContenido);
@@ -1546,7 +1555,7 @@ function muestraDisciplinasYPoderes(muestraBotones) {
     var div = getDiv("");
     var i;
     var divDisciplinas = getDiv(CSS_TEXTO_SMALL).addClass(CSS_MUESTRA_BLOCK);
-    div.append(muestraSubtitulo(UI_AFINIDAD_CON_DISCIPLINAS, false));
+    div.append(muestraSubtitulo(UI_AFINIDAD_CON_DISCIPLINAS, false, false, []));
 
     if (muestraBotones) {
         var divBotonNuevaDisciplina = getDiv("");
@@ -1565,7 +1574,7 @@ function muestraDisciplinasYPoderes(muestraBotones) {
 
     div.append(divDisciplinas);
 
-    div.append(muestraSubtitulo(UI_PODERES_DOMINADOS, false));
+    div.append(muestraSubtitulo(UI_PODERES_DOMINADOS, false, false, []));
     var divPoderes = getDiv("");
 
     if (muestraBotones) {
@@ -1650,13 +1659,13 @@ function muestraSecundarias(estadoGeneracion) {
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
     div.addClass("tablaSecundarias");
 
-    div.append(muestraSubtitulo(UI_SECUNDARIAS, true));
+    div.append(muestraSubtitulo(UI_SECUNDARIAS, true, false, []));
 
 
     for (var i = 0; i <habilidades_secundarias.length; i++) {
         var grupoHab = habilidades_secundarias[i];
 
-        divContenido.append(muestraSubtitulo(habilidades_secundarias_nombres_grupos[i], false));
+        divContenido.append(muestraSubtitulo(habilidades_secundarias_nombres_grupos[i], false, false, []));
         divContenido.append(muestraCabecerasBaseBonosFinal());
 
         for (var j = 0; j< grupoHab.length; j++) {
@@ -1712,9 +1721,9 @@ function muestraEquipamiento() {
     var div = recuadroBase();
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
-    div.append(muestraSubtitulo(UI_EQUIPAMIENTO, true));
+    div.append(muestraSubtitulo(UI_EQUIPAMIENTO, true, false, []));
 
-    divContenido.append(muestraSubtitulo(UI_DINERO, false));
+    divContenido.append(muestraSubtitulo(UI_DINERO, false, false, []));
 
     var divDinero = getDiv("row");
     var divEtiqueta = getDiv("two columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(UI_DINERO) + ": ");
@@ -1726,7 +1735,7 @@ function muestraEquipamiento() {
 
     divContenido.append(divDinero.append(divEtiqueta).append(divValorDinero).append(divBotonCambiarOro).append(divBotonCambiarPlata).append(divBotonCambiarCobre));
 
-    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false));
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO, false, false, []));
 
     divContenido.append(muestraBotonPequeño(_l(UI_BOTON_COMPRAR_EQUIPO),{},muestraVentanaCompraEquipo,""));
     divContenido.append(muestraBotonPequeño(_l(UI_BOTON_AÑADIR_EQUIPO),{},muestraVentanaAñadirEquipo,""));
@@ -1756,7 +1765,7 @@ function muestraEquipamiento() {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
-    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMAS, false));
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMAS, false, false, []));
 
     /**
      *
@@ -1810,7 +1819,7 @@ function muestraEquipamiento() {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
     }
 
-    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMADURAS, false));
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_ARMADURAS, false, false, []));
 
     /**
      *
@@ -1888,7 +1897,7 @@ function muestraEquipamiento() {
 
     divContenido.append(divEquipoArmaduras);
 
-    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_YELMOS, false));
+    divContenido.append(muestraSubtitulo(UI_EQUIPAMIENTO_YELMOS, false, false, []));
 
     if (armaduras.length == 0) {
         divContenido.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALLER).html("<br>"));
@@ -1967,9 +1976,9 @@ function muestraDescripcion() {
     var div = recuadroBase();
     var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
 
-    div.append(muestraSubtitulo(UI_DESCRIPCION_TRASFONDO, true));
+    div.append(muestraSubtitulo(UI_DESCRIPCION_TRASFONDO, true, false, []));
 
-    divContenido.append(muestraSubtitulo(UI_DESCRIPCION, false));
+    divContenido.append(muestraSubtitulo(UI_DESCRIPCION, false, false, []));
 
     var divDescripcion = getDiv("row");
 
@@ -1979,7 +1988,7 @@ function muestraDescripcion() {
 
     divContenido.append(divDescripcion);
 
-    divContenido.append(muestraSubtitulo(UI_TRASFONDO, false));
+    divContenido.append(muestraSubtitulo(UI_TRASFONDO, false, false, []));
 
     var divTrasfondo = getDiv("row");
 
