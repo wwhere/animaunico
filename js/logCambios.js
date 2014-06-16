@@ -1,7 +1,14 @@
 var CURRENT_VERSION = 71;
 
 function mostrarLogCambios() {
-    $("#logCambios").dialog({
+    var div = recuadroBase();
+    var divContenido = getDiv(CSS_CONTENIDO_RECUADRO);
+
+    div.append(muestraSubtitulo(UI_DIALOGO_LOG_CAMBIOS_TITULO, true, true, [{texto:"X",delegado:cerrarLogCambios}]));
+    divContenido.append($("#logCambios").html());
+    div.append(divContenido);
+    $("#contenidoResaltado").empty().append(div);
+/*    $("#logCambios").dialog({
         modal: true,
         autoOpen: true,
         draggable: true,
@@ -13,9 +20,13 @@ function mostrarLogCambios() {
         width: ANCHO_DIALOGO,
         height: ALTO_DIALOGO,
         maxHeight: ALTO_DIALOGO
-    });
+    });*/
 
     localStorage.ultimosCambiosVistos = CURRENT_VERSION;
+}
+
+function cerrarLogCambios() {
+    $("#contenidoResaltado").empty();
 }
 
 function mostrarLicencia() {

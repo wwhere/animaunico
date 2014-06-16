@@ -1779,3 +1779,9 @@ ul.listaCambios { list-style-type: circle; }
 .colorGris { color: grey; }
 
 .colorPalidGreen { color: palegreen; }
+
+.botonDiminuto {
+    height: 15px!important;
+    font-size: x-small!important;
+    line-height: 16px!important;
+}
