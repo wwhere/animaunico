@@ -70,7 +70,7 @@ function dialogoElegirArma(categoriasPermitidas, callback, parametros) {
 
         var yaListada = false;
         for (j=0; j < categorias.length; j++) {
-            if (categorias[j].etiqueta == categoria) {
+            if (categorias[j].etiqueta == categoriaLoc) {
                 yaListada = true;
                 break;
             }
