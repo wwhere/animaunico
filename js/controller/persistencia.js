@@ -1410,9 +1410,18 @@ function cargarPersonaje(cadena) {
     });
 
     if (personaje_actual['armaduraNatural']) {
-        //TODO comprobar si tiene REX FRAME, si tiene bonos de Armadura natural, si tiene ventajas Armadura mistica o armadura natural
+        if (personaje_actual.hasVentaja(getVentaja(VENT_ARMADURA_MISTICA),"")) {
+            armaduraMistica(0,0,true);
+        }
+        if (personaje_actual.hasVentaja(getVentaja(VENT_ARMADURA_NATURAL),"")) {
+            armaduraNatural(0,0,true);
+        }
+        var bonos = personaje_actual.getBonos(BONO_ARMADURA_NATURAL,"",CATEGORIA_BONO_CUALQUIERA);
+        for (var x = 0; x < bonos.length; x++) {
+            personaje_actual.addArmaduraNatural([bonos[x].bono,bonos[x].bono,bonos[x].bono,bonos[x].bono,bonos[x].bono,bonos[x].bono,bonos[x].bono],(bonos[x].getOpcion() == ARMADURA_CLASE_BLANDA));
+        }
 
-        //TODO eliminar valor armaduraNatural
+        delete personaje_actual['armaduraNatural'];
     }
 
     personaje_actual['allHabilidades'] = parseArrayHabilidadDePersonaje(allHabilidades);
