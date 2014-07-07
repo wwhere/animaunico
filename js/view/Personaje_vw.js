@@ -1866,7 +1866,7 @@ function muestraEquipamiento() {
         $(inputCheckEquipadoArmadura).on("click",{armadura:itemArmadura}, function(ev) {
             var armadura = ev.data.armadura;
 
-            if (armadura.getClase() == ARMADURA_CLASE_DURA) {
+            /*if (armadura.getClase() == ARMADURA_CLASE_DURA) {
                 desequipaArmaduras(true);
             } else {
                 if (!armadura.isEquipado()) {
@@ -1886,7 +1886,7 @@ function muestraEquipamiento() {
                         primeraBlanda.setEquipado(false);
                     }
                 }
-            }
+            }*/
             ev.data.armadura.setEquipado(!ev.data.armadura.isEquipado());
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
             lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);

@@ -1271,6 +1271,22 @@ function parseTipoArmadura(v) {
     return tipoArmadura;
 }
 
+/**
+ *
+ * @param {string} v
+ * @returns {TipoArmadura[]}
+ */
+function parseArrayTiposArmadura(v) {
+    var equipo = [];
+
+    for (var i = 0; i < v.length;i++) {
+        equipo.push(parseTipoArmadura(v[i]));
+    }
+
+    return equipo;
+}
+
+
 function cargarPersonaje(cadena) {
     personaje_actual = new Personaje();
 
@@ -1291,10 +1307,10 @@ function cargarPersonaje(cadena) {
             case 'categoriasPorNiveles':
                 personaje_actual.categoriasPorNiveles = parseArrayCategorias(v);
                 break;
+            case 'armadurasNaturales':
+                personaje_actual[k] = parseArrayTiposArmadura(v);
+                break;
             case 'armaduraNatural':
-            case 'capaArmaduraDura':
-            case 'capaArmaduraBlanda1':
-            case 'capaArmaduraBlanda2':
             case 'capaYelmo':
                 personaje_actual[k] = parseTipoArmadura(v);
                 break;
@@ -1392,6 +1408,12 @@ function cargarPersonaje(cadena) {
                 personaje_actual[k] = v;
         }
     });
+
+    if (personaje_actual['armaduraNatural']) {
+        //TODO comprobar si tiene REX FRAME, si tiene bonos de Armadura natural, si tiene ventajas Armadura mistica o armadura natural
+
+        //TODO eliminar valor armaduraNatural
+    }
 
     personaje_actual['allHabilidades'] = parseArrayHabilidadDePersonaje(allHabilidades);
 

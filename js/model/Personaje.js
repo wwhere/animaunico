@@ -137,8 +137,8 @@ function Personaje(nivelInicial) {
     //endregion Categoría
 
     //region Armadura
-    /** @type TipoArmadura */
-    this.armaduraNatural = new TipoArmadura(ARMADURA_NATURAL,[0,0,0,0,0,0,0],true);
+    /** @type TipoArmadura[] */
+    this.armadurasNaturales = [new TipoArmadura(ARMADURA_NATURAL,[0,0,0,0,0,0,0],true)];
 
     /** @type TipoArmadura */
     this.capaYelmo = new TipoArmadura(ARMADURA_NINGUNA,[0,0,0,0,0,0,0],true);
@@ -474,155 +474,6 @@ Personaje.prototype = {
         return this.nombre + " (" + this.getStringCategoria() + ", " + this.raza + ")";
     },
 
-
-/**
-     *
-     * @returns {string}
-     */
-    getTrasfondo: function() {
-        return this.trasfondo;
-    },
-
-    /**
-     *
-     * @returns {string}
-     */
-    getOrigen : function() {
-        return this.origen;
-    },
-
-    /**
-     *
-     * @param {string} valor
-     */
-    setOrigen: function(valor) {
-        var claseGenerica = CLASE_SOCIAL_MEDIO;
-        var nuevaClase = getClaseSocialAzar(valor);
-
-        if (this.hasFlag(FLAG_RAICES_CULTURALES)) {
-            var coste = getVentaja(VENT_RAICES_CULTURALES).getCostes()[0];
-            raicesCulturales(coste,"",false);
-
-            this.setClaseSocial(claseGenerica);
-            this.origen = valor;
-            this.setClaseSocial(nuevaClase);
-
-            raicesCulturales(coste,"",true);
-        } else {
-            this.setClaseSocial(claseGenerica);
-            this.origen = valor;
-            this.setClaseSocial(nuevaClase);
-        }
-        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
-    },
-
-
-    /**
-     *
-     * @returns {string}
-     */
-    getEtnia : function() {
-        return this.etnia;
-    },
-
-    /**
-     *
-     * @param {string} valor
-     */
-    setEtnia: function(valor) {
-        this.etnia = valor;
-        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
-    },
-
-    /**
-     *
-     * @param {string} valor
-     */
-    setTrasfondo: function(valor) {
-        this.trasfondo = valor;
-        lanzarEvento(EVENT_CHARACTER_SECCION_DESCRIPCION);
-    },
-
-    /**
-     *
-     * @param {string} valor
-     */
-    setDescripcion: function(valor) {
-        this.descripcion = valor;
-        lanzarEvento(EVENT_CHARACTER_SECCION_DESCRIPCION);
-    },
-
-    /**
-     *
-     * @returns {string}
-     */
-    getDescripcion : function() {
-        return this.descripcion;
-    },
-
-    /**
-     *
-     * @returns {EquipoComprado[]}
-     */
-    getEquipo : function() {
-        return this.equipoComprado;
-    },
-
-    /**
-     *
-     * @returns {ArmaComprada[]}
-     */
-    getArmas : function() {
-        return this.armas;
-    },
-
-    /**
-     *
-     * @returns {ArmaduraComprada[]}
-     */
-    getArmaduras : function() {
-        return this.armaduras;
-    },
-
-    /**
-     *
-     * @returns {YelmoComprado[]}
-     */
-    getYelmos : function() {
-        return this.yelmos;
-    },
-
-    /**
-     *
-     * @returns {string}
-     */
-    getStringCategoria : function() {
-        var cadena = "";
-        var catActual = "";
-        var nivelActual = 0;
-        var numCategorias = 0;
-        for (var i = 1; i <= this.nivel; i++) {
-            if ((this.categoriasPorNiveles[i].toString() != catActual) || (numCategorias == 0)) {
-                if (numCategorias == 1) {
-                    cadena += _l(catActual) + " " + nivelActual;
-                } else if (numCategorias > 1) {
-                    cadena += "/" + _l(catActual) + " " + nivelActual;
-                }
-                catActual = this.categoriasPorNiveles[i].toString();
-                numCategorias++;
-                nivelActual = 0;
-            }
-            nivelActual++;
-        }
-        if (numCategorias == 1) {
-            cadena += _l(catActual) + " " + nivelActual;
-        } else if (numCategorias > 1) {
-            cadena += "/" + _l(catActual) + " " + nivelActual;
-        }
-
-        return cadena;
-    },
-
 //region Datos Personales
 
     /**
@@ -723,6 +574,91 @@ Personaje.prototype = {
     setAltura : function(valor) {
         this.altura = valor;
         lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getTrasfondo: function() {
+        return this.trasfondo;
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getOrigen : function() {
+        return this.origen;
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setOrigen: function(valor) {
+        var claseGenerica = CLASE_SOCIAL_MEDIO;
+        var nuevaClase = getClaseSocialAzar(valor);
+
+        if (this.hasFlag(FLAG_RAICES_CULTURALES)) {
+            var coste = getVentaja(VENT_RAICES_CULTURALES).getCostes()[0];
+            raicesCulturales(coste,"",false);
+
+            this.setClaseSocial(claseGenerica);
+            this.origen = valor;
+            this.setClaseSocial(nuevaClase);
+
+            raicesCulturales(coste,"",true);
+        } else {
+            this.setClaseSocial(claseGenerica);
+            this.origen = valor;
+            this.setClaseSocial(nuevaClase);
+        }
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+
+    /**
+     *
+     * @returns {string}
+     */
+    getEtnia : function() {
+        return this.etnia;
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setEtnia: function(valor) {
+        this.etnia = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_PERSONALES);
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setTrasfondo: function(valor) {
+        this.trasfondo = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_DESCRIPCION);
+    },
+
+    /**
+     *
+     * @param {string} valor
+     */
+    setDescripcion: function(valor) {
+        this.descripcion = valor;
+        lanzarEvento(EVENT_CHARACTER_SECCION_DESCRIPCION);
+    },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getDescripcion : function() {
+        return this.descripcion;
     },
 
 //endregion Datos Personales
@@ -1264,6 +1200,38 @@ Personaje.prototype = {
         lanzarEvento(EVENT_CHARACTER_SECCION_SECUNDARIAS);
         lanzarEvento(EVENT_CHARACTER_SECCION_VENTAJAS);
     },
+
+    /**
+     *
+     * @returns {string}
+     */
+    getStringCategoria : function() {
+        var cadena = "";
+        var catActual = "";
+        var nivelActual = 0;
+        var numCategorias = 0;
+        for (var i = 1; i <= this.nivel; i++) {
+            if ((this.categoriasPorNiveles[i].toString() != catActual) || (numCategorias == 0)) {
+                if (numCategorias == 1) {
+                    cadena += _l(catActual) + " " + nivelActual;
+                } else if (numCategorias > 1) {
+                    cadena += "/" + _l(catActual) + " " + nivelActual;
+                }
+                catActual = this.categoriasPorNiveles[i].toString();
+                numCategorias++;
+                nivelActual = 0;
+            }
+            nivelActual++;
+        }
+        if (numCategorias == 1) {
+            cadena += _l(catActual) + " " + nivelActual;
+        } else if (numCategorias > 1) {
+            cadena += "/" + _l(catActual) + " " + nivelActual;
+        }
+
+        return cadena;
+    },
+
 //endregion Categoría
 
 //region Armadura
@@ -1274,37 +1242,44 @@ Personaje.prototype = {
      */
     getArmadura : function(taArmadura) {
         var valorDura = 0, valorBlanda1 = 0, valorBlanda2 = 0;
-        var naturalUsada = false;
 
         for (var i = 0; i < this.armaduras.length; i++) {
+            var esteValor = this.armaduras[i].getTA(taArmadura);
             if (this.armaduras[i].isEquipado()) {
                 if (this.armaduras[i].getClase() == ARMADURA_CLASE_DURA) {
-                    if (this.armaduras[i].getTA(taArmadura) > valorDura) {
-                        valorDura = this.armaduras[i].getTA(taArmadura);
+                    if (esteValor > valorDura) {
+                        valorDura = esteValor;
                     }
                 } else if (this.armaduras[i].getClase() == ARMADURA_CLASE_BLANDA) {
-                    if (this.armaduras[i].getTA(taArmadura) > valorBlanda1) {
+                    if (esteValor > valorBlanda1) {
                         if (valorBlanda1 > valorBlanda2) {
                             valorBlanda2 = valorBlanda1;
                         }
-                        valorBlanda1 = this.armaduras[i].getTA(taArmadura);
-                    } else if (this.armaduras[i].getTA(taArmadura) > valorBlanda2) {
-                        valorBlanda2 = this.armaduras[i].getTA(taArmadura);
+                        valorBlanda1 = esteValor;
+                    } else if (esteValor > valorBlanda2) {
+                        valorBlanda2 = esteValor;
                     }
                 }
             }
         }
 
-        if (this.armaduraNatural.getTA(taArmadura) > valorBlanda1) {
-            if (valorBlanda1 > valorBlanda2) {
-                valorBlanda2 = valorBlanda1;
+        for (i = 0; i < this.armadurasNaturales.length; i++) {
+            esteValor = this.armadurasNaturales[i].getTA(taArmadura);
+            if (!this.armadurasNaturales[i].isBlanda()) {
+                if (esteValor > valorDura) {
+                    valorDura = esteValor;
+                }
+            } else {
+                if (esteValor > valorBlanda1) {
+                    if (valorBlanda1 > valorBlanda2) {
+                        valorBlanda2 = valorBlanda1;
+                    }
+                    valorBlanda1 = esteValor;
+                } else if (esteValor > valorBlanda2) {
+                    valorBlanda2 = esteValor;
+                }
             }
-            valorBlanda1 = this.armaduraNatural.getTA(taArmadura);
-
-        } else if (this.armaduraNatural.getTA(taArmadura) > valorBlanda2) {
-            valorBlanda2 = this.armaduraNatural.getTA(taArmadura);
         }
-        //TODO la armadura natural solo contara como blanda
 
         var valorFinal;
         if ((valorDura>=valorBlanda1)&&(valorDura>=valorBlanda2)) {
@@ -1320,19 +1295,38 @@ Personaje.prototype = {
 
     /**
      *
-     * @returns {TipoArmadura}
+     * @param {number[]} taArmadura
+     * @param {boolean} esBlanda
      */
-    getArmaduraNatural : function() {
-        return this.armaduraNatural;
+    addArmaduraNatural : function(taArmadura, esBlanda) {
+        this.armadurasNaturales.push(new TipoArmadura(ARMADURA_NATURAL,taArmadura,esBlanda));
+        lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
     },
 
     /**
      *
      * @param {number[]} taArmadura
+     * @param {boolean} esBlanda
      */
-    setArmaduraNatural : function(taArmadura) {
-        this.armaduraNatural = new TipoArmadura(ARMADURA_NATURAL,taArmadura,true);
-        lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+    removeArmaduraNatural : function(taArmadura, esBlanda) {
+        for (var i = 0; i < this.armadurasNaturales.length; i++) {
+            /** @type {TipoArmadura} */
+            var armadura = this.armadurasNaturales[i];
+            if (armadura.blanda == esBlanda) {
+                var igual  = true;
+                for (var j = 0; j < armadura.TAs.length; j++) {
+                    if (armadura.TAs[j] != taArmadura[j]) {
+                        igual = false;
+                        break;
+                    }
+                }
+                if (igual) {
+                    this.armadurasNaturales.splice(i,1);
+                    lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
+                    break;
+                }
+            }
+        }
     },
 
 
@@ -1990,7 +1984,7 @@ Personaje.prototype = {
         if (!yaExiste) {
             this.bonos.push(bono);
             if (bono.getTipo() == BONO_ARMADURA_NATURAL) {
-                personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono]));
+                personaje_actual.addArmaduraNatural([bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono],(bono.getOpcion() == ARMADURA_CLASE_BLANDA));
             }
             if (notifica)
                 this.dispatchAvisoPorBono(bono);
@@ -2012,7 +2006,7 @@ Personaje.prototype = {
                 (bono.getCategoria() == this.bonos[i].getCategoria()) &&
                 (bono.isPorNivel() == this.bonos[i].isPorNivel())) {
                 if (bono.getTipo() == BONO_ARMADURA_NATURAL) {
-                    personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono,-1 * this.bonos[i].bono]));
+                    personaje_actual.removeArmaduraNatural([bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono,bono.bono],(bono.getOpcion() == ARMADURA_CLASE_BLANDA));
                 }
 
                 if (notifica)
@@ -4408,6 +4402,38 @@ Personaje.prototype = {
             this.equipoComprado = limpiarArrayObjetosPorFuncion(this.equipoComprado,getNombre,item.getNombre());
         }
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
+    },
+
+    /**
+     *
+     * @returns {EquipoComprado[]}
+     */
+    getEquipo : function() {
+        return this.equipoComprado;
+    },
+
+    /**
+     *
+     * @returns {ArmaComprada[]}
+     */
+    getArmas : function() {
+        return this.armas;
+    },
+
+    /**
+     *
+     * @returns {ArmaduraComprada[]}
+     */
+    getArmaduras : function() {
+        return this.armaduras;
+    },
+
+    /**
+     *
+     * @returns {YelmoComprado[]}
+     */
+    getYelmos : function() {
+        return this.yelmos;
     },
 //endregion
 

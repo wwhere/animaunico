@@ -184,9 +184,9 @@ function efectoDeteccionKi(aplicar) {
  */
 function efectoKiArmaduraEnergia(aplicar) {
     if (aplicar) {
-        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[0,0,0,0,0,0,2]));
+        personaje_actual.addArmaduraNatural([0,0,0,0,0,0,2],true);
     } else {
-        personaje_actual.setArmaduraNatural(sumarArmadura(personaje_actual.getArmaduraNatural().getTAs(),[0,0,0,0,0,0,-2]));
+        personaje_actual.removeArmaduraNatural([0,0,0,0,0,0,2],true);
     }
 }
 
