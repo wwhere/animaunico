@@ -14,11 +14,8 @@ class PersonajesController extends AppController {
         )
     );
 
-    function index() {
-        $this->set('personajes', $this->Personaje->find('all'));
-    }
 
-    public function indexBeta() {
+    public function index() {
         $this->Paginator->settings = $this->paginate;
         $data = $this->Paginator->paginate('Personaje');
         $this->set('data', $data);
