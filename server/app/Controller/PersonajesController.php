@@ -5,14 +5,23 @@
 
 class PersonajesController extends AppController {
     public $name = 'Personajes';
-    public $components = array('Session');
+    public $components = array('Session','Paginator');
+
+    public $paginate = array(
+        'limit' => 15,
+        'order' => array(
+            'Personaje.nombre' => 'asc'
+        )
+    );
 
     function index() {
         $this->set('personajes', $this->Personaje->find('all'));
     }
 
-    function indexBeta() {
-        $this->set('personajes', $this->Personaje->find('all'));
+    public function indexBeta() {
+        $this->Paginator->settings = $this->paginate;
+        $data = $this->Paginator->paginate('Personaje');
+        $this->set('data', $data);
         $this->layout = 'animaunico';
     }
 

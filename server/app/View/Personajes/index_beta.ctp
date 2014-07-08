@@ -7,21 +7,18 @@
 ?>
 <!-- File: /app/View/Posts/index.ctp -->
 
-<h1>Personajes - Versión Desarrollo (BETA)</h1>
-<?php echo $this->Html->link('Añadir Personaje', array('controller' => 'personajes', 'action' => 'add')); ?>
+<h1>Personajes</h1>
 <table>
     <tr>
-        <th>Nombre</th>
-        <th>Nivel</th>
-        <th>Categoría</th>
-        <th>Raza</th>
-        <th>Usuario</th>
+        <th><?php echo $this->Paginator->sort('nombre', 'Nombre'); ?></th>
+        <th><?php echo $this->Paginator->sort('nivel', 'Nivel'); ?></th>
+        <th><?php echo $this->Paginator->sort('categoria', 'Categoria'); ?></th>
+        <th><?php echo $this->Paginator->sort('raza', 'Raza'); ?></th>
+        <th><?php echo $this->Paginator->sort('User.username', 'Creador'); ?></th>
         <th>Acción</th>
     </tr>
 
-    <!-- Here is where we loop through our $posts array, printing out post info -->
-
-    <?php foreach ($personajes as $personaje): ?>
+    <?php foreach ($data as $personaje): ?>
         <tr>
             <td><?php echo $this->Html->link($personaje['Personaje']['nombre'],
                     array('controller' => 'personajes', 'action' => 'view', $personaje['Personaje']['id'])); ?></td>
@@ -60,3 +57,24 @@
     <?php endforeach; ?>
 
 </table>
+<?php
+// Shows the page numbers
+echo $this->Paginator->numbers();
+
+// Shows the next and previous links
+echo $this->Paginator->prev(
+'« Anterior ',
+null,
+null,
+array('class' => 'disabled')
+);
+echo $this->Paginator->next(
+' Siguiente »',
+null,
+null,
+array('class' => 'disabled')
+);
+
+// prints X of Y, where X is current page and Y is number of pages
+echo $this->Paginator->counter();
+?>
