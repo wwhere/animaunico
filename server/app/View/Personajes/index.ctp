@@ -37,7 +37,7 @@
                                         array('action' => 'edit', $personaje['Personaje']['id']))*/
                 $optionsCreate = array(
                     'type' => 'GET',
-                    'url' => 'http://helechaloscuro.net/animaunico/beta/index.html'
+                    'url' => 'http://helechaloscuro.net/animaunico/index.html'
                 );
                 echo $this->Form->create($optionsCreate);
                 echo $this->Form->hidden('id', array(
