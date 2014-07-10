@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Anima: UNICO - Generador de Personajes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/img/favicon.ico" >
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/anima-unico/jquery-ui-1.10.3.custom.min.css">
+    <link rel="stylesheet" href="css/gumby.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="js/vendor/jquery-2.0.3.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="js/anima-unico.min.{{VERSION}}.js"></script>
+
+</head>
+<body onload="animaUnico.inicializar()" class="ui-widget">
+<div class="navbar pretty" id="nav1" gumby-fixed="top">
+    <div class="row">
+        <h1 class="two columns logo">
+            <a href="#">
+                <img src="img/animaunicoBN.png" gumby-retina />
+            </a>
+        </h1>
+
+        <div class="two columns">
+            <div id="infoSuperior">
+
+            </div>
+        </div>
+
+        <ul class="eight columns" >
+            <li>
+                <a href="#" class="localizable" loc="Personaje">Personaje</a>
+                <div class="dropdown">
+                    <ul id="menuPersonaje">
+                        <li><a href="#" id="BOTON_CREACION" class="localizable" loc="Iniciar Creación">UI_BOTON_CREACION</a></li>
+                        <li><a href="#" id="BOTON_SUBIR_NIVEL" class="localizable" loc="Subir nivel">UI_BOTON_SUBIR_NIEVL</a></li>
+                        <li><a href="#" id="BOTON_GUARDAR" class="localizable" loc="Guardar personaje">UI_BOTON_GUARDAR</a></li>
+                        <li><a href="#" id="BOTON_CARGAR" class="localizable" loc="Cargar personaje">UI_BOTON_CARGAR</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="localizable" loc="Creacion">Creacion</a>
+                <div class="dropdown">
+                    <ul id="menuCreacion">
+                        <li><a href="#" id="BOTON_BONOS_NATURALES" class="localizable" loc="Elegir bonos Naturales">UI_BOTON_NATURALES></a></li>
+                        <li><a href="#" id="BOTON_ARMA_INICIAL" class="localizable" loc="Elegir arma inicial">UI_BOTON_ARMA_INICIAL</a></li>
+                        <li><a href="#" id="BOTON_TABLAS_ARMAS" class="localizable" loc="Comprar Tablas de Armas">UI_BOTON_TABLAS_ARMAS</a></li>
+                        <li><a href="#" id="BOTON_CV" class="localizable" loc="Gastar CVs">UI_BOTON_GASTAR_CV</a></li>
+                        <li><a href="#" id="BOTON_ELAN" class="localizable" loc="Gastar elan">UI_BOTON_GASTAR_ELAN</a></li>
+                        <hr>
+                        <li><a href="#" id="BOTON_FINALIZAR_CREACION" class="localizable" loc="Finalizar Creación">UI_BOTON_FINALIZAR_CREACION</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <img src="img/flagENG.png" style="height:15px" id="BOTON_IDIOMA_INGLES">
+                <img src="img/flagESP.png" style="height:15px" id="BOTON_IDIOMA_ESPAÑOL">
+            </li>
+            <li>
+                <a href="#" class="localizable" loc="Soporte">Soporte</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#" id="BOTON_LOG" class="localizable" loc="Log de cambios">UI_BOTON_LOG_CAMBIOS</a></li>
+                        <li><a href="#" id="BOTON_LICENCIA" class="localizable" loc="Agradecimientos y licencia de software">UI_BOTON_LICENCIA</a></li>
+                        <li><a href="https://www.assembla.com/spaces/animaunico/support/tickets" target="_blank" class="localizable" loc="Informa de errores">UI_BOTON_SOPORTE</a></li>
+                        <li><a href="https://www.assembla.com/spaces/animaunico/messages" target="_blank" class="localizable" loc="Comentarios, sugerencias ...">UI_BOTON_COMENTARIOS</a></li>
+                        <li><a href="mailto:animaunico@helechaloscuro.net?Subject=Anima UNICO" target="_blank">e-mail</a></li>
+                        <li><a href="https://plus.google.com/104698164485522729909" rel="publisher">Google+</a></li>
+                        <li style="text-align: center;line-height: initial;">
+                            <div class="localizable" loc="donacion" style="color: red;font-size: small;padding: 0;margin: 0;">UI_DONAR</div>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----"><input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet."><img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1"></form>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div style="position:fixed !important;position:absolute;top:70px;right:0;bottom:0;left:0;overflow-y: scroll;">
+    <div class="row">
+        <div class="twelve columns">
+            <div id="contenidoResaltado"></div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="six columns">
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divPersonales"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divCaracteristicas"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divCombate"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divArtesMarciales"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divKi"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divArsMagnus"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divSobrenatural"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divPsiquica"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divElan"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="six columns">
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divDesarrollo"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divCapacidades"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divResistencias"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divVentajas"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divDesventajas"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divSecundarias"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divEquipamiento"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="divDescripcion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45119981-1', 'helechaloscuro.net');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<div id="dialogElegirRaza">
+
+</div>
+
+<div id="dialogElegirCategoria">
+
+</div>
+
+<div id="dialogPuntosCreacion">
+
+</div>
+
+<div id="dialogBonosNaturales"></div>
+
+<div id="dialogElegirArma"></div>
+
+<div id="dialogFileSystem"></div>
+
+<div id="licencia" style="display:none">
+    <h5>Agradecimientos</h5>
+    <div class="textoSmall">
+        <p>Agradecimientos a Anima Studio. Por todo.</p>
+        <p>A very big THANKS to Andrew "Dynaes" Reich for all the heavy lift work of the english localization!</p>
+    </div>
+    <h5>Créditos</h5>
+    <div class="textoSmall">
+        <p>Anima, Beyond Fantasy es © 2005 - 2010 de Anima Project Studio.</p>
+        <p><a href="www.animarpg.com">www.animarpg.com</a></p>
+        <p>La edición en castellano es © 2005 - 2010 de Edge Entertainment.</p>
+        <p><a href="www.edgeent.com">www.edgeent.com</a></p>
+        <p>Todo el texto descriptivo de los efectos de juego es copyright de Edge Entertainment.</p>
+        <p>El código es copyright 2013 de Guillermo Heras Prieto.</p>
+        <p>Anima: Único no existiría si no hubiera tenido como inspiración y modelo muy inicial la excepcional <a href="http://azrapse.es/tor/sheet.html" target="_blank">hoja de personaje online para El Anillo Único de David Esparza Guerrero.</a></p>
+    </div>
+    <h5>Licencia de software</h5>
+    <div class="textoSmall">
+        <p>The MIT License (MIT)</p>
+        <br>
+        <p>Copyright (c) 2013 Guillermo Heras Prieto</p>
+        <br>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p>
+        <br>
+        <p>
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+        </p>
+        <br>
+        <p>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+        </p>
+    </div>
+</div>
+
+<div id="logCambios" style="display:none">
+<!--    <div style="text-align: center;">
+        <a href="https://www.kickstarter.com/projects/1353316830/anima-gate-of-memories-extended-campaign" target="_blank"><img src="img/animaGateOfMemoriesKS.jpg"/></a><hr>
+        ¡Ánimo! Aún queda tiempo para participar en el nuevo Kickstarter de Anima: Gate of Memories. ¡Ahora con más Addons!<hr>
+        Hurry! You can still enter the kickstarter for the videogame Anima: Gate of Memories. Catch the new AddOns!
+    </div>-->
+    <div class="pretty label danger subtituloSeccion">10 de Julio de 2013</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Hotfix:</div><div class="valorPersonales"> Arreglado el problema al cargar un personaje que tuviera alguna vía de magia sin subvía.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Hotfix:</div><div class="valorPersonales"> Fixed the loading of characters with magic paths without a sub-path.</div></i>
+    </div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Bonos Naturales:</div><div class="valorPersonales"> Ahora ya se pueden elegir bien los bonos naturales, bonos de habilidad natural y bonos de novel para todos los niveles.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Natural Bonuses:</div><div class="valorPersonales"> You can now choose correctly all natural bonuses, freelance bonuses and natural skill bonuses for all the levels.</div></i>
+    </div>
+    <div class="pretty label danger subtituloSeccion">8 de Julio de 2013</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Servidor de personajes:</div><div class="valorPersonales"> Ahora los personajes se listan por páginas y se pueden ordenar por nombre, nivel, categoría, raza y usuario. Además, van más rápidos.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Character server:</div><div class="valorPersonales"> Now the applications paginates the characters, and they can be sorted by name, race, class, user and level. Also, they load faster.</div></i>
+    </div>
+    <div class="pretty label danger subtituloSeccion">7 de Julio de 2013</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Hotfix:</div><div class="valorPersonales"> El programa calculaba mal las combinaciones de armaduras. Tras consultarlo con Anima Studio, ahora lo hace bien: puedes equiparte tantas armaduras como gustes, pero para cada TA sólo te contará tres valores, 1 duro y 2 blandos. Los penalizadores siempre se acumulan.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Hotfix:</div><div class="valorPersonales"> The application was calculating wrongly armor combinations. After checking the right way with Anima Studio, I have fixed it: now you can equip as many armor layers as you want, but for each Armor Type you will get the benefits of only three layers (at most).</div></i>
+    </div>
+    <div class="pretty label danger subtituloSeccion">30 de Junio de 2013</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Hotfix:</div><div class="valorPersonales"> La lista de armas iniciales salía mal en inglés. Ya no lo hace.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Hotfix:</div><div class="valorPersonales"> Initial weapon list was appearing all wrong in English. Not anymore.</div></i>
+    </div>
+    <div class="pretty label danger subtituloSeccion">26 de Junio de 2013</div>
+    <div class="campoDatosPersonales">
+        <div class="etiquetaCampoHoja">Logo:</div><div class="valorPersonales"> Cambiado el logo de la aplicación y su icono.</div>
+    </div>
+    <div class="campoDatosPersonales">
+        <i><div class="etiquetaCampoHoja">Logo:</div><div class="valorPersonales"> Changed the logo and icon of the application.</div></i>
+    </div>
+</div>
+</html>

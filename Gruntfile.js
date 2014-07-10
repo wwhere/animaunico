@@ -276,6 +276,23 @@ module.exports = function(grunt) {
             }
         },
 
+        'string-replace': {
+            dist: {
+                files: {
+                    'index.html': 'index.pre',
+                    'js/logCambios.js': 'js/logCambios.pre'
+                },
+                options: {
+                    replacements: [
+                        {
+                            pattern: '{{VERSION}}',
+                            replacement: grunt.option("a")
+                        }
+                    ]
+                }
+            }
+        },
+
         watch: {
             options: {
                 livereload: true,
@@ -328,9 +345,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-string-replace');
 
     // the default task can be run just by typing "grunt" on the command line
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'compass:prod']);
+    grunt.registerTask('default', ['string-replace','concat', 'uglify']);
 }
 
 
