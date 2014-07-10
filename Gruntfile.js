@@ -260,7 +260,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'js/<%= pkg.name %>.min.<%= grunt.option("a") %>.js': ['<%= concat.dist.dest %>']
                 }
             }
         }
