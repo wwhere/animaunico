@@ -372,7 +372,11 @@ function parseNivelEnVia(nivelEnVia,texto) {
                 nivelEnVia.conjurosLibres.push(nivelEnVia[k]);
                 break;
             case 'subvia':
-                nivelEnVia[k] = getSubVia(v);
+                if (v) {
+                    nivelEnVia[k] = getSubVia(v);
+                } else {
+                    nivelEnVia[k] = false;
+                }
                 break;
             default:
                 nivelEnVia[k] = v;
