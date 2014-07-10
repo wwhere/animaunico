@@ -736,12 +736,6 @@ function compra(tipoCompra, parametros, coste) {
 
 /***** PASO 7 : mejoras naturales *****/
 
-/**
- *
- */
-function elegirBonosNaturales() {
-    $("#dialogBonosNaturales").dialog("open");
-}
 
 /**
  *
