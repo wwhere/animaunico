@@ -4,114 +4,83 @@
  */
 function mostrarBonosHabilidadNatural() {
     var divRetorno = getDiv();
-    for (var i = 0; i < 5; i++) {
-        var div = $("<div></div>");
 
-        var etiqu = $("<div></div>");
-        etiqu.addClass(CSS_MUESTRA_INLINE);
-        etiqu.append(_l(UI_HABILIDAD_NATURAL) + " " + (i + 1) + ": ");
+    //Para cada nivel
+    for (var n = 1; n <= personaje_actual.getNivel(); n++) {
+        var divNivel = getDiv();
+        var etiquetaNivel = getDiv(CSS_MUESTRA_BLOCK).addClass(CSS_TEXTO_FUERTE).append(_l(UI_NIVEL) + " " + n);
+        divNivel.append(etiquetaNivel);
 
-        var divNombre = $("<div></div>");
-        divNombre.attr("id", "habilidadNaturalElegida" + i);
-        divNombre.addClass(CSS_MUESTRA_INLINE);
-        if (personaje_actual.getBonoHabilidadNatural(i, personaje_actual.getNivel()) != -1) {
-            var nombreElegido = personaje_actual.getBonoHabilidadNatural(i, personaje_actual.getNivel()).getItem();
-            divNombre.append(_l(nombreElegido));
+        //Se muestran las cinco elecciones de bono
+        for (var i = 0; i < 5; i++) {
+            var div = getDiv();
+            var etiqu = getDiv(CSS_MUESTRA_INLINE).append(_l(UI_HABILIDAD_NATURAL) + " " + (i + 1) + ": ");
+
+            var divNombre = getDiv(CSS_MUESTRA_INLINE).attr("id", "habilidadNaturalElegida" + i  + "_" + n);
+
+            if (personaje_actual.getBonoHabilidadNatural(i, n) != -1) {
+                var nombreElegido = personaje_actual.getBonoHabilidadNatural(i, n).getItem();
+                divNombre.append(_l(nombreElegido));
+            }
+            etiqu.append(divNombre);
+
+            div.append(etiqu);
+
+            var botonBono = boton("medium pretty primary btn", _l(UI_ELEGIR));
+            div.append(botonBono);
+
+            botonBono.on("click", {indice: i, nivel: n}, elegirHabilidadNatural);
+
+            divNivel.append(div);
         }
-        etiqu.append(divNombre);
 
-        div.append(etiqu);
-
-        var botonBono = boton("medium pretty primary btn", _l(UI_ELEGIR));
-        div.append(botonBono);
-
-        botonBono.on("click", {indice: i, nivel: personaje_actual.getNivel()}, elegirHabilidadNatural);
-
-        divRetorno.append(div);
+        divRetorno.append(divNivel);
     }
     return divRetorno;
 }
 
+function mostrarBonificadorNaturalEspecifico(etiqueta,tipo, n) {
+    var divBonificador = getDiv();
+    var divEtiqueta = getDiv(CSS_MUESTRA_INLINE).append(_l(etiqueta) + ": ");
+    var divNombre = getDiv(CSS_MUESTRA_INLINE).attr("id", "bonificadorNaturalElegido" + tipo + "_" + n);
+
+    var bono = personaje_actual.getBonificadorNatural(tipo, n);
+    if (bono != "") {
+        divNombre.append(_l(bono));
+    }
+    divEtiqueta.append(divNombre);
+    divBonificador.append(divEtiqueta);
+
+    var boton = boton("medium pretty primary btn", _l(UI_ELEGIR));
+    boton.on("click", {tipo: tipo, nivel: n}, elegirBonificadorNatural);
+
+    divBonificador.append(boton);
+
+    return divBonificador;
+}
+
 function mostrarBonificadoresNaturales() {
-    /*bonificador natural físico*/
-    var divBonificadoresNaturales = $("<div></div>");
+    var divBonificadoresNaturales = getDiv();
 
-    var divFisico = $("<div></div>");
+    //Para cada nivel
+    for (var n = 1; n <= personaje_actual.getNivel(); n++) {
+        var divNivel = getDiv();
+        var etiquetaNivel = getDiv(CSS_MUESTRA_BLOCK).addClass(CSS_TEXTO_FUERTE).append(_l(UI_NIVEL) + " " + n);
+        divNivel.append(etiquetaNivel);
 
-    var etiquFisico = $("<div></div>");
-    etiquFisico.addClass(CSS_MUESTRA_INLINE);
-    etiquFisico.append(_l(UI_BONIFICADOR_NATURAL_FISICO) + ": ");
+        /*bonificador natural físico*/
+        divNivel.append(mostrarBonificadorNaturalEspecifico(UI_BONIFICADOR_NATURAL_FISICO,TIPO_BONIFICADOR_NATURAL_FISICO,n));
 
-    var divNombreFisico = $("<div></div>");
-    divNombreFisico.addClass(CSS_MUESTRA_INLINE);
-    divNombreFisico.attr("id", "bonificadorNaturalElegido" + TIPO_BONIFICADOR_NATURAL_FISICO);
+        /*bonificador natural mental*/
+        divNivel.append(mostrarBonificadorNaturalEspecifico(UI_BONIFICADOR_NATURAL_MENTAL,TIPO_BONIFICADOR_NATURAL_MENTAL,n));
 
-    if (personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_FISICO, 1) != "") {
-        var nombreElegidoFisico = personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_FISICO, 1);
-        divNombreFisico.append(_l(nombreElegidoFisico));
-    }
-    etiquFisico.append(divNombreFisico);
-    divFisico.append(etiquFisico);
-
-    var botonFisico = boton("medium pretty primary btn", _l(UI_ELEGIR));
-    divFisico.append(botonFisico);
-    divBonificadoresNaturales.append(divFisico);
-
-    botonFisico.on("click", {tipo: TIPO_BONIFICADOR_NATURAL_FISICO}, elegirBonificadorNatural);
-
-
-    /*bonificador natural mental*/
-    var divMental = $("<div></div>");
-
-    var etiquMental = $("<div></div>");
-    etiquMental.addClass(CSS_MUESTRA_INLINE);
-    etiquMental.append(_l(UI_BONIFICADOR_NATURAL_MENTAL) + ": ");
-
-    var divNombreMental = $("<div></div>");
-    divNombreMental.addClass(CSS_MUESTRA_INLINE);
-    divNombreMental.attr("id", "bonificadorNaturalElegido" + TIPO_BONIFICADOR_NATURAL_MENTAL);
-
-    if (personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_MENTAL, 1) != "") {
-        var nombreElegidoMental = personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_MENTAL, 1);
-        divNombreMental.append(_l(nombreElegidoMental));
-    }
-    etiquMental.append(divNombreMental);
-
-    divMental.append(etiquMental);
-
-
-    var botonMental = boton("medium pretty primary btn", _l(UI_ELEGIR));
-    divMental.append(botonMental);
-
-    divBonificadoresNaturales.append(divMental);
-    botonMental.on("click", {tipo: TIPO_BONIFICADOR_NATURAL_MENTAL}, elegirBonificadorNatural);
-
-    if (personaje_actual.hasFlag(FLAG_BONO_NATURAL_EXTRA)) {
         /*bonificador natural extra*/
-        var divExtra = $("<div></div>");
-
-        var etiquExtra = $("<div></div>");
-        etiquExtra.addClass(CSS_MUESTRA_INLINE);
-        etiquExtra.append(_l(UI_BONIFICADOR_NATURAL_EXTRA) + ": ");
-
-        var divNombreExtra = $("<div></div>");
-        divNombreExtra.addClass(CSS_MUESTRA_INLINE);
-        divNombreExtra.attr("id", "bonificadorNaturalElegido" + TIPO_BONIFICADOR_NATURAL_EXTRA);
-
-        if (personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_EXTRA, 1) != "") {
-            var nombreElegidoExtra = personaje_actual.getBonificadorNatural(TIPO_BONIFICADOR_NATURAL_EXTRA, 1);
-            divNombreExtra.append(_l(nombreElegidoExtra));
+        if (personaje_actual.hasFlag(FLAG_BONO_NATURAL_EXTRA)) {
+            /*bonificador natural extra*/
+            divNivel.append(mostrarBonificadorNaturalEspecifico(UI_BONIFICADOR_NATURAL_EXTRA,TIPO_BONIFICADOR_NATURAL_EXTRA,n));
         }
-        etiquExtra.append(divNombreExtra);
 
-        divExtra.append(etiquExtra);
-
-
-        var botonExtra = boton("medium pretty primary btn", _l(UI_ELEGIR));
-        divExtra.append(botonExtra);
-
-        divBonificadoresNaturales.append(divExtra);
-        botonExtra.on("click", {tipo: TIPO_BONIFICADOR_NATURAL_EXTRA}, elegirBonificadorNatural);
+        divBonificadoresNaturales.append(divNivel);
     }
     return divBonificadoresNaturales;
 }

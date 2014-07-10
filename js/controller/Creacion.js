@@ -766,11 +766,12 @@ function elegirBonoNovel(event) {
 function añadirHabilidadNatural(parametros) {
     var nombreHabilidad = parametros.opcion;
     var indice = parametros.indice;
+    var nivel = parametros.nivel;
     var bono = new Bono(BONO_HABILIDAD,nombreHabilidad,10,"",false,BONO_NATURAL,ORIGEN_HABILIDAD_NATURAL);
     bono.indice = indice;
-    bono.nivel = 1;
+    bono.nivel = nivel;
     personaje_actual.addBonoHabilidadNatural(bono,indice);
-    $("#habilidadNaturalElegida"+indice).empty().append(nombreHabilidad);
+    $("#habilidadNaturalElegida"+indice+"_"+nivel).empty().append(nombreHabilidad);
 }
 
 /**
@@ -794,8 +795,9 @@ function añadirBonoNovel(parametros) {
  */
 function elegirBonificadorNatural(event) {
     var tipoBonificadorNatural = event.data.tipo;
+    var nivelBonificadorNatural = event.data.nivel;
 
-    muestraDialogoElegirOpcionHabilidad({principal:añadirBonificadorNatural,isDisabled:noPuedeAñadirBonificadorNatural},{tipo: tipoBonificadorNatural},tipoBonificadorNatural);
+    muestraDialogoElegirOpcionHabilidad({principal:añadirBonificadorNatural,isDisabled:noPuedeAñadirBonificadorNatural},{tipo: tipoBonificadorNatural, nivel: nivelBonificadorNatural},tipoBonificadorNatural);
 }
 
 /**
@@ -854,9 +856,10 @@ function noPuedeAñadirHabilidadNatural(parametros) {
 function añadirBonificadorNatural(parametros) {
     var nombreHabilidad = parametros.opcion;
     var tipoBonificadorNatural = parametros.tipo;
+    var nivelBonificadorNatural = parametros.nivel;
 
-    personaje_actual.addBonificadorNatural(nombreHabilidad,tipoBonificadorNatural,1);
-    $("#bonificadorNaturalElegido"+tipoBonificadorNatural).empty().append(nombreHabilidad);
+    personaje_actual.addBonificadorNatural(nombreHabilidad,tipoBonificadorNatural,nivelBonificadorNatural);
+    $("#bonificadorNaturalElegido"+tipoBonificadorNatural+"_"+nivelBonificadorNatural).empty().append(nombreHabilidad);
 }
 
 /****** otros pasos *******/
