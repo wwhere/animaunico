@@ -206,7 +206,11 @@ var UI_HABILIDAD_NATURAL = (new L("Habilidad Natural (+10)","Habilidad Natural (
 var UI_BONIFICADOR_NATURAL_FISICO = (new L("Bonificador natural físico (añadir bono de característica)","Bonificador natural físico (añadir bono de característica)","Physical Natural Bonus (add attribute bonus)")).getId();
 var UI_BONIFICADOR_NATURAL_MENTAL = (new L("Bonificador natural mental (añadir bono de característica)","Bonificador natural mental (añadir bono de característica)","Mental Natural Bonus (add attribute bonus)")).getId();
 var UI_BONIFICADOR_NATURAL_EXTRA = (new L("Bonificador natural extra (añadir bono de característica)","Bonificador natural extra (añadir bono de característica)","Extra Natural Bonus (add attribute bonus)")).getId();
-var UI_BONO_NOVEL = (new L("Bono innato de Novel (+10)","Bono innato de Novel (+10)","Novel innate bonus (+10)")).getId();
+var UI_BONO_NOVEL = (new L("Bono innato de Novel (+10)","Bono innato de Novel (+10)","Freelance innate bonus (+10)")).getId();
+
+var UI_BONOS_HABILIDAD_NATURAL = (new L("UI_BONOS_HABILIDAD_NATURAL","Bonos de Habilidad Natural", "Natural Ability Bonuses")).getId();
+var UI_BONOS_NATURALES = (new L("UI_BONOS_NATURALES","Bonos Naturales", "Natural Bonuses")).getId();
+var UI_BONOS_NOVEL = (new L("UI_BONOS_NOVEL","Bonos de Novel", "Freelance Innate Bonuses")).getId();
 
 var UI_ELEGIR = (new L("?","?","?")).getId();
 

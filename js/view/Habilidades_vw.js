@@ -51,10 +51,10 @@ function mostrarBonificadorNaturalEspecifico(etiqueta,tipo, n) {
     divEtiqueta.append(divNombre);
     divBonificador.append(divEtiqueta);
 
-    var boton = boton("medium pretty primary btn", _l(UI_ELEGIR));
-    boton.on("click", {tipo: tipo, nivel: n}, elegirBonificadorNatural);
+    var botonBono = boton("medium pretty primary btn", _l(UI_ELEGIR));
+    botonBono.on("click", {tipo: tipo, nivel: n}, elegirBonificadorNatural);
 
-    divBonificador.append(boton);
+    divBonificador.append(botonBono);
 
     return divBonificador;
 }
@@ -87,31 +87,40 @@ function mostrarBonificadoresNaturales() {
 
 function mostrarBonosNovel() {
     var divRetorno = getDiv();
-    for (var i = 0; i < 5; i++) {
-        var divNovel = $("<div></div>");
 
-        var etiquNovel = $("<div></div>");
-        etiquNovel.addClass(CSS_MUESTRA_INLINE);
-        etiquNovel.append(_l(UI_BONO_NOVEL) + " " + (i + 1) + ": ");
+    //Para cada nivel
+    for (var n = 1; n <= personaje_actual.getNivel(); n++) {
 
-        var divNombreNovel = $("<div></div>");
-        divNombreNovel.attr("id", "habilidadNaturalElegidaNovel" + i);
-        divNombreNovel.addClass(CSS_MUESTRA_INLINE);
-        if (personaje_actual.getBonoNovel(i, personaje_actual.getNivel()) != "") {
-            var nombreElegidoNovel = personaje_actual.getBonoNovel(i, personaje_actual.getNivel());
-            divNombreNovel.append(_l(nombreElegidoNovel));
+        //pero solo los niveles de Novel
+        if (personaje_actual.getCategoriaPorNivel(n).getNombre() == CAT_NOVEL) {
+            var divNivel = getDiv();
+            var etiquetaNivel = getDiv(CSS_MUESTRA_BLOCK).addClass(CSS_TEXTO_FUERTE).append(_l(UI_NIVEL) + " " + n);
+            divNivel.append(etiquetaNivel);
+
+            //Se muestran los cinco bonos de novel
+            for (var i = 0; i < 5; i++) {
+                var divNovel = getDiv();
+
+                var etiquNovel = getDiv(CSS_MUESTRA_INLINE).append(_l(UI_BONO_NOVEL) + " " + (i + 1) + ": ");
+
+                var divNombreNovel = getDiv(CSS_MUESTRA_INLINE).attr("id", "habilidadNaturalElegidaNovel" + i + "_" + n);
+                if (personaje_actual.getBonoNovel(i, n) != "") {
+                    var nombreElegidoNovel = personaje_actual.getBonoNovel(i, n);
+                    divNombreNovel.append(_l(nombreElegidoNovel));
+                }
+                etiquNovel.append(divNombreNovel);
+                divNovel.append(etiquNovel);
+
+                var botonNovel = boton("medium pretty primary btn", _l(UI_ELEGIR));
+                botonNovel.css("cursor", "pointer");
+                divNovel.append(botonNovel);
+
+                botonNovel.on("click", {indice: i, nivel: n}, elegirBonoNovel);
+
+                divNivel.append(divNovel);
+            }
+            divRetorno.append(divNivel);
         }
-        etiquNovel.append(divNombreNovel);
-
-        divNovel.append(etiquNovel);
-
-        var botonNovel = boton("medium pretty primary btn", _l(UI_ELEGIR));
-        botonNovel.css("cursor", "pointer");
-        divNovel.append(botonNovel);
-
-        botonNovel.on("click", {indice: i, nivel: personaje_actual.getNivel()}, elegirBonoNovel);
-
-        divRetorno.append(divNovel);
     }
     return divRetorno;
 }
@@ -127,20 +136,32 @@ function dialogoBonosNaturales() {
     var divGeneral = getDiv();
 
     //Bonos de habilidad natural
+    divGeneral.append($("<h3></h3>").append(_l(UI_BONOS_HABILIDAD_NATURAL)));
     divGeneral.append(mostrarBonosHabilidadNatural());
 
     //Bonos naturales
     if (!personaje_actual.hasFlag(FLAG_SIN_BONIFICADOR_NATURAL)) {
+        divGeneral.append($("<h3></h3>").append(_l(UI_BONOS_NATURALES)));
         divGeneral.append(mostrarBonificadoresNaturales());
     }
 
     //Bonos de novel
-    if (personaje_actual.getCategoria().getNombre() == CAT_NOVEL) {
+    var esNovel = false;
+    for (var i = 1; i <= personaje_actual.getNivel(); i++) {
+        if (personaje_actual.getCategoriaPorNivel(i).getNombre() == CAT_NOVEL) {
+            esNovel = true;
+            break;
+        }
+    }
+    if (esNovel) {
+        divGeneral.append($("<h3></h3>").append(_l(UI_BONOS_NOVEL)));
         divGeneral.append(mostrarBonosNovel());
     }
 
     //Mostrar diálogo
-    dialogBonosNaturales.append(divGeneral);
+    dialogBonosNaturales.append(divGeneral.accordion({
+        heightStyle: "content"
+    }));
     dialogBonosNaturales.dialog({
         modal: true,
         autoOpen: true,

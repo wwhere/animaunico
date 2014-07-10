@@ -781,12 +781,13 @@ function añadirHabilidadNatural(parametros) {
 function añadirBonoNovel(parametros) {
     var nombreHabilidad = parametros.opcion;
     var indice = parametros.indice;
+    var nivel = parametros.nivel;
     var bono = new Bono(BONO_HABILIDAD,nombreHabilidad,10,"",false,BONO_INNATO,ORIGEN_CATEGORIA,CAT_NOVEL);
     bono.indice = indice;
-    bono.nivel = 1;
-    personaje_actual.bonoNovel[personaje_actual.getNivel()][indice] = nombreHabilidad;
+    bono.nivel = nivel;
+    personaje_actual.bonoNovel[nivel][indice] = nombreHabilidad;
     personaje_actual.addBonoHabilidadNatural(bono,indice);
-    $("#habilidadNaturalElegidaNovel"+indice).empty().append(nombreHabilidad);
+    $("#habilidadNaturalElegidaNovel"+indice+"_"+nivel).empty().append(nombreHabilidad);
 }
 
 /**
