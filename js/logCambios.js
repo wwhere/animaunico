@@ -1,4 +1,4 @@
-var CURRENT_VERSION = 76;
+var CURRENT_VERSION = 77;
 
 function mostrarLogCambios() {
     var div = recuadroBase();

@@ -1,6 +1,6 @@
 {
   "name": "anima-unico",
-  "version": "0.76.0",
+  "version": "0.77.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-nodeunit": "~0.2.0",
