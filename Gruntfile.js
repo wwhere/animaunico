@@ -263,14 +263,74 @@ module.exports = function(grunt) {
                     'js/<%= pkg.name %>.min.<%= grunt.option("a") %>.js': ['<%= concat.dist.dest %>']
                 }
             }
+        },
+
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'img/raw/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'img/'
+                }]
+            }
+        },
+
+        watch: {
+            options: {
+                livereload: true,
+            },
+            images: {
+                files: ['img/raw/*'],
+                tasks: ['imagemin'],
+                options: {
+                    spawn: false
+                }
+            },
+            css: {
+                files: ['sass/*.{scss,sass}'],
+                tasks: ['compass:dev']
+            }
+        },
+
+        compass: {
+            dev: {
+                options: {
+                    sassDir: ['sass'],
+                    cssDir: ['css'],
+                    environment: 'development'
+                }
+            },
+            prod: {
+                options: {
+                    sassDir: ['sass'],
+                    cssDir: ['css'],
+                    environment: 'production'
+                }
+            }
+        },
+
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: {
+                    'css/gumby.css': 'sass/gumby.scss'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     // the default task can be run just by typing "grunt" on the command line
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'compass:prod']);
 }
 
 
