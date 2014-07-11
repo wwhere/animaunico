@@ -295,7 +295,7 @@ module.exports = function(grunt) {
                 options: {
                     replacements: [
                         {
-                            pattern: '{{VERSION}}',
+                            pattern: /\{\{VERSION\}\}/ig,
                             replacement: grunt.option("a")
                         }
                     ]
