@@ -186,6 +186,7 @@
   padding-left: 1rem;
   font-size: $norm;
   display: block;
+  cursor: pointer;
 }
 
 .subtituloSeccion {
@@ -286,6 +287,10 @@ ul.listaCambios {
 .seccionCerrada {
   height: 3em!important;
   overflow: hidden!important;
+
+  .tituloSeccion:hover {
+    background-color: $secondary-hover-color!important;
+  }
 }
 
 .flechaAbajo {

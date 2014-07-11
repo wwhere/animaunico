@@ -1752,7 +1752,7 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 .contenidoRecuadro { margin-left: 0.7rem; margin-right: 0.7rem; }
 
-.tituloSeccion { -moz-border-radius-topleft: 1rem; -webkit-border-top-left-radius: 1rem; border-top-left-radius: 1rem; -moz-border-radius-topright: 1rem; -webkit-border-top-right-radius: 1rem; border-top-right-radius: 1rem; padding-left: 1rem; font-size: 16px; display: block; }
+.tituloSeccion { -moz-border-radius-topleft: 1rem; -webkit-border-top-left-radius: 1rem; border-top-left-radius: 1rem; -moz-border-radius-topright: 1rem; -webkit-border-top-right-radius: 1rem; border-top-right-radius: 1rem; padding-left: 1rem; font-size: 16px; display: block; cursor: pointer; }
 
 .subtituloSeccion { -webkit-border-radius: 1rem; -moz-border-radius: 1rem; -ms-border-radius: 1rem; -o-border-radius: 1rem; border-radius: 1rem; font-size: 10px; margin-left: 1rem; margin-right: 1rem; padding-left: 2rem; display: block; border-bottom: 2px solid #547595 !important; background-color: inherit !important; border-left: 0px !important; border-right: 0px !important; border-top: 0px !important; }
 
@@ -1783,6 +1783,6 @@ ul.listaCambios { list-style-type: circle; }
 .botonDiminuto { height: 15px !important; line-height: 16px !important; font-size: x-small !important; }
 
 .seccionCerrada { height: 3em !important; overflow: hidden !important; }
+.seccionCerrada .tituloSeccion:hover { background-color: #6dbb80 !important; }
 
 .flechaAbajo { color: #f6b83f; }
-
