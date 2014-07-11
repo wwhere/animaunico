@@ -346,6 +346,17 @@ module.exports = function(grunt) {
                     'css/gumby.css': 'sass/gumby.scss'
                 }
             }
+        },
+
+        rename: {
+            main: {
+                files: [
+                    {
+                        src: ['css/gumby.css'],
+                        dest: 'css/gumby.<%= grunt.option("a") %>.css'
+                    }
+                ]
+            }
         }
     });
 
@@ -356,9 +367,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-string-replace');
+    grunt.loadNpmTasks('grunt-contrib-rename');
 
 // the default task can be run just by typing "grunt" on the command line
-    grunt.registerTask('default', ['string-replace','concat:html','concat:js', 'uglify']);
+    grunt.registerTask('default', ['compass:prod','rename','string-replace','concat:html','concat:js', 'uglify']);
 }
 
 

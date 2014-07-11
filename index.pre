@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/anima-unico/jquery-ui-1.10.3.custom.min.css">
-    <link rel="stylesheet" href="css/gumby.css">
+    <link rel="stylesheet" href="css/gumby.{{VERSION}}.css">
 
     <!--[if lt IE 9]>
     <script src="js/vendor/jquery-1.10.2.min.js"></script>
