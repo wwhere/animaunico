@@ -45,8 +45,11 @@ function mostrarDialogoOpcionesGeneracion() {
     var inputNivelInicial = $("<select></select>").attr("name","inputNivelInicial").attr("id","inputNivelInicial");
 
     for (var i = 0; i <= 30; i++) {
+        var opcion = $("<option></option>").attr("value",i).append(_l(UI_NIVEL) + " " + i);
+        if (i == 1)
+            $(opcion).attr("selected","selected");
         inputNivelInicial.append(
-            $("<option></option>").attr("value",i).append(_l(UI_NIVEL) + " " + i)
+            opcion
         )
     }
 
@@ -119,9 +122,7 @@ function mostrarDialogoOpcionesGeneracion() {
  * @param {{nivelInicial:number,categoria:string,raza:string}} parametros
  */
 function pasosFinalesInicioGeneracion(parametros) {
-    personaje_actual = new Personaje(parametros.nivelInicial);
-    personaje_actual.setRaza(getRaza(parametros.raza));
-    personaje_actual.setCategoria(getCategoria(parametros.categoria));
+    personaje_actual = new Personaje(parametros.nivelInicial,parametros.categoria,parametros.raza);
 
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;
@@ -1535,7 +1536,16 @@ function getNivelPorPX(px) {
     return nivel;
 }
 
-
+/**
+ * Devuelve los PXs mínimos de un nivel
+ * @param {number} nivel
+ * @returns {number}
+ */
+function getPXPorNivel(nivel) {
+    var px = 0;
+    //TODO
+    return px;
+}
 
 function getPDsPorNivel(nivel) {
     var pds = 0;

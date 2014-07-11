@@ -4,10 +4,18 @@
  * @class Personaje
  * @constructor
  */
-function Personaje(nivelInicial) {
+function Personaje(nivelInicial, categoriaInicial, razaInicial) {
 
     if (!nivelInicial) {
         nivelInicial = 1;
+    }
+
+    if (!categoriaInicial) {
+        categoriaInicial = CAT_NOVEL;
+    }
+
+    if (!razaInicial) {
+        razaInicial = RAZA_HUMANO;
     }
 
     /**
@@ -109,15 +117,15 @@ function Personaje(nivelInicial) {
 
     //region Raza
     /** @type Raza */
-    this.raza = getRaza(RAZA_HUMANO);
+    this.raza = getRaza(razaInicial);
     //endregion Raza
 
     //region Categoría
-    /** @type string */
-    this.arquetipo = ARQ_SIN_CATEGORIA;
-
     /** @type Categoria */
-    this.categoria = getCategoria(CAT_NOVEL);
+    this.categoria = getCategoria(categoriaInicial);
+
+    /** @type string */
+    this.arquetipo = this.categoria.getArquetipo();
 
     /** @type Categoria[] */
     this.categoriasPorNiveles = [];
@@ -210,7 +218,9 @@ function Personaje(nivelInicial) {
     //region Bonificadores Naturales
     /** @type BonificadorNatural[] */
     this.bonificadoresNaturales = [];
-    this.bonificadoresNaturales[1] = new BonificadorNatural();
+    for (i = 1; i <= nivelInicial; i++) {
+        this.bonificadoresNaturales[i] = new BonificadorNatural();
+    }
     //endregion Bonificadores Naturales
 
     //region Puntos de Desarrollo
@@ -269,7 +279,7 @@ function Personaje(nivelInicial) {
 
     //region PX y nivel
     /** @type number */
-    this.px = 0;
+    this.px = getPXPorNivel(nivelInicial);
 
     /** @type number */
     this.nivel = nivelInicial;

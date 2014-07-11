@@ -285,7 +285,7 @@ function muestraDesarrollo(estadoGeneracion) {
     }
 
 
-    if ((estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
+    if (personaje_actual.getAumentosCaracteristicasLibres() > 0) {
         divContenido.append(muestraPersonal(_l(UI_AUMENTOS_CARACTERISTICAS), personaje_actual.getAumentosCaracteristicasLibres(), false));
     }
 
@@ -459,11 +459,13 @@ function muestraCaracteristicas(estadoGeneracion) {
     divRow.append(divNombre).append(divValor).append(divBono).append(divAumento);
     divContenido.append(divRow);
 
+    var mostrarBotonesAumento = ((estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL) || ((estadoGeneracion == ESTADO_GENERACION_INICIADA)&&(personaje_actual.getAumentosCaracteristicasLibres() > 0)));
+
     for (var i = 0;i<CARACTERISTICAS_NOMBRES.length;i++) {
         var valor = personaje_actual.getCaracteristica(CARACTERISTICAS_NOMBRES[i]);
         var bono = modificadorBonito(personaje_actual.getBonoCaracteristica(CARACTERISTICAS_NOMBRES[i]));
 
-        divContenido.append(muestraCaracteristica(CARACTERISTICAS_NOMBRES[i],valor,bono,(estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL)));
+        divContenido.append(muestraCaracteristica(CARACTERISTICAS_NOMBRES[i],valor,bono,mostrarBotonesAumento));
     }
 
     div.append(divContenido);
