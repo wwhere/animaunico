@@ -7,7 +7,16 @@ module.exports = function(grunt) {
                 // define a string to put between each file in the concatenated output
                 separator: '\r\n'
             },
-            dist: {
+            html: {
+                // the files to concatenate
+                src: [
+                    "index.pre2",
+                    "cambios.html"
+                ],
+                // the location of the resulting JS file
+                dest: 'index.html'
+            },
+            js:  {
                 // the files to concatenate
                 src: [
                     "js/vendor/modernizr-2.6.2.min.js",
@@ -251,6 +260,7 @@ module.exports = function(grunt) {
                 // the location of the resulting JS file
                 dest: 'js/<%= pkg.name %>.js'
             }
+
         },
 
         uglify: {
@@ -260,7 +270,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'js/<%= pkg.name %>.min.<%= grunt.option("a") %>.js': ['<%= concat.dist.dest %>']
+                    'js/<%= pkg.name %>.min.<%= grunt.option("a") %>.js': ['<%= concat.js.dest %>']
                 }
             }
         },
@@ -279,7 +289,7 @@ module.exports = function(grunt) {
         'string-replace': {
             dist: {
                 files: {
-                    'index.html': 'index.pre',
+                    'index.pre2': 'index.pre',
                     'js/logCambios.js': 'js/logCambios.pre'
                 },
                 options: {
@@ -347,8 +357,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-string-replace');
 
-    // the default task can be run just by typing "grunt" on the command line
-    grunt.registerTask('default', ['string-replace','concat', 'uglify']);
+// the default task can be run just by typing "grunt" on the command line
+    grunt.registerTask('default', ['string-replace','concat:html','concat:js', 'uglify']);
 }
 
 
