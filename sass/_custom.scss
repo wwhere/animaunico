@@ -282,3 +282,12 @@ ul.listaCambios {
   line-height: 16px!important;
   font-size: x-small!important;
 }
+
+.seccionCerrada {
+  height: 3em!important;
+  overflow: hidden!important;
+}
+
+.flechaAbajo {
+  color: $warning-color;
+}

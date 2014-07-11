@@ -55,6 +55,9 @@ animaUnico.inicializar = function() {
         }
         ALTO_DIALOGO =  $(window).height() * 0.8;
     }
+
+    inicializarAreasContraibles();
+
 };
 
 function inicializar() {
@@ -116,9 +119,32 @@ function inicializar() {
         ALTO_DIALOGO =  $(window).height() * 0.8;
     }
 
+    inicializarAreasContraibles();
+
+
 }
 
 function mostrarPersonajeActual() {
     muestraPersonaje(personaje_actual);
 }
 
+function inicializarAreasContraibles() {
+    $(document).on("click","." + CSS_TITULO_SECCION,{},function(event) {
+        if (!$(this).parent(".recuadroDatos").hasClass("seccionCerrada")) {
+            cierraSeccion(this);
+        } else {
+            abreSeccion(this);
+        }
+    });
+}
+
+function cierraSeccion(seccion) {
+    $(seccion).parent(".recuadroDatos").addClass("seccionCerrada");
+    $(seccion).prepend($("<div></div>").html("V ").addClass("flechaAbajo").css("display","inline"));
+    $(seccion).append($("<div></div>").html(" V").addClass("flechaAbajo").css("display","inline"));
+}
+
+function abreSeccion(seccion) {
+    $(seccion).parent(".recuadroDatos").removeClass("seccionCerrada");
+    $(seccion).children(".flechaAbajo").remove();
+}

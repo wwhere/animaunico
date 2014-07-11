@@ -1661,6 +1661,8 @@ function muestraSecundarias(estadoGeneracion) {
 
     div.append(muestraSubtitulo(UI_SECUNDARIAS, true, false, []));
 
+    if (muestraBotones)
+        divContenido.append(botonComprarNuevo(_l(UI_BOTON_NATURALES),"",dialogoBonosNaturales,{}));
 
     for (var i = 0; i <habilidades_secundarias.length; i++) {
         var grupoHab = habilidades_secundarias[i];

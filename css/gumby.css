@@ -1781,3 +1781,8 @@ ul.listaCambios { list-style-type: circle; }
 .colorPalidGreen { color: palegreen; }
 
 .botonDiminuto { height: 15px !important; line-height: 16px !important; font-size: x-small !important; }
+
+.seccionCerrada { height: 3em !important; overflow: hidden !important; }
+
+.flechaAbajo { color: #f6b83f; }
+
