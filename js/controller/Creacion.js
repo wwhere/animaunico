@@ -33,9 +33,95 @@ function iniciarGeneracion() {
         }
     }
     desactivarNotificaciones();
-    personaje_actual = new Personaje();
-    personaje_actual.setRaza(getRaza(RAZA_HUMANO));
-    personaje_actual.setCategoria(CATEGORIA_NOVEL);
+
+    mostrarDialogoOpcionesGeneracion();
+}
+
+function mostrarDialogoOpcionesGeneracion() {
+    var ventana = getDiv();
+
+    //nivel inicial
+    var etiquetaNivelInicial = $("<label></label>").attr("for","inputNivelInicial").append(_l(UI_NIVEL_INICIAL));
+    var inputNivelInicial = $("<select></select>").attr("name","inputNivelInicial").attr("id","inputNivelInicial");
+
+    for (var i = 0; i <= 30; i++) {
+        inputNivelInicial.append(
+            $("<option></option>").attr("value",i).append(_l(UI_NIVEL) + " " + i)
+        )
+    }
+
+    ventana.append(etiquetaNivelInicial).append(inputNivelInicial).append("<br>");
+
+    //raza inicial
+    var etiquetaRazaInicial = $("<label></label>").attr("for","inputRazaInicial").append(_l(UI_RAZA_INICIAL));
+    var inputRazaInicial = $("<select></select>").attr("name","inputRazaInicial").attr("id","inputRazaInicial");
+
+    for (i = 0; i < razas_set.length; i++) {
+        var raza = razas_set[i];
+        inputRazaInicial.append(
+            $("<option></option>").attr("value",raza.getNombre()).append(_l(raza.getNombre()))
+        )
+    }
+
+    ventana.append(etiquetaRazaInicial).append(inputRazaInicial).append("<br>");
+
+    //categoria inicial
+    var etiquetaCategoriaInicial = $("<label></label>").attr("for","inputCategoriaInicial").append(_l(UI_CATEGORIA_INICIAL));
+    var inputCategoriaInicial = $("<select></select>").attr("name","inputCategoriaInicial").attr("id","inputCategoriaInicial");
+
+    for (i = 0; i < categorias_set.length; i++) {
+        var categoria = categorias_set[i];
+        inputCategoriaInicial.append(
+            $("<option></option>").attr("value",categoria.getNombre()).append(_l(categoria.getNombre()))
+        )
+    }
+
+    ventana.append(etiquetaCategoriaInicial).append(inputCategoriaInicial).append("<br>");
+
+    ventana.dialog({
+        modal: true,
+        autoOpen: true,
+        draggable: true,
+        resizable: false,
+        title: _l(DIAG_ELEGIR_OPCIONES_TITULO),
+        position: "center",
+        closeOnEscape: true,
+        width: ANCHO_DIALOGO,
+        height: ALTO_DIALOGO,
+        maxHeight: ALTO_DIALOGO,
+        buttons: [
+            {
+                text: _l(UI_OK),
+                click: function() {
+                    var parametros = {
+                        nivelInicial : parseInt($("#inputNivelInicial option:selected").val()),
+                        raza : $("#inputRazaInicial option:selected").val(),
+                        categoria : $("#inputCategoriaInicial option:selected").val()
+                    };
+                    pasosFinalesInicioGeneracion(parametros);
+                    $( this ).dialog( "close" );
+                    $(this).empty();
+                }
+            },
+            {
+                text: _l(UI_CANCELAR),
+                click: function() {
+                    $( this ).dialog( "close" );
+                    $(this).empty();
+                }
+            }
+        ]
+    });
+}
+
+/**
+ *
+ * @param {{nivelInicial:number,categoria:string,raza:string}} parametros
+ */
+function pasosFinalesInicioGeneracion(parametros) {
+    personaje_actual = new Personaje(parametros.nivelInicial);
+    personaje_actual.setRaza(getRaza(parametros.raza));
+    personaje_actual.setCategoria(getCategoria(parametros.categoria));
 
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;

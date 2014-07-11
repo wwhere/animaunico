@@ -220,7 +220,7 @@ var DAIM_NEPH_PEQUEÑO = (new L("DAIM_NEPH_PEQUEÑO","Pequeño tamaño (Daimah N
     "Small Size (Daimah Nephilim)")).getId();
 var DAIM_NEPH_NATURALEZA = (new L("DAIM_NEPH_NATURALEZA","Naturaleza curativa (Daimah Nephilim)",
     "Nature's Cure (Daimah Nephilim)")).getId();
-var DAIM_NEPH_ALMA = (new L("DAIM_NEPH_ALMA","Immortal Soul (Daimah Nephilim)",
+var DAIM_NEPH_ALMA = (new L("DAIM_NEPH_ALMA","Alma inmortal (Daimah Nephilim)",
     "Immortal Soul (Daimah Nephilim)")).getId();
 var DAIM_NEPH_SENTIR_DESC = (new L("DAIM_NEPH_SENTIR_DESC","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.",
     "Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.")).getId();

@@ -623,6 +623,7 @@ var DIAG_COMPRAR_VENTAJAS_TITULO = (new L("Comprar ventajas","Comprar ventajas",
 var DIAG_ELEGIR_DESVENTAJAS_TITULO = (new L("Elegir desventajas","Elegir desventajas","Choose Disadvantages")).getId();
 var DIAG_ELEGIR_BONOS_NATURALES_TITULO = (new L("Elegir bonos naturales","Elegir bonos naturales","Choose natural bonuses")).getId();
 var DIAG_ELEGIR_OPCIONES_TITULO = (new L("Elegir opciones","Elegir opciones","Choose options")).getId();
+
 var DIAG_PODERES_PSIQUICOS = (new L("Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
 var DIAG_PODERES_KI = (new L("Dominios del Ki","Dominios del Ki","Ki")).getId();
 var DIAG_PODERES_MAGIA = (new L("Magia","Magia","Magic")).getId();
@@ -1123,3 +1124,9 @@ var UI_PATRONES_MENTALES = (new L("UI_PATRONES_MENTALES","Patrones Mentales","Me
 var UI_BOTON_COMPRAR_PATRON = (new L("UI_BOTON_COMPRAR_PATRON","Comprar Patrón Mental","Buy Mental Pattern")).getId();
 var UI_CANCELADO = (new L("UI_CANCELADO","Cancelado","Cancelled")).getId();
 var UI_CANCELAR = (new L("UI_CANCELAR","Cancelar","Cancel")).getId();
+
+var UI_OK = (new L("UI_OK","Ok","Ok")).getId();
+
+var UI_NIVEL_INICIAL = (new L("UI_NIVEL_INICIAL","Nivel inicial","Initial level")).getId();
+var UI_RAZA_INICIAL = (new L("UI_RAZA_INICIAL", "Raza inicial", "Initial race")).getId();
+var UI_CATEGORIA_INICIAL = (new L("UI_CATEGORIA_INICIAL", "Categoría inicial", "Initial class")).getId();
