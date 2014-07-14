@@ -123,15 +123,19 @@ function mostrarDialogoOpcionesGeneracion() {
  */
 function pasosFinalesInicioGeneracion(parametros) {
     personaje_actual = new Personaje(parametros.nivelInicial,parametros.categoria,parametros.raza);
-    personaje_actual.setCategoria(getCategoria(parametros.categoria));
-    personaje_actual.setRaza(getRaza(parametros.raza));
 
+    var pasosPostCaracteristicas = function(categoria, raza) {
+        return function() {
+            personaje_actual.setCategoria(categoria);
+            personaje_actual.setRaza(raza);
+        };
+    }(getCategoria(parametros.categoria),getRaza(parametros.raza));
 
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;
     activarNotificaciones();
     mostrarPersonajeActual();
-    mostrarDialogoTipoGeneracion();
+    mostrarDialogoTipoGeneracion(pasosPostCaracteristicas);
 }
 
 /**
@@ -152,26 +156,27 @@ function getSexoAzar() {
  *
  * @param {number} metodo
  * @throws ERR_METODO_DESCONOCIDO
+ * @param callback
  */
-function generarMetodo(metodo) {
+function generarMetodo(metodo, callback) {
     switch (metodo) {
         case 0:
-            generarMetodo0();
+            generarMetodo0(callback);
             break;
         case 1:
-            generarMetodo1();
+            generarMetodo1(callback);
             break;
         case 2:
-            generarMetodo2();
+            generarMetodo2(callback);
             break;
         case 3:
-            generarMetodo3();
+            generarMetodo3(callback);
             break;
         case 4:
-            generarMetodo4();
+            generarMetodo4(callback);
             break;
         case 5:
-            generarMetodo5();
+            generarMetodo5(callback);
             break;
         default:
             throw ERR_METODO_DESCONOCIDO;
@@ -214,14 +219,14 @@ function getExplicacionMetodo(metodo) {
 /**
  *
  */
-function generarMetodo0() {
-    mostrarDialogoRepartoPuntosCaracteristicas(0, false, true);
+function generarMetodo0(callback) {
+    mostrarDialogoRepartoPuntosCaracteristicas(0, false, true, callback);
 }
 
 /**
  *
  */
-function generarMetodo1() {
+function generarMetodo1(callback) {
     var tiradas = [];
     var valoresAbandonados = [];
 
@@ -248,13 +253,13 @@ function generarMetodo1() {
     tiradas.sort();
     valoresAbandonados.sort();
 
-    mostrarDialogoRepartoTiradasCaracteristicas(tiradas,valoresAbandonados);
+    mostrarDialogoRepartoTiradasCaracteristicas(tiradas,valoresAbandonados, callback);
 }
 
 /**
  *
  */
-function generarMetodo2() {
+function generarMetodo2(callback) {
     var tiradas = [];
     var valoresAbandonados = [];
 
@@ -273,37 +278,37 @@ function generarMetodo2() {
     tiradas.sort();
     valoresAbandonados.sort();
 
-    mostrarDialogoRepartoTiradasCaracteristicas(tiradas,valoresAbandonados);
+    mostrarDialogoRepartoTiradasCaracteristicas(tiradas,valoresAbandonados,callback);
 }
 
 /**
  *
  */
-function generarMetodo3() {
+function generarMetodo3(callback) {
     desactivarNotificaciones();
     for (var i = 0; i < CARACTERISTICAS_NOMBRES.length; i++) {
         personaje_actual.setCaracteristica(CARACTERISTICAS_NOMBRES[i],d10());
     }
     activarNotificaciones();
-    finAsignacionCaracteristicas()
+    finAsignacionCaracteristicas(callback);
 }
 
 /**
  *
  */
-function generarMetodo4() {
+function generarMetodo4(callback) {
     var total = 0;
     for (var i = 0; i < 7; i++) {
         total += d10();
     }
-    mostrarDialogoRepartoPuntosCaracteristicas(total, false, false);
+    mostrarDialogoRepartoPuntosCaracteristicas(total, false, false,callback);
 }
 
 /**
  *
  */
-function generarMetodo5() {
-    muestraDialogoElegirOpciones([new OpcionMostrable("45","45",""),new OpcionMostrable("50","50",""),new OpcionMostrable("55","55",""),new OpcionMostrable("60","60",""),new OpcionMostrable("65","65",""),new OpcionMostrable(_l(UI_ESPECIFICAR),UI_ESPECIFICAR,"")],{},{principal:metodo5PuntosElegidos,isDisabled:alwaysEnabled},false);
+function generarMetodo5(callback) {
+    muestraDialogoElegirOpciones([new OpcionMostrable("45","45",""),new OpcionMostrable("50","50",""),new OpcionMostrable("55","55",""),new OpcionMostrable("60","60",""),new OpcionMostrable("65","65",""),new OpcionMostrable(_l(UI_ESPECIFICAR),UI_ESPECIFICAR,"")],{callback:callback},{principal:metodo5PuntosElegidos,isDisabled:alwaysEnabled},false);
 }
 
 function metodo5PuntosElegidos(parametros) {
@@ -313,18 +318,19 @@ function metodo5PuntosElegidos(parametros) {
     } else {
         total = parseInt(parametros.opcion);
     }
-    mostrarDialogoRepartoPuntosCaracteristicas(total, true, false);
+    mostrarDialogoRepartoPuntosCaracteristicas(total, true, false,parametros.callback);
 }
 
 /**
  *
  */
-function finAsignacionCaracteristicas() {
+function finAsignacionCaracteristicas(callback) {
     desactivarNotificaciones();
     personaje_actual.setTamaño(personaje_actual.getCaracteristica(FUE) + personaje_actual.getCaracteristica(CON));
     personaje_actual.setApariencia(d10());
     personaje_actual.setFlag(FLAG_APARIENCIA_ALEATORIA);
     activarNotificaciones();
+    callback();
     lanzarEvento(EVENT_CHARACTER_SECCION_CARACTERISTICAS);
     personaje_actual.updateBonoyBases();
 }

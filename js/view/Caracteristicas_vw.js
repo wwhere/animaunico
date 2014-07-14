@@ -1,7 +1,7 @@
 /**
  * Muestra el diálogo para elegir el tipo de método de generación de características.
  */
-function mostrarDialogoTipoGeneracion() {
+function mostrarDialogoTipoGeneracion(callback) {
     var dialogMetodoCreacion = getDiv("");
 
     dialogMetodoCreacion.dialog({
@@ -39,7 +39,7 @@ function mostrarDialogoTipoGeneracion() {
 
         divBoton.on("click", {tipo:i}, function(event) {
             dialogMetodoCreacion.dialog("close");
-            generarMetodo(event.data.tipo);
+            generarMetodo(event.data.tipo, callback);
         });
 
         divBoton.on("mouseenter", {metodo:i}, function(event) {
@@ -59,7 +59,7 @@ function mostrarDialogoTipoGeneracion() {
  * @param {number[]} valores Los valores a repartir
  * @param {number[]} valoresAbandonados Los valores que se han ignorado por diversos motivos
  */
-function mostrarDialogoRepartoTiradasCaracteristicas(valores,valoresAbandonados) {
+function mostrarDialogoRepartoTiradasCaracteristicas(valores,valoresAbandonados, callback) {
     var dialogo = getDiv("");
     dialogo.attr("id",DIV_DIALOGO_REPARTO_CARACTERISTICAS);
 
@@ -177,7 +177,7 @@ function mostrarDialogoRepartoTiradasCaracteristicas(valores,valoresAbandonados)
                     click: function() {
                         dialogo.dialog( "close" );
                         activarNotificaciones();
-                        finAsignacionCaracteristicas();
+                        finAsignacionCaracteristicas(callback);
                     }
                 }
             ]);
@@ -247,7 +247,7 @@ function nuevoValorAbandonado(valor) {
  * @param {number} total El total de puntos a repartir
  * @param {boolean} diezCuestaDoble Indica si el décimo punto cuesta doble
  */
-function mostrarDialogoRepartoPuntosCaracteristicas(total, diezCuestaDoble, repartoLibre) {
+function mostrarDialogoRepartoPuntosCaracteristicas(total, diezCuestaDoble, repartoLibre, callback) {
     var dialogo = getDiv("");
     dialogo.attr("id",DIV_DIALOGO_REPARTO_CARACTERISTICAS);
 
@@ -350,7 +350,7 @@ function mostrarDialogoRepartoPuntosCaracteristicas(total, diezCuestaDoble, repa
                 click: function() {
                     $( this ).dialog( "close" );
                     activarNotificaciones();
-                    finAsignacionCaracteristicas();
+                    finAsignacionCaracteristicas(callback);
                 }
             }]);
 
