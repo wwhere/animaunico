@@ -123,6 +123,9 @@ function mostrarDialogoOpcionesGeneracion() {
  */
 function pasosFinalesInicioGeneracion(parametros) {
     personaje_actual = new Personaje(parametros.nivelInicial,parametros.categoria,parametros.raza);
+    personaje_actual.setCategoria(getCategoria(parametros.categoria));
+    personaje_actual.setRaza(getRaza(parametros.raza));
+
 
     personaje_actual.GENERACION_INICIADA = ESTADO_GENERACION_INICIADA;
     PERSONAJE_EN_MARCHA = true;

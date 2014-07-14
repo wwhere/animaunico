@@ -37,8 +37,8 @@ animaUnico.inicializar = function() {
         });
     } else {
         personaje_actual = new Personaje();
-        personaje_actual.setRaza(getRaza(RAZA_HUMANO));
-        personaje_actual.setCategoria(CATEGORIA_NOVEL);
+//        personaje_actual.setRaza(getRaza(RAZA_HUMANO));
+  //      personaje_actual.setCategoria(CATEGORIA_NOVEL);
 
         muestraPersonaje(personaje_actual);
 
@@ -100,8 +100,8 @@ function inicializar() {
         });
     } else {
         personaje_actual = new Personaje();
-        personaje_actual.setRaza(getRaza(RAZA_HUMANO));
-        personaje_actual.setCategoria(CATEGORIA_NOVEL);
+//        personaje_actual.setRaza(getRaza(RAZA_HUMANO));
+  //      personaje_actual.setCategoria(CATEGORIA_NOVEL);
 
         muestraPersonaje(personaje_actual);
 
