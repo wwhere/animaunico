@@ -160,8 +160,8 @@ function muestraArcanaSephirah(destino) {
         fontSizeHighlight = '1.5em',
         fontSizeNormal = '1em';
 
-    var w = "100%";
-    var h = "90%";
+    var w = "800px";
+    var h = "600px";
     var palette = {
         "black": "#000000",
         "lightgray": "#819090",
@@ -462,6 +462,7 @@ function muestraDialogoArcanaSephirah() {
 
     var actualizarDialogoArcanaSephirah = function() {
         $("#muestraArcanaSephirah").empty();
+
 
         muestraArcanaSephirah("#muestraArcanaSephirah");
     };
