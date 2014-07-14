@@ -373,6 +373,20 @@ ElementoPCComprado.prototype = {
      */
     setAnulable : function(valor) {
         this.anulable = valor;
+    },
+
+    /**
+     *
+     * @returns {boolean}
+     */
+    isAumentable : function() {
+        for (var i = 0; i < this.ventaja.costes.length; i++) {
+            if (this.ventaja.costes[i] > this.pc) {
+                return true;
+            }
+        }
+        return false;
     }
+
 };
 //endregion ElementoPCComprado

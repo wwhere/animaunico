@@ -452,6 +452,23 @@ function muestraBotonAnular(callback, parametros) {
 
 /**
  *
+ * @param {function} callback
+ * @param {{}} parametros
+ * @returns {jQuery}
+ */
+function muestraBotonAumentar(callback, parametros) {
+    var botonAnular = boton("small pretty primary btn",_l("+"));
+
+    if (parametros) {
+        botonAnular.on("click", parametros, callback);
+    } else {
+        botonAnular.on("click", callback);
+    }
+    return botonAnular;
+}
+
+/**
+ *
  * @param {GrupoOpciones[]} gruposOpciones
  * @param {function} callback
  * @param {object} parametros

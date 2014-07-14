@@ -664,8 +664,8 @@ function muestraVentajas(estadoGeneracion) {
     if ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
         puedeAñadir = true;
     }
-
-    div.append(listaElementosPCComprados(UI_VENTAJAS,personaje_actual.ventajas,anularelementoPCComprado,puedeAñadir, dialogoVentajas,_l(UI_COMPRAR_VENTAJA)));
+//TODO aumentarVentaja
+    div.append(listaElementosPCComprados(UI_VENTAJAS,personaje_actual.ventajas,anularelementoPCComprado,aumentarVentaja,puedeAñadir, dialogoVentajas,_l(UI_COMPRAR_VENTAJA)));
 
     return div;
 }
@@ -677,8 +677,8 @@ function muestraDesventajas(estadoGeneracion) {
     if ((estadoGeneracion == ESTADO_GENERACION_INICIADA) || (estadoGeneracion == ESTADO_GENERACION_SUBIENDO_NIVEL)) {
         puedeAñadir = true;
     }
-
-    div.append(listaElementosPCComprados(UI_DESVENTAJAS,personaje_actual.desventajas,anularelementoPCComprado,puedeAñadir,dialogoDesventajas,_l(UI_COMPRAR_DESVENTAJA)));
+//TODO aumentarDesventaja
+    div.append(listaElementosPCComprados(UI_DESVENTAJAS,personaje_actual.desventajas,anularelementoPCComprado,aumentarDesventaja,puedeAñadir,dialogoDesventajas,_l(UI_COMPRAR_DESVENTAJA)));
 
     return div;
 }
@@ -687,13 +687,14 @@ function muestraDesventajas(estadoGeneracion) {
  *
  * @param {string} titulo No localizado
  * @param arrayElementos
- * @param callback
+ * @param callbackAnular
+ * @param callbackAumentar
  * @param puedeComprarNuevo
  * @param callbackBotonNuevo
  * @param {string} etiquetaBotonNuevo Ya localizado
  * @returns {*}
  */
-function listaElementosPCComprados(titulo,arrayElementos,callback,puedeComprarNuevo,callbackBotonNuevo, etiquetaBotonNuevo) {
+function listaElementosPCComprados(titulo,arrayElementos,callbackAnular,callbackAumentar,puedeComprarNuevo,callbackBotonNuevo, etiquetaBotonNuevo) {
     var div = getDiv("");
 
     var divTitulo = muestraSubtitulo(titulo, true, false, []);
@@ -713,7 +714,10 @@ function listaElementosPCComprados(titulo,arrayElementos,callback,puedeComprarNu
         var divV = muestraVentaja(ventajaComprada);
         if (puedeComprarNuevo) {
             if ((ventajaComprada.isAnulable()) && (ventajaComprada.ventaja.origen != ORIGEN_RAZA) && (ventajaComprada.ventaja.origen != ORIGEN_ELAN)) {
-                divV.append(muestraBotonAnular(callback,{elementoPCComprado: ventajaComprada}));
+                divV.append(muestraBotonAnular(callbackAnular,{elementoPCComprado: ventajaComprada}));
+            }
+            if ((ventajaComprada.isAumentable()) && (ventajaComprada.ventaja.origen != ORIGEN_RAZA) && (ventajaComprada.ventaja.origen != ORIGEN_ELAN)) {
+                divV.append(muestraBotonAumentar(callbackAumentar,{elementoPCComprado: ventajaComprada}));
             }
         }
         divContenido.append(divV);
