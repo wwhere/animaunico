@@ -21,6 +21,7 @@ var BOTON_ELAN = "BOTON_ELAN";
 var BOTON_FINALIZAR_CREACION = "BOTON_FINALIZAR_CREACION";
 var BOTON_COMPRAR_EQUIPO = "BOTON_COMPRAR_EQUIPO";
 var BOTON_SUBIR_NIVEL = "BOTON_SUBIR_NIVEL";
+var BOTON_IMPRIMIR = "BOTON_IMPRIMIR";
 var BOTON_GUARDAR = "BOTON_GUARDAR";
 var BOTON_CARGAR = "BOTON_CARGAR";
 var BOTON_LOG = "BOTON_LOG";
@@ -64,6 +65,7 @@ function muestraControles() {
     $("#"+BOTON_CREACION).off("click",iniciarGeneracion);
     $("#"+BOTON_FINALIZAR_CREACION).off("click",finalizarGeneracion);
     $("#"+BOTON_SUBIR_NIVEL).off("click",subirNivel);
+    $("#"+BOTON_IMPRIMIR).off("click",muestraVentanaImprimirPersonaje);
     $("#"+BOTON_GUARDAR).off("click",muestraDialogoGuardarPersonaje);
     $("#"+BOTON_CARGAR).off("click",muestraDialogoCargarPersonaje);
     $("#"+BOTON_LOG).off("click",mostrarLogCambios);
@@ -82,6 +84,7 @@ function muestraControles() {
     $("#"+BOTON_CREACION).on("click",iniciarGeneracion);
     $("#"+BOTON_FINALIZAR_CREACION).on("click",finalizarGeneracion);
     $("#"+BOTON_SUBIR_NIVEL).on("click",subirNivel);
+    $("#"+BOTON_IMPRIMIR).on("click",muestraVentanaImprimirPersonaje);
     $("#"+BOTON_GUARDAR).on("click",muestraDialogoGuardarPersonaje);
     $("#"+BOTON_CARGAR).on("click",muestraDialogoCargarPersonaje);
     $("#"+BOTON_LOG).on("click",mostrarLogCambios);
@@ -142,7 +145,7 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
 
     //menu Personaje
     var menuPersonaje = $("#menuPersonaje").empty();
-    var liNuevo, liSubir, liGuardar, liCargar;
+    var liNuevo, liSubir, liGuardar, liCargar, liImprimir;
 
     liNuevo = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CREACION).append(_l(UI_BOTON_CREACION)));
     if (activar==2) {
@@ -156,8 +159,9 @@ function enableButtonsPasosCreacion(estadoGeneracion) {
         liGuardar = $("<li></li>").addClass("desactivado").append(_l(UI_BOTON_GUARDAR));
     }
     liCargar = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_CARGAR).append(_l(UI_BOTON_CARGAR)));
+    liImprimir = $("<li></li>").append($("<a></a>").prop("href","#").prop("id",BOTON_IMPRIMIR).append(_l(UI_BOTON_IMPRIMIR)));
 
-    menuPersonaje.append(liNuevo).append(liSubir).append(liGuardar).append(liCargar);
+    menuPersonaje.append(liNuevo).append(liSubir).append(liImprimir).append(liGuardar).append(liCargar);
 
     //menu Creacion
     var menuCreacion = $("#menuCreacion").empty();

@@ -50,6 +50,7 @@
                     <ul id="menuPersonaje">
                         <li><a href="#" id="BOTON_CREACION" class="localizable" loc="Iniciar Creación">UI_BOTON_CREACION</a></li>
                         <li><a href="#" id="BOTON_SUBIR_NIVEL" class="localizable" loc="Subir nivel">UI_BOTON_SUBIR_NIEVL</a></li>
+                        <li><a href="#" id="BOTON_IMPRIMIR" class="localizable" loc="Imprimir personaje">UI_BOTON_IMPRIMIR</a></li>
                         <li><a href="#" id="BOTON_GUARDAR" class="localizable" loc="Guardar personaje">UI_BOTON_GUARDAR</a></li>
                         <li><a href="#" id="BOTON_CARGAR" class="localizable" loc="Cargar personaje">UI_BOTON_CARGAR</a></li>
                     </ul>

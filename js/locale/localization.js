@@ -272,6 +272,7 @@ var UI_BOTON_GASTAR_NIVELES_VIA = (new L("Gastar niveles de vía","Gastar nivele
 var UI_BOTON_GASTAR_ELAN = (new L("Gastar elan","Gastar elan","Spend Elan")).getId();
 var UI_BOTON_FINALIZAR_CREACION = (new L("Finalizar Creación","Finalizar Creación","End Creation")).getId();
 var UI_BOTON_SUBIR_NIEVL = (new L("Subir nivel","Subir nivel","Level Up")).getId();
+var UI_BOTON_IMPRIMIR = (new L("UI_BOTON_IMPRIMIR","Imprimir personaje","Print Character")).getId();
 var UI_BOTON_GUARDAR = (new L("Guardar personaje","Guardar personaje","Save Character")).getId();
 var UI_BOTON_CARGAR = (new L("Cargar personaje","Cargar personaje","Load Character")).getId();
 var UI_BOTON_COMPRAR_EQUIPO = (new L("Comprar equipo","Comprar equipo","Buy Equipment")).getId();
@@ -623,6 +624,7 @@ var DIAG_COMPRAR_VENTAJAS_TITULO = (new L("Comprar ventajas","Comprar ventajas",
 var DIAG_ELEGIR_DESVENTAJAS_TITULO = (new L("Elegir desventajas","Elegir desventajas","Choose Disadvantages")).getId();
 var DIAG_ELEGIR_BONOS_NATURALES_TITULO = (new L("Elegir bonos naturales","Elegir bonos naturales","Choose natural bonuses")).getId();
 var DIAG_ELEGIR_OPCIONES_TITULO = (new L("Elegir opciones","Elegir opciones","Choose options")).getId();
+var DIAG_IMPRIMIR_PERSONAJE = (new L("DIAG_IMPRIMIR_PERSONAJE","Imprimir personaje","Print character")).getId();
 
 var DIAG_PODERES_PSIQUICOS = (new L("Poderes Psíquicos","Poderes Psíquicos","Psychic Powers")).getId();
 var DIAG_PODERES_KI = (new L("Dominios del Ki","Dominios del Ki","Ki")).getId();

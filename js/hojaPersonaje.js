@@ -42,6 +42,7 @@ var CSS_TEXTO_CENTRO = "textCenter";
 var CSS_VALOR_ABANDONADO = "valorCaracteristicaTachado";
 var CSS_COLOR_GRIS = "colorGris";
 var CSS_COLOR_PALIDGREEN = "colorPalidGreen";
+var CSS_ZONA_IMPRESION = "zonaImpresion";
 
 function getDiv(clase) {
     return $("<div></div>").addClass(clase);

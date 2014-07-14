@@ -296,3 +296,18 @@ ul.listaCambios {
 .flechaAbajo {
   color: $warning-color;
 }
+
+.zonaImpresion {
+  background-color: white;
+  color: black;
+  font-size: $small;
+
+  h3 {
+    font-size: $norm;
+    color: black;
+  }
+
+  b {
+    font-weight: bold;
+  }
+}

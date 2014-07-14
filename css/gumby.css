@@ -1786,3 +1786,7 @@ ul.listaCambios { list-style-type: circle; }
 .seccionCerrada .tituloSeccion:hover { background-color: #6dbb80 !important; }
 
 .flechaAbajo { color: #f6b83f; }
+
+.zonaImpresion { background-color: white; color: black; font-size: 10px; }
+.zonaImpresion h3 { font-size: 16px; color: black; }
+.zonaImpresion b { font-weight: bold; }
