@@ -287,7 +287,7 @@ HabilidadDePersonaje.prototype = {
 
     /**
      *
-     * @param {string} valor
+     * @param {number} valor
      */
     setValorInicial : function(valor) {
         if ((this.getNombre() == HB_ACT) ||(this.getNombre() == HB_REGENERACION_ZEONICA)) {

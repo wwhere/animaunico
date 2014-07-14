@@ -1193,6 +1193,9 @@ Personaje.prototype = {
             }
         }
 
+        if (this.GENERACION_INICIADA == ESTADO_GENERACION_INICIADA)
+            this.updateCVBase();
+
         this.updateNivelesPDHabilidades();
 
         lanzarEvento(EVENT_CHARACTER_SECCION_ARTES_MARCIALES);
@@ -4056,10 +4059,11 @@ Personaje.prototype = {
         var valorBase = 0;
 
         if (this.hasFlag(FLAG_PSIQUICO)) {
-            valorBase = 1;
+            valorBase = 1+Math.floor((this.nivel-1)/this.categoria.nivelesParaCV);
         } else {
             valorBase = 0;
         }
+
         this[HB_CV].setValorInicial(valorBase);
         lanzarEvento(EVENT_CHARACTER_SECCION_PSIQUICA);
     },
@@ -4457,10 +4461,7 @@ Personaje.prototype = {
             this.flags.push(flag);
 
             if (flag == FLAG_PSIQUICO) {
-                if (this[HB_CV].getValorInicial() == 0) {
-                    this[HB_CV].setValorInicial(1);
-                    lanzarEvento(EVENT_CHARACTER_SECCION_PSIQUICA);
-                }
+                this.updateCVBase();
             }
         }
     },
@@ -4475,7 +4476,7 @@ Personaje.prototype = {
                 this.flags[i] = "";
                 this.anularVentajasPorFlag(flag);
                 if (flag == FLAG_PSIQUICO) {
-                    this[HB_CV].setValorInicial(0);
+                    this.updateCVBase();
                     this.disciplinasPsiquicas = [];
                     this.poderesPsiquicosDominados = [];
                     this.innatosPsiquicos = 0;
