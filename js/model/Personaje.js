@@ -4400,16 +4400,16 @@ Personaje.prototype = {
      */
     quitaEquipo : function(item) {
         if (esArmaComprada(item)) {
-            this.armas = limpiarArrayObjetosPorFuncion(this.armas,getNombre,item.getNombre());
+            this.armas = limpiarArrayObjetosPorFuncion(this.armas,comparaGetNombre,item.getNombre());
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else if (esArmaduraComprada(item)) {
-            this.armaduras = limpiarArrayObjetosPorFuncion(this.armaduras,getNombre,item.getNombre());
+            this.armaduras = limpiarArrayObjetosPorFuncion(this.armaduras,comparaGetNombre,item.getNombre());
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else if (esYelmoComprado(item)) {
-            this.yelmos = limpiarArrayObjetosPorFuncion(this.yelmos,getNombre,item.getNombre());
+            this.yelmos = limpiarArrayObjetosPorFuncion(this.yelmos,comparaGetNombre,item.getNombre());
             lanzarEvento(EVENT_CHARACTER_SECCION_COMBATE_GENERAL);
         } else {
-            this.equipoComprado = limpiarArrayObjetosPorFuncion(this.equipoComprado,getNombre,item.getNombre());
+            this.equipoComprado = limpiarArrayObjetosPorFuncion(this.equipoComprado,comparaGetNombre,item.getNombre());
         }
         lanzarEvento(EVENT_CHARACTER_SECCION_EQUIPO);
     },
