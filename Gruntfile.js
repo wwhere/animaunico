@@ -251,6 +251,7 @@ module.exports = function(grunt) {
 
                     "js/controller/json_parse.js",
                     "js/controller/persistencia.js",
+                    "js/controller/printer.js",
 
                     "js/init.js",
 
