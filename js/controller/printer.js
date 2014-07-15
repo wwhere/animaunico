@@ -1,27 +1,17 @@
 /**
  *
- * @param {Personaje} personaje
- * @returns {string} HTML
- */
-function printPlain(personaje) {
-    var out = "";
-
-    out += "<h3>" + personaje.getNombre() + "</h3>";
-    out += "<div>" + "<b>" + _l(UI_RAZA) + ":</b>" + _l(personaje.getRaza().toString()) + "</div>";
-    out += "<div>" + "<b>" + _l(UI_CATEGORIA) + ":</b>" + personaje.getStringCategoria() + "</div>";
-
-    return out;
-}
-
-/**
- *
  */
 function muestraVentanaImprimirPersonaje() {
     var ventana = getDiv();
+    var rivetsView;
+    var impresion = getDiv(CSS_TEXTO_SMALL).attr("id","personaje");
 
-    var impresion = getDiv(CSS_TEXTO_SMALL).addClass(CSS_ZONA_IMPRESION);
-
-    impresion.append(printPlain(personaje_actual));
+    $.get("printTemplate1.html", function (data) {
+        impresion.append(data);
+        rivetsView = rivets.bind($('#personaje'), {
+            p: personaje_actual
+        });
+    });
 
     ventana.append(impresion);
 
@@ -40,10 +30,22 @@ function muestraVentanaImprimirPersonaje() {
             {
                 text: _l(UI_OK),
                 click: function() {
+                    $("#personaje").printArea({
+                        mode: "popup",
+                        popTitle: "Anima: UNICO",
+                        popClose: true
+                    });
                     $( this ).dialog( "close" );
                     $(this).empty();
                 }
             }
         ]
     });
+
+    ventana.on("close",function() {
+        rivetsView.unbind();
+    });
+
+
+
 }

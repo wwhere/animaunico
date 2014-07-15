@@ -22,8 +22,11 @@ module.exports = function(grunt) {
                     "js/vendor/modernizr-2.6.2.min.js",
                     "js/pluginsOld.js",
                     "js/vendor/jquery-ui-1.10.3.custom.min.js",
+                    "js/libs/jquery.PrintArea.js",
                     "js/libs/gumby.min.js",
                     "js/libs/d3.min.js",
+                    "js/libs/rivets.min.js",
+
                     "js/plugins.js",
                     "js/main.js",
 
@@ -306,7 +309,7 @@ module.exports = function(grunt) {
 
         watch: {
             options: {
-                livereload: true,
+                livereload: true
             },
             images: {
                 files: ['img/raw/*'],

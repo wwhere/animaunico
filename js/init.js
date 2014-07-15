@@ -121,6 +121,9 @@ function inicializar() {
 
     inicializarAreasContraibles();
 
+    rivets.formatters.l = function(value){
+        return _l(value);
+    };
 
 }
 
