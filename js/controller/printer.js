@@ -42,7 +42,7 @@ function muestraVentanaImprimirPersonaje() {
         ]
     });
 
-    ventana.on("close",function() {
+    ventana.on("dialogclose",function() {
         rivetsView.unbind();
     });
 

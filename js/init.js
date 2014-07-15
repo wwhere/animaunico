@@ -121,9 +121,8 @@ function inicializar() {
 
     inicializarAreasContraibles();
 
-    rivets.formatters.l = function(value){
-        return _l(value);
-    };
+    inicializarRivets();
+
 
 }
 
@@ -150,4 +149,35 @@ function cierraSeccion(seccion) {
 function abreSeccion(seccion) {
     $(seccion).parent(".recuadroDatos").removeClass("seccionCerrada");
     $(seccion).children(".flechaAbajo").remove();
+}
+
+function inicializarRivets() {
+    rivets.formatters.l = function(value){
+        return _l(value);
+    };
+
+    rivets.adapters['ç'] = {
+        subscribe: function(obj, keypath, callback) {
+        },
+        unsubscribe: function(obj, keypath, callback) {
+        },
+        read: function(obj, keypath) {
+            return obj.caracteristicas[parseInt(keypath)]
+        },
+        publish: function(obj, keypath, value) {
+        }
+    };
+
+    rivets.adapters['Ç'] = {
+        subscribe: function(obj, keypath, callback) {
+        },
+        unsubscribe: function(obj, keypath, callback) {
+        },
+        read: function(obj, keypath) {
+            return modificadorBonito(getBonoPorValor(obj.caracteristicas[parseInt(keypath)]));
+        },
+        publish: function(obj, keypath, value) {
+        }
+    }
+
 }

@@ -1787,25 +1787,21 @@ ul.listaCambios { list-style-type: circle; }
 
 .flechaAbajo { color: #f6b83f; }
 
-.zonaImpresion { color: black; font-size: 10px; width: 21cm; min-height: 29.7cm; padding: 0.2cm; border: 1px #D3D3D3 solid; border-radius: 5px; background: white; }
+.zonaImpresion { color: black; font-size: 10px; width: 21cm; min-height: 29.7cm; padding: 0.2cm; border: 1px #D3D3D3 solid; border-radius: 5px; background: white; display: block; }
 .zonaImpresion h3 { font-size: 16px; color: black; }
-.zonaImpresion b { font-weight: bold; }
+.zonaImpresion span { display: block; }
+.zonaImpresion span b { display: inline; font-weight: bold; }
+.zonaImpresion .prDatosBasicos { width: 25%; }
+.zonaImpresion .prCaracteristicas { display: inline-block; }
+.zonaImpresion .prCaracteristicas b { display: inline-block; width: 4em; }
+.zonaImpresion .prCaracteristicas .prCaracValor { display: inline-block; text-align: center; width: 2em; font-size: 16px; }
+.zonaImpresion .prCaracteristicas .prCaracBono { display: inline-block; text-align: center; width: 2em; font-size: 18px; }
+.zonaImpresion .prDatosPersonales { width: 100%; }
+.zonaImpresion .prDatosPersonales .prIdioma { display: inline; }
+.zonaImpresion .prDatosPersonales .prIdioma::after { content: ", "; }
+.zonaImpresion .prDatosPersonales .prIdioma:last-of-type::after { content: "" !important; }
+.zonaImpresion .prRecuadro { border: solid black 1px; }
 
 @page { size: A4; margin: 0; }
 
 @media print { .page { margin: 0; border: initial; border-radius: initial; width: initial; min-height: initial; box-shadow: initial; background: initial; page-break-after: always; } }
-/*
-body { margin: 0; padding: 0; background-color: #FAFAFA; font: 12pt "Tahoma";
-}
-* { box-sizing: border-box; -moz-box-sizing: border-box;
-}
-.page { width: 21cm; min-height: 29.7cm; padding: 2cm; margin: 1cm auto; border: 1px #D3D3D3 solid; border-radius: 5px; background: white; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-.subpage { padding: 1cm; border: 5px red solid; height: 237mm; outline: 2cm #FFEAEA solid;
-}
-
-@page { size: A4; margin: 0;
-}
-@media print { .page { margin: 0; border: initial; border-radius: initial; width: initial; min-height: initial; box-shadow: initial; background: initial; page-break-after: always; }
-}
-*/

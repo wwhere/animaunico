@@ -307,13 +307,67 @@ ul.listaCambios {
   border-radius: 5px;
   background: white;
 
+  display: block;
+
   h3 {
     font-size: $norm;
     color: black;
   }
+  span {
+    display: block;
+    b {
+      display:inline;
+      font-weight: bold;
+    }
+  }
 
-  b {
-    font-weight: bold;
+  .prDatosBasicos {
+    width: 25%;
+  }
+
+  .prCaracteristicas {
+
+    display: inline-block;
+
+    b {
+      display: inline-block;
+      width: 4em;
+    }
+
+    .prCaracValor {
+      display: inline-block;
+      text-align: center;
+      width: 2em;
+      font-size: $norm;
+    }
+
+    .prCaracBono {
+      display: inline-block;
+      text-align: center;
+      width: 2em;
+      font-size: $med;
+    }
+
+  }
+
+  .prDatosPersonales {
+    width: 100%;
+
+    .prIdioma {
+      display: inline;
+
+      &::after {
+        content: ", ";
+      }
+
+      &:last-of-type::after {
+        content: ""!important;
+      }
+    }
+  }
+
+  .prRecuadro {
+    border: solid black 1px;
   }
 }
 
@@ -334,48 +388,3 @@ ul.listaCambios {
   }
 }
 
-/*
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #FAFAFA;
-  font: 12pt "Tahoma";
-}
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-.page {
-  width: 21cm;
-  min-height: 29.7cm;
-  padding: 2cm;
-  margin: 1cm auto;
-  border: 1px #D3D3D3 solid;
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-.subpage {
-  padding: 1cm;
-  border: 5px red solid;
-  height: 237mm;
-  outline: 2cm #FFEAEA solid;
-}
-
-@page {
-  size: A4;
-  margin: 0;
-}
-@media print {
-  .page {
-    margin: 0;
-    border: initial;
-    border-radius: initial;
-    width: initial;
-    min-height: initial;
-    box-shadow: initial;
-    background: initial;
-    page-break-after: always;
-  }
-}
-*/

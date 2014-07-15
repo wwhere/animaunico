@@ -1,15 +1,29 @@
 <div class="zonaImpresion">
-    <h3>{ p.nombre }</h3>
-    <div>
+    <div class="prDatosBasicos prRecuadro">
+        <h3>{ p.nombre }</h3>
         <span><b>Sexo:</b> { p.sexo }</span>
         <span><b>Peso:</b> { p.peso }</span>
         <span><b>Altura:</b> { p.altura }</span>
     </div>
+    <div class="prCaracteristicas prRecuadro">
+        <h3>Características</h3>
+        <span><b>AGI</b><div class="prCaracValor">{ pç0 }</div><div class="prCaracBono">{ pÇ0 }</div></span>
+        <span><b>CON</b><div class="prCaracValor">{ pç1 }</div><div class="prCaracBono">{ pÇ1 }</div></span>
+        <span><b>DES</b><div class="prCaracValor">{ pç2 }</div><div class="prCaracBono">{ pÇ2 }</div></span>
+        <span><b>FUE</b><div class="prCaracValor">{ pç3 }</div><div class="prCaracBono">{ pÇ3 }</div></span>
+        <span><b>INT</b><div class="prCaracValor">{ pç4 }</div><div class="prCaracBono">{ pÇ4 }</div></span>
+        <span><b>PER</b><div class="prCaracValor">{ pç5 }</div><div class="prCaracBono">{ pÇ5 }</div></span>
+        <span><b>POD</b><div class="prCaracValor">{ pç6 }</div><div class="prCaracBono">{ pÇ6 }</div></span>
+        <span><b>VOL</b><div class="prCaracValor">{ pç7 }</div><div class="prCaracBono">{ pÇ7 }</div></span>
+    </div>
 </div>
 <div class="zonaImpresion">
-    <span><b>Origen:</b> { p.origen | l }</span>
-    <span><b>Etnia:</b> { p.etnia | l }</span>
-    <span><b>Clase social:</b> { p.claseSocial | l }</span>
-    <span><b>Descripción:</b> { p.descripcion }</span>
-    <span><b>Trasfondo:</b> { p.trasfondo }</span>
+    <div class="prDatosPersonales prRecuadro">
+        <span><b>Origen:</b> { p.origen | l }</span>
+        <span><b>Idiomas:</b><div class="prIdioma" rv-each-idioma="p.idiomas">{ idioma | l}</div></span>
+        <span><b>Etnia:</b> { p.etnia | l }</span>
+        <span><b>Clase social:</b> { p.claseSocial | l }</span>
+        <span><b>Descripción:</b> { p.descripcion }</span>
+        <span><b>Trasfondo:</b> { p.trasfondo }</span>
+    </div>
 </div>
