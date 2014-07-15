@@ -9,7 +9,8 @@ function muestraVentanaImprimirPersonaje() {
     $.get("printTemplate1.html", function (data) {
         impresion.append(data);
         rivetsView = rivets.bind($('#personaje'), {
-            p: personaje_actual
+            p: personaje_actual,
+            habilidades:habilidades_set
         });
     });
 

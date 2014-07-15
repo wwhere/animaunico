@@ -417,6 +417,15 @@ HabilidadDePersonaje.prototype = {
         }
         this.PDinvertidosPrevios += this.PDinvertidos;
         this.PDinvertidos = 0;
+    },
+
+    isPrincipal : function() {
+        return this.habilidad.isPrincipal();
+    },
+
+    isSecundaria : function() {
+        return !this.habilidad.isPrincipal();
     }
+
 };
 //endregion HabilidadDePersonaje

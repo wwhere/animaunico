@@ -1794,8 +1794,9 @@ ul.listaCambios { list-style-type: circle; }
 .zonaImpresion .prDatosBasicos { width: 25%; }
 .zonaImpresion .prCaracteristicas { display: inline-block; }
 .zonaImpresion .prCaracteristicas b { display: inline-block; width: 4em; }
-.zonaImpresion .prCaracteristicas .prCaracValor { display: inline-block; text-align: center; width: 2em; font-size: 16px; }
 .zonaImpresion .prCaracteristicas .prCaracBono { display: inline-block; text-align: center; width: 2em; font-size: 18px; }
+.zonaImpresion .prCaracValor { display: inline-block; text-align: center; width: 2em; font-size: 16px; }
+.zonaImpresion .prCaracteristicasSecundarias { display: inline-block; }
 .zonaImpresion .prDatosPersonales { width: 100%; }
 .zonaImpresion .prDatosPersonales .prIdioma { display: inline; }
 .zonaImpresion .prDatosPersonales .prIdioma::after { content: ", "; }

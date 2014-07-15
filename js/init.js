@@ -156,6 +156,10 @@ function inicializarRivets() {
         return _l(value);
     };
 
+    rivets.formatters.nombre = function(value){
+        return value.nombre;
+    };
+
     rivets.adapters['ç'] = {
         subscribe: function(obj, keypath, callback) {
         },

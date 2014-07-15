@@ -1,9 +1,10 @@
 <div class="zonaImpresion">
     <div class="prDatosBasicos prRecuadro">
         <h3>{ p.nombre }</h3>
-        <span><b>Sexo:</b> { p.sexo }</span>
-        <span><b>Peso:</b> { p.peso }</span>
-        <span><b>Altura:</b> { p.altura }</span>
+        <span><b>Categoría:</b> { p.getStringCategoria }</span>
+        <span><b>Raza:</b> { p.raza | nombre | l }</span>
+        <span><b>Nivel:</b> { p.nivel }</span>
+        <span><b>Sexo:</b> { p.sexo | l }</span>
     </div>
     <div class="prCaracteristicas prRecuadro">
         <h3>Características</h3>
@@ -16,9 +17,29 @@
         <span><b>POD</b><div class="prCaracValor">{ pç6 }</div><div class="prCaracBono">{ pÇ6 }</div></span>
         <span><b>VOL</b><div class="prCaracValor">{ pç7 }</div><div class="prCaracBono">{ pÇ7 }</div></span>
     </div>
+    <div class="prCaracteristicasSecundarias prRecuadro">
+        <span><b>Cansancio</b><div class="prCaracValor">{ p.puntosCansancio }</div></span>
+        <span><b>Movimiento</b><div class="prCaracValor">{ p.tipoMovimiento }</div></span>
+        <span><b>Regeneración</b><div class="prCaracValor">{ p.regeneracion }</div></span>
+        <span><b>Apariencia</b><div class="prCaracValor">{ p.apariencia }</div></span>
+        <span><b>Tamaño</b><div class="prCaracValor">{ p.tamaño }</div></span>
+    </div>
+    <div class="prPV prRecuadro">
+        <span><b>PV</b><div class="prCaracValor">{ p.pv }</div></span>
+    </div>
+    <div class="prHabilidadesSecundarias prRecuadro">
+        <h3>Habilidades Secundarias</h3>
+        <section rv-each-habilidad="p.allHabilidades">
+            <span rv-if="habilidad.isSecundaria">
+                <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </span>
+        </section>
+    </div>
 </div>
 <div class="zonaImpresion">
     <div class="prDatosPersonales prRecuadro">
+        <span><b>Peso:</b> { p.peso }</span>
+        <span><b>Altura:</b> { p.altura }</span>
         <span><b>Origen:</b> { p.origen | l }</span>
         <span><b>Idiomas:</b><div class="prIdioma" rv-each-idioma="p.idiomas">{ idioma | l}</div></span>
         <span><b>Etnia:</b> { p.etnia | l }</span>

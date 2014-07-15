@@ -334,19 +334,30 @@ ul.listaCambios {
       width: 4em;
     }
 
-    .prCaracValor {
-      display: inline-block;
-      text-align: center;
-      width: 2em;
-      font-size: $norm;
-    }
-
     .prCaracBono {
       display: inline-block;
       text-align: center;
       width: 2em;
       font-size: $med;
     }
+
+  }
+
+  .prCaracValor {
+    display: inline-block;
+    text-align: center;
+    width: 2em;
+    font-size: $norm;
+  }
+
+  .prCaracteristicasSecundarias {
+
+    display: inline-block;
+
+
+  }
+
+  .prPV {
 
   }
 
