@@ -151,7 +151,7 @@ DatosImpresionPersonaje.prototype = {
 
     //region Ventajas y desventajas
     ventajas : function() {
-        return this.p.getVentajas();
+        return this.p.ventajas;
     },
 
     desventajas : function() {

@@ -309,7 +309,14 @@ ElementoPCComprado.prototype = {
 
 
     toString : function() {
-        return this.ventaja.toString() + " (" + this.pc + " PC)";
+        var cadena = _l(this.ventaja.toString());
+
+        if (this.opcion != "") {
+            cadena += " (" + _l(this.opcion) + ")";
+        }
+
+        cadena += " ["+ this.pc + " " + _l(UDS_PC) + "]";
+        return cadena;
     },
 
     /**
