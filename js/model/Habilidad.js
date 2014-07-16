@@ -366,6 +366,11 @@ HabilidadDePersonaje.prototype = {
         return {pdDevueltos:pdDevueltos,mensaje:mensaje};
     },
 
+    esUsable : function() {
+        console.log(this.getNombre() + " es usable? valor=" + this.valorBaseActual() + " y HABILIDAD NO USABLE es " + HABILIDAD_NO_USABLE );
+        return (this.valorBaseActual() != HABILIDAD_NO_USABLE);
+    },
+
     /**
      *
      * @returns {number}
@@ -405,6 +410,22 @@ HabilidadDePersonaje.prototype = {
         }
 
         return valorFinal;
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    valorBaseActual : function() {
+        return this.valorBase(personaje_actual.getCoste(this.habilidad.getNombre(), this.habilidad.isPrincipal()));
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
+    valorBonosActual : function() {
+        return this.valorFinalActual() - this.valorBaseActual();
     },
 
     subirNivel : function() {

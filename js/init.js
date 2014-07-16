@@ -160,6 +160,10 @@ function inicializarRivets() {
         return value.nombre;
     };
 
+    rivets.formatters.modBonito = function(value) {
+        return modificadorBonito(parseInt(value));
+    };
+
     rivets.adapters['ç'] = {
         subscribe: function(obj, keypath, callback) {
         },
@@ -182,6 +186,23 @@ function inicializarRivets() {
         },
         publish: function(obj, keypath, value) {
         }
-    }
+    };
+
+    rivets.adapters['*'] = {
+        subscribe: function(obj, keypath, callback) {
+        },
+        unsubscribe: function(obj, keypath, callback) {
+        },
+        read: function(obj, keypath) {
+            var cadena = keypath.split("&");
+            var parametros = [];
+            if (cadena.length > 1) {
+                parametros = cadena.slice(1);
+            }
+            return obj.constructor.prototype[cadena[0]].apply(obj,parametros);
+        },
+        publish: function(obj, keypath, value) {
+        }
+    };
 
 }

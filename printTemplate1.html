@@ -41,31 +41,73 @@
     <div class="prHabilidadesSecundarias prRecuadro">
         <h3>Atléticas</h3>
         <section rv-each-habilidad="p.habAtleticas">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad*valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
         <h3>Vigor</h3>
         <section rv-each-habilidad="p.habVigor">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
         <h3>Perceptivas</h3>
         <section rv-each-habilidad="p.habPerceptivas">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
         <h3>Intelectuales</h3>
         <section rv-each-habilidad="p.habIntelectuales">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
         <h3>Sociales</h3>
         <section rv-each-habilidad="p.habSociales">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
         <h3>Subterfugio</h3>
         <section rv-each-habilidad="p.habSubterfugio">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
         <h3>Creativas</h3>
         <section rv-each-habilidad="p.haCreativas">
-            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            <b>{ habilidad.getNombre | l }</b>
+            <section rv-if="habilidad.esUsable">
+                <div class="prValorBase">{ habilidad.valorBaseActual }</div><div class="prValorBonos">{ habilidad.valorBonosActual | modBonito }</div> = <div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+            </section>
+            <section rv-unless="habilidad.esUsable">
+                <div class="prValorBase">Sin rangos</div>
+            </section>
         </section>
     </div>
 </div>
