@@ -3,6 +3,8 @@
  * @param {number} [nivelInicial=1] El nivel al que se crea el personaje. Mínimo 0.
  * @class Personaje
  * @constructor
+ * @param categoriaInicial
+ * @param razaInicial
  */
 function Personaje(nivelInicial, categoriaInicial, razaInicial) {
 
