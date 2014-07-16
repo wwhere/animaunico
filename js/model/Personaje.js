@@ -969,6 +969,14 @@ Personaje.prototype = {
      *
      * @returns {number}
      */
+    getNumMultiplosVida : function() {
+        return  this[HB_MULTIPLO_VIDA].valorBase(this.getCostePV());
+    },
+
+    /**
+     *
+     * @returns {number}
+     */
     pvBase : function() {
         var pvbase;
         switch (parseInt(this.getCaracteristica(CON))) {

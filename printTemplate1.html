@@ -1,8 +1,8 @@
 <div class="zonaImpresion">
     <div class="prDatosBasicos prRecuadro">
         <h3>{ p.nombre }</h3>
-        <span><b>Categoría:</b> { p.getStringCategoria }</span>
-        <span><b>Raza:</b> { p.raza | nombre | l }</span>
+        <span><b>Categoría:</b> { p.categoria }</span>
+        <span><b>Raza:</b> { p.raza | l }</span>
         <span><b>Nivel:</b> { p.nivel }</span>
         <span><b>Sexo:</b> { p.sexo | l }</span>
     </div>
@@ -26,13 +26,36 @@
     </div>
     <div class="prPV prRecuadro">
         <span><b>PV</b><div class="prCaracValor">{ p.pv }</div></span>
+        <span><b>Múltiplos de vida</b><div class="prCaracValor">{ p.multiplosDeVida }</div></span>
     </div>
     <div class="prHabilidadesSecundarias prRecuadro">
-        <h3>Habilidades Secundarias</h3>
-        <section rv-each-habilidad="p.allHabilidades">
-            <span rv-if="habilidad.isSecundaria">
-                <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
-            </span>
+        <h3>Atléticas</h3>
+        <section rv-each-habilidad="p.habAtleticas">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+        </section>
+        <h3>Vigor</h3>
+        <section rv-each-habilidad="p.habVigor">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+        </section>
+        <h3>Perceptivas</h3>
+        <section rv-each-habilidad="p.habPerceptivas">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+        </section>
+        <h3>Intelectuales</h3>
+        <section rv-each-habilidad="p.habIntelectuales">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+        </section>
+        <h3>Sociales</h3>
+        <section rv-each-habilidad="p.habSociales">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+        </section>
+        <h3>Subterfugio</h3>
+        <section rv-each-habilidad="p.habSubterfugio">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
+        </section>
+        <h3>Creativas</h3>
+        <section rv-each-habilidad="p.haCreativas">
+            <b>{ habilidad.getNombre | l }</b><div class="prCaracValor">{ habilidad.valorFinalActual }</div>
         </section>
     </div>
 </div>

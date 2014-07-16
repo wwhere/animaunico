@@ -166,7 +166,7 @@ function inicializarRivets() {
         unsubscribe: function(obj, keypath, callback) {
         },
         read: function(obj, keypath) {
-            return obj.caracteristicas[parseInt(keypath)]
+            return obj.caracteristicas()[parseInt(keypath)]
         },
         publish: function(obj, keypath, value) {
         }
@@ -178,7 +178,7 @@ function inicializarRivets() {
         unsubscribe: function(obj, keypath, callback) {
         },
         read: function(obj, keypath) {
-            return modificadorBonito(getBonoPorValor(obj.caracteristicas[parseInt(keypath)]));
+            return modificadorBonito(getBonoPorValor(obj.caracteristicas()[parseInt(keypath)]));
         },
         publish: function(obj, keypath, value) {
         }
