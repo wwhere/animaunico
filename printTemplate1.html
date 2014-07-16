@@ -28,6 +28,16 @@
         <span><b>PV</b><div class="prCaracValor">{ p.pv }</div></span>
         <span><b>Múltiplos de vida</b><div class="prCaracValor">{ p.multiplosDeVida }</div></span>
     </div>
+    <div class="prVentajas prRecuadro">
+        <h3>Ventajas</h3>
+        <section rv-each-ventaja="p.ventajas">
+            <b>{ ventaja.toString }</b>
+        </section>
+        <h3>Desventajas</h3>
+        <section rv-each-desventaja="p.desventajas">
+            <b>{ desventaja.toString }</b>
+        </section>
+    </div>
     <div class="prHabilidadesSecundarias prRecuadro">
         <h3>Atléticas</h3>
         <section rv-each-habilidad="p.habAtleticas">

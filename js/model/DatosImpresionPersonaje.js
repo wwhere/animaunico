@@ -149,6 +149,16 @@ DatosImpresionPersonaje.prototype = {
 
     //endregion Armadura
 
+    //region Ventajas y desventajas
+    ventajas : function() {
+        return this.p.getVentajas();
+    },
+
+    desventajas : function() {
+        return this.p.getDesventajas();
+    },
+    //endregion Ventajas y desventajas
+
     //region Habilidades Secundarias
 
     getGrupoHabilidades : function(grupo) {
@@ -190,7 +200,6 @@ DatosImpresionPersonaje.prototype = {
     }
 
     //endregion Habilidades Secundarias
-
 
     //region Elan
     //TODO
