@@ -126,6 +126,16 @@ Bono.prototype = {
         } else {
             valor = this.bono;
         }
+
+        if (this.categoria == BONO_INNATO) {
+            if (this.tipo == BONO_HABILIDAD) {
+                if (this.item == HB_ATAQUE || this.item == HB_PARADA || this.item == HB_ESQUIVA) {
+                    if (valor > 50)
+                        valor = 50;
+                }
+            }
+        }
+
         return valor;
     },
 
