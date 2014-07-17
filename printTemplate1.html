@@ -28,6 +28,14 @@
         <span><b>PV</b><div class="prCaracValor">{ p.pv }</div></span>
         <span><b>Múltiplos de vida</b><div class="prCaracValor">{ p.multiplosDeVida }</div></span>
     </div>
+    <div class="prResistencias prRecuadro">
+        <span><b>PRE</b><div class="prCaracValor">{ p.presencia }</div></span>
+        <span><b>RF</b><div class="prCaracValor">{ p.presencia } { p.RF_Bonos | modBonito } = { p.RF }</div></span>
+        <span><b>RE</b><div class="prCaracValor">{ p.presencia } { p.RE_Bonos | modBonito } = { p.RE }</div></span>
+        <span><b>RV</b><div class="prCaracValor">{ p.presencia } { p.RV_Bonos | modBonito } = { p.RV }</div></span>
+        <span><b>RM</b><div class="prCaracValor">{ p.presencia } { p.RM_Bonos | modBonito } = { p.RM }</div></span>
+        <span><b>RP</b><div class="prCaracValor">{ p.presencia } { p.RP_Bonos | modBonito } = { p.RP }</div></span>
+    </div>
     <div class="prVentajas prRecuadro">
         <h3>Ventajas</h3>
         <section rv-each-ventaja="p.ventajas">

@@ -159,6 +159,10 @@ DatosImpresionPersonaje.prototype = {
     },
     //endregion Ventajas y desventajas
 
+    //region Habilidades de combate
+
+    //endregion
+
     //region Habilidades Secundarias
 
     getGrupoHabilidades : function(grupo) {
@@ -197,7 +201,7 @@ DatosImpresionPersonaje.prototype = {
 
     habCreativas : function() {
         return this.getGrupoHabilidades(habilidades_creativas_set);
-    }
+    },
 
     //endregion Habilidades Secundarias
 
@@ -209,5 +213,125 @@ DatosImpresionPersonaje.prototype = {
     //TODO
     //endregion Magia
 
+    //region Resistencias
+    presencia : function() {
+        return this.p.getPresencia();
+    },
+
+    getResistencia : function(resistencia) {
+        var bonos = personaje_actual.getBonos(BONO_RESISTENCIA, resistencia, CATEGORIA_BONO_CUALQUIERA);
+
+        var valorFinal = parseInt(personaje_actual.getPresencia());
+        var valorBonos = 0;
+        for (var i = 0; i < bonos.length; i++) {
+            var bono = bonos[i];
+            var valorBono = bono.bono;
+            valorFinal += parseInt(valorBono);
+            valorBonos += parseInt(valorBono);
+        }
+
+        return {valorFinal:valorFinal,valorBonos:valorBonos};
+    },
+
+    RF : function() {
+        var multiplicador;
+
+        if (personaje_actual.hasFlag(FLAG_RF_A_MITAD)) {
+            multiplicador = MULTIPLICADOR_MITAD;
+        } else {
+            multiplicador = MULTIPLICADOR_ENTERO;
+        }
+
+        var rf = this.getResistencia(RF);
+
+        return rf.valorFinal * multiplicador;
+    },
+
+    RF_Bonos : function() {
+        var rf = this.getResistencia(RF);
+
+        return rf.valorBonos;
+    },
+
+    RE : function() {
+        var multiplicador;
+
+        if (personaje_actual.hasFlag(FLAG_RE_A_MITAD)) {
+            multiplicador = MULTIPLICADOR_MITAD;
+        } else {
+            multiplicador = MULTIPLICADOR_ENTERO;
+        }
+
+        var rf = this.getResistencia(RE);
+
+        return rf.valorFinal * multiplicador;
+    },
+
+    RE_Bonos : function() {
+        var rf = this.getResistencia(RE);
+
+        return rf.valorBonos;
+    },
+
+    RV : function() {
+        var multiplicador;
+
+        if (personaje_actual.hasFlag(FLAG_RV_A_MITAD)) {
+            multiplicador = MULTIPLICADOR_MITAD;
+        } else {
+            multiplicador = MULTIPLICADOR_ENTERO;
+        }
+
+        var rf = this.getResistencia(RV);
+
+        return rf.valorFinal * multiplicador;
+    },
+
+    RV_Bonos : function() {
+        var rf = this.getResistencia(RV);
+
+        return rf.valorBonos;
+    },
+
+    RM : function() {
+        var multiplicador;
+
+        if (personaje_actual.hasFlag(FLAG_RM_A_MITAD)) {
+            multiplicador = MULTIPLICADOR_MITAD;
+        } else {
+            multiplicador = MULTIPLICADOR_ENTERO;
+        }
+
+        var rf = this.getResistencia(RM);
+
+        return rf.valorFinal * multiplicador;
+    },
+
+    RM_Bonos : function() {
+        var rf = this.getResistencia(RM);
+
+        return rf.valorBonos;
+    },
+
+    RP : function() {
+        var multiplicador;
+
+        if (personaje_actual.hasFlag(FLAG_RP_A_MITAD)) {
+            multiplicador = MULTIPLICADOR_MITAD;
+        } else {
+            multiplicador = MULTIPLICADOR_ENTERO;
+        }
+
+        var rf = this.getResistencia(RP);
+
+        return rf.valorFinal * multiplicador;
+    },
+
+    RP_Bonos : function() {
+        var rf = this.getResistencia(RP);
+
+        return rf.valorBonos;
+    }
+    //endregion
 
 };
