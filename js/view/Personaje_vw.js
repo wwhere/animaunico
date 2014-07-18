@@ -786,7 +786,7 @@ function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
         coste,
         botones,
         true,
-        (nombreHabilidad == HB_POTENCIAL_PSIQUICO));
+        {esPotencialPsiquico:(nombreHabilidad == HB_POTENCIAL_PSIQUICO)});
 }
 
 function muestraDesequilibrioOfensivoMagico() {
@@ -990,7 +990,7 @@ function muestraHabilidadesKi(muestraBotones) {
                     0,
                     divBotones,
                     true,
-                    false)
+                    {})
             );
         } else {
             divHabilidad.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(habKi[i].getNombre())));
@@ -1693,7 +1693,7 @@ function muestraSecundarias(estadoGeneracion) {
                 bonos.push(penalizaroArmadura);
             }
             divContenido.append(
-                muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), bonos, coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), false)
+                muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), bonos, coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), {})
             );
         }
     }
@@ -2026,20 +2026,21 @@ function muestraDescripcion() {
  * @param coste
  * @param toAppend
  * @param usable
- * @param esPotencialPsiquico
+ * @param {{esPotencialPsiquico:boolean}} parametros
  * @returns {*}
  */
-function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend, usable, esPotencialPsiquico) {
+function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend, usable, parametros) {
     var divRow = getDiv("row");
-
     var divEtiqueta = getDiv("four columns").addClass(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL);
-
     var divValorBase = getDiv("one columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL);
-
     var divBonos = getDiv("two columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL);
-
     var divValor = getDiv("one columns").addClass(CSS_VALOR_PERSONALES).addClass(CSS_TEXTO_SMALL);
 
+    var esPotencialPsiquico = parametros.esPotencialPsiquico || false;
+    var valorFinal = parametros.valorFinal;
+    var esPrimariaCombate = parametros.esPrimariaCombate || false;
+    var esSecundaria = parametros.esSecundaria || false;
+//TODO
     var divCoste;
     if (coste != 0) {
         divCoste = getDiv(CSS_COSTE).addClass(CSS_TEXTO_SMALL);
