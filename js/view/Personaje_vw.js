@@ -772,7 +772,9 @@ function muestraVentaja(ventajaComprada) {
  */
 function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
     var coste = personaje_actual.getCoste(nombreHabilidad, true);
-    var valorBase = personaje_actual.getHabilidadDePersonaje(nombreHabilidad).valorBase(coste);
+    var habilidad = personaje_actual.getHabilidadDePersonaje(nombreHabilidad);
+    var valorBase = habilidad.valorBase(coste);
+    var valorFinalActual = habilidad.valorFinalActual();
     var bonos = personaje_actual.getBonos(BONO_HABILIDAD, nombreHabilidad, CATEGORIA_BONO_CUALQUIERA);
     if (nombreHabilidad == HB_REGENERACION_ZEONICA) {
         bonos.push(new Bono(BONO_HABILIDAD,HB_REGENERACION_ZEONICA,personaje_actual[HB_ACT].valorFinalActual(),"",false,BONO_ESPECIAL,HB_ACT));
@@ -786,7 +788,11 @@ function muestraHabilidadPrimaria(nombreHabilidad,etiqueta,muestraBotones) {
         coste,
         botones,
         true,
-        {esPotencialPsiquico:(nombreHabilidad == HB_POTENCIAL_PSIQUICO)});
+        {
+            esPotencialPsiquico:(nombreHabilidad == HB_POTENCIAL_PSIQUICO),
+            esPrimariaCombate : ((nombreHabilidad==HB_ATAQUE)||(nombreHabilidad==HB_PARADA)||(nombreHabilidad==HB_ESQUIVA)),
+            valorFinal: valorFinalActual
+        });
 }
 
 function muestraDesequilibrioOfensivoMagico() {
@@ -990,7 +996,7 @@ function muestraHabilidadesKi(muestraBotones) {
                     0,
                     divBotones,
                     true,
-                    {})
+                    {valorFinal:habKi[i].valorFinalActual()})
             );
         } else {
             divHabilidad.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(habKi[i].getNombre())));
@@ -1693,7 +1699,10 @@ function muestraSecundarias(estadoGeneracion) {
                 bonos.push(penalizaroArmadura);
             }
             divContenido.append(
-                muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), bonos, coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), {})
+                muestraValorConBonosYCoste(etiqueta, habilidadDePersonaje.valorBase(coste), bonos, coste, divBotones, (valorBase != HABILIDAD_NO_USABLE), {
+                    valorFinal: habilidadDePersonaje.valorFinalActual(),
+                    esSecundaria : true
+                })
             );
         }
     }
@@ -2026,7 +2035,7 @@ function muestraDescripcion() {
  * @param coste
  * @param toAppend
  * @param usable
- * @param {{esPotencialPsiquico:boolean}} parametros
+ * @param {{esPotencialPsiquico:boolean,valorFinal:number,esPrimariaCombate:boolean,esSecundaria:boolean}} parametros
  * @returns {*}
  */
 function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend, usable, parametros) {
@@ -2040,7 +2049,11 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
     var valorFinal = parametros.valorFinal;
     var esPrimariaCombate = parametros.esPrimariaCombate || false;
     var esSecundaria = parametros.esSecundaria || false;
-//TODO
+
+    var sumaNaturalesYCarac = 0;
+    var sumaInnatos = 0;
+
+    //region coste
     var divCoste;
     if (coste != 0) {
         divCoste = getDiv(CSS_COSTE).addClass(CSS_TEXTO_SMALL);
@@ -2058,9 +2071,9 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
             divCoste = getDiv(CSS_COSTE).addClass(CSS_TEXTO_SMALL);
             divCoste.append(costePotencial);
             divEtiqueta.append(divCoste);
-
         }
     }
+    //endregion
 
     var valorBonos = 0;
     var tooltip = "";
@@ -2075,7 +2088,6 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
         tooltip = _l(UI_NO_USABLE_SIN_RANGOS) + "("+_l(UI_BASE)+")";
     }
 
-    var valorFinal = parseInt(valorBase);
     for (var i = 0; i < bonos.length; i++) {
         /**
          *
@@ -2083,8 +2095,15 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
          */
         var bono = bonos[i];
         var valorBono = bono.getBonoParaNivel(personaje_actual.getNivel(),personaje_actual);
-        valorFinal += parseInt(valorBono);
+
         valorBonos += parseInt(valorBono);
+
+        if (bono.getCategoria() == BONO_INNATO) {
+            sumaInnatos += valorBono;
+        } else if ((bono.getCategoria() == BONO_NATURAL) || (bono.getCategoria() == BONO_CARACTERISTICA)) {
+            sumaNaturalesYCarac += valorBono;
+        }
+
         if (valorBono >= 0) {
             valorBono = "+" + valorBono;
         } else {
@@ -2092,6 +2111,19 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
         }
         tooltip += valorBono + " (" + _l(bono.origen) + ")";
     }
+
+    if (esPrimariaCombate) {
+        if (sumaInnatos > 50) {
+            tooltip += " -" + (sumaInnatos-50) + " (" + _l(UI_MAXIMO_INNATOS) + ")";
+            valorBonos -= (sumaInnatos-50);
+        }
+    }
+
+    if (sumaNaturalesYCarac > 100) {
+        tooltip += " -" + (sumaNaturalesYCarac-100) + " (" + _l(UI_MAXIMO_NATURALES) + ")";
+        valorBonos -= (sumaNaturalesYCarac-100);
+    }
+
     if (valorBonos >= 0) {
         valorBonos = "+" + valorBonos;
     } else {

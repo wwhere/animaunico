@@ -1130,3 +1130,7 @@ var UI_OK = (new L("UI_OK","Ok","Ok")).getId();
 var UI_NIVEL_INICIAL = (new L("UI_NIVEL_INICIAL","Nivel inicial","Initial level")).getId();
 var UI_RAZA_INICIAL = (new L("UI_RAZA_INICIAL", "Raza inicial", "Initial race")).getId();
 var UI_CATEGORIA_INICIAL = (new L("UI_CATEGORIA_INICIAL", "Categoría inicial", "Initial class")).getId();
+
+
+var UI_MAXIMO_INNATOS = (new L("UI_MAXIMO_INNATOS","Por máximo por innatos","Per innate maximum")).getId();
+var UI_MAXIMO_NATURALES = (new L("UI_MAXIMO_NATURALES","Por máximo por naturales","Per natural maximum")).getId();
