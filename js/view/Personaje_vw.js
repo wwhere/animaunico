@@ -996,7 +996,8 @@ function muestraHabilidadesKi(muestraBotones) {
                     0,
                     divBotones,
                     true,
-                    {valorFinal:habKi[i].valorFinalActual()})
+                    false//{valorFinal:habKi[i].valorFinalActual()}
+                    )
             );
         } else {
             divHabilidad.append(getDiv(CSS_ETIQUETA).addClass(CSS_TEXTO_SMALL).append(_l(habKi[i].getNombre())));
@@ -2123,6 +2124,9 @@ function muestraValorConBonosYCoste(etiqueta, valorBase, bonos, coste, toAppend,
         tooltip += " -" + (sumaNaturalesYCarac-100) + " (" + _l(UI_MAXIMO_NATURALES) + ")";
         valorBonos -= (sumaNaturalesYCarac-100);
     }
+
+    if (!valorFinal)
+        valorFinal = valorBase + valorBonos;
 
     if (valorBonos >= 0) {
         valorBonos = "+" + valorBonos;
