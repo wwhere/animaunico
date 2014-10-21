@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/anima-unico/jquery-ui-1.10.3.custom.min.css">
-    <link rel="stylesheet" href="css/gumby.83.css">
+    <link rel="stylesheet" href="css/gumby.84.css">
 
     <!--[if lt IE 9]>
     <script src="js/vendor/jquery-1.10.2.min.js"></script>
@@ -25,7 +25,7 @@
     <script src="js/vendor/jquery-2.0.3.min.js"></script>
     <!--<![endif]-->
 
-    <script src="js/anima-unico.min.83.js"></script>
+    <script src="js/anima-unico.min.84.js"></script>
 
 </head>
 <body onload="animaUnico.inicializar()" class="ui-widget">
