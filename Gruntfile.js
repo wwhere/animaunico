@@ -370,7 +370,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-rename');
 
 // the default task can be run just by typing "grunt" on the command line
-    grunt.registerTask('default', ['compass:prod','rename','string-replace','concat:html','concat:js', 'uglify']);
+    grunt.registerTask('default', ['rename','string-replace','concat:html','concat:js', 'uglify']);
 }
 
 
