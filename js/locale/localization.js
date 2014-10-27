@@ -1,6 +1,7 @@
 //region codigo
 var SPA = "spa";
 var ENG = "eng";
+var FRA = "fra";
 
 var IDIOMA_UI = ENG;
 
@@ -23,17 +24,23 @@ function cambiaIdiomaIngles() {
     idioma(ENG);
 }
 
+function cambiaIdiomaFrances() {
+    idioma(FRA);
+}
+
 function setIdiomaUI() {
     var lang = navigator.language || navigator.userLanguage;
 
     if ((lang.lastIndexOf("es") != -1) || (lang.lastIndexOf("spa") != -1)) {
         IDIOMA_UI = SPA;
-    } else {
+    } else if ((lang.lastIndexOf("fr") != -1) || (lang.lastIndexOf("fra") != -1) || (lang.lastIndexOf("fre") != -1)) {
+        IDIOMA_UI = FRA;
+    }else {
         IDIOMA_UI = ENG;
     }
 }
 
-function L(id, spa, eng) {
+function L(id, spa, eng, fra) {
     /**
      *
      * @type {string}
@@ -52,11 +59,17 @@ function L(id, spa, eng) {
      */
     this[ENG] = eng;
 
+    /**
+     *
+     * @type {string}
+     */
+    this[FRA] = fra;
+
     if (!diccionario["ANIMAUNICO_"+this.id]) {
         diccionario["ANIMAUNICO_"+this.id] = this;
     } else {
-        console.log("Clave de diccionario repetida: [" + this.id + " / " + this[SPA] + " / " + this[ENG] + "]");
-        console.log("--Clave previa: [" + diccionario["ANIMAUNICO_"+this.id].id + " / " + diccionario["ANIMAUNICO_"+this.id][SPA] + " / " + diccionario["ANIMAUNICO_"+this.id][ENG] + "]");
+        console.log("Clave de diccionario repetida: [" + this.id + " / " + this[SPA] + " / " + this[ENG] + " / " + this[FRA] + "]");
+        console.log("--Clave previa: [" + diccionario["ANIMAUNICO_"+this.id].id + " / " + diccionario["ANIMAUNICO_"+this.id][SPA] + " / " + diccionario["ANIMAUNICO_"+this.id][ENG] + " / " + diccionario["ANIMAUNICO_"+this.id][FRA] + "]");
     }
 }
 
