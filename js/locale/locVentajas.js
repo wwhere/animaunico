@@ -1,517 +1,254 @@
-var VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA = (new L("VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA","Acceso a una disciplina psíquica",
-    "Access to One Psychic Discipline")).getId();
-var VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA_DESC = (new L("VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA_DESC","Esta ventaja permite utilizar un CV para adquirir afinidad a una única disciplina psíquica y a los poderes matriciales.",
-    "Esta ventaja permite utilizar un CV para adquirir afinidad a una única disciplina psíquica y a los poderes matriciales.")).getId();
-var VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA = (new L("VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA","Acceso libre a cualquier disciplina psíquica",
-    "Free Access to Any Psychic Discipline")).getId();
-var VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA_DESC = (new L("VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA_DESC","Esta ventaja capacita al personaje a acceder libremente a tantas disciplinas psíquicas como desee empleando sus CV.",
-    "Esta ventaja capacita al personaje a acceder libremente a tantas disciplinas psíquicas como desee empleando sus CV.")).getId();
-var VENT_DON = (new L("VENT_DON","Don",
-    "The Gift")).getId();
-var VENT_DON_DESC = (new L("VENT_DON_DESC","El personaje está dotado de la capacidad de ver y utilizar la magia. Añadirá además un bonificador especial de +10 a su RM, puesto que su naturaleza sobrenatural resiste mejor los efectos místicos. Nota: Ten en cuenta que tanto los hechiceros como otras categorías especializadas en el lanzamiento de conjuros requieren escoger esta ventaja para poder usar sortilegios.",
-    "El personaje está dotado de la capacidad de ver y utilizar la magia. Añadirá además un bonificador especial de +10 a su RM, puesto que su naturaleza sobrenatural resiste mejor los efectos místicos. Nota: Ten en cuenta que tanto los hechiceros como otras categorías especializadas en el lanzamiento de conjuros requieren escoger esta ventaja para poder usar sortilegios.")).getId();
-var VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES = (new L("VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES","Acceso a poderes psíquicos naturales",
-    "Access to Natural Psychic Powers")).getId();
-var VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES_DESC = (new L("VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES_DESC","El personaje es capaz de utilizar de manera natural un único poder mental determinado. En realidad no es un verdadero psíquico, por lo que no puede emplear CVs para adquirir nuevas habilidades ni para potenciar el poder que posee. Su potencial psíquico no se basa en su Voluntad ni requiere lanzar dados para calcularlo, sino que tiene automáticamente un valor de Difícil (DIF). El poder elegido puede ser de cualquier nivel, pero si tiene un requerimiento base superior a Difícil no es posible utilizarlo. Puede usarse una vez por minuto sin que el personaje sufra ningún tipo de penalización, pero cada uso adicional sin el periodo de descanso requerido causa la pérdida de un punto de Cansancio. La inversión de puntos adicionales aumenta el potencial psíquico natural a Muy Difícil (MDF) y a Absurdo (ABS), respectivamente.",
-    "El personaje es capaz de utilizar de manera natural un único poder mental determinado. En realidad no es un verdadero psíquico, por lo que no puede emplear CVs para adquirir nuevas habilidades ni para potenciar el poder que posee. Su potencial psíquico no se basa en su Voluntad ni requiere lanzar dados para calcularlo, sino que tiene automáticamente un valor de Difícil (DIF). El poder elegido puede ser de cualquier nivel, pero si tiene un requerimiento base superior a Difícil no es posible utilizarlo. Puede usarse una vez por minuto sin que el personaje sufra ningún tipo de penalización, pero cada uso adicional sin el periodo de descanso requerido causa la pérdida de un punto de Cansancio. La inversión de puntos adicionales aumenta el potencial psíquico natural a Muy Difícil (MDF) y a Absurdo (ABS), respectivamente.")).getId();
-var VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS = (new L("VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS","Repetir una tirada de características",
-    "Repeat a Characteristics Roll")).getId();
-var VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS_DESC = (new L("VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS_DESC","Te permite lanzar un dado adicional una vez que has generado las características de tu personaje, y utilizar el resultado obtenido en lugar de uno de los anteriores. La nueva cifra no podrá ser inferior al valor de tu tirada más baja.",
-    "Te permite lanzar un dado adicional una vez que has generado las características de tu personaje, y utilizar el resultado obtenido en lugar de uno de los anteriores. La nueva cifra no podrá ser inferior al valor de tu tirada más baja.")).getId();
-var VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA = (new L("VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA","Sumar un punto a una característica",
-    "Add One Point to a Characteristic")).getId();
-var VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA_DESC = (new L("VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA_DESC","Añade un punto al valor de una característica.",
-    "Añade un punto al valor de una característica.")).getId();
-var VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE = (new L("VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE","Sustituir una característica por un nueve",
-    "Increase One Characteristic to Nine")).getId();
-var VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE_DESC = (new L("VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE_DESC","Sustituye una característica por un nueve sin importar cuál fuese su valor original.",
-    "Sustituye una característica por un nueve sin importar cuál fuese su valor original.")).getId();
-var VENT_RESISTENCIA_FISICA_EXCEPCIONAL = (new L("VENT_RESISTENCIA_FISICA_EXCEPCIONAL","Resistencia física excepcional",
-    "Exceptional Physical Resistance")).getId();
-var VENT_RESISTENCIA_FISICA_EXCEPCIONAL_DESC = (new L("VENT_RESISTENCIA_FISICA_EXCEPCIONAL_DESC","Añade un bonificador especial de +25 a la Resistencia física (RF), Resistencia contra venenos (RV) y Resistencia contra enfermedades (RE). La inversión de un segundo punto de creación aumenta el nivel de las Resistencias a +50.",
-    "Añade un bonificador especial de +25 a la Resistencia física (RF), Resistencia contra venenos (RV) y Resistencia contra enfermedades (RE). La inversión de un segundo punto de creación aumenta el nivel de las Resistencias a +50.")).getId();
-var VENT_RESISTENCIA_MAGICA_EXCEPCIONAL = (new L("VENT_RESISTENCIA_MAGICA_EXCEPCIONAL","Resistencia mágica excepcional",
-    "Exceptional Magic Resistance")).getId();
-var VENT_RESISTENCIA_MAGICA_EXCEPCIONAL_DESC = (new L("VENT_RESISTENCIA_MAGICA_EXCEPCIONAL_DESC","Añade un bonificador especial de +25 a la Resistencia mágica (RM). La inversión de un segundo punto de creación aumenta el nivel de la Resistencia a +50.",
-    "Añade un bonificador especial de +25 a la Resistencia mágica (RM). La inversión de un segundo punto de creación aumenta el nivel de la Resistencia a +50.")).getId();
-var VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL = (new L("VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL","Resistencia psíquica excepcional",
-    "Exceptional Psychic Resistance")).getId();
-var VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL_DESC = (new L("VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL_DESC","Esta ventaja añade un bonificador especial de +25 a la Resistencia mental (RP) del personaje. La inversión de un segundo punto de creación aumenta el nivel de la Resistencia a +50.",
-    "Esta ventaja añade un bonificador especial de +25 a la Resistencia mental (RP) del personaje. La inversión de un segundo punto de creación aumenta el nivel de la Resistencia a +50.")).getId();
-var VENT_FONDOS_INICIALES = (new L("VENT_FONDOS_INICIALES","Fondos iniciales",
-    "Starting Wealth")).getId();
-var VENT_FONDOS_INICIALES_DESC = (new L("VENT_FONDOS_INICIALES_DESC","Esta ventaja proporciona una cantidad de dinero inicial o equipo valorado en 2.000 Escudos de Oro (MO), 5.000 o 10.000.",
-    "Esta ventaja proporciona una cantidad de dinero inicial o equipo valorado en 2.000 Escudos de Oro (MO), 5.000 o 10.000.")).getId();
-var VENT_AFINIDAD_ANIMAL = (new L("VENT_AFINIDAD_ANIMAL","Afinidad animal",
-    "Animal Affinity")).getId();
-var VENT_AFINIDAD_ANIMAL_DESC = (new L("VENT_AFINIDAD_ANIMAL_DESC","El alcance de esta ventaja debe de ser interpretada por el Director de Juego.",
-    "El alcance de esta ventaja debe de ser interpretada por el Director de Juego.")).getId();
-var VENT_REGENERACION_BASICA = (new L("VENT_REGENERACION_BASICA","Regeneración básica",
-    "Regeneration: Basic")).getId();
-var VENT_REGENERACION_BASICA_DESC = (new L("VENT_REGENERACION_BASICA_DESC","Aumenta dos niveles la Regeneración del personaje.",
-    "Aumenta dos niveles la Regeneración del personaje.")).getId();
-var VENT_REGENERACION_AVANZADA = (new L("VENT_REGENERACION_AVANZADA","Regeneración avanzada",
-    "Regeneration: Advanced")).getId();
-var VENT_REGENERACION_AVANZADA_DESC = (new L("VENT_REGENERACION_AVANZADA_DESC","Aumenta cuatro niveles la Regeneración del personaje.",
-    "Aumenta cuatro niveles la Regeneración del personaje.")).getId();
-var VENT_REGENERACION_MAYOR = (new L("VENT_REGENERACION_MAYOR","Regeneración mayor",
-    "Regeneration: Greater")).getId();
-var VENT_REGENERACION_MAYOR_DESC = (new L("VENT_REGENERACION_MAYOR_DESC","Aumenta seis niveles la Regeneración del personaje.",
-    "Aumenta seis niveles la Regeneración del personaje.")).getId();
-var VENT_ENCANTO = (new L("VENT_ENCANTO","Encanto",
-    "Charm")).getId();
-var VENT_ENCANTO_DESC = (new L("VENT_ENCANTO_DESC","El alcance de esta ventaja debe de ser interpretada por el Director de Juego.",
-    "El alcance de esta ventaja debe de ser interpretada por el Director de Juego.")).getId();
-var VENT_AMBIDESTRIA = (new L("VENT_AMBIDESTRIA","Ambidestria",
-    "Ambidextrous")).getId();
-var VENT_AMBIDESTRIA_DESC = (new L("VENT_AMBIDESTRIA_DESC","Un personaje ambidiestro podrá efectuar maniobras con cualquier mano con idéntica habilidad. En combate, permite reducir a –10 los ataques efectuados con un arma adicional.",
-    "Un personaje ambidiestro podrá efectuar maniobras con cualquier mano con idéntica habilidad. En combate, permite reducir a –10 los ataques efectuados con un arma adicional.")).getId();
-var VENT_VISION_NOCTURNA = (new L("VENT_VISION_NOCTURNA","Visión nocturna",
-    "Night Vision")).getId();
-var VENT_VISION_NOCTURNA_DESC = (new L("VENT_VISION_NOCTURNA_DESC","Permite ignorar cualquier penalizador causado por la oscuridad, siempre que no se trate de un lugar con carencia absoluta de luz o algún tipo de oscuridad mágica, en cuyo caso, sólo quedan reducidos a la mitad.",
-    "Permite ignorar cualquier penalizador causado por la oscuridad, siempre que no se trate de un lugar con carencia absoluta de luz o algún tipo de oscuridad mágica, en cuyo caso, sólo quedan reducidos a la mitad.")).getId();
-var VENT_BUENA_SUERTE = (new L("VENT_BUENA_SUERTE","Buena suerte",
-    "Good Luck")).getId();
-var VENT_BUENA_SUERTE_DESC = (new L("VENT_BUENA_SUERTE_DESC","Se reduce un punto la cifra requerida para pifiar. En circunstancias normales el personaje pifiará con un 2. Si alcanza la maestría en una habilidad, sólo pifiará con un 1.",
-    "Se reduce un punto la cifra requerida para pifiar. En circunstancias normales el personaje pifiará con un 2. Si alcanza la maestría en una habilidad, sólo pifiará con un 1.")).getId();
-var VENT_INQUIETANTE = (new L("VENT_INQUIETANTE","Inquietante",
-    "Disquieting")).getId();
-var VENT_INQUIETANTE_DESC = (new L("VENT_INQUIETANTE_DESC","El personaje puede resultar inquietante si lo desea. El alcance de esta ventaja debe de ser interpretado por el Director de Juego.",
-    "El personaje puede resultar inquietante si lo desea. El alcance de esta ventaja debe de ser interpretado por el Director de Juego.")).getId();
-var VENT_APTO_EN_UN_CAMPO = (new L("VENT_APTO_EN_UN_CAMPO","Apto en un campo",
-    "Aptitude in a Field")).getId();
-var VENT_APTO_EN_UN_CAMPO_DESC = (new L("VENT_APTO_EN_UN_CAMPO_DESC","El coste de desarrollo de habilidades secundarias de ese campo se reduce en un punto. Si se da el caso de que la categoría del personaje posee una habilidad secundaria concreta dentro de dicho campo con un coste inferior al del resto de habilidades, este valor también se reducirá.",
-    "El coste de desarrollo de habilidades secundarias de ese campo se reduce en un punto. Si se da el caso de que la categoría del personaje posee una habilidad secundaria concreta dentro de dicho campo con un coste inferior al del resto de habilidades, este valor también se reducirá.")).getId();
-var VENT_APTO_EN_UNA_MATERIA = (new L("VENT_APTO_EN_UNA_MATERIA","Apto en una materia",
-    "Aptitude in a Subject")).getId();
-var VENT_APTO_EN_UNA_MATERIA_DESC = (new L("VENT_APTO_EN_UNA_MATERIA_DESC","Esta ventaja reduce un punto el coste de desarrollo de una habilidad secundaria por cada Punto de Creación que se invierta.",
-    "Esta ventaja reduce un punto el coste de desarrollo de una habilidad secundaria por cada Punto de Creación que se invierta.")).getId();
-var VENT_SENTIDOS_AGUDOS = (new L("VENT_SENTIDOS_AGUDOS","Sentidos agudos",
-    "Acute Senses")).getId();
-var VENT_SENTIDOS_AGUDOS_DESC = (new L("VENT_SENTIDOS_AGUDOS_DESC","Añade un punto a la Percepción del personaje a la hora de realizar controles de características y un bonificador especial de +50 a sus habilidades secundarias de Advertir y Buscar.",
-    "Añade un punto a la Percepción del personaje a la hora de realizar controles de características y un bonificador especial de +50 a sus habilidades secundarias de Advertir y Buscar.")).getId();
-var VENT_APRENDIZAJE_INNATO = (new L("VENT_APRENDIZAJE_INNATO","Aprendizaje innato",
-    "Natural Learner")).getId();
-var VENT_APRENDIZAJE_INNATO_DESC = (new L("VENT_APRENDIZAJE_INNATO_DESC","Otorga un bono de categoría de +10 por nivel en una habilidad secundaria. Este bono se suma a cualquier otro bonificador innato que pudiera obtener el personaje gracias a su categoría. La inversión de un punto adicional aumenta el bono a +20.",
-    "Otorga un bono de categoría de +10 por nivel en una habilidad secundaria. Este bono se suma a cualquier otro bonificador innato que pudiera obtener el personaje gracias a su categoría. La inversión de un punto adicional aumenta el bono a +20.")).getId();
-var VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO = (new L("VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO","Aprendizaje innato en un campo",
-    "Natural Learner, Field")).getId();
-var VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO_DESC = (new L("VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO_DESC","Otorga un bono de categoría de +5 o +10 por nivel a todas las habilidades de un campo. Estos bonificadores se suman a cualquier otro bono innato que pudiera obtener el personaje por su categoría.",
-    "Otorga un bono de categoría de +5 o +10 por nivel a todas las habilidades de un campo. Estos bonificadores se suman a cualquier otro bono innato que pudiera obtener el personaje por su categoría.")).getId();
-var VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS = (new L("VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS","Conocedor de todas las materias",
-    "Jack of All Trades")).getId();
-var VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS_DESC = (new L("VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS_DESC","El personaje no aplica nunca el penalizador de –30 por no haber invertido PD en una habilidad secundaria y tiene un bonificador natural de 10 en todas sus habilidades secundarias, que se suma directamente al bono que le otorgue su característica.",
-    "El personaje no aplica nunca el penalizador de –30 por no haber invertido PD en una habilidad secundaria y tiene un bonificador natural de 10 en todas sus habilidades secundarias, que se suma directamente al bono que le otorgue su característica.")).getId();
-var VENT_SUEÑO_LIGERO = (new L("VENT_SUEÑO_LIGERO","Sueño ligero",
-    "Light Sleeper")).getId();
-var VENT_SUEÑO_LIGERO_DESC = (new L("VENT_SUEÑO_LIGERO_DESC","El personaje sólo aplica un penalizador de –20 a su habilidad de Advertir mientras duerme.",
-    "El personaje sólo aplica un penalizador de –20 a su habilidad de Advertir mientras duerme.")).getId();
-var VENT_REFLEJOS_RAPIDOS = (new L("VENT_REFLEJOS_RAPIDOS","Reflejos rápidos",
-    "Quick Reflexes")).getId();
-var VENT_REFLEJOS_RAPIDOS_DESC = (new L("VENT_REFLEJOS_RAPIDOS_DESC","Otorga un bonificador especial de +25 al turno. Los Puntos de Creación adicionales aumentarán el bono a +45 y a +60 respectivamente.",
-    "Otorga un bonificador especial de +25 al turno. Los Puntos de Creación adicionales aumentarán el bono a +45 y a +60 respectivamente.")).getId();
-var VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO = (new L("VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO","Inmunidad al dolor y al cansancio",
-    "Immunity to Pain and Fatigue")).getId();
-var VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO_DESC = (new L("VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO_DESC","Los penalizadores provocados por el dolor y el Cansancio se reducen a la mitad.",
-    "Los penalizadores provocados por el dolor y el Cansancio se reducen a la mitad.")).getId();
-var VENT_AFORTUNADO = (new L("VENT_AFORTUNADO","Afortunado",
-    "Fortunate")).getId();
-var VENT_AFORTUNADO_DESC = (new L("VENT_AFORTUNADO_DESC","El alcance de esta ventaja debe de ser interpretada por el Director de Juego. En cualquier caso, nunca sufrirá los efectos negativos de una trampa o de un ataque que se determinen mediante el azar.",
-    "El alcance de esta ventaja debe de ser interpretada por el Director de Juego. En cualquier caso, nunca sufrirá los efectos negativos de una trampa o de un ataque que se determinen mediante el azar.")).getId();
-var VENT_ARMADURA_NATURAL = (new L("VENT_ARMADURA_NATURAL","Armadura natural",
-    "Natural Armor")).getId();
-var VENT_ARMADURA_NATURAL_DESC = (new L("VENT_ARMADURA_NATURAL_DESC","Otorga un Tipo de Armadura natural de 2 contra todas las clases de ataques salvo las de energía. Aunque cuenta como una protección, no se aplican penalizadores al turno por emplear capas de armaduras adicionales.",
-    "Otorga un Tipo de Armadura natural de 2 contra todas las clases de ataques salvo las de energía. Aunque cuenta como una protección, no se aplican penalizadores al turno por emplear capas de armaduras adicionales.")).getId();
-var VENT_ARMADURA_MISTICA = (new L("VENT_ARMADURA_MISTICA","Armadura mística",
-    "Mystical Armor")).getId();
-var VENT_ARMADURA_MISTICA_DESC = (new L("VENT_ARMADURA_MISTICA_DESC","Otorga un Tipo de Armadura natural de 4 contra los ataques basados en Energía. Aunque cuenta como una armadura, no se aplican penalizadores al turno por emplear capas de protección adicionales.",
-    "Otorga un Tipo de Armadura natural de 4 contra los ataques basados en Energía. Aunque cuenta como una armadura, no se aplican penalizadores al turno por emplear capas de protección adicionales.")).getId();
-var VENT_ARTEFACTO = (new L("VENT_ARTEFACTO","Artefacto",
-    "Artifact")).getId();
-var VENT_ARTEFACTO_DESC = (new L("VENT_ARTEFACTO_DESC","El jugador y el Director de Juego deberán ponerse de acuerdo con las habilidades del artefacto. Los puntos invertidos adicionalmente aumentan teóricamente las capacidades del objeto.",
-    "El jugador y el Director de Juego deberán ponerse de acuerdo con las habilidades del artefacto. Los puntos invertidos adicionalmente aumentan teóricamente las capacidades del objeto.")).getId();
-var VENT_MAESTRO_MARCIAL = (new L("VENT_MAESTRO_MARCIAL","Maestro marcial",
-    "Martial Mastery")).getId();
-var VENT_MAESTRO_MARCIAL_DESC = (new L("VENT_MAESTRO_MARCIAL_DESC","Añade 40 puntos al Conocimiento Marcial base. Los Puntos de Creación adicionales aumentan el añadido a 80 y 120 puntos respectivamente.",
-    "Añade 40 puntos al Conocimiento Marcial base. Los Puntos de Creación adicionales aumentan el añadido a 80 y 120 puntos respectivamente.")).getId();
-var VENT_INFATIGABLE = (new L("VENT_INFATIGABLE","Infatigable",
-    "Untiring")).getId();
-var VENT_INFATIGABLE_DESC = (new L("VENT_INFATIGABLE_DESC","Aumenta tres puntos el Cansancio del personaje. Los Puntos de Creación adicionales lo incrementan seis y nueve puntos respectivamente.",
-    "Aumenta tres puntos el Cansancio del personaje. Los Puntos de Creación adicionales lo incrementan seis y nueve puntos respectivamente.")).getId();
-var VENT_VER_LO_SOBRENATURAL = (new L("VENT_VER_LO_SOBRENATURAL","Ver lo sobrenatural",
-    "See Supernatural")).getId();
-var VENT_VER_LO_SOBRENATURAL_DESC = (new L("VENT_VER_LO_SOBRENATURAL_DESC","El personaje ve lo sobrenatural, tanto magia y matrices psíquicas como criaturas espirituales. Por tanto, no aplica el penalizador de cegado en ninguna de dichas situaciones.",
-    "El personaje ve lo sobrenatural, tanto magia y matrices psíquicas como criaturas espirituales. Por tanto, no aplica el penalizador de cegado en ninguna de dichas situaciones.")).getId();
-var VENT_SENTIDO_DEL_PELIGRO = (new L("VENT_SENTIDO_DEL_PELIGRO","Sentido del peligro",
-    "Danger Sense")).getId();
-var VENT_SENTIDO_DEL_PELIGRO_DESC = (new L("VENT_SENTIDO_DEL_PELIGRO_DESC","El personaje no puede ser cogido por sorpresa, salvo por una diferencia de 150 en turno contra su adversario.",
-    "El personaje no puede ser cogido por sorpresa, salvo por una diferencia de 150 en turno contra su adversario.")).getId();
-var VENT_CURTIDO = (new L("VENT_CURTIDO","Curtido",
-    "Been Around")).getId();
-var VENT_CURTIDO_DESC = (new L("VENT_CURTIDO_DESC","El personaje comienza con 50 puntos de experiencia añadidos. Los Puntos de Creación adicionales aumentan los puntos de experiencia iniciales a 100 y a 150, respectivamente. Este aumento permite subir de nivel de modo convencional si se alcanzan los puntos de experiencia necesarios.",
-    "El personaje comienza con 50 puntos de experiencia añadidos. Los Puntos de Creación adicionales aumentan los puntos de experiencia iniciales a 100 y a 150, respectivamente. Este aumento permite subir de nivel de modo convencional si se alcanzan los puntos de experiencia necesarios.")).getId();
-var VENT_RECUPERACION_DE_KI = (new L("VENT_RECUPERACION_DE_KI","Recuperación de Ki",
-    "Ki Recovery")).getId();
-var VENT_RECUPERACION_DE_KI_DESC = (new L("VENT_RECUPERACION_DE_KI_DESC","El personaje recupera un punto de Ki por característica cada diez minutos, en lugar de uno por hora. La inversión de puntos adicionales disminuye el tiempo a cinco y un minuto respectivamente.",
-    "El personaje recupera un punto de Ki por característica cada diez minutos, en lugar de uno por hora. La inversión de puntos adicionales disminuye el tiempo a cinco y un minuto respectivamente.")).getId();
-var VENT_ELAN = (new L("VENT_ELAN","Elan",
-    "Elan")).getId();
-var VENT_ELAN_DESC = (new L("VENT_ELAN_DESC","El personaje tiene Elan de 20 de la entidad que elija. La inversión de puntos adicionales aumenta su nivel a 40 y 50 respectivamente.",
-    "El personaje tiene Elan de 20 de la entidad que elija. La inversión de puntos adicionales aumenta su nivel a 40 y 50 respectivamente.")).getId();
-var VENT_APRENDIZAJE = (new L("VENT_APRENDIZAJE","Aprendizaje",
-    "Learning")).getId();
-var VENT_APRENDIZAJE_DESC = (new L("VENT_APRENDIZAJE_DESC","Obtiene un beneficio adicional de 3 puntos de experiencia a la cantidad que le otorgue el Director de Juego al finalizar cada sesión de juego. Los Puntos de Creación adicionales aumentan el beneficio a 6 y 9 puntos respectivamente.",
-    "Obtiene un beneficio adicional de 3 puntos de experiencia a la cantidad que le otorgue el Director de Juego al finalizar cada sesión de juego. Los Puntos de Creación adicionales aumentan el beneficio a 6 y 9 puntos respectivamente.")).getId();
-var VENT_DIFICIL_DE_MATAR = (new L("VENT_DIFICIL_DE_MATAR","Difícil de matar",
-    "Hard to Kill")).getId();
-var VENT_DIFICIL_DE_MATAR_DESC = (new L("VENT_DIFICIL_DE_MATAR_DESC","Obtiene un bonificador de +10, +20 o +30 pv por nivel. También un +10, +20 o +30 a los controles de Resistencia de las reglas opcionales de Entre la vida y la muerte",
-    "Obtiene un bonificador de +10, +20 o +30 pv por nivel. También un +10, +20 o +30 a los controles de Resistencia de las reglas opcionales de Entre la vida y la muerte")).getId();
-var VENT_AL_LIMITE = (new L("VENT_AL_LIMITE","Al límite",
-    "To the Limit")).getId();
-var VENT_AL_LIMITE_DESC = (new L("VENT_AL_LIMITE_DESC","Cuando los pv bajan por debajo de una cuarta parte del total, gana  un bono +20 a toda acción.",
-    "Cuando los pv bajan por debajo de una cuarta parte del total, gana  un bono +20 a toda acción.")).getId();
-var VENT_SIN_LIMITE_DE_FAMILIARES = (new L("VENT_SIN_LIMITE_DE_FAMILIARES","Sin límite de familiares",
-    "Unlimited Familiars")).getId();
-var VENT_SIN_LIMITE_DE_FAMILIARES_DESC = (new L("VENT_SIN_LIMITE_DE_FAMILIARES_DESC","Puede crear un lazo de familiar con tantas criaturas como desee.",
-    "Puede crear un lazo de familiar con tantas criaturas como desee.")).getId();
-var VENT_SENTIDO_DEL_COMBATE = (new L("VENT_SENTIDO_DEL_COMBATE","Sentido del combate",
-    "Combat Senses")).getId();
-var VENT_SENTIDO_DEL_COMBATE_DESC = (new L("VENT_SENTIDO_DEL_COMBATE_DESC","El personaje consigue un bono innato de +5 a ataque, parada o esquiva.",
-    "El personaje consigue un bono innato de +5 a ataque, parada o esquiva.")).getId();
-var VENT_BONIFICADOR_NATURAL_INCREMENTADO = (new L("VENT_BONIFICADOR_NATURAL_INCREMENTADO","Bonificador natural incrementado",
-    "Increased Natural Bonus")).getId();
-var VENT_BONIFICADOR_NATURAL_INCREMENTADO_DESC = (new L("VENT_BONIFICADOR_NATURAL_INCREMENTADO_DESC","El personaje obtiene un bonificador natural adicional.",
-    "El personaje obtiene un bonificador natural adicional.")).getId();
-var VENT_USO_DE_ARMADURA = (new L("VENT_USO_DE_ARMADURA","Uso de armadura",
-    "Use of Armor")).getId();
-var VENT_USO_DE_ARMADURA_DESC = (new L("VENT_USO_DE_ARMADURA_DESC","El personaje consigue un bono innato de +5, +10 o +15 a llevar armadura.",
-    "El personaje consigue un bono innato de +5, +10 o +15 a llevar armadura.")).getId();
-var VENT_VERSATIL = (new L("VENT_VERSATIL","Versátil",
-    "Versatile")).getId();
-var VENT_VERSATIL_DESC = (new L("VENT_VERSATIL_DESC","Al personaje le cuesta la mitad de PD cambiar de categoría y no tiene que esperar dos niveles.",
-    "Al personaje le cuesta la mitad de PD cambiar de categoría y no tiene que esperar dos niveles.")).getId();
-var VENT_SUPERVIVIENTE = (new L("VENT_SUPERVIVIENTE","Superviviente",
-    "Survivor")).getId();
-var VENT_SUPERVIVIENTE_DESC = (new L("VENT_SUPERVIVIENTE_DESC","El personaje aguanta en puntos de vida negativa diez veces el valor de su CON, en lugar de sólo cinco. Además suma +40 a su RF para estabilizare. Al salir de entre la vida y la muerte, el negativo será sólo de -30. Si se usan las reglas opcionales de puntos de vida en negativos, el +40 es a los controles para resistir.",
-    "El personaje aguanta en puntos de vida negativa diez veces el valor de su CON, en lugar de sólo cinco. Además suma +40 a su RF para estabilizare. Al salir de entre la vida y la muerte, el negativo será sólo de -30. Si se usan las reglas opcionales de puntos de vida en negativos, el +40 es a los controles para resistir.")).getId();
-var VENT_TOCADO_POR_EL_DESTINO = (new L("VENT_TOCADO_POR_EL_DESTINO","Tocado por el destino",
-    "Touched by Destiny")).getId();
-var VENT_TOCADO_POR_EL_DESTINO_DESC = (new L("VENT_TOCADO_POR_EL_DESTINO_DESC","Una ocasión por partida, puede repetir una tirada y elegir el nuevo resultado. Puede adquirirse tantas veces como se quiera.",
-    "Una ocasión por partida, puede repetir una tirada y elegir el nuevo resultado. Puede adquirirse tantas veces como se quiera.")).getId();
-var VENT_INMUNIDAD_PSIQUICA = (new L("VENT_INMUNIDAD_PSIQUICA","Inmunidad psíquica",
-    "Psychic Immunity")).getId();
-var VENT_INMUNIDAD_PSIQUICA_DESC = (new L("VENT_INMUNIDAD_PSIQUICA_DESC","Obtiene un +60 a todo control de Frialdad dedicado a mitigar sus estados emocionales. No es compatible con Fobia, Cobardía o Adicción Grave",
-    "Obtiene un +60 a todo control de Frialdad dedicado a mitigar sus estados emocionales. No es compatible con Fobia, Cobardía o Adicción Grave")).getId();
-var VENT_HABILIDOSO = (new L("VENT_HABILIDOSO","Habilidoso",
-    "Talented")).getId();
-var VENT_HABILIDOSO_DESC = (new L("VENT_HABILIDOSO_DESC","Obtiene un bono de +30 a Trucos de manos y puede aplicar un +3 a cualquier control enfrentado de DES.",
-    "Obtiene un bono de +30 a Trucos de manos y puede aplicar un +3 a cualquier control enfrentado de DES.")).getId();
-var VENT_LIBRE_ALBEDRIO = (new L("VENT_LIBRE_ALBEDRIO","Libre albedrío",
-    "Free Will")).getId();
-var VENT_LIBRE_ALBEDRIO_DESC = (new L("VENT_LIBRE_ALBEDRIO_DESC","Obtiene un bono de +60 a todo control de Resistencia relacionado con posesión o dominación.",
-    "Obtiene un bono de +60 a todo control de Resistencia relacionado con posesión o dominación.")).getId();
-var VENT_SEDUCTOR = (new L("VENT_SEDUCTOR","Seductor",
-    "Seducer")).getId();
-var VENT_SEDUCTOR_DESC = (new L("VENT_SEDUCTOR_DESC","Obtiene un bono de +60 en los controles de Persuasión relacionados con la seducción.",
-    "Obtiene un bono de +60 en los controles de Persuasión relacionados con la seducción.")).getId();
-var VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA = (new L("VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA","Apto para el desarrollo de la magia",
-    "Aptitude for Magic Development")).getId();
-var VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA_DESC = (new L("VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA_DESC","El personaje añade 3 puntos a su característica de Inteligencia para calcular la Inteligencia Requerida de los conjuros. Este bonificador no se aplica para ninguna otra habilidad, ni siquiera para calcular su nivel de magia.",
-    "El personaje añade 3 puntos a su característica de Inteligencia para calcular la Inteligencia Requerida de los conjuros. Este bonificador no se aplica para ninguna otra habilidad, ni siquiera para calcular su nivel de magia.")).getId();
-var VENT_POTENCIAL_ENFRENTADO = (new L("VENT_POTENCIAL_ENFRENTADO","Potencial enfrentado",
-    "Contested Spell Mastery")).getId();
-var VENT_POTENCIAL_ENFRENTADO_DESC = (new L("VENT_POTENCIAL_ENFRENTADO_DESC","El personaje aplica un bonificador de +50 a sus tiradas para calcular el resultado del choque de conjuros.",
-    "El personaje aplica un bonificador de +50 a sus tiradas para calcular el resultado del choque de conjuros.")).getId();
-var VENT_RECUPERACION_SUPERIOR_DE_MAGIA = (new L("VENT_RECUPERACION_SUPERIOR_DE_MAGIA","Recuperación superior de magia",
-    "Superior Magic Recovery")).getId();
-var VENT_RECUPERACION_SUPERIOR_DE_MAGIA_DESC = (new L("VENT_RECUPERACION_SUPERIOR_DE_MAGIA_DESC","El personaje recupera sus puntos de Zeon al doble de su regeneración zeónica. Los Puntos de Creación adicionales le permiten aumentarla al triple y al cuádruple de lo normal.",
-    "El personaje recupera sus puntos de Zeon al doble de su regeneración zeónica. Los Puntos de Creación adicionales le permiten aumentarla al triple y al cuádruple de lo normal.")).getId();
-var VENT_MAGIA_INNATA_MEJORADA = (new L("VENT_MAGIA_INNATA_MEJORADA","Magia innata mejorada",
-    "Improved Innate Magic")).getId();
-var VENT_MAGIA_INNATA_MEJORADA_DESC = (new L("VENT_MAGIA_INNATA_MEJORADA_DESC","Los conjuros innatos del brujo tienen un potencial de +10 a lo indicado por su ACT. Los Puntos de Creación adicionales aumentan el valor de los conjuros innatos a +20 y +30 respectivamente.",
-    "Los conjuros innatos del brujo tienen un potencial de +10 a lo indicado por su ACT. Los Puntos de Creación adicionales aumentan el valor de los conjuros innatos a +20 y +30 respectivamente.")).getId();
-var VENT_INUTILIDAD_SOMATICA = (new L("VENT_INUTILIDAD_SOMATICA","Inutilidad somática",
-    "Gestureless Casting")).getId();
-var VENT_INUTILIDAD_SOMATICA_DESC = (new L("VENT_INUTILIDAD_SOMATICA_DESC","El personaje no reduce su ACT por no ser capaz de gesticular.",
-    "El personaje no reduce su ACT por no ser capaz de gesticular.")).getId();
-var VENT_INUTILIDAD_ORAL = (new L("VENT_INUTILIDAD_ORAL","Inutilidad oral",
-    "Unspoken Casting")).getId();
-var VENT_INUTILIDAD_ORAL_DESC = (new L("VENT_INUTILIDAD_ORAL_DESC","El personaje puede lanzar conjuros en completo silencio sin ver reducido su ACT.",
-    "El personaje puede lanzar conjuros en completo silencio sin ver reducido su ACT.")).getId();
-var VENT_DESEQUILIBRIO_SEPHIROTICO = (new L("VENT_DESEQUILIBRIO_SEPHIROTICO","Desequilibrio sephirótico",
-    "Elemental Compatibility")).getId();
-var VENT_DESEQUILIBRIO_SEPHIROTICO_DESC = (new L("VENT_DESEQUILIBRIO_SEPHIROTICO_DESC","El brujo dispone de un bono especial de +20 a su ACT y un +20 en su RM en las cinco vías mágicas de un segmento del árbol que elija. En el resto aplicará un penalizador de –20 a su ACT y un –20 a su RM. La nigromancia no está incluida en esta ventaja, al encontrarse fuera del árbol.",
-    "El brujo dispone de un bono especial de +20 a su ACT y un +20 en su RM en las cinco vías mágicas de un segmento del árbol que elija. En el resto aplicará un penalizador de –20 a su ACT y un –20 a su RM. La nigromancia no está incluida en esta ventaja, al encontrarse fuera del árbol.")).getId();
-var VENT_CONOCIMIENTO_NATURAL_DE_VIA = (new L("VENT_CONOCIMIENTO_NATURAL_DE_VIA","Conocimiento natural de vía",
-    "Natural Knowledge of a Path")).getId();
-var VENT_CONOCIMIENTO_NATURAL_DE_VIA_DESC = (new L("VENT_CONOCIMIENTO_NATURAL_DE_VIA_DESC","Esta ventaja otorga conocimientos innatos de una vía a nivel 40 sin invertir en ella puntos de nivel de magia. Al ser un conocimiento natural, el hechicero puede seguir desarrollandola a partir de nivel 40 gastando en ella nuevos puntos de nivel de magia.",
-    "Esta ventaja otorga conocimientos innatos de una vía a nivel 40 sin invertir en ella puntos de nivel de magia. Al ser un conocimiento natural, el hechicero puede seguir desarrollandola a partir de nivel 40 gastando en ella nuevos puntos de nivel de magia.")).getId();
-var VENT_MAGIA_OPUESTA = (new L("VENT_MAGIA_OPUESTA","Magia opuesta",
-    "Opposite Magic")).getId();
-var VENT_MAGIA_OPUESTA_DESC = (new L("VENT_MAGIA_OPUESTA_DESC","El personaje no dobla el coste de nivel de las vías opuestas.",
-    "El personaje no dobla el coste de nivel de las vías opuestas.")).getId();
-var VENT_NATURALEZA_MAGICA = (new L("VENT_NATURALEZA_MAGICA","Naturaleza mágica",
-    "Magic Nature")).getId();
-var VENT_NATURALEZA_MAGICA_DESC = (new L("VENT_NATURALEZA_MAGICA_DESC","Obtiene un bono innato de +50, +100 ó +150 puntos de Zeon por nivel.",
-    "Obtiene un bono innato de +50, +100 ó +150 puntos de Zeon por nivel.")).getId();
-var VENT_PODER_NATURAL = (new L("VENT_PODER_NATURAL","Poder natural",
-    "Natural Power")).getId();
-var VENT_PODER_NATURAL_DESC = (new L("VENT_PODER_NATURAL_DESC","Para calcular el potencial máximo de sus conjuros, el personaje utiliza su característica se Poder en lugar de su Inteligencia.",
-    "Para calcular el potencial máximo de sus conjuros, el personaje utiliza su característica se Poder en lugar de su Inteligencia.")).getId();
-var VENT_DICCION_MAGICA = (new L("VENT_DICCION_MAGICA","Dicción mágica",
-    "Magical Diction")).getId();
-var VENT_DICCION_MAGICA_DESC = (new L("VENT_DICCION_MAGICA_DESC","No reduce el ACT al ejecutar conjuros inscritos en grimorios, pergaminos o libros, usando su potencial al máximo incluso si no es capaz de gesticular.",
-    "No reduce el ACT al ejecutar conjuros inscritos en grimorios, pergaminos o libros, usando su potencial al máximo incluso si no es capaz de gesticular.")).getId();
-var VENT_CALIBRE = (new L("VENT_CALIBRE","Calibre",
-    "Focus")).getId();
-var VENT_CALIBRE_DESC = (new L("VENT_CALIBRE_DESC","Los CV invertidos para mejorar la Proyección Psíquica aumentarán su habilidad en +20 en lugar de +10.",
-    "Los CV invertidos para mejorar la Proyección Psíquica aumentarán su habilidad en +20 en lugar de +10.")).getId();
-var VENT_CONCENTRACION_EXTREMA = (new L("VENT_CONCENTRACION_EXTREMA","Concentración extrema",
-    "Extreme Concentration")).getId();
-var VENT_CONCENTRACION_EXTREMA_DESC = (new L("VENT_CONCENTRACION_EXTREMA_DESC","El psíquico dobla el bono que le reporta la concentración a su potencial. Por ejemplo, si se concentra un asalto completo obtiene un +20 en lugar de un +10.",
-    "El psíquico dobla el bono que le reporta la concentración a su potencial. Por ejemplo, si se concentra un asalto completo obtiene un +20 en lugar de un +10.")).getId();
-var VENT_MANTENIMIENTO_AÑADIDO = (new L("VENT_MANTENIMIENTO_AÑADIDO","Mantenimiento añadido",
-    "Amplify Sustained Power")).getId();
-var VENT_MANTENIMIENTO_AÑADIDO_DESC = (new L("VENT_MANTENIMIENTO_AÑADIDO_DESC","Los poderes mantenidos innatamente se hallan un nivel de dificultad por encima de lo que le permite su potencial psíquico.",
-    "Los poderes mantenidos innatamente se hallan un nivel de dificultad por encima de lo que le permite su potencial psíquico.")).getId();
-var VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA = (new L("VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA","Resistencia a la fatiga psíquica",
-    "Psychic Fatigue Resistance")).getId();
-var VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA_DESC = (new L("VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA_DESC","Si el psíquico obtiene un fracaso en el uso de uno de sus poderes, no pierde puntos de Cansancio una vez que se ha quedado sin CVs libres por gastar. Los poderes de tercer nivel no son afectados por esta ventaja.",
-    "Si el psíquico obtiene un fracaso en el uso de uno de sus poderes, no pierde puntos de Cansancio una vez que se ha quedado sin CVs libres por gastar. Los poderes de tercer nivel no son afectados por esta ventaja.")).getId();
-var VENT_RECUPERACION_DE_CVS = (new L("VENT_RECUPERACION_DE_CVS","Recuperación de CVs",
-    "Psychic Point Recovery")).getId();
-var VENT_RECUPERACION_DE_CVS_DESC = (new L("VENT_RECUPERACION_DE_CVS_DESC","El índice de recuperación de CVs libres es de un punto por cada diez minutos transcurridos. La inversión de Puntos de Creación adicionales lo acrecienta a uno cada cinco o un minuto respectivamente.",
-    "El índice de recuperación de CVs libres es de un punto por cada diez minutos transcurridos. La inversión de Puntos de Creación adicionales lo acrecienta a uno cada cinco o un minuto respectivamente.")).getId();
-var VENT_DESEQUILIBRIO_PSIQUICO = (new L("VENT_DESEQUILIBRIO_PSIQUICO","Desequilibrio psíquico",
-    "Psychic Inclination")).getId();
-var VENT_DESEQUILIBRIO_PSIQUICO_DESC = (new L("VENT_DESEQUILIBRIO_PSIQUICO_DESC","El psíquico obtiene automáticamente un nivel de dificultad superior al que ha obtenido con su potencial al utilizar los poderes de una disciplina determinada.",
-    "El psíquico obtiene automáticamente un nivel de dificultad superior al que ha obtenido con su potencial al utilizar los poderes de una disciplina determinada.")).getId();
-var VENT_CONCENTRACION_PASIVA = (new L("VENT_CONCENTRACION_PASIVA","Concentración pasiva",
-    "Passive Concentration")).getId();
-var VENT_CONCENTRACION_PASIVA_DESC = (new L("VENT_CONCENTRACION_PASIVA_DESC","El psíquico puede concentrarse para potenciar un poder incluso mientras ejecuta acciones activas.",
-    "El psíquico puede concentrarse para potenciar un poder incluso mientras ejecuta acciones activas.")).getId();
-var VENT_AMBIVALENCIA_PSIQUICA = (new L("VENT_AMBIVALENCIA_PSIQUICA","Ambivalencia psíquica",
-    "Psychic Ambivalence")).getId();
-var VENT_AMBIVALENCIA_PSIQUICA_DESC = (new L("VENT_AMBIVALENCIA_PSIQUICA_DESC","Al dividir el potencial psíquico para realizar más de un poder por asalto, obtiene un bono especial acumulativo de +5 por cada poder que declare.",
-    "Al dividir el potencial psíquico para realizar más de un poder por asalto, obtiene un bono especial acumulativo de +5 por cada poder que declare.")).getId();
-var VENT_MODIFICADOR_PSIQUICO_INCREMENTADO = (new L("VENT_MODIFICADOR_PSIQUICO_INCREMENTADO","Modificador psíquico incrementado",
-    "Increase Psychic Modifiers")).getId();
-var VENT_MODIFICADOR_PSIQUICO_INCREMENTADO_DESC = (new L("VENT_MODIFICADOR_PSIQUICO_INCREMENTADO_DESC","El personaje dobla cualquier modificador natural que tenga la disciplina psíquica que usa. Los negativos también son incrementados.",
-    "El personaje dobla cualquier modificador natural que tenga la disciplina psíquica que usa. Los negativos también son incrementados.")).getId();
-var VENT_TAMAÑO_NO_NATURAL = (new L("VENT_TAMAÑO_NO_NATURAL","Tamaño no natural",
-    "Uncommon Size")).getId();
-var VENT_TAMAÑO_NO_NATURAL_DESC = (new L("VENT_TAMAÑO_NO_NATURAL_DESC","El personaje puede aumentar o disminuir hasta cinco puntos su Tamaño en el momento de su creación.",
-    "El personaje puede aumentar o disminuir hasta cinco puntos su Tamaño en el momento de su creación.")).getId();
-var VENT_INMUNIDAD_SOBRENATURAL = (new L("VENT_INMUNIDAD_SOBRENATURAL","Inmunidad sobrenatural",
-    "Supernatural Immunity")).getId();
-var VENT_INMUNIDAD_SOBRENATURAL_DESC = (new L("VENT_INMUNIDAD_SOBRENATURAL_DESC","Ignora los conjuros de valor zeónico 60, 90 o 120 o inferiores, y supera cualquier RM de efecto místico no mayor de 80, 100 o 120. No puede acceder al Don o Ver lo Sobrenatural, y no puede esta ventaja ser comprada por Sylvain, Duk'zarist o Daimah",
-    "Ignora los conjuros de valor zeónico 60, 90 o 120 o inferiores, y supera cualquier RM de efecto místico no mayor de 80, 100 o 120. No puede acceder al Don o Ver lo Sobrenatural, y no puede esta ventaja ser comprada por Sylvain, Duk'zarist o Daimah")).getId();
-var VENT_DESEQUILIBRIO_ELEMENTAL = (new L("VENT_DESEQUILIBRIO_ELEMENTAL","Desequilibrio elemental",
-    "Elemental Compatibility")).getId();
-var VENT_DESEQUILIBRIO_ELEMENTAL_DESC = (new L("VENT_DESEQUILIBRIO_ELEMENTAL_DESC","El personaje dispone de un bono especial de +20 a su ACT y un +20 a su RM en la vía mágica que elija. Cuando utilice conjuros de la vía opuesta, aplicará un penalizador de –20 a su ACT y un –20 a su RM. Si la vía elegida es la nigromancia, el penalizador se aplicará a todas las demás.",
-    "El personaje dispone de un bono especial de +20 a su ACT y un +20 a su RM en la vía mágica que elija. Cuando utilice conjuros de la vía opuesta, aplicará un penalizador de –20 a su ACT y un –20 a su RM. Si la vía elegida es la nigromancia, el penalizador se aplicará a todas las demás.")).getId();
-
-var VENT_FAMA = (new L("VENT_FAMA","Fama",
-    "Fama")).getId();
-var VENT_FAMA_DESC = (new L("VENT_FAMA_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo. El jugador debe determinar la causa de la fama de su personaje en el momento de su creación. Esta ventaja otorga 40 ó 65 puntos de fama, dependiendo de los PC que invierta.",
-    "Los efectos de esta ventaja se aplican únicamente al plano interpretativo. El jugador debe determinar la causa de la fama de su personaje en el momento de su creación. Esta ventaja otorga 40 ó 65 puntos de fama, dependiendo de los PC que invierta.")).getId();
-var VENT_RAICES_CULTURALES = (new L("VENT_RAICES_CULTURALES","Raíces culturales",
-    "Raíces culturales")).getId();
-var VENT_RAICES_CULTURALES_DESC = (new L("VENT_RAICES_CULTURALES_DESC","Esta ventaja otorga un bono especial a varias habilidades secundarias, atendiendo a la posición social y al país de origen del personaje.",
-    "Esta ventaja otorga un bono especial a varias habilidades secundarias, atendiendo a la posición social y al país de origen del personaje.")).getId();
-var VENT_SANTO = (new L("VENT_SANTO","Santo",
-    "Santo")).getId();
-var VENT_SANTO_DESC = (new L("VENT_SANTO_DESC","Los efectos de esta ventaja son únicamente a nivel interpretativo.",
-    "Los efectos de esta ventaja son únicamente a nivel interpretativo.")).getId();
-var VENT_POSICION_SOCIAL = (new L("VENT_POSICION_SOCIAL","Posición social",
-    "Posición social")).getId();
-var VENT_POSICION_SOCIAL_DESC = (new L("VENT_POSICION_SOCIAL_DESC","Además de sus efectos en el plano interpretativo, esta ventaja otorga al personaje acceso a las clases reservadas de cada principado, sin la necesidad de que realice ninguna tirada de dados. Su valor en Puntos de Creación depende, consecuentemente, del nivel de dichas clases.",
-    "Además de sus efectos en el plano interpretativo, esta ventaja otorga al personaje acceso a las clases reservadas de cada principado, sin la necesidad de que realice ninguna tirada de dados. Su valor en Puntos de Creación depende, consecuentemente, del nivel de dichas clases.")).getId();
-var VENT_CONTACTOS = (new L("VENT_CONTACTOS","Contactos",
-    "Contactos")).getId();
-var VENT_CONTACTOS_DESC = (new L("VENT_CONTACTOS_DESC","Siempre que lo requiera, un individuo con esta ventaja puede usar sus contactos para obtener información o ayuda limitada dentro de sus ámbitos de influencia.",
-    "Siempre que lo requiera, un individuo con esta ventaja puede usar sus contactos para obtener información o ayuda limitada dentro de sus ámbitos de influencia.")).getId();
-var VENT_ALIADO_PODEROSO = (new L("VENT_ALIADO_PODEROSO","Aliado poderoso",
-    "Aliado poderoso")).getId();
-var VENT_ALIADO_PODEROSO_DESC = (new L("VENT_ALIADO_PODEROSO_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo.",
-    "Los efectos de esta ventaja se aplican únicamente al plano interpretativo.")).getId();
-var VENT_SANGRE_ANTIGUA = (new L("VENT_SANGRE_ANTIGUA","Sangre antigua",
-    "Sangre antigua")).getId();
-var VENT_SANGRE_ANTIGUA_DESC = (new L("VENT_SANGRE_ANTIGUA_DESC","Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.",
-    "Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.")).getId();
-
-
-var VENT_ACUMULACION_PLENA = (new L("VENT_ACUMULACION_PLENA","Acumulación plena",
-    "Acumulación plena")).getId();
-var VENT_ACUMULACION_PLENA_DESC = (new L("VENT_ACUMULACION_PLENA_DESC","El personaje no reduce sus Acumulaciones de Ki por realizar Acciones pasivas o activas. A efectos de juego, siempre goza de su Acumulación plena, sin importar lo que haga durante el Turno.",
-    "El personaje no reduce sus Acumulaciones de Ki por realizar Acciones pasivas o activas. A efectos de juego, siempre goza de su Acumulación plena, sin importar lo que haga durante el Turno.")).getId();
-var VENT_APRENDIZAJE_MARCIAL = (new L("VENT_APRENDIZAJE_MARCIAL","Aprendizaje marcial",
-    "Aprendizaje marcial")).getId();
-var VENT_APRENDIZAJE_MARCIAL_DESC = (new L("VENT_APRENDIZAJE_MARCIAL_DESC","Alguien con esta ventaja incrementa en dos niveles el Grado de aprendizaje que le otorgue su CM",
-    "Alguien con esta ventaja incrementa en dos niveles el Grado de aprendizaje que le otorgue su CM")).getId();
-var VENT_KI_IMPERCEPTIBLE = (new L("VENT_KI_IMPERCEPTIBLE","Ki imperceptible",
-    "Ki imperceptible")).getId();
-var VENT_KI_IMPERCEPTIBLE_DESC = (new L("VENT_KI_IMPERCEPTIBLE_DESC","Esta ventaja otorga un bono especial de +10 a Ocultación del Ki por nivel.",
-    "Esta ventaja otorga un bono especial de +10 a Ocultación del Ki por nivel.")).getId();
-var VENT_PODER_INNATO = (new L("VENT_PODER_INNATO","Poder innato",
-    "Poder innato")).getId();
-var VENT_PODER_INNATO_DESC = (new L("VENT_PODER_INNATO_DESC","A la hora de calcular sus puntos de Ki iniciales, en lugar de utilizar con normalidad el valor básico de sus Características, el personaje emplea tan sólo su atributo de Poder y multiplica por seis la cantidad que este le otorgue. Los puntos adicionales por tener un valor de Característica superior a 10, también se multiplican. Esta ventaja sólo puede ser escogida en el caso de que se utilicen las reglas opcionales de Unificación de puntos de Ki.",
-    "A la hora de calcular sus puntos de Ki iniciales, en lugar de utilizar con normalidad el valor básico de sus Características, el personaje emplea tan sólo su atributo de Poder y multiplica por seis la cantidad que este le otorgue. Los puntos adicionales por tener un valor de Característica superior a 10, también se multiplican. Esta ventaja sólo puede ser escogida en el caso de que se utilicen las reglas opcionales de Unificación de puntos de Ki.")).getId();
-var VENT_TECNICAS_DESVINCULADAS = (new L("VENT_TECNICAS_DESVINCULADAS","Técnicas desvinculadas",
-    "Técnicas desvinculadas")).getId();
-var VENT_TECNICAS_DESVINCULADAS_DESC = (new L("VENT_TECNICAS_DESVINCULADAS_DESC","El personaje puede desarrollar o aprender Técnicas de Dominio con libertad, sin la necesidad de seguir las reglas de Árbol. Es decir, no necesita Técnicas de nivel inferior para aprender otras de nivel superior.",
-    "El personaje puede desarrollar o aprender Técnicas de Dominio con libertad, sin la necesidad de seguir las reglas de Árbol. Es decir, no necesita Técnicas de nivel inferior para aprender otras de nivel superior.")).getId();
-var VENT_ACUMULACION_DE_KI_INCREMENTADA = (new L("VENT_ACUMULACION_DE_KI_INCREMENTADA","Acumulación de ki incrementada",
-    "Acumulación de ki incrementada")).getId();
-var VENT_ACUMULACION_DE_KI_INCREMENTADA_DESC = (new L("VENT_ACUMULACION_DE_KI_INCREMENTADA_DESC","Si el personaje no realiza ninguna otra Acción durante el asalto, activa ni pasiva, que no sea Acumular Ki, puede sumar un +1 al valor de todas sus Acumulaciones de Ki durante ese asalto. La inversión de un punto de Creación adicional incrementa este bono a +2.",
-    "Si el personaje no realiza ninguna otra Acción durante el asalto, activa ni pasiva, que no sea Acumular Ki, puede sumar un +1 al valor de todas sus Acumulaciones de Ki durante ese asalto. La inversión de un punto de Creación adicional incrementa este bono a +2.")).getId();
-var VENT_PERCEPCION_DEL_KI = (new L("VENT_PERCEPCION_DEL_KI","Percepción del ki",
-    "Percepción del ki")).getId();
-var VENT_PERCEPCION_DEL_KI_DESC = (new L("VENT_PERCEPCION_DEL_KI_DESC","Esta ventaja otorga un bono especial de +10 a Detección del Ki por nivel.",
-    "Esta ventaja otorga un bono especial de +10 a Detección del Ki por nivel.")).getId();
-var VENT_LIMITE_DUAL = (new L("VENT_LIMITE_DUAL","Límite dual",
-    "Límite dual")).getId();
-var VENT_LIMITE_DUAL_DESC = (new L("VENT_LIMITE_DUAL_DESC","El personaje puede escoger hasta dos Límites en lugar de uno.",
-    "El personaje puede escoger hasta dos Límites en lugar de uno.")).getId();
-var VENT_INUTILIDAD_GESTUAL = (new L("VENT_INUTILIDAD_GESTUAL","Inutilidad gestual",
-    "Inutilidad gestual")).getId();
-var VENT_INUTILIDAD_GESTUAL_DESC = (new L("VENT_INUTILIDAD_GESTUAL_DESC","El personaje no reduce su Acumulación de Ki, incluso si no es capaz de usar las manos.",
-    "El personaje no reduce su Acumulación de Ki, incluso si no es capaz de usar las manos.")).getId();
-var VENT_SELLOS_MAGISTRALES = (new L("VENT_SELLOS_MAGISTRALES","Sellos magistrales",
-    "Sellos magistrales")).getId();
-var VENT_SELLOS_MAGISTRALES_DESC = (new L("VENT_SELLOS_MAGISTRALES_DESC","A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.",
-    "A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.")).getId();
-
-/**legados***/
-
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO","Sangre de Aeon: Lazo Elemental - Kagutsuchi (Fuego)",
-    "Sangre de Aeon: Lazo Elemental - Kagutsuchi (Fuego)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE","Sangre de Aeon: Lazo Elemental - Boreas (Aire)",
-    "Sangre de Aeon: Lazo Elemental - Boreas (Aire)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO","Sangre de Aeon: Lazo Elemental - Niflheim (Frío)",
-    "Sangre de Aeon: Lazo Elemental - Niflheim (Frío)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD","Sangre de Aeon: Lazo Elemental - Rudraksha (Electricidad)",
-    "Sangre de Aeon: Lazo Elemental - Rudraksha (Electricidad)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA","Sangre de Aeon: Lazo Elemental - Ran (Agua)",
-    "Sangre de Aeon: Lazo Elemental - Ran (Agua)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA","Sangre de Aeon: Lazo Elemental - Toa (Tierra)",
-    "Sangre de Aeon: Lazo Elemental - Toa (Tierra)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD","Sangre de Aeon: Lazo Elemental - Phandemonium (Oscuridad)",
-    "Sangre de Aeon: Lazo Elemental - Phandemonium (Oscuridad)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ","Sangre de Aeon: Lazo Elemental - Shephirah (Luz)",
-    "Sangre de Aeon: Lazo Elemental - Shephirah (Luz)")).getId();
-var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ_DESC= (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ_DESC","",
-    "")).getId();
-var VENT_LOS_OJOS_DE_LA_MUERTE = (new L("VENT_LOS_OJOS_DE_LA_MUERTE","Los Ojos de la Muerte",
-    "Los Ojos de la Muerte")).getId();
-var VENT_LOS_OJOS_DE_LA_MUERTE_DESC= (new L("VENT_LOS_OJOS_DE_LA_MUERTE_DESC","",
-    "")).getId();
-var VENT_OJOS_DEL_ALMA = (new L("VENT_OJOS_DEL_ALMA","Ojos del Alma",
-    "Ojos del Alma")).getId();
-var VENT_OJOS_DEL_ALMA_DESC= (new L("VENT_OJOS_DEL_ALMA_DESC","",
-    "")).getId();
-var VENT_LEGADO_DE_LA_LUNA = (new L("VENT_LEGADO_DE_LA_LUNA","Legado de la Luna (Tsukiyomi)",
-    "Legado de la Luna (Tsukiyomi)")).getId();
-var VENT_LEGADO_DE_LA_LUNA_DESC= (new L("VENT_LEGADO_DE_LA_LUNA_DESC","",
-    "")).getId();
-var VENT_LA_SANGRE_DE_UROBOROS = (new L("VENT_LA_SANGRE_DE_UROBOROS","La Sangre de Uroboros",
-    "La Sangre de Uroboros")).getId();
-var VENT_LA_SANGRE_DE_UROBOROS_DESC= (new L("VENT_LA_SANGRE_DE_UROBOROS_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_LAS_GRANDES_BESTIAS = (new L("VENT_SANGRE_DE_LAS_GRANDES_BESTIAS","Sangre de las Grandes Bestias",
-    "Sangre de las Grandes Bestias")).getId();
-var VENT_SANGRE_DE_LAS_GRANDES_BESTIAS_DESC= (new L("VENT_SANGRE_DE_LAS_GRANDES_BESTIAS_DESC","",
-    "")).getId();
-var VENT_OJOS_DEL_DESTINO = (new L("VENT_OJOS_DEL_DESTINO","Ojos del Destino",
-    "Ojos del Destino")).getId();
-var VENT_OJOS_DEL_DESTINO_DESC= (new L("VENT_OJOS_DEL_DESTINO_DESC","",
-    "")).getId();
-var VENT_SANGRE_ETERNA = (new L("VENT_SANGRE_ETERNA","Sangre Eterna",
-    "Sangre Eterna")).getId();
-var VENT_SANGRE_ETERNA_DESC= (new L("VENT_SANGRE_ETERNA_DESC","",
-    "")).getId();
-var VENT_LA_SANGRE_DE_OROCHI = (new L("VENT_LA_SANGRE_DE_OROCHI","La Sangre de Orochi",
-    "La Sangre de Orochi")).getId();
-var VENT_LA_SANGRE_DE_OROCHI_DESC= (new L("VENT_LA_SANGRE_DE_OROCHI_DESC","",
-    "")).getId();
-var VENT_DEVORADOR_DE_EXISTENCIA = (new L("VENT_DEVORADOR_DE_EXISTENCIA","Devorador de Existencia",
-    "Devorador de Existencia")).getId();
-var VENT_DEVORADOR_DE_EXISTENCIA_DESC= (new L("VENT_DEVORADOR_DE_EXISTENCIA_DESC","",
-    "")).getId();
-var VENT_ESENCIA_VENENOSA = (new L("VENT_ESENCIA_VENENOSA","Esencia Venenosa",
-    "Esencia Venenosa")).getId();
-var VENT_ESENCIA_VENENOSA_DESC= (new L("VENT_ESENCIA_VENENOSA_DESC","",
-    "")).getId();
-var VENT_ARMAS_NATURALES = (new L("VENT_ARMAS_NATURALES","Armas Naturales",
-    "Armas Naturales")).getId();
-var VENT_ARMAS_NATURALES_DESC= (new L("VENT_ARMAS_NATURALES_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_LOS_MUERTOS = (new L("VENT_SANGRE_DE_LOS_MUERTOS","Sangre de los Muertos",
-    "Sangre de los Muertos")).getId();
-var VENT_SANGRE_DE_LOS_MUERTOS_DESC= (new L("VENT_SANGRE_DE_LOS_MUERTOS_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_KAMI_GENUS_LOCI = (new L("VENT_SANGRE_DE_KAMI_GENUS_LOCI","Sangre de Kami - Genus Loci",
-    "Sangre de Kami - Genus Loci")).getId();
-var VENT_SANGRE_DE_KAMI_GENUS_LOCI_DESC= (new L("VENT_SANGRE_DE_KAMI_GENUS_LOCI_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA = (new L("VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA","Sangre de Kami - Señor de la Guerra",
-    "Sangre de Kami - Señor de la Guerra")).getId();
-var VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA_DESC= (new L("VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA_DESC","",
-    "")).getId();
-var VENT_SANGRE_DE_EL_DRAGON = (new L("VENT_SANGRE_DE_EL_DRAGON","Sangre de El Dragón",
-    "Sangre de El Dragón")).getId();
-var VENT_SANGRE_DE_EL_DRAGON_DESC= (new L("VENT_SANGRE_DE_EL_DRAGON_DESC","",
-    "")).getId();
-var VENT_SANGRE_LATENTE = (new L("VENT_SANGRE_LATENTE","Sangre Latente",
-    "Sangre Latente")).getId();
-var VENT_SANGRE_LATENTE_DESC= (new L("VENT_SANGRE_LATENTE_DESC","",
-    "")).getId();
-
-var VENT_VERSATIBILIDAD_METAMAGICA= (new L("VENT_VERSATIBILIDAD_METAMAGICA","Versatibilidad Metamágica",
-    "Metamagic Versatibility")).getId();
-var VENT_VERSATIBILIDAD_METAMAGICA_DESC= (new L("VENT_VERSATIBILIDAD_METAMAGICA_DESC","",
-    "")).getId();
-var VENT_HECHICERO_NATO= (new L("VENT_HECHICERO_NATO","Hechicero Nato",
-    "Natural Born Sorcerer")).getId();
-var VENT_HECHICERO_NATO_DESC= (new L("VENT_HECHICERO_NATO_DESC","",
-    "")).getId();
-var VENT_APRENDIZAJE_MAGICO_GRADUAL= (new L("VENT_APRENDIZAJE_MAGICO_GRADUAL","Aprendizaje Mágico Gradual",
-    "Gradual Magic Learning")).getId();
-var VENT_APRENDIZAJE_MAGICO_GRADUAL_DESC= (new L("VENT_APRENDIZAJE_MAGICO_GRADUAL_DESC","",
-    "")).getId();
-var VENT_DON_INCOMPLETO= (new L("VENT_DON_INCOMPLETO","Don Incompleto",
-    "Incomplete Gift")).getId();
-var VENT_DON_INCOMPLETO_DESC= (new L("VENT_DON_INCOMPLETO_DESC","",
-    "")).getId();
-var VENT_ESENCIA_SHEELE= (new L("VENT_ESENCIA_SHEELE","Esencia Sheele",
-    "Sheele Essence")).getId();
-var VENT_ESENCIA_SHEELE_DESC= (new L("VENT_ESENCIA_SHEELE_DESC","",
-    "")).getId();
-var VENT_FAMILIAR= (new L("VENT_FAMILIAR","Familiar",
-    "Familiar")).getId();
-var VENT_FAMILIAR_DESC= (new L("VENT_FAMILIAR_DESC","",
-    "")).getId();
-var VENT_CONVOCADOR_DE_MASAS = (new L("VENT_CONVOCADOR_DE_MASAS","Convocador de Masas",
-    "Mass Summoner")).getId();
-var VENT_CONVOCADOR_DE_MASAS_DESC= (new L("VENT_CONVOCADOR_DE_MASAS_DESC","",
-    "")).getId();
-/******/
-
-var VENT_AFINIDAD_DE_USO = (new L("VENT_AFINIDAD_DE_USO","Afinidad de Uso",
-    "Use Affinity")).getId();
-var VENT_AFINIDAD_DE_USO_DESC = (new L("VENT_AFINIDAD_DE_USO_DESC","",
-    "")).getId();
+var VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA = (new L("VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA","Acceso a una disciplina psíquica","Access to One Psychic Discipline","Accès à une discipline psychique")).getId();
+var VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA_DESC = (new L("VENT_ACCESO_A_UNA_DISCIPLINA_PSIQUICA_DESC","Esta ventaja permite utilizar un CV para adquirir afinidad a una única disciplina psíquica y a los poderes matriciales.","This Advantage allow the use of PP to acquire affinity to a single psychic discipline and the matrix powers","Autorise à dépenser un PPP pour ouvrir une discipline psychique et une seule.")).getId();
+var VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA = (new L("VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA","Acceso libre a cualquier disciplina psíquica","Free Access to Any Psychic Discipline","Accès à toutes les disciplines psychiques")).getId();
+var VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA_DESC = (new L("VENT_ACCESO_LIBRE_A_CUALQUIER_DISCIPLINA_PSIQUICA_DESC","Esta ventaja capacita al personaje a acceder libremente a tantas disciplinas psíquicas como desee empleando sus CV.","This advantage enables the character to use as many psychic disciplines as they wish using their Psychic Points","Autorise à dépenser des PPP pour ouvrir n'importe quelle discipline psychique.")).getId();
+var VENT_DON = (new L("VENT_DON","Don","The Gift","Don Mystique")).getId();
+var VENT_DON_DESC = (new L("VENT_DON_DESC","El personaje está dotado de la capacidad de ver y utilizar la magia. Añadirá además un bonificador especial de +10 a su RM, puesto que su naturaleza sobrenatural resiste mejor los efectos místicos. Nota: Ten en cuenta que tanto los hechiceros como otras categorías especializadas en el lanzamiento de conjuros requieren escoger esta ventaja para poder usar sortilegios.","The character can see and use magic. They also add a special bonus of +10 to their MR, since their supernatural nature better resists mystical effects.","Permet de voir et d'utiliser la magie. Donne aussi un bonus de +10 à sa RMys, sa conscience surnaturelle lui permettant de mieux résister aux effets mystiques.")).getId();
+var VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES = (new L("VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES","Acceso a poderes psíquicos naturales","Access to Natural Psychic Powers","Accès à un pouvoir psychique naturel")).getId();
+var VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES_DESC = (new L("VENT_ACCESO_A_PODERES_PSIQUICOS_NATURALES_DESC","El personaje es capaz de utilizar de manera natural un único poder mental determinado. En realidad no es un verdadero psíquico, por lo que no puede emplear CVs para adquirir nuevas habilidades ni para potenciar el poder que posee. Su potencial psíquico no se basa en su Voluntad ni requiere lanzar dados para calcularlo, sino que tiene automáticamente un valor de Difícil (DIF). El poder elegido puede ser de cualquier nivel, pero si tiene un requerimiento base superior a Difícil no es posible utilizarlo. Puede usarse una vez por minuto sin que el personaje sufra ningún tipo de penalización, pero cada uso adicional sin el periodo de descanso requerido causa la pérdida de un punto de Cansancio. La inversión de puntos adicionales aumenta el potencial psíquico natural a Muy Difícil (MDF) y a Absurdo (ABS), respectivamente.","The character can naturally use one specific Psychic Ability. They are not a true psychic and cannot use Psychic Points to acquire new abilities or to harness the power they have. Their Psychic Potential is not based on Willpower and does not require rolling dice, but automatically is Difficult(DIF). The chosen power can be of any level, but it cannot have a base requirement greater than Difficult. It can be used once per minute without the character suffering a penalty, but each additional use without the required rest inflicts 1 point of Fatigue. Spending additional points increases the natural Psychic Potential to Very Difficult (VDF) and Absurd (ABS), respectively","Peut choisir un unique pouvoir Psy, de n'importe quel niveau, mais ne peut en aucun cas dépenser des PPP ni être considéré comme un Psy. Pas de Talent psychique, le pouvoir est automatiquement manifesté à un niveau de difficulté qui dépend du nombre de PC dépensés. De même, le niveau minimal du pouvoir choisis ne doit pas être supérieur au niveau de difficulté lié aux PC dépensés. 1PC = Difficile, 2PC = Très Difficile, 3PC = Absurde. Le pouvoir peut être utilisé une fois par minute sans problème, chaque utilisation supplémentaire entraîne la perte de 1 point de Fatigue.")).getId();
+var VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS = (new L("VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS","Repetir una tirada de características","Repeat a Characteristics Roll","Refaire un jet de caractéristique")).getId();
+var VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS_DESC = (new L("VENT_REPETIR_UNA_TIRADA_DE_CARACTERISTICAS_DESC","Te permite lanzar un dado adicional una vez que has generado las características de tu personaje, y utilizar el resultado obtenido en lugar de uno de los anteriores. La nueva cifra no podrá ser inferior al valor de tu tirada más baja.","Players may roll one additional die once they have generated Characteristics and use the result in place of one of their previous rolls. The new number cannot be less then the character's lowest roll","Une fois toutes les caractéristiques générées, lancer un dé supplémentaire et utiliser le résultat à la place d'un des précédents. Si le nouveau est inférieur, relancer le dé. Limite : Incompatible avec la méthode 4 de génération. Spécial : On peut prend cet avantage plusieurs fois.")).getId();
+var VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA = (new L("VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA","Sumar un punto a una característica","Add One Point to a Characteristic","Rajouter un point à une caractéristique")).getId();
+var VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA_DESC = (new L("VENT_SUMAR_UN_PUNTO_A_UNA_CARACTERISTICA_DESC","Añade un punto al valor de una característica.","Add a pout the the value of a single Characteristic","Augmente d'un point une caractéristique au choix. Limite : Les caractéristiques physiques ne peuvent pas dépasser 11 avec cet avantage. Spécial : on peut prend cet avantage plusieurs fois.")).getId();
+var VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE = (new L("VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE","Sustituir una característica por un nueve","Increase One Characteristic to Nine","Monter une caractéristique à neuf")).getId();
+var VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE_DESC = (new L("VENT_SUSTITUIR_UNA_CARACTERISTICA_POR_UN_NUEVE_DESC","Sustituye una característica por un nueve sin importar cuál fuese su valor original.","Substitute one Characteristic's value for a 9, no matter what its original value was","La caractéristique choisie est montée à 9. Spécial : on peut prendre cet avantage plusieurs fois.")).getId();
+var VENT_RESISTENCIA_FISICA_EXCEPCIONAL = (new L("VENT_RESISTENCIA_FISICA_EXCEPCIONAL","Resistencia física excepcional","Exceptional Physical Resistance","Résistance Physique exceptionnelle")).getId();
+var VENT_RESISTENCIA_FISICA_EXCEPCIONAL_DESC = (new L("VENT_RESISTENCIA_FISICA_EXCEPCIONAL_DESC","Añade un bonificador especial de +25 a la Resistencia física (RF), Resistencia contra venenos (RV) y Resistencia contra enfermedades (RE). La inversión de un segundo punto de creación aumenta el nivel de las Resistencias a +50.","Add a special bonus of +25 to Physical Resistance(PhR), Venom Resistance(VR) and Disease Resistance(DR). Spending a second Creation Point increases the bonus to +50","Bonus de +25 à la Résistance Physique (RPhy), Résistance aux maladies (RMal) et la Résistance aux poisons (RPoi). +50 pour 2 points.")).getId();
+var VENT_RESISTENCIA_MAGICA_EXCEPCIONAL = (new L("VENT_RESISTENCIA_MAGICA_EXCEPCIONAL","Resistencia mágica excepcional","Exceptional Magic Resistance","Résistance Mystique exceptionnelle")).getId();
+var VENT_RESISTENCIA_MAGICA_EXCEPCIONAL_DESC = (new L("VENT_RESISTENCIA_MAGICA_EXCEPCIONAL_DESC","Añade un bonificador especial de +25 a la Resistencia mágica (RM). La inversión de un segundo punto de creación aumenta el nivel de la Resistencia a +50.","Add a special bonus of +25 to Magic Resistance (MR). Spending a second point increases the bonus to +50","Bonus de +25 à la Résistance Mystique (RMys), +50 pour deux points")).getId();
+var VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL = (new L("VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL","Resistencia psíquica excepcional","Exceptional Psychic Resistance","Résistance Psychique exceptionnelle")).getId();
+var VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL_DESC = (new L("VENT_RESISTENCIA_PSIQUICA_EXCEPCIONAL_DESC","Esta ventaja añade un bonificador especial de +25 a la Resistencia mental (RP) del personaje. La inversión de un segundo punto de creación aumenta el nivel de la Resistencia a +50.","This Advantage adds a special bonus of +25 to a character's Psychic Resistance (PsR). Spending a second point increases the bonus to +50","Bonus de +25 à la Résistance Psychique (RPsy), +50 pour deux points")).getId();
+var VENT_FONDOS_INICIALES = (new L("VENT_FONDOS_INICIALES","Fondos iniciales","Starting Wealth","Biens de départ")).getId();
+var VENT_FONDOS_INICIALES_DESC = (new L("VENT_FONDOS_INICIALES_DESC","Esta ventaja proporciona una cantidad de dinero inicial o equipo valorado en 2.000 Escudos de Oro (MO), 5.000 o 10.000.","This Advantage provides starting money or equipment valued at 2,000 gold crowns (GC). Further points spent increase this amount to 5,000 and 10,000, respectively","Accorde une somme d'argent ou de l'équipement initial. 1PC = 2 000 écus d'or (PO), 2PC = 5 000 écus d'or, 3PC = 10 000 écus d'or. Condition : Le MJ peut décider de modifier ces sommes en fonction de sa campagne.")).getId();
+var VENT_AFINIDAD_ANIMAL = (new L("VENT_AFINIDAD_ANIMAL","Afinidad animal","Animal Affinity","Affinité avec les animaux")).getId();
+var VENT_AFINIDAD_ANIMAL_DESC = (new L("VENT_AFINIDAD_ANIMAL_DESC","El alcance de esta ventaja debe de ser interpretada por el Director de Juego.","The effects of this Advantage must be decided by the Game Master","A l'interprétation du MJ. Un animal entraîné attaquera toujours le personnage en dernier et en général après un avertissement et en lui laissant la possibilité de fuir.")).getId();
+var VENT_REGENERACION_BASICA = (new L("VENT_REGENERACION_BASICA","Regeneración básica","Regeneration: Basic","Régénération : Basique")).getId();
+var VENT_REGENERACION_BASICA_DESC = (new L("VENT_REGENERACION_BASICA_DESC","Aumenta dos niveles la Regeneración del personaje.","Increase the character's Regeneration by two levels","Bonus de +2 à la Régénération")).getId();
+var VENT_REGENERACION_AVANZADA = (new L("VENT_REGENERACION_AVANZADA","Regeneración avanzada","Regeneration: Advanced","Régénération : Avancée")).getId();
+var VENT_REGENERACION_AVANZADA_DESC = (new L("VENT_REGENERACION_AVANZADA_DESC","Aumenta cuatro niveles la Regeneración del personaje.","Increase the character's Regeneration by four levels","Bonus de +4 à la Régénération")).getId();
+var VENT_REGENERACION_MAYOR = (new L("VENT_REGENERACION_MAYOR","Regeneración mayor","Regeneration: Greater","Régénération : Majeure")).getId();
+var VENT_REGENERACION_MAYOR_DESC = (new L("VENT_REGENERACION_MAYOR_DESC","Aumenta seis niveles la Regeneración del personaje.","Increase the character's Regeneration by six levels","Bonus de +6 à la Régénération")).getId();
+var VENT_ENCANTO = (new L("VENT_ENCANTO","Encanto","Charm","Charme")).getId();
+var VENT_ENCANTO_DESC = (new L("VENT_ENCANTO_DESC","El alcance de esta ventaja debe de ser interpretada por el Director de Juego.","The effects of this Advantage must be decided by the Game Master","Selon interprétation du MJ.")).getId();
+var VENT_AMBIDESTRIA = (new L("VENT_AMBIDESTRIA","Ambidestria","Ambidextrous","Ambidextre")).getId();
+var VENT_AMBIDESTRIA_DESC = (new L("VENT_AMBIDESTRIA_DESC","Un personaje ambidiestro podrá efectuar maniobras con cualquier mano con idéntica habilidad. En combate, permite reducir a –10 los ataques efectuados con un arma adicional.","An ambidextrous character can perform manoeuvres with either hand. In combat, they suffer only -10 to attacks with an additional weapon","Peut effectuer les manœuvres avec n'importe quelle main. Réduit de -10 les malus des attaques avec une arme supplémentaire.")).getId();
+var VENT_VISION_NOCTURNA = (new L("VENT_VISION_NOCTURNA","Visión nocturna","Night Vision","Vision nocturne")).getId();
+var VENT_VISION_NOCTURNA_DESC = (new L("VENT_VISION_NOCTURNA_DESC","Permite ignorar cualquier penalizador causado por la oscuridad, siempre que no se trate de un lugar con carencia absoluta de luz o algún tipo de oscuridad mágica, en cuyo caso, sólo quedan reducidos a la mitad.","The character may ignore any penalty caused by the dark - except for magically induced dark or absolute lack of light, in which case the penalty is reduced by half","Ignorer tout malus provoqué par l'obscurité non magique ou non totale. En cas d'obscurité totale (aucune source de lumière) les malus sont réduits de moitié.")).getId();
+var VENT_BUENA_SUERTE = (new L("VENT_BUENA_SUERTE","Buena suerte","Good Luck","Chance")).getId();
+var VENT_BUENA_SUERTE_DESC = (new L("VENT_BUENA_SUERTE_DESC","Se reduce un punto la cifra requerida para pifiar. En circunstancias normales el personaje pifiará con un 2. Si alcanza la maestría en una habilidad, sólo pifiará con un 1.","The required number to fumble is reduced by 1. In normal circumstances, therefore, the character will only fumble on a roll of 2. If a character with this Advantage attains mastery in any ability, he will fumble only on a 1 when using it.","Ne provoque une Maladresse que sur un 1 ou un 2. Pour une compétence maîtrisée, la Maladresse ne sera que sur un 1.")).getId();
+var VENT_INQUIETANTE = (new L("VENT_INQUIETANTE","Inquietante","Disquieting","Inquiétant")).getId();
+var VENT_INQUIETANTE_DESC = (new L("VENT_INQUIETANTE_DESC","El personaje puede resultar inquietante si lo desea. El alcance de esta ventaja debe de ser interpretado por el Director de Juego.","The limits of this advantage must be decided by the Game Master","A déterminer par le MJ en fonction de la situation. Le personnage peut se montrer inquiétant quand il le désire.")).getId();
+var VENT_APTO_EN_UN_CAMPO = (new L("VENT_APTO_EN_UN_CAMPO","Apto en un campo","Aptitude in a Field","Apte dans un champ de compétences")).getId();
+var VENT_APTO_EN_UN_CAMPO_DESC = (new L("VENT_APTO_EN_UN_CAMPO_DESC","El coste de desarrollo de habilidades secundarias de ese campo se reduce en un punto. Si se da el caso de que la categoría del personaje posee una habilidad secundaria concreta dentro de dicho campo con un coste inferior al del resto de habilidades, este valor también se reducirá.","The Development Cost for a field of Secondary Abilities is reduced by 1 point. If the character's class offers a Secondary Ability within this field at a reduced cost, the benefits of this Advantage apply in addition to the class benefit","Réduit le coût de toutes les compétences d'un champ secondaire de 1 point. Si la classe du personnage a une compétence de champ dont le coût est inférieur au reste, le coût est réduit également. Limite : Concerne uniquement les compétences secondaires, ne peut pas descendre le coût en dessous de 1.")).getId();
+var VENT_APTO_EN_UNA_MATERIA = (new L("VENT_APTO_EN_UNA_MATERIA","Apto en una materia","Aptitude in a Subject","Apte dans une compétence")).getId();
+var VENT_APTO_EN_UNA_MATERIA_DESC = (new L("VENT_APTO_EN_UNA_MATERIA_DESC","Esta ventaja reduce un punto el coste de desarrollo de una habilidad secundaria por cada Punto de Creación que se invierta.","This advantage reduces the Development Cost of a single Secondary ability for each Creation Point spent","Réduit le coût d'une compétence d'autant que de PC dépensés. Limite : Concerne uniquement les compétences secondaires, ne peut pas descendre le coût en dessous de 1.")).getId();
+var VENT_SENTIDOS_AGUDOS = (new L("VENT_SENTIDOS_AGUDOS","Sentidos agudos","Acute Senses","Sens aiguisés")).getId();
+var VENT_SENTIDOS_AGUDOS_DESC = (new L("VENT_SENTIDOS_AGUDOS_DESC","Añade un punto a la Percepción del personaje a la hora de realizar controles de características y un bonificador especial de +50 a sus habilidades secundarias de Advertir y Buscar.","This advantage adds 1 point to the character's Perception when making Characteristic Checks. It also adds a special bonus of +30 to Notice and Search","Ajoute 1 point à la Perception lors des tests physiques. Rajoute +50 aux compétences de Vigilance et d'Observation.")).getId();
+var VENT_APRENDIZAJE_INNATO = (new L("VENT_APRENDIZAJE_INNATO","Aprendizaje innato","Natural Learner","Apprentissage inné")).getId();
+var VENT_APRENDIZAJE_INNATO_DESC = (new L("VENT_APRENDIZAJE_INNATO_DESC","Otorga un bono de categoría de +10 por nivel en una habilidad secundaria. Este bono se suma a cualquier otro bonificador innato que pudiera obtener el personaje gracias a su categoría. La inversión de un punto adicional aumenta el bono a +20.","Grants a character an innate special modifier of +10 per level in a single Secondary Ability. Add this modifier to any other innate class-based bonus the character receives. Spending additional point increases the bonus to +20 and +30, respectively","Accorde un bonus automatique à une compétence secondaire. 1PC = +10 par niveau, 2PC = +20 par niveau, 3PC = +30 par niveau.")).getId();
+var VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO = (new L("VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO","Aprendizaje innato en un campo","Natural Learner, Field","Apprentissage inné dans un champ de compétences")).getId();
+var VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO_DESC = (new L("VENT_APRENDIZAJE_INNATO_EN_UN_CAMPO_DESC","Otorga un bono de categoría de +5 o +10 por nivel a todas las habilidades de un campo. Estos bonificadores se suman a cualquier otro bono innato que pudiera obtener el personaje por su categoría.","Grants a special +5 per level bonus to all the Secondary Abilities in a field. Add this bonus to any other innate class-based bonus the character receives. Spending an additional point increases this bonus to +10","Accorde un bonus automatique à toutes les compétences d'un champ secondaire. 2PC = +5 par niveau, 3PC = +10 par niveau")).getId();
+var VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS = (new L("VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS","Conocedor de todas las materias","Jack of All Trades","Homme à tout faire")).getId();
+var VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS_DESC = (new L("VENT_CONOCEDOR_DE_TODAS_LAS_MATERIAS_DESC","El personaje no aplica nunca el penalizador de –30 por no haber invertido PD en una habilidad secundaria y tiene un bonificador natural de 10 en todas sus habilidades secundarias, que se suma directamente al bono que le otorgue su característica.","The character never applies the -30 penalty for not spending DP in a Secondary ability, and they also receive a special bonus of +10 in all their Secondary Abilities","Plutôt que d'avoir une base de -30, le personnage a une base de 0 dans les compétences pour lesquelles il n'a pas investit de PF. Il bénéficie également d'un bonus de +10 dans toutes ses compétences secondaires.")).getId();
+var VENT_SUEÑO_LIGERO = (new L("VENT_SUEÑO_LIGERO","Sueño ligero","Light Sleeper","Sommeil léger")).getId();
+var VENT_SUEÑO_LIGERO_DESC = (new L("VENT_SUEÑO_LIGERO_DESC","El personaje sólo aplica un penalizador de –20 a su habilidad de Advertir mientras duerme.","The character ply applies a -20 to their Notice ability while sleeping","Applique uniquement un malus -20 à sa compétence de Vigilance quand il dort.")).getId();
+var VENT_REFLEJOS_RAPIDOS = (new L("VENT_REFLEJOS_RAPIDOS","Reflejos rápidos","Quick Reflexes","Réflexes rapides")).getId();
+var VENT_REFLEJOS_RAPIDOS_DESC = (new L("VENT_REFLEJOS_RAPIDOS_DESC","Otorga un bonificador especial de +25 al turno. Los Puntos de Creación adicionales aumentarán el bono a +45 y a +60 respectivamente.","Grants a special bonus of +25 to a character's Initiative score. Spending additional Creation Points increases the bonus to +45 and +60 respectively","Accorde un bonus spécial à l'initiative. 1PC = +25, 2PC = +45, 3PC = +60.")).getId();
+var VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO = (new L("VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO","Inmunidad al dolor y al cansancio","Immunity to Pain and Fatigue","Immunité à la douleur et à la fatigue")).getId();
+var VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO_DESC = (new L("VENT_INMUNIDAD_AL_DOLOR_Y_AL_CANSANCIO_DESC","Los penalizadores provocados por el dolor y el Cansancio se reducen a la mitad.","Penalties cause by pain and Fatigue are reduced by half","Les malus que provoquent la douleur ou à la Fatigue sont réduits de moitié")).getId();
+var VENT_AFORTUNADO = (new L("VENT_AFORTUNADO","Afortunado","Fortunate","Bonne fortune")).getId();
+var VENT_AFORTUNADO_DESC = (new L("VENT_AFORTUNADO_DESC","El alcance de esta ventaja debe de ser interpretada por el Director de Juego. En cualquier caso, nunca sufrirá los efectos negativos de una trampa o de un ataque que se determinen mediante el azar.","The limits of this Advantage must be determined by the Game Master. In any case, the character will never suffer the negative effects of a trap or an attack determined solely by chance","Selon interprétation du MJ. Ne subit toutefois jamais les effets négatifs d'un piège ou d'une attaque réussie par hasard.")).getId();
+var VENT_ARMADURA_NATURAL = (new L("VENT_ARMADURA_NATURAL","Armadura natural","Natural Armor","Armure naturelle")).getId();
+var VENT_ARMADURA_NATURAL_DESC = (new L("VENT_ARMADURA_NATURAL_DESC","Otorga un Tipo de Armadura natural de 2 contra todas las clases de ataques salvo las de energía. Aunque cuenta como una protección, no se aplican penalizadores al turno por emplear capas de armaduras adicionales.","Grants natural armour of 2 against all classes of attacks except energy-based ones. Although it counts as armour, penalties are not applied for using additional armor layers","Accorde une protection naturelle IP 2 contre tous les modes sauf Energie. Compte comme une couche d'armure mais ne donne pas de malus si cumulé avec d'autres armures.")).getId();
+var VENT_ARMADURA_MISTICA = (new L("VENT_ARMADURA_MISTICA","Armadura mística","Mystical Armor","Armure mystique")).getId();
+var VENT_ARMADURA_MISTICA_DESC = (new L("VENT_ARMADURA_MISTICA_DESC","Otorga un Tipo de Armadura natural de 4 contra los ataques basados en Energía. Aunque cuenta como una armadura, no se aplican penalizadores al turno por emplear capas de protección adicionales.","Grants a character a natural armour of 4 against energy-based attacks. Although it counts as armour, penalties are not applied for using additional armour layers","Accorde une protection IP 4 contre le Mode Energie. Compte comme une couche d'armure mais ne donne pas de malus si cumulé avec d'autres armures.")).getId();
+var VENT_ARTEFACTO = (new L("VENT_ARTEFACTO","Artefacto","Artifact","Artefact")).getId();
+var VENT_ARTEFACTO_DESC = (new L("VENT_ARTEFACTO_DESC","El jugador y el Director de Juego deberán ponerse de acuerdo con las habilidades del artefacto. Los puntos invertidos adicionalmente aumentan teóricamente las capacidades del objeto.","The player and the Game Master must agree on the abilities of the device. Spending additional points increases the capabilities of the object","A déterminer avec le MJ pour la création d'un artefact selon l'importance des PC dépensés. (Voir Prometheum Exxet page 6).")).getId();
+var VENT_MAESTRO_MARCIAL = (new L("VENT_MAESTRO_MARCIAL","Maestro marcial","Martial Mastery","Maître martial")).getId();
+var VENT_MAESTRO_MARCIAL_DESC = (new L("VENT_MAESTRO_MARCIAL_DESC","Añade 40 puntos al Conocimiento Marcial base. Los Puntos de Creación adicionales aumentan el añadido a 80 y 120 puntos respectivamente.","Adds 40 points to character's Martial Knowledge (MK). Additional Creation Points increase this amount to 80 and 120 points, respectively","Ajout des DI supplémentaires. 1PC = 40 DI, 2PC = 80 DI, 3PC = 120 DI.")).getId();
+var VENT_INFATIGABLE = (new L("VENT_INFATIGABLE","Infatigable","Untiring","Infatigable")).getId();
+var VENT_INFATIGABLE_DESC = (new L("VENT_INFATIGABLE_DESC","Aumenta tres puntos el Cansancio del personaje. Los Puntos de Creación adicionales lo incrementan seis y nueve puntos respectivamente.","A player can add 3 points to their character's fatigue. Spending additional Creation Points adds 6 and 9 points respectively.","Augmente la Fatigue. 1PC = +3 points, 2PC = +6 points, 3PC = +9 points.")).getId();
+var VENT_VER_LO_SOBRENATURAL = (new L("VENT_VER_LO_SOBRENATURAL","Ver lo sobrenatural","See Supernatural","Voir le surnaturel")).getId();
+var VENT_VER_LO_SOBRENATURAL_DESC = (new L("VENT_VER_LO_SOBRENATURAL_DESC","El personaje ve lo sobrenatural, tanto magia y matrices psíquicas como criaturas espirituales. Por tanto, no aplica el penalizador de cegado en ninguna de dichas situaciones.","The character sees supernatural things - including magic and psychic matrices - as spiritual creatures. He does not apply the blinded penalty in any of these situations","Permet de voir aussi bien la magie, que les matrices psychiques et les créatures animiques.")).getId();
+var VENT_SENTIDO_DEL_PELIGRO = (new L("VENT_SENTIDO_DEL_PELIGRO","Sentido del peligro","Danger Sense","Sens du danger")).getId();
+var VENT_SENTIDO_DEL_PELIGRO_DESC = (new L("VENT_SENTIDO_DEL_PELIGRO_DESC","El personaje no puede ser cogido por sorpresa, salvo por una diferencia de 150 en turno contra su adversario.","The character cannot be taken by surprise, unless their opponent's Initiative score in 150 points or more higher than theirs.","Accorde également la capacité de ne pas pouvoir être pris par surprise sauf avec une différence d'initiative de 150 en faveur de son adversaire.")).getId();
+var VENT_CURTIDO = (new L("VENT_CURTIDO","Curtido","Been Around","Chevronné")).getId();
+var VENT_CURTIDO_DESC = (new L("VENT_CURTIDO_DESC","El personaje comienza con 50 puntos de experiencia añadidos. Los Puntos de Creación adicionales aumentan los puntos de experiencia iniciales a 100 y a 150, respectivamente. Este aumento permite subir de nivel de modo convencional si se alcanzan los puntos de experiencia necesarios.","The character begins the game with 50, 100 or 150 additional Experience Points, depending on the Creation Points spent. This constitutes a conventional rise in level if the necessary point total is reached","Permet de commencer avec un certain nombre de points d'expérience, ce qui peut augmenter le niveau initial du personnage. 1PC = 50 points, 2PC = 100 points, 3PC =150 points.")).getId();
+var VENT_RECUPERACION_DE_KI = (new L("VENT_RECUPERACION_DE_KI","Recuperación de Ki","Ki Recovery","Récupération du Ki")).getId();
+var VENT_RECUPERACION_DE_KI_DESC = (new L("VENT_RECUPERACION_DE_KI_DESC","El personaje recupera un punto de Ki por característica cada diez minutos, en lugar de uno por hora. La inversión de puntos adicionales disminuye el tiempo a cinco y un minuto respectivamente.","The character recovers 1 point of Ki every ten minutes, instead of every hour. Spending additional Creation Points decreases the recovery time to five minutes and one minute, respectively","1PC = 1 point Ki / carac toutes les 10 minutes, 2PC = 1 point Ki / carac toutes les 5 minutes, 3PC = 1 point Ki / carac toutes les minutes.")).getId();
+var VENT_ELAN = (new L("VENT_ELAN","Elan","Elan","Elan")).getId();
+var VENT_ELAN_DESC = (new L("VENT_ELAN_DESC","El personaje tiene Elan de 20 de la entidad que elija. La inversión de puntos adicionales aumenta su nivel a 40 y 50 respectivamente.","The character has Elan 20 for the entity they choose. Spending additional points increases the level to 40 and 50, respectively","Donne une certaine quantité d'Elan vis-à-vis d'une entité précise, 1PC = 20, 2PC = 40, 3PC = 50.")).getId();
+var VENT_APRENDIZAJE = (new L("VENT_APRENDIZAJE","Aprendizaje","Learning","Apprentissage")).getId();
+var VENT_APRENDIZAJE_DESC = (new L("VENT_APRENDIZAJE_DESC","Obtiene un beneficio adicional de 3 puntos de experiencia a la cantidad que le otorgue el Director de Juego al finalizar cada sesión de juego. Los Puntos de Creación adicionales aumentan el beneficio a 6 y 9 puntos respectivamente.","Characters gain an additional 3 Experience points when the Game Master grants points at the end of each game session. Spending additional Creation Points increases the benefit to 6 and 9 points, respectively","A la fin de chaque session de jeu, donne un bonus aux points d'expérience. 1PC = +3 points, 2PC = +6 points, 3PC = +9 points.")).getId();
+var VENT_DIFICIL_DE_MATAR = (new L("VENT_DIFICIL_DE_MATAR","Difícil de matar","Hard to Kill","Grande vitalité")).getId();
+var VENT_DIFICIL_DE_MATAR_DESC = (new L("VENT_DIFICIL_DE_MATAR_DESC","Obtiene un bonificador de +10, +20 o +30 pv por nivel. También un +10, +20 o +30 a los controles de Resistencia de las reglas opcionales de Entre la vida y la muerte","This grants a special bonus of +10 per level to a character's Life Points. Spending additional Creation Points increases this bonus to +20 and +30, respectively. If the optional rules for Between Life and Death are used, this Advantage also grants a special bonus of +10 to those resistance checks (or +20 or +30 if additional Creation Points are spent","Bonus de points de vie par niveau qui s'ajoutent à ceux donnés par la classe. 1 PC = +10 PV par niveau, 2PC = +20 PV par niveau, 3 PC = +30 PV par niveau. Note : en cas d'utilisation de la règle optionnelle d'Entre la vie et la mort offre également un bonus de +10, + 20 ou +30 pour  les tests de Résistance.")).getId();
+var VENT_AL_LIMITE = (new L("VENT_AL_LIMITE","Al límite","To the Limit","Energie du désespoir")).getId();
+var VENT_AL_LIMITE_DESC = (new L("VENT_AL_LIMITE_DESC","Cuando los pv bajan por debajo de una cuarta parte del total, gana un bono +20 a toda acción.","When a character's Life Points are below a quarter of their total, they receive a +20 All Action Bonus","Bonus de +20 à toutes ses actions quand ses points de vie sont inférieurs à un quart de son total. Uniquement dans les situations de danger pour lui ou pour autrui.")).getId();
+var VENT_SIN_LIMITE_DE_FAMILIARES = (new L("VENT_SIN_LIMITE_DE_FAMILIARES","Sin límite de familiares","Unlimited Familiars","Sans limite de familiers")).getId();
+var VENT_SIN_LIMITE_DE_FAMILIARES_DESC = (new L("VENT_SIN_LIMITE_DE_FAMILIARES_DESC","Puede crear un lazo de familiar con tantas criaturas como desee.","The character is no longer limited in the number of familiars they may have bound to them","Plus limité à la possession d'un seul familier mais peut faire un lien avec autant de créatures que souhaité.")).getId();
+var VENT_SENTIDO_DEL_COMBATE = (new L("VENT_SENTIDO_DEL_COMBATE","Sentido del combate","Combat Senses","Sens du combat")).getId();
+var VENT_SENTIDO_DEL_COMBATE_DESC = (new L("VENT_SENTIDO_DEL_COMBATE_DESC","El personaje consigue un bono innato de +5 a ataque, parada o esquiva.","The character gains an innate +5 bonus to Attack, Dodge or Block, chosen when this Advantage is acquired","Donne à chaque niveau un bonus de +5 à l'une des trois compétences principales martiales : Attaque, Parade ou Esquive. Ce bonus s'ajoute à n'importe quel autre que pourrait donner la classe. Spécial : Le bonus est considéré comme un bonus automatique et donc ne peut pas dépasser les +50 en se cumulant avec les bonus de classe ou d'art martial.")).getId();
+var VENT_BONIFICADOR_NATURAL_INCREMENTADO = (new L("VENT_BONIFICADOR_NATURAL_INCREMENTADO","Bonificador natural incrementado","Increased Natural Bonus","Bonus naturel accru")).getId();
+var VENT_BONIFICADOR_NATURAL_INCREMENTADO_DESC = (new L("VENT_BONIFICADOR_NATURAL_INCREMENTADO_DESC","El personaje obtiene un bonificador natural adicional.","The character gets an additional natural bonus","Gagne un bonus naturel supplémentaire par niveau. Donc à chaque nouveau niveau, deux bonus naturels d'une même caractéristique peuvent être attribués à des compétences même différentes.")).getId();
+var VENT_USO_DE_ARMADURA = (new L("VENT_USO_DE_ARMADURA","Uso de armadura","Use of Armor","Utilisation d'armure")).getId();
+var VENT_USO_DE_ARMADURA_DESC = (new L("VENT_USO_DE_ARMADURA_DESC","El personaje consigue un bono innato de +5, +10 o +15 a llevar armadura.","The character gains an innate +5 per level bonus to Wear Armor. Spending additional Creation Points increases this to +10 and +15, respectively","Bonus automatique par niveau en Port d'armure et qui se cumule avec les bonus de classe. 1 PC = +5 par niveau, 2 PC = +10 par niveau, 3 PC = +15 par niveau.")).getId();
+var VENT_VERSATIL = (new L("VENT_VERSATIL","Versátil","Versatile","Polyvalent")).getId();
+var VENT_VERSATIL_DESC = (new L("VENT_VERSATIL_DESC","Al personaje le cuesta la mitad de PD cambiar de categoría y no tiene que esperar dos niveles.","The Development Point cost of changing class is halved","Réduit de moitié le coût en PF du changement de classe et n'a pas besoin d'attendre deux niveaux pour changer de classe tant que le passage du temps et la justification de l'apprentissage sont suffisants selon le MJ.")).getId();
+var VENT_SUPERVIVIENTE = (new L("VENT_SUPERVIVIENTE","Superviviente","Survivor","Survivant")).getId();
+var VENT_SUPERVIVIENTE_DESC = (new L("VENT_SUPERVIVIENTE_DESC","El personaje aguanta en puntos de vida negativa diez veces el valor de su CON, en lugar de sólo cinco. Además suma +40 a su RF para estabilizare. Al salir de entre la vida y la muerte, el negativo será sólo de -30. Si se usan las reglas opcionales de puntos de vida en negativos, el +40 es a los controles para resistir.","The character can withstand negative Life Points to to ten times their Constitution value, instead of five. Also apply a bonus of +40 to their Physical Resistance Check to attempt to stabilise themselves. Once out of the fine line between life and death, their All Action Penalty is only -30, instead of -60. If using the optional rules for negative Life Points, apply a +40 to the PhR checks","Supporte dix fois sa valeur de Constitution en points de vie négatifs au lieu de cinq fois. De plus, bonus de +40 aux tests de RPhy pour se stabiliser. Une fois sorti de l'état entre la vie et la mort, le malus est de -30 à toutes ses actions au lieu de -60. Note : en cas d'utilisation de la règle optionnelle d'Entre la vie et la mort, bonus de +40 aux tests de RPhy.")).getId();
+var VENT_TOCADO_POR_EL_DESTINO = (new L("VENT_TOCADO_POR_EL_DESTINO","Tocado por el destino","Touched by Destiny","Touché par le destin")).getId();
+var VENT_TOCADO_POR_EL_DESTINO_DESC = (new L("VENT_TOCADO_POR_EL_DESTINO_DESC","Una ocasión por partida, puede repetir una tirada y elegir el nuevo resultado. Puede adquirirse tantas veces como se quiera.","Once per game session, when performing and kind of check, the player can repeat one of their dice rolls and choose the best result","Une fois par partie, peut relancer n'importe quel jet de dés du personnage et choisir d'appliquer le nouveau résultat. Spécial : Peut être pris plusieurs fois.")).getId();
+var VENT_INMUNIDAD_PSIQUICA = (new L("VENT_INMUNIDAD_PSIQUICA","Inmunidad psíquica","Psychic Immunity","Immunité psychique")).getId();
+var VENT_INMUNIDAD_PSIQUICA_DESC = (new L("VENT_INMUNIDAD_PSIQUICA_DESC","Obtiene un +60 a todo control de Frialdad dedicado a mitigar sus estados emocionales. No es compatible con Fobia, Cobardía o Adicción Grave","The character receives a bonus of +60 to any Composure Check based on mitigating their emotional state","Bonus de +60 à tout test d'Impassibilité réaliser dans le but de calmer ses états émotionnels. Limite : Avantage incompatible avec les désavantages Phobie sévère, Couard et Addiction ou vice grave.")).getId();
+var VENT_HABILIDOSO = (new L("VENT_HABILIDOSO","Habilidoso","Talented","Adroit")).getId();
+var VENT_HABILIDOSO_DESC = (new L("VENT_HABILIDOSO_DESC","Obtiene un bono de +30 a Trucos de manos y puede aplicar un +3 a cualquier control enfrentado de DES.","The character adds a special bonus of +30 to Sleight of Hand, and can apply a +3 to any contested Dexterity Check","Bonus de +30 à la compétence Habilité manuelle. Bonus de +3 aux tests opposés de Dextérité.")).getId();
+var VENT_LIBRE_ALBEDRIO = (new L("VENT_LIBRE_ALBEDRIO","Libre albedrío","Free Will","Libre arbitre")).getId();
+var VENT_LIBRE_ALBEDRIO_DESC = (new L("VENT_LIBRE_ALBEDRIO_DESC","Obtiene un bono de +60 a todo control de Resistencia relacionado con posesión o dominación.","This grants a +60 to any Resistance Check related to possession or domination","Donne un bonus de +60 à tout test de Résistance en rapport avec la possession ou la domination.")).getId();
+var VENT_SEDUCTOR = (new L("VENT_SEDUCTOR","Seductor","Seducer","Séducteur")).getId();
+var VENT_SEDUCTOR_DESC = (new L("VENT_SEDUCTOR_DESC","Obtiene un bono de +60 en los controles de Persuasión relacionados con la seducción.","This grants a +60 bonus to Persuasion Checks related to seduction","Bonus de +60 aux tests de Persuasion dans tous les domaines liés à la séduction avec les membres du sexe opposé.")).getId();
+var VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA = (new L("VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA","Apto para el desarrollo de la magia","Aptitude for Magic Development","Grand potentiel magique")).getId();
+var VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA_DESC = (new L("VENT_APTO_PARA_EL_DESARROLLO_DE_LA_MAGIA_DESC","El personaje añade 3 puntos a su característica de Inteligencia para calcular la Inteligencia Requerida de los conjuros. Este bonificador no se aplica para ninguna otra habilidad, ni siquiera para calcular su nivel de magia.","A player can add 3 points to their character's Intelligence to determine the maximum potential of a spell","Augmente l'Intelligence de 3 points pour le calcul du niveau maximal du sort qu’il peut lancer.")).getId();
+var VENT_POTENCIAL_ENFRENTADO = (new L("VENT_POTENCIAL_ENFRENTADO","Potencial enfrentado","Contested Spell Mastery","Sorts renforcés")).getId();
+var VENT_POTENCIAL_ENFRENTADO_DESC = (new L("VENT_POTENCIAL_ENFRENTADO_DESC","El personaje aplica un bonificador de +50 a sus tiradas para calcular el resultado del choque de conjuros.","The character applies a +50 bonus to his roll to calculate the result of a Collision against another magic beam","Bonus de +50 pour calculer le résultat des chocs de sorts.")).getId();
+var VENT_RECUPERACION_SUPERIOR_DE_MAGIA = (new L("VENT_RECUPERACION_SUPERIOR_DE_MAGIA","Recuperación superior de magia","Superior Magic Recovery","Récupération de magie rapide")).getId();
+var VENT_RECUPERACION_SUPERIOR_DE_MAGIA_DESC = (new L("VENT_RECUPERACION_SUPERIOR_DE_MAGIA_DESC","El personaje recupera sus puntos de Zeon al doble de su regeneración zeónica. Los Puntos de Creación adicionales le permiten aumentarla al triple y al cuádruple de lo normal.","The character recovers Zeon at twice his normal rate. Spending additional Creation Points increases this to triple or quadruple the normal rate","Multiplie la vitesse de régénération Zéonique du personnage. 1PC = x2, 2PC = x3, 3PC = x4")).getId();
+var VENT_MAGIA_INNATA_MEJORADA = (new L("VENT_MAGIA_INNATA_MEJORADA","Magia innata mejorada","Improved Innate Magic","Magie innée améliorée")).getId();
+var VENT_MAGIA_INNATA_MEJORADA_DESC = (new L("VENT_MAGIA_INNATA_MEJORADA_DESC","Los conjuros innatos del brujo tienen un potencial de +10 a lo indicado por su ACT. Los Puntos de Creación adicionales aumentan el valor de los conjuros innatos a +20 y +30 respectivamente.","The character's potential for Innate spells is increased by 10. Additional Creation Points increase this to +20 or +30, respectively","La valeur des sorts que le personnage peut utiliser de façon innée augmente par rapport à son AMR. 1PC = +10, 2PC = +20, 3PC =+30.")).getId();
+var VENT_INUTILIDAD_SOMATICA = (new L("VENT_INUTILIDAD_SOMATICA","Inutilidad somática","Gestureless Casting","Dispense de gestes")).getId();
+var VENT_INUTILIDAD_SOMATICA_DESC = (new L("VENT_INUTILIDAD_SOMATICA_DESC","El personaje no reduce su ACT por no ser capaz de gesticular.","The character does not reduce their MA if unable to gesture","Le personnage ne réduit pas son AMR quand il ne peut pas faire de gestes ou quand il réalise toute autre action physique en même temps, y compris se battre.")).getId();
+var VENT_INUTILIDAD_ORAL = (new L("VENT_INUTILIDAD_ORAL","Inutilidad oral","Unspoken Casting","Dispense de paroles")).getId();
+var VENT_INUTILIDAD_ORAL_DESC = (new L("VENT_INUTILIDAD_ORAL_DESC","El personaje puede lanzar conjuros en completo silencio sin ver reducido su ACT.","The character can cast spells in complete silence without reducing their MA","Peut lancer des sorts en silence sans réduire son AMR.")).getId();
+var VENT_DESEQUILIBRIO_SEPHIROTICO = (new L("VENT_DESEQUILIBRIO_SEPHIROTICO","Desequilibrio sephirótico","Elemental Compatibility","Prédilection séphirotique")).getId();
+var VENT_DESEQUILIBRIO_SEPHIROTICO_DESC = (new L("VENT_DESEQUILIBRIO_SEPHIROTICO_DESC","El brujo dispone de un bono especial de +20 a su ACT y un +20 en su RM en las cinco vías mágicas de un segmento del árbol que elija. En el resto aplicará un penalizador de –20 a su ACT y un –20 a su RM. La nigromancia no está incluida en esta ventaja, al encontrarse fuera del árbol.","The character gain a +20 to their MA and their MR for the magical Path they choose. They also receive a -20 to their MA and MR for spells of the opposed Path. If the chosen Path is Necromancy apply the penalty to all other Paths","Bonus de +20 à son AMR pour les sorts des cinq voies d'un côté de l'arbre et de +20 à sa RMys contre les sorts des mêmes voies. Malus de -20 à son AMR et RMys pour les sorts des voies du côté opposé de l'arbre. Limite : La Nécromancie est exclue de cet avantage puisqu'elle se trouve hors de l'Arbre Séphirotique.")).getId();
+var VENT_CONOCIMIENTO_NATURAL_DE_VIA = (new L("VENT_CONOCIMIENTO_NATURAL_DE_VIA","Conocimiento natural de vía","Natural Knowledge of a Path","Connaissance innée d'une voie")).getId();
+var VENT_CONOCIMIENTO_NATURAL_DE_VIA_DESC = (new L("VENT_CONOCIMIENTO_NATURAL_DE_VIA_DESC","Esta ventaja otorga conocimientos innatos de una vía a nivel 40 sin invertir en ella puntos de nivel de magia. Al ser un conocimiento natural, el hechicero puede seguir desarrollandola a partir de nivel 40 gastando en ella nuevos puntos de nivel de magia.","This Advantage grants innate knowledge of a Path at level 40 without investing Magic Level points. As it is innate knowledge, the character can continue to develop it beyond 40 by spending Magic Level points","Accorde une connaissance innée d'une voie au niveau 40. Elle peut être ensuite développée de façon normale en dépensant des niveaux de magie. Spécial : On peut prendre cet avantage plusieurs fois pour des voies différentes.")).getId();
+var VENT_MAGIA_OPUESTA = (new L("VENT_MAGIA_OPUESTA","Magia opuesta","Opposite Magic","Magie opposée")).getId();
+var VENT_MAGIA_OPUESTA_DESC = (new L("VENT_MAGIA_OPUESTA_DESC","El personaje no dobla el coste de nivel de las vías opuestas.","The character does not double the Magic Level cost of opposed Paths.","Ne double pas les coûts pour apprendre des sorts dans une voie opposée à l'une déjà connue.")).getId();
+var VENT_NATURALEZA_MAGICA = (new L("VENT_NATURALEZA_MAGICA","Naturaleza mágica","Magic Nature","Nature magique")).getId();
+var VENT_NATURALEZA_MAGICA_DESC = (new L("VENT_NATURALEZA_MAGICA_DESC","Obtiene un bono innato de +50, +100 ó +150 puntos de Zeon por nivel.","The character gains a bonus of +50, +100 or +150 Zeon per level depending on the Creation Points invested","Bonus automatique par niveau aux points de Zéon. 1 PC = +50 Zéon par niveau, 2 PC = +100 Zéon par niveau, 3 PC = +150 Zéon par niveau.")).getId();
+var VENT_PODER_NATURAL = (new L("VENT_PODER_NATURAL","Poder natural","Natural Power","Pouvoir naturel")).getId();
+var VENT_PODER_NATURAL_DESC = (new L("VENT_PODER_NATURAL_DESC","Para calcular el potencial máximo de sus conjuros, el personaje utiliza su característica se Poder en lugar de su Inteligencia.","The character uses their Power Characteristic, instead of their Intelligence, for determining the maximum potential of spells they cast","Utilise le Pouvoir au lieu de l'Intelligence pour calculer le potentiel maximum des sorts mais pas le niveau de Voie")).getId();
+var VENT_DICCION_MAGICA = (new L("VENT_DICCION_MAGICA","Dicción mágica","Magical Diction","Diction magique")).getId();
+var VENT_DICCION_MAGICA_DESC = (new L("VENT_DICCION_MAGICA_DESC","No reduce el ACT al ejecutar conjuros inscritos en grimorios, pergaminos o libros, usando su potencial al máximo incluso si no es capaz de gesticular.","The character does not reduce their MA when casting spells from grimoires, scrolls or books","Ne réduit pas l'AMR quand on lance des sorts depuis un manuscrit, même s'il n'est pas capable de faire des gestes.")).getId();
+var VENT_CALIBRE = (new L("VENT_CALIBRE","Calibre","Focus","Viseur mental")).getId();
+var VENT_CALIBRE_DESC = (new L("VENT_CALIBRE_DESC","Los CV invertidos para mejorar la Proyección Psíquica aumentarán su habilidad en +20 en lugar de +10.","Psychic Points spent to increase Psychic Projection increase it by +20, instead of +10","Chaque PPP libre dépensé pour améliorer la projection psychique donne un bonus de +20 au lieu de +10.")).getId();
+var VENT_CONCENTRACION_EXTREMA = (new L("VENT_CONCENTRACION_EXTREMA","Concentración extrema","Extreme Concentration","Concentration intense")).getId();
+var VENT_CONCENTRACION_EXTREMA_DESC = (new L("VENT_CONCENTRACION_EXTREMA_DESC","El psíquico dobla el bono que le reporta la concentración a su potencial. Por ejemplo, si se concentra un asalto completo obtiene un +20 en lugar de un +10.","The character doubles the bonus they normally receive from concentration","Le Psy double le bonus au Talent psychique que lui rapporte la concentration.")).getId();
+var VENT_MANTENIMIENTO_AÑADIDO = (new L("VENT_MANTENIMIENTO_AÑADIDO","Mantenimiento añadido","Amplify Sustained Power","Attache psychique renforcée")).getId();
+var VENT_MANTENIMIENTO_AÑADIDO_DESC = (new L("VENT_MANTENIMIENTO_AÑADIDO_DESC","Los poderes mantenidos innatamente se hallan un nivel de dificultad por encima de lo que le permite su potencial psíquico.","Any Powers maintained in this way are one difficulty higher than what the character could normally sustain","Le personnage peut maintenir ses pouvoirs attachés à un niveau de difficulté au-dessus de ce qu'indique son Talent Psychique. Limite : ne se cumule pas avec les bonus gagné en dépensant des PPP libres pour renforcer une attache.")).getId();
+var VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA = (new L("VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA","Resistencia a la fatiga psíquica","Psychic Fatigue Resistance","Résistance à la fatigue psychique")).getId();
+var VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA_DESC = (new L("VENT_RESISTENCIA_A_LA_FATIGA_PSIQUICA_DESC","Si el psíquico obtiene un fracaso en el uso de uno de sus poderes, no pierde puntos de Cansancio una vez que se ha quedado sin CVs libres por gastar. Los poderes de tercer nivel no son afectados por esta ventaja.","The character does not lose Fatigue due to failures in using Powers. Free PP and level 3 Powers are not affected by this Advantage","Pas de pertes de fatigue si le Psy échoue à utiliser un de ses pouvoirs, même s'il n'a plus de PPP libres à dépenser. Limite : Cet avantage n'a aucun effet sur les pouvoirs de niveau 3.")).getId();
+var VENT_RECUPERACION_DE_CVS = (new L("VENT_RECUPERACION_DE_CVS","Recuperación de CVs","Psychic Point Recovery","Récupération rapide des PPP")).getId();
+var VENT_RECUPERACION_DE_CVS_DESC = (new L("VENT_RECUPERACION_DE_CVS_DESC","El índice de recuperación de CVs libres es de un punto por cada diez minutos transcurridos. La inversión de Puntos de Creación adicionales lo acrecienta a uno cada cinco o un minuto respectivamente.","The character Psychic Point recovery rate is increased to one points every ten minutes. Spending additional Creation Points increases the rate to one points every five minutes or one minute, respectively","Augmente la vitesse de récupération des PPP libres, normalement 1 par heure. 1PC = 1 par 10 minutes, 2PC = 1 par 5 minutes, 3PC = 1 par minute.")).getId();
+var VENT_DESEQUILIBRIO_PSIQUICO = (new L("VENT_DESEQUILIBRIO_PSIQUICO","Desequilibrio psíquico","Psychic Inclination","Préférence psychique")).getId();
+var VENT_DESEQUILIBRIO_PSIQUICO_DESC = (new L("VENT_DESEQUILIBRIO_PSIQUICO_DESC","El psíquico obtiene automáticamente un nivel de dificultad superior al que ha obtenido con su potencial al utilizar los poderes de una disciplina determinada.","The character automatically gains one level of difficulty greater than normal when activating power of a specific discipline","Quand il utilise un pouvoir de la discipline choisie, le personnage atteint le niveau de difficulté au-dessus de celui qu'il a obtenu grâce à son Talent psychique.")).getId();
+var VENT_CONCENTRACION_PASIVA = (new L("VENT_CONCENTRACION_PASIVA","Concentración pasiva","Passive Concentration","Concentration passive")).getId();
+var VENT_CONCENTRACION_PASIVA_DESC = (new L("VENT_CONCENTRACION_PASIVA_DESC","El psíquico puede concentrarse para potenciar un poder incluso mientras ejecuta acciones activas.","The character can concentrate to harness a power even while executing active actions.","Le Psy peut se concentrer même s'il réalise des actions actives.")).getId();
+var VENT_AMBIVALENCIA_PSIQUICA = (new L("VENT_AMBIVALENCIA_PSIQUICA","Ambivalencia psíquica","Psychic Ambivalence","Ambivalence psychique")).getId();
+var VENT_AMBIVALENCIA_PSIQUICA_DESC = (new L("VENT_AMBIVALENCIA_PSIQUICA_DESC","Al dividir el potencial psíquico para realizar más de un poder por asalto, obtiene un bono especial acumulativo de +5 por cada poder que declare.","When the character divides up their Psychic potential in order to use more than one power per turn, they gain a cumulative bonus of +5 for each power that is declared","Quand le personnage divise son Talent psychique pour utiliser plusieurs pouvoirs dans un même round, il gagne sur chaque pouvoir un bonus cumulatif de +5 par pouvoir déclaré.")).getId();
+var VENT_MODIFICADOR_PSIQUICO_INCREMENTADO = (new L("VENT_MODIFICADOR_PSIQUICO_INCREMENTADO","Modificador psíquico incrementado","Increase Psychic Modifiers","Modificateur psychique accru")).getId();
+var VENT_MODIFICADOR_PSIQUICO_INCREMENTADO_DESC = (new L("VENT_MODIFICADOR_PSIQUICO_INCREMENTADO_DESC","El personaje dobla cualquier modificador natural que tenga la disciplina psíquica que usa. Los negativos también son incrementados.","The character double any natural modifier that their psychic discipline uses. Any negative modifiers are also increased","Double tous les modificateurs naturels que possède la discipline psychique utilisée. Valable aussi bien sur les bonus que les malus.")).getId();
+var VENT_TAMAÑO_NO_NATURAL = (new L("VENT_TAMAÑO_NO_NATURAL","Tamaño no natural","Uncommon Size","Taille inhabituelle")).getId();
+var VENT_TAMAÑO_NO_NATURAL_DESC = (new L("VENT_TAMAÑO_NO_NATURAL_DESC","El personaje puede aumentar o disminuir hasta cinco puntos su Tamaño en el momento de su creación.","The player can increase or decrease their character's Size by up to 5 points during character creation","Permet d'augmenter ou de diminuer de 5 points maximum la taille du personnage à la création.")).getId();
+var VENT_INMUNIDAD_SOBRENATURAL = (new L("VENT_INMUNIDAD_SOBRENATURAL","Inmunidad sobrenatural","Supernatural Immunity","Immunité surnaturelle")).getId();
+var VENT_INMUNIDAD_SOBRENATURAL_DESC = (new L("VENT_INMUNIDAD_SOBRENATURAL_DESC","Ignora los conjuros de valor zeónico 60, 90 o 120 o inferiores, y supera cualquier RM de efecto místico no mayor de 80, 100 o 120. No puede acceder al Don o Ver lo Sobrenatural, y no puede esta ventaja ser comprada por Sylvain, Duk'zarist o Daimah","A character with this advantage automatically ignores any spell cast on them with a Zeonic value of 60/90/100 or less, and mystical effects that cause Magic Resistance checks of 80/100/120 or less. The numbers are for 1, 2 and 3 Creation points respectively. This Advantage only avoids direct effects, not those caused by the spells or abilities affecting other objects.","En fonction du nombre de PC, ignore tout sort de la valeur Zéonique indiquée et résiste à tout effet mystique qui nécessite de tirer contre une RMys de la valeur indiquée. 1 PC = 60 Zéons ou 80 RMys, 2 PC = 90 Zéons ou 100 RMys, 3 PC = 120 Zéons et 120 RMys. Limite : Incompatible avec les avantages Don Mystique et Voir le surnaturel. Impossible également pour les Nephilim Sylvain, Duk'zarist ou Daimah.")).getId();
+var VENT_DESEQUILIBRIO_ELEMENTAL = (new L("VENT_DESEQUILIBRIO_ELEMENTAL","Desequilibrio elemental","Elemental Compatibility","Prédilection élémentaire")).getId();
+var VENT_DESEQUILIBRIO_ELEMENTAL_DESC = (new L("VENT_DESEQUILIBRIO_ELEMENTAL_DESC","El personaje dispone de un bono especial de +20 a su ACT y un +20 a su RM en la vía mágica que elija. Cuando utilice conjuros de la vía opuesta, aplicará un penalizador de –20 a su ACT y un –20 a su RM. Si la vía elegida es la nigromancia, el penalizador se aplicará a todas las demás.","El personaje dispone de un bono especial de +20 a su ACT y un +20 a su RM en la vía mágica que elija. Cuando utilice conjuros de la vía opuesta, aplicará un penalizador de –20 a su ACT y un –20 a su RM. Si la vía elegida es la nigromancia, el penalizador se aplicará a todas las demás.","Bonus de +20 à son AMR pour les sorts de sa voie et de +20 à sa RMys contre les sorts de sa voie. Malus de -20 à son AMR et RMys pour les sorts de la voie opposée. Si la voie choisie est la Nécromancie, toutes les autres voies sont opposées.")).getId();
+var VENT_FAMA = (new L("VENT_FAMA","Fama","Fama","Réputation")).getId();
+var VENT_FAMA_DESC = (new L("VENT_FAMA_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo. El jugador debe determinar la causa de la fama de su personaje en el momento de su creación. Esta ventaja otorga 40 ó 65 puntos de fama, dependiendo de los PC que invierta.","Los efectos de esta ventaja se aplican únicamente al plano interpretativo. El jugador debe determinar la causa de la fama de su personaje en el momento de su creación. Esta ventaja otorga 40 ó 65 puntos de fama, dependiendo de los PC que invierta.","A l'interprétation du MJ, le joueur devrait fournir les raisons de sa renommée. Note : Si les règles optionnelles de Réputation sont utilisées, donne un bonus en points de réputation. 1 PC = 40 points, 2 PC = 65 points")).getId();
+var VENT_RAICES_CULTURALES = (new L("VENT_RAICES_CULTURALES","Raíces culturales","Raíces culturales","Racines culturelles")).getId();
+var VENT_RAICES_CULTURALES_DESC = (new L("VENT_RAICES_CULTURALES_DESC","Esta ventaja otorga un bono especial a varias habilidades secundarias, atendiendo a la posición social y al país de origen del personaje.","Esta ventaja otorga un bono especial a varias habilidades secundarias, atendiendo a la posición social y al país de origen del personaje.","Donne un bonus à plusieurs compétences en fonction du pays d'origine et de la position sociale du personnage. Voir les descriptions dans Gaïa.")).getId();
+var VENT_SANTO = (new L("VENT_SANTO","Santo","Santo","Saint")).getId();
+var VENT_SANTO_DESC = (new L("VENT_SANTO_DESC","Los efectos de esta ventaja son únicamente a nivel interpretativo.","Los efectos de esta ventaja son únicamente a nivel interpretativo.","A l'interprétation du MJ. Limite : Doit être doté d'un quelconque pouvoir surnaturel pour pouvoir prendre cet avantage.")).getId();
+var VENT_POSICION_SOCIAL = (new L("VENT_POSICION_SOCIAL","Posición social","Posición social","Position sociale")).getId();
+var VENT_POSICION_SOCIAL_DESC = (new L("VENT_POSICION_SOCIAL_DESC","Además de sus efectos en el plano interpretativo, esta ventaja otorga al personaje acceso a las clases reservadas de cada principado, sin la necesidad de que realice ninguna tirada de dados. Su valor en Puntos de Creación depende, consecuentemente, del nivel de dichas clases.","Además de sus efectos en el plano interpretativo, esta ventaja otorga al personaje acceso a las clases reservadas de cada principado, sin la necesidad de que realice ninguna tirada de dados. Su valor en Puntos de Creación depende, consecuentemente, del nivel de dichas clases.","Permet d'accéder aux classes sociales réservées de chaque principauté. Voir les descriptions dans Gaïa.")).getId();
+var VENT_CONTACTOS = (new L("VENT_CONTACTOS","Contactos","Contactos","Contact")).getId();
+var VENT_CONTACTOS_DESC = (new L("VENT_CONTACTOS_DESC","Siempre que lo requiera, un individuo con esta ventaja puede usar sus contactos para obtener información o ayuda limitada dentro de sus ámbitos de influencia.","Siempre que lo requiera, un individuo con esta ventaja puede usar sus contactos para obtener información o ayuda limitada dentro de sus ámbitos de influencia.","À chaque fois que nécessaire le personnage peut utiliser ses contacts pour obtenir des informations ou une aide limitée dans leur domaine d'influence. La table suivante donne une liste de valeurs de PC pour les différentes organisations de Gaïa. Dépenser plus de PC indique que le contact est de plus grande importance dans l'organisation en question. (Voir page 288 de Gaïa 1).")).getId();
+var VENT_ALIADO_PODEROSO = (new L("VENT_ALIADO_PODEROSO","Aliado poderoso","Aliado poderoso","Allié puissant")).getId();
+var VENT_ALIADO_PODEROSO_DESC = (new L("VENT_ALIADO_PODEROSO_DESC","Los efectos de esta ventaja se aplican únicamente al plano interpretativo.","Los efectos de esta ventaja se aplican únicamente al plano interpretativo.","À déterminer par le MJ en fonction des PC dépensés. La table des contacts peut servir de base pour le coût en PC. (Voir page 288 de Gaïa 1).")).getId();
+var VENT_SANGRE_ANTIGUA = (new L("VENT_SANGRE_ANTIGUA","Sangre antigua","Sangre antigua","Sang Ancien")).getId();
+var VENT_SANGRE_ANTIGUA_DESC = (new L("VENT_SANGRE_ANTIGUA_DESC","Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.","Los efectos de esta ventaja se aplican únicamente en el plano interpretativo.","À déterminer par le MJ. Et possède une affinité avec la technologie des Loges Perdues.")).getId();
+var VENT_ACUMULACION_PLENA = (new L("VENT_ACUMULACION_PLENA","Acumulación plena","Acumulación plena","Pleine accumulation")).getId();
+var VENT_ACUMULACION_PLENA_DESC = (new L("VENT_ACUMULACION_PLENA_DESC","El personaje no reduce sus Acumulaciones de Ki por realizar Acciones pasivas o activas. A efectos de juego, siempre goza de su Acumulación plena, sin importar lo que haga durante el Turno.","El personaje no reduce sus Acumulaciones de Ki por realizar Acciones pasivas o activas. A efectos de juego, siempre goza de su Acumulación plena, sin importar lo que haga durante el Turno.","Ne réduit pas ses accumulations lorsqu'il réalise d'autres actions dans le même round. Il dispose toujours de toute son accumulation quoi qu'il fasse durant le round.")).getId();
+var VENT_APRENDIZAJE_MARCIAL = (new L("VENT_APRENDIZAJE_MARCIAL","Aprendizaje marcial","Aprendizaje marcial","Apprentissage martial")).getId();
+var VENT_APRENDIZAJE_MARCIAL_DESC = (new L("VENT_APRENDIZAJE_MARCIAL_DESC","Alguien con esta ventaja incrementa en dos niveles el Grado de aprendizaje que le otorgue su CM","Alguien con esta ventaja incrementa en dos niveles el Grado de aprendizaje que le otorgue su CM","Augmente de deux le rang d'apprentissage que lui donne son DI dans le tableau d'apprentissage du Ki.")).getId();
+var VENT_KI_IMPERCEPTIBLE = (new L("VENT_KI_IMPERCEPTIBLE","Ki imperceptible","Ki imperceptible","Ki imperceptible")).getId();
+var VENT_KI_IMPERCEPTIBLE_DESC = (new L("VENT_KI_IMPERCEPTIBLE_DESC","Esta ventaja otorga un bono especial de +10 a Ocultación del Ki por nivel.","Esta ventaja otorga un bono especial de +10 a Ocultación del Ki por nivel.","Bonus spécial de +10 par niveau en Dissimulation du Ki. Limite : ne donne aucun bonus si le personnage ne développe pas le pouvoir de Dissimulation du Ki.")).getId();
+var VENT_PODER_INNATO = (new L("VENT_PODER_INNATO","Poder innato","Poder innato","Pouvoir inné")).getId();
+var VENT_PODER_INNATO_DESC = (new L("VENT_PODER_INNATO_DESC","A la hora de calcular sus puntos de Ki iniciales, en lugar de utilizar con normalidad el valor básico de sus Características, el personaje emplea tan sólo su atributo de Poder y multiplica por seis la cantidad que este le otorgue. Los puntos adicionales por tener un valor de Característica superior a 10, también se multiplican. Esta ventaja sólo puede ser escogida en el caso de que se utilicen las reglas opcionales de Unificación de puntos de Ki.","A la hora de calcular sus puntos de Ki iniciales, en lugar de utilizar con normalidad el valor básico de sus Características, el personaje emplea tan sólo su atributo de Poder y multiplica por seis la cantidad que este le otorgue. Los puntos adicionales por tener un valor de Característica superior a 10, también se multiplican. Esta ventaja sólo puede ser escogida en el caso de que se utilicen las reglas opcionales de Unificación de puntos de Ki.","Le calcul des points Ki initiaux ne dépend pas de la somme des points fournis par les caractéristiques mais de la valeur des points fournis par le Pouvoir multipliée par six. Les points supplémentaires lorsque la valeur de pouvoir est supérieure à 10 sont aussi multipliés. Spécial : ne peut être choisi que si la règle optionnelle d'unification des points Ki est appliquée.")).getId();
+var VENT_TECNICAS_DESVINCULADAS = (new L("VENT_TECNICAS_DESVINCULADAS","Técnicas desvinculadas","Técnicas desvinculadas","Techniques déliées")).getId();
+var VENT_TECNICAS_DESVINCULADAS_DESC = (new L("VENT_TECNICAS_DESVINCULADAS_DESC","El personaje puede desarrollar o aprender Técnicas de Dominio con libertad, sin la necesidad de seguir las reglas de Árbol. Es decir, no necesita Técnicas de nivel inferior para aprender otras de nivel superior.","El personaje puede desarrollar o aprender Técnicas de Dominio con libertad, sin la necesidad de seguir las reglas de Árbol. Es decir, no necesita Técnicas de nivel inferior para aprender otras de nivel superior.","Peut apprendre des techniques de puissance intérieure sans respecter les règles de limitations d'arbre. Il n'a pas besoin de deux techniques de niveau inférieur pour apprendre des techniques de niveau supérieur.")).getId();
+var VENT_ACUMULACION_DE_KI_INCREMENTADA = (new L("VENT_ACUMULACION_DE_KI_INCREMENTADA","Acumulación de ki incrementada","Acumulación de ki incrementada","Accumulation de Ki accrue")).getId();
+var VENT_ACUMULACION_DE_KI_INCREMENTADA_DESC = (new L("VENT_ACUMULACION_DE_KI_INCREMENTADA_DESC","Si el personaje no realiza ninguna otra Acción durante el asalto, activa ni pasiva, que no sea Acumular Ki, puede sumar un +1 al valor de todas sus Acumulaciones de Ki durante ese asalto. La inversión de un punto de Creación adicional incrementa este bono a +2.","Si el personaje no realiza ninguna otra Acción durante el asalto, activa ni pasiva, que no sea Acumular Ki, puede sumar un +1 al valor de todas sus Acumulaciones de Ki durante ese asalto. La inversión de un punto de Creación adicional incrementa este bono a +2.","S'il n'effectue aucune autre action pendant le round, passive ou active, le personnage gagne un bonus à toutes ses accumulations pour ce round. 1 PC = +1, 2PC =+2. Limite : on ne peut pas cumuler les effets de cet avantage avec celui de Pleine accumulation pour augmenter ses accumulations tout en pouvant faire d'autres actions.")).getId();
+var VENT_PERCEPCION_DEL_KI = (new L("VENT_PERCEPCION_DEL_KI","Percepción del ki","Percepción del ki","Perception du Ki")).getId();
+var VENT_PERCEPCION_DEL_KI_DESC = (new L("VENT_PERCEPCION_DEL_KI_DESC","Esta ventaja otorga un bono especial de +10 a Detección del Ki por nivel.","Esta ventaja otorga un bono especial de +10 a Detección del Ki por nivel.","Bonus spécial de +10 par niveau en Détection du Ki. Limite : ne donne aucun bonus si le personnage ne développe pas le pouvoir de Détection du Ki.")).getId();
+var VENT_LIMITE_DUAL = (new L("VENT_LIMITE_DUAL","Límite dual","Límite dual","Limite double")).getId();
+var VENT_LIMITE_DUAL_DESC = (new L("VENT_LIMITE_DUAL_DESC","El personaje puede escoger hasta dos Límites en lugar de uno.","El personaje puede escoger hasta dos Límites en lugar de uno.","Peut choisir deux Limites au lieu d'une seule.")).getId();
+var VENT_INUTILIDAD_GESTUAL = (new L("VENT_INUTILIDAD_GESTUAL","Inutilidad gestual","Inutilidad gestual","Dispenses de gestes (Sceaux)")).getId();
+var VENT_INUTILIDAD_GESTUAL_DESC = (new L("VENT_INUTILIDAD_GESTUAL_DESC","El personaje no reduce su Acumulación de Ki, incluso si no es capaz de usar las manos.","El personaje no reduce su Acumulación de Ki, incluso si no es capaz de usar las manos.","Ne réduit pas son Accumulation de Ki pour les sceaux, même si incapable d'utiliser ses mains.")).getId();
+var VENT_SELLOS_MAGISTRALES = (new L("VENT_SELLOS_MAGISTRALES","Sellos magistrales","Sellos magistrales","Sceaux magistraux")).getId();
+var VENT_SELLOS_MAGISTRALES_DESC = (new L("VENT_SELLOS_MAGISTRALES_DESC","A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.","A la hora de fijar el Control de Dificultad de una invocación utilizando Sellos, el personaje es considerado como si tuviera dos niveles más.","Est considéré comme ayant deux niveaux de plus pour établir le test de difficulté d'une invocation en utilisant les Sceaux.")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO","Sangre de Aeon: Lazo Elemental - Kagutsuchi (Fuego)","Sangre de Aeon: Lazo Elemental - Kagutsuchi (Fuego)","Sang d'Aeon : Kagutsuchi (Feu)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_KAGUTSUCHI_FUEGO_DESC","","","Affinité (Feu) et Empathie (Feu). (Voir page 74 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE","Sangre de Aeon: Lazo Elemental - Boreas (Aire)","Sangre de Aeon: Lazo Elemental - Boreas (Aire)","Sang d'Aeon : Boreas (Air)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_BOREAS_AIRE_DESC","","","Affinité (Air) et Empathie (Air). (Voir page 74 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO","Sangre de Aeon: Lazo Elemental - Niflheim (Frío)","Sangre de Aeon: Lazo Elemental - Niflheim (Frío)","Sang d'Aeon : Niflheim (Froid)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_NIFLHEIM_FRIO_DESC","","","Affinité (Froid) et Contrôle du Froid et Sentir les modifications environnementales. (Voir page 74-76 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD","Sangre de Aeon: Lazo Elemental - Rudraksha (Electricidad)","Sangre de Aeon: Lazo Elemental - Rudraksha (Electricidad)","Sang d'Aeon : Rudraksha (Electricité)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RUDRAKSHA_ELECTRICIDAD_DESC","","","Affinité (Electricité) et Lien avec les Orages. (Voir page 74-76 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA","Sangre de Aeon: Lazo Elemental - Ran (Agua)","Sangre de Aeon: Lazo Elemental - Ran (Agua)","Sang d'Aeon : Ran (Eau)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_RAN_AGUA_DESC","","","Mouvement aquatique et Empathie (Eau). (Voir page 74-76 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA","Sangre de Aeon: Lazo Elemental - Toa (Tierra)","Sangre de Aeon: Lazo Elemental - Toa (Tierra)","Sang d'Aeon : Toa (Terre)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_TOA_TIERRA_DESC","","","Affinité (Terre) et Bonus de +1 en Régénération et Bonus de +10 à la RPhy contre les Critiques.. (Voir page 74 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD","Sangre de Aeon: Lazo Elemental - Phandemonium (Oscuridad)","Sangre de Aeon: Lazo Elemental - Phandemonium (Oscuridad)","Sang d'Aeon : Phandemonium (Obscurité)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_PHANDEMONIUM_OSCURIDAD_DESC","","","Affinité (Obscurité) et Empathie (Obscurité). (Voir page 74 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ","Sangre de Aeon: Lazo Elemental - Shephirah (Luz)","Sangre de Aeon: Lazo Elemental - Shephirah (Luz)","Sang d'Aeon : Shephirah (Lumière)")).getId();
+var VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ_DESC = (new L("VENT_SANGRE_DE_AEON_LAZO_ELEMENTAL_SHEPHIRAH_LUZ_DESC","","","Affinité (Lumière) et Empathie (Lumière). (Voir page 74 Dominus Exxet)")).getId();
+var VENT_LOS_OJOS_DE_LA_MUERTE = (new L("VENT_LOS_OJOS_DE_LA_MUERTE","Los Ojos de la Muerte","Los Ojos de la Muerte","Yeux de la Mort")).getId();
+var VENT_LOS_OJOS_DE_LA_MUERTE_DESC = (new L("VENT_LOS_OJOS_DE_LA_MUERTE_DESC","","","Yeux de la Fin de Toute Existence (Voir page 77 Dominus Exxet)")).getId();
+var VENT_OJOS_DEL_ALMA = (new L("VENT_OJOS_DEL_ALMA","Ojos del Alma","Ojos del Alma","Yeux de l'Âme")).getId();
+var VENT_OJOS_DEL_ALMA_DESC = (new L("VENT_OJOS_DEL_ALMA_DESC","","","(Voir page 77 Dominus Exxet)")).getId();
+var VENT_LEGADO_DE_LA_LUNA = (new L("VENT_LEGADO_DE_LA_LUNA","Legado de la Luna (Tsukiyomi)","Legado de la Luna (Tsukiyomi)","Héritage de la Lune (Tsukiyomi)")).getId();
+var VENT_LEGADO_DE_LA_LUNA_DESC = (new L("VENT_LEGADO_DE_LA_LUNA_DESC","","","(Voir page 77 Dominus Exxet)")).getId();
+var VENT_LA_SANGRE_DE_UROBOROS = (new L("VENT_LA_SANGRE_DE_UROBOROS","La Sangre de Uroboros","La Sangre de Uroboros","Sang d'Uroboros")).getId();
+var VENT_LA_SANGRE_DE_UROBOROS_DESC = (new L("VENT_LA_SANGRE_DE_UROBOROS_DESC","","","(Voir page 77 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_LAS_GRANDES_BESTIAS = (new L("VENT_SANGRE_DE_LAS_GRANDES_BESTIAS","Sangre de las Grandes Bestias","Sangre de las Grandes Bestias","Sang des Grandes Bêtes")).getId();
+var VENT_SANGRE_DE_LAS_GRANDES_BESTIAS_DESC = (new L("VENT_SANGRE_DE_LAS_GRANDES_BESTIAS_DESC","","","Reçoit 40 PF ou 80 PF ou 120 PF a dépenser dans les pouvoirs de créatures (pages 306-316)")).getId();
+var VENT_OJOS_DEL_DESTINO = (new L("VENT_OJOS_DEL_DESTINO","Ojos del Destino","Ojos del Destino","Yeux du Destin")).getId();
+var VENT_OJOS_DEL_DESTINO_DESC = (new L("VENT_OJOS_DEL_DESTINO_DESC","","","(Voir page 78 Dominus Exxet)")).getId();
+var VENT_SANGRE_ETERNA = (new L("VENT_SANGRE_ETERNA","Sangre Eterna","Sangre Eterna","Sang Eternel")).getId();
+var VENT_SANGRE_ETERNA_DESC = (new L("VENT_SANGRE_ETERNA_DESC","","","(Voir page 79 Dominus Exxet)")).getId();
+var VENT_LA_SANGRE_DE_OROCHI = (new L("VENT_LA_SANGRE_DE_OROCHI","La Sangre de Orochi","La Sangre de Orochi","Sang d'Orochi")).getId();
+var VENT_LA_SANGRE_DE_OROCHI_DESC = (new L("VENT_LA_SANGRE_DE_OROCHI_DESC","","","(Voir page 79 Dominus Exxet)")).getId();
+var VENT_DEVORADOR_DE_EXISTENCIA = (new L("VENT_DEVORADOR_DE_EXISTENCIA","Devorador de Existencia","Devorador de Existencia","Dévoreur d'Existence")).getId();
+var VENT_DEVORADOR_DE_EXISTENCIA_DESC = (new L("VENT_DEVORADOR_DE_EXISTENCIA_DESC","","","(Voir pages 79-80 Dominus Exxet)")).getId();
+var VENT_ESENCIA_VENENOSA = (new L("VENT_ESENCIA_VENENOSA","Esencia Venenosa","Esencia Venenosa","Essence Vénéneuse")).getId();
+var VENT_ESENCIA_VENENOSA_DESC = (new L("VENT_ESENCIA_VENENOSA_DESC","","","(Voir page 80 Dominus Exxet)")).getId();
+var VENT_ARMAS_NATURALES = (new L("VENT_ARMAS_NATURALES","Armas Naturales","Armas Naturales","Armes Naturelles")).getId();
+var VENT_ARMAS_NATURALES_DESC = (new L("VENT_ARMAS_NATURALES_DESC","","","(Voir page 80 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_LOS_MUERTOS = (new L("VENT_SANGRE_DE_LOS_MUERTOS","Sangre de los Muertos","Sangre de los Muertos","Sang des Morts")).getId();
+var VENT_SANGRE_DE_LOS_MUERTOS_DESC = (new L("VENT_SANGRE_DE_LOS_MUERTOS_DESC","","","(Voir pages 80-81 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_KAMI_GENUS_LOCI = (new L("VENT_SANGRE_DE_KAMI_GENUS_LOCI","Sangre de Kami - Genus Loci","Sangre de Kami - Genus Loci","Sang de Kami : Genus Loci")).getId();
+var VENT_SANGRE_DE_KAMI_GENUS_LOCI_DESC = (new L("VENT_SANGRE_DE_KAMI_GENUS_LOCI_DESC","","","(Voir page 81 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA = (new L("VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA","Sangre de Kami - Señor de la Guerra","Sangre de Kami - Señor de la Guerra","Sang de Kami : Seigneur de guerre")).getId();
+var VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA_DESC = (new L("VENT_SANGRE_DE_KAMI_SEÑOR_DE_LA_GUERRA_DESC","","","(Voir page 81 Dominus Exxet)")).getId();
+var VENT_SANGRE_DE_EL_DRAGON = (new L("VENT_SANGRE_DE_EL_DRAGON","Sangre de El Dragón","Sangre de El Dragón","Sang du Dragon")).getId();
+var VENT_SANGRE_DE_EL_DRAGON_DESC = (new L("VENT_SANGRE_DE_EL_DRAGON_DESC","","","(Voir page 81 Dominus Exxet)")).getId();
+var VENT_SANGRE_LATENTE = (new L("VENT_SANGRE_LATENTE","Sangre Latente","Sangre Latente","Sang Latent")).getId();
+var VENT_SANGRE_LATENTE_DESC = (new L("VENT_SANGRE_LATENTE_DESC","","","(Voir page 81 Dominus Exxet)")).getId();
+var VENT_VERSATIBILIDAD_METAMAGICA = (new L("VENT_VERSATIBILIDAD_METAMAGICA","Versatibilidad Metamágica","Metamagic Versatibility","Versatilité métamagique")).getId();
+var VENT_VERSATIBILIDAD_METAMAGICA_DESC = (new L("VENT_VERSATIBILIDAD_METAMAGICA_DESC","","","Le personnage peut choisir 2 points de départs différents dans l’Arcana Sphephirah.")).getId();
+var VENT_HECHICERO_NATO = (new L("VENT_HECHICERO_NATO","Hechicero Nato","Natural Born Sorcerer","Sorcier naturel")).getId();
+var VENT_HECHICERO_NATO_DESC = (new L("VENT_HECHICERO_NATO_DESC","","","Le mage augmente de 2 niveaux son Rang d’apprentissage dans le Tableau 1 (Aracana Exxet page 8).")).getId();
+var VENT_APRENDIZAJE_MAGICO_GRADUAL = (new L("VENT_APRENDIZAJE_MAGICO_GRADUAL","Aprendizaje Mágico Gradual","Gradual Magic Learning","Apprentissage magique graduel")).getId();
+var VENT_APRENDIZAJE_MAGICO_GRADUAL_DESC = (new L("VENT_APRENDIZAJE_MAGICO_GRADUAL_DESC","","","Chaque fois qu’il monte de niveau, le personnage obtient +5 à son Niveau de Magie total.")).getId();
+var VENT_DON_INCOMPLETO = (new L("VENT_DON_INCOMPLETO","Don Incompleto","Incomplete Gift","Don incomplet")).getId();
+var VENT_DON_INCOMPLETO_DESC = (new L("VENT_DON_INCOMPLETO_DESC","","","Le personnage ne peut voir la magie mais il est capable de lancer des sorts de façon limitée. Chaque fois qu’il souhaite utiliser un sortilège, il doit réussir un test de Pouvoir contre une difficulté de 10 plus 1 point pour chaque 10 Niveaux de sort. S’il échoue, il perdra du Zéon comme s’il avait lancé le sort, mais celui-ci n’aura pas fonctionné.")).getId();
+var VENT_ESENCIA_SHEELE = (new L("VENT_ESENCIA_SHEELE","Esencia Sheele","Sheele Essence","Essence de Sheele")).getId();
+var VENT_ESENCIA_SHEELE_DESC = (new L("VENT_ESENCIA_SHEELE_DESC","","","Si le personnage s’unit à une Sheele, cette dernière peut obtenir 2 Améliorations supplémentaires au moment de sceller le Lien.")).getId();
+var VENT_FAMILIAR = (new L("VENT_FAMILIAR","Familiar","Familiar","Familier")).getId();
+var VENT_FAMILIAR_DESC = (new L("VENT_FAMILIAR_DESC","","","Le personnage commence la partie avec un familier de son niveau ou d’une niveau supérieur au sien.")).getId();
+var VENT_CONVOCADOR_DE_MASAS = (new L("VENT_CONVOCADOR_DE_MASAS","Convocador de Masas","Mass Summoner","Convocateur en masse")).getId();
+var VENT_CONVOCADOR_DE_MASAS_DESC = (new L("VENT_CONVOCADOR_DE_MASAS_DESC","","","Le personnage qui réalise une convocation en masse le fait comme s’il avait 1, 2 ou 3 niveaux de plus.")).getId();
+var VENT_AFINIDAD_DE_USO = (new L("VENT_AFINIDAD_DE_USO","Afinidad de Uso","Use Affinity","Affinité d'Utilisation")).getId();
+var VENT_AFINIDAD_DE_USO_DESC = (new L("VENT_AFINIDAD_DE_USO_DESC","","","Le personnage ajoute 5 points à sa caractéristique de POU lorsqu'il doit déterminer le temps nécessaire pour maîtriser les capacités de Notions d'utilisation des artefacts qu'il possède.")).getId();
