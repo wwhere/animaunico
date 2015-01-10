@@ -1,525 +1,268 @@
-var RAZA_DAIMAH = (new L("RAZA_DAIMAH","Daimah",
-    "Daimah")).getId();
-var DAIM_CUERPO = (new L("DAIM_CUERPO","Cuerpo felino (Daimah)",
-    "Cat-like Body (Daimah)")).getId();
-var DAIM_SENTIR = (new L("DAIM_SENTIR","Sentir el bosque (Daimah)",
-    "Sense the Forest (Daimah)")).getId();
-var DAIM_GARRAS = (new L("DAIM_GARRAS","Garras y dientes (Daimah)",
-    "Natural Weapons (Daimah)")).getId();
-var DAIM_HABILIDAD = (new L("DAIM_HABILIDAD","Habilidad inhumana (Daimah)",
-    "Inhuman Actions (Daimah)")).getId();
-var DAIM_PEQUEÑO = (new L("DAIM_PEQUEÑO","Pequeño tamaño (Daimah)",
-    "Small Size (Daimah)")).getId();
-var DAIM_NATURALEZA = (new L("DAIM_NATURALEZA","Naturaleza curativa (Daimah)",
-    "Nature's Cure (Daimah)")).getId();
-var DAIM_RESISTENCIA = (new L("DAIM_RESISTENCIA","Resistencia a las caídas (Daimah)",
-    "Resistance to Falling (Daimah)")).getId();
-var DAIM_INMUNIDAD = (new L("DAIM_INMUNIDAD","Inmunidad natural (Daimah)",
-    "Natural Immunity (Daimah)")).getId();
-var DAIM_ESENCIA = (new L("DAIM_ESENCIA","Esencia mística (Daimah)",
-    "Mystical Essence (Daimah)")).getId();
-var DAIM_MOVIMIENTO = (new L("DAIM_MOVIMIENTO","Movimiento por los bosques (Daimah)",
-    "Movement in the Forest (Daimah)")).getId();
-var DAIM_VER = (new L("DAIM_VER","Ver la esencia (Daimah)",
-    "See the Essence (Daimah)")).getId();
-var DAIM_CUERPO_DESC = (new L("DAIM_CUERPO_DESC","Aplican un bono de +1 a sus características de AGI y DES, pero un -1 a su CON y VOL",
-    "Aplican un bono de +1 a sus características de AGI y DES, pero un -1 a su CON y VOL")).getId();
-var DAIM_SENTIR_DESC = (new L("DAIM_SENTIR_DESC","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.",
-    "Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.")).getId();
-var DAIM_GARRAS_DESC = (new L("DAIM_GARRAS_DESC","Empleadas de este modo, tiene un daño base de 30 puntos más el bono de Fuerza. Lógicamente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.",
-    "Empleadas de este modo, tiene un daño base de 30 puntos más el bono de Fuerza. Lógicamente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.")).getId();
-var DAIM_HABILIDAD_DESC = (new L("DAIM_HABILIDAD_DESC","La capacidad de los Daimah les permite alcanzar la dificultad de Inhumano en aquellos controles y habilidades que dependan de su Agilidad y su Destreza.",
-    "La capacidad de los Daimah les permite alcanzar la dificultad de Inhumano en aquellos controles y habilidades que dependan de su Agilidad y su Destreza.")).getId();
-var DAIM_PEQUEÑO_DESC = (new L("DAIM_PEQUEÑO_DESC","Restan un punto de su característica de Tamaño",
-    "Restan un punto de su característica de Tamaño")).getId();
-var DAIM_NATURALEZA_DESC = (new L("DAIM_NATURALEZA_DESC","Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma ocho puntos a su nivel de Regeneración.",
-    "Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma ocho puntos a su nivel de Regeneración.")).getId();
-var DAIM_RESISTENCIA_DESC = (new L("DAIM_RESISTENCIA_DESC","Restan dos grados a la dificultad que necesitan superar para evitar daños en la Tabla 68.",
-    "Restan dos grados a la dificultad que necesitan superar para evitar daños en la Tabla 68.")).getId();
-var DAIM_INMUNIDAD_DESC = (new L("DAIM_INMUNIDAD_DESC","Por tanto, son inmunes a todos los venenos que provengan de animales o plantas naturales, al igual que a las enfermedades que no sean de origen místico.",
-    "Por tanto, son inmunes a todos los venenos que provengan de animales o plantas naturales, al igual que a las enfermedades que no sean de origen místico.")).getId();
-var DAIM_ESENCIA_DESC = (new L("DAIM_ESENCIA_DESC","Están obligados a elegir la ventaja de Don.",
-    "Están obligados a elegir la ventaja de Don.")).getId();
-var DAIM_MOVIMIENTO_DESC = (new L("DAIM_MOVIMIENTO_DESC","A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.",
-    "A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.")).getId();
-var DAIM_VER_DESC = (new L("DAIM_VER_DESC","Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.",
-    "Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.")).getId();
-var RAZA_DANJAYNI = (new L("RAZA_DANJAYNI","D'Anjayni",
-    "D'Anjayni")).getId();
-var DANJ_OLVIDO = (new L("DANJ_OLVIDO","Olvido (D'Anjayni)",
-    "Forgetfulness (D'Anjayni)")).getId();
-var DANJ_INDETECTABILIDAD = (new L("DANJ_INDETECTABILIDAD","Indetectabilidad (D'Anjayni)",
-    "Undetectability (D'Anjayni)")).getId();
-var DANJ_ROSTRO = (new L("DANJ_ROSTRO","El rostro de la araña (D'Anjayni)",
-    "Face of the Spider (D'Anjayni)")).getId();
-var DANJ_PASAR = (new L("DANJ_PASAR","Pasar sin dejar rastro (D'Anjayni)",
-    "Pass Without Trace (D'Anjayni)")).getId();
-var DANJ_SUSURROS = (new L("DANJ_SUSURROS","Susurros silenciosos (D'Anjayni)",
-    "Silent Whisper (D'Anjayni)")).getId();
-var DANJ_NATURALEZA = (new L("DANJ_NATURALEZA","Naturaleza observadora (D'Anjayni)",
-    "Observant Nature (D'Anjayni)")).getId();
-var DANJ_OLVIDO_DESC = (new L("DANJ_OLVIDO_DESC","A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 120, u olvidará su apariencia y la conversación que han mantenido. ",
-    "A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 120, u olvidará su apariencia y la conversación que han mantenido. ")).getId();
-var DANJ_INDETECTABILIDAD_DESC = (new L("DANJ_INDETECTABILIDAD_DESC","Su capacidad para evitar ser detectados por medios sobrenaturales les otorga un bono de +50 a cualquier Resistencia contra tales efectos. Además, poseen de manera innata la habilidad de Ocultación del Ki.",
-    "Su capacidad para evitar ser detectados por medios sobrenaturales les otorga un bono de +50 a cualquier Resistencia contra tales efectos. Además, poseen de manera innata la habilidad de Ocultación del Ki.")).getId();
-var DANJ_ROSTRO_DESC = (new L("DANJ_ROSTRO_DESC","Mientras esté empleando El rostro de la araña, su habilidad de Olvido se resiente fuertemente, reduciendo la Resistencia a tan sólo 80.",
-    "Mientras esté empleando El rostro de la araña, su habilidad de Olvido se resiente fuertemente, reduciendo la Resistencia a tan sólo 80.")).getId();
-var DANJ_PASAR_DESC = (new L("DANJ_PASAR_DESC","Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -60 a su habilidad.",
-    "Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -60 a su habilidad.")).getId();
-var DANJ_SUSURROS_DESC = (new L("DANJ_SUSURROS_DESC","Todo aquel que intente escucharlas aplicará un -80 a sus controles si no es su receptor.",
-    "Todo aquel que intente escucharlas aplicará un -80 a sus controles si no es su receptor.")).getId();
-var DANJ_NATURALEZA_DESC = (new L("DANJ_NATURALEZA_DESC","Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.",
-    "Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.")).getId();
-var RAZA_DUKZARIST = (new L("RAZA_DUKZARIST","Duk'zarist",
-    "Duk'zarist")).getId();
-var DUK_PERFECCION = (new L("DUK_PERFECCION","Perfección física y anímica (Duk'zarist)",
-    "Perfection (Duk'zarist)")).getId();
-var DUK_OJOS = (new L("DUK_OJOS","Ojos de fuego (Duk'zarist)",
-    "Eyes of Fire (Duk'zarist)")).getId();
-var DUK_ACCIONES = (new L("DUK_ACCIONES","Acciones inhumanas (Duk'zarist)",
-    "Inhuman Actions (Duk'zarist)")).getId();
-var DUK_PRESENTIR = (new L("DUK_PRESENTIR","Presentir lo oscuro y lo luminoso (Duk'zarist)",
-    "Sense Light and Dark (Duk'zarist)")).getId();
-var DUK_LAZO = (new L("DUK_LAZO","Lazo de oscuridad y fuego (Duk'zarist)",
-    "Link to Darkness and Fire (Duk'zarist)")).getId();
-var DUK_RESISTENCIAS = (new L("DUK_RESISTENCIAS","Resistencias excepcionales (Duk'zarist)",
-    "Exceptional Resistances (Duk'zarist)")).getId();
-var DUK_AGUANTE = (new L("DUK_AGUANTE","Aguante extremo a la Muerte (Duk'zarist)",
-    "Extreme Resistance to Death (Duk'zarist)")).getId();
-var DUK_CURACION = (new L("DUK_CURACION","Curación Rápida (Duk'zarist)",
-    "Quick Healing (Duk'zarist)")).getId();
-var DUK_NECESIDADES = (new L("DUK_NECESIDADES","Necesidades Limitadas (Duk'zarist)",
-    "Limited Needs (Duk'zarist)")).getId();
-var DUK_OBLIGACION = (new L("DUK_OBLIGACION","Obligación sobrenatural (Duk'zarist)",
-    "Supernatural Obligation (Duk'zarist)")).getId();
-var DUK_ALERGIA = (new L("DUK_ALERGIA","Alergia al Metal (Duk'zarist)",
-    "Allergy to Metals (Duk'zarist)")).getId();
-var DUK_PERFECCION_DESC = (new L("DUK_PERFECCION_DESC","aplican un bonificador excepcional de +1 a todas sus características (FUE, DES, AGI, CON, INT, POD, VOL, PER). Sin embargo, por la misma causa son incapaces de elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.",
-    "aplican un bonificador excepcional de +1 a todas sus características (FUE, DES, AGI, CON, INT, POD, VOL, PER). Sin embargo, por la misma causa son incapaces de elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.")).getId();
-var DUK_OJOS_DESC = (new L("DUK_OJOS_DESC","Sus ojos son capaces de ver en la oscuridad, por lo que aplican a la mitad cualquier penalizador que sufran por su causa. También pueden detectar fuentes de calor.",
-    "Sus ojos son capaces de ver en la oscuridad, por lo que aplican a la mitad cualquier penalizador que sufran por su causa. También pueden detectar fuentes de calor.")).getId();
-var DUK_ACCIONES_DESC = (new L("DUK_ACCIONES_DESC","Por naturaleza, un Duk´zarist puede alcanzar la dificultad de Inhumano en los controles de dificultades.",
-    "Por naturaleza, un Duk´zarist puede alcanzar la dificultad de Inhumano en los controles de dificultades.")).getId();
-var DUK_PRESENTIR_DESC = (new L("DUK_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas.",
-    "De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas.")).getId();
-var DUK_LAZO_DESC = (new L("DUK_LAZO_DESC","Obtienen un bono especial de +10 a sus controles contra ellos. Un Duk´zarist no puede elegir la ventaja Desequilibrio mágico hacia la luz.",
-    "Obtienen un bono especial de +10 a sus controles contra ellos. Un Duk´zarist no puede elegir la ventaja Desequilibrio mágico hacia la luz.")).getId();
-var DUK_RESISTENCIAS_DESC = (new L("DUK_RESISTENCIAS_DESC","Los primeros aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo a la Física (RF), donde poseen un +20, mientras que las jóvenes tienen un +15 a todas ellas (RF, RP, RV y RE) salvo a la Mágica (RM), donde llegan a +20.",
-    "Los primeros aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo a la Física (RF), donde poseen un +20, mientras que las jóvenes tienen un +15 a todas ellas (RF, RP, RV y RE) salvo a la Mágica (RM), donde llegan a +20.")).getId();
-var DUK_AGUANTE_DESC = (new L("DUK_AGUANTE_DESC","No sólo pasan automáticamente los controles para superar el estado de entre la vida y la muerte, sino que además permanecen conscientes con un penalizador de -40 a toda acción mientras se encuentran con puntos de vida negativos.",
-    "No sólo pasan automáticamente los controles para superar el estado de entre la vida y la muerte, sino que además permanecen conscientes con un penalizador de -40 a toda acción mientras se encuentran con puntos de vida negativos.")).getId();
-var DUK_CURACION_DESC = (new L("DUK_CURACION_DESC","Suman cinco puntos a su nivel de Regeneración natural.",
-    "Suman cinco puntos a su nivel de Regeneración natural.")).getId();
-var DUK_NECESIDADES_DESC = (new L("DUK_NECESIDADES_DESC","Disminuyen sus necesidades de sueño y comida hasta una séptima parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.",
-    "Disminuyen sus necesidades de sueño y comida hasta una séptima parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.")).getId();
-var DUK_OBLIGACION_DESC = (new L("DUK_OBLIGACION_DESC","Necesariamente, un Duk´zarist debe emplear sus Puntos de Creación para tener acceso a una habilidad psíquica o al Don. Como mínimo, debe elegir una de ambas ventajas, aunque nada les impide tomarlas ambas. En el caso de que adquiera poderes psíquicos, su devoción al fuego le obliga a que la primera disciplina elegida sea siempre piroquinesis.",
-    "Necesariamente, un Duk´zarist debe emplear sus Puntos de Creación para tener acceso a una habilidad psíquica o al Don. Como mínimo, debe elegir una de ambas ventajas, aunque nada les impide tomarlas ambas. En el caso de que adquiera poderes psíquicos, su devoción al fuego le obliga a que la primera disciplina elegida sea siempre piroquinesis.")).getId();
-var DUK_ALERGIA_DESC = (new L("DUK_ALERGIA_DESC","Si ponen su piel en contacto con metal que contenga algo de hierro, deberán superar un control de Resistencia usando su presencia base contra una dificultad de 40. Si el metal es hierro puro, la dificultad es de 60. Cuando su presencia base es veinte puntos mayor que la cantidad necesaria, ya no es necesario hacer ningún control. Los Duk´zarist que lo fallen desaparecen completamente, dejando caer al suelo sus pertenencias y ropajes vacíos.",
-    "Si ponen su piel en contacto con metal que contenga algo de hierro, deberán superar un control de Resistencia usando su presencia base contra una dificultad de 40. Si el metal es hierro puro, la dificultad es de 60. Cuando su presencia base es veinte puntos mayor que la cantidad necesaria, ya no es necesario hacer ningún control. Los Duk´zarist que lo fallen desaparecen completamente, dejando caer al suelo sus pertenencias y ropajes vacíos.")).getId();
-var RAZA_EBUDAN = (new L("RAZA_EBUDAN","Ebudan",
-    "Ebudan")).getId();
-var EBUD_ORINIE = (new L("EBUD_ORINIE","Or'inie (Ebudan)",
-    "Or'inie (Ebudan)")).getId();
-var EBUD_ALAS = (new L("EBUD_ALAS","Alas de Serafín (Ebudan)",
-    "Seraphim Wings (Ebudan)")).getId();
-var EBUD_ESENCIA = (new L("EBUD_ESENCIA","Esencia Celestial (Ebudan)",
-    "Heveanly Essence (Ebudan)")).getId();
-var EBUD_ORINIE_DESC = (new L("EBUD_ORINIE_DESC","El Ebudan puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente y puede elegir entre trascender al flujo de almas y renacer como entidades espirituales con Gnosis 30, o permanecer en el mundo para guiar a otros miembros de su especie. En un caso u otro, ganan un bono de +2 a su POD y a su VOL.",
-    "El Ebudan puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente y puede elegir entre trascender al flujo de almas y renacer como entidades espirituales con Gnosis 30, o permanecer en el mundo para guiar a otros miembros de su especie. En un caso u otro, ganan un bono de +2 a su POD y a su VOL.")).getId();
-var EBUD_ALAS_DESC = (new L("EBUD_ALAS_DESC","Las características de las alas (ambas se consideran una sola unidad como arma) son las siguientes: poseen un turno de +20, un daño base de 60 más el bono de Fuerza, su crítico primario es de Filo, de tipo mandoble, con una entereza y rotura de 20 y 5 respectivamente. Por su complejidad, no pueden utilizarlas en combinación con armas empuñadas. Además, pueden detener proyectiles como si se tratasen de un escudo. Si cumplen el Sue´ Aman, un Ebudan es capaz de dañar energía con ellas.",
-    "Las características de las alas (ambas se consideran una sola unidad como arma) son las siguientes: poseen un turno de +20, un daño base de 60 más el bono de Fuerza, su crítico primario es de Filo, de tipo mandoble, con una entereza y rotura de 20 y 5 respectivamente. Por su complejidad, no pueden utilizarlas en combinación con armas empuñadas. Además, pueden detener proyectiles como si se tratasen de un escudo. Si cumplen el Sue´ Aman, un Ebudan es capaz de dañar energía con ellas.")).getId();
-var EBUD_ESENCIA_DESC = (new L("EBUD_ESENCIA_DESC","A efectos de juego, el Ebudan se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.",
-    "A efectos de juego, el Ebudan se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.")).getId();
-var RAZA_HUMANO = (new L("RAZA_HUMANO","Humano",
-    "Human")).getId();
-var RAZA_JAYAN = (new L("RAZA_JAYAN","Jayán",
-    "Jayan")).getId();
-var JAY_GIGANTES = (new L("JAY_GIGANTES","Gigantes (Jayán)",
-    "Giant (Jayán)")).getId();
-var JAY_FISICO = (new L("JAY_FISICO","Físico excepcional (Jayán)",
-    "Exceptional Build (Jayán)")).getId();
-var JAY_CANSANCIO = (new L("JAY_CANSANCIO","Aguante al cansancio (Jayán)",
-    "Withstand Fatigue (Jayán)")).getId();
-var JAY_RESISTENCIA = (new L("JAY_RESISTENCIA","Resistencia física (Jayán)",
-    "Resistance to Damage (Jayán)")).getId();
-var JAY_OJO = (new L("JAY_OJO","El tercer ojo (Jayán)",
-    "The Third Eye (Jayán)")).getId();
-var JAY_ARMAS = (new L("JAY_ARMAS","Armas naturales (Jayán)",
-    "Natural Weapons (Jayán)")).getId();
-var JAY_FUERZA = (new L("JAY_FUERZA","Fuerza inhumana (Jayán)",
-    "Inhuman Strength (Jayán)")).getId();
-var JAY_DEBILIDAD = (new L("JAY_DEBILIDAD","Debilidad contra magia (Jayán)",
-    "Susceptibility to Magic (Jayán)")).getId();
-var JAY_GIGANTES_DESC = (new L("JAY_GIGANTES_DESC","Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.",
-    "Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.")).getId();
-var JAY_FISICO_DESC = (new L("JAY_FISICO_DESC","Suman un +2 a su característica de FUE y un +1 a su CON. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos a una característica para rebajar su Fuerza.",
-    "Suman un +2 a su característica de FUE y un +1 a su CON. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos a una característica para rebajar su Fuerza.")).getId();
-var JAY_CANSANCIO_DESC = (new L("JAY_CANSANCIO_DESC","Aplican un bonificador de tres puntos al valor máximo de su Cansancio",
-    "Aplican un bonificador de tres puntos al valor máximo de su Cansancio")).getId();
-var JAY_RESISTENCIA_DESC = (new L("JAY_RESISTENCIA_DESC","Obtienen +20 a su RF.",
-    "Obtienen +20 a su RF.")).getId();
-var JAY_OJO_DESC = (new L("JAY_OJO_DESC","Esta habilidad no funciona con conjuros, efectos místicos o matrices psíquicas.",
-    "Esta habilidad no funciona con conjuros, efectos místicos o matrices psíquicas.")).getId();
-var JAY_ARMAS_DESC = (new L("JAY_ARMAS_DESC","Incluso desarmados, sus ataques producen un daño base de 40 ó 60 más el bono de Fuerza, dependiendo de su tamaño (Ver la Tabla 82). Naturalmente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.",
-    "Incluso desarmados, sus ataques producen un daño base de 40 ó 60 más el bono de Fuerza, dependiendo de su tamaño (Ver la Tabla 82). Naturalmente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.")).getId();
-var JAY_FUERZA_DESC = (new L("JAY_FUERZA_DESC","Su increíble físico permite a los Jayán realizar acciones de dificultad Inhumana en todos aquellos controles que dependan de la característica de Fuerza.",
-    "Su increíble físico permite a los Jayán realizar acciones de dificultad Inhumana en todos aquellos controles que dependan de la característica de Fuerza.")).getId();
-var JAY_DEBILIDAD_DESC = (new L("JAY_DEBILIDAD_DESC","Aplican un penalizador de -20 a su RM. Además, restan un punto de su característica de POD.",
-    "Aplican un penalizador de -20 a su RM. Además, restan un punto de su característica de POD.")).getId();
-var RAZA_SYLVAIN = (new L("RAZA_SYLVAIN","Sylvain",
-    "Sylvain")).getId();
-var SYLV_CARACTERISTICAS = (new L("SYLV_CARACTERISTICAS","Características sobrehumanas (Sylvain)",
-    "Superhuman Characteristics (Sylvain)")).getId();
-var SYLV_RESISTENCIAS = (new L("SYLV_RESISTENCIAS","Resistencias anímicas excepcionales (Sylvain)",
-    "Exceptional Resistances (Sylvain)")).getId();
-var SYLV_INMUNIDAD = (new L("SYLV_INMUNIDAD","Inmunidad a las enfermedades y venenos naturales (Sylvain)",
-    "Immunity to Sickness and Natural Venom (Sylvain)")).getId();
-var SYLV_INHUMANAS = (new L("SYLV_INHUMANAS","Acciones inhumanas (Sylvain)",
-    "Inhuman Actions (Sylvain)")).getId();
-var SYLV_NECESIDADES = (new L("SYLV_NECESIDADES","Necesidades Limitadas (Sylvain)",
-    "Limited Needs (Sylvain)")).getId();
-var SYLV_CURACION = (new L("SYLV_CURACION","Curación Rápida (Sylvain)",
-    "Quick Healing (Sylvain)")).getId();
-var SYLV_PRESENTIR = (new L("SYLV_PRESENTIR","Presentir lo oscuro y lo luminoso (Sylvain)",
-    "Sense Light and Dark (Sylvain)")).getId();
-var SYLV_OBLIGACION = (new L("SYLV_OBLIGACION","Obligación mágica (Sylvain)",
-    "Magical Obligation (Sylvain)")).getId();
-var SYLV_VISION = (new L("SYLV_VISION","Su visión del mundo (Sylvain)",
-    "Sylvain Ethos (Sylvain)")).getId();
-var SYLV_LAZO = (new L("SYLV_LAZO","Lazo hacia la luz (Sylvain)",
-    "Unbalanced Inclination to the Light (Sylvain)")).getId();
-var SYLV_CARACTERISTICAS_DESC = (new L("SYLV_CARACTERISTICAS_DESC","Aplica un bono de +1 a las características de DES, AGI, POD e INT, pero sufren un penalizador de -1 a su FUE y CON.",
-    "Aplica un bono de +1 a las características de DES, AGI, POD e INT, pero sufren un penalizador de -1 a su FUE y CON.")).getId();
-var SYLV_RESISTENCIAS_DESC = (new L("SYLV_RESISTENCIAS_DESC","aplican un bono de +30 a su Resistencia Mágica y Psíquica (RM y RP). Un Sylvain no puede elegir las desventajas de Vulnerabilidad a la magia o Fácil posesión.",
-    "aplican un bono de +30 a su Resistencia Mágica y Psíquica (RM y RP). Un Sylvain no puede elegir las desventajas de Vulnerabilidad a la magia o Fácil posesión.")).getId();
-var SYLV_INMUNIDAD_DESC = (new L("SYLV_INMUNIDAD_DESC","Obtienen además un bono de +20 a su RE y un +10 a su RV. No pueden elegir las desventajas de: Salud enfermiza, Vulnerable a los venenos o enfermedad grave incurable.",
-    "Obtienen además un bono de +20 a su RE y un +10 a su RV. No pueden elegir las desventajas de: Salud enfermiza, Vulnerable a los venenos o enfermedad grave incurable.")).getId();
-var SYLV_INHUMANAS_DESC = (new L("SYLV_INHUMANAS_DESC","Por naturaleza, un Sylvain puede alcanzar la dificultad de Inhumano en los controles de dificultades.",
-    "Por naturaleza, un Sylvain puede alcanzar la dificultad de Inhumano en los controles de dificultades.")).getId();
-var SYLV_NECESIDADES_DESC = (new L("SYLV_NECESIDADES_DESC","Disminuyen sus necesidades de sueño y comida hasta una quinta parte de las que necesita un humano.",
-    "Disminuyen sus necesidades de sueño y comida hasta una quinta parte de las que necesita un humano.")).getId();
-var SYLV_CURACION_DESC = (new L("SYLV_CURACION_DESC","Suman tres puntos a su nivel de Regeneración natural.",
-    "Suman tres puntos a su nivel de Regeneración natural.")).getId();
-var SYLV_PRESENTIR_DESC = (new L("SYLV_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.",
-    "De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.")).getId();
-var SYLV_LAZO_DESC = (new L("SYLV_LAZO_DESC","Cualquier ser de dicho elemento sentirá afinidad hacia ellos y no pueden elegir la ventaja Desequilibrio hacia la oscuridad. Además, poseen un bono especial de +10 a cualquier control de Resistencia que realicen contra efectos de lumínicos, y un penalizador equivalente contra la oscuridad.",
-    "Cualquier ser de dicho elemento sentirá afinidad hacia ellos y no pueden elegir la ventaja Desequilibrio hacia la oscuridad. Además, poseen un bono especial de +10 a cualquier control de Resistencia que realicen contra efectos de lumínicos, y un penalizador equivalente contra la oscuridad.")).getId();
-var SYLV_OBLIGACION_DESC = (new L("SYLV_OBLIGACION_DESC","Están obligados a elegir la ventaja de Don.",
-    "Están obligados a elegir la ventaja de Don.")).getId();
-var SYLV_VISION_DESC = (new L("SYLV_VISION_DESC","Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.",
-    "Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.")).getId();
-var RAZA_NEPH_DAIMAH = (new L("RAZA_NEPH_DAIMAH","Daimah Nephilim",
-    "Daimah Nephilim")).getId();
-var DAIM_NEPH_SENTIR = (new L("DAIM_NEPH_SENTIR","Sentir el bosque (Daimah Nephilim)",
-    "Sense the Forest (Daimah Nephilim)")).getId();
-var DAIM_NEPH_MOVIMIENTO = (new L("DAIM_NEPH_MOVIMIENTO","Movimiento por los bosques (Daimah Nephilim)",
-    "Movement in the Forest (Daimah Nephilim)")).getId();
-var DAIM_NEPH_VER = (new L("DAIM_NEPH_VER","Ver la esencia (Daimah Nephilim)",
-    "See the Essence (Daimah Nephilim)")).getId();
-var DAIM_NEPH_PEQUEÑO = (new L("DAIM_NEPH_PEQUEÑO","Pequeño tamaño (Daimah Nephilim)",
-    "Small Size (Daimah Nephilim)")).getId();
-var DAIM_NEPH_NATURALEZA = (new L("DAIM_NEPH_NATURALEZA","Naturaleza curativa (Daimah Nephilim)",
-    "Nature's Cure (Daimah Nephilim)")).getId();
-var DAIM_NEPH_ALMA = (new L("DAIM_NEPH_ALMA","Alma inmortal (Daimah Nephilim)",
-    "Immortal Soul (Daimah Nephilim)")).getId();
-var DAIM_NEPH_SENTIR_DESC = (new L("DAIM_NEPH_SENTIR_DESC","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.",
-    "Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.")).getId();
-var DAIM_NEPH_MOVIMIENTO_DESC = (new L("DAIM_NEPH_MOVIMIENTO_DESC","A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.",
-    "A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.")).getId();
-var DAIM_NEPH_VER_DESC = (new L("DAIM_NEPH_VER_DESC","Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.",
-    "Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.")).getId();
-var DAIM_NEPH_PEQUEÑO_DESC = (new L("DAIM_NEPH_PEQUEÑO_DESC","Restan un punto de su característica de Tamaño",
-    "Restan un punto de su característica de Tamaño")).getId();
-var DAIM_NEPH_NATURALEZA_DESC = (new L("DAIM_NEPH_NATURALEZA_DESC","Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma tres puntos a su nivel de Regeneración.",
-    "Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma tres puntos a su nivel de Regeneración.")).getId();
-var DAIM_NEPH_ALMA_DESC = (new L("DAIM_NEPH_ALMA_DESC","Penalizador de -2 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
-    "Penalizador de -2 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
-var RAZA_NEPH_DANJAYNI = (new L("RAZA_NEPH_DANJAYNI","D'Anjayni Nephilim",
-    "D'Anjayni Nephilim")).getId();
-var DANJ_NEPH_INDETECTABILIDAD = (new L("DANJ_NEPH_INDETECTABILIDAD","Indetectabilidad (D'Anjayni Nephilim)",
-    "Undetectability (D'Anjayni Nephilim)")).getId();
-var DANJ_NEPH_OLVIDO = (new L("DANJ_NEPH_OLVIDO","Olvido (D'Anjayni Nephilim)",
-    "Forgetfulness (D'Anjayni Nephilim)")).getId();
-var DANJ_NEPH_SUSURROS = (new L("DANJ_NEPH_SUSURROS","Susurros silenciosos (D'Anjayni Nephilim)",
-    "Silent Whisper (D'Anjayni Nephilim)")).getId();
-var DANJ_NEPH_PASAR = (new L("DANJ_NEPH_PASAR","Pasar sin dejar rastro (D'Anjayni Nephilim)",
-    "Pass Without Trace (D'Anjayni Nephilim)")).getId();
-var DANJ_NEPH_APARIENCIA = (new L("DANJ_NEPH_APARIENCIA","Apariencia común (D'Anjayni Nephilim)",
-    "Common Appearance (D'Anjayni Nephilim)")).getId();
-var DANJ_NEPH_ALMA = (new L("DANJ_NEPH_ALMA","Immortal Soul (D'Anjayni Nephilim)",
-    "Immortal Soul (D'Anjayni Nephilim)")).getId();
-var DANJ_NEPH_INDETECTABILIDAD_DESC = (new L("DANJ_NEPH_INDETECTABILIDAD_DESC","Todos los D´Anjayni aplican un bonificador de +30 a cualquiera de sus Resistencias contra efectos de detección. Además, aprenden de manera innata la habilidad de Ocultación del Ki, que desarrollan aplicando también un bono de +30.",
-    "Todos los D´Anjayni aplican un bonificador de +30 a cualquiera de sus Resistencias contra efectos de detección. Además, aprenden de manera innata la habilidad de Ocultación del Ki, que desarrollan aplicando también un bono de +30.")).getId();
-var DANJ_NEPH_OLVIDO_DESC = (new L("DANJ_NEPH_OLVIDO_DESC","A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 100, u olvidará su apariencia y la conversación que han mantenido. Esta habilidad se considera equivalente a un efecto místico automático cuya condición consiste, simplemente, en encontrarse con el personaje y que este se marche sin haberle dicho su nombre. No es posible percatarse del funcionamiento de esta habilidad, ni siquiera para alguien con la capacidad de ver magia. Los afectados no se darán cuenta de que lo ocurrido es innatural, sino que pensarán simplemente que son incapaces de acordarse o que no se han fijado bien. Un hechicero deberá superar un control de Valoración mágica contra una dificultad de Imposible para percatarse del uso de esta habilidad. El olvido deja de tener efecto en cualquier momento en el que el D´Anjayni se presenta con su verdadero nombre durante la conversación, o se encuentra con individuos que saben exactamente quién es.",
-    "A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 100, u olvidará su apariencia y la conversación que han mantenido. Esta habilidad se considera equivalente a un efecto místico automático cuya condición consiste, simplemente, en encontrarse con el personaje y que este se marche sin haberle dicho su nombre. No es posible percatarse del funcionamiento de esta habilidad, ni siquiera para alguien con la capacidad de ver magia. Los afectados no se darán cuenta de que lo ocurrido es innatural, sino que pensarán simplemente que son incapaces de acordarse o que no se han fijado bien. Un hechicero deberá superar un control de Valoración mágica contra una dificultad de Imposible para percatarse del uso de esta habilidad. El olvido deja de tener efecto en cualquier momento en el que el D´Anjayni se presenta con su verdadero nombre durante la conversación, o se encuentra con individuos que saben exactamente quién es.")).getId();
-var DANJ_NEPH_SUSURROS_DESC = (new L("DANJ_NEPH_SUSURROS_DESC","Todo aquel que intente escucharlas aplicará un -60 a sus controles si no es su receptor.",
-    "Todo aquel que intente escucharlas aplicará un -60 a sus controles si no es su receptor.")).getId();
-var DANJ_NEPH_PASAR_DESC = (new L("DANJ_NEPH_PASAR_DESC","Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -40 a su habilidad.",
-    "Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -40 a su habilidad.")).getId();
-var DANJ_NEPH_APARIENCIA_DESC = (new L("DANJ_NEPH_APARIENCIA_DESC","No podrán tener nunca una apariencia inferior a 3 o superior a 7.",
-    "No podrán tener nunca una apariencia inferior a 3 o superior a 7.")).getId();
-var DANJ_NEPH_ALMA_DESC = (new L("DANJ_NEPH_ALMA_DESC","Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego.",
-    "Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego.")).getId();
-var RAZA_NEPH_DUKZARIST = (new L("RAZA_NEPH_DUKZARIST","Duk'zarist Nephilim",
-    "Duk'zarist Nephilim")).getId();
-var DUK_NEPH_RESISTENCIAS = (new L("DUK_NEPH_RESISTENCIAS","Resistencias excepcionales (Duk'zarist Nephilim)",
-    "Exceptional Resistances (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_DESEQUILIBRIO = (new L("DUK_NEPH_DESEQUILIBRIO","Desequilibrio hacia la Oscuridad (Duk'zarist Nephilim)",
-    "Unbalanced Inclination toward the Dark (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_AGUANTE = (new L("DUK_NEPH_AGUANTE","Aguante a la Muerte (Duk'zarist Nephilim)",
-    "Withstand Death (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_CURACION = (new L("DUK_NEPH_CURACION","Curación Rápida (Duk'zarist Nephilim)",
-    "Quick Healing (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_NECESIDADES = (new L("DUK_NEPH_NECESIDADES","Necesidades Limitadas (Duk'zarist Nephilim)",
-    "Limited Needs (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_PRESENTIR = (new L("DUK_NEPH_PRESENTIR","Presentir lo oscuro y lo luminoso (Duk'zarist Nephilim)",
-    "Sense Light and Dark (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_VISION = (new L("DUK_NEPH_VISION","Visión nocturna (Duk'zarist Nephilim)",
-    "Night Vision (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_FUEGO = (new L("DUK_NEPH_FUEGO","Devoción al Fuego (Duk'zarist Nephilim)",
-    "Devotion to Fire (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_CUERPOS = (new L("DUK_NEPH_CUERPOS","Cuerpos perfectos (Duk'zarist Nephilim)",
-    "Perfect Bodies (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_ALERGIA = (new L("DUK_NEPH_ALERGIA","Alergia al Metal (Duk'zarist Nephilim)",
-    "Allergic to Metal (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_ALMA = (new L("DUK_NEPH_ALMA","Immortal Soul (Duk'zarist Nephilim)",
-    "Immortal Soul (Duk'zarist Nephilim)")).getId();
-var DUK_NEPH_RESISTENCIAS_DESC = (new L("DUK_NEPH_RESISTENCIAS_DESC","Las almas masculinas aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo la Resistencia Física (RF), donde poseen un +20. Por el contrario, las femeninas tienen un +15 a todas sus Resistencias (RF, RP, RV y RE) salvo la Mágica, donde tienen un +20 (RM).",
-    "Las almas masculinas aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo la Resistencia Física (RF), donde poseen un +20. Por el contrario, las femeninas tienen un +15 a todas sus Resistencias (RF, RP, RV y RE) salvo la Mágica, donde tienen un +20 (RM).")).getId();
-var DUK_NEPH_DESEQUILIBRIO_DESC = (new L("DUK_NEPH_DESEQUILIBRIO_DESC","Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Luz.",
-    "Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Luz.")).getId();
-var DUK_NEPH_AGUANTE_DESC = (new L("DUK_NEPH_AGUANTE_DESC","Cuando entran en el estado de entre la vida y la muerte, no necesitan superar el control de Resistencia Física para sobrevivir, ya que su alma se afianza tanto al cuerpo que superan automáticamente estos controles.",
-    "Cuando entran en el estado de entre la vida y la muerte, no necesitan superar el control de Resistencia Física para sobrevivir, ya que su alma se afianza tanto al cuerpo que superan automáticamente estos controles.")).getId();
-var DUK_NEPH_CURACION_DESC = (new L("DUK_NEPH_CURACION_DESC","Suman un punto a su nivel de Regeneración natural.",
-    "Suman un punto a su nivel de Regeneración natural.")).getId();
-var DUK_NEPH_NECESIDADES_DESC = (new L("DUK_NEPH_NECESIDADES_DESC","Disminuyen sus necesidades de sueño y comida hasta una tercera parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.",
-    "Disminuyen sus necesidades de sueño y comida hasta una tercera parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.")).getId();
-var DUK_NEPH_PRESENTIR_DESC = (new L("DUK_NEPH_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.",
-    "De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.")).getId();
-var DUK_NEPH_VISION_DESC = (new L("DUK_NEPH_VISION_DESC","A efectos de juego, esta capacidad no está tan desarrollada como la que se adquiere mediante un Punto de Creación, pero permite disminuir a la mitad cualquier penalizador que el Nephilim sufra a su percepción por causa de la oscuridad natural.",
-    "A efectos de juego, esta capacidad no está tan desarrollada como la que se adquiere mediante un Punto de Creación, pero permite disminuir a la mitad cualquier penalizador que el Nephilim sufra a su percepción por causa de la oscuridad natural.")).getId();
-var DUK_NEPH_FUEGO_DESC = (new L("DUK_NEPH_FUEGO_DESC","Si desarrolla sus habilidades mentales, tiene la obligación de adquirir como primera disciplina la Piroquinesis.",
-    "Si desarrolla sus habilidades mentales, tiene la obligación de adquirir como primera disciplina la Piroquinesis.")).getId();
-var DUK_NEPH_CUERPOS_DESC = (new L("DUK_NEPH_CUERPOS_DESC","El Nephilim no puede elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.",
-    "El Nephilim no puede elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.")).getId();
-var DUK_NEPH_ALERGIA_DESC = (new L("DUK_NEPH_ALERGIA_DESC","Si pone su piel en contacto con un metal que contenga una aleación de hierro, deberá superar un control usando su presencia base contra una dificultad de 60, o sufrirá una reacción adversa que le produce un negativo a la acción equivalente a la cantidad por la que falló la tirada. Si el metal es hierro puro, la tirada es contra 80. Estos negativos desaparecen a un ritmo de 10 puntos por minuto. Un Nephilim Duk´zarist puede utilizar ropas y guantes para evitar estos efectos.",
-    "Si pone su piel en contacto con un metal que contenga una aleación de hierro, deberá superar un control usando su presencia base contra una dificultad de 60, o sufrirá una reacción adversa que le produce un negativo a la acción equivalente a la cantidad por la que falló la tirada. Si el metal es hierro puro, la tirada es contra 80. Estos negativos desaparecen a un ritmo de 10 puntos por minuto. Un Nephilim Duk´zarist puede utilizar ropas y guantes para evitar estos efectos.")).getId();
-var DUK_NEPH_ALMA_DESC = (new L("DUK_NEPH_ALMA_DESC","Sufren un penalizador de -5 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
-    "Sufren un penalizador de -5 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
-var RAZA_NEPH_EBUDAN = (new L("RAZA_NEPH_EBUDAN","Ebudan Nephilim",
-    "Ebudan Nephilim")).getId();
-var EBUD_NEPH_ORINIE = (new L("EBUD_NEPH_ORINIE","Or'inie (Ebudan Nephilim)",
-    "Or'inie (Ebudan Nephilim)")).getId();
-var EBUD_NEPH_ALAS = (new L("EBUD_NEPH_ALAS","Alas de Serafín (Ebudan Nephilim)",
-    "Seraphim Wings (Ebudan Nephilim)")).getId();
-var EBUD_NEPH_ESENCIA = (new L("EBUD_NEPH_ESENCIA","Esencia Celestial (Ebudan Nephilim)",
-    "Celestial Essence (Ebudan Nephilim)")).getId();
-var EBUD_NEPH_ALMA = (new L("EBUD_NEPH_ALMA","Immortal Soul (Ebudan Nephilim)",
-    "Immortal Soul (Ebudan Nephilim)")).getId();
-var EBUD_NEPH_ORINIE_DESC = (new L("EBUD_NEPH_ORINIE_DESC","El Nephilim puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente.",
-    "El Nephilim puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente.")).getId();
-var EBUD_NEPH_ALAS_DESC = (new L("EBUD_NEPH_ALAS_DESC","El personaje puede exteriorizarlas u ocultarlas a voluntad, aunque hacerlo requiere un asalto completo. Las alas le otorgan la capacidad de surcar los cielos a un Tipo de Vuelo 12. Esta habilidad únicamente se manifiesta después de que el personaje haya logrado el Sue´ Aman.",
-    "El personaje puede exteriorizarlas u ocultarlas a voluntad, aunque hacerlo requiere un asalto completo. Las alas le otorgan la capacidad de surcar los cielos a un Tipo de Vuelo 12. Esta habilidad únicamente se manifiesta después de que el personaje haya logrado el Sue´ Aman.")).getId();
-var EBUD_NEPH_ESENCIA_DESC = (new L("EBUD_NEPH_ESENCIA_DESC","A efectos de juego, el Nephilim se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.",
-    "A efectos de juego, el Nephilim se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.")).getId();
-var EBUD_NEPH_ALMA_DESC = (new L("EBUD_NEPH_ALMA_DESC","Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
-    "Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
-var RAZA_NEPH_JAYAN = (new L("RAZA_NEPH_JAYAN","Jayan Nephilim",
-    "Jayan Nephilim")).getId();
-var JAY_NEPH_GIGANTES = (new L("JAY_NEPH_GIGANTES","Gigantes (Jayan Nephilim)",
-    "Giant (Jayan Nephilim)")).getId();
-var JAY_NEPH_CANSANCIO = (new L("JAY_NEPH_CANSANCIO","Aguante al cansancio (Jayan Nephilim)",
-    "Withstand Fatigue (Jayan Nephilim)")).getId();
-var JAY_NEPH_RESISTENCIA = (new L("JAY_NEPH_RESISTENCIA","Resistencia al daño (Jayan Nephilim)",
-    "Resistance to Damage (Jayan Nephilim)")).getId();
-var JAY_NEPH_FUERZA = (new L("JAY_NEPH_FUERZA","Fuerza descomunal (Jayan Nephilim)",
-    "Uncommon Strength (Jayan Nephilim)")).getId();
-var JAY_NEPH_VISION = (new L("JAY_NEPH_VISION","Visión espiritual (Jayan Nephilim)",
-    "Spiritual Vision (Jayan Nephilim)")).getId();
-var JAY_NEPH_DEBILIDAD = (new L("JAY_NEPH_DEBILIDAD","Debilidad contra la magia (Jayan Nephilim)",
-    "Susceptibility to Magic (Jayan Nephilim)")).getId();
-var JAY_NEPH_ALMA = (new L("JAY_NEPH_ALMA","Immortal Soul (Jayan Nephilim)",
-    "Immortal Soul (Jayan Nephilim)")).getId();
-var JAY_NEPH_GIGANTES_DESC = (new L("JAY_NEPH_GIGANTES_DESC","Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.",
-    "Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.")).getId();
-var JAY_NEPH_CANSANCIO_DESC = (new L("JAY_NEPH_CANSANCIO_DESC","Aumentan un punto el valor máximo de su Cansancio.",
-    "Aumentan un punto el valor máximo de su Cansancio.")).getId();
-var JAY_NEPH_RESISTENCIA_DESC = (new L("JAY_NEPH_RESISTENCIA_DESC","Aplica un bonificador de +15 a su Resistencia Física (RF).",
-    "Aplica un bonificador de +15 a su Resistencia Física (RF).")).getId();
-var JAY_NEPH_FUERZA_DESC = (new L("JAY_NEPH_FUERZA_DESC","Aument un punto el atributo de Fuerza del personaje. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos una característica para rebajar la Fuerza del Nephilim.",
-    "Aument un punto el atributo de Fuerza del personaje. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos una característica para rebajar la Fuerza del Nephilim.")).getId();
-var JAY_NEPH_VISION_DESC = (new L("JAY_NEPH_VISION_DESC","Para hacerlo, el personaje debe cerrar los ojos y de un modo inconsciente podrá 'mirar' a los seres espirituales, aunque no será capaz de ver nada en el mundo material. Esta habilidad no permite al personaje ver conjuros, efectos místicos o matrices psíquicas, sino tan sólo almas invisibles al ojo humano.",
-    "Para hacerlo, el personaje debe cerrar los ojos y de un modo inconsciente podrá 'mirar' a los seres espirituales, aunque no será capaz de ver nada en el mundo material. Esta habilidad no permite al personaje ver conjuros, efectos místicos o matrices psíquicas, sino tan sólo almas invisibles al ojo humano.")).getId();
-var JAY_NEPH_DEBILIDAD_DESC = (new L("JAY_NEPH_DEBILIDAD_DESC","Sufre un penalizador de -10 a su Resistencia Mágica (RM).",
-    "Sufre un penalizador de -10 a su Resistencia Mágica (RM).")).getId();
-var JAY_NEPH_ALMA_DESC = (new L("JAY_NEPH_ALMA_DESC","Sufren un penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
-    "Sufren un penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
-var RAZA_NEPH_SYLVAIN = (new L("RAZA_NEPH_SYLVAIN","Sylvain Nephilim",
-    "Sylvain Nephilim")).getId();
-var SYLV_NEPH_RESISTENCIAS = (new L("SYLV_NEPH_RESISTENCIAS","Resistencias excepcionales (Sylvain Nephilim)",
-    "Exceptional Resistances (Sylvain Nephilim)")).getId();
-var SYLV_NEPH_DESEQUILIBRIO = (new L("SYLV_NEPH_DESEQUILIBRIO","Desequilibrio hacia la Luz (Sylvain Nephilim)",
-    "Unbalanced Inclination to the Light (Sylvain Nephilim)")).getId();
-var SYLV_NEPH_CURACION = (new L("SYLV_NEPH_CURACION","Curación Rápida (Sylvain Nephilim)",
-    "Quick Healing (Sylvain Nephilim)")).getId();
-var SYLV_NEPH_PRESENTIR = (new L("SYLV_NEPH_PRESENTIR","Presentir lo oscuro y lo luminoso (Sylvain Nephilim)",
-    "Sense Light and Dark (Sylvain Nephilim)")).getId();
-var SYLV_NEPH_NECESIDADES = (new L("SYLV_NEPH_NECESIDADES","Necesidades Limitadas (Sylvain Nephilim)",
-    "Limited Needs (Sylvain Nephilim)")).getId();
-var SYLV_NEPH_ALMA = (new L("SYLV_NEPH_ALMA","Immortal Soul (Sylvain Nephilim)",
-    "Immortal Soul (Sylvain Nephilim)")).getId();
-var SYLV_NEPH_RESISTENCIAS_DESC = (new L("SYLV_NEPH_RESISTENCIAS_DESC","Aplican un bonificador de +10 a su Resistencia Mágica (RM) y Psíquica (RP), un +20 a su Resistencia contra Enfermedades (RE) y un +5 a sus Resistencias Físicas y contra Venenos (RF y RV, respectivamente). Un Nephilim no puede elegir las desventajas de: Salud enfermiza, Enfermedad grave incurable y Vulnerabilidad a la magia.",
-    "Aplican un bonificador de +10 a su Resistencia Mágica (RM) y Psíquica (RP), un +20 a su Resistencia contra Enfermedades (RE) y un +5 a sus Resistencias Físicas y contra Venenos (RF y RV, respectivamente). Un Nephilim no puede elegir las desventajas de: Salud enfermiza, Enfermedad grave incurable y Vulnerabilidad a la magia.")).getId();
-var SYLV_NEPH_DESEQUILIBRIO_DESC = (new L("SYLV_NEPH_DESEQUILIBRIO_DESC","Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Oscuridad.",
-    "Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Oscuridad.")).getId();
-var SYLV_NEPH_CURACION_DESC = (new L("SYLV_NEPH_CURACION_DESC","Suman un punto a su nivel de Regeneración natural.",
-    "Suman un punto a su nivel de Regeneración natural.")).getId();
-var SYLV_NEPH_PRESENTIR_DESC = (new L("SYLV_NEPH_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.",
-    "De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.")).getId();
-var SYLV_NEPH_NECESIDADES_DESC = (new L("SYLV_NEPH_NECESIDADES_DESC","Sus necesidades se reducen a la mitad de las de una persona normal. Eso no significa que no tengan hambre por comer de una manera escasa, sino que, en la práctica, no requieren tantos alimentos para sobrevivir.",
-    "Sus necesidades se reducen a la mitad de las de una persona normal. Eso no significa que no tengan hambre por comer de una manera escasa, sino que, en la práctica, no requieren tantos alimentos para sobrevivir.")).getId();
-var SYLV_NEPH_ALMA_DESC = (new L("SYLV_NEPH_ALMA_DESC","Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.",
-    "Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.")).getId();
+var RAZA_DAIMAH = (new L("RAZA_DAIMAH","Daimah","Daimah","Daimah")).getId();
+var DAIM_CUERPO = (new L("DAIM_CUERPO","Cuerpo felino (Daimah)","Cat-like Body (Daimah)","Corps félin (Daimah)")).getId();
+var DAIM_SENTIR = (new L("DAIM_SENTIR","Sentir el bosque (Daimah)","Sense the Forest (Daimah)","Sentir la forêt (Daimah)")).getId();
+var DAIM_GARRAS = (new L("DAIM_GARRAS","Garras y dientes (Daimah)","Natural Weapons (Daimah)","Griffes et dents (Daimah)")).getId();
+var DAIM_HABILIDAD = (new L("DAIM_HABILIDAD","Habilidad inhumana (Daimah)","Inhuman Actions (Daimah)","Coordination surhuamine (Daimah)")).getId();
+var DAIM_PEQUEÑO = (new L("DAIM_PEQUEÑO","Pequeño tamaño (Daimah)","Small Size (Daimah)","Petite Taille (Daimah)")).getId();
+var DAIM_NATURALEZA = (new L("DAIM_NATURALEZA","Naturaleza curativa (Daimah)","Nature's Cure (Daimah)","Nature guérisseuse (Daimah)")).getId();
+var DAIM_RESISTENCIA = (new L("DAIM_RESISTENCIA","Resistencia a las caídas (Daimah)","Resistance to Falling (Daimah)","Résistance aux chutes (Daimah)")).getId();
+var DAIM_INMUNIDAD = (new L("DAIM_INMUNIDAD","Inmunidad natural (Daimah)","Natural Immunity (Daimah)","Immunité naturelle (Daimah)")).getId();
+var DAIM_ESENCIA = (new L("DAIM_ESENCIA","Esencia mística (Daimah)","Mystical Essence (Daimah)","Essence mystique (Daimah)")).getId();
+var DAIM_MOVIMIENTO = (new L("DAIM_MOVIMIENTO","Movimiento por los bosques (Daimah)","Movement in the Forest (Daimah)","Mouvement par les arbres (Daimah)")).getId();
+var DAIM_VER = (new L("DAIM_VER","Ver la esencia (Daimah)","See the Essence (Daimah)","Voir l'essence (Daimah)")).getId();
+var DAIM_CUERPO_DESC = (new L("DAIM_CUERPO_DESC","Aplican un bono de +1 a sus características de AGI y DES, pero un -1 a su CON y VOL","Aplican un bono de +1 a sus características de AGI y DES, pero un -1 a su CON y VOL","Appliquer un bonus de +1 à l'AGI et la DEX, mais un malsu de -1 à la CON et la VOL.")).getId();
+var DAIM_SENTIR_DESC = (new L("DAIM_SENTIR_DESC","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.","Capacité à ressentir les émotions des animaux et des plantes, de savoir s'ils ont peur, s'ils se sentent en sécurité ou s'il se passe quelque chose d'étrange.")).getId();
+var DAIM_GARRAS_DESC = (new L("DAIM_GARRAS_DESC","Empleadas de este modo, tiene un daño base de 30 puntos más el bono de Fuerza. Lógicamente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.","Empleadas de este modo, tiene un daño base de 30 puntos más el bono de Fuerza. Lógicamente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.","Griffes et canines du Daimah font 30 plus le bonus de FOR. Il faut bien sûr apprendre à se battre avec les armes naturelles.")).getId();
+var DAIM_HABILIDAD_DESC = (new L("DAIM_HABILIDAD_DESC","La capacidad de los Daimah les permite alcanzar la dificultad de Inhumano en aquellos controles y habilidades que dependan de su Agilidad y su Destreza.","La capacidad de los Daimah les permite alcanzar la dificultad de Inhumano en aquellos controles y habilidades que dependan de su Agilidad y su Destreza.","Sur les tests utilisant l'AGI ou la DEX vous pouvez atteindre la difficulté Surhumaine.")).getId();
+var DAIM_PEQUEÑO_DESC = (new L("DAIM_PEQUEÑO_DESC","Restan un punto de su característica de Tamaño","Restan un punto de su característica de Tamaño","-1 à la caractéristique de Taille.")).getId();
+var DAIM_NATURALEZA_DESC = (new L("DAIM_NATURALEZA_DESC","Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma ocho puntos a su nivel de Regeneración.","Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma ocho puntos a su nivel de Regeneración.","Dans une forêt ou une jungle vous avez +8 au niveau de Régénération.")).getId();
+var DAIM_RESISTENCIA_DESC = (new L("DAIM_RESISTENCIA_DESC","Restan dos grados a la dificultad que necesitan superar para evitar daños en la Tabla 68.","Restan dos grados a la dificultad que necesitan superar para evitar daños en la Tabla 68.","Réduisez la difficulté de 2 niveaux pour éviter les dégâts d'une chute (Tableau 71 page 230).")).getId();
+var DAIM_INMUNIDAD_DESC = (new L("DAIM_INMUNIDAD_DESC","Por tanto, son inmunes a todos los venenos que provengan de animales o plantas naturales, al igual que a las enfermedades que no sean de origen místico.","Por tanto, son inmunes a todos los venenos que provengan de animales o plantas naturales, al igual que a las enfermedades que no sean de origen místico.","Immunité aux maladies non mystique et aux poisons venant des plantes ou des animaux.")).getId();
+var DAIM_ESENCIA_DESC = (new L("DAIM_ESENCIA_DESC","Están obligados a elegir la ventaja de Don.","Están obligados a elegir la ventaja de Don.","Doit prendre l'avantage Don Mystique.")).getId();
+var DAIM_MOVIMIENTO_DESC = (new L("DAIM_MOVIMIENTO_DESC","A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.","A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.","Aucun malus de vitesse ou de déplacement quand vous êtes dans une forêt.")).getId();
+var DAIM_VER_DESC = (new L("DAIM_VER_DESC","Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.","Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.","Cette faculté est considérée comme un pouvoir inné de détection, auquel un individu peut résister naturellement s'il réussit un test de RMys de difficulté 140.")).getId();
+var RAZA_DANJAYNI = (new L("RAZA_DANJAYNI","D'Anjayni","D'Anjayni","D'Anjayni")).getId();
+var DANJ_OLVIDO = (new L("DANJ_OLVIDO","Olvido (D'Anjayni)","Forgetfulness (D'Anjayni)","Oubli (D'Anjayni)")).getId();
+var DANJ_INDETECTABILIDAD = (new L("DANJ_INDETECTABILIDAD","Indetectabilidad (D'Anjayni)","Undetectability (D'Anjayni)","Indétectable (D'Anjayni)")).getId();
+var DANJ_ROSTRO = (new L("DANJ_ROSTRO","El rostro de la araña (D'Anjayni)","Face of the Spider (D'Anjayni)","Le visage de l'araignée (D'Anjayni)")).getId();
+var DANJ_PASAR = (new L("DANJ_PASAR","Pasar sin dejar rastro (D'Anjayni)","Pass Without Trace (D'Anjayni)","Passage sans trace (D'Anjayni)")).getId();
+var DANJ_SUSURROS = (new L("DANJ_SUSURROS","Susurros silenciosos (D'Anjayni)","Silent Whisper (D'Anjayni)","Murmures silencieux (D'Anjayni)")).getId();
+var DANJ_NATURALEZA = (new L("DANJ_NATURALEZA","Naturaleza observadora (D'Anjayni)","Observant Nature (D'Anjayni)","Nature observatrice (D'Anjayni)")).getId();
+var DANJ_OLVIDO_DESC = (new L("DANJ_OLVIDO_DESC",
+    "A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 120, u olvidará su apariencia y la conversación que han mantenido.",
+    "A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 120, u olvidará su apariencia y la conversación que han mantenido.",
+    "En terme de jeu, chaque individu qui voit le personnage ou discute avec lui doit réussir un test de RMys contre une difficulté de 120 sous peine d'oublier l'apparence de son interlocuteur et la nature de leur converstation.")).getId();
+var DANJ_INDETECTABILIDAD_DESC = (new L("DANJ_INDETECTABILIDAD_DESC","Su capacidad para evitar ser detectados por medios sobrenaturales les otorga un bono de +50 a cualquier Resistencia contra tales efectos. Además, poseen de manera innata la habilidad de Ocultación del Ki.","Su capacidad para evitar ser detectados por medios sobrenaturales les otorga un bono de +50 a cualquier Resistencia contra tales efectos. Además, poseen de manera innata la habilidad de Ocultación del Ki.","La capacité à ne pas être détecté par les moyens surnaturels lui accord un bonus de +50 pour tous les tests de Résistance. Il possède de façon innée le pouvoir Dissimulation du Ki du bonus.")).getId();
+var DANJ_ROSTRO_DESC = (new L("DANJ_ROSTRO_DESC","Mientras esté empleando El rostro de la araña, su habilidad de Olvido se resiente fuertemente, reduciendo la Resistencia a tan sólo 80.","Mientras esté empleando El rostro de la araña, su habilidad de Olvido se resiente fuertemente, reduciendo la Resistencia a tan sólo 80.","Permet de prendre l'identité de quelqu'un en volant la peau de la cible. Pendant ce pouvoir, la RMys de Oubli passe à 80.")).getId();
+var DANJ_PASAR_DESC = (new L("DANJ_PASAR_DESC","Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -60 a su habilidad.","Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -60 a su habilidad.","Malus de -60 pour le pister si le D'Anjayni se déplace pieds nus.")).getId();
+var DANJ_SUSURROS_DESC = (new L("DANJ_SUSURROS_DESC","Todo aquel que intente escucharlas aplicará un -80 a sus controles si no es su receptor.","Todo aquel que intente escucharlas aplicará un -80 a sus controles si no es su receptor.","Malus de -80 pour écouter les conversations entre le D'Anjayni et ses interlocuteurs.")).getId();
+var DANJ_NATURALEZA_DESC = (new L("DANJ_NATURALEZA_DESC","Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.","Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_DUKZARIST = (new L("RAZA_DUKZARIST","Duk'zarist","Duk'zarist","Duk'zarist")).getId();
+var DUK_PERFECCION = (new L("DUK_PERFECCION","Perfección física y anímica (Duk'zarist)","Perfection (Duk'zarist)","Perfection physique et spirituelle (Duk'zarist)")).getId();
+var DUK_OJOS = (new L("DUK_OJOS","Ojos de fuego (Duk'zarist)","Eyes of Fire (Duk'zarist)","Yeux de feu (Duk'zarist)")).getId();
+var DUK_ACCIONES = (new L("DUK_ACCIONES","Acciones inhumanas (Duk'zarist)","Inhuman Actions (Duk'zarist)","Actions surhumaines (Duk'zarist)")).getId();
+var DUK_PRESENTIR = (new L("DUK_PRESENTIR","Presentir lo oscuro y lo luminoso (Duk'zarist)","Sense Light and Dark (Duk'zarist)","Ressentir l'Obscurité et la Lumière (Duk'zarist)")).getId();
+var DUK_LAZO = (new L("DUK_LAZO","Lazo de oscuridad y fuego (Duk'zarist)","Link to Darkness and Fire (Duk'zarist)","Liens envers l'Obscurité et le Feu (Duk'zarist)")).getId();
+var DUK_RESISTENCIAS = (new L("DUK_RESISTENCIAS","Resistencias excepcionales (Duk'zarist)","Exceptional Resistances (Duk'zarist)","Résistances exceptionnelles (Duk'zarist)")).getId();
+var DUK_AGUANTE = (new L("DUK_AGUANTE","Aguante extremo a la Muerte (Duk'zarist)","Extreme Resistance to Death (Duk'zarist)","Résistance exceptionnelle à la mort (Duk'zarist)")).getId();
+var DUK_CURACION = (new L("DUK_CURACION","Curación Rápida (Duk'zarist)","Quick Healing (Duk'zarist)","Guérison Rapide (Duk'zarist)")).getId();
+var DUK_NECESIDADES = (new L("DUK_NECESIDADES","Necesidades Limitadas (Duk'zarist)","Limited Needs (Duk'zarist)","Besoins limités (Duk'zarist)")).getId();
+var DUK_OBLIGACION = (new L("DUK_OBLIGACION","Obligación sobrenatural (Duk'zarist)","Supernatural Obligation (Duk'zarist)","Obligation supernaturelle (Duk'zarist)")).getId();
+var DUK_ALERGIA = (new L("DUK_ALERGIA","Alergia al Metal (Duk'zarist)","Allergy to Metals (Duk'zarist)","Allergie au métal (Duk'zarist)")).getId();
+var DUK_PERFECCION_DESC = (new L("DUK_PERFECCION_DESC","aplican un bonificador excepcional de +1 a todas sus características (FUE, DES, AGI, CON, INT, POD, VOL, PER). Sin embargo, por la misma causa son incapaces de elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.","aplican un bonificador excepcional de +1 a todas sus características (FUE, DES, AGI, CON, INT, POD, VOL, PER). Sin embargo, por la misma causa son incapaces de elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.","Bonus de +1 à toutes les caractéristiques (FOR, DEX, AGI, CON, INT, POU, VOL, PER). Impossible de choisir les désavantages suivants : Membre atrophié, Mauvaise Santé, Vulnérabilité aux poisons, Myopie, Faiblesse physique, Grave maladie, Aveugle, Sourd, Muet.")).getId();
+var DUK_OJOS_DESC = (new L("DUK_OJOS_DESC","Sus ojos son capaces de ver en la oscuridad, por lo que aplican a la mitad cualquier penalizador que sufran por su causa. También pueden detectar fuentes de calor.","Sus ojos son capaces de ver en la oscuridad, por lo que aplican a la mitad cualquier penalizador que sufran por su causa. También pueden detectar fuentes de calor.","Permet de voir dans l'obscurité et donc de diviser par 2 les malus. Permet de voir les sources de chaleur.")).getId();
+var DUK_ACCIONES_DESC = (new L("DUK_ACCIONES_DESC","Por naturaleza, un Duk´zarist puede alcanzar la dificultad de Inhumano en los controles de dificultades.","Por naturaleza, un Duk´zarist puede alcanzar la dificultad de Inhumano en los controles de dificultades.","Par nature, un Duk'zarist peut atteindre la difficulté  Surhumanité.")).getId();
+var DUK_PRESENTIR_DESC = (new L("DUK_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas.","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas.","Perception surnaturelle qui permet de sentir  l'essence obscure ou lumineuse d'une âme à proximité. Cela ne fonctionne pas si l'individu est dissimulé magiquement.")).getId();
+var DUK_LAZO_DESC = (new L("DUK_LAZO_DESC","Obtienen un bono especial de +10 a sus controles contra ellos. Un Duk´zarist no puede elegir la ventaja Desequilibrio mágico hacia la luz.","Obtienen un bono especial de +10 a sus controles contra ellos. Un Duk´zarist no puede elegir la ventaja Desequilibrio mágico hacia la luz.","Bonus de +10 aux tests contre les 2 éléments. Un Duk'zarist ne peut choisir l'avantage Prédilection élémentaire (Lumière).")).getId();
+var DUK_RESISTENCIAS_DESC = (new L("DUK_RESISTENCIAS_DESC","Los primeros aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo a la Física (RF), donde poseen un +20, mientras que las jóvenes tienen un +15 a todas ellas (RF, RP, RV y RE) salvo a la Mágica (RM), donde llegan a +20.","Los primeros aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo a la Física (RF), donde poseen un +20, mientras que las jóvenes tienen un +15 a todas ellas (RF, RP, RV y RE) salvo a la Mágica (RM), donde llegan a +20.","Bonus pour les hommes +15 à la RMys, RPsy, RPoi et RMal et +20 à la RPhy. Bonus pour les femmes +15 à la RPhy, RPsy, RPoi et RMal et +20 à la RMys")).getId();
+var DUK_AGUANTE_DESC = (new L("DUK_AGUANTE_DESC","No sólo pasan automáticamente los controles para superar el estado de entre la vida y la muerte, sino que además permanecen conscientes con un penalizador de -40 a toda acción mientras se encuentran con puntos de vida negativos.","No sólo pasan automáticamente los controles para superar el estado de entre la vida y la muerte, sino que además permanecen conscientes con un penalizador de -40 a toda acción mientras se encuentran con puntos de vida negativos.","Non seulement les Duk'zarists réussissent automatiquement les tests pour sortir de l'état Entre la vie et la mort, mais ils restent conscients même quand leur PV sont négatifs (Malus de -40 à toutes leurs actions).")).getId();
+var DUK_CURACION_DESC = (new L("DUK_CURACION_DESC","Suman cinco puntos a su nivel de Regeneración natural.","Suman cinco puntos a su nivel de Regeneración natural.","Bonus de +5 à la Régénération.")).getId();
+var DUK_NECESIDADES_DESC = (new L("DUK_NECESIDADES_DESC","Disminuyen sus necesidades de sueño y comida hasta una séptima parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.","Disminuyen sus necesidades de sueño y comida hasta una séptima parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.","Les besoins en nourriture ou sommeil sont réduits au septième des besoins d'un humain normal.")).getId();
+var DUK_OBLIGACION_DESC = (new L("DUK_OBLIGACION_DESC","Necesariamente, un Duk´zarist debe emplear sus Puntos de Creación para tener acceso a una habilidad psíquica o al Don. Como mínimo, debe elegir una de ambas ventajas, aunque nada les impide tomarlas ambas. En el caso de que adquiera poderes psíquicos, su devoción al fuego le obliga a que la primera disciplina elegida sea siempre piroquinesis.","Necesariamente, un Duk´zarist debe emplear sus Puntos de Creación para tener acceso a una habilidad psíquica o al Don. Como mínimo, debe elegir una de ambas ventajas, aunque nada les impide tomarlas ambas. En el caso de que adquiera poderes psíquicos, su devoción al fuego le obliga a que la primera disciplina elegida sea siempre piroquinesis.","Doit avoir à la création l'avantage Don Mystique ou Accès à une discipline psychique (Accès à toutes les disciplines psychiques) ou les 2. S'il est psy il doit prendre Pyrokinésie en premier.")).getId();
+var DUK_ALERGIA_DESC = (new L("DUK_ALERGIA_DESC","Si ponen su piel en contacto con metal que contenga algo de hierro, deberán superar un control de Resistencia usando su presencia base contra una dificultad de 40. Si el metal es hierro puro, la dificultad es de 60. Cuando su presencia base es veinte puntos mayor que la cantidad necesaria, ya no es necesario hacer ningún control. Los Duk´zarist que lo fallen desaparecen completamente, dejando caer al suelo sus pertenencias y ropajes vacíos.","Si ponen su piel en contacto con metal que contenga algo de hierro, deberán superar un control de Resistencia usando su presencia base contra una dificultad de 40. Si el metal es hierro puro, la dificultad es de 60. Cuando su presencia base es veinte puntos mayor que la cantidad necesaria, ya no es necesario hacer ningún control. Los Duk´zarist que lo fallen desaparecen completamente, dejando caer al suelo sus pertenencias y ropajes vacíos.","En cas de contact avec du fer, on doit faire un test de Présence difficulté 40 (ou 60 si le fer est pur). Si le test est raté le Duk'zarist disparaît complètement en laissant ses possessions. Si la Présence du Duk'zarist est de 20 point au dessus de la difficulté alors il ne fait plus le test.")).getId();
+var RAZA_EBUDAN = (new L("RAZA_EBUDAN","Ebudan","Ebudan","Ebudan")).getId();
+var EBUD_ORINIE = (new L("EBUD_ORINIE","Or'inie (Ebudan)","Or'inie (Ebudan)","Or'inie (Ebudan)")).getId();
+var EBUD_ALAS = (new L("EBUD_ALAS","Alas de Serafín (Ebudan)","Seraphim Wings (Ebudan)","Ailes de séraphin (Eruban)")).getId();
+var EBUD_ESENCIA = (new L("EBUD_ESENCIA","Esencia Celestial (Ebudan)","Heveanly Essence (Ebudan)","Essence céleste (Eruban)")).getId();
+var EBUD_ORINIE_DESC = (new L("EBUD_ORINIE_DESC","El Ebudan puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente y puede elegir entre trascender al flujo de almas y renacer como entidades espirituales con Gnosis 30, o permanecer en el mundo para guiar a otros miembros de su especie. En un caso u otro, ganan un bono de +2 a su POD y a su VOL.","El Ebudan puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente y puede elegir entre trascender al flujo de almas y renacer como entidades espirituales con Gnosis 30, o permanecer en el mundo para guiar a otros miembros de su especie. En un caso u otro, ganan un bono de +2 a su POD y a su VOL.","L'Eruban peut appliquer un bonus de +30 à tous ses tests de Résistance contre la domination, le contrôle émotionnel ou l'oubli qui le détourne de son Sue'Aman. Si l'Eruban l'accomplie la capacité disparaît et il peut devenir une entité avec une Gnose de 30 ou bien guidé son peuple sur Gaïa. Il gagne aussi +2 en POU et VOL.")).getId();
+var EBUD_ALAS_DESC = (new L("EBUD_ALAS_DESC","Las características de las alas (ambas se consideran una sola unidad como arma) son las siguientes: poseen un turno de +20, un daño base de 60 más el bono de Fuerza, su crítico primario es de Filo, de tipo mandoble, con una entereza y rotura de 20 y 5 respectivamente. Por su complejidad, no pueden utilizarlas en combinación con armas empuñadas. Además, pueden detener proyectiles como si se tratasen de un escudo. Si cumplen el Sue´ Aman, un Ebudan es capaz de dañar energía con ellas.","Las características de las alas (ambas se consideran una sola unidad como arma) son las siguientes: poseen un turno de +20, un daño base de 60 más el bono de Fuerza, su crítico primario es de Filo, de tipo mandoble, con una entereza y rotura de 20 y 5 respectivamente. Por su complejidad, no pueden utilizarlas en combinación con armas empuñadas. Además, pueden detener proyectiles como si se tratasen de un escudo. Si cumplen el Sue´ Aman, un Ebudan es capaz de dañar energía con ellas.","L'Eruban a une Qualité de Vol de 12. Les caractéristiques des ailes en combat sont : Vitesse +20, Dégâts 60 plus modificateur de FOR, Mode TRA, catégorie 2 Mains, Solidité 20 et Fracassement 5. Les ailes peuvent bloquer des projectiles comme s'il s'agissait d'un bouclier. On ne peut manipuler les ailes et des armes en combat. S'il accomplit son Sue'Aman les ailes peuvent altérer l'énergie.")).getId();
+var EBUD_ESENCIA_DESC = (new L("EBUD_ESENCIA_DESC","A efectos de juego, el Ebudan se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.","A efectos de juego, el Ebudan se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.","L'Eruban qui a accompli son Sue'Aman devient invulnérable à toutes les attaques naturelles qui n'affectent pas l'énergie.")).getId();
+var RAZA_HUMANO = (new L("RAZA_HUMANO","Humano","Human","Humain")).getId();
+var RAZA_JAYAN = (new L("RAZA_JAYAN","Jayán","Jayan","Jayan")).getId();
+var JAY_GIGANTES = (new L("JAY_GIGANTES","Gigantes (Jayán)","Giant (Jayán)","Géants (Jayan)")).getId();
+var JAY_FISICO = (new L("JAY_FISICO","Físico excepcional (Jayán)","Exceptional Build (Jayán)","Physique exceptionnel (Jayan)")).getId();
+var JAY_CANSANCIO = (new L("JAY_CANSANCIO","Aguante al cansancio (Jayán)","Withstand Fatigue (Jayán)","Résistant à la fatigue (Jayan)")).getId();
+var JAY_RESISTENCIA = (new L("JAY_RESISTENCIA","Resistencia física (Jayán)","Resistance to Damage (Jayán)","Résistant aux blessures (Jayan)")).getId();
+var JAY_OJO = (new L("JAY_OJO","El tercer ojo (Jayán)","The Third Eye (Jayán)","Troisième oeil (Jayan)")).getId();
+var JAY_ARMAS = (new L("JAY_ARMAS","Armas naturales (Jayán)","Natural Weapons (Jayán)","Armes naturelles (Jayan)")).getId();
+var JAY_FUERZA = (new L("JAY_FUERZA","Fuerza inhumana (Jayán)","Inhuman Strength (Jayán)","Force inhumaine (Jayan)")).getId();
+var JAY_DEBILIDAD = (new L("JAY_DEBILIDAD","Debilidad contra magia (Jayán)","Susceptibility to Magic (Jayán)","Faiblesse contre la magie (Jayan)")).getId();
+var JAY_GIGANTES_DESC = (new L("JAY_GIGANTES_DESC","Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.","Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.","Ajouter +2 à la caractéristique de Taille. Ils ne peuvent pas réduire leur taille et s'il atteingne la Taille Enorme du tableau 85 (page 306) ils n'ont pas les bénéfices.")).getId();
+var JAY_FISICO_DESC = (new L("JAY_FISICO_DESC","Suman un +2 a su característica de FUE y un +1 a su CON. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos a una característica para rebajar su Fuerza.","Suman un +2 a su característica de FUE y un +1 a su CON. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos a una característica para rebajar su Fuerza.","Bonus de +2 en FOR et +1 en CON. Ils ne peuvent pas prendre le désavantage Réduire la FOR de 2 points.")).getId();
+var JAY_CANSANCIO_DESC = (new L("JAY_CANSANCIO_DESC","Aplican un bonificador de tres puntos al valor máximo de su Cansancio","Aplican un bonificador de tres puntos al valor máximo de su Cansancio","Augmenter de 3 point leur Fatigue")).getId();
+var JAY_RESISTENCIA_DESC = (new L("JAY_RESISTENCIA_DESC","Obtienen +20 a su RF.","Obtienen +20 a su RF.","Bonus de +20 à sa RPhy")).getId();
+var JAY_OJO_DESC = (new L("JAY_OJO_DESC","Esta habilidad no funciona con conjuros, efectos místicos o matrices psíquicas.","Esta habilidad no funciona con conjuros, efectos místicos o matrices psíquicas.","Voit les êtres Animiques, invisibles. Ne fonctionne pas pour les sorts, les effets mystiques ou les matrices.")).getId();
+var JAY_ARMAS_DESC = (new L("JAY_ARMAS_DESC","Incluso desarmados, sus ataques producen un daño base de 40 ó 60 más el bono de Fuerza, dependiendo de su tamaño (Ver la Tabla 82). Naturalmente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.","Incluso desarmados, sus ataques producen un daño base de 40 ó 60 más el bono de Fuerza, dependiendo de su tamaño (Ver la Tabla 82). Naturalmente, es necesario desarrollar su habilidad de combate con ellas para no aplicar penalizadores.","Les griffes et les cornes peuvent être utilisées. Les dégâts sont de 40 ou 60 (Voir tableau 85 page 306) plus le modificateur de FOR. Il faut savoir se battre avec pour ne pas avoir de malus.")).getId();
+var JAY_FUERZA_DESC = (new L("JAY_FUERZA_DESC","Su increíble físico permite a los Jayán realizar acciones de dificultad Inhumana en todos aquellos controles que dependan de la característica de Fuerza.","Su increíble físico permite a los Jayán realizar acciones de dificultad Inhumana en todos aquellos controles que dependan de la característica de Fuerza.","Peut faire des actions de difficulté Surhumaine pour tous les test liés à la FORCE.")).getId();
+var JAY_DEBILIDAD_DESC = (new L("JAY_DEBILIDAD_DESC","Aplican un penalizador de -20 a su RM. Además, restan un punto de su característica de POD.","Aplican un penalizador de -20 a su RM. Además, restan un punto de su característica de POD.","Malus de -1 en POU et -20 à la RMys")).getId();
+var RAZA_SYLVAIN = (new L("RAZA_SYLVAIN","Sylvain","Sylvain","Sylvain")).getId();
+var SYLV_CARACTERISTICAS = (new L("SYLV_CARACTERISTICAS","Características sobrehumanas (Sylvain)","Superhuman Characteristics (Sylvain)","Caractéristiques exceptionnelles (Sylvain)")).getId();
+var SYLV_RESISTENCIAS = (new L("SYLV_RESISTENCIAS","Resistencias anímicas excepcionales (Sylvain)","Exceptional Resistances (Sylvain)","Résistances exceptionnelles (Sylvain)")).getId();
+var SYLV_INMUNIDAD = (new L("SYLV_INMUNIDAD","Inmunidad a las enfermedades y venenos naturales (Sylvain)","Immunity to Sickness and Natural Venom (Sylvain)","Immunité aux maladies et aux poisons naturels (Sylvain)")).getId();
+var SYLV_INHUMANAS = (new L("SYLV_INHUMANAS","Acciones inhumanas (Sylvain)","Inhuman Actions (Sylvain)","Actions surhumaines (Sylvain)")).getId();
+var SYLV_NECESIDADES = (new L("SYLV_NECESIDADES","Necesidades Limitadas (Sylvain)","Limited Needs (Sylvain)","Besoins limités (Sylvain)")).getId();
+var SYLV_CURACION = (new L("SYLV_CURACION","Curación Rápida (Sylvain)","Quick Healing (Sylvain)","Guérison Rapide (Sylvain)")).getId();
+var SYLV_PRESENTIR = (new L("SYLV_PRESENTIR","Presentir lo oscuro y lo luminoso (Sylvain)","Sense Light and Dark (Sylvain)","Ressentir l'Obscurité et la Lumière (Sylvain)")).getId();
+var SYLV_OBLIGACION = (new L("SYLV_OBLIGACION","Obligación mágica (Sylvain)","Magical Obligation (Sylvain)","Obligation magique (Sylvain)")).getId();
+var SYLV_VISION = (new L("SYLV_VISION","Su visión del mundo (Sylvain)","Sylvain Ethos (Sylvain)","Vision du monde (Sylvain)")).getId();
+var SYLV_LAZO = (new L("SYLV_LAZO","Lazo hacia la luz (Sylvain)","Unbalanced Inclination to the Light (Sylvain)","Lien envers la lumière (Sylvain)")).getId();
+var SYLV_CARACTERISTICAS_DESC = (new L("SYLV_CARACTERISTICAS_DESC","Aplica un bono de +1 a las características de DES, AGI, POD e INT, pero sufren un penalizador de -1 a su FUE y CON.","Aplica un bono de +1 a las características de DES, AGI, POD e INT, pero sufren un penalizador de -1 a su FUE y CON.","Bonus de +1 en AGI, DEX, POU et INT et un malus de -1 en FOR et CON")).getId();
+var SYLV_RESISTENCIAS_DESC = (new L("SYLV_RESISTENCIAS_DESC","aplican un bono de +30 a su Resistencia Mágica y Psíquica (RM y RP). Un Sylvain no puede elegir las desventajas de Vulnerabilidad a la magia o Fácil posesión.","aplican un bono de +30 a su Resistencia Mágica y Psíquica (RM y RP). Un Sylvain no puede elegir las desventajas de Vulnerabilidad a la magia o Fácil posesión.","Bonus de +30 à la RMys et la RPsy. Interdit de prendre les désavantages Vulnérabilité à la magie et Possession facilitée")).getId();
+var SYLV_INMUNIDAD_DESC = (new L("SYLV_INMUNIDAD_DESC","Obtienen además un bono de +20 a su RE y un +10 a su RV. No pueden elegir las desventajas de: Salud enfermiza, Vulnerable a los venenos o enfermedad grave incurable.","Obtienen además un bono de +20 a su RE y un +10 a su RV. No pueden elegir las desventajas de: Salud enfermiza, Vulnerable a los venenos o enfermedad grave incurable.","Immunité aux poisons et maladies naturels et un bonus de +20 à la RMal et +10 à la RPoi. Interdit de prend les désavantages Mauvaise santé, Grave maladie ou Vulnérabilité aux poisons")).getId();
+var SYLV_INHUMANAS_DESC = (new L("SYLV_INHUMANAS_DESC","Por naturaleza, un Sylvain puede alcanzar la dificultad de Inhumano en los controles de dificultades.","Por naturaleza, un Sylvain puede alcanzar la dificultad de Inhumano en los controles de dificultades.","Par nature, un Sylvain peut atteindre la difficulté  Surhumanité.")).getId();
+var SYLV_NECESIDADES_DESC = (new L("SYLV_NECESIDADES_DESC","Disminuyen sus necesidades de sueño y comida hasta una quinta parte de las que necesita un humano.","Disminuyen sus necesidades de sueño y comida hasta una quinta parte de las que necesita un humano.","Les besoins en nourriture ou sommeil sont réduits au cinquième des besoins d'un humain normal.")).getId();
+var SYLV_CURACION_DESC = (new L("SYLV_CURACION_DESC","Suman tres puntos a su nivel de Regeneración natural.","Suman tres puntos a su nivel de Regeneración natural.","Bonus de +3 à la Régénération.")).getId();
+var SYLV_PRESENTIR_DESC = (new L("SYLV_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.","Perception surnaturelle qui permet de sentir  l'essence obscure ou lumineuse d'une âme à proximité. Cela ne fonctionne pas si l'individu est dissimulé magiquement.")).getId();
+var SYLV_LAZO_DESC = (new L("SYLV_LAZO_DESC","Cualquier ser de dicho elemento sentirá afinidad hacia ellos y no pueden elegir la ventaja Desequilibrio hacia la oscuridad. Además, poseen un bono especial de +10 a cualquier control de Resistencia que realicen contra efectos de lumínicos, y un penalizador equivalente contra la oscuridad.","Cualquier ser de dicho elemento sentirá afinidad hacia ellos y no pueden elegir la ventaja Desequilibrio hacia la oscuridad. Además, poseen un bono especial de +10 a cualquier control de Resistencia que realicen contra efectos de lumínicos, y un penalizador equivalente contra la oscuridad.","Bonus de +10 aux tests de Résistance contre la lumière (et -10 contre l'obscurité). Un Sylvain ne peut choisir l'avantage Prédilection élémentaire (Obscurité).")).getId();
+var SYLV_OBLIGACION_DESC = (new L("SYLV_OBLIGACION_DESC","Están obligados a elegir la ventaja de Don.","Están obligados a elegir la ventaja de Don.","Doit avoir à la création l'avantage Don Mystique.")).getId();
+var SYLV_VISION_DESC = (new L("SYLV_VISION_DESC","Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.","Sufre un penalizador de -3 a los puntos de experiencia que obtenga al finalizar una sesión de juego.","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_NEPH_DAIMAH = (new L("RAZA_NEPH_DAIMAH","Daimah Nephilim","Daimah Nephilim","Daimah Nephilim")).getId();
+var DAIM_NEPH_SENTIR = (new L("DAIM_NEPH_SENTIR","Sentir el bosque (Daimah Nephilim)","Sense the Forest (Daimah Nephilim)","Sentir la forêt (Daimah Nephilim)")).getId();
+var DAIM_NEPH_MOVIMIENTO = (new L("DAIM_NEPH_MOVIMIENTO","Movimiento por los bosques (Daimah Nephilim)","Movement in the Forest (Daimah Nephilim)","Mouvement par les arbres (Daimah Nephilim)")).getId();
+var DAIM_NEPH_VER = (new L("DAIM_NEPH_VER","Ver la esencia (Daimah Nephilim)","See the Essence (Daimah Nephilim)","Voir l'essence (Daimah Nephilim)")).getId();
+var DAIM_NEPH_PEQUEÑO = (new L("DAIM_NEPH_PEQUEÑO","Pequeño tamaño (Daimah Nephilim)","Small Size (Daimah Nephilim)","Petite Taille (Daimah Nephilim)")).getId();
+var DAIM_NEPH_NATURALEZA = (new L("DAIM_NEPH_NATURALEZA","Naturaleza curativa (Daimah Nephilim)","Nature's Cure (Daimah Nephilim)","Nature Guérisseuse (Daimah Nephilim)")).getId();
+var DAIM_NEPH_ALMA = (new L("DAIM_NEPH_ALMA","Alma inmortal (Daimah Nephilim)","Immortal Soul (Daimah Nephilim)","Âme immortelle (Daimah Nephilim)")).getId();
+var DAIM_NEPH_SENTIR_DESC = (new L("DAIM_NEPH_SENTIR_DESC","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.","Son capaces de notar las sensaciones de los animales y las plantas, detectando si tienen miedo, se sienten tranquilos o les ocurre algo extraño.","Capacité à ressentir les émotions des animaux et des plantes, de savoir s'ils ont peur, s'ils se sentent en sécurité ou s'il se passe quelque chose d'étrange.")).getId();
+var DAIM_NEPH_MOVIMIENTO_DESC = (new L("DAIM_NEPH_MOVIMIENTO_DESC","A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.","A pesar de lo espeso del follaje o de lo cerrado de la vegetación, un Daimah no tiene penalizadores al movimiento por moverse en este entorno.","Aucun malus de vitesse ou de déplacement quand vous êtes dans une forêt.")).getId();
+var DAIM_NEPH_VER_DESC = (new L("DAIM_NEPH_VER_DESC","Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.","Esta habilidad se considera un poder innato de detección, pero un individuo puede resistirse naturalmente si supera una RM contra 140.","Cette faculté est considérée comme un pouvoir inné de détection, auquel un individu peut résister naturellement s'il réussit un test de RMys de difficulté 140.")).getId();
+var DAIM_NEPH_PEQUEÑO_DESC = (new L("DAIM_NEPH_PEQUEÑO_DESC","Restan un punto de su característica de Tamaño","Restan un punto de su característica de Tamaño","-1 à la caractéristique de Taille.")).getId();
+var DAIM_NEPH_NATURALEZA_DESC = (new L("DAIM_NEPH_NATURALEZA_DESC","Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma tres puntos a su nivel de Regeneración.","Mientras esté en una espesa zona boscosa o selvática, el Nephilim suma tres puntos a su nivel de Regeneración.","Dans une forêt ou une jungle vous avez +3 au niveau de Régénération.")).getId();
+var DAIM_NEPH_ALMA_DESC = (new L("DAIM_NEPH_ALMA_DESC","Penalizador de -2 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Penalizador de -2 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Malus de -2 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_NEPH_DANJAYNI = (new L("RAZA_NEPH_DANJAYNI","D'Anjayni Nephilim","D'Anjayni Nephilim","D'Anjayni Nephilim")).getId();
+var DANJ_NEPH_INDETECTABILIDAD = (new L("DANJ_NEPH_INDETECTABILIDAD","Indetectabilidad (D'Anjayni Nephilim)","Undetectability (D'Anjayni Nephilim)","Indétectable (D'Anjayni Nephilim)")).getId();
+var DANJ_NEPH_OLVIDO = (new L("DANJ_NEPH_OLVIDO","Olvido (D'Anjayni Nephilim)","Forgetfulness (D'Anjayni Nephilim)","Oubli (D'Anjayni Nephilim)")).getId();
+var DANJ_NEPH_SUSURROS = (new L("DANJ_NEPH_SUSURROS","Susurros silenciosos (D'Anjayni Nephilim)","Silent Whisper (D'Anjayni Nephilim)","Murmures silencieux (D'Anjayni Nephilim)")).getId();
+var DANJ_NEPH_PASAR = (new L("DANJ_NEPH_PASAR","Pasar sin dejar rastro (D'Anjayni Nephilim)","Pass Without Trace (D'Anjayni Nephilim)","Passage sans trace (D'Anjayni Nephilim)")).getId();
+var DANJ_NEPH_APARIENCIA = (new L("DANJ_NEPH_APARIENCIA","Apariencia común (D'Anjayni Nephilim)","Common Appearance (D'Anjayni Nephilim)","Apparence banale (D'Ajayni Nephilim)")).getId();
+var DANJ_NEPH_ALMA = (new L("DANJ_NEPH_ALMA","Immortal Soul (D'Anjayni Nephilim)","Immortal Soul (D'Anjayni Nephilim)","Âme immortelle (D'Anjayni Nephilim)")).getId();
+var DANJ_NEPH_INDETECTABILIDAD_DESC = (new L("DANJ_NEPH_INDETECTABILIDAD_DESC","Todos los D´Anjayni aplican un bonificador de +30 a cualquiera de sus Resistencias contra efectos de detección. Además, aprenden de manera innata la habilidad de Ocultación del Ki, que desarrollan aplicando también un bono de +30.","Todos los D´Anjayni aplican un bonificador de +30 a cualquiera de sus Resistencias contra efectos de detección. Además, aprenden de manera innata la habilidad de Ocultación del Ki, que desarrollan aplicando también un bono de +30.","La capacité à ne pas être détecté par les moyens surnaturels lui accord un bonus de +30 pour tous les tests de Résistance. Il possède de façon innée le pouvoir Dissimulation du Ki et du bonus.")).getId();
+var DANJ_NEPH_OLVIDO_DESC = (new L("DANJ_NEPH_OLVIDO_DESC","A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 100, u olvidará su apariencia y la conversación que han mantenido. Esta habilidad se considera equivalente a un efecto místico automático cuya condición consiste, simplemente, en encontrarse con el personaje y que este se marche sin haberle dicho su nombre. No es posible percatarse del funcionamiento de esta habilidad, ni siquiera para alguien con la capacidad de ver magia. Los afectados no se darán cuenta de que lo ocurrido es innatural, sino que pensarán simplemente que son incapaces de acordarse o que no se han fijado bien. Un hechicero deberá superar un control de Valoración mágica contra una dificultad de Imposible para percatarse del uso de esta habilidad. El olvido deja de tener efecto en cualquier momento en el que el D´Anjayni se presenta con su verdadero nombre durante la conversación, o se encuentra con individuos que saben exactamente quién es.","A términos de juego, cualquiera que vea o hable con el personaje deberá superar una Resistencia Mágica (RM) contra 100, u olvidará su apariencia y la conversación que han mantenido. Esta habilidad se considera equivalente a un efecto místico automático cuya condición consiste, simplemente, en encontrarse con el personaje y que este se marche sin haberle dicho su nombre. No es posible percatarse del funcionamiento de esta habilidad, ni siquiera para alguien con la capacidad de ver magia. Los afectados no se darán cuenta de que lo ocurrido es innatural, sino que pensarán simplemente que son incapaces de acordarse o que no se han fijado bien. Un hechicero deberá superar un control de Valoración mágica contra una dificultad de Imposible para percatarse del uso de esta habilidad. El olvido deja de tener efecto en cualquier momento en el que el D´Anjayni se presenta con su verdadero nombre durante la conversación, o se encuentra con individuos que saben exactamente quién es.","En terme de jeu, chaque individu qui voit le personnage ou discute avec lui doit réussir un test de RMys contre une difficulté de 100 sous peine d'oublier l'apparence de son interlocuteur et la nature de leur converstation. Un sorcier peut faire un test Impossible d'Evaluation magique pour s'apercevoir de la mise en oeuvre de cette faculté. La faculté ne fonctionne plus si le D'Anjayni se presente sous son nom ou que les autres connaissent sa nature.")).getId();
+var DANJ_NEPH_SUSURROS_DESC = (new L("DANJ_NEPH_SUSURROS_DESC","Todo aquel que intente escucharlas aplicará un -60 a sus controles si no es su receptor.","Todo aquel que intente escucharlas aplicará un -60 a sus controles si no es su receptor.","Malus de -60 pour écouter les conversations entre le D'Anjayni et ses interlocuteurs.")).getId();
+var DANJ_NEPH_PASAR_DESC = (new L("DANJ_NEPH_PASAR_DESC","Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -40 a su habilidad.","Su rastro se borra a medida que camina, por lo que si alguien intenta rastrearles, aplicará un -40 a su habilidad.","Malus de -40 pour le pister si le D'Anjayni se déplace pieds nus.")).getId();
+var DANJ_NEPH_APARIENCIA_DESC = (new L("DANJ_NEPH_APARIENCIA_DESC","No podrán tener nunca una apariencia inferior a 3 o superior a 7.","No podrán tener nunca una apariencia inferior a 3 o superior a 7.","L'apparence est obligatoirement  entre 3 et 7 inclus.")).getId();
+var DANJ_NEPH_ALMA_DESC = (new L("DANJ_NEPH_ALMA_DESC","Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego.","Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego.","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_NEPH_DUKZARIST = (new L("RAZA_NEPH_DUKZARIST","Duk'zarist Nephilim","Duk'zarist Nephilim","Duk'zarist Nephilim")).getId();
+var DUK_NEPH_RESISTENCIAS = (new L("DUK_NEPH_RESISTENCIAS","Resistencias excepcionales (Duk'zarist Nephilim)","Exceptional Resistances (Duk'zarist Nephilim)","Résistances exceptionnelles (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_DESEQUILIBRIO = (new L("DUK_NEPH_DESEQUILIBRIO","Desequilibrio hacia la Oscuridad (Duk'zarist Nephilim)","Unbalanced Inclination toward the Dark (Duk'zarist Nephilim)","Penchant pour l'Obscurité (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_AGUANTE = (new L("DUK_NEPH_AGUANTE","Aguante a la Muerte (Duk'zarist Nephilim)","Withstand Death (Duk'zarist Nephilim)","Résistance à la mort (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_CURACION = (new L("DUK_NEPH_CURACION","Curación Rápida (Duk'zarist Nephilim)","Quick Healing (Duk'zarist Nephilim)","Guérison Rapide (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_NECESIDADES = (new L("DUK_NEPH_NECESIDADES","Necesidades Limitadas (Duk'zarist Nephilim)","Limited Needs (Duk'zarist Nephilim)","Besoins limités (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_PRESENTIR = (new L("DUK_NEPH_PRESENTIR","Presentir lo oscuro y lo luminoso (Duk'zarist Nephilim)","Sense Light and Dark (Duk'zarist Nephilim)","Ressentir l'Obscurité et la Lumière (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_VISION = (new L("DUK_NEPH_VISION","Visión nocturna (Duk'zarist Nephilim)","Night Vision (Duk'zarist Nephilim)","Vision nocturne (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_FUEGO = (new L("DUK_NEPH_FUEGO","Devoción al Fuego (Duk'zarist Nephilim)","Devotion to Fire (Duk'zarist Nephilim)","Dévotion au feu (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_CUERPOS = (new L("DUK_NEPH_CUERPOS","Cuerpos perfectos (Duk'zarist Nephilim)","Perfect Bodies (Duk'zarist Nephilim)","Corps parfait (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_ALERGIA = (new L("DUK_NEPH_ALERGIA","Alergia al Metal (Duk'zarist Nephilim)","Allergic to Metal (Duk'zarist Nephilim)","Allergie au métal (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_ALMA = (new L("DUK_NEPH_ALMA","Immortal Soul (Duk'zarist Nephilim)","Immortal Soul (Duk'zarist Nephilim)","Âme immortelle (Duk'zarist Nephilim)")).getId();
+var DUK_NEPH_RESISTENCIAS_DESC = (new L("DUK_NEPH_RESISTENCIAS_DESC","Las almas masculinas aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo la Resistencia Física (RF), donde poseen un +20. Por el contrario, las femeninas tienen un +15 a todas sus Resistencias (RF, RP, RV y RE) salvo la Mágica, donde tienen un +20 (RM).","Las almas masculinas aplican un bonificador de +15 a todas sus Resistencias (RM, RP, RV y RE) salvo la Resistencia Física (RF), donde poseen un +20. Por el contrario, las femeninas tienen un +15 a todas sus Resistencias (RF, RP, RV y RE) salvo la Mágica, donde tienen un +20 (RM).","Bonus pour les hommes +15 à la RMys, RPsy, RPoi et RMal et +20 à la RPhy. Bonus pour les femmes +15 à la RPhy, RPsy, RPoi et RMal et +20 à la RMys")).getId();
+var DUK_NEPH_DESEQUILIBRIO_DESC = (new L("DUK_NEPH_DESEQUILIBRIO_DESC","Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Luz.","Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Luz.","Bonus de +10 aux tests de Résistance contre l'obscurité (et -10 contre la lumière). Il ne peut choisir l'avantage Prédilection élémentaire (Lumière).")).getId();
+var DUK_NEPH_AGUANTE_DESC = (new L("DUK_NEPH_AGUANTE_DESC","Cuando entran en el estado de entre la vida y la muerte, no necesitan superar el control de Resistencia Física para sobrevivir, ya que su alma se afianza tanto al cuerpo que superan automáticamente estos controles.","Cuando entran en el estado de entre la vida y la muerte, no necesitan superar el control de Resistencia Física para sobrevivir, ya que su alma se afianza tanto al cuerpo que superan automáticamente estos controles.","Réussite automatique du test de Entre la vie et la mort.")).getId();
+var DUK_NEPH_CURACION_DESC = (new L("DUK_NEPH_CURACION_DESC","Suman un punto a su nivel de Regeneración natural.","Suman un punto a su nivel de Regeneración natural.","Bonus de +1 à la Régénération.")).getId();
+var DUK_NEPH_NECESIDADES_DESC = (new L("DUK_NEPH_NECESIDADES_DESC","Disminuyen sus necesidades de sueño y comida hasta una tercera parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.","Disminuyen sus necesidades de sueño y comida hasta una tercera parte que la de cualquier otro ser humano, sin sufrir ningún tipo de negativo.","Les besoins en nourriture ou sommeil sont réduits au tiers des besoins d'un humain normal.")).getId();
+var DUK_NEPH_PRESENTIR_DESC = (new L("DUK_NEPH_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.","Réduire de moitié les malus de l'obscurité naturelle. L'avantage Vision nocturne est plus développé.")).getId();
+var DUK_NEPH_VISION_DESC = (new L("DUK_NEPH_VISION_DESC","A efectos de juego, esta capacidad no está tan desarrollada como la que se adquiere mediante un Punto de Creación, pero permite disminuir a la mitad cualquier penalizador que el Nephilim sufra a su percepción por causa de la oscuridad natural.","A efectos de juego, esta capacidad no está tan desarrollada como la que se adquiere mediante un Punto de Creación, pero permite disminuir a la mitad cualquier penalizador que el Nephilim sufra a su percepción por causa de la oscuridad natural.","Perception surnaturelle qui permet de sentir  l'essence obscure ou lumineuse d'une âme à proximité. Cela ne fonctionne pas si l'individu est dissimulé magiquement.")).getId();
+var DUK_NEPH_FUEGO_DESC = (new L("DUK_NEPH_FUEGO_DESC","Si desarrolla sus habilidades mentales, tiene la obligación de adquirir como primera disciplina la Piroquinesis.","Si desarrolla sus habilidades mentales, tiene la obligación de adquirir como primera disciplina la Piroquinesis.","Doit développer Pyrokinésie comme première discipline mental, s'il en développe.")).getId();
+var DUK_NEPH_CUERPOS_DESC = (new L("DUK_NEPH_CUERPOS_DESC","El Nephilim no puede elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.","El Nephilim no puede elegir ninguna de las siguientes desventajas: Miembro atrofiado, Salud enfermiza, Vulnerabilidad a los venenos, Miopía, Debilidad física, Enfermedad grave, Mudo, Ciego o Sordo.","Impossible de choisir les désavantages suivants : Membre atrophié, Mauvaise Santé, Vulnérabilité aux poisons, Myopie, Faiblesse physique, Grave maladie, Aveugle, Sourd, Muet.")).getId();
+var DUK_NEPH_ALERGIA_DESC = (new L("DUK_NEPH_ALERGIA_DESC","Si pone su piel en contacto con un metal que contenga una aleación de hierro, deberá superar un control usando su presencia base contra una dificultad de 60, o sufrirá una reacción adversa que le produce un negativo a la acción equivalente a la cantidad por la que falló la tirada. Si el metal es hierro puro, la tirada es contra 80. Estos negativos desaparecen a un ritmo de 10 puntos por minuto. Un Nephilim Duk´zarist puede utilizar ropas y guantes para evitar estos efectos.","Si pone su piel en contacto con un metal que contenga una aleación de hierro, deberá superar un control usando su presencia base contra una dificultad de 60, o sufrirá una reacción adversa que le produce un negativo a la acción equivalente a la cantidad por la que falló la tirada. Si el metal es hierro puro, la tirada es contra 80. Estos negativos desaparecen a un ritmo de 10 puntos por minuto. Un Nephilim Duk´zarist puede utilizar ropas y guantes para evitar estos efectos.","En cas de contact avec du fer, on doit faire un test de Présence difficulté 60 (ou 80 si le fer est pur). Si le test est raté le Duk'zarist subit un malus égal à la marge d'échec (le malus se récupère au rythme de 10 points par minute). Le Nephilim peut utliser des gants et des vêtements pour se protéger.")).getId();
+var DUK_NEPH_ALMA_DESC = (new L("DUK_NEPH_ALMA_DESC","Sufren un penalizador de -5 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Sufren un penalizador de -5 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Malus de -5 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_NEPH_EBUDAN = (new L("RAZA_NEPH_EBUDAN","Ebudan Nephilim","Ebudan Nephilim","Ebudan Nephilim")).getId();
+var EBUD_NEPH_ORINIE = (new L("EBUD_NEPH_ORINIE","Or'inie (Ebudan Nephilim)","Or'inie (Ebudan Nephilim)","Or'inie (Ebudan Nephilim)")).getId();
+var EBUD_NEPH_ALAS = (new L("EBUD_NEPH_ALAS","Alas de Serafín (Ebudan Nephilim)","Seraphim Wings (Ebudan Nephilim)","Ailes de séraphin (Ebudan Nephilim)")).getId();
+var EBUD_NEPH_ESENCIA = (new L("EBUD_NEPH_ESENCIA","Esencia Celestial (Ebudan Nephilim)","Celestial Essence (Ebudan Nephilim)","Essence céleste (Ebudan Nephilim)")).getId();
+var EBUD_NEPH_ALMA = (new L("EBUD_NEPH_ALMA","Immortal Soul (Ebudan Nephilim)","Immortal Soul (Ebudan Nephilim)","Âme immortelle (Ebudan Nephilim)")).getId();
+var EBUD_NEPH_ORINIE_DESC = (new L("EBUD_NEPH_ORINIE_DESC","El Nephilim puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente.","El Nephilim puede aplicar un bonificador de +30 a cualquier Resistencia contra efectos de dominio, control emocional u olvido que puedan impedirle realizar el Sue´ Aman. Una vez conseguido, esta habilidad desaparece completamente.","L'Eruban peut appliquer un bonus de +30 à tous ses tests de Résistance contre la domination, le contrôle émotionnel ou l'oubli qui le détourne de son Sue'Aman. Si l'Eruban l'accomplie la capacité disparaît.")).getId();
+var EBUD_NEPH_ALAS_DESC = (new L("EBUD_NEPH_ALAS_DESC","El personaje puede exteriorizarlas u ocultarlas a voluntad, aunque hacerlo requiere un asalto completo. Las alas le otorgan la capacidad de surcar los cielos a un Tipo de Vuelo 12. Esta habilidad únicamente se manifiesta después de que el personaje haya logrado el Sue´ Aman.","El personaje puede exteriorizarlas u ocultarlas a voluntad, aunque hacerlo requiere un asalto completo. Las alas le otorgan la capacidad de surcar los cielos a un Tipo de Vuelo 12. Esta habilidad únicamente se manifiesta después de que el personaje haya logrado el Sue´ Aman.","L'Eruban qui a réussi son Sue'Aman reçoit des ailes lumineuses qu'il contrôle. Il peut les faire disparaître et apparaître comme il le veut. Il a une Qualité de Vol de 12.")).getId();
+var EBUD_NEPH_ESENCIA_DESC = (new L("EBUD_NEPH_ESENCIA_DESC","A efectos de juego, el Nephilim se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.","A efectos de juego, el Nephilim se vuelve invulnerable a cualquier ataque natural que no sea capaz de dañar energía.","L'Eruban qui a accompli son Sue'Aman devient invulnérable à toutes les attaques naturelles qui n'affectent pas l'énergie.")).getId();
+var EBUD_NEPH_ALMA_DESC = (new L("EBUD_NEPH_ALMA_DESC","Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_NEPH_JAYAN = (new L("RAZA_NEPH_JAYAN","Jayan Nephilim","Jayan Nephilim","Jayan Nephilim")).getId();
+var JAY_NEPH_GIGANTES = (new L("JAY_NEPH_GIGANTES","Gigantes (Jayan Nephilim)","Giant (Jayan Nephilim)","Géants (Jayan Nephilim)")).getId();
+var JAY_NEPH_CANSANCIO = (new L("JAY_NEPH_CANSANCIO","Aguante al cansancio (Jayan Nephilim)","Withstand Fatigue (Jayan Nephilim)","Résistant à la fatigue (Jayan Nephilim)")).getId();
+var JAY_NEPH_RESISTENCIA = (new L("JAY_NEPH_RESISTENCIA","Resistencia al daño (Jayan Nephilim)","Resistance to Damage (Jayan Nephilim)","Résistant aux blessures (Jayan Nephilim)")).getId();
+var JAY_NEPH_FUERZA = (new L("JAY_NEPH_FUERZA","Fuerza descomunal (Jayan Nephilim)","Uncommon Strength (Jayan Nephilim)","Physique exceptionnel (Jayan Nephilim)")).getId();
+var JAY_NEPH_VISION = (new L("JAY_NEPH_VISION","Visión espiritual (Jayan Nephilim)","Spiritual Vision (Jayan Nephilim)","Vision spirituelle (Jayan Nephilim)")).getId();
+var JAY_NEPH_DEBILIDAD = (new L("JAY_NEPH_DEBILIDAD","Debilidad contra la magia (Jayan Nephilim)","Susceptibility to Magic (Jayan Nephilim)","Faiblesse contre la magie (Jayan Nephilim)")).getId();
+var JAY_NEPH_ALMA = (new L("JAY_NEPH_ALMA","Immortal Soul (Jayan Nephilim)","Immortal Soul (Jayan Nephilim)","Âme immortelle (Jayan Nephilim)")).getId();
+var JAY_NEPH_GIGANTES_DESC = (new L("JAY_NEPH_GIGANTES_DESC","Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.","Suman dos puntos a su característica de Tamaño y no pueden elegir la ventaja Tamaño desigual para disminuirlo.","Ajouter +2 à la caractéristique de Taille. Ils ne peuvent pas réduire leur taille.")).getId();
+var JAY_NEPH_CANSANCIO_DESC = (new L("JAY_NEPH_CANSANCIO_DESC","Aumentan un punto el valor máximo de su Cansancio.","Aumentan un punto el valor máximo de su Cansancio.","Augmenter de 1 point leur Fatigue")).getId();
+var JAY_NEPH_RESISTENCIA_DESC = (new L("JAY_NEPH_RESISTENCIA_DESC","Aplica un bonificador de +15 a su Resistencia Física (RF).","Aplica un bonificador de +15 a su Resistencia Física (RF).","Bonus de +15 à sa RPhy")).getId();
+var JAY_NEPH_FUERZA_DESC = (new L("JAY_NEPH_FUERZA_DESC","Aument un punto el atributo de Fuerza del personaje. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos una característica para rebajar la Fuerza del Nephilim.","Aument un punto el atributo de Fuerza del personaje. Adicionalmente, no es posible utilizar la desventaja de Reducir dos puntos una característica para rebajar la Fuerza del Nephilim.","Bonus de +1 en FOR. Ils ne peuvent pas prendre le désavantage Réduire la FOR de 2 points.")).getId();
+var JAY_NEPH_VISION_DESC = (new L("JAY_NEPH_VISION_DESC","Para hacerlo, el personaje debe cerrar los ojos y de un modo inconsciente podrá 'mirar' a los seres espirituales, aunque no será capaz de ver nada en el mundo material. Esta habilidad no permite al personaje ver conjuros, efectos místicos o matrices psíquicas, sino tan sólo almas invisibles al ojo humano.","Para hacerlo, el personaje debe cerrar los ojos y de un modo inconsciente podrá 'mirar' a los seres espirituales, aunque no será capaz de ver nada en el mundo material. Esta habilidad no permite al personaje ver conjuros, efectos místicos o matrices psíquicas, sino tan sólo almas invisibles al ojo humano.","Voit les êtres Animiques, invisibles. Ne fonctionne pas pour les sorts, les effets mystiques ou les matrices.")).getId();
+var JAY_NEPH_DEBILIDAD_DESC = (new L("JAY_NEPH_DEBILIDAD_DESC","Sufre un penalizador de -10 a su Resistencia Mágica (RM).","Sufre un penalizador de -10 a su Resistencia Mágica (RM).","Malus de -10 à la RMys")).getId();
+var JAY_NEPH_ALMA_DESC = (new L("JAY_NEPH_ALMA_DESC","Sufren un penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Sufren un penalizador de -3 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
+var RAZA_NEPH_SYLVAIN = (new L("RAZA_NEPH_SYLVAIN","Sylvain Nephilim","Sylvain Nephilim","Sylvain Nephilim")).getId();
+var SYLV_NEPH_RESISTENCIAS = (new L("SYLV_NEPH_RESISTENCIAS","Resistencias excepcionales (Sylvain Nephilim)","Exceptional Resistances (Sylvain Nephilim)","Résistances exceptionnelles (Sylvain Nephilim)")).getId();
+var SYLV_NEPH_DESEQUILIBRIO = (new L("SYLV_NEPH_DESEQUILIBRIO","Desequilibrio hacia la Luz (Sylvain Nephilim)","Unbalanced Inclination to the Light (Sylvain Nephilim)","Penchant vers la lumière (Sylvain Nephilim)")).getId();
+var SYLV_NEPH_CURACION = (new L("SYLV_NEPH_CURACION","Curación Rápida (Sylvain Nephilim)","Quick Healing (Sylvain Nephilim)","Guérison Rapide (Sylvain Nephilim)")).getId();
+var SYLV_NEPH_PRESENTIR = (new L("SYLV_NEPH_PRESENTIR","Presentir lo oscuro y lo luminoso (Sylvain Nephilim)","Sense Light and Dark (Sylvain Nephilim)","Ressentir l'Obscurité et la Lumière (Sylvain Nephilim)")).getId();
+var SYLV_NEPH_NECESIDADES = (new L("SYLV_NEPH_NECESIDADES","Necesidades Limitadas (Sylvain Nephilim)","Limited Needs (Sylvain Nephilim)","Besoins limités (Sylvain Nephilim)")).getId();
+var SYLV_NEPH_ALMA = (new L("SYLV_NEPH_ALMA","Immortal Soul (Sylvain Nephilim)","Immortal Soul (Sylvain Nephilim)","Âme immortelle (Sylvain Nephilim)")).getId();
+var SYLV_NEPH_RESISTENCIAS_DESC = (new L("SYLV_NEPH_RESISTENCIAS_DESC","Aplican un bonificador de +10 a su Resistencia Mágica (RM) y Psíquica (RP), un +20 a su Resistencia contra Enfermedades (RE) y un +5 a sus Resistencias Físicas y contra Venenos (RF y RV, respectivamente). Un Nephilim no puede elegir las desventajas de: Salud enfermiza, Enfermedad grave incurable y Vulnerabilidad a la magia.","Aplican un bonificador de +10 a su Resistencia Mágica (RM) y Psíquica (RP), un +20 a su Resistencia contra Enfermedades (RE) y un +5 a sus Resistencias Físicas y contra Venenos (RF y RV, respectivamente). Un Nephilim no puede elegir las desventajas de: Salud enfermiza, Enfermedad grave incurable y Vulnerabilidad a la magia.","Bonus de +10 à la RMys et la RPsy, +20 à la RMal, +5 à la RPhy et RPoi. Interdit de prendre les désavantages Vulnérabilité à la magie, Mauvaise santé ou Grave maladie.")).getId();
+var SYLV_NEPH_DESEQUILIBRIO_DESC = (new L("SYLV_NEPH_DESEQUILIBRIO_DESC","Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Oscuridad.","Esta habilidad les otorga una Resistencia especial de +10 contra cualquier efecto basado en dicho elemento. Adicionalmente, esta afinidad les impide elegir la ventaja de Desequilibrio Mágico hacia la Oscuridad.","Bonus de +10 aux tests de Résistance contre la lumière (et -10 contre l'obscurité). Un Sylvain ne peut choisir l'avantage Prédilection élémentaire (Obscurité).")).getId();
+var SYLV_NEPH_CURACION_DESC = (new L("SYLV_NEPH_CURACION_DESC","Suman un punto a su nivel de Regeneración natural.","Suman un punto a su nivel de Regeneración natural.","Bonus de +1 à la Régénération.")).getId();
+var SYLV_NEPH_PRESENTIR_DESC = (new L("SYLV_NEPH_PRESENTIR_DESC","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.","De un modo sobrenatural, perciben la esencia oscura o luminosa que desprenden sus almas. Esta habilidad no les permite reconocer a un individuo que se halle oculto por un conjuro o mediante una habilidad del Ki.","Perception surnaturelle qui permet de sentir  l'essence obscure ou lumineuse d'une âme à proximité. Cela ne fonctionne pas si l'individu est dissimulé magiquement.")).getId();
+var SYLV_NEPH_NECESIDADES_DESC = (new L("SYLV_NEPH_NECESIDADES_DESC","Sus necesidades se reducen a la mitad de las de una persona normal. Eso no significa que no tengan hambre por comer de una manera escasa, sino que, en la práctica, no requieren tantos alimentos para sobrevivir.","Sus necesidades se reducen a la mitad de las de una persona normal. Eso no significa que no tengan hambre por comer de una manera escasa, sino que, en la práctica, no requieren tantos alimentos para sobrevivir.","Les besoins en nourriture ou sommeil sont réduits à la moitié des besoins d'un humain normal.")).getId();
+var SYLV_NEPH_ALMA_DESC = (new L("SYLV_NEPH_ALMA_DESC","Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Sufren un penalizador de -4 puntos a la experiencia que otorgue el Director de Juego al finalizar cada sesión.","Malus de -4 points d'expérience à la fin de chaque séance de jeu.")).getId();
 
-var RAZA_DEVAH = (new L("RAZA_DEVAH","Devah",
-    "Devah")).getId();
-var DEV_MENTE_Y_ALMA_SUPERIOR = (new L("DEV_MENTE_Y_ALMA_SUPERIOR","Mente y Alma Superior (Devah)",
-    "Mente y Alma Superior (Devah)")).getId();
-var DEV_MENTE_Y_ALMA_SUPERIOR_DESC = (new L("DEV_MENTE_Y_ALMA_SUPERIOR_DESC","+1 INT, POD, VOL",
-    "+1 INT, POW, WP")).getId();
-var DEV_TAMAÑO_INNATURAL = (new L("DEV_TAMAÑO_INNATURAL","Tamaño Innatural (Devah)",
-    "Tamaño Innatural (Devah)")).getId();
-var DEV_TAMAÑO_INNATURAL_DESC = (new L("DEV_TAMAÑO_INNATURAL_DESC","+2 Tamaño",
-    "+2 Size")).getId();
-var DEV_COMUNICACION_SOBRENATURAL = (new L("DEV_COMUNICACION_SOBRENATURAL","Comunicación Sobrenatural (Devah)",
-    "Comunicación Sobrenatural (Devah)")).getId();
-var DEV_COMUNICACION_SOBRENATURAL_DESC = (new L("DEV_COMUNICACION_SOBRENATURAL_DESC","",
-    "")).getId();
-var DEV_MENTE_COMPLEJA = (new L("DEV_MENTE_COMPLEJA","Mente Compleja (Devah)",
-    "Mente Compleja (Devah)")).getId();
-var DEV_MENTE_COMPLEJA_DESC = (new L("DEV_MENTE_COMPLEJA_DESC","",
-    "")).getId();
-var DEV_EL_OJO_DEL_ALMA = (new L("DEV_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah)",
-    "El Ojo del Alma (Devah)")).getId();
-var DEV_EL_OJO_DEL_ALMA_DESC = (new L("DEV_EL_OJO_DEL_ALMA_DESC","",
-    "")).getId();
-var DEV_LAZOS_EXISTENCIALES = (new L("DEV_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah)",
-    "Lazos Existenciales (Devah)")).getId();
-var DEV_LAZOS_EXISTENCIALES_DESC = (new L("DEV_LAZOS_EXISTENCIALES_DESC","+10 Convocar, Controlar, Atar, Desconvocar",
-    "+10 Summon, Control, Bind, Banish")).getId();
-var DEV_FRAGILIDAD_FISICA = (new L("DEV_FRAGILIDAD_FISICA","Fragilidad Física (Devah)",
-    "Fragilidad Física (Devah)")).getId();
-var DEV_FRAGILIDAD_FISICA_DESC = (new L("DEV_FRAGILIDAD_FISICA_DESC","-1 FUE, -2 CON, -10 RF y RE",
-    "-1 STR, -2 CON, -10 PR and DR")).getId();
-var DEV_ALMA_INNATURAL = (new L("DEV_ALMA_INNATURAL","Alma Innatural (Devah)",
-    "Alma Innatural (Devah)")).getId();
-var DEV_ALMA_INNATURAL_DESC = (new L("DEV_ALMA_INNATURAL_DESC","Debe elegir Don o Acceso a poderes psíquicos",
-    "Must buy Gift or Psychic Access")).getId();
+var RAZA_DEVAH = (new L("RAZA_DEVAH","Devah","Devah","Devas")).getId();
+var DEV_MENTE_Y_ALMA_SUPERIOR = (new L("DEV_MENTE_Y_ALMA_SUPERIOR","Mente y Alma Superior (Devah)","Mente y Alma Superior (Devah)","Esprit et âme supérieur (Devas)")).getId();
+var DEV_MENTE_Y_ALMA_SUPERIOR_DESC = (new L("DEV_MENTE_Y_ALMA_SUPERIOR_DESC"," +1 INT, POD, VOL"," +1 INT, POW, WP","Bonus de +1 INT, POU, VOL.")).getId();
+var DEV_TAMAÑO_INNATURAL = (new L("DEV_TAMAÑO_INNATURAL","Tamaño Innatural (Devah)","Tamaño Innatural (Devah)","Taille non naturelle (Devas)")).getId();
+var DEV_TAMAÑO_INNATURAL_DESC = (new L("DEV_TAMAÑO_INNATURAL_DESC"," +2 Tamaño"," +2 Size","Bonus de +2 à la Taille.")).getId();
+var DEV_COMUNICACION_SOBRENATURAL = (new L("DEV_COMUNICACION_SOBRENATURAL","Comunicación Sobrenatural (Devah)","Comunicación Sobrenatural (Devah)","Communication surnaturelle (Devas)")).getId();
+var DEV_COMUNICACION_SOBRENATURAL_DESC = (new L("DEV_COMUNICACION_SOBRENATURAL_DESC","","","Communication spécial entre eux à l'aide de leur troisième oeil.")).getId();
+var DEV_MENTE_COMPLEJA = (new L("DEV_MENTE_COMPLEJA","Mente Compleja (Devah)","Mente Compleja (Devah)","Esprit complexe (Devas)")).getId();
+var DEV_MENTE_COMPLEJA_DESC = (new L("DEV_MENTE_COMPLEJA_DESC","","","Bonus de +15 RMys et RPsy.")).getId();
+var DEV_EL_OJO_DEL_ALMA = (new L("DEV_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah)","El Ojo del Alma (Devah)","L'oeil de l'âme (Devas)")).getId();
+var DEV_EL_OJO_DEL_ALMA_DESC = (new L("DEV_EL_OJO_DEL_ALMA_DESC","","","Permet de voir les créatures animiques et voir leur affinité élémentaire. Pour les être Entre Mondes ou Animique, en se concentrant 2 ou 3 rounds, le Devas obtient son véritable nom (ne fonctionne pas avec les créatures dont la Gnose dépasse 30).")).getId();
+var DEV_LAZOS_EXISTENCIALES = (new L("DEV_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah)","Lazos Existenciales (Devah)","Liens existentiels (Devas)")).getId();
+var DEV_LAZOS_EXISTENCIALES_DESC = (new L("DEV_LAZOS_EXISTENCIALES_DESC"," +10 Convocar, Controlar, Atar, Desconvocar"," +10 Summon, Control, Bind, Banish","Bonus de +10 en Convoquer, Dominer, Lier ou Révoquer")).getId();
+var DEV_FRAGILIDAD_FISICA = (new L("DEV_FRAGILIDAD_FISICA","Fragilidad Física (Devah)","Fragilidad Física (Devah)","Fragilité physique (Devas)")).getId();
+var DEV_FRAGILIDAD_FISICA_DESC = (new L("DEV_FRAGILIDAD_FISICA_DESC","-1 FUE, -2 CON, -10 RF y RE","-1 STR, -2 CON, -10 PR and DR","-1 FOR, -2 CON, -10 à la RPhy et RMal.")).getId();
+var DEV_ALMA_INNATURAL = (new L("DEV_ALMA_INNATURAL","Alma Innatural (Devah)","Alma Innatural (Devah)","Âme non naturelle (Devas)")).getId();
+var DEV_ALMA_INNATURAL_DESC = (new L("DEV_ALMA_INNATURAL_DESC","Debe elegir Don o Acceso a poderes psíquicos","Must buy Gift or Psychic Access","Doit prendre l'avantage Don mystique ou Accès à toutes les disciplines.")).getId();
 
-var RAZA_NEPH_DEVAH = (new L("RAZA_NEPH_DEVAH","Devah Nephilim",
-    "Devah Nephilim")).getId();
-var DEV_NEPH_MENTE_COMPLEJA = (new L("DEV_NEPH_MENTE_COMPLEJA","Mente Compleja (Devah Nephilim)",
-    "Mente Compleja (Devah Nephilim)")).getId();
-var DEV_NEPH_MENTE_COMPLEJA_DESC = (new L("DEV_NEPH_MENTE_COMPLEJA_DESC","",
-    "")).getId();
-var DEV_NEPH_EL_OJO_DEL_ALMA = (new L("DEV_NEPH_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah Nephilim)",
-    "El Ojo del Alma (Devah Nephilim)")).getId();
-var DEV_NEPH_EL_OJO_DEL_ALMA_DESC = (new L("DEV_NEPH_EL_OJO_DEL_ALMA_DESC","",
-    "")).getId();
-var DEV_NEPH_LAZOS_EXISTENCIALES = (new L("DEV_NEPH_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah Nephilim)",
-    "Lazos Existenciales (Devah Nephilim)")).getId();
-var DEV_NEPH_LAZOS_EXISTENCIALES_DESC = (new L("DEV_NEPH_LAZOS_EXISTENCIALES_DESC","+10 Convocar, Desconvocar",
-    "+10 Summon, Banish")).getId();
-var DEV_NEPH_FRAGILIDAD_FISICA = (new L("DEV_NEPH_FRAGILIDAD_FISICA","Fragilidad Física (Devah Nephilim)",
-    "Fragilidad Física (Devah Nephilim)")).getId();
-var DEV_NEPH_FRAGILIDAD_FISICA_DESC = (new L("DEV_NEPH_FRAGILIDAD_FISICA_DESC","-10 RF y RE",
-    "-10 PR and DR")).getId();
-var DEV_NEPH_ALMA_INMORTAL = (new L("DEV_NEPH_ALMA_INMORTAL","Alma Innatural (Devah Nephilim)",
-    "Alma Innatural (Devah Nephilim)")).getId();
-var DEV_NEPH_ALMA_INMORTAL_DESC = (new L("DEV_NEPH_ALMA_INMORTAL_DESC","",
-    "")).getId();
+var RAZA_NEPH_DEVAH = (new L("RAZA_NEPH_DEVAH","Devah Nephilim","Devah Nephilim","Devas Nephilim")).getId();
+var DEV_NEPH_MENTE_COMPLEJA = (new L("DEV_NEPH_MENTE_COMPLEJA","Mente Compleja (Devah Nephilim)","Mente Compleja (Devah Nephilim)","Esprit complexe (Devas Nephilim)")).getId();
+var DEV_NEPH_MENTE_COMPLEJA_DESC = (new L("DEV_NEPH_MENTE_COMPLEJA_DESC","","","Bonus de +10 RMys et RPsy.")).getId();
+var DEV_NEPH_EL_OJO_DEL_ALMA = (new L("DEV_NEPH_EL_OJO_DEL_ALMA","El Ojo del Alma (Devah Nephilim)","El Ojo del Alma (Devah Nephilim)","L'oeil de l'âme (Devas Nephilim)")).getId();
+var DEV_NEPH_EL_OJO_DEL_ALMA_DESC = (new L("DEV_NEPH_EL_OJO_DEL_ALMA_DESC","","","Permet de voir les créatures animiques et voir leur affinité élémentaire. Pour les être Entre Mondes ou Animique, en se concentrant 2 ou 3 rounds, le Devas obtient son véritable nom (ne fonctionne pas avec les créatures dont la Gnose dépasse 30).")).getId();
+var DEV_NEPH_LAZOS_EXISTENCIALES = (new L("DEV_NEPH_LAZOS_EXISTENCIALES","Lazos Existenciales (Devah Nephilim)","Lazos Existenciales (Devah Nephilim)","Liens existentiels (Devas Nephilim)")).getId();
+var DEV_NEPH_LAZOS_EXISTENCIALES_DESC = (new L("DEV_NEPH_LAZOS_EXISTENCIALES_DESC"," +10 Convocar, Desconvocar"," +10 Summon, Banish","Bonus de +10 en Convoquer ou Révoquer")).getId();
+var DEV_NEPH_FRAGILIDAD_FISICA = (new L("DEV_NEPH_FRAGILIDAD_FISICA","Fragilidad Física (Devah Nephilim)","Fragilidad Física (Devah Nephilim)","Fragilité physique (Devas Nephilim)")).getId();
+var DEV_NEPH_FRAGILIDAD_FISICA_DESC = (new L("DEV_NEPH_FRAGILIDAD_FISICA_DESC","-10 RF y RE","-10 PR and DR","-10 à la RPhy et RMal.")).getId();
+var DEV_NEPH_ALMA_INMORTAL = (new L("DEV_NEPH_ALMA_INMORTAL","Alma Innatural (Devah Nephilim)","Alma Innatural (Devah Nephilim)","Âme immortelle (Devas Nephilim)")).getId();
+var DEV_NEPH_ALMA_INMORTAL_DESC = (new L("DEV_NEPH_ALMA_INMORTAL_DESC","","","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
 
-var RAZA_VETALA = (new L("RAZA_VETALA","Vetala",
-    "Vetala")).getId();
-var VETALA_HIJOS_DE_LA_NOCHE = (new L("VETALA_HIJOS_DE_LA_NOCHE","Hijos de la Noche (Vetala)",
-    "Hijos de la Noche (Vetala)")).getId();
-var VETALA_HIJOS_DE_LA_NOCHE_DESC = (new L("VETALA_HIJOS_DE_LA_NOCHE_DESC","",
-    "")).getId();
-var VETALA_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala)",
-    "Aguante al Daño Crítico (Vetala)")).getId();
-var VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC","",
-    "")).getId();
-var VETALA_ULTRASONIDOS = (new L("VETALA_ULTRASONIDOS","Ultrasonidos (Vetala)",
-    "Ultrasonidos (Vetala)")).getId();
-var VETALA_ULTRASONIDOS_DESC = (new L("VETALA_ULTRASONIDOS_DESC","",
-    "")).getId();
-var VETALA_EXTASIS_SANGUINEO = (new L("VETALA_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala)",
-    "Éxtasis Sanguíneo (Vetala)")).getId();
-var VETALA_EXTASIS_SANGUINEO_DESC = (new L("VETALA_EXTASIS_SANGUINEO_DESC","",
-    "")).getId();
-var VETALA_CURACION_RAPIDA = (new L("VETALA_CURACION_RAPIDA","Curación Rápida (Vetala)",
-    "Curación Rápida (Vetala)")).getId();
-var VETALA_CURACION_RAPIDA_DESC = (new L("VETALA_CURACION_RAPIDA_DESC","",
-    "")).getId();
-var VETALA_VULNERABLE_A_LA_LUZ = (new L("VETALA_VULNERABLE_A_LA_LUZ","Vulnerable a la Luz (Vetala)",
-    "Vulnerable a la Luz (Vetala)")).getId();
-var VETALA_VULNERABLE_A_LA_LUZ_DESC = (new L("VETALA_VULNERABLE_A_LA_LUZ_DESC","",
-    "")).getId();
-var VETALA_SU_VISION_DEL_MUNDO = (new L("VETALA_SU_VISION_DEL_MUNDO","Su Visión del Mundo (Vetala)",
-    "Su Visión del Mundo (Vetala)")).getId();
-var VETALA_SU_VISION_DEL_MUNDO_DESC = (new L("VETALA_SU_VISION_DEL_MUNDO_DESC","",
-    "")).getId();
+var RAZA_VETALA = (new L("RAZA_VETALA","Vetala","Vetala","Vetala")).getId();
+var VETALA_HIJOS_DE_LA_NOCHE = (new L("VETALA_HIJOS_DE_LA_NOCHE","Hijos de la Noche (Vetala)","Hijos de la Noche (Vetala)","Enfant de la nuit (Vetala)")).getId();
+var VETALA_HIJOS_DE_LA_NOCHE_DESC = (new L("VETALA_HIJOS_DE_LA_NOCHE_DESC","","","De nuit, +1 en FOR et POU.")).getId();
+var VETALA_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala)","Aguante al Daño Crítico (Vetala)","Endurance aux dégâts Critiques (Vetala)")).getId();
+var VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_AGUANTE_AL_DAÑO_CRITICO_DESC","","","Ignore les effets des Critiques sur le corps et la tête, sauf pour la décapitation.")).getId();
+var VETALA_ULTRASONIDOS = (new L("VETALA_ULTRASONIDOS","Ultrasonidos (Vetala)","Ultrasonidos (Vetala)","Ultrasons (Vetala)")).getId();
+var VETALA_ULTRASONIDOS_DESC = (new L("VETALA_ULTRASONIDOS_DESC","","","Permet d'influencer des animaux naturels de niveau 0 ou d'INT inférieur à 3. Il peut influencer un nombre de créature dont la somme de leur Présence est inférieur au double de sa Présence.  Avec 11 en PER on peut comprendre que le Vetala produit des sons.")).getId();
+var VETALA_EXTASIS_SANGUINEO = (new L("VETALA_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala)","Éxtasis Sanguíneo (Vetala)","Extase sanguine (Vetala)")).getId();
+var VETALA_EXTASIS_SANGUINEO_DESC = (new L("VETALA_EXTASIS_SANGUINEO_DESC","","","Suralimentation en sang donne +10 à toutes les actions et +1 dans une caractéristique choisie pour le Vetala. Les malus de fatigue et de douleur sont divisé par 2. Cela dure 5 à 30 minutes en fonction de la quantité de sang bu. Après pendant 2 à 3 heure, ils ont un malus de -30 à toutes les actions.")).getId();
+var VETALA_CURACION_RAPIDA = (new L("VETALA_CURACION_RAPIDA","Curación Rápida (Vetala)","Curación Rápida (Vetala)","Guérison rapide (Vetala)")).getId();
+var VETALA_CURACION_RAPIDA_DESC = (new L("VETALA_CURACION_RAPIDA_DESC","","","Bonus de +4 à la Régénération.")).getId();
+var VETALA_VULNERABLE_A_LA_LUZ = (new L("VETALA_VULNERABLE_A_LA_LUZ","Vulnerable a la Luz (Vetala)","Vulnerable a la Luz (Vetala)","Vulnérabilité à la lumière (Vetala)")).getId();
+var VETALA_VULNERABLE_A_LA_LUZ_DESC = (new L("VETALA_VULNERABLE_A_LA_LUZ_DESC","","","Brûle si exposer à des sources de lumière intense. RPhy 80 à 160 fonction de l'intensité de la lumière.  S'il rate, il prend marge d'échec PV, si cela fait 50 ou plus il passe dans l'état En flammes (page 235).")).getId();
+var VETALA_SU_VISION_DEL_MUNDO = (new L("VETALA_SU_VISION_DEL_MUNDO","Su Visión del Mundo (Vetala)","Su Visión del Mundo (Vetala)","Leur vision du monde (Vetala)")).getId();
+var VETALA_SU_VISION_DEL_MUNDO_DESC = (new L("VETALA_SU_VISION_DEL_MUNDO_DESC","","","Malus de -2 points d'expérience à la fin de chaque séance de jeu.")).getId();
 
-var RAZA_NEPH_VETALA = (new L("RAZA_NEPH_VETALA","Vetala Nephilim",
-    "Vetala Nephilim")).getId();
-var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala Nephilim)",
-    "Aguante al Daño Crítico (Vetala Nephilim)")).getId();
-var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC","",
-    "")).getId();
-var VETALA_NEPH_EXTASIS_SANGUINEO = (new L("VETALA_NEPH_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala Nephilim)",
-    "Éxtasis Sanguíneo (Vetala Nephilim)")).getId();
-var VETALA_NEPH_EXTASIS_SANGUINEO_DESC = (new L("VETALA_NEPH_EXTASIS_SANGUINEO_DESC","",
-    "")).getId();
-var VETALA_NEPH_CURACION_RAPIDA = (new L("VETALA_NEPH_CURACION_RAPIDA","Curación Rápida (Vetala Nephilim)",
-    "Curación Rápida (Vetala Nephilim)")).getId();
-var VETALA_NEPH_CURACION_RAPIDA_DESC = (new L("VETALA_NEPH_CURACION_RAPIDA_DESC","",
-    "")).getId();
-var VETALA_NEPH_PIEL_FOTOSENSIBLE = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE","Piel Fotosensible (Vetala Nephilim)",
-    "Piel Fotosensible (Vetala Nephilim)")).getId();
-var VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC","",
-    "")).getId();
-var VETALA_NEPH_OBSESION_POR_LA_SANGRE = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE","Obsesión por la Sangre (Vetala Nephilim)",
-    "Obsesión por la Sangre (Vetala Nephilim)")).getId();
-var VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC","",
-    "")).getId();
-var VETALA_NEPH_SALUD_ENFERMIZA = (new L("VETALA_NEPH_SALUD_ENFERMIZA","Salud Enfermiza (Vetala Nephilim)",
-    "Salud Enfermiza (Vetala Nephilim)")).getId();
-var VETALA_NEPH_SALUD_ENFERMIZA_DESC = (new L("VETALA_NEPH_SALUD_ENFERMIZA_DESC","",
-    "")).getId();
-var VETALA_NEPH_ALMA_INMORTAL = (new L("VETALA_NEPH_ALMA_INMORTAL","Alma Inmortal (Vetala Nephilim)",
-    "Alma Inmortal (Vetala Nephilim)")).getId();
-var VETALA_NEPH_ALMA_INMORTAL_DESC = (new L("VETALA_NEPH_ALMA_INMORTAL_DESC","",
-    "")).getId();
+var RAZA_NEPH_VETALA = (new L("RAZA_NEPH_VETALA","Vetala Nephilim","Vetala Nephilim","Vetala Nephilim")).getId();
+var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO","Aguante al Daño Crítico (Vetala Nephilim)","Aguante al Daño Crítico (Vetala Nephilim)","Endurance aux dégâts Critiques (Vetala Nephilim)")).getId();
+var VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC = (new L("VETALA_NEPH_AGUANTE_AL_DAÑO_CRITICO_DESC","","","Bonus de +50 à la RPhy pour résister aux Critiques.")).getId();
+var VETALA_NEPH_EXTASIS_SANGUINEO = (new L("VETALA_NEPH_EXTASIS_SANGUINEO","Éxtasis Sanguíneo (Vetala Nephilim)","Éxtasis Sanguíneo (Vetala Nephilim)","Extase sanguine (Vetala Nephilim)")).getId();
+var VETALA_NEPH_EXTASIS_SANGUINEO_DESC = (new L("VETALA_NEPH_EXTASIS_SANGUINEO_DESC","","","Suralimentation en sang donne +10 à toutes les actions et +1 dans une caractéristique choisie pour le Vetala. Les malus de fatigue et de douleur sont divisé par 2. Cela dure 1 à 5 minutes en fonction de la quantité de sang bu. Après pendant 2 à 3 heure ils ne peuvent plus utiliser cette faculté.")).getId();
+var VETALA_NEPH_CURACION_RAPIDA = (new L("VETALA_NEPH_CURACION_RAPIDA","Curación Rápida (Vetala Nephilim)","Curación Rápida (Vetala Nephilim)","Guérison rapide (Vetala Nephilim)")).getId();
+var VETALA_NEPH_CURACION_RAPIDA_DESC = (new L("VETALA_NEPH_CURACION_RAPIDA_DESC","","","Bonus de +4 à la Régénération.")).getId();
+var VETALA_NEPH_PIEL_FOTOSENSIBLE = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE","Piel Fotosensible (Vetala Nephilim)","Piel Fotosensible (Vetala Nephilim)","Peau photosensible (Vetala Nephilim)")).getId();
+var VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC = (new L("VETALA_NEPH_PIEL_FOTOSENSIBLE_DESC","","","Brûle si exposer à des sources de lumière intense. RPhy 40 à 140 fonction de l'intensité de la lumière.  S'il rate de moins de 30 il perd 10 PV et a un malus de -20 à toutes ses actions, de plus de 30 il perd 20 PV et a un malus de -40 à toues ses actions. Cela dure 3 round après la fin de l'exposition.")).getId();
+var VETALA_NEPH_OBSESION_POR_LA_SANGRE = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE","Obsesión por la Sangre (Vetala Nephilim)","Obsesión por la Sangre (Vetala Nephilim)","Obsession pour le sang (Vetala Nephilim)")).getId();
+var VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC = (new L("VETALA_NEPH_OBSESION_POR_LA_SANGRE_DESC","","","Acquiert le désavantage Dépendance grave au sang après la première utilisation de l'Extase sanguine. S'il avait déjà on double les malus et doit réussir un test de Volonté pour éviter de boire le sang dès qu'il en coule autour de lui.")).getId();
+var VETALA_NEPH_SALUD_ENFERMIZA = (new L("VETALA_NEPH_SALUD_ENFERMIZA","Salud Enfermiza (Vetala Nephilim)","Salud Enfermiza (Vetala Nephilim)","Santé maladive (Vetala Nephilim)")).getId();
+var VETALA_NEPH_SALUD_ENFERMIZA_DESC = (new L("VETALA_NEPH_SALUD_ENFERMIZA_DESC","","","-20 à la RMal.")).getId();
+var VETALA_NEPH_ALMA_INMORTAL = (new L("VETALA_NEPH_ALMA_INMORTAL","Alma Inmortal (Vetala Nephilim)","Alma Inmortal (Vetala Nephilim)","Âme immortelle (Vetala Nephilim)")).getId();
+var VETALA_NEPH_ALMA_INMORTAL_DESC = (new L("VETALA_NEPH_ALMA_INMORTAL_DESC","","","Malus de -3 points d'expérience à la fin de chaque séance de jeu.")).getId();
 
-var RAZA_TUAN_DALYR = (new L("RAZA_TUAN_DALYR","Tuan Dalyr",
-    "Tuan Dalyr")).getId();
-var TUAN_DALYR_ARMAS_NATURALES = (new L("TUAN_DALYR_ARMAS_NATURALES","Armas Naturales (Tuan Dalyr)",
-    "Armas Naturales (Tuan Dalyr)")).getId();
-var TUAN_DALYR_ARMAS_NATURALES_DESC = (new L("TUAN_DALYR_ARMAS_NATURALES_DESC","",
-    "")).getId();
-var TUAN_DALYR_TRANSFORMACION = (new L("TUAN_DALYR_TRANSFORMACION","Transformación (Tuan Dalyr)",
-    "Transformación (Tuan Dalyr)")).getId();
-var TUAN_DALYR_TRANSFORMACION_DESC = (new L("TUAN_DALYR_TRANSFORMACION_DESC","",
-    "")).getId();
-var TUAN_DALYR_SENTIDO_DE_ANIMAL = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL","Sentido de Animal (Tuan Dalyr)",
-    "Sentido de Animal (Tuan Dalyr)")).getId();
-var TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC","+1 PER, Sentidos Agudos da +40",
-    "+1 PER, Acute Senses gives +40")).getId();
-var TUAN_DALYR_HIJOS_DE_LA_LUNA = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA","Hijos de la Luna (Tuan Dalyr)",
-    "Hijos de la Luna (Tuan Dalyr)")).getId();
-var TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC","",
-    "")).getId();
-var TUAN_DALYR_RASGOS_ANIMALES = (new L("TUAN_DALYR_RASGOS_ANIMALES","Rasgos Animales (Tuan Dalyr)",
-    "Rasgos Animales (Tuan Dalyr)")).getId();
-var TUAN_DALYR_RASGOS_ANIMALES_DESC = (new L("TUAN_DALYR_RASGOS_ANIMALES_DESC","",
-    "")).getId();
+var RAZA_TUAN_DALYR = (new L("RAZA_TUAN_DALYR","Tuan Dalyr","Tuan Dalyr","Tuan Dalyr")).getId();
+var TUAN_DALYR_ARMAS_NATURALES = (new L("TUAN_DALYR_ARMAS_NATURALES","Armas Naturales (Tuan Dalyr)","Armas Naturales (Tuan Dalyr)","Armes naturelles (Tuan Dalyr)")).getId();
+var TUAN_DALYR_ARMAS_NATURALES_DESC = (new L("TUAN_DALYR_ARMAS_NATURALES_DESC","","","En Transformation les Crocs et les Griffes font 40 plus modificateur de FOR. Il faut développer la compétence pour ne pas avoir de Malus.")).getId();
+var TUAN_DALYR_TRANSFORMACION = (new L("TUAN_DALYR_TRANSFORMACION","Transformación (Tuan Dalyr)","Transformación (Tuan Dalyr)","Transformation (Tuan Dalyr)")).getId();
+var TUAN_DALYR_TRANSFORMACION_DESC = (new L("TUAN_DALYR_TRANSFORMACION_DESC","","","Lorsqu'il se transforme en forme Tuan Dalyr, il a un bonus de +3 à répartir entre FOR, AGI, DEX et PER. Cette répartition est décidé au début et ne changera plus. Ils ont un Malus de -2 en INT et VOL et -10 à la RMys et RPsy")).getId();
+var TUAN_DALYR_SENTIDO_DE_ANIMAL = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL","Sentido de Animal (Tuan Dalyr)","Sentido de Animal (Tuan Dalyr)","Sens animaux (Tuan Dalyr)")).getId();
+var TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC = (new L("TUAN_DALYR_SENTIDO_DE_ANIMAL_DESC"," +1 PER, Sentidos Agudos da +40"," +1 PER, Acute Senses gives +40","Bonus de +1 en PER et s'il a l'avantage Sens aiguisés le bonus en Vigilance et Observation passe à +80.")).getId();
+var TUAN_DALYR_HIJOS_DE_LA_LUNA = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA","Hijos de la Luna (Tuan Dalyr)","Hijos de la Luna (Tuan Dalyr)","Enfants de la lune (Tuan Dalyr)")).getId();
+var TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC = (new L("TUAN_DALYR_HIJOS_DE_LA_LUNA_DESC","","","Pendant le cycle les caractéristiques qu'ils modifent pendant sa Transformation varie. Il faut décider comment cela varie au début. A son maximum ils gagnent +1 dans les caractéristiques et au minimum ils ne peuvent pas se Transformer et perd tous les avantages.")).getId();
+var TUAN_DALYR_RASGOS_ANIMALES = (new L("TUAN_DALYR_RASGOS_ANIMALES","Rasgos Animales (Tuan Dalyr)","Rasgos Animales (Tuan Dalyr)","Traits animaux (Tuan Dalyr)")).getId();
+var TUAN_DALYR_RASGOS_ANIMALES_DESC = (new L("TUAN_DALYR_RASGOS_ANIMALES_DESC","","","Lorsqu'ils perdent le contrôle, leurs pupilles prennent un aspect animal.")).getId();

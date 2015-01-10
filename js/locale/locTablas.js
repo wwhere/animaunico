@@ -1,209 +1,120 @@
-var TABLA_ARMA_SIMILAR = (new L("TABLA_ARMA_SIMILAR","Arma similar",
-    "Similar Weapon")).getId();
-var TABLA_ARMA_SIMILAR_DESC = (new L("TABLA_ARMA_SIMILAR_DESC","Otorga la capacidad de usar un arma adicional del mismo tipo que una que el personaje ya conoce.",
-    "Otorga la capacidad de usar un arma adicional del mismo tipo que una que el personaje ya conoce.")).getId();
-var TABLA_ARMA_MIXTA = (new L("TABLA_ARMA_MIXTA","Arma mixta",
-    "Mixed-class Weapon")).getId();
-var TABLA_ARMA_MIXTA_DESC = (new L("TABLA_ARMA_MIXTA_DESC","Otorga la capacidad de usar un arma mixta que tiene, por lo menos, un mismo tipo en común con otra que el personaje ya conoce.",
-    "Otorga la capacidad de usar un arma mixta que tiene, por lo menos, un mismo tipo en común con otra que el personaje ya conoce.")).getId();
-var TABLA_ARMA_DISTINTA_DESARMADO = (new L("TABLA_ARMA_DISTINTA_DESARMADO","Arma distinta_Desarmado",
-    "Different type / Unarmed")).getId();
-var TABLA_ARMA_DISTINTA_DESARMADO_DESC = (new L("TABLA_ARMA_DISTINTA_DESARMADO_DESC","Otorga la capacidad de usar un arma de un tipo que no conoce el personaje.",
-    "Otorga la capacidad de usar un arma de un tipo que no conoce el personaje.")).getId();
-var TABLA_TABLA_DE_TIPOLOGIA = (new L("TABLA_TABLA_DE_TIPOLOGIA","Tabla de tipología",
-    "Whole-class Weapons")).getId();
-var TABLA_TABLA_DE_TIPOLOGIA_DESC = (new L("TABLA_TABLA_DE_TIPOLOGIA_DESC","Permite utilizar una determinada tipología de armas sin aplicar ningún penalizador a su habilidad marcial. Deben de elegirse las de una clase concreta, ya sea pura o mixta. Si por ejemplo el personaje domina el uso de las espadas, podrá manejar cualquiera de ellas sin negativos, pero no así un mandoble, al ser un arma de tipología mixta.",
-    "Permite utilizar una determinada tipología de armas sin aplicar ningún penalizador a su habilidad marcial. Deben de elegirse las de una clase concreta, ya sea pura o mixta. Si por ejemplo el personaje domina el uso de las espadas, podrá manejar cualquiera de ellas sin negativos, pero no así un mandoble, al ser un arma de tipología mixta.")).getId();
-var TABLA_TABLA_DE_PROYECTILES = (new L("TABLA_TABLA_DE_PROYECTILES","Tabla de proyectiles",
-    "Projectile Weapons")).getId();
-var TABLA_TABLA_DE_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_PROYECTILES_DESC","Adquiere la pericia de usar cualquier arma de disparo con la misma habilidad de ataque.",
-    "Adquiere la pericia de usar cualquier arma de disparo con la misma habilidad de ataque.")).getId();
-var TABLA_TABLA_DE_LANZAMIENTO = (new L("TABLA_TABLA_DE_LANZAMIENTO","Tabla de lanzamiento",
-    "Throwing")).getId();
-var TABLA_TABLA_DE_LANZAMIENTO_DESC = (new L("TABLA_TABLA_DE_LANZAMIENTO_DESC","Adquiere la pericia de lanzar toda clase de artefactos con la misma habilidad de ataque.",
-    "Adquiere la pericia de lanzar toda clase de artefactos con la misma habilidad de ataque.")).getId();
-var TABLA_TABLA_DE_ARMAS_IMPROVISADAS = (new L("TABLA_TABLA_DE_ARMAS_IMPROVISADAS","Tabla de armas improvisadas",
-    "Improvised Weapons")).getId();
-var TABLA_TABLA_DE_ARMAS_IMPROVISADAS_DESC = (new L("TABLA_TABLA_DE_ARMAS_IMPROVISADAS_DESC","Esta tabla permite utilizar cualquier tipo de objeto común como arma improvisada.",
-    "Esta tabla permite utilizar cualquier tipo de objeto común como arma improvisada.")).getId();
-var TABLA_TABLA_DE_ASESINO = (new L("TABLA_TABLA_DE_ASESINO","Tabla de Asesino",
-    "Assassin Module")).getId();
-var TABLA_TABLA_DE_ASESINO_DESC = (new L("TABLA_TABLA_DE_ASESINO_DESC","Otorga pericia en las siguientes armas: Espada Corta, Ballesta de Mano, Garrote, Cerbatana y Estilete.",
-    "Otorga pericia en las siguientes armas: Espada Corta, Ballesta de Mano, Garrote, Cerbatana y Estilete.")).getId();
-var TABLA_TABLA_DE_BARBARO = (new L("TABLA_TABLA_DE_BARBARO","Tabla de Bárbaro",
-    "Barbarian Module")).getId();
-var TABLA_TABLA_DE_BARBARO_DESC = (new L("TABLA_TABLA_DE_BARBARO_DESC","Otorga pericia en las siguientes armas: Hacha de Guerra, Hacha a dos manos, Mandoble, Espada Bastarda y Maza a Dos Manos.",
-    "Otorga pericia en las siguientes armas: Hacha de Guerra, Hacha a dos manos, Mandoble, Espada Bastarda y Maza a Dos Manos.")).getId();
-var TABLA_TABLA_DE_CABALLERO = (new L("TABLA_TABLA_DE_CABALLERO","Tabla de Caballero",
-    "Knight Module")).getId();
-var TABLA_TABLA_DE_CABALLERO_DESC = (new L("TABLA_TABLA_DE_CABALLERO_DESC","Otorga pericia en las siguientes armas: Espada Larga, Lanza de Caballería, Maza, Espada Bastarda y Escudo Medio.",
-    "Otorga pericia en las siguientes armas: Espada Larga, Lanza de Caballería, Maza, Espada Bastarda y Escudo Medio.")).getId();
-var TABLA_TABLA_DE_NOMADA = (new L("TABLA_TABLA_DE_NOMADA","Tabla de Nómada",
-    "Nomad Module")).getId();
-var TABLA_TABLA_DE_NOMADA_DESC = (new L("TABLA_TABLA_DE_NOMADA_DESC","Otorga pericia en las siguientes armas: Daga, Turcus, Arco Largo, Cimitarra y Lanza.",
-    "Otorga pericia en las siguientes armas: Daga, Turcus, Arco Largo, Cimitarra y Lanza.")).getId();
-var TABLA_TABLA_DE_GLADIADOR = (new L("TABLA_TABLA_DE_GLADIADOR","Tabla de Gladiador",
-    "Gladiator Module")).getId();
-var TABLA_TABLA_DE_GLADIADOR_DESC = (new L("TABLA_TABLA_DE_GLADIADOR_DESC","Otorga pericia en las siguientes armas: Espada Corta, Red de Gladiador, Rodela, Tridente y Látigo.",
-    "Otorga pericia en las siguientes armas: Espada Corta, Red de Gladiador, Rodela, Tridente y Látigo.")).getId();
-var TABLA_TABLA_DE_CAZADOR = (new L("TABLA_TABLA_DE_CAZADOR","Tabla de Cazador",
-    "Hunt Module")).getId();
-var TABLA_TABLA_DE_CAZADOR_DESC = (new L("TABLA_TABLA_DE_CAZADOR_DESC","Otorga pericia en las siguientes armas: Jabalina, Arco, Espada Corta, Lanza y Boleadoras.",
-    "Otorga pericia en las siguientes armas: Jabalina, Arco, Espada Corta, Lanza y Boleadoras.")).getId();
-var TABLA_TABLA_DE_SOLDADO = (new L("TABLA_TABLA_DE_SOLDADO","Tabla de Soldado",
-    "Soldier Module")).getId();
-var TABLA_TABLA_DE_SOLDADO_DESC = (new L("TABLA_TABLA_DE_SOLDADO_DESC","Otorga pericia en las siguientes armas: Ballesta, Espada Larga, Alabarda, Lanza y Escudo Medio.",
-    "Otorga pericia en las siguientes armas: Ballesta, Espada Larga, Alabarda, Lanza y Escudo Medio.")).getId();
-var TABLA_TABLA_DE_NINJA = (new L("TABLA_TABLA_DE_NINJA","Tabla de Ninja",
-    "Ninja Module")).getId();
-var TABLA_TABLA_DE_NINJA_DESC = (new L("TABLA_TABLA_DE_NINJA_DESC","Otorga pericia en las siguientes armas: Katana, Tanto, Garras, Shuriken y Kusari Gama.",
-    "Otorga pericia en las siguientes armas: Katana, Tanto, Garras, Shuriken y Kusari Gama.")).getId();
-var TABLA_TABLA_DE_DUELISTA = (new L("TABLA_TABLA_DE_DUELISTA","Tabla de Duelista",
-    "Duel Module")).getId();
-var TABLA_TABLA_DE_DUELISTA_DESC = (new L("TABLA_TABLA_DE_DUELISTA_DESC","Otorga pericia en las siguientes armas: Estoque, Florete, Daga de Parada, Sable y Espada Larga.",
-    "Otorga pericia en las siguientes armas: Estoque, Florete, Daga de Parada, Sable y Espada Larga.")).getId();
-var TABLA_TABLA_DE_ABORIGEN = (new L("TABLA_TABLA_DE_ABORIGEN","Tabla de Aborigen",
-    "Indigenous Module")).getId();
-var TABLA_TABLA_DE_ABORIGEN_DESC = (new L("TABLA_TABLA_DE_ABORIGEN_DESC","Otorga pericia en las siguientes armas: Jabalina, Lanza, Escudo Corporal, Arco y Cerbatana.",
-    "Otorga pericia en las siguientes armas: Jabalina, Lanza, Escudo Corporal, Arco y Cerbatana.")).getId();
-var TABLA_TABLA_DE_PIRATA = (new L("TABLA_TABLA_DE_PIRATA","Tabla de Pirata",
-    "Pirate Module")).getId();
-var TABLA_TABLA_DE_PIRATA_DESC = (new L("TABLA_TABLA_DE_PIRATA_DESC","Otorga pericia en las siguientes armas: Arpón, Red de Gladiador, Garfio, Sable y Hacha de mano.",
-    "Otorga pericia en las siguientes armas: Arpón, Red de Gladiador, Garfio, Sable y Hacha de mano.")).getId();
-var TABLA_TABLA_DE_BANDIDO = (new L("TABLA_TABLA_DE_BANDIDO","Tabla de Bandido",
-    "Bandit Module")).getId();
-var TABLA_TABLA_DE_BANDIDO_DESC = (new L("TABLA_TABLA_DE_BANDIDO_DESC","Otorga pericia en las siguientes armas: Daga, Ballesta, Espada Corta, Maza y Garrote.",
-    "Otorga pericia en las siguientes armas: Daga, Ballesta, Espada Corta, Maza y Garrote.")).getId();
-var TABLA_BATTO_JUTSU_IAI_JUTSU = (new L("TABLA_BATTO_JUTSU_IAI_JUTSU","Batto jutsu_Iai jutsu",
-    "Batto Jutsu / Iai Jutsu")).getId();
-var TABLA_BATTO_JUTSU_IAI_JUTSU_DESC = (new L("TABLA_BATTO_JUTSU_IAI_JUTSU_DESC","El personaje puede desenfundar su arma sin aplicar el penalizador de -25 a su habilidad de ataque o parada. No tiene efectos sobre armas a dos manos.",
-    "El personaje puede desenfundar su arma sin aplicar el penalizador de -25 a su habilidad de ataque o parada. No tiene efectos sobre armas a dos manos.")).getId();
-var TABLA_TABLA_DE_AREA = (new L("TABLA_TABLA_DE_AREA","Tabla de Área",
-    "Area Attack")).getId();
-var TABLA_TABLA_DE_AREA_DESC = (new L("TABLA_TABLA_DE_AREA_DESC","Reduce a la mitad el penalizador de la maniobra Ataque en área, por lo que al ejecutarla, un personaje aplica sólo un -25 a su habilidad.",
-    "Reduce a la mitad el penalizador de la maniobra Ataque en área, por lo que al ejecutarla, un personaje aplica sólo un -25 a su habilidad.")).getId();
-var TABLA_TABLA_DE_PRECISION = (new L("TABLA_TABLA_DE_PRECISION","Tabla de Precisión",
-    "Precision Attack")).getId();
-var TABLA_TABLA_DE_PRECISION_DESC = (new L("TABLA_TABLA_DE_PRECISION_DESC","Reduce a la mitad el penalizador de la maniobra Engatillar, por lo que un personaje sufre sólo un -50 a su habilidad al ejecutarla.",
-    "Reduce a la mitad el penalizador de la maniobra Engatillar, por lo que un personaje sufre sólo un -50 a su habilidad al ejecutarla.")).getId();
-var TABLA_TABLA_DE_DESARME = (new L("TABLA_TABLA_DE_DESARME","Tabla de Desarme",
-    "Disarming Attack")).getId();
-var TABLA_TABLA_DE_DESARME_DESC = (new L("TABLA_TABLA_DE_DESARME_DESC","Reduce a la mitad el penalizador de la maniobra Desarmar, por lo que un personaje sufre sólo un -20 a su habilidad al ejecutarla.",
-    "Reduce a la mitad el penalizador de la maniobra Desarmar, por lo que un personaje sufre sólo un -20 a su habilidad al ejecutarla.")).getId();
-var TABLA_TABLA_DE_ATAQUE_ENCADENADO = (new L("TABLA_TABLA_DE_ATAQUE_ENCADENADO","Tabla de Ataque Encadenado",
-    "Enchanted Attack")).getId();
-var TABLA_TABLA_DE_ATAQUE_ENCADENADO_DESC = (new L("TABLA_TABLA_DE_ATAQUE_ENCADENADO_DESC","Al realizar ataques adicionales, el personaje puede usar las armas de tamaño Grande aplicando el penalizador de armas de tamaño Medio (es decir, un -30), y las de tamaño Medio como si fueran Pequeñas (un -20). No tiene efectos sobre armas Pequeñas.",
-    "Al realizar ataques adicionales, el personaje puede usar las armas de tamaño Grande aplicando el penalizador de armas de tamaño Medio (es decir, un -30), y las de tamaño Medio como si fueran Pequeñas (un -20). No tiene efectos sobre armas Pequeñas.")).getId();
-var TABLA_PROYECCION_MAGICA_COMO_ATAQUE = (new L("TABLA_PROYECCION_MAGICA_COMO_ATAQUE","Proyección Mágica como ataque",
-    "Magic Projection as Attack")).getId();
-var TABLA_PROYECCION_MAGICA_COMO_ATAQUE_DESC = (new L("TABLA_PROYECCION_MAGICA_COMO_ATAQUE_DESC","Permite utilizar la habilidad de ataque de un personaje como Proyección Mágica ofensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para lanzar conjuros pasivos ni defensivos.",
-    "Permite utilizar la habilidad de ataque de un personaje como Proyección Mágica ofensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para lanzar conjuros pasivos ni defensivos.")).getId();
-var TABLA_PROYECCION_MAGICA_COMO_DEFENSA = (new L("TABLA_PROYECCION_MAGICA_COMO_DEFENSA","Proyección Mágica como defensa",
-    "Magic Projection as Defense")).getId();
-var TABLA_PROYECCION_MAGICA_COMO_DEFENSA_DESC = (new L("TABLA_PROYECCION_MAGICA_COMO_DEFENSA_DESC","Permite utilizar la habilidad de defensa de un personaje como Proyección Mágica defensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para dirigir conjuros de carácter ofensivo.",
-    "Permite utilizar la habilidad de defensa de un personaje como Proyección Mágica defensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para dirigir conjuros de carácter ofensivo.")).getId();
-var TABLA_TABLA_DE_PROYECCION_PSIQUICA = (new L("TABLA_TABLA_DE_PROYECCION_PSIQUICA","Tabla de Proyección Psíquica",
-    "Psychic Projection Module")).getId();
-var TABLA_TABLA_DE_PROYECCION_PSIQUICA_DESC = (new L("TABLA_TABLA_DE_PROYECCION_PSIQUICA_DESC","Otorga la capacidad de usar las habilidades de combate del personaje como Proyección Psíquica. La ofensiva se utiliza para atacar, y la defensiva para levantar escudos. Sólo se emplea la habilidad base, no los puntos de mejora innata que proporcionan algunas categorías de combate.",
-    "Otorga la capacidad de usar las habilidades de combate del personaje como Proyección Psíquica. La ofensiva se utiliza para atacar, y la defensiva para levantar escudos. Sólo se emplea la habilidad base, no los puntos de mejora innata que proporcionan algunas categorías de combate.")).getId();
+var TABLA_ARMA_SIMILAR = (new L("TABLA_ARMA_SIMILAR","Arma similar","Similar Weapon","Arme Similaire")).getId();
+var TABLA_ARMA_SIMILAR_DESC = (new L("TABLA_ARMA_SIMILAR_DESC","Otorga la capacidad de usar un arma adicional del mismo tipo que una que el personaje ya conoce.","Otorga la capacidad de usar un arma adicional del mismo tipo que una que el personaje ya conoce.","Permet de manier sans malus les armes suivantes : arbalète de poing, épée courte, gourdin, sarbacane et stylet.")).getId();
+var TABLA_ARMA_MIXTA = (new L("TABLA_ARMA_MIXTA","Arma mixta","Mixed-class Weapon","Arme Mixte")).getId();
+var TABLA_ARMA_MIXTA_DESC = (new L("TABLA_ARMA_MIXTA_DESC","Otorga la capacidad de usar un arma mixta que tiene, por lo menos, un mismo tipo en común con otra que el personaje ya conoce.","Otorga la capacidad de usar un arma mixta que tiene, por lo menos, un mismo tipo en común con otra que el personaje ya conoce.","Permet d'utiliser sans malus une arme mixte dont le personnage connaît déjà au moins une des deux catégories.")).getId();
+var TABLA_ARMA_DISTINTA_DESARMADO = (new L("TABLA_ARMA_DISTINTA_DESARMADO","Arma distinta_Desarmado","Different type / Unarmed","Arme Distincte / Mains Nues")).getId();
+var TABLA_ARMA_DISTINTA_DESARMADO_DESC = (new L("TABLA_ARMA_DISTINTA_DESARMADO_DESC","Otorga la capacidad de usar un arma de un tipo que no conoce el personaje.","Otorga la capacidad de usar un arma de un tipo que no conoce el personaje.","Permet d'utiliser sans malus une arme d'une catégorie que ne connaît pas le personnage.")).getId();
+var TABLA_TABLA_DE_TIPOLOGIA = (new L("TABLA_TABLA_DE_TIPOLOGIA","Tabla de tipología","Whole-class Weapons","Catégorie Entière")).getId();
+var TABLA_TABLA_DE_TIPOLOGIA_DESC = (new L("TABLA_TABLA_DE_TIPOLOGIA_DESC","Permite utilizar una determinada tipología de armas sin aplicar ningún penalizador a su habilidad marcial. Deben de elegirse las de una clase concreta, ya sea pura o mixta. Si por ejemplo el personaje domina el uso de las espadas, podrá manejar cualquiera de ellas sin negativos, pero no así un mandoble, al ser un arma de tipología mixta.","Permite utilizar una determinada tipología de armas sin aplicar ningún penalizador a su habilidad marcial. Deben de elegirse las de una clase concreta, ya sea pura o mixta. Si por ejemplo el personaje domina el uso de las espadas, podrá manejar cualquiera de ellas sin negativos, pero no así un mandoble, al ser un arma de tipología mixta.","Permet de manier sans malus toutes les armes de la catégorie choisie. Il faut choisir les armes d'une catégorie existante, qu'elle soit pure ou mixte. Si par exemple, le personnage maîtrise les épées, il pourra manier n'importe quelle épée sans malus, mais pas une épée bâtarde, puisqu'il s'agit d'une arme de catégorie mixte.")).getId();
+var TABLA_TABLA_DE_PROYECTILES = (new L("TABLA_TABLA_DE_PROYECTILES","Tabla de proyectiles","Projectile Weapons","Module de Projectiles")).getId();
+var TABLA_TABLA_DE_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_PROYECTILES_DESC","Adquiere la pericia de usar cualquier arma de disparo con la misma habilidad de ataque.","Adquiere la pericia de usar cualquier arma de disparo con la misma habilidad de ataque.","Permet de manier sans malus toutes les armes de tir.")).getId();
+var TABLA_TABLA_DE_LANZAMIENTO = (new L("TABLA_TABLA_DE_LANZAMIENTO","Tabla de lanzamiento","Throwing","Module d'Armes de Lancer")).getId();
+var TABLA_TABLA_DE_LANZAMIENTO_DESC = (new L("TABLA_TABLA_DE_LANZAMIENTO_DESC","Adquiere la pericia de lanzar toda clase de artefactos con la misma habilidad de ataque.","Adquiere la pericia de lanzar toda clase de artefactos con la misma habilidad de ataque.","Permet de lancer tout type d'objet sans malus en Attaque. Le personnage ne sait pas spécialement se battre au corps à corps avec les armes lançables ; ce module ne lui apprend qu'à les lancer.")).getId();
+var TABLA_TABLA_DE_ARMAS_IMPROVISADAS = (new L("TABLA_TABLA_DE_ARMAS_IMPROVISADAS","Tabla de armas improvisadas","Improvised Weapons","Module d'Armes Improvisées")).getId();
+var TABLA_TABLA_DE_ARMAS_IMPROVISADAS_DESC = (new L("TABLA_TABLA_DE_ARMAS_IMPROVISADAS_DESC","Esta tabla permite utilizar cualquier tipo de objeto común como arma improvisada.","Esta tabla permite utilizar cualquier tipo de objeto común como arma improvisada.","Le combattant s révèle très doué à l'utilisation des choses qui l'entourent au cours d'un combat.")).getId();
+var TABLA_TABLA_DE_ASESINO = (new L("TABLA_TABLA_DE_ASESINO","Tabla de Asesino","Assassin Module","Armes d'Assassin")).getId();
+var TABLA_TABLA_DE_ASESINO_DESC = (new L("TABLA_TABLA_DE_ASESINO_DESC","Otorga pericia en las siguientes armas: Espada Corta, Ballesta de Mano, Garrote, Cerbatana y Estilete.","Otorga pericia en las siguientes armas: Espada Corta, Ballesta de Mano, Garrote, Cerbatana y Estilete.","Permet de manier sans malus les armes suivantes : griffes de tigre, katana, kusari-gama, shuriken et tantô.")).getId();
+var TABLA_TABLA_DE_BARBARO = (new L("TABLA_TABLA_DE_BARBARO","Tabla de Bárbaro","Barbarian Module","Armes de Barbare")).getId();
+var TABLA_TABLA_DE_BARBARO_DESC = (new L("TABLA_TABLA_DE_BARBARO_DESC","Otorga pericia en las siguientes armas: Hacha de Guerra, Hacha a dos manos, Mandoble, Espada Bastarda y Maza a Dos Manos.","Otorga pericia en las siguientes armas: Hacha de Guerra, Hacha a dos manos, Mandoble, Espada Bastarda y Maza a Dos Manos.","Permet de manier sans malus les armes suivantes : épée à deux mains, épée bâtarde, hache à deux mains, hache de bataille et masse à deux mains.")).getId();
+var TABLA_TABLA_DE_CABALLERO = (new L("TABLA_TABLA_DE_CABALLERO","Tabla de Caballero","Knight Module","Armes de Chevalier")).getId();
+var TABLA_TABLA_DE_CABALLERO_DESC = (new L("TABLA_TABLA_DE_CABALLERO_DESC","Otorga pericia en las siguientes armas: Espada Larga, Lanza de Caballería, Maza, Espada Bastarda y Escudo Medio.","Otorga pericia en las siguientes armas: Espada Larga, Lanza de Caballería, Maza, Espada Bastarda y Escudo Medio.","Permet de manier sans malus les armes suivantes : bouclier, épée bâtarde, épée longue, lance de cavalerie et masse.")).getId();
+var TABLA_TABLA_DE_NOMADA = (new L("TABLA_TABLA_DE_NOMADA","Tabla de Nómada","Nomad Module","Armes de Nomade")).getId();
+var TABLA_TABLA_DE_NOMADA_DESC = (new L("TABLA_TABLA_DE_NOMADA_DESC","Otorga pericia en las siguientes armas: Daga, Turcus, Arco Largo, Cimitarra y Lanza.","Otorga pericia en las siguientes armas: Daga, Turcus, Arco Largo, Cimitarra y Lanza.","Permet de manier sans malus les armes suivantes : arc long, chakram, cimeterre, lance et poignard.")).getId();
+var TABLA_TABLA_DE_GLADIADOR = (new L("TABLA_TABLA_DE_GLADIADOR","Tabla de Gladiador","Gladiator Module","Armes de Gladiateur")).getId();
+var TABLA_TABLA_DE_GLADIADOR_DESC = (new L("TABLA_TABLA_DE_GLADIADOR_DESC","Otorga pericia en las siguientes armas: Espada Corta, Red de Gladiador, Rodela, Tridente y Látigo.","Otorga pericia en las siguientes armas: Espada Corta, Red de Gladiador, Rodela, Tridente y Látigo.","Permet de manier sans malus les armes suivantes : épée courte, filet de gladiateur, fouet, rondache, trident.")).getId();
+var TABLA_TABLA_DE_CAZADOR = (new L("TABLA_TABLA_DE_CAZADOR","Tabla de Cazador","Hunt Module","Armes de Chasseur")).getId();
+var TABLA_TABLA_DE_CAZADOR_DESC = (new L("TABLA_TABLA_DE_CAZADOR_DESC","Otorga pericia en las siguientes armas: Jabalina, Arco, Espada Corta, Lanza y Boleadoras.","Otorga pericia en las siguientes armas: Jabalina, Arco, Espada Corta, Lanza y Boleadoras.","Permet de manier sans malus les armes suivantes : arc, bolas, épée courte, javeline et lance.")).getId();
+var TABLA_TABLA_DE_SOLDADO = (new L("TABLA_TABLA_DE_SOLDADO","Tabla de Soldado","Soldier Module","Armes de Soldat")).getId();
+var TABLA_TABLA_DE_SOLDADO_DESC = (new L("TABLA_TABLA_DE_SOLDADO_DESC","Otorga pericia en las siguientes armas: Ballesta, Espada Larga, Alabarda, Lanza y Escudo Medio.","Otorga pericia en las siguientes armas: Ballesta, Espada Larga, Alabarda, Lanza y Escudo Medio.","Permet de manier sans malus les armes suivantes : arbalète, bouclier, épée longue, hallebarde et lance.")).getId();
+var TABLA_TABLA_DE_NINJA = (new L("TABLA_TABLA_DE_NINJA","Tabla de Ninja","Ninja Module","Armes de Ninja")).getId();
+var TABLA_TABLA_DE_NINJA_DESC = (new L("TABLA_TABLA_DE_NINJA_DESC","Otorga pericia en las siguientes armas: Katana, Tanto, Garras, Shuriken y Kusari Gama.","Otorga pericia en las siguientes armas: Katana, Tanto, Garras, Shuriken y Kusari Gama.","Permet de manier sans malus les armes suivantes : griffes de tigre, katana, kusari-gama, shuriken et tantô.")).getId();
+var TABLA_TABLA_DE_DUELISTA = (new L("TABLA_TABLA_DE_DUELISTA","Tabla de Duelista","Duel Module","Armes de Duelliste")).getId();
+var TABLA_TABLA_DE_DUELISTA_DESC = (new L("TABLA_TABLA_DE_DUELISTA_DESC","Otorga pericia en las siguientes armas: Estoque, Florete, Daga de Parada, Sable y Espada Larga.","Otorga pericia en las siguientes armas: Estoque, Florete, Daga de Parada, Sable y Espada Larga.","Permet de manier sans malus les armes suivantes : épée longue, fleuret, main gauche, rapière et sabre.")).getId();
+var TABLA_TABLA_DE_ABORIGEN = (new L("TABLA_TABLA_DE_ABORIGEN","Tabla de Aborigen","Indigenous Module","Armes d'Aborigène")).getId();
+var TABLA_TABLA_DE_ABORIGEN_DESC = (new L("TABLA_TABLA_DE_ABORIGEN_DESC","Otorga pericia en las siguientes armas: Jabalina, Lanza, Escudo Corporal, Arco y Cerbatana.","Otorga pericia en las siguientes armas: Jabalina, Lanza, Escudo Corporal, Arco y Cerbatana.","Permet de manier sans malus les armes suivantes : arc, javeline, lance, pavois et sarbacane.")).getId();
+var TABLA_TABLA_DE_PIRATA = (new L("TABLA_TABLA_DE_PIRATA","Tabla de Pirata","Pirate Module","Armes de Pirate")).getId();
+var TABLA_TABLA_DE_PIRATA_DESC = (new L("TABLA_TABLA_DE_PIRATA_DESC","Otorga pericia en las siguientes armas: Arpón, Red de Gladiador, Garfio, Sable y Hacha de mano.","Otorga pericia en las siguientes armas: Arpón, Red de Gladiador, Garfio, Sable y Hacha de mano.","Permet de manier sans malus les armes suivantes : crochet, filet de gladiateur, hachette, harpon et sabre.")).getId();
+var TABLA_TABLA_DE_BANDIDO = (new L("TABLA_TABLA_DE_BANDIDO","Tabla de Bandido","Bandit Module","Armes de Brigand")).getId();
+var TABLA_TABLA_DE_BANDIDO_DESC = (new L("TABLA_TABLA_DE_BANDIDO_DESC","Otorga pericia en las siguientes armas: Daga, Ballesta, Espada Corta, Maza y Garrote.","Otorga pericia en las siguientes armas: Daga, Ballesta, Espada Corta, Maza y Garrote.","Permet de manier sans malus les armes suivantes : arbalète, épée courte, gourdin, masse et poignard.")).getId();
+var TABLA_BATTO_JUTSU_IAI_JUTSU = (new L("TABLA_BATTO_JUTSU_IAI_JUTSU","Batto jutsu_Iai jutsu","Batto Jutsu / Iai Jutsu","Batto Jutsu / Iai Jutsu")).getId();
+var TABLA_BATTO_JUTSU_IAI_JUTSU_DESC = (new L("TABLA_BATTO_JUTSU_IAI_JUTSU_DESC","El personaje puede desenfundar su arma sin aplicar el penalizador de -25 a su habilidad de ataque o parada. No tiene efectos sobre armas a dos manos.","El personaje puede desenfundar su arma sin aplicar el penalizador de -25 a su habilidad de ataque o parada. No tiene efectos sobre armas a dos manos.","Le personnage peut dégainer son arme sans subir le malus de -25 en Attaque et Parade. Cela n'a pas d'effet sur les armes à deux mains.")).getId();
+var TABLA_TABLA_DE_AREA = (new L("TABLA_TABLA_DE_AREA","Tabla de Área","Area Attack","Module d'Attaque Circulaire")).getId();
+var TABLA_TABLA_DE_AREA_DESC = (new L("TABLA_TABLA_DE_AREA_DESC","Reduce a la mitad el penalizador de la maniobra Ataque en área, por lo que al ejecutarla, un personaje aplica sólo un -25 a su habilidad.","Reduce a la mitad el penalizador de la maniobra Ataque en área, por lo que al ejecutarla, un personaje aplica sólo un -25 a su habilidad.","Réduit de moitié le malus de la manoeuvre Attaque circulaire. Quand il la réalise, le personnage applique seulement -25 à sa compétence.")).getId();
+var TABLA_TABLA_DE_PRECISION = (new L("TABLA_TABLA_DE_PRECISION","Tabla de Precisión","Precision Attack","Module de Mise en Joue")).getId();
+var TABLA_TABLA_DE_PRECISION_DESC = (new L("TABLA_TABLA_DE_PRECISION_DESC","Reduce a la mitad el penalizador de la maniobra Engatillar, por lo que un personaje sufre sólo un -50 a su habilidad al ejecutarla.","Reduce a la mitad el penalizador de la maniobra Engatillar, por lo que un personaje sufre sólo un -50 a su habilidad al ejecutarla.","Réduit de moitié le malus de la manoeuvre Tenir en Joue : le personnage ne subit que -50 à sa compétence.")).getId();
+var TABLA_TABLA_DE_DESARME = (new L("TABLA_TABLA_DE_DESARME","Tabla de Desarme","Disarming Attack","Module de Désarmement")).getId();
+var TABLA_TABLA_DE_DESARME_DESC = (new L("TABLA_TABLA_DE_DESARME_DESC","Reduce a la mitad el penalizador de la maniobra Desarmar, por lo que un personaje sufre sólo un -20 a su habilidad al ejecutarla.","Reduce a la mitad el penalizador de la maniobra Desarmar, por lo que un personaje sufre sólo un -20 a su habilidad al ejecutarla.","Réduit de moitié le malus de la manoeuvre Désarmer : le personnage ne subit que -20 à sa compétence.")).getId();
+var TABLA_TABLA_DE_ATAQUE_ENCADENADO = (new L("TABLA_TABLA_DE_ATAQUE_ENCADENADO","Tabla de Ataque Encadenado","Enchanted Attack","Module d'Attaques Enchaînées")).getId();
+var TABLA_TABLA_DE_ATAQUE_ENCADENADO_DESC = (new L("TABLA_TABLA_DE_ATAQUE_ENCADENADO_DESC","Al realizar ataques adicionales, el personaje puede usar las armas de tamaño Grande aplicando el penalizador de armas de tamaño Medio (es decir, un -30), y las de tamaño Medio como si fueran Pequeñas (un -20). No tiene efectos sobre armas Pequeñas.","Al realizar ataques adicionales, el personaje puede usar las armas de tamaño Grande aplicando el penalizador de armas de tamaño Medio (es decir, un -30), y las de tamaño Medio como si fueran Pequeñas (un -20). No tiene efectos sobre armas Pequeñas.","En effectuant des attaques supplémentaires, le personnage peut utiliser des armes de Grande taille en appliquant les malus d'armes de taille de Petite taille (-20). Ce module n'a pas d'effet sur les armes de Petite taille.")).getId();
+var TABLA_PROYECCION_MAGICA_COMO_ATAQUE = (new L("TABLA_PROYECCION_MAGICA_COMO_ATAQUE","Proyección Mágica como ataque","Magic Projection as Attack","Maniement Offensif des Sorts")).getId();
+var TABLA_PROYECCION_MAGICA_COMO_ATAQUE_DESC = (new L("TABLA_PROYECCION_MAGICA_COMO_ATAQUE_DESC","Permite utilizar la habilidad de ataque de un personaje como Proyección Mágica ofensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para lanzar conjuros pasivos ni defensivos.","Permite utilizar la habilidad de ataque de un personaje como Proyección Mágica ofensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para lanzar conjuros pasivos ni defensivos.","Permet d'utiliser la compétence Attaque à la place de la Projection Magique offensive. Seule la base de compétence est utilisée, pas les points de bonus automatique qu'accordent quelques classes de combattants. Le modificateur de caractéristiques reste inchangé. Ce module ne peut pas être utilisé pour lancer des sorts passifs ou défensifs.")).getId();
+var TABLA_PROYECCION_MAGICA_COMO_DEFENSA = (new L("TABLA_PROYECCION_MAGICA_COMO_DEFENSA","Proyección Mágica como defensa","Magic Projection as Defense","Maniement Défensif des Sorts")).getId();
+var TABLA_PROYECCION_MAGICA_COMO_DEFENSA_DESC = (new L("TABLA_PROYECCION_MAGICA_COMO_DEFENSA_DESC","Permite utilizar la habilidad de defensa de un personaje como Proyección Mágica defensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para dirigir conjuros de carácter ofensivo.","Permite utilizar la habilidad de defensa de un personaje como Proyección Mágica defensiva. Sólo se emplea la habilidad base, y no los puntos de mejora innata que proporcionan algunas categorías de combate. No puede utilizarse para dirigir conjuros de carácter ofensivo.","Permet d'utiliser la compétence de défense à la place de la Projection Magique défensive. Seule la base de compétence est utilisée, pas les points de bonus automatique qu'accordent quelques classes de combattants. Le modificateur de caractéristiques reste inchangé. Ce module ne peut pas être utilisé pour lancer des sorts de type offensifs (Attaque, Animique).")).getId();
+var TABLA_TABLA_DE_PROYECCION_PSIQUICA = (new L("TABLA_TABLA_DE_PROYECCION_PSIQUICA","Tabla de Proyección Psíquica","Psychic Projection Module","Maniement des Matrices")).getId();
+var TABLA_TABLA_DE_PROYECCION_PSIQUICA_DESC = (new L("TABLA_TABLA_DE_PROYECCION_PSIQUICA_DESC","Otorga la capacidad de usar las habilidades de combate del personaje como Proyección Psíquica. La ofensiva se utiliza para atacar, y la defensiva para levantar escudos. Sólo se emplea la habilidad base, no los puntos de mejora innata que proporcionan algunas categorías de combate.","Otorga la capacidad de usar las habilidades de combate del personaje como Proyección Psíquica. La ofensiva se utiliza para atacar, y la defensiva para levantar escudos. Sólo se emplea la habilidad base, no los puntos de mejora innata que proporcionan algunas categorías de combate.","Permet d'utiliser les compétences martiales à la place de la Projection Psychique. La compétence Attaque sert pour les attaques et Défense pour lever des boucliers. Seule la base de compétence est utilisée, pas les points de bonus automatique qu'accordent quelques classes de combattants. Le modificateur de caractéristiques reste inchangé.")).getId();
 
-var TABLA_TABLA_DE_DESVIO = (new L("TABLA_TABLA_DE_DESVIO","Tabla de Desvío",
-    "Tabla de Desvío")).getId();
-var TABLA_TABLA_DE_DESVIO_DESC = (new L("TABLA_TABLA_DE_DESVIO_DESC","El luchador puede sumar el valor de su característica de Destreza a la Entereza de su arma cuando para ataques",
-    "El luchador puede sumar el valor de su característica de Destreza a la Entereza de su arma cuando para ataques")).getId();
-var TABLA_TABLA_DE_REDUCCION_DE_ARMADURA = (new L("TABLA_TABLA_DE_REDUCCION_DE_ARMADURA","Tabla de Reducción de Armadura",
-    "Tabla de Reducción de Armadura")).getId();
-var TABLA_TABLA_DE_REDUCCION_DE_ARMADURA_DESC = (new L("TABLA_TABLA_DE_REDUCCION_DE_ARMADURA_DESC","Permite al luchador restar un punto de la Armadura de cualquier adversario. Esta habilidad se suma a cualquier otro modificador que el personaje tuviese, ya sea gracias a armas de calidad o Técnicas de Ki.",
-    "Permite al luchador restar un punto de la Armadura de cualquier adversario. Esta habilidad se suma a cualquier otro modificador que el personaje tuviese, ya sea gracias a armas de calidad o Técnicas de Ki.")).getId();
-var TABLA_TABLA_DE_COMBATE_A_CIEGAS = (new L("TABLA_TABLA_DE_COMBATE_A_CIEGAS","Tabla de Combate a Ciegas",
-    "Tabla de Combate a Ciegas")).getId();
-var TABLA_TABLA_DE_COMBATE_A_CIEGAS_DESC = (new L("TABLA_TABLA_DE_COMBATE_A_CIEGAS_DESC","El personaje reduce a la mitad los penalizadores a la acción que sufre en combate por Ceguera, ya sea parcial o completa.",
-    "El personaje reduce a la mitad los penalizadores a la acción que sufre en combate por Ceguera, ya sea parcial o completa.")).getId();
-var TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO = (new L("TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO","Tabla de Disparo en Movimiento",
-    "Tabla de Disparo en Movimiento")).getId();
-var TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO_DESC = (new L("TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO_DESC","Elimina el penalizador de -10 al ataque con proyectiles por desplazarse a más de una cuarta parte de su tipo de movimiento, y reduce disparar a la mitad, (es decir, a sólo -25) cuando corre a su velocidad máxima.",
-    "Elimina el penalizador de -10 al ataque con proyectiles por desplazarse a más de una cuarta parte de su tipo de movimiento, y reduce disparar a la mitad, (es decir, a sólo -25) cuando corre a su velocidad máxima.")).getId();
-var TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO = (new L("TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO","Tabla de Blanco en Movimiento",
-    "Tabla de Blanco en Movimiento")).getId();
-var TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO_DESC = (new L("TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO_DESC","Reduce a la mitad el penalizador de la Tabla 44 por disparar a blancos en movimiento. Por tanto, el personaje sólo sufre un negativo de -10 si su objetivo se desplaza a más de velocidad 8, -20 si lo hace a velocidad 10 y -30 si es superior.",
-    "Reduce a la mitad el penalizador de la Tabla 44 por disparar a blancos en movimiento. Por tanto, el personaje sólo sufre un negativo de -10 si su objetivo se desplaza a más de velocidad 8, -20 si lo hace a velocidad 10 y -30 si es superior.")).getId();
-var TABLA_TABLA_DE_VARIOS_BLANCOS = (new L("TABLA_TABLA_DE_VARIOS_BLANCOS","Tabla de Varios blancos",
-    "Tabla de Varios blancos")).getId();
-var TABLA_TABLA_DE_VARIOS_BLANCOS_DESC = (new L("TABLA_TABLA_DE_VARIOS_BLANCOS_DESC","El personaje no sufre el penalizador de -10 por cambiar de blanco al ejecutar disparos o lanzamientos.",
-    "El personaje no sufre el penalizador de -10 por cambiar de blanco al ejecutar disparos o lanzamientos.")).getId();
-var TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES = (new L("TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES","Tabla de Defensa contra proyectiles",
-    "Tabla de Defensa contra proyectiles")).getId();
-var TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES_DESC","Cuando utiliza un arma de clase Mandoble, el personaje puede parar proyectiles como si tuviera un escudo, a la hora de aplicar los penalizadores pertinentes.",
-    "Cuando utiliza un arma de clase Mandoble, el personaje puede parar proyectiles como si tuviera un escudo, a la hora de aplicar los penalizadores pertinentes.")).getId();
-var TABLA_TABLA_DE_ATAQUE_ADICIONAL = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL","Tabla de Ataque adicional",
-    "Tabla de Ataque adicional")).getId();
-var TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC","Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.",
-    "Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.")).getId();
+var TABLA_TABLA_DE_DESVIO = (new L("TABLA_TABLA_DE_DESVIO","Tabla de Desvío","Tabla de Desvío","Module de Déviation")).getId();
+var TABLA_TABLA_DE_DESVIO_DESC = (new L("TABLA_TABLA_DE_DESVIO_DESC","El luchador puede sumar el valor de su característica de Destreza a la Entereza de su arma cuando para ataques","El luchador puede sumar el valor de su característica de Destreza a la Entereza de su arma cuando para ataques","Le combattant peut ajouter sa valeur de Dextérité à la Solidité de son arme lorsqu'il pare des attaques.")).getId();
+var TABLA_TABLA_DE_REDUCCION_DE_ARMADURA = (new L("TABLA_TABLA_DE_REDUCCION_DE_ARMADURA","Tabla de Reducción de Armadura","Tabla de Reducción de Armadura","Module de Réduction d'Armure")).getId();
+var TABLA_TABLA_DE_REDUCCION_DE_ARMADURA_DESC = (new L("TABLA_TABLA_DE_REDUCCION_DE_ARMADURA_DESC","Permite al luchador restar un punto de la Armadura de cualquier adversario. Esta habilidad se suma a cualquier otro modificador que el personaje tuviese, ya sea gracias a armas de calidad o Técnicas de Ki.","Permite al luchador restar un punto de la Armadura de cualquier adversario. Esta habilidad se suma a cualquier otro modificador que el personaje tuviese, ya sea gracias a armas de calidad o Técnicas de Ki.","Elle permet au combattant de soustraire un point à l'Indice de Protection de n'importe quel adversaire. Cette aptitude s'ajoute à tout autre modificateur que posséderait le personnage, que ce soit grâce aux armes de qualité ou à une technique de Ki. Spécial : Ce module peut être acheté autant de fois que le souhaite le personnage.")).getId();
+var TABLA_TABLA_DE_COMBATE_A_CIEGAS = (new L("TABLA_TABLA_DE_COMBATE_A_CIEGAS","Tabla de Combate a Ciegas","Tabla de Combate a Ciegas","Module de Combat en Aveugle")).getId();
+var TABLA_TABLA_DE_COMBATE_A_CIEGAS_DESC = (new L("TABLA_TABLA_DE_COMBATE_A_CIEGAS_DESC","El personaje reduce a la mitad los penalizadores a la acción que sufre en combate por Ceguera, ya sea parcial o completa.","El personaje reduce a la mitad los penalizadores a la acción que sufre en combate por Ceguera, ya sea parcial o completa.","Le personnage réduit de moitié les malus aux actions subis pour Cécité Partielle ou Totale (page 89).")).getId();
+var TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO = (new L("TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO","Tabla de Disparo en Movimiento","Tabla de Disparo en Movimiento","Module de Tir en Mouvement")).getId();
+var TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO_DESC = (new L("TABLA_TABLA_DE_DISPARO_EN_MOVIMIENTO_DESC","Elimina el penalizador de -10 al ataque con proyectiles por desplazarse a más de una cuarta parte de su tipo de movimiento, y reduce disparar a la mitad, (es decir, a sólo -25) cuando corre a su velocidad máxima.","Elimina el penalizador de -10 al ataque con proyectiles por desplazarse a más de una cuarta parte de su tipo de movimiento, y reduce disparar a la mitad, (es decir, a sólo -25) cuando corre a su velocidad máxima.","Élimine le malus de -10 aux attaques de projectiles dû au déplacement de plus d'un quart de son Mouvement et réduit le malus de tir de moitié (c'est à dire seulement -25) quand on court à vitesse maximale.")).getId();
+var TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO = (new L("TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO","Tabla de Blanco en Movimiento","Tabla de Blanco en Movimiento","Module de Cible Mouvante")).getId();
+var TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO_DESC = (new L("TABLA_TABLA_DE_BLANCO_EN_MOVIMIENTO_DESC","Reduce a la mitad el penalizador de la Tabla 44 por disparar a blancos en movimiento. Por tanto, el personaje sólo sufre un negativo de -10 si su objetivo se desplaza a más de velocidad 8, -20 si lo hace a velocidad 10 y -30 si es superior.","Reduce a la mitad el penalizador de la Tabla 44 por disparar a blancos en movimiento. Por tanto, el personaje sólo sufre un negativo de -10 si su objetivo se desplaza a más de velocidad 8, -20 si lo hace a velocidad 10 y -30 si es superior.","Réduit de moitié le malus de tir sur cible mouvante. Par conséquent, le personnage ne subit qu'un malus de -10 si son objectif a un Mouvement de 8-9, -20 s'il est de 10 et -30 s'il est supérieur à 10.")).getId();
+var TABLA_TABLA_DE_VARIOS_BLANCOS = (new L("TABLA_TABLA_DE_VARIOS_BLANCOS","Tabla de Varios blancos","Tabla de Varios blancos","Module de Cibles Multiples")).getId();
+var TABLA_TABLA_DE_VARIOS_BLANCOS_DESC = (new L("TABLA_TABLA_DE_VARIOS_BLANCOS_DESC","El personaje no sufre el penalizador de -10 por cambiar de blanco al ejecutar disparos o lanzamientos.","El personaje no sufre el penalizador de -10 por cambiar de blanco al ejecutar disparos o lanzamientos.","Le personnage ne souffre pas du malus de -10 pour changement de cible lors de tirs ou de lancers.")).getId();
+var TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES = (new L("TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES","Tabla de Defensa contra proyectiles","Tabla de Defensa contra proyectiles","Module de Défense contre les Projectiles")).getId();
+var TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_DEFENSA_CONTRA_PROYECTILES_DESC","Cuando utiliza un arma de clase Mandoble, el personaje puede parar proyectiles como si tuviera un escudo, a la hora de aplicar los penalizadores pertinentes.","Cuando utiliza un arma de clase Mandoble, el personaje puede parar proyectiles como si tuviera un escudo, a la hora de aplicar los penalizadores pertinentes.","Quand il utilise une arme de catégorie Deux mains, le personnage peut bloquer des projectiles comme s'il possédait un bouclier lors de l'application des malus correspondants.")).getId();
+var TABLA_TABLA_DE_ATAQUE_ADICIONAL = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL","Tabla de Ataque adicional","Tabla de Ataque adicional","Module d'Attaque Supplémentaire")).getId();
+var TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_ADICIONAL_DESC","Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.","Otorga la capacidad de realizar un ataque adicional, equivalente a cuando un personaje posee 100 puntos de habilidad ofensiva. Es decir, un luchador con 120 de habilidad podría ejecutar hasta un total de tres ataques (uno por tener más de 100 de HA, y el otro gracias a la Tabla) con 70 en los tres.","Offre la capacité d'effectuer une attaque supplémentaire, comme si le personnage possédait 100 points supplémentaires en Attaque. Par exemple, un combattant avec une compétence de 120 pourrait réaliser jusqu'à trois attaques. Spécial : Ce module peut être acheté autant de fois que le souhaite le personnage.")).getId();
 
-var TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES = (new L("TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES","Tabla de Acumulación de Proyectiles",
-    "Tabla de Acumulación de Proyectiles")).getId();
-var TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES_DESC","Un luchador puede usar la maniobra Acumulación de Proyectiles sin sufrir penalizadores a su Habilidad Ofensiva. Por lo tanto, aplicará un -10 a su Turno por cada proyectil adicional que lance con esa maniobra, pero no un -5 a su Habilidad de Ataque.",
-    "Un luchador puede usar la maniobra Acumulación de Proyectiles sin sufrir penalizadores a su Habilidad Ofensiva. Por lo tanto, aplicará un -10 a su Turno por cada proyectil adicional que lance con esa maniobra, pero no un -5 a su Habilidad de Ataque.")).getId();
-var TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO = (new L("TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO","Tabla de Segunda Arma: Estilo Defensivo",
-    "Tabla de Segunda Arma: Estilo Defensivo")).getId();
-var TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO_DESC = (new L("TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO_DESC","Un luchador que porte un arma de mano adicional puede utilizarla para mejorar su capacidad defensiva en lugar de para atacar, de manera que pueda detener un segundo ataque sin aplicar penalizador alguno a su Habilidad Defensiva. De este modo, el segundo ataque no sufre ningún penalizador, el tercero sufre un -30 (como si fuera el segundo ataque), el cuarto un -50 (como si fuera el tercero) y así consecutivamente. Si un personaje quiere usar su arma de este modo, no puede hacer un ataque adicional con ella.",
-    "Un luchador que porte un arma de mano adicional puede utilizarla para mejorar su capacidad defensiva en lugar de para atacar, de manera que pueda detener un segundo ataque sin aplicar penalizador alguno a su Habilidad Defensiva. De este modo, el segundo ataque no sufre ningún penalizador, el tercero sufre un -30 (como si fuera el segundo ataque), el cuarto un -50 (como si fuera el tercero) y así consecutivamente. Si un personaje quiere usar su arma de este modo, no puede hacer un ataque adicional con ella.")).getId();
-var TABLA_TABLA_DE_CRITICO_INCREMENTADO = (new L("TABLA_TABLA_DE_CRITICO_INCREMENTADO","Tabla de Crítico Incrementado",
-    "Tabla de Crítico Incrementado")).getId();
-var TABLA_TABLA_DE_CRITICO_INCREMENTADO_DESC = (new L("TABLA_TABLA_DE_CRITICO_INCREMENTADO_DESC","Permite al luchador aplicar un +10 a las tiradas para calcular su Nivel de Crítico.",
-    "Permite al luchador aplicar un +10 a las tiradas para calcular su Nivel de Crítico.")).getId();
-var TABLA_TABLA_DE_ATAQUE_INUSUAL = (new L("TABLA_TABLA_DE_ATAQUE_INUSUAL","Tabla de Ataque Inusual",
-    "Tabla de Ataque Inusual")).getId();
-var TABLA_TABLA_DE_ATAQUE_INUSUAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_INUSUAL_DESC","Permite a un personaje usar el Crítico Secundario de las armas que sepa manejar, sin ninguna clase de penalizador a su habilidad.",
-    "Permite a un personaje usar el Crítico Secundario de las armas que sepa manejar, sin ninguna clase de penalizador a su habilidad.")).getId();
-var TABLA_TABLA_DE_PRESA_INUSUAL = (new L("TABLA_TABLA_DE_PRESA_INUSUAL","Tabla de Presa Inusual",
-    "Tabla de Presa Inusual")).getId();
-var TABLA_TABLA_DE_PRESA_INUSUAL_DESC = (new L("TABLA_TABLA_DE_PRESA_INUSUAL_DESC","Permite realizar una maniobra de Presa con armas que no tengan dicha regla especial, aplicando un penalizador de -60 en lugar del -40 habitual. Si la maniobra tiene éxito, el personaje utiliza para el Control Enfrentado de Características su Destreza, aunque con un penalizador de -3 a su valor.",
-    "Permite realizar una maniobra de Presa con armas que no tengan dicha regla especial, aplicando un penalizador de -60 en lugar del -40 habitual. Si la maniobra tiene éxito, el personaje utiliza para el Control Enfrentado de Características su Destreza, aunque con un penalizador de -3 a su valor.")).getId();
-var TABLA_TABLA_DE_GUARDAESPALDAS = (new L("TABLA_TABLA_DE_GUARDAESPALDAS","Tabla de Guardaespaldas",
-    "Tabla de Guardaespaldas")).getId();
-var TABLA_TABLA_DE_GUARDAESPALDAS_DESC = (new L("TABLA_TABLA_DE_GUARDAESPALDAS_DESC","Reduce a -10 los penalizadores aplicables por tratar de cubrir o apartar de la trayectoria de un ataque a otra persona. No otorga ninguna ventaja si el personaje emplea escudos sobrenaturales.",
-    "Reduce a -10 los penalizadores aplicables por tratar de cubrir o apartar de la trayectoria de un ataque a otra persona. No otorga ninguna ventaja si el personaje emplea escudos sobrenaturales.")).getId();
-var TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS = (new L("TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS","Tabla de Movimiento en Espacios Reducidos",
-    "Tabla de Movimiento en Espacios Reducidos")).getId();
-var TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS_DESC = (new L("TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS_DESC","Reduce a la mitad los penalizadores aplicables por atacar o defenderse en el interior de un espacio reducido.",
-    "Reduce a la mitad los penalizadores aplicables por atacar o defenderse en el interior de un espacio reducido.")).getId();
-var TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO = (new L("TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO","Tabla de Esquiva con Escudo",
-    "Tabla de Esquiva con Escudo")).getId();
-var TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO_DESC = (new L("TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO_DESC","Permite a un personaje que esquive empleando un escudo beneficiarse del bono que otorga el escudo a la parada en lugar de a la esquiva. Es decir, un luchador esquivando obtendría un bono de +20 por usar un escudo medio en lugar de +10.",
-    "Permite a un personaje que esquive empleando un escudo beneficiarse del bono que otorga el escudo a la parada en lugar de a la esquiva. Es decir, un luchador esquivando obtendría un bono de +20 por usar un escudo medio en lugar de +10.")).getId();
-var TABLA_TABLA_DE_SUJECION = (new L("TABLA_TABLA_DE_SUJECION","Tabla de Sujeción",
-    "Tabla de Sujeción")).getId();
-var TABLA_TABLA_DE_SUJECION_DESC = (new L("TABLA_TABLA_DE_SUJECION_DESC","Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.",
-    "Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.")).getId();
+var TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES = (new L("TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES","Tabla de Acumulación de Proyectiles","Tabla de Acumulación de Proyectiles","Module d'Accumulation de Projectiles")).getId();
+var TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES_DESC = (new L("TABLA_TABLA_DE_ACUMULACION_DE_PROYECTILES_DESC","Un luchador puede usar la maniobra Acumulación de Proyectiles sin sufrir penalizadores a su Habilidad Ofensiva. Por lo tanto, aplicará un -10 a su Turno por cada proyectil adicional que lance con esa maniobra, pero no un -5 a su Habilidad de Ataque.","Un luchador puede usar la maniobra Acumulación de Proyectiles sin sufrir penalizadores a su Habilidad Ofensiva. Por lo tanto, aplicará un -10 a su Turno por cada proyectil adicional que lance con esa maniobra, pero no un -5 a su Habilidad de Ataque.","un combattant peut utiliser la manoeuvre Accumulations de projectiles sans subir de malus en Attaque. Il appliquera donc un -10 à son Initiative pour chaque projectile supplémentaire lancé avec cette manoeuvre, mais pas de -5 à sa compétence d'Attaque.")).getId();
+var TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO = (new L("TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO","Tabla de Segunda Arma: Estilo Defensivo","Tabla de Segunda Arma: Estilo Defensivo","Module de Deuxième Arme : Style Défensif")).getId();
+var TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO_DESC = (new L("TABLA_TABLA_DE_SEGUNDA_ARMA_ESTILO_DEFENSIVO_DESC","Un luchador que porte un arma de mano adicional puede utilizarla para mejorar su capacidad defensiva en lugar de para atacar, de manera que pueda detener un segundo ataque sin aplicar penalizador alguno a su Habilidad Defensiva. De este modo, el segundo ataque no sufre ningún penalizador, el tercero sufre un -30 (como si fuera el segundo ataque), el cuarto un -50 (como si fuera el tercero) y así consecutivamente. Si un personaje quiere usar su arma de este modo, no puede hacer un ataque adicional con ella.","Un luchador que porte un arma de mano adicional puede utilizarla para mejorar su capacidad defensiva en lugar de para atacar, de manera que pueda detener un segundo ataque sin aplicar penalizador alguno a su Habilidad Defensiva. De este modo, el segundo ataque no sufre ningún penalizador, el tercero sufre un -30 (como si fuera el segundo ataque), el cuarto un -50 (como si fuera el tercero) y así consecutivamente. Si un personaje quiere usar su arma de este modo, no puede hacer un ataque adicional con ella.","Un combattant portant une arme de corps à corps supplémentaire peut l'utiliser pour améliorer sa capacité défensive au lieu de son attaque, ce qui lui permettra d'arrêter une seconde attaque sans appliquer aucun malus à sa compétence défensive. Ainsi, la seconde défense ne subit aucun malus, la troisième un -30 (comme si c'était la deuxième défense), la quatrième un -50 (comme si c'était la troisième) et ainsi de suite. Si un personnage souhaite utiliser son arme de cette manière, il ne peut pas lancer d'attaque supplémentaire avec elle.")).getId();
+var TABLA_TABLA_DE_CRITICO_INCREMENTADO = (new L("TABLA_TABLA_DE_CRITICO_INCREMENTADO","Tabla de Crítico Incrementado","Tabla de Crítico Incrementado","Module de Critique Accru")).getId();
+var TABLA_TABLA_DE_CRITICO_INCREMENTADO_DESC = (new L("TABLA_TABLA_DE_CRITICO_INCREMENTADO_DESC","Permite al luchador aplicar un +10 a las tiradas para calcular su Nivel de Crítico.","Permite al luchador aplicar un +10 a las tiradas para calcular su Nivel de Crítico.","Permet au combattant d'appliquer un +10 aux jets pour calculer son niveau de critique. Ce modificateur s'ajoute à tout autre qu'il pourrait obtenir grâce aux techniques de Ki, armes surnaturelles ou autres éléments similaires.")).getId();
+var TABLA_TABLA_DE_ATAQUE_INUSUAL = (new L("TABLA_TABLA_DE_ATAQUE_INUSUAL","Tabla de Ataque Inusual","Tabla de Ataque Inusual","Module d'Attaque Inhabituelle")).getId();
+var TABLA_TABLA_DE_ATAQUE_INUSUAL_DESC = (new L("TABLA_TABLA_DE_ATAQUE_INUSUAL_DESC","Permite a un personaje usar el Crítico Secundario de las armas que sepa manejar, sin ninguna clase de penalizador a su habilidad.","Permite a un personaje usar el Crítico Secundario de las armas que sepa manejar, sin ninguna clase de penalizador a su habilidad.","Permet au personnage d'utiliser le mode secondaire des armes qu'il sait manier, sans aucun type de malus à sa compétence. Il pourrait par exemple brandir une hallebarde et l'utiliser pour attaquer de façon CONtondante (au lieu du mode TRAnchant) avec toute sa compétence.")).getId();
+var TABLA_TABLA_DE_PRESA_INUSUAL = (new L("TABLA_TABLA_DE_PRESA_INUSUAL","Tabla de Presa Inusual","Tabla de Presa Inusual","Module d'Immobilisation Inhabituelle")).getId();
+var TABLA_TABLA_DE_PRESA_INUSUAL_DESC = (new L("TABLA_TABLA_DE_PRESA_INUSUAL_DESC","Permite realizar una maniobra de Presa con armas que no tengan dicha regla especial, aplicando un penalizador de -60 en lugar del -40 habitual. Si la maniobra tiene éxito, el personaje utiliza para el Control Enfrentado de Características su Destreza, aunque con un penalizador de -3 a su valor.","Permite realizar una maniobra de Presa con armas que no tengan dicha regla especial, aplicando un penalizador de -60 en lugar del -40 habitual. Si la maniobra tiene éxito, el personaje utiliza para el Control Enfrentado de Características su Destreza, aunque con un penalizador de -3 a su valor.","Permet d'effectuer une manoeuvre d'Immobilisation avec des armes n'ayant pas cette règle spéciale, en appliquant un malus de -60 au lieu du -40 habituel. Si la manoeuvre est un succès, le personnage utilise pour le test opposé de caractéristiques sa Dextérité, quoiqu'avec un malus de -3 à cette valeur.")).getId();
+var TABLA_TABLA_DE_GUARDAESPALDAS = (new L("TABLA_TABLA_DE_GUARDAESPALDAS","Tabla de Guardaespaldas","Tabla de Guardaespaldas","Module de Garde du Corps")).getId();
+var TABLA_TABLA_DE_GUARDAESPALDAS_DESC = (new L("TABLA_TABLA_DE_GUARDAESPALDAS_DESC","Reduce a -10 los penalizadores aplicables por tratar de cubrir o apartar de la trayectoria de un ataque a otra persona. No otorga ninguna ventaja si el personaje emplea escudos sobrenaturales.","Reduce a -10 los penalizadores aplicables por tratar de cubrir o apartar de la trayectoria de un ataque a otra persona. No otorga ninguna ventaja si el personaje emplea escudos sobrenaturales.","Réduit à -10 les malus applicables lorsque l'on tente de couvrir une autre personne ou de l'écarter de la trajectoire d'une attaque. Il ne donne aucun avantage si le personnage utilise des boucliers surnaturels.")).getId();
+var TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS = (new L("TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS","Tabla de Movimiento en Espacios Reducidos","Tabla de Movimiento en Espacios Reducidos","Module de Mouvement dans un Espace Réduit")).getId();
+var TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS_DESC = (new L("TABLA_TABLA_DE_MOVIMIENTO_EN_ESPACIOS_REDUCIDOS_DESC","Reduce a la mitad los penalizadores aplicables por atacar o defenderse en el interior de un espacio reducido.","Reduce a la mitad los penalizadores aplicables por atacar o defenderse en el interior de un espacio reducido.","Diminue de moitié les malus applicable en attaque ou en défense au sein d'un espace réduit.")).getId();
+var TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO = (new L("TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO","Tabla de Esquiva con Escudo","Tabla de Esquiva con Escudo","Module d'Esquive avec Bouclier")).getId();
+var TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO_DESC = (new L("TABLA_TABLA_DE_ESQUIVA_CON_ESCUDO_DESC","Permite a un personaje que esquive empleando un escudo beneficiarse del bono que otorga el escudo a la parada en lugar de a la esquiva. Es decir, un luchador esquivando obtendría un bono de +20 por usar un escudo medio en lugar de +10.","Permite a un personaje que esquive empleando un escudo beneficiarse del bono que otorga el escudo a la parada en lugar de a la esquiva. Es decir, un luchador esquivando obtendría un bono de +20 por usar un escudo medio en lugar de +10.","Permet à un personnage qui esquive en utilisant un bouclier de profiter du bonus que donne celui-ci en parade au lieu de l'esquive. Par exemple, un combattant qui esquive obtiendrait un bonus de +20 en utilisant un bouclier moyen au lieu de +10.")).getId();
+var TABLA_TABLA_DE_SUJECION = (new L("TABLA_TABLA_DE_SUJECION","Tabla de Sujeción","Tabla de Sujeción","Module de Tenue")).getId();
+var TABLA_TABLA_DE_SUJECION_DESC = (new L("TABLA_TABLA_DE_SUJECION_DESC","Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.","Esta Tabla otorga al personaje que la posea un bonificador de +3 al valor de sus Características a la hora de realizar un control para evitar ser desarmado.","Ce module donne au personnage le possédant un bonus de +3 à la valeur de ses caractéristiques lorsqu'il effectue un test pour éviter d'être désarmé.")).getId();
 
-var TABLA_AIKIDO= (new L("TABLA_AIKIDO","Armas de Aikido","Aikido weapons")).getId();
-var TABLA_KUNG_FU= (new L("TABLA_KUNG_FU","Armas de Kung Fu","Kung Fu weapons")).getId();
-var TABLA_SHOTOKAN= (new L("TABLA_SHOTOKAN","Armas de Shotokan","Shotokan weapons")).getId();
-var TABLA_MOAI_THAI= (new L("TABLA_MOAI_THAI","Armas de Moai Thai","Moai Thai weapons")).getId();
-var TABLA_CAPOEIRA= (new L("TABLA_CAPOEIRA","Armas de Capoeira","Capoeira weapons")).getId();
-var TABLA_KEMPO= (new L("TABLA_KEMPO","Armas de Kempo","Kempo weapons")).getId();
-var TABLA_GRAPPLING= (new L("TABLA_GRAPPLING","Armas de Grappling","Grappling weapons")).getId();
-var TABLA_SAMBO= (new L("TABLA_SAMBO","Armas de Sambo","Sambo weapons")).getId();
-var TABLA_TAE_KWON_DO= (new L("TABLA_TAE_KWON_DO","Armas de Tae Kwon Do","Tae Kwon Do weapons")).getId();
-var TABLA_TAI_CHI= (new L("TABLA_TAI_CHI","Armas de Tai Chi","Tai Chi weapons")).getId();
-var TABLA_PANKRATION= (new L("TABLA_PANKRATION","Armas de Pankration","Pankration weapons")).getId();
-var TABLA_KARDAD= (new L("TABLA_KARDAD","Armas de Kardad","Kardad weapons")).getId();
-var TABLA_MALLA_YUDDHA= (new L("TABLA_MALLA_YUDDHA","Armas de Malla-yuddha","Malla-yuddha weapons")).getId();
-var TABLA_LAMA= (new L("TABLA_LAMA","Armas de Lama","Lama weapons")).getId();
-var TABLA_KUAN= (new L("TABLA_KUAN","Armas de Kuan","Kuan weapons")).getId();
-var TABLA_SOO_BAHK= (new L("TABLA_SOO_BAHK","Armas de Soo Bahk","Soo Bahk weapons")).getId();
-var TABLA_BOXEO= (new L("TABLA_BOXEO","Armas de Boxeo","Boxing weapons")).getId();
-var TABLA_XING_QUAN= (new L("TABLA_XING_QUAN","Armas de Xing Quan","Xing Quan weapons")).getId();
-var TABLA_SELENE= (new L("TABLA_SELENE","Armas de Selene","Selene weapons")).getId();
-var TABLA_MELKAIAH= (new L("TABLA_MELKAIAH","Armas de Melkaiah","Melkaiah weapons")).getId();
-var TABLA_EMP= (new L("TABLA_EMP","Armas de Emp","Emp weapons")).getId();
-var TABLA_SERAPHITE= (new L("TABLA_SERAPHITE","Armas de Seraphite","Seraphite weapons")).getId();
-var TABLA_SHEPHON= (new L("TABLA_SHEPHON","Armas de Shephon","Shephon weapons")).getId();
-var TABLA_ENUTH= (new L("TABLA_ENUTH","Armas de Enuth","Enuth weapons")).getId();
-var TABLA_HAKYOUKUKEN= (new L("TABLA_HAKYOUKUKEN","Armas de Hahyoukuken","Hahyoukuken weapons")).getId();
-var TABLA_SUNYATA= (new L("TABLA_SUNYATA","Armas de Suyanta","Suyanta weapons")).getId();
-var TABLA_HANJA= (new L("TABLA_HANJA","Armas de Hanja","Hanja weapons")).getId();
-var TABLA_MUSHIN= (new L("TABLA_MUSHIN","Armas de Mushin","Mushin weapons")).getId();
-var TABLA_REX_FRAME= (new L("TABLA_REX_FRAME","Armas de Rex Frame","Rex Frame weapons")).getId();
-
+var TABLA_AIKIDO = (new L("TABLA_AIKIDO","Armas de Aikido","Aikido weapons","Armes d'Aïkido")).getId();
+var TABLA_KUNG_FU = (new L("TABLA_KUNG_FU","Armas de Kung Fu","Kung Fu weapons","Armes de Kung Fu")).getId();
+var TABLA_SHOTOKAN = (new L("TABLA_SHOTOKAN","Armas de Shotokan","Shotokan weapons","Armes de Shotokan")).getId();
+var TABLA_MOAI_THAI = (new L("TABLA_MOAI_THAI","Armas de Moai Thai","Moai Thai weapons","Armes de Moi Tahi")).getId();
+var TABLA_CAPOEIRA = (new L("TABLA_CAPOEIRA","Armas de Capoeira","Capoeira weapons","Armes de Capoeira")).getId();
+var TABLA_KEMPO = (new L("TABLA_KEMPO","Armas de Kempo","Kempo weapons","Armes de Kempo")).getId();
+var TABLA_GRAPPLING = (new L("TABLA_GRAPPLING","Armas de Grappling","Grappling weapons","Armes de Pancrace")).getId();
+var TABLA_SAMBO = (new L("TABLA_SAMBO","Armas de Sambo","Sambo weapons","Armes de Sambo")).getId();
+var TABLA_TAE_KWON_DO = (new L("TABLA_TAE_KWON_DO","Armas de Tae Kwon Do","Tae Kwon Do weapons","Armes de Tae Kwon Do")).getId();
+var TABLA_TAI_CHI = (new L("TABLA_TAI_CHI","Armas de Tai Chi","Tai Chi weapons","Armes de Tai Chi")).getId();
+var TABLA_PANKRATION = (new L("TABLA_PANKRATION","Armas de Pankration","Pankration weapons","Armes de Pugilat")).getId();
+var TABLA_KARDAD = (new L("TABLA_KARDAD","Armas de Kardad","Kardad weapons","Armes de Kardad")).getId();
+var TABLA_MALLA_YUDDHA = (new L("TABLA_MALLA_YUDDHA","Armas de Malla-yuddha","Malla-yuddha weapons","Armes de Malla-yuddha")).getId();
+var TABLA_LAMA = (new L("TABLA_LAMA","Armas de Lama","Lama weapons","Armes de Lama")).getId();
+var TABLA_KUAN = (new L("TABLA_KUAN","Armas de Kuan","Kuan weapons","Armes de Kuan")).getId();
+var TABLA_SOO_BAHK = (new L("TABLA_SOO_BAHK","Armas de Soo Bahk","Soo Bahk weapons","Armes de Soo Bank")).getId();
+var TABLA_BOXEO = (new L("TABLA_BOXEO","Armas de Boxeo","Boxing weapons","Armes de Boxe")).getId();
+var TABLA_XING_QUAN = (new L("TABLA_XING_QUAN","Armas de Xing Quan","Xing Quan weapons","Armes de Xing Quan")).getId();
+var TABLA_SELENE = (new L("TABLA_SELENE","Armas de Selene","Selene weapons","Armes de Séléné")).getId();
+var TABLA_MELKAIAH = (new L("TABLA_MELKAIAH","Armas de Melkaiah","Melkaiah weapons","Armes de Malkaiah")).getId();
+var TABLA_EMP = (new L("TABLA_EMP","Armas de Emp","Emp weapons","Armes d'Emp")).getId();
+var TABLA_SERAPHITE = (new L("TABLA_SERAPHITE","Armas de Seraphite","Seraphite weapons","Armes de Séraphite")).getId();
+var TABLA_SHEPHON = (new L("TABLA_SHEPHON","Armas de Shephon","Shephon weapons","Armes de Shephon")).getId();
+var TABLA_ENUTH = (new L("TABLA_ENUTH","Armas de Enuth","Enuth weapons","Armes d'Enuth")).getId();
+var TABLA_HAKYOUKUKEN = (new L("TABLA_HAKYOUKUKEN","Armas de Hahyoukuken","Hahyoukuken weapons","Armes de Hakyoukuken")).getId();
+var TABLA_SUNYATA = (new L("TABLA_SUNYATA","Armas de Suyanta","Suyanta weapons","Armes de Suyanta")).getId();
+var TABLA_HANJA = (new L("TABLA_HANJA","Armas de Hanja","Hanja weapons","Armes de Hanja")).getId();
+var TABLA_MUSHIN = (new L("TABLA_MUSHIN","Armas de Mushin","Mushin weapons","Armes de Mushin")).getId();
+var TABLA_REX_FRAME = (new L("TABLA_REX_FRAME","Armas de Rex Frame","Rex Frame weapons","Armes de Rex Frame")).getId();
