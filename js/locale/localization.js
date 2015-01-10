@@ -731,27 +731,27 @@ var ERR_VIA_NO_DOMINADA = (new L("Vía no dominada","Vía no dominada","Path not
 var ERR_VIA_DESCONOCIDA = (new L("Error: Vía desconocida","Error: Vía desconocida","Error: Unknown path","Erreur: Voie inconnue")).getId();
 var ERR_INVOCACION_DESCONCODIA = (new L("ERR_INVOCACION_DESCONCODIA","Invocación desconocida","Invocation unknown","Invocation inconnue")).getId();
 var VIA_LUZ = (new L("VIA Luz","Luz","Light","Lumière")).getId();
-var VIA_LUZ_DESCRIPCION = (new L("","","","")).getId();
+var VIA_LUZ_DESCRIPCION = (new L("VIA_LUZ_DESCRIPCION","","","")).getId();
 var VIA_OSCURIDAD = (new L("VIA Oscuridad","Oscuridad","Darkness","Obscurité")).getId();
-var VIA_OSCURIDAD_DESCRIPCION = (new L("","","","")).getId();
+var VIA_OSCURIDAD_DESCRIPCION = (new L("VIA_OSCURIDAD_DESCRIPCION","","","")).getId();
 var VIA_CREACION = (new L("VIA Creacion","Creación","Creation","Création")).getId();
-var VIA_CREACION_DESCRIPCION = (new L("","","","")).getId();
+var VIA_CREACION_DESCRIPCION = (new L("VIA_CREACION_DESCRIPCION","","","")).getId();
 var VIA_DESTRUCCION = (new L("VIA Destrucción","Destrucción","Destruction","Destruction")).getId();
-var VIA_DESTRUCCION_DESCRIPCION = (new L("","","","")).getId();
+var VIA_DESTRUCCION_DESCRIPCION = (new L("VIA_DESTRUCCION_DESCRIPCION","","","")).getId();
 var VIA_FUEGO = (new L("VIA Fuego","Fuego","Fire","Feu")).getId();
-var VIA_FUEGO_DESCRIPCION = (new L("","","","")).getId();
+var VIA_FUEGO_DESCRIPCION = (new L("VIA_FUEGO_DESCRIPCION","","","")).getId();
 var VIA_AGUA = (new L("VIA Agua","Agua","Water","Eau")).getId();
-var VIA_AGUA_DESCRIPCION = (new L("","","","")).getId();
+var VIA_AGUA_DESCRIPCION = (new L("VIA_AGUA_DESCRIPCION","","","")).getId();
 var VIA_TIERRA = (new L("VIA Tierra","Tierra","Earth","Terre")).getId();
-var VIA_TIERRA_DESCRIPCION = (new L("","","","")).getId();
+var VIA_TIERRA_DESCRIPCION = (new L("VIA_TIERRA_DESCRIPCION","","","")).getId();
 var VIA_AIRE = (new L("VIA Aire","Aire","Air","Air")).getId();
-var VIA_AIRE_DESCRIPCION = (new L("","","","")).getId();
+var VIA_AIRE_DESCRIPCION = (new L("VIA_AIRE_DESCRIPCION","","","")).getId();
 var VIA_ESENCIA = (new L("VIA Esencia","Esencia","Essence","Essence")).getId();
-var VIA_ESENCIA_DESCRIPCION = (new L("","","","")).getId();
+var VIA_ESENCIA_DESCRIPCION = (new L("VIA_ESENCIA_DESCRIPCION","","","")).getId();
 var VIA_ILUSION = (new L("VIA Ilusión","Ilusión","Illusion","Illusion")).getId();
-var VIA_ILUSION_DESCRIPCION = (new L("","","","")).getId();
+var VIA_ILUSION_DESCRIPCION = (new L("VIA_ILUSION_DESCRIPCION","","","")).getId();
 var VIA_NIGROMANCIA = (new L("VIA Nigromancia","Nigromancia","Necromancy","Nécromancie")).getId();
-var VIA_NIGROMANCIA_DESCRIPCION = (new L("","","","")).getId();
+var VIA_NIGROMANCIA_DESCRIPCION = (new L("VIA_NIGROMANCIA_DESCRIPCION","","","")).getId();
 var TODAS_VIAS = (new L("Todas las vías","Todas las vías","All Paths","Toutes les voies")).getId();
 var VIA_LIBRE_ACCESO = (new L("Libre acceso","Libre acceso","Free Access","Accès libre")).getId();
 var VIA_LIBRE_ACCESO_DESCRIPCION = (new L("Conjuros de libre acceso","Conjuros de libre acceso","Free Access Spells","Sorts d'accès libre")).getId();
@@ -902,10 +902,5 @@ var DIAG_IMPRIMIR_PERSONAJE = (new L("DIAG_IMPRIMIR_PERSONAJE","Imprimir persona
 var UI_BOTON_IMPRIMIR = (new L("UI_BOTON_IMPRIMIR","Imprimir personaje","Print Character","Imprimer personnage")).getId();
 var UI_MAXIMO_INNATOS = (new L("UI_MAXIMO_INNATOS","Por máximo por innatos","Per innate maximum","Par maximum par inné")).getId();
 var UI_MAXIMO_NATURALES = (new L("UI_MAXIMO_NATURALES","Por máximo por naturales","Per natural maximum","Par maximum par inné")).getId();
-
-
-new L("E", "E", "S");
-new L("1ª", "1ª", "1st");
-new L("2ª", "2ª", "2nd");
 
 

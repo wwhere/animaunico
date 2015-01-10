@@ -518,3 +518,4 @@ var HAB_SELLO_KI_METAL_MENOR = (new L("HAB_SELLO_KI_METAL_MENOR","Sello de Metal
 var HAB_SELLO_KI_METAL_MAYOR = (new L("HAB_SELLO_KI_METAL_MAYOR","Sello de Metal Mayor","Sello de Metal Mayor","Sceau de Métal majeur")).getId();
 var HAB_SELLO_KI_MADERA_MENOR = (new L("HAB_SELLO_KI_MADERA_MENOR","Sello de Madera Menor","Sello de Madera Menor","Sceau de Terre (Bois) mineur")).getId();
 var HAB_SELLO_KI_MADERA_MAYOR = (new L("HAB_SELLO_KI_MADERA_MAYOR","Sello de Madera Mayor","Sello de Madera Mayor","Sceau de Terre (Bois) majeur")).getId();
+
